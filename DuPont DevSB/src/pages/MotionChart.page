@@ -1,0 +1,61 @@
+<apex:page >
+
+<html>
+<head>
+<script src="../../soap/ajax/19.0/connection.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('visualization', '1', {'packages':['motionchart']});
+google.setOnLoadCallback(drawChart);
+sforce.connection.sessionId = '{!$Api.Session_ID}';
+
+function formNumber(numValue){
+
+    var num = parseInt(numValue);
+
+return num;
+}
+
+
+
+
+function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Application Name');
+    data.addColumn('date','Date Added');
+    data.addColumn('number', 'Candidate Score');
+    data.addColumn('string', 'Pilot Candidate');
+    data.addColumn('string', 'High Value Candidate');
+    data.addColumn('string', 'Strategic Candidate');
+
+  try{
+    var result = sforce.connection.query("Select Application__r.Name, CreatedDate,Calculated_Pilot_Score__c,Calculated_Pilot_Fit_Indicator__c,High_Value_Candidate_Indicator__c, Strategic_Candidate_Indicator__c from Validation_Score__c");
+    records = result.getArray("records");
+   // alert(records);
+  }catch(error) {
+      alert(error);
+  }
+  
+ 
+  for (var i=0; i< records.length; i++) {
+    var record = records[i];
+    var now = new Date();
+    var test = data.addRows([[record.Application__r.Name,new Date(now.getFullYear(),now.getMonth(),now.getDay()),formNumber(record.Calculated_Pilot_Score__c),record.Calculated_Pilot_Fit_Indicator__c,record.High_Value_Candidate_Indicator__c, record.Strategic_Candidate_Indicator__c]]);
+  };
+
+
+
+
+
+    var chart = new google.visualization.MotionChart(document.getElementById('chart_div'));
+    chart.draw(data, {width: 600, height:300});
+}
+</script>
+</head>
+
+<body>
+<div id="chart_div" style="width: 600px; height: 300px;"></div>
+</body>
+</html>
+
+</apex:page>

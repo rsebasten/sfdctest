@@ -1,0 +1,157 @@
+<apex:page cache="false" showHeader="false" contentType="text/css">
+    
+    /*Looks like we have ourselves a perfectionist. 
+    Add any custom CSS for your portal in this page.
+    Some sample tags are included below.*/
+    
+    /*If adding styles for communities you may 
+    need to add !important to your CSS atrributes*/
+    
+    /*The body*/
+    body{}
+    
+    /*The container*/
+    #portalwrapper{
+        width:1024px;
+        margin:0 auto;
+    }
+    
+    /*The body*/
+    #portalbody{}
+    
+    /*The header*/
+    #portalheader{}
+    
+    /*The user section*/
+    #portalheadertop{}
+    
+    /*The logo*/
+    #portalheadermid{}
+    
+    /*The slider*/
+    #portalheaderbot{}
+    
+    /*The footer*/
+    #portalfooter{
+    background:url('{!$Resource.Footer}') no-repeat !important;
+    }
+    
+    /*The sidebar*/
+    #sidebarDiv{}
+    
+    /*The tabbar*/
+    .tabNavigation{}
+    #SSEPortalLogo
+    {
+    height:160px !important;
+    width:100%;
+    background:url('{!$Resource.Header_dupond}') no-repeat #fff;
+    }
+    
+    
+    html .brandPrimaryBgr {
+    background-color: #e31837!important;
+}
+#portalfooter {
+    background: url('/innovation/resource/Footer') no-repeat !important;
+    height: 100px !important;
+    width: 1000px !important;
+    position:relative !important;
+    bottom: 0px;
+    display:none !important;
+}
+nav
+{
+position: absolute;
+    top: 69px;
+    left: 410px;
+}
+<!------------------------------------>
+#SSEPortalLogo {
+    height: 67px !important;
+    background: url('{!$Resource.Header_dupond}') no-repeat left top transparent;
+}
+nav{
+position: absolute;
+    top: 61px;
+    left: 410px;
+}
+.zen .zen-tabMenu>li {
+    height: 41px;
+    line-height: 41px;
+    padding: 0 10px;
+    background-color: transparent;
+    background-image: none;
+}
+.zen .zen-tabMenu>li:hover
+{
+background:#aeaeae !important;
+}
+.zen .zen-tabMenu a ,.zen .zen-tabMenu .zen-active>a{
+    color: #eaeaea !important;
+}
+.zen .zen-tabMenu .zen-active {
+    background-color: #e11d3c !important;
+    color: #c6001e;
+    border: none !important;
+    box-shadow: none !Important;
+    background-image: none !important;
+    -moz-border-radius-topright: 7px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    -moz-box-shadow: 3px 0 5px -3px #999,-3px 0 5px -3px #999;
+    -webkit-box-shadow: none !Important;
+    }
+    #portalFooter
+    {
+    background:url('{!$Resource.Footer}') no-repeat #transparent !important;
+    display:none !important;
+    }
+    
+    body .bPageTitle .ptBody .pageDescription {
+    font-size: 1.8em;
+    font-weight: normal;
+    line-height: 1.1em;
+    color: #e11d3c !important;
+}
+
+#ideaSubtabs .bg {
+    background:#474747 !important;
+    }
+    
+    body .miniTab, body.ideaTab #ideaSubtabs {
+    background-color: rgb(71, 71, 71) !important;
+    } 
+    
+    
+    
+    body a.ideaSubjectLink {
+    color: #E11D3C !important;
+    }
+    
+
+    
+    
+    body .communityIntro {
+    border: 3px solid #E11D3C !important;
+    
+    }
+    
+    
+    
+    
+    /* this is a fix for the ideas tab where the content explodes if the following style is not in place :P - Darshil */
+    .ideaContentWidth{
+        max-width: 700px;
+    }
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46606102-1', 'salesforce.com');
+  ga('send', 'pageview');
+
+</script>
+</apex:page>

@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity">
+<apex:canvasApp applicationName="Sparkler" 
+    height="536px" 
+    width="654px" 
+    parameters="
+    {
+        'ts.javascriptLib': 'https://{SETME.com}/javascripts/api/viz_v1.js',
+        'ts.height': '536',
+        'ts.width': '654',
+        'ts.hostUrl': 'https://{SETME.com}',
+        'ts.siteRoot': '/t/{SETME}',
+        'ts.name': 'Opportunity_Dashboard/OpportunityDashboard',
+        'ts.tabs': 'yes',
+        'ts.toolbar': 'yes',
+        'ts.trustedTicket.host': '{SETME.com}',
+        'ts.trustedTicket.siteId': '{SETME}',
+        'ts.trustedTicket.username': '<user.email>',
+        'ts.filter': 'Opportunity_Parameter={!Opportunity.Id}',
+    }" />
+</apex:page>
