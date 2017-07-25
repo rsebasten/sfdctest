@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Validation Score</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Validation Scores</value>
+    </caseValues>
+    <fields>
+        <help><!-- Application Quality --></help>
+        <label><!-- Application Quality --></label>
+        <name>Application_Quality__c</name>
+        <picklistValues>
+            <masterLabel>1-Significant defects exist</masterLabel>
+            <translation><!-- 1-Significant defects exist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Some defects exist</masterLabel>
+            <translation><!-- 3-Some defects exist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-No defects exist</masterLabel>
+            <translation><!-- 5-No defects exist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What are the application/UI integration requirements? --></help>
+        <label><!-- Application/UI Integration Requirements --></label>
+        <name>Application_UI_integration_requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Extensive passing required</masterLabel>
+            <translation><!-- 1-Extensive passing required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Simple Context Passing (Fire and Forget)</masterLabel>
+            <translation><!-- 3-Simple Context Passing (Fire and Forget) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-None</masterLabel>
+            <translation><!-- 5-None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Validation Scores --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What are the audit needs? --></help>
+        <label><!-- Audit Requirements --></label>
+        <name>Audit_requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Page View &amp; Data Auditing</masterLabel>
+            <translation><!-- 1-Page View &amp; Data Auditing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Data only</masterLabel>
+            <translation><!-- 3-Data only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-None</masterLabel>
+            <translation><!-- 5-None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describe the use of custom branding within the applicaiton --></help>
+        <label><!-- Branding Requirements --></label>
+        <name>Branding_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1 - All Custom Branding</masterLabel>
+            <translation><!-- 1 - All Custom Branding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 -</masterLabel>
+            <translation><!-- 2 - --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Some Custom, Mostly Standard</masterLabel>
+            <translation><!-- 3 - Some Custom, Mostly Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4  -</masterLabel>
+            <translation><!-- 4  - --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - All Standard Salesforce Branding</masterLabel>
+            <translation><!-- 5 - All Standard Salesforce Branding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Build vs. Buy Score --></label>
+        <name>Build_vs_Buy_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is there a packaged application that would meet customer needs that is not available on the AppExchange? --></help>
+        <label><!-- Buy vs Build --></label>
+        <name>Build_vs_Buy__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Calculated Complexity Indicator --></label>
+        <name>Calculated_Complexity_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complexity Score (%) --></label>
+        <name>Calculated_Complexity_Score_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Complexity Score --></label>
+        <name>Calculated_Complexity_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Current User Percept Ind --></label>
+        <name>Calculated_Current_User_Percept_Ind__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Current User Perception --></label>
+        <name>Calculated_Current_User_Perception__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Force Fit Indicator --></label>
+        <name>Calculated_Force_Fit_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Force Fit Score --></label>
+        <name>Calculated_Force_Fit_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Force Fit --></label>
+        <name>Calculated_Force_Fit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pilot Fit Indicator --></label>
+        <name>Calculated_Pilot_Fit_Indicator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apps that are of:
+Low complexity 
+Low to Medium Usage
+Current User Perception is Poor --></help>
+        <label><!-- Pilot Candidate --></label>
+        <name>Calculated_Pilot_Fit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Candidate Score (%) --></label>
+        <name>Calculated_Pilot_Score2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Pilot Score --></label>
+        <name>Calculated_Pilot_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk/Usage Score (%) --></label>
+        <name>Calculated_Risk_Usage_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Usage Indicator --></label>
+        <name>Calculated_Usage_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Usage / Risk Score --></label>
+        <name>Calculated_Usage_Risk_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated User Perception Score --></label>
+        <name>Calculated_User_Perception_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Centralized Database Storage Score --></label>
+        <name>Centralized_Database_Storage_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complexity (Cost) --></label>
+        <name>Complexity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Computational Intensive Score --></label>
+        <name>Computational_Intensive_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the application require extremely large number of calculations per transaction (e.g. multi-dimensional data analysis such as required by certain scientific applications) --></help>
+        <label><!-- Computationally Intensive --></label>
+        <name>Computational_Intensive__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Content Requirements --></label>
+        <name>Content_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>NEED INPUT FROM TOM</masterLabel>
+            <translation><!-- NEED INPUT FROM TOM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Cost Effectiveness --></help>
+        <label><!-- Cost Effectiveness --></label>
+        <name>Cost_Effectiveness__c</name>
+        <picklistValues>
+            <masterLabel>1-Very Cost Effective</masterLabel>
+            <translation><!-- 1-Very Cost Effective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Expensive, but manageable</masterLabel>
+            <translation><!-- 3-Expensive, but manageable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Too Expensive</masterLabel>
+            <translation><!-- 5-Too Expensive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current User Perception (%) --></label>
+        <name>Current_User_Perception_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current User Perception (Reward) --></label>
+        <name>Current_User_Perception__c</name>
+    </fields>
+    <fields>
+        <help><!-- Data Warehousing/OLAP Processing --></help>
+        <label><!-- Data Warehousing/OLAP Processing --></label>
+        <name>Data_Warehousing_OLAP_Processing__c</name>
+        <picklistValues>
+            <masterLabel>1-Many custom reports w/ complex analytical queries</masterLabel>
+            <translation><!-- 1-Many custom reports w/ complex analytical queries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Few custom reports w/ complex analytical queries</masterLabel>
+            <translation><!-- 3-Few custom reports w/ complex analytical queries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-All custom reports do not require complex analytical queries</masterLabel>
+            <translation><!-- 5-All custom reports do not require complex analytical queries --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Impact to the organization if this application is not available? --></help>
+        <label><!-- Downtime Impact --></label>
+        <name>Downtime_Impact__c</name>
+        <picklistValues>
+            <masterLabel>1-Catastrophic</masterLabel>
+            <translation><!-- 1-Catastrophic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-Major</masterLabel>
+            <translation><!-- 2-Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Moderate</masterLabel>
+            <translation><!-- 3-Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Minor</masterLabel>
+            <translation><!-- 4-Minor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-None</masterLabel>
+            <translation><!-- 5-None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Ease of Data Extraction --></help>
+        <label><!-- Ease of Data Extraction --></label>
+        <name>Ease_of_Data_Extraction__c</name>
+        <picklistValues>
+            <masterLabel>1-No Direct DB, API, or File Extracts Avail</masterLabel>
+            <translation><!-- 1-No Direct DB, API, or File Extracts Avail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-File extract ONLY</masterLabel>
+            <translation><!-- 3-File extract ONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Direct DB or API Available</masterLabel>
+            <translation><!-- 5-Direct DB or API Available --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Ease of Use --></help>
+        <label><!-- Ease of Use --></label>
+        <name>Ease_of_Use__c</name>
+        <picklistValues>
+            <masterLabel>1-Very easy</masterLabel>
+            <translation><!-- 1-Very easy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Average</masterLabel>
+            <translation><!-- 3-Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Very Poor</masterLabel>
+            <translation><!-- 5-Very Poor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does the application require accessed data to be encrypted when stored on the database server? --></help>
+        <label><!-- Encryption Requirements --></label>
+        <name>Encryption_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Unique client encryption methodology</masterLabel>
+            <translation><!-- 1-Unique client encryption methodology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Standard SFDC encryption</masterLabel>
+            <translation><!-- 3-Standard SFDC encryption --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-No encryption needs</masterLabel>
+            <translation><!-- 5-No encryption needs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Entitlement Integration Requirements --></label>
+        <name>Entitlement_Integration_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Requires Integration to Entitlements System with Frequent Mass Realignments (Monthly, Quarterly)</masterLabel>
+            <translation><!-- 1-Requires Integration to Entitlements System with Frequent Mass Realignments (Monthly, Quarterly) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Requires Integration to Entitlements System  with Infrequent Mass Realignments (Annually)</masterLabel>
+            <translation><!-- 3-Requires Integration to Entitlements System  with Infrequent Mass Realignments (Annually) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-No Integration Required, Salesforce is the System of Record</masterLabel>
+            <translation><!-- 5-No Integration Required, Salesforce is the System of Record --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Entitlements Requirements --></label>
+        <name>Entitlements_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Territory or Group Based Non-Hierarchal Structure</masterLabel>
+            <translation><!-- 1-Territory or Group Based Non-Hierarchal Structure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Territory or Group Based Hierarchal Structure</masterLabel>
+            <translation><!-- 3-Territory or Group Based Hierarchal Structure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Organizational Role Hierarchy Based</masterLabel>
+            <translation><!-- 5-Organizational Role Hierarchy Based --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- File Size --></help>
+        <label><!-- File Size --></label>
+        <name>File_Size__c</name>
+        <picklistValues>
+            <masterLabel>1-Avg. file size over 10 MB</masterLabel>
+            <translation><!-- 1-Avg. file size over 10 MB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Most files under 10 MB</masterLabel>
+            <translation><!-- 3-Most files under 10 MB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-All files under 10 MB</masterLabel>
+            <translation><!-- 5-All files under 10 MB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Force Fit Indicator --></label>
+        <name>Force_Fit_Indicator__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GSAppRecType --></label>
+        <name>GSAppRecType__c</name>
+    </fields>
+    <fields>
+        <label><!-- High Value Candidate Indicator --></label>
+        <name>High_Value_Candidate_Indicator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apps that are of: 
+Low to Meduim Complexity 
+Medium to High Usage 
+Current User Perception is Poor to Average --></help>
+        <label><!-- High Value Candidate --></label>
+        <name>High_Value_Candidate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Innovation/Growth and Speed to Market --></help>
+        <label><!-- Innovation/Growth + Speed to Market --></label>
+        <name>Innovation_Growth_Speed_Market__c</name>
+        <picklistValues>
+            <masterLabel>1-Easy to make chg, w/ low effort/cost</masterLabel>
+            <translation><!-- 1-Easy to make chg, w/ low effort/cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-New req w/ moderate cost/effort</masterLabel>
+            <translation><!-- 3-New req w/ moderate cost/effort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-New req w/ high effort/costs</masterLabel>
+            <translation><!-- 5-New req w/ high effort/costs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Integration capabilities of other systems --></help>
+        <label><!-- Integration capabilities of other system --></label>
+        <name>Integration_capabilities_of_other_system__c</name>
+        <picklistValues>
+            <masterLabel>1-File-based CSV format not acceptable</masterLabel>
+            <translation><!-- 1-File-based CSV format not acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-File-based ONLY CSV acceptable</masterLabel>
+            <translation><!-- 3-File-based ONLY CSV acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-File-based CSV, Direct DB or Standards based API acceptable</masterLabel>
+            <translation><!-- 5-File-based CSV, Direct DB or Standards based API acceptable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What are the interface timing requirements? --></help>
+        <label><!-- Interface timing --></label>
+        <name>Interface_timing__c</name>
+        <picklistValues>
+            <masterLabel>1-Real-time interface</masterLabel>
+            <translation><!-- 1-Real-time interface --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Some RT/Some Batch</masterLabel>
+            <translation><!-- 3-Some RT/Some Batch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Batch</masterLabel>
+            <translation><!-- 5-Batch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the application workflow logic primarily contained within the application or thru email notifications (e.g., no callouts or updates to other systems applications in real time)? --></help>
+        <label><!-- Internal or External Workflow --></label>
+        <name>Internal_or_External_Workflow__c</name>
+        <picklistValues>
+            <masterLabel>1-Workflow to external systems</masterLabel>
+            <translation><!-- 1-Workflow to external systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Workflow with Email component</masterLabel>
+            <translation><!-- 3-Workflow with Email component --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Workflow to internal system</masterLabel>
+            <translation><!-- 5-Workflow to internal system --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Maintenance Backlog --></help>
+        <label><!-- Maintenance Backlog --></label>
+        <name>Maintenance_Backlog__c</name>
+        <picklistValues>
+            <masterLabel>High &gt;6 mnths effort</masterLabel>
+            <translation><!-- High &gt;6 mnths effort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low &lt; 3 mnths effort</masterLabel>
+            <translation><!-- Low &lt; 3 mnths effort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium 3-6 mnths effort</masterLabel>
+            <translation><!-- Medium 3-6 mnths effort --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Are there mobile requirements? --></help>
+        <label><!-- Mobile requirements --></label>
+        <name>Mobile_requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Yes</masterLabel>
+            <translation><!-- 1-Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-No</masterLabel>
+            <translation><!-- 5-No --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Multi-sourced Reports and Dashboards --></help>
+        <label><!-- Multi-sourced Reports and Dashboards --></label>
+        <name>Multi_sourced_Reports_and_Dashboards__c</name>
+        <picklistValues>
+            <masterLabel>1-Custom Reports, multi underlying DB sources</masterLabel>
+            <translation><!-- 1-Custom Reports, multi underlying DB sources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Data included in Custom Reports is stored within SFDC DB</masterLabel>
+            <translation><!-- 5-Data included in Custom Reports is stored within SFDC DB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describe the UI navigation requirements in terms of the following
+1 - All Custom Navigation (Many Wizards, All Custom Buttons and Links)
+3 - Some Custom Navigation (A few buttons, but mostly standard)
+5 - Standard Salesforce (All Standard) --></help>
+        <label><!-- Navigational Requirements --></label>
+        <name>Navigational_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1 - All Custom Navigation Components</masterLabel>
+            <translation><!-- 1 - All Custom Navigation Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 -</masterLabel>
+            <translation><!-- 2 - --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Some Custom, Some Standard Salesforce Navigation</masterLabel>
+            <translation><!-- 3 - Some Custom, Some Standard Salesforce Navigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 -</masterLabel>
+            <translation><!-- 4 - --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Standard Salesforce Navigation Components</masterLabel>
+            <translation><!-- 5 - Standard Salesforce Navigation Components --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the number of external users? --></help>
+        <label><!-- Number of external users --></label>
+        <name>Number_of_external_users__c</name>
+        <picklistValues>
+            <masterLabel>0 - (5000+)</masterLabel>
+            <translation><!-- 0 - (5000+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - (1000-5000)</masterLabel>
+            <translation><!-- 1 - (1000-5000) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - (500-800)</masterLabel>
+            <translation><!-- 3 - (500-800) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - (0)</masterLabel>
+            <translation><!-- 5 - (0) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the number of internal users? --></help>
+        <label><!-- Number of internal users --></label>
+        <name>Number_of_internal_users__c</name>
+        <picklistValues>
+            <masterLabel>0 - (5000+)</masterLabel>
+            <translation><!-- 0 - (5000+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1-(1000-5000)</masterLabel>
+            <translation><!-- 1-(1000-5000) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-(500-800)</masterLabel>
+            <translation><!-- 3-(500-800) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-(less than 300)</masterLabel>
+            <translation><!-- 5-(less than 300) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Offline Requirements --></label>
+        <name>Offline_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1- Yes</masterLabel>
+            <translation><!-- 1- Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5- No</masterLabel>
+            <translation><!-- 5- No --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the existing application packaged or custom? --></help>
+        <label><!-- Packaged or custom --></label>
+        <name>Packaged_or_custom__c</name>
+        <picklistValues>
+            <masterLabel>1-Pkg robust soln</masterLabel>
+            <translation><!-- 1-Pkg robust soln --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Pkg with bus. need separate from soln</masterLabel>
+            <translation><!-- 3-Pkg with bus. need separate from soln --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Custom</masterLabel>
+            <translation><!-- 5-Custom --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Page Processing Time Requirements --></label>
+        <name>Page_Processing_Time_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1 - All HTTPS Pages (No caching available)</masterLabel>
+            <translation><!-- 1 - All HTTPS Pages (No caching available) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3- Some HTTP, Some HTTPS</masterLabel>
+            <translation><!-- 3- Some HTTP, Some HTTPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5- All HTTP Pages</masterLabel>
+            <translation><!-- 5- All HTTP Pages --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Performance --></help>
+        <label><!-- Performance --></label>
+        <name>Performance__c</name>
+        <picklistValues>
+            <masterLabel>1-Very Good</masterLabel>
+            <translation><!-- 1-Very Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Average</masterLabel>
+            <translation><!-- 3-Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Poor</masterLabel>
+            <translation><!-- 5-Poor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pilot Fit Indicator --></label>
+        <name>Pilot_Fit_Indicator__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pilot Fit --></label>
+        <name>Pilot_Fit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public Site Download Requirements --></label>
+        <name>Public_Site_Download_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>0- Many video, audio, binary files stored on SFDC</masterLabel>
+            <translation><!-- 0- Many video, audio, binary files stored on SFDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Video, audio, binary files not stored in SFDC</masterLabel>
+            <translation><!-- 3 - Video, audio, binary files not stored in SFDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5- No video, audio, binary file downloads</masterLabel>
+            <translation><!-- 5- No video, audio, binary file downloads --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does the application require sustained throughput of over 100Mbps (certain multimedia and gaming applications may have this requirement) --></help>
+        <label><!-- Min Throughput &gt;100Mbps --></label>
+        <name>Real_time_Transaction_Volumes_Millions__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Real-time Transaction Volumes Score --></label>
+        <name>Real_time_Transaction_Volumes_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regulatory Limitations Score --></label>
+        <name>Regulatory_Limitations_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do regulatory restrictions limit storage of this application&apos;s data off-premise? --></help>
+        <label><!-- Regulatory Limitations --></label>
+        <name>Regulatory_Limitations__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Unstructured Data Requirements - Non-relational data, usually text heavy --></help>
+        <label><!-- Unstructured Data Requirements --></label>
+        <name>Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Full Knowledge base</masterLabel>
+            <translation><!-- 1-Full Knowledge base --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Attachments to Structured Data</masterLabel>
+            <translation><!-- 5-Attachments to Structured Data --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Requires Cleansing --></help>
+        <label><!-- Requires Cleansing --></label>
+        <name>Requires_Cleansing__c</name>
+        <picklistValues>
+            <masterLabel>1-Fuzzy logic required to cleanse/merge data</masterLabel>
+            <translation><!-- 1-Fuzzy logic required to cleanse/merge data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Cleanse criteria is based upon key data</masterLabel>
+            <translation><!-- 3-Cleanse criteria is based upon key data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-No cleanse required</masterLabel>
+            <translation><!-- 5-No cleanse required --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response Time Score --></label>
+        <name>Response_Time_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the application require response times under 250ms? (typically this is only the case when integrating to sensors or devices, as opposed to end-user interactions) --></help>
+        <label><!-- Max Response Time &lt;250ms --></label>
+        <name>Response_Time__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describe the Content Management Requirements for the applicaiton --></help>
+        <label><!-- Site Content Management Requirements --></label>
+        <name>Site_Content_Management_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1 - Robust Content Management Capabilities (i.e. Interwoven, Vignette)</masterLabel>
+            <translation><!-- 1 - Robust Content Management Capabilities (i.e. Interwoven, Vignette) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Minor Content Management Capabilities (i.e. Templates, Approvals)</masterLabel>
+            <translation><!-- 3 - Minor Content Management Capabilities (i.e. Templates, Approvals) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5- None</masterLabel>
+            <translation><!-- 5- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Strategic Candidate Indicator --></label>
+        <name>Strategic_Candidate_Indicator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apps that are of: 
+Medim to High Complexity 
+Medium to High Usage 
+Current User Perception is Poor to Average --></help>
+        <label><!-- Strategic Candidate --></label>
+        <name>Strategic_Candidate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order of Magnitude for Structured Data Stored - Typically relational data stored in an RDBMS --></help>
+        <label><!-- Structured Data Storage Magnitude --></label>
+        <name>Structured_Data_Storage_Magnitude__c</name>
+        <picklistValues>
+            <masterLabel>1-Multi millions for multiple objects</masterLabel>
+            <translation><!-- 1-Multi millions for multiple objects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Tens/Hundreds of Thousands</masterLabel>
+            <translation><!-- 3-Tens/Hundreds of Thousands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Tens of thousands or less</masterLabel>
+            <translation><!-- 5-Tens of thousands or less --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Synchronous Reporting on Large Result Sets - Requires higher data throughput --></help>
+        <label><!-- Synchronous Reporting on Large Results --></label>
+        <name>Synchronous_Reporting_on_Large_Results__c</name>
+        <picklistValues>
+            <masterLabel>1-Many Reports, requires tens of thousands of record to be returned</masterLabel>
+            <translation><!-- 1-Many Reports, requires tens of thousands of record to be returned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Few Reports, requires tens of thousands records to be returned</masterLabel>
+            <translation><!-- 3-Few Reports, requires tens of thousands records to be returned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-All Reports will be under 2K records</masterLabel>
+            <translation><!-- 5-All Reports will be under 2K records --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the system documentation available (Requirements, Design, Specs)? --></help>
+        <label><!-- System documentation availability --></label>
+        <name>System_documentation_availability__c</name>
+        <picklistValues>
+            <masterLabel>1-No documentation available</masterLabel>
+            <translation><!-- 1-No documentation available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Some documentation available</masterLabel>
+            <translation><!-- 3-Some documentation available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Documentation available and current</masterLabel>
+            <translation><!-- 5-Documentation available and current --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tolerate Maintenance Windows Score --></label>
+        <name>Tolerate_Maintenance_Windows_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the application unable to tolerate scheduled maintenance downtime? --></help>
+        <label><!-- Intolerant of Maintenance Windows --></label>
+        <name>Tolerate_Maintenance_Windows__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Tools for integration architecture --></help>
+        <label><!-- Tools for integration architecture --></label>
+        <name>Tools_for_integration_architecture__c</name>
+        <picklistValues>
+            <masterLabel>1-None</masterLabel>
+            <translation><!-- 1-None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Middleware with no SFDC Adaptor</masterLabel>
+            <translation><!-- 3-Middleware with no SFDC Adaptor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Middleware with SFDC Adaptor</masterLabel>
+            <translation><!-- 5-Middleware with SFDC Adaptor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Existing Application</masterLabel>
+            <translation><!-- Existing Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Application</masterLabel>
+            <translation><!-- New Application --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describe the access requirements (i.e public vs. private site) --></help>
+        <label><!-- Unauthenticated Access Requirements --></label>
+        <name>Unauthenticated_Access_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>1 - All Unauthenticated Access (Public Site)</masterLabel>
+            <translation><!-- 1 - All Unauthenticated Access (Public Site) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Some Unauthenticated, Some Authenticated Access</masterLabel>
+            <translation><!-- 3 - Some Unauthenticated, Some Authenticated Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - All Authenticated Access</masterLabel>
+            <translation><!-- 5 - All Authenticated Access --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Usage (Risk) --></label>
+        <name>Usage_Risk__c</name>
+    </fields>
+    <fields>
+        <help><!-- User Satisfaction --></help>
+        <label><!-- User Satisfaction --></label>
+        <name>User_Satisfaction__c</name>
+        <picklistValues>
+            <masterLabel>1-Very Satisfied</masterLabel>
+            <translation><!-- 1-Very Satisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Somewhat Satisfied</masterLabel>
+            <translation><!-- 3-Somewhat Satisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Very Dissatisfied</masterLabel>
+            <translation><!-- 5-Very Dissatisfied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What are the system’s authentication requirements? --></help>
+        <label><!-- Authentication requirements --></label>
+        <name>authentication_requirements__c</name>
+        <picklistValues>
+            <masterLabel>1-Single-sign on (SSO)</masterLabel>
+            <translation><!-- 1-Single-sign on (SSO) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-SSO using SAML (1.1, 2.0)</masterLabel>
+            <translation><!-- 3-SSO using SAML (1.1, 2.0) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Username/Password only</masterLabel>
+            <translation><!-- 5-Username/Password only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The number of business processes supported by the application. --></help>
+        <label><!-- # of Business Processes --></label>
+        <name>of_Business_Processes__c</name>
+        <picklistValues>
+            <masterLabel>0- (8+)</masterLabel>
+            <translation><!-- 0- (8+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1- (5-8)</masterLabel>
+            <translation><!-- 1- (5-8) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3- (3-4)</masterLabel>
+            <translation><!-- 3- (3-4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5- (1-2)</masterLabel>
+            <translation><!-- 5- (1-2) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the # of Custom Fields? --></help>
+        <label><!-- # of Custom Fields --></label>
+        <name>of_Custom_Fields__c</name>
+        <picklistValues>
+            <masterLabel>1-Complex (200 or more per single object)</masterLabel>
+            <translation><!-- 1-Complex (200 or more per single object) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Medium (100-200 per object)</masterLabel>
+            <translation><!-- 3-Medium (100-200 per object) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Simple (&lt;50 per object)</masterLabel>
+            <translation><!-- 5-Simple (&lt;50 per object) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the # of Custom Objects/Tabs? --></help>
+        <label><!-- # of Custom Objects/Tabs --></label>
+        <name>of_Custom_Objects_Tabs__c</name>
+        <picklistValues>
+            <masterLabel>1-Complex (300 or more per single object)</masterLabel>
+            <translation><!-- 1-Complex (300 or more per single object) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-(20-25)</masterLabel>
+            <translation><!-- 2-(20-25) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Medium (15-20)</masterLabel>
+            <translation><!-- 3-Medium (15-20) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-(10-15)</masterLabel>
+            <translation><!-- 4-(10-15) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-Simple (10 or less)</masterLabel>
+            <translation><!-- 5-Simple (10 or less) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The estimated number of custom pages required --></help>
+        <label><!-- # of Custom Pages --></label>
+        <name>of_Custom_Pages__c</name>
+        <picklistValues>
+            <masterLabel>1 - (50+)</masterLabel>
+            <translation><!-- 1 - (50+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - ( 20 - 40 )</masterLabel>
+            <translation><!-- 3 - ( 20 - 40 ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - (None)</masterLabel>
+            <translation><!-- 5 - (None) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # of Data Migration Sources --></label>
+        <name>of_Data_Migration_Sources__c</name>
+        <picklistValues>
+            <masterLabel>0 - (10+)</masterLabel>
+            <translation><!-- 0 - (10+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1- (5-10)</masterLabel>
+            <translation><!-- 1- (5-10) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-  (1-3)</masterLabel>
+            <translation><!-- 3-  (1-3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - 0</masterLabel>
+            <translation><!-- 5 - 0 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How many departments leverage solution? --></help>
+        <label><!-- # of Departments --></label>
+        <name>of_Departments__c</name>
+        <picklistValues>
+            <masterLabel>1-(5+)</masterLabel>
+            <translation><!-- 1-(5+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-(3-5)</masterLabel>
+            <translation><!-- 3-(3-5) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-(1)</masterLabel>
+            <translation><!-- 5-(1) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How many physical locations are the users based in? --></help>
+        <label><!-- # of Physical Locations --></label>
+        <name>of_Physical_Locations__c</name>
+        <picklistValues>
+            <masterLabel>1-Many, International</masterLabel>
+            <translation><!-- 1-Many, International --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Several, Single Country</masterLabel>
+            <translation><!-- 3-Several, Single Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-One</masterLabel>
+            <translation><!-- 5-One --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How many divisions leverage solution? --></help>
+        <label><!-- # of Divisions --></label>
+        <name>of_divisions__c</name>
+        <picklistValues>
+            <masterLabel>1-(5+)</masterLabel>
+            <translation><!-- 1-(5+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-(3-5)</masterLabel>
+            <translation><!-- 3-(3-5) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-(1)</masterLabel>
+            <translation><!-- 5-(1) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- # of integration points --></help>
+        <label><!-- # of Integration Points --></label>
+        <name>of_integration_points__c</name>
+        <picklistValues>
+            <masterLabel>0-(10+)</masterLabel>
+            <translation><!-- 0-(10+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1-(5-10)</masterLabel>
+            <translation><!-- 1-(5-10) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-(1-3)</masterLabel>
+            <translation><!-- 3-(1-3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-(0)</masterLabel>
+            <translation><!-- 5-(0) --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Candidate Score --></label>
+        <name>Candidate_Score</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Force Fit Score --></label>
+        <name>Force_Fit_Score</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Show_Motion_Chart --></label>
+        <name>Show_Motion_Chart</name>
+    </webLinks>
+</CustomObjectTranslation>

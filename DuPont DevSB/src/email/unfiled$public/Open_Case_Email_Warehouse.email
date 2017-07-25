@@ -1,0 +1,19 @@
+Dear Warehouse Department,
+
+{!Case.Contact} from {!Case.Account} called support and opened a case. Your department's assistance is required to solve this issue. Please review the case to determine a resolution. Please follow the link below in order to view the case and add comments.
+
+Case Summary
+
+Case Number: {!Case.CaseNumber}
+Case Type: {!Case.Type}
+Case SubType: {!Case.SubType__c}
+
+https://dupontglobal.force.com/warehouse/login?inst=8&startURL=%2Fwarehouse%2F500%2Fo
+
+**If you do not have a SFDC login, click the "Not a member?" link below the "Log in" button to create a log in.
+
+Sincerely,
+
+{!User.FullName}
+{!Organization.Name}
+{!User.Email}

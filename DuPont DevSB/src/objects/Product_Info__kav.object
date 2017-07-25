@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleTypeChannelDisplay>
+        <articleTypeTemplates>
+            <channel>App</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Prm</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Csp</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Pkb</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+    </articleTypeChannelDisplay>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Added with Inquiry Mgmt and Communities POC to demonstrate the availability of self service articles on Community site</description>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>Attachment__c</fullName>
+        <description>Added with Inquiry Mgmt and Communities POC.  Allows for upload of Attachment to Article.</description>
+        <externalId>false</externalId>
+        <label>Attachment</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Details__c</fullName>
+        <description>Added with Inquiry Mgmt and Communities POC.  Holds Article Content to be displayed to Community members.</description>
+        <externalId>false</externalId>
+        <label>Details</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>30</visibleLines>
+    </fields>
+    <label>Product Info</label>
+    <pluralLabel>Product Infos</pluralLabel>
+</CustomObject>

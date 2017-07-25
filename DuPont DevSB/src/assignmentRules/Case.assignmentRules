@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Expedites to CSR Level2</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>CSR_Level_2</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>SAP Investigation,Bill I/C Services,Request Sample,Request Rebate,Expedite Request</value>
+            </criteriaItems>
+            <template>unfiled$public/Case_Opened</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

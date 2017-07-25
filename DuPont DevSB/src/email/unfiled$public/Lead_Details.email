@@ -1,0 +1,24 @@
+Hello,
+
+The data required to create a new account has been collected.  Please use the information below to create the account in ECC.
+
+Account Name: {!Lead.Company}
+Address: {!Lead.Address}
+City: {!Lead.City}
+State: {!Lead.State}
+Zip Code: {!Lead.PostalCode}
+Country: {!Lead.Country}
+SBU: {!Lead.SBU__c}
+
+Purchasing Details
+Delivery Priority: {!Lead.Delivery_Priority__c}
+Shipping Conditions: {!Lead.Shipping_Conditions__c}
+Partial Delivery: {!Lead.Partial_Delivery__c}
+Tax Jurisdiction Code: {!Lead.Tax_Jurisdiction_Code__c}
+
+Credit Details
+Terms of Payment:
+Credit Risk Profile:
+Credit Agency Feedback:
+
+Link to Lead: {!Lead.Link}

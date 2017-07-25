@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <attributes>
+        <formula>$User.Id</formula>
+        <key>Session Id</key>
+    </attributes>
+    <contactEmail>michael.j.vosse@accenture.come</contactEmail>
+    <label>Adobe AEM</label>
+    <samlConfig>
+        <acsUrl>https://www.testssl.com/Shibboleth.sso/SAML2/POST</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://www.testssl.com/shibboleth</entityUrl>
+        <issuer>https://lab-dupont.my.salesforce.com</issuer>
+        <samlNameIdFormat>Unspecified</samlNameIdFormat>
+        <samlSubjectType>FederationId</samlSubjectType>
+    </samlConfig>
+</ConnectedApp>
