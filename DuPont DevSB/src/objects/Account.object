@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>Account_no_validation</fullName>
+        <active>true</active>
+        <description>Account_no_validation to test regression testing</description>
+        <errorConditionFormula>NOT(ISBLANK(AccountNumber))</errorConditionFormula>
+        <errorMessage>Account number contains 12345</errorMessage>
+    </validationRules>
+</CustomObject>
