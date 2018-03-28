@@ -1,0 +1,26 @@
+<apex:page standardController="ConstructionPts__CP_Contact__c" extensions="ConstructionPts.CPContactMatchToStandardContacts" >
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.css')}"/>
+   <style>
+.cpHeaderLabel {  
+box-sizing: border-box;
+color: #3C3D3E;
+font-family:Verdana;
+font-size: 15px;
+font-weight: 400;
+line-height: 38px;
+}
+</style>
+<table height="66px">
+<tr height="14px"><td ></td></tr>
+<tr>
+<td width="14px"></td>
+<td  height="38px" width="38px" style="background-color: #4fac9c;border-radius:3px 3px 3px 3px;">      
+        <img class="icon " height="38px" width="38px"  src="/img/icon/t4/standard/related_list_120.png" alt="" title=""></img>
+</td>
+<td width="14px"></td>
+<td class="cpHeaderLabel">CP Projects</td>
+</tr>
+<tr height="14px"><td colspan="2"></td></tr>
+</table>  
+<c:SelectRoles_Mobile rendered="{!IF(ShowRolesContact,true,false)}"/>           
+</apex:page>

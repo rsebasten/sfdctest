@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Leads related to a Solution</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Cost_Center__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Center</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Generic_Name_Code__c</fullName>
+        <description>Preferred common name or code related to a product or sales aid</description>
+        <externalId>false</externalId>
+        <label>Generic Name/Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Name of the lead that will be</description>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Solution Leads</relationshipLabel>
+        <relationshipName>R00N30000001GoDqEAK</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Migration_DB_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Migration DB ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <description>Organization to which the solution belongs (SBU, BU).  Need to reference solutions which relate to multiple SBUs (e.g. Envex) or BU&apos;s (e.g. Pyralux, Centari).</description>
+        <externalId>false</externalId>
+        <label>Owning Organization</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Audience__c</fullName>
+        <description>Group of users for which solution was created (e.g. Inquiry Level 1, Inquiry Level 2, Inquiry Level 3, Customer Self-Service).</description>
+        <externalId>false</externalId>
+        <label>Primary Audience</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <description>Quantity of sales aids that have been requested</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Solution_Type__c</fullName>
+        <description>Type of Solution</description>
+        <externalId>false</externalId>
+        <label>Solution Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Solution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Name of the solution</description>
+        <externalId>false</externalId>
+        <label>Solution</label>
+        <referenceTo>Solution</referenceTo>
+        <relationshipLabel>Solution Leads</relationshipLabel>
+        <relationshipName>R00N30000001GoDWEA0</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status of the Solution</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Solution Lead</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Solution_Type__c</columns>
+        <columns>Owning_Organization__c</columns>
+        <columns>Status__c</columns>
+        <columns>Solution__c</columns>
+        <columns>Lead__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>SFDCAdminSupport787141</group>
+            <group>SFDCCRMEngagementTeams</group>
+            <group>SFDCDuPontSystemAdministrators</group>
+            <group>SolutionManager</group>
+            <group>SolutionsSpecialists</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>SOLLD-{0000}</displayFormat>
+        <label>Solution Lead Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Solution Leads</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Solution__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Generic_Name_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Solution_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Owning_Organization__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Primary_Audience__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Quantity__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Solution__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Generic_Name_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Solution_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Owning_Organization__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Primary_Audience__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Quantity__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Solution__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Generic_Name_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Solution_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owning_Organization__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Primary_Audience__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quantity__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

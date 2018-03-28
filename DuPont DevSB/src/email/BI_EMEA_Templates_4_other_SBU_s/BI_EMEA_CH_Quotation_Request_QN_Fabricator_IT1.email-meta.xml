@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA Quotation request template for QN Fabricators</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Quotation Request QN Fabricator IT</name>
+    <style>formalLetter</style>
+    <subject>Richiesta di offerta per intervento al fabbricatore QN (case: {!Case.CaseNumber})</subject>
+    <textOnly>Gent. Fabbricatore QN,
+
+In riferimento al nostro reclamo {!Case.CaseNumber} in data {!Case.Date_Entered__c}, gradiremo ricevere da parte vostra un’offerta dettagliata riguardante la riparazione del problema dal cliente:
+
+{!Case.Contact} 
+{!Account.BillingAddress} 
+{!Account.BillingCity} 
+{!Contact.Phone} 
+{!Case.Description}
+
+Vi chiediamo di indicare in dettaglio il chilometraggio e costi di lavoro (prezzo/ore) e di informarci se dobbiamo inviarvi materiale dal nostro magazzino. 
+
+In allegato trovate una foto del piano con i dettagli riguardanti il problema riscontrato, unitamente ai dati del cliente. 
+ 
+Al ricevimento della vostra offerta, Vi spediremo la nostra conferma con il modulo di soddisfazione del cliente e le informazioni per la fatturazione. 
+
+Per qualsiasi chiarimento, non esitate a contattarci. 
+
+Cordiali Saluti,
+ 
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

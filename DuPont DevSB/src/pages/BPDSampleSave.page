@@ -1,0 +1,121 @@
+<!-- *****************************************************************************
+This page is to fill the details of Sample object
+<Sai Mamillapalli> 030916 Removed the Autofil functionality on the field Active_Ingredients_Per_Label__c Line 80
+******************************************************************************/ -->
+<apex:page cache="false" sidebar="true" standardController="Trademark_Abuse_Sample__c" extensions="ctrlBPDSampleSave" showHeader="true">
+<apex:sectionHeader title="New Sample/Trap Purchase" />
+<style>
+        .quant:hover { font-size: 80%; color: #EDEDED; cursor: pointer;}
+        .quant { cursor: pointer; font-size: 80%; }
+    </style>
+
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection columns="2">
+<apex:facet name="header">
+<span style="color: black">Sample Information</span>
+</apex:facet>
+<apex:inputField style="width:40%;" value="{!sample.Batch_Number__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Identification_Date__c}" required="true"/>
+<apex:inputField style="width:40%;" value="{!sample.Sample_Reason__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Active_Ingredients__c}" required="true"/>
+<apex:inputField style="width:40%;" value="{!sample.Dealer__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Country__c}" required="true"/>
+<apex:inputField style="width:40%;" value="{!sample.Internal_Sample_Collector2__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.External_Sample_Collector__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Value_Chain_Identified__c}"/>
+</apex:pageBlockSection>
+  
+
+<apex:pageBlockSection columns="1" title="Sample Details">
+<apex:facet name="header">
+<span style="color: black">Sample Details</span>
+</apex:facet>
+<apex:inputField style="width:50%;height=50%" value="{!sample.Sample_Comments__c}"/>
+<apex:inputField style="width:50%;" value="{!sample.Label_Name__c}"  />
+<apex:inputField style="width:50%;" value="{!sample.Label_Manufacturer__c}"  />
+<apex:inputField style="width:50%;" value="{!sample.Label_Manufacturer_Country__c}"  />
+<apex:inputField style="width:50%;" value="{!sample.Formulation__c }"/>
+<apex:inputField style="width:30%;" value="{!sample.Formulation_Abbr__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="2" title="Sample Address">
+<apex:facet name="header">
+<span style="color: black">Sample Address</span>
+</apex:facet>
+<apex:inputText id="city" style="width:100px" value="{!sample.City_Village__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.City_Village__c.Label}">
+                <c:BPDautoComplete_General sObjectType="Trademark_Abuse_Sample__c" for="{!$Component.city}" where="" 
+                 minLength="3" fields="City_Village__c"/>
+        </apex:inputText>
+<apex:inputText id="address" style="width:100px" value="{!sample.Address__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.Address__c.Label}">
+              <c:BPDautoComplete_General sObjectType="Trademark_Abuse_Sample__c" for="{!$Component.address}" where="" 
+                 minLength="3" fields="Address__c"/>
+        </apex:inputText>
+<apex:inputText id="district" style="width:100px" value="{!sample.District_province__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.District_province__c.Label}">
+                <c:BPDautoComplete_General sObjectType="Trademark_Abuse_Sample__c" for="{!$Component.district}" where="" 
+                 minLength="3" fields="District_province__c"/>
+        </apex:inputText>
+<apex:inputText id="zipCode" style="width:100px" value="{!sample.Zip_Postal_Code__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.Zip_Postal_Code__c.Label}">
+               <c:BPDautoComplete_General sObjectType="Trademark_Abuse_Sample__c" for="{!$Component.zipCode}" where="" 
+                 minLength="3" fields="Zip_Postal_Code__c"/>
+        </apex:inputText>
+</apex:pageBlockSection>
+    
+<apex:pageBlockSection columns="2" title="Sample Actives">
+<apex:facet name="header">
+<span style="color: black">Sample Actives</span>
+</apex:facet>
+<apex:inputTextarea id="First" style="width:200px;height:40px" value="{!sample.First_Active__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.First_Active__c.Label}">
+                <c:BPDautoComplete_General sObjectType="Trademark_Abuse_Sample__c" for="{!$Component.First}" where="" 
+                 minLength="3" fields="First_Active__c"/>
+        </apex:inputTextarea>
+<apex:inputTextarea id="Second" style="width:200px;height:40px" value="{!sample.Second_Active__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.Second_Active__c.Label}">
+                <c:BPDautoComplete_General sObjectType="Trademark_Abuse_Sample__c" for="{!$Component.Second}" where="" 
+                 minLength="3" fields="Second_Active__c"/>
+        </apex:inputTextarea>  
+<apex:inputTextarea id="Third" style="width:200px;height:40px" value="{!sample.Third_Active__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.Third_Active__c.Label}">
+                <c:BPDautoComplete_General sObjectType="Trademark_Abuse_Sample__c" for="{!$Component.Third}" where="" 
+                 minLength="3" fields="Third_Active__c"/>
+        </apex:inputTextarea>
+<apex:inputTextarea id="Active" style="width:200px;height:40px" value="{!sample.Active_Ingredients_Per_Label__c}" label="{!$ObjectType.Trademark_Abuse_Sample__c.fields.Active_Ingredients_Per_Label__c.Label}">
+                
+        </apex:inputTextarea>                        
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="2" title="Sample Quantity & Quality Details"> 
+<apex:facet name="header">
+<span style="color: black">Sample Quantity and Quality Details</span>
+</apex:facet>
+<apex:inputField style="width:40%;" value="{!sample.Product_Quantity_Collected__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Product_Quantity_Collected_Unit__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Total_Product_Quantity_Identified__c}" />
+<apex:inputField style="width:30%;" value="{!sample.Total_Product_Quantity_Identified_Unit__c}" />
+<apex:inputField style="width:40%;" value="{!sample.Total_Product_Price_Actual__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Total_Product_Price_Currency__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Total_Product_Price_USD__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Product_Quality_Aspects__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Package_Type__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Product_Pack_Size__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Product_Pack_Size_Unit__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Price_per_Unit_Actual__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Price_Per_Unit_Currency__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Price_per_Unit_USD__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Package_Quality_Aspects__c}"/>
+<apex:inputField style="width:40%;" value="{!sample.Product_Collection_Method__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="2" title="Shipping Logistics"> 
+<apex:facet name="header">
+<span style="color: black">Shipping Logistics</span>
+</apex:facet>
+<apex:inputField style="width:40%;" value="{!sample.Sample_Archived_Date__c}"/>
+<apex:inputField style="width:30%;" value="{!sample.Sample_Dispatched_Date__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockButtons location="both">
+<apex:commandButton action="{!dosave}" value="Save"/>
+<apex:commandButton action="{!doCancel}" value="Cancel" immediate="true" html-formnovalidate="formnovalidate"/>
+</apex:pageBlockButtons>
+</apex:pageBlock> 
+
+</apex:form>
+</apex:page>

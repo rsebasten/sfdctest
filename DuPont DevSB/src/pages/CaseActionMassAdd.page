@@ -1,0 +1,35 @@
+<apex:page controller="ctrlCaseActionMassAdd"  tabstyle="Case_Action__c" title="Add Case Actions">
+<apex:form >
+
+<apex:sectionHeader title="" subtitle="Add Case Actions"/> 
+
+<apex:pageMessage summary="{!ErrMsg}" severity="error" strength="3" rendered="{!!ISBLANK(ErrMsg)}"/>
+
+<apex:pageBlock title="" mode="edit" id="pb" > 
+    <apex:pageBlockButtons location="both">
+    <apex:outputPanel >
+        <apex:commandButton value="Save" action="{!Save}" />
+        <apex:commandButton value="Cancel" action="{!Done}" />
+    </apex:outputPanel> 
+    </apex:pageBlockButtons>
+        <table width="732px">
+                <tr>
+                <th>{!$ObjectType.Case_Action__c.fields.ActionType__c.label}</th>
+                <th>{!$ObjectType.Case_Action__c.fields.ActionSubtype__c.label}</th>
+                <th>&nbsp;</th>
+                </tr>
+        <apex:repeat var="r" value="{!newRecords}">
+                <tr>
+                <td align="left" style="width:400px;white-space:nowrap;"><apex:outputPanel id="req1" style="background-color:#CC0000;font-size:14px;vertical-align:-1px;">&nbsp;</apex:outputPanel>
+                    <Apex:inputField id="c1" value="{!r.ActionType__c}"/>
+                </td>
+                <td align="left" style="width:100%;white-space:nowrap;"><apex:outputPanel id="req2" style="background-color:#CC0000;font-size:14px;vertical-align:-1px;">&nbsp;</apex:outputPanel>
+                    <Apex:inputField id="c2" value="{!r.ActionSubtype__c}"/>
+                </td>
+                <td>&nbsp;</td>
+                </tr>
+        </apex:repeat>
+        </table>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

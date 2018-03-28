@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Site Object --></value>
+    </caseValues>
+    <fields>
+        <help><!-- User authorized to request for portal access --></help>
+        <label><!-- Access Approver --></label>
+        <name>Access_Approver__c</name>
+        <relationshipLabel><!-- Site Objects (Access Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- require CAPTCHA validation on the form. --></help>
+        <label><!-- CAPTCHA --></label>
+        <name>CAPTCHA__c</name>
+    </fields>
+    <fields>
+        <help><!-- Campaign related to this site object --></help>
+        <label>Kampagne</label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Site Objects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Internal description of this Site Object --></help>
+        <label>Beschreibung</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- System Unique identifier for OrgId+CampaignId --></help>
+        <label><!-- ExternalId --></label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Public group that allows access to the Portal Workspace Permissions --></help>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+    </fields>
+    <fields>
+        <help><!-- Active Status of Site Object
+Portal - determines if the Portal is available for granting access. --></help>
+        <label><!-- Active --></label>
+        <name>IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- TRUE if this Site Object can be publicly displayed externally (e.g. a Subscription Center) --></help>
+        <label><!-- IsPublic --></label>
+        <name>IsPublic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key User --></label>
+        <name>Key_User__c</name>
+        <relationshipLabel><!-- Site Objects (Key User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of License this user requires --></help>
+        <label><!-- License Type --></label>
+        <name>License_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer Portal Manager Custom</masterLabel>
+            <translation><!-- Customer Portal Manager Custom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Portal Manager Standard</masterLabel>
+            <translation><!-- Customer Portal Manager Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold Partner</masterLabel>
+            <translation><!-- Gold Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Community</masterLabel>
+            <translation><!-- Partner Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- User or Queue Id of Owner --></help>
+        <label><!-- New Record OwnerId --></label>
+        <name>NewRecordOwnerId__c</name>
+    </fields>
+    <fields>
+        <help><!-- RecordType Id used for new records created from this SiteObject (e.g. New Leads in a Subscription Center) --></help>
+        <label><!-- New Record TypeId --></label>
+        <name>NewRecordTypeId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owning Business --></label>
+        <name>Owning_Business__c</name>
+        <picklistValues>
+            <masterLabel>Building Innovations</masterLabel>
+            <translation><!-- Building Innovations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crop Protection</masterLabel>
+            <translation><!-- Crop Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuPont Chemicals &amp; Fluoroproducts</masterLabel>
+            <translation><!-- DuPont Chemicals &amp; Fluoroproducts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuPont Protection Technologies</masterLabel>
+            <translation><!-- DuPont Protection Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuPont Sustainable Solutions</masterLabel>
+            <translation><!-- DuPont Sustainable Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics &amp; Communications</masterLabel>
+            <translation><!-- Electronics &amp; Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Biosciences</masterLabel>
+            <translation><!-- Industrial Biosciences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nutrition &amp; Health</masterLabel>
+            <translation><!-- Nutrition &amp; Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaging &amp; Industrial Polymers</masterLabel>
+            <translation><!-- Packaging &amp; Industrial Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Polymers</masterLabel>
+            <translation><!-- Performance Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pioneer</masterLabel>
+            <translation><!-- Pioneer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solae</masterLabel>
+            <translation><!-- Solae --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Titanium Technologies</masterLabel>
+            <translation><!-- Titanium Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Owning Organization --></label>
+        <name>Owning_Organization__c</name>
+        <picklistValues>
+            <masterLabel>AGCP-CPC</masterLabel>
+            <translation><!-- AGCP-CPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Env</masterLabel>
+            <translation><!-- BI-Env --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Landscape Systems</masterLabel>
+            <translation><!-- BI-Landscape Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf</masterLabel>
+            <translation><!-- BI-Surf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-Packaging Graphics</masterLabel>
+            <translation><!-- DEC-Packaging Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Parts</masterLabel>
+            <translation><!-- DPP-Parts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Polymers</masterLabel>
+            <translation><!-- DPP-Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT</masterLabel>
+            <translation><!-- DPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT - IPP</masterLabel>
+            <translation><!-- DPT - IPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-A&amp;HF</masterLabel>
+            <translation><!-- DPT-A&amp;HF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ASPS</masterLabel>
+            <translation><!-- DPT-ASPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Agriculture</masterLabel>
+            <translation><!-- DPT-Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Air and Filtration</masterLabel>
+            <translation><!-- DPT-Air and Filtration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Aramids</masterLabel>
+            <translation><!-- DPT-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Chemical Industrial</masterLabel>
+            <translation><!-- DPT-Chemical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Cleanroom/Pharma</masterLabel>
+            <translation><!-- DPT-Cleanroom/Pharma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Critical Clean</masterLabel>
+            <translation><!-- DPT-Critical Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Envelopes</masterLabel>
+            <translation><!-- DPT-Envelopes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Graphics</masterLabel>
+            <translation><!-- DPT-Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Mechanical Industrial</masterLabel>
+            <translation><!-- DPT-Mechanical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Fabrics</masterLabel>
+            <translation><!-- DPT-Medical Fabrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Packaging</masterLabel>
+            <translation><!-- DPT-Medical Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Specialties</masterLabel>
+            <translation><!-- DPT-Medical Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NOW</masterLabel>
+            <translation><!-- DPT-NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Optical</masterLabel>
+            <translation><!-- DPT-Optical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-PM</masterLabel>
+            <translation><!-- DPT-PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-ER</masterLabel>
+            <translation><!-- DPT-Public Sector-ER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-LE</masterLabel>
+            <translation><!-- DPT-Public Sector-LE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-MIL</masterLabel>
+            <translation><!-- DPT-Public Sector-MIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Sontara</masterLabel>
+            <translation><!-- DPT-Sontara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Thermal Industrial</masterLabel>
+            <translation><!-- DPT-Thermal Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Tyvek</masterLabel>
+            <translation><!-- DPT-Tyvek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSS</masterLabel>
+            <translation><!-- DSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S-Corp Marketing</masterLabel>
+            <translation><!-- M&amp;S-Corp Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pioneer</masterLabel>
+            <translation><!-- Pioneer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Profile --></label>
+        <name>Profile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-PG</masterLabel>
+            <translation><!-- DEC-PG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Parts</masterLabel>
+            <translation><!-- DPP-Parts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Poly</masterLabel>
+            <translation><!-- DPP-Poly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT</masterLabel>
+            <translation><!-- DPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT - IPP</masterLabel>
+            <translation><!-- DPT - IPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB</masterLabel>
+            <translation><!-- IB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHI</masterLabel>
+            <translation><!-- PHI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Short description visible to external audience --></help>
+        <label><!-- Public Description --></label>
+        <name>PublicDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default Public name for this Site Object --></help>
+        <label><!-- Public Name --></label>
+        <name>PublicName__c</name>
+    </fields>
+    <fields>
+        <help><!-- URL displayed after the successful completion of a Site Submit in this Site Object --></help>
+        <label><!-- ReturnUrl --></label>
+        <name>ReturnUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roles --></label>
+        <name>Roles__c</name>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager</masterLabel>
+            <translation><!-- Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SiteScript --></label>
+        <name>SiteScript__c</name>
+        <relationshipLabel><!-- Site Objects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used in the Center to indicate the Subform to use for both MyProfile and &apos;this is not my email&apos; --></help>
+        <label><!-- SubForm --></label>
+        <name>SubForm__c</name>
+        <relationshipLabel><!-- Centers using this Subform --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use Global for this Site Object to be displayed in the Global external directory --></help>
+        <label><!-- Tags --></label>
+        <name>Tags__c</name>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TEST Tag</masterLabel>
+            <translation><!-- TEST Tag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of Site Object --></help>
+        <label>Typ</label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>CLS Translation</masterLabel>
+            <translation><!-- CLS Translation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Script</masterLabel>
+            <translation><!-- Call Script --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Portal</masterLabel>
+            <translation><!-- Customer Portal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Form</masterLabel>
+            <translation><!-- Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Field</masterLabel>
+            <translation><!-- Lead Field --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead SubForm</masterLabel>
+            <translation><!-- Lead SubForm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Portal</masterLabel>
+            <translation><!-- Partner Portal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SiteScript</masterLabel>
+            <translation><!-- SiteScript --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SiteScript with Attachment</masterLabel>
+            <translation><!-- SiteScript with Attachment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscription Center</masterLabel>
+            <translation><!-- Subscription Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscription List</masterLabel>
+            <translation><!-- Subscription List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Translation Label</masterLabel>
+            <translation><!-- Translation Label --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Url --></label>
+        <name>Url__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Name --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Contact Us --></label>
+        <name>Contact_Us</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Member Portal --></label>
+        <name>MemberPortal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Portal --></label>
+        <name>Portal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SubForm --></label>
+        <name>SubForm</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Subscriber List --></label>
+        <name>SubscriberList</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Subscription Center --></label>
+        <name>Subscription_Center</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- System Admin --></label>
+        <name>System_Admin</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Translation --></label>
+        <name>Translation</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Unexpected External Id.  This field should match the OrgId + campaignId if a campaign is populated.   To Delete a Subscriber List Campaign,  you must first remove reference to the campaign and clear the externalid from the referencing SiteObject. --></errorMessage>
+        <name>Subscriber_List_Validation</name>
+    </validationRules>
+    <webLinks>
+        <label>Abonnements ansehen</label>
+        <name>View_Subscription_Center</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,20 @@
+<apex:page standardController="ConstructionPts__CP_Role_Type__c" tabStyle="ConstructionPts__CP_Roles__c" >
+    <apex:includeScript value="{!$Resource.ConstructionPts__jquery}"/>    
+<c:CPHeader title="Dodge Role Type" subtitle="{!ConstructionPts__CP_Role_Type__c.Name}" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" ShowSubTitle="true"/> 
+<br/>
+    <apex:pageBlock title="Role info">
+      <apex:detail relatedList="true" title="false" />
+    </apex:pageBlock>
+    <br/>
+     <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+    
+    <script type="text/javascript">
+        // Using jQuery, hide all of the actionLinks
+        jQuery.noConflict();
+        jQuery("a.actionLink").css("display","none");      
+        var el = jQuery("td.actionColumn");
+        if (el.length > 0) {
+            jQuery(el).html(el.html().replace("|", "").replace("|", "").replace("|", ""));      
+        }
+    </script>       
+</apex:page>

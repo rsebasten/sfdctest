@@ -1,0 +1,44 @@
+<table width="550" cellpadding="5" height="400" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td locked="0" style=" font-family:arial; bLabel:main; color:#000000; font-size:12pt; bEditID:r3st1; background-color:#FFFFFF;" aEditID="c1r1" tEditID="c1r1" >
+<![CDATA[<P>Call Report Name: {!Call_Report__c.Name}</P>
+<P>Channel: {!Call_Report__c.Channel__c}</P>
+<P>Call Date: {!Call_Report__c.Call_Date__c}</P>
+<P>Status: {!Call_Report__c.Status__c}</P>
+<P>Call Report Link: {!Call_Report__c.Link}</P>
+<P>&nbsp;</P>
+<P><STRONG>Report Summary</STRONG></P>
+<P>Purpose &amp; Agenda: {!Call_Report__c.Purpose__c}</P>
+<P>&nbsp;</P>
+<P>Account Attendees: {!Call_Report__c.Account_Attendees__c}</P>
+<P>&nbsp;</P>
+<P>DuPont Attendees: {!Call_Report__c.DuPont_Attendees__c}</P>
+<P>&nbsp;</P>
+<P>Summary: {!Call_Report__c.Summary__c}</P>
+<P>&nbsp;</P>
+<P>Unmet Customer Needs:&nbsp;{!Call_Report__c.Unmet_Customer_Needs__c}</P>
+<P>&nbsp;</P>
+<P>Market Information: {!Call_Report__c.Market_Information__c}</P>
+<P>&nbsp;</P>
+<P>Competetive Information: {!Call_Report__c.Competitive_Information__c}</P>
+<P>&nbsp;</P>
+<P>Next Steps: {!Call_Report__c.Next_Steps__c}</P>
+<P>&nbsp;</P>
+<P><STRONG>Account Details</STRONG></P>
+<P>Account Name: {!Account.Name}</P>
+<P>Account Site: {!Account.Site}</P>
+<P>Site Type: {!Account.Site_Type__c}</P>
+<P>Account Owner: {!Account.OwnerFullName}</P>
+<P>Sales Representative: {!Account.Sales_Representative__c}</P>
+<P>Ownership: {!Account.Ownership}</P>
+<P>Type: {!Account.Type}</P>
+<P>Description: {!Account.Description}</P>
+<P>Parent Account: {!Account.Parent}</P>
+<P>Website: {!Account.Website}</P>
+<P>Country: {!Account.Country__c}</P>
+<P>Geo SubRegion: {!Account.SubRegion__c}</P>
+<P>Geo Region: {!Account.Region__c}</P>
+<P>Account Link: {!Account.Link}</P>
+<P>&nbsp;</P>]]></td>
+</tr>
+</table>

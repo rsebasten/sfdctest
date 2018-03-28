@@ -1,0 +1,40 @@
+<apex:page controller="ctrlDPT_NomexLeftNav" cache="true" showheader="false" sidebar="false" language="en" action="{!getGroups}">
+<apex:form >
+<table width="100%">
+        <tr>
+            <td>
+                    <apex:outputPanel rendered="{!(UserType == true && FUserType == 'Fabric')}">
+                        <apex:repeat value="{!newButtons}" var="b">
+                            <apex:outputPanel rendered="{!(b.eFabric__c == true)}">
+                                
+                                <!--<input type="button" style="width: 130px" onclick="javascript:window.open('/apex/DPT_NomexCert?id={!b.SiteScriptId__c}');" value="{!b.ButtonLabel__c}" /><br/><br/> -->
+                                <input type="button" style="width: 130px" onclick="javascript:window.open('{!$site.prefix}/DPT_NomexCert?id={!b.SiteScriptId__c}');" value="{!b.ButtonLabel__c}" /><br/><br/>
+                            </apex:outputPanel>
+                         </apex:repeat>
+                    </apex:outputPanel>
+
+                    <br/>
+                    <apex:outputPanel rendered="{!(UserType == true && GUserType == 'Garment')}">
+                        <apex:repeat value="{!newButtons}" var="b">
+                            <apex:outputPanel rendered="{!(b.eGarment__c == true)}">
+                                <!--<input type="button" style="width: 130px" onclick="javascript:window.open('/apex/DPT_NomexCert?id={!b.SiteScriptId__c}');" value="{!b.ButtonLabel__c}" /><br/><br/>-->
+                                <input type="button" style="width: 130px" onclick="javascript:window.open('{!$site.prefix}/DPT_NomexCert?id={!b.SiteScriptId__c}');" value="{!b.ButtonLabel__c}" /><br/><br/>
+                            </apex:outputPanel>
+                         </apex:repeat>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel >
+                    <br/>
+                    
+                    <!--<input type="button" style="width: 130px" onclick="javascript:window.open('apex/DPT_Nomex_Certification_PDF');" value="Active Certificates" target="_blank" />-->
+                    <input type="button" style="width: 130px" onclick="javascript:window.open('{!$site.prefix}/DPT_Nomex_Certification_PDF');" value="Active Certificates" target="_blank" />
+                        <br/>
+                        
+                        
+                    </apex:outputPanel>
+                    
+             </td>
+    </tr>
+</table>
+</apex:form>        
+</apex:page>

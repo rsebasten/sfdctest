@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to auto-send the certificate to the nominee</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Certificate Email</name>
+    <style>none</style>
+    <subject>{!Qualification__c.Certified_In_Area__c} Certificate Enclosed</subject>
+    <textOnly>{!Qualification__c.Primary_Contact_Name__c}, 
+
+Congratulations on completing all of the requirements for certification. 
+
+Please find attached your {!Qualification__c.Certified_In_Area__c} certificate. 
+
+Best Regards, 
+DuPont Protection Solutions</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

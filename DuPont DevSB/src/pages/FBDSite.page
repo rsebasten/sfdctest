@@ -1,0 +1,182 @@
+<apex:page cache="false" renderAs="html" standardStylesheets="true"
+    showHeader="false" standardController="Future_Business_Development__c"
+    title="Future Business Development">
+
+    <style>
+TEXTAREA {
+    width: 450px;
+    height: 225px;
+}
+
+.bPageBlock .detailList .labelCol {
+    width: 300px;
+}
+</style>
+
+    <apex:form >
+
+
+        <tr>
+            <td colspan="1" align="center"><span
+                style="font-size: 200%; font-weight: bold;"> <apex:sectionHeader title="Future Business Development" subtitle="Idea Submission" /> </span></td>
+        </tr>
+        <br />
+        <apex:outputPanel rendered="{!NOT(isnull(Future_Business_Development__c.id))}">
+            <tr>
+                <td colspan="1" align="center"><span
+                    style="font-size: 200%; font-weight: bold;">Thank you for
+                your submission.<br />
+                <br />
+                </span></td>
+            </tr>
+
+        </apex:outputPanel>
+        <table style="width: 100%">
+            <tr>
+                <td><apex:pageblock mode="edit">
+                    <apex:pageBlockButtons location="{!IF(isnull(Future_Business_Development__c.id),'bottom','top')}">
+                        <apex:commandButton rendered="{!isnull(Future_Business_Development__c.id)}"
+                            action="{!quicksave}" value="Submit" />
+
+                        <apex:commandButton rendered="{!isnull(Future_Business_Development__c.id)}"
+                            action="{!cancel}" value="Cancel" />
+
+                        <apex:outputPanel rendered="{!NOT(isnull(Future_Business_Development__c.id))}">
+                            <input class="btn" type="button"
+                                onClick="javascript:window.location='http://www.dupont.com';"
+                                value="DuPont Homepage" />
+                        </apex:outputPanel>
+
+
+
+
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Introductory Information" columns="1">
+                        <apex:pageblockSectionItem >
+                            <apex:outputLabel value="{!$ObjectType.Future_Business_Development__c.fields.Submitter_Email__c.label}"
+                                for="email">
+                                <span style="font-size: x-small" /><br />
+                                {!$ObjectType.Future_Business_Development__c.fields.Submitter_Email__c.InlineHelpText}
+                                
+                            </apex:outputLabel>
+                            <apex:inputField id="email"
+                                value="{!Future_Business_Development__c.Submitter_Email__c}"
+                                onfocus="true" required="true" />
+                        </apex:pageblockSectionItem>
+                        <br />
+
+                        <!--   <apex:inputField onfocus="true" required="true" value="{!Future_Business_Development__c.Submitter_Email__c}"/> -->
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Submitted_by__c}" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Submitting_Organization__c}"
+                            label="Your Organization" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Submitter_Function__c}"
+                            label="Your Function" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.FutureBusinessDevelopmentName__c}"
+                            Label="Idea Name" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Owning_Organization__c}"
+                            label="Where should the idea go?" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Market_Segment__c}" />
+
+                        <apex:inputField value="{!Future_Business_Development__c.Timing_to_Market__c}" />
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection title="Please describe the unmet needs and how this idea can help us to serve those needs better than our competitors"
+                        columns="1">
+
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Description__c}" />
+                        <apex:inputField value="{!Future_Business_Development__c.Source__c}" />
+                        <apex:inputField value="{!Future_Business_Development__c.Approach__c}" />
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection title="Please Describe Opportunity Attractiveness" columns="1">
+
+
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Market_Size_Annual__c}"
+                            label="Addressable Market Sub-Segment Size in 5 years" />
+
+                        <!-- 
+            <apex:pageblockSectionItem >      
+            <apex:inputField required="true" value="{!Future_Business_Development__c.Market_Size_Annual__c}" label="Market Size"/>
+                <apex:outputLabel value="{!$ObjectType.Future_Business_Development__c.fields.Market_Size_Annual__c.label}" for="Market_Size__c" >
+                    <span style="font-size:x-small"/><br/>
+                    {!$ObjectType.Future_Business_Development__c.fields.Market_Size_Annual__c.InlineHelpText}
+                </apex:outputLabel>
+                <apex:inputField id="Market_Size__c" value="{!Future_Business_Development__c.Market_Size_Annual__c}" onfocus="true" required="true" />
+                 
+            </apex:pageblockSectionItem> 
+           
+                       
+            <apex:pageblockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.Future_Business_Development__c.fields.Market_Barriers__c.label}" for="Market_Barriers__c">
+                    <span style="font-size:x-small"/><br/>
+                    {!$ObjectType.Future_Business_Development__c.fields.Market_Barriers__c.InlineHelpText}
+                </apex:outputLabel>
+                <apex:inputField id="Market_Barriers__c" value="{!Future_Business_Development__c.Market_Barriers__c}" onfocus="true" required="true"/>
+            </apex:pageblockSectionItem>
+         -->
+
+
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Market_Growth_Rate__c}"
+                            label="Market Sub-Segment Growth Rate" />
+                        <!-- <apex:inputField required="true" value="{!Future_Business_Development__c.Market_Barriers__c}"/>  -->
+                        <!-- <apex:inputField value="{!Future_Business_Development__c.Competitive_Environment__c}"/> -->
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Number_of_Competitors__c}" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Expected_Value_Proposition__c}"
+                            label="Strength of Value Proposition" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Market_Barriers__c}"
+                            label="Entry Barrier (assets, capital, channel, IP)" />
+                        <apex:inputField required="true" 
+                            value="{!Future_Business_Development__c.Estimated_Gross_Margin__c}"
+                            label="Est. Profitability in this part of the Value Chain (Gross Margin)" />
+                        <!--  
+            <apex:pageblockSectionItem >
+                <apex:outputLabel value="Barriers to Entry: Assets,Capital,Channel,IP" for="barriers">
+                    <span style="font-size:x-small"/><br/>
+                    Consider barriers to entry in terms of assets/capital intensity, channel/market access
+                </apex:outputLabel>
+                <apex:inputField id="email" value="{!Future_Business_Development__c.Market_Barriers__c}" onfocus="true" required="true"/>
+            </apex:pageblockSectionItem><br/>
+            -->
+
+
+                        <apex:inputField value="{!Future_Business_Development__c.Market_Attractiveness_Comments__c}"
+                            label="Comments" />
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection title="Describe the DuPont Capabilities and Fit" columns="1">
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Strategy_Fit__c}" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Technology_Capability__c}" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Market_Channel_Advantage__c}" />
+                        <apex:inputField required="true"
+                            value="{!Future_Business_Development__c.Operational_Fit__c}" />
+
+                        <apex:inputField value="{!Future_Business_Development__c.Capability_and_Fit_Comments__c}"
+                            Label="Comments" />
+                        <!--   <apex:inputField value="{!Future_Business_Development__c.Critical_Success_Factors__c}"/>
+            <apex:inputField value="{!Future_Business_Development__c.Secondary_Research_Needed__c}"/>
+            <apex:inputField value="{!Future_Business_Development__c.Value_Proposition__c}"/> -->
+
+
+
+                    </apex:pageBlockSection>
+                </apex:pageblock></td>
+            </tr>
+        </table>
+
+    </apex:form>
+</apex:page>

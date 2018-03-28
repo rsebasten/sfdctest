@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>USE FOR DPD PROJECTS: Vendor RFP - TCS</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPD - Vendor RFP - TCS</name>
+    <style>formalLetter</style>
+    <subject>DuPont {!eProject__c.Business_Unit__c} {!eProject__c.Name} DuPont Direct RFP</subject>
+    <textOnly>INSTRUCTIONS:
+
+This process is to be used for all global DPD projects
+Use this version when TCS has the lead for DPD activities
+Check Accuracy of Content
+Copy email address below to the &quot;Additional To:&quot; field
+
+Support.T03SAP@usa.dupont.com
+
+Copy email addresses below to the &quot;CC:&quot; field
+
+prameeda.abraham@dupont.com
+
+Remember to include any documentation (i.e. FEL requirement document) before submitting
+Remove these instructions before sending this request via email
+Create a PQR and assign to TSR group: AT-DUPONT DIRECT
+
+
+DuPont is requesting that TCS respond with their proposal within 2 weeks from date of this request.
+
+
+DuPont SBU: {!eProject__c.Business_Unit__c}
+
+
+Target Country: {!eProject__c.Target_Country__c}
+
+
+Project Background
+
+DuPont&apos;s {!eProject__c.Business_Unit__c} business unit is requesting a DuPont Direct implementation due to {!eProject__c.Project_Driver__c}.
+
+
+{!eProject__c.Background__c}
+
+
+Scope of Work
+
+{!eProject__c.Problem_Statement__c}
+
+Project Goal/Project Concept
+
+{!eProject__c.Project_Concept__c}
+
+Desired Go-Live Timeframe
+
+{!eProject__c.Requested_Date__c}.  Assume execution to start as soon as possible - please submit compressed schedule where possible.
+
+Comments/Miscellaneous (i.e. required timing if applies)
+
+{!eProject__c.Requested_Date_Issues__c}
+
+Requestor/Contacts
+
+Please submit your proposal to:
+
+
+Delivery Manager: {!eProject__c.OwnerFullName}
+FEL Requirements:
+
+
+Work description/expected work output:
+
+Determine requirements
+Prepare Statement of Work and Project Approval Request
+Gain assistance from TCS in support of development, testing and implementation for this project.
+
+This request should be billed against TCS 2014 - eCommerce CoE - DuPont Direct Project support for small/medium projects and enhancements</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

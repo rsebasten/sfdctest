@@ -1,0 +1,7 @@
+<apex:page standardController="Case" extensions="ctrlOverideNewCase" action="{!redirectToPage}" >
+<apex:pageMessages ></apex:pageMessages>  
+<apex:form >
+<center><apex:commandButton id="Back" value="Back" action="{!retPage}" rendered="{!backBut}"/></center>
+<center><apex:commandButton id="Cancel" value="Cancel" action="{!cancel}" rendered="{!cancelBut}"/></center>
+</apex:form>
+</apex:page>

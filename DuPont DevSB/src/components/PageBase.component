@@ -1,0 +1,31 @@
+<apex:component id="pbC" >
+<apex:attribute name="pagebase" type="PageBase" description="reference to pagebase" required="true"/> 
+<!--  
+	<apex:inputhidden id="pagebase" value="{!pagebase}"/>	
+	<apex:inputhidden id="memberKey" value="{!pagebase.memberKey}"/>	
+	<apex:inputhidden id="debug" value="{!pagebase.debug}"/>
+	<apex:inputhidden id="showFooter" value="{!pagebase.showFooter}"/>
+	<apex:inputhidden id="showHeader" value="{!pagebase.showHeader}"/>
+	<apex:inputhidden id="showLnav" value="{!pagebase.showLnav}"/>		
+	<apex:inputhidden id="pageWidth" value="{!pagebase.pageWidth}"/>	
+	<apex:inputhidden id="lnavWidth" value="{!pagebase.lnavWidth}"/>	
+-->	
+
+	<apex:outputpanel id="pDebugLog" rendered="{!pagebase.debug}">
+				<b>PageBase Properties</b><br/>
+				debug: {!pagebase.debug}<br/>
+				reflect:{!pagebase.reflect}<br/>
+				 <br/>  
+				 <apex:repeat var="e" value="{!pagebase.EventLog}">
+				 	{!e}<br/>
+				 </apex:repeat>
+				 	<br/><br/> HEADERS: <br/>
+				<apex:repeat var="h" value="{!pagebase.headers}">
+				 	{!h}<br/>
+				 </apex:repeat>
+				<br/><br/>PARAMETERS: <br/>
+				<apex:repeat var="p" value="{!pagebase.parameters}">
+				 	{!p}<br/>
+				 </apex:repeat>
+				 </apex:outputpanel>
+</apex:component>

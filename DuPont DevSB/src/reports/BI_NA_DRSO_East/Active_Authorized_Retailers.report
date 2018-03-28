@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Stage__c</field>
+    </columns>
+    <columns>
+        <field>Account.fId18__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.ERP_PAYER_Code__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.BI_Account_SubType__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>ADKD List Filtered for Active Accounts</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Mb_of_Marketing_Program__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>includes</operator>
+            <value>Authorized Retailer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Distributor__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>DRSO - East</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>CHARAMELLA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Stage__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Active Authorized Retailers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>TYPE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

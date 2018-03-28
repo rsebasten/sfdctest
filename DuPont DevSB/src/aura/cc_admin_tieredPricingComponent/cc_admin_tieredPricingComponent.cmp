@@ -1,0 +1,183 @@
+<aura:component access="global" description="CloudCraze Tiered Display Table" implements="force:hasRecordId"
+				controller="ccrz.cc_ctrl_admin_tieredPricingComponent" extensible="true">
+
+	<aura:attribute name="jsonTiersKey" type="String" default="null"/>
+	<aura:attribute name="jsonQuantity" type="String" default="null"/>
+	<aura:attribute name="jsonType" type="String" default="null"/>
+	<aura:attribute name="jsonPrice" type="String" default="null"/>
+	<aura:attribute name="basePrice" type="String" default="0"/>
+
+	<aura:attribute name="currentTiers" type="List" default="[]"/>
+	<aura:attribute name="selectedType" type="String" default="null"/>
+	<aura:attribute name="itemType" type="String" default="null"/>
+	<aura:attribute name="baseMax" type="Decimal" default="0"/>
+
+	<aura:attribute name="amountHeaderText" type="String" default="Amount"/>
+	<aura:attribute name="typeDisplayText" type="String" default="Select Above"/>
+	<aura:attribute name="toastMessage" type="String" default="Save Successful"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:attribute name="opacities" type="Integer[]" default="[1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]"/>
+	<aura:attribute name="firstRenderComplete" type="Boolean" default="false"/>
+
+	<div aura:id="container" class="container">
+		<div aura:id="mainPanel" class="slds-card slds-is-relative headerPanel">
+			<div class="slds-card__header slds-grid">
+				<header class="slds-has-flexi-truncate">
+					<div class="slds-media__body">
+						<h2>Tier Pricing</h2>
+					</div>
+				</header>
+				<div class="slds-no-flex">
+					<span aura:id="mainButtons">
+						<lightning:button variant="neutral" label="Add Pricing Tier" onclick="{! c.createNewRow }"/>
+						<lightning:button variant="neutral" label="Clear" onclick="{! c.handleClearClick }"/>
+						<lightning:button variant="neutral" label="Save Pricing Tiers" onclick="{! c.handleSaveTiers }"/>
+					</span>
+					<span aura:id="clearConfirm" class="slds-hide">
+						Are you sure?
+						<lightning:button class="slds-m-left--large" variant="neutral" label="Clear" onclick="{! c.handleClearTiers }"/>
+						<lightning:button variant="neutral" label="Cancel" onclick="{! c.handleCancelClear }" />
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="scrollWrapper">
+			<div aura:id="scrollArea" class="scrollableArea">
+				<table aura:id="stencilTable" class="slds-table slds-table_fixed-layout slds-table--bordered slds-table--cell-buffer">
+					<aura:iteration items="{! v.opacities }" var="opacity">
+						<tr style="{! 'opacity: ' + opacity }">
+							<td>
+								<div class="stencil"/>
+							</td>
+							<td>
+								<div class="stencil"/>
+							</td>
+							<td>
+								<div class="stencil"/>
+							</td>
+						</tr>
+					</aura:iteration>
+				</table>
+				<div aura:id="noTiersMessage" class="slds-hide noTiersMessage slds-m-around--large">
+					<table class="slds-table slds-table_fixed-layout slds-table_bordered slds-no-row-hover">
+						<tr>
+							<td class="slds-align_absolute-center">
+								<div class="slds-m-vertical--medium">
+									<div class="slds-align_absolute-center">You currently have no pricing tiers. </div>
+									<div class="addTierButtonRow slds-m-top--large slds-align_absolute-center">
+										<lightning:button variant="neutral" label="Add Pricing Tier" onclick="{! c.createNewRow }"/>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+				<div aura:id="tableWrapper" class="slds-m-around--large slds-hide">
+					<table aura:id="tiersTable"
+						   class="slds-table slds-table_fixed-layout slds-table_bordered slds-table_cell-buffer slds-no-row-hover
+			   slds-border_left slds-border_right">
+						<thead>
+						<tr class="slds-line-height_reset headerRow">
+							<th scope="col">
+								Minimum Quantity
+							</th>
+							<th scope="col">Maximum Quantity</th>
+							<th scope="col">
+								<div class="slds-m-top_small slds-m-bottom_small">
+									<lightning:select aura:id="valueTypeSelect" label="Choose" name="valueTypeSelect"
+													  required="true"
+													  class="valueSelect" variant="label-hidden"
+													  onchange="{!c.handleTypeChange}">
+										<option value="none" text="Select Value Type"></option>
+										<option value="tAbsPrice" text="Absolute Price"></option>
+										<option value="tAbsDisc" text="Price Adjustment"></option>
+										<option value="tPercDisc" text="Percent Adjustment"></option>
+									</lightning:select>
+								</div>
+							</th>
+							<th scope="col">{!v.amountHeaderText}</th>
+							<aura:if isTrue="{!and(v.selectedType != 'tAbsPrice', v.selectedType != 'null')}">
+								<th scope="col">Unit Price</th>
+							</aura:if>
+							<th scope="col" class="actionColumn">Action</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr class="basePriceRow slds-color__background_gray-3">
+							<td class="slds-cell-buffer_right">
+								<div class="slds-p-vertical_small">
+									0
+								</div>
+							</td>
+							<td><span aura:id="baseMaxTo">To </span>
+								<ui:outputText value="{!v.baseMax}"/>
+							</td>
+							<td>{!v.typeDisplayText}</td>
+							<aura:if isTrue="{!or(v.selectedType == 'tAbsDisc', v.selectedType == 'tPercDisc') }">
+								<td></td>
+								<td>{!v.basePrice}</td>
+							</aura:if>
+							<aura:if isTrue="{!or(v.selectedType == 'tAbsPrice', v.selectedType == 'null')}">
+								<td>{!v.basePrice}</td>
+							</aura:if>
+							<td></td>
+						</tr>
+						<aura:if isTrue="{!v.firstRenderComplete}">
+							<aura:iteration items="{!v.currentTiers}" var="item" indexVar="idx">
+								<tr>
+									<td class="slds-cell-buffer_right">
+										<div class="slds-p-vertical_small">
+											<lightning:input label="Quantity" name="quantity" class="no-label"
+															 value="{!item.q}"
+															 required="true" onblur="{!c.handleQuantityBlur}"
+															 aura:id="quantity"/>
+										</div>
+									</td>
+									<td>To
+										<ui:outputText value="{!item.max}"/>
+									</td>
+									<td>{!v.typeDisplayText}</td>
+									<td>
+										<lightning:input aura:id="priceInput" type="number" label="amount" name="amount"
+														 formatter="currency" step="0.01" value="{!item.p}"
+														 required="true"
+														 onchange="{!c.handlePriceChange}" class="no-label"/>
+									</td>
+									<aura:if isTrue="{!and(v.selectedType != 'tAbsPrice', v.selectedType != 'null')}">
+										<td>
+												{!item.unitPrice}
+										</td>
+									</aura:if>
+									<td class="buttonRow">
+										<a href="#" onclick="{!c.handleDeleteClick}">Remove</a>
+									</td>
+									<td class="deleteConfirm slds-hide">
+										Confirm: <a href="#" onclick="{!c.handleConfirmDelete}" data-index="{!idx}">Remove</a>
+										|
+										<a href="#" onclick="{!c.handleCancelDelete}">Cancel</a>
+									</td>
+								</tr>
+							</aura:iteration>
+						</aura:if>
+						</tbody>
+					</table>
+					<div class="addTierButtonRow slds-m-left--large slds-m-top--large">
+						<lightning:button variant="neutral" label="Add Pricing Tier" onclick="{! c.createNewRow }"/>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div aura:id="notificationContainer" class="slds-notify_container notificationContainer notificationHide">
+		<div class="slds-notify slds-notify_toast slds-theme_info" role="alert">
+			<div class="slds-notify__content">
+				<h2 class="slds-text-heading_small">{!v.toastMessage}</h2>
+			</div>
+		</div>
+	</div>
+
+</aura:component>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Complaint Closed Communication going to the customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Complaint Closed to Customer FR</name>
+    <style>formalLetter</style>
+    <subject>Communication de la clôture de la réclamation au client (case: {!Case.CaseNumber})</subject>
+    <textOnly>Cher client,
+
+En référence à votre réclamation {!Case.CaseNumber} du {!Case.Date_Entered__c}, nous sommes désolés des désagréments causés et tenons à vous informer que nous avons clôturé le dossier.
+
+En espérant que vous pouvez profiter de votre installation DuPont™ Corian® encore pendant de nombreuses années à venir.
+
+En restant à votre disposition pour des renseignements supplémentaires, je vous prie d’agréer, l’expression de mes sentiments distingués,
+
+Sincères salutations,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

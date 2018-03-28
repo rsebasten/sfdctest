@@ -1,0 +1,32 @@
+.THIS.container {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.THIS .priceCol {
+    width: 150px;
+}
+
+.THIS .buttonCol {
+    width: 200px;
+}
+
+.THIS .attributeSelect label {
+    display:none;
+}
+
+.THIS .stencil {
+    background: #f4f6f9;
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+    animation: pulsate 2s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+
+@keyframes pulsate {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.5;}
+}

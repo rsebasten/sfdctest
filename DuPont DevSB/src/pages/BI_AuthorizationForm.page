@@ -1,0 +1,78 @@
+<apex:page controller="ctrlBIRetailerAuth" action="{!init}"  showHeader="false">
+<apex:pagemessages />    
+    <style type="text/css">
+        .link{
+          text-decoration:none;
+          font-weight:bold;
+        }
+    </style>
+    
+    <p style="background-color:white;height:100px;width:1050px;margin-left:5px;">
+        <apex:image url="https://ps-crm-dupont--c.na35.content.force.com/servlet/servlet.ImageServer?id=01541000002d7Mh&oid=00D41000002FFQJ&lastMod=1515609777000"/><br/><br/><br/>     
+    </p>
+    <br/> 
+<apex:sectionHeader title="Corian® Solid Surface and Corian® Quartz Authorized Retailer"/>
+<apex:pageBlock id="pgblock">
+<apex:pageBlockSection id="pgblocksec">
+<apex:composition template="templateDupont" >
+<apex:define name="body">
+<c:SiteScript script="{!script}" /> 
+<!-- Added Product Selection to the page -->
+
+<apex:outputPanel id="KeyProduct" >
+
+<div style="margin-left:300px;" >
+<c:BI_NA_MultiSelectMaterials leftLabel="Product: Available" 
+                leftOption="{!AllProducts}"
+                rightLabel="Product: Selected*"
+                rightOption="{!SelectedProducts}"
+                size="8"
+                width="300px"/>  </div>
+</apex:outputPanel>
+<br/><br/>
+<c:SiteScript script="{!script2}" />
+<br/><br/>
+<apex:outputPanel id="Product">
+<div style="margin-left:350px;">
+<apex:pageBlockSection id="Product1" columns="1">
+<!---- <apex:outputLabel value="Search Product" styleClass="labelCol" style="padding-LEFT:11em;"/> --->
+<apex:outputText label="Product">
+<apex:inputText value="{!searchProduct}" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}" id="inpTxt" style="margin-left:14px;"/>
+<apex:commandButton value="Search" action="{!searchProductValue}" status="cStatus" id="searchButton" reRender="Product"/ >
+</apex:outputText>
+<apex:actionStatus id="cStatus" startText=" Please Wait..."  stopText="" startStyle="padding-LEFT:18em;font-weight:bold;"/>
+<apex:outputText id="NoProduct" rendered="{!noProduct}" styleClass="labelCol" value=" No Product Found... Please search other product" style="margin-LEFT:150px; color:Brown !important; font-weight:bold!important;"></apex:outputText>
+</apex:pageBlockSection>  </div>
+<div style="margin-left:300px;">
+<c:BI_NA_MultiSelectMaterials leftLabel="Showroom Display - Color: Available"
+                leftOption="{!AllMaterials}"
+                rightLabel="Showroom Display - Color: Selected"
+                rightOption="{!SelectedMaterials}"
+                size="8"
+                width="300px"/>  </div>              
+</apex:outputPanel>
+    <br/><br/>
+    <div style="margin-left:300px;">
+        <apex:commandbutton id="submit" action="{!save}" value="{!$Label.site.submit}"  />
+    </div>
+    </apex:define>    
+    </apex:composition>
+    </apex:pageBlockSection>
+    
+    <br/><br/>
+    <div style="font-style:font-size:20px;color:grey;margin-left:100px;margin-right:300px;text-align:justify;">*Installations refer to sheets or slabs converted into displays. This enables customers to see applications of Corian® Solid Surface and Corian® Quartz in kitchens, baths, desktops, etc.</div><br/>    
+    <div style="font-style:font-size:20px;color:grey;margin-left:100px;margin-right:300px;text-align:justify;">The information set forth herein is furnished free of charge and based on technical data that Corian® Design believes to be reliable. It is intended for use by persons having technical skill,at their own risk.  Since conditions of use are outside our control, Corian® Design makes no warranties, expressed or implied and assume no liability in connection with any use of this information.  Nothing herein is to be taken as a license to operate under, or a recommendation to infringe any patents or patent applications.<br/> <br/> 
+     Corian® Design cares about your privacy. Your personal information (name, e-Mail, phone number, etc.) will be stored in chosen customer systems primarily hosted in the United States. This information will be used by Corian® Design, its affiliates, partners, and selected third parties in other countries to provide you with the product or service information requested. To learn more , please visit <a class="link" href="http://www.privacy.dupont.com" target="_blank">www.privacy.dupont.com</a>. By providing your personal information, you agree to the terms and conditions of this Privacy Statement</div><br/><br/>
+    <div style="margin-left:100px;font-weight:none;">
+        <a class="link" href="http://www2.dupont.com/DuPont_Home/en_US/faq.html" target="_blank">FAQ</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a class="link" href="http://www2.dupont.com/DuPont_Home/en_US/site_map.html" target="_blank">Site Map</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a class="link" href="http://www2.dupont.com/DuPont_Home/en_US/legal.html" target="_blank">Legal Notices &amp; Terms of Use</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a class="link" href="http://www2.dupont.com/DuPont_Home/en_US/privacy.html" target="_blank">PRIVACY</a>&nbsp;&nbsp;&nbsp;&nbsp;
+         
+    </div><br/><br/>
+    <div style="margin-left:font-size:12px;">         
+        <p style="color:grey;margin-left:100px;margin-right:300px;text-align:justify;">Copyright &copy; 2018 E.I. du Pont de Nemours and Company. The Corian® Design Logo and Corian® are trademarks of E.I. du Pont de Nemours and Company or its affiliates. All rights reserved.<br/></p>
+    </div>
+    
+</apex:pageBlock> 
+</apex:page>

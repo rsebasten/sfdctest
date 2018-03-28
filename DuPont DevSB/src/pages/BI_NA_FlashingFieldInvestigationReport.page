@@ -1,0 +1,159 @@
+<apex:page standardStylesheets="false" standardController="Case" extensions="ctrlBINA_InvestionReports" showHeader="false" sidebar="false" contentType="application/msWord" cache="true">
+<apex:pageBlock >
+    <center>
+    <apex:pageBlockSection >
+        <u>
+           <h1>Dupont<sup>TM</sup> Flashing System Products</h1>
+           <h1>Field Investigation</h1>
+           <h1>Report</h1>
+        </u>
+    <br/>
+    <br/>
+    <br/>    
+    </apex:pageBlockSection>
+    </center>
+
+    <apex:pageBlockSection >
+
+    <center><h2><u>Background Information</u></h2></center>
+    
+  <table>    
+
+    <tr><td><h4>Date - </h4> </td></tr>
+
+    <tr><td><h4>Customer Name - </h4><apex:outputField Label="" value="{!currentcase.Submitted_By_First_Name_Last_Name__c}"/></td></tr>
+    
+    <tr><td><h4>Nature Of Complaint - </h4><apex:outputText Label="" value="{!currentcase.Description}"/></td></tr>
+
+    <tr><td><h4>Does homeowner have original construction pictures?(Y/N)</h4></td></tr>
+
+    <tr><td><h4>Flashing samples available (Y/N)-</h4></td></tr>
+
+    <tr><td><h4>When problem observed-</h4></td></tr>
+
+    <tr><td><h4>How observed-</h4></td></tr>
+
+    <tr><td><h4>Repair estimate-</h4></td></tr>
+    
+     <tr><td><h4>Status of repairs-</h4></td></tr>    
+          
+    <tr><td><h4>Date DuPont notified - </h4><apex:outputText Label="" value="{!currentcase.CreatedDate}"/></td>
+    
+     <td><h4>DuPont representative notified-</h4></td></tr>
+     
+     <tr><td><h4>Send all information and samples to:</h4></td></tr>
+
+    </table>
+    </apex:pageBlockSection>
+    
+<apex:pageBlockSection >
+   <table>   
+ <tr><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td><td><PRE></PRE></td>
+ <td><h4>
+    <PRE>
+    James River Logistics Center
+    1501 Bellwood Road
+    Richmond, VA 23237
+    Attn: Dana Perry- Residential
+    or Andrew Miles - Commercial
+    804-383-6100
+    *Upon shipment, forward tracking number to
+    christopher.e.fetterman@usa.dupont.com or
+    andrew.s.miles@usa.dupont.com
+    </PRE></h4></td></tr>
+</table>    
+    </apex:pageBlockSection>   
+
+
+   <apex:pageBlockSection >
+    <br/>
+   <center> <h2><u>General Building and Site Visit Information</u></h2> </center>
+<table>
+    <tr><td><h4>Year Built - </h4></td>
+<td><h4>Remodeled (Y/N) year-</h4></td></tr>
+<tr><td><h4>Builder - </h4> </td>
+<td><h4>Remodel Contractor-</h4> </td></tr>
+<tr><td><h4>Type of flashing used and locations - </h4></td></tr>
+
+<tr><td><h4>Temperature at time of flashing installation -  </h4></td></tr>
+
+<tr><td><h4>Weather condition at time of flashing installation - 
+</h4></td></tr>
+
+<tr><td><h4>Damage location(s)-</h4></td></tr>
+
+<tr><td><h4>Exterior Sheathing (Y/N) -</h4></td>
+
+<td><h4>Type of Sheathing - </h4></td></tr>
+
+<tr><td><h4>Moisture readings taken (Y/N)-</h4></td>
+<td><h4>Location-</h4></td>
+<td><h4>Values-</h4></td></tr>
+
+
+
+    
+</table>
+    </apex:pageBlockSection>       
+
+
+<apex:pageblockSection >
+
+<center><h2><u>Site Visit Specific Information</u></h2></center>
+
+<table>
+
+<tr><td><h4><u>Wall Diagram / Construction Description</u></h4></td></tr>
+<br/>
+<tr><td><h4>Identifiable markings or lot numbers-</h4></td></tr>
+
+<tr><td><h4>Flashing samples desired is 5 ft.(with identifying markers) </h4></td></tr>
+
+<tr><td><h4>Information needed from product package.  Obtain this label from the box or as much information from this label as possible</h4></td></tr>
+
+<tr><td><h4>Example : </h4></td></tr>
+
+
+
+<tr><td><h4>Pictures (check and label as necessary)</h4></td></tr>
+
+<tr><td><h4><PRE>                  Whole Building__</PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Walls N__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  S__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  E__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  W__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Specific damage areas__</PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Close-up of details__ </PRE></h4></td></tr>
+
+
+<tr><td><h4> Flashing print assessment </h4></td></tr>
+
+<tr><td><h4><PRE>                     Vivid__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                     Some Fading__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                     Faded__ </PRE></h4></td></tr>
+
+
+
+
+
+
+</table>
+
+
+
+
+</apex:pageblockSection>
+
+
+
+</apex:pageBlock>
+                   
+</apex:page>

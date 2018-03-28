@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>DUPONT BRAND/MOS</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - Notice of Trademark Infringement: &quot;{!Case.Customer_Lab_Result__c}&quot;</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+E. I. du Pont de Nemours and Company (“DuPont”) is committed to providing high quality products to its customers.  Our efforts to insist on proper labeling, identification and usage of our trademarks are critical to that commitment.
+
+
+It has come to our attention that you are using our trademark signature (The DuPont Oval and The miracles of science™) on your website.  DuPont has invested heavily over the course of many years in the development and promotion of our trademarks, and the goodwill associated therewith. Your use of the DuPont trademark makes it appear as though there is a relationship between DuPont and your company.  We do not have record of granting you permission to use our trademarks.  Your use is improper and threatens to weaken the identity and value of our trademarks.
+
+
+This may be unintentional on your part; nonetheless, we would ask that you please remove our trademarks from your promotional material.  We would like your written assurance that you will correct the use within ten business days of receipt of this email.  We look forward to your prompt response.
+
+
+Please contact us if you have any questions or require additional information. Thank you in advance for your attention to this matter.
+
+
+Sincerely,
+
+
+
+DuPont Brand Protection Center</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

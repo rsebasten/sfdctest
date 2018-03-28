@@ -1,0 +1,114 @@
+<!-- ********************************************************************************
+(C)2016
+Author: krishnaveni duggaraju
+Email: krishnaveni.duggaraju@tcs.com
+Description:  This VF page to transfer ownership of records
+ ******************************************************************************** -->
+<apex:page Controller="CtrlRecordTransfer" >
+<style>
+    /* This is for the full screen DIV */
+    .popupBackground {
+        /* Background color */
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+    
+        /* Dimensions */
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 998;
+        position: absolute;
+        
+        /* Mouse */
+        cursor:wait;
+    }
+ 
+    /* This is for the message DIV */
+    .PopupPanel {
+        /* Background color */
+        border: solid 1px gray;
+        background-color: white;
+ 
+        /* Dimensions */
+        left: 50%;
+        width: 300px;
+        margin-left: -100px;
+        top: 50%;
+        height: 50px;
+        margin-top: -25px;
+        z-index: 999;
+        position: fixed;
+        
+        /* Mouse */
+        cursor:pointer;
+    }
+    .helptext{
+        border-style: solid;
+        border-width: 1px;
+        border-color: #39f;
+        background-color:#ffc;
+        padding:10px 13px 10px 13px;
+        margin: 4px 20px;
+        font-family: Arial,Helvetica,sans-serif;
+        border-radius: 4px;
+        vertical-align: middle;
+    }
+</style>
+    <apex:actionStatus id="statusSaveTrip" stopText="">
+        <apex:facet name="start">
+            <div>
+                <div class="popupBackground" />
+                <div class="PopupPanel">
+                    <table border="0" width="100%" height="100%">
+                        <tr>
+                            <td align="center"><b>Kindly wait..Transfer under progress!</b></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><img src="{!$Resource.ProgressBar}"/></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+    <apex:form id="myForm">
+       <apex:pageMessages id="msg" escape="false"></apex:pageMessages>
+      <apex:pageBlock title="Record Transfer Solution">         
+          <apex:pageblockSection columns="1">
+                 
+                  <apex:selectList value="{!selectedObject}" size="1" label="Applicable Object" title="Applicable Object">
+                      <apex:selectOptions value="{!ObjectNames}"/>
+                  </apex:selectList>
+              <apex:inputText label="Current Record Owner (Username)" value="{!TransferFrom}" title="Please fill username of user in this text field."/>
+              <apex:inputField label="New Record Owner" value="{!u.RelatedUser__c}" />
+          </apex:pageblockSection>
+          <apex:pageBlockButtons location="bottom"> 
+              <apex:commandButton value="Submit"  action="{!TransferOfRecords}" rerender="myForm" status="statusSaveTrip"/>
+              <apex:commandbutton value="Export Results" action="{!exportResults}" rendered="{!lstMsgWrapperSuccess.size>0 || lstMsgWrapperError.size>0}"  />
+          </apex:pageBlockButtons>  
+      </apex:pageBlock>
+      <!-- <apex:pageMessage summary="This pageMessage will always display. Validation error
+           messages appear in the pageMessages component." severity="info" strength="3" />-->
+        <!--<apex:outputText styleclass="helptext"  escape="false"></apex:outputtext> -->
+        <Div class="helptext">
+        <u>About <b>Record Transfer Solution</b></u>:-<br/><br/>
+        This utility serves is a self-service solution and enables business users to transfer records from one user to another. A perfect use of this utility is to transfer the records of the outgoing users (about to be deactivated) and provide ownership to the new users to be onboarded.
+        <br/><br/><u>Instructions/Help on using <b>Record Transfer</b></u> Solution:-
+        <br/><br/>Follow the steps detailed below to successfully transfer records of one user to another:-<br/>
+        <br/>1.  <b>Applicable Object</b>:  Specify the object for which the records are to be transferred. For example, it could be Opportunity records from Opportunity object that might needs to be transferred. 
+        <br/><br/>2.  <b>Current Record Owner</b>: Specify the Username of the user from whom the record ownership has to be taken away. Username information for a user is available on the User Detail page in Salesforce and is accessible to all users of Salesforce.
+        <br/><br/><apex:image url="{!$Resource.Username}"/>
+        
+        <br/><br/>3.  <b>New Record Owner</b>: Click and select new user name to whom records are to be transferred.
+        <br/><br/>4.  Click <b>Submit</b> button
+        <br/><br/>5. If there are valid records owned by User, Records will be transferred and You will get success and Error message on the top. You can click on <b>Export Results</b> button to Download result.
+      <br/><br/>6. There can be multiple reasons for any failure like <b>Validation rules, missing required field on record, or Obsolete/Old data</b>. 
+      <br/><br/>7. You can try again for failures after correcting data, or can create Issue with <b>Exported result</b> file so System admin can take care of the failures.
+      
+          
+</Div>
+             
+    </apex:form>
+</apex:page>

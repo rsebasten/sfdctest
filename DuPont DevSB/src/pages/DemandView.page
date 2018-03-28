@@ -1,0 +1,886 @@
+<!-- 
+/*******************************************************************************
+Copyright © 2013 DuPont. All rights reserved. 
+Author: Thomas Snyder/Abhinav Bhatnagar
+Email: thomas.snyder@usa.dupont.com, tom@3ddd.com, abhinav.bhatnagar@dupont.com
+
+TES20130415  initial Release
+AB20150311	Added Output label to left most bottom location to keep showing the demand view type
+********************************************************************************
+-->
+
+<apex:page controller="ctrlDemandView" tabstyle="Demand__c"> 
+    <head>
+        <apex:includeScript value="{!URLFOR($Resource.Jquery_1_8_11, 'js/jquery-1.5.1.min.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.jquery_tools_min_1_2_7)}" />  
+        <script type="text/javascript">
+        function esc(myid) {
+            return '#' + myid.replace(/(:|\.)/g,'\\\\$1');
+        }  
+        </script>
+        <style>
+            * tr.dataRow td {border-width:0 0 1px 1px;border-style:solid;border-color:#D4DADC;}
+            .infoIco { background-image: url(/img/sprites/master.png); background-position: 0 -222px; width: 16px; height: 16px; }
+            .tooltip {display:none; background:#F8F8F8; font-size:11px; padding:0px; color:#000; width:200px; border: 0px solid white; -webkit-box-shadow: 0 0 10px black;}
+            div[class='tooltip'] td {font-size:11px; color:#000;}
+            .ttipitem {padding: 0;}
+        </style>
+    </head>
+    
+    <apex:sectionHeader subtitle="{!demandInfo.Name}" title="Demand View: {!dsType}"/>  
+    <apex:form id="frm">
+        <apex:PageMessages />
+        <apex:pageBlock id="pageGroup" >
+            <apex:pageBlockButtons style="position: fixed;bottom: 0px;background:#FFFFFF;z-index:100;left:0px;width:1400px;text-align:center;margin:auto;display:block;">
+                <!-- AB20150311 Added Output label to left most bottom location to keep showing the demand view type -->
+                <apex:outputlabel value="Demand View: {!dsType}" style="left:0px;width:140px;text-align:left;"/>
+                <apex:commandButton id="bsave" value="Save & Exit" action="{!save}" title="Save changes & Exit Screen" rerender="frm" status="{!$Component.saveStatus}"/>&nbsp;&nbsp;
+                <apex:commandButton id="bqsave" value="Quick Save" action="{!quicksave}" rerender="frm" status="{!$Component.saveStatus}" oncomplete="rebindEnterEvent();" />&nbsp;&nbsp;<!-- <AB20141001>Rebind the enter event on loading of the page -->
+                <!-- <apex:commandButton id="bUndo" value="Undo" onclick="this.form.reset();return false;" /> -->
+                <apex:commandButton id="bcancel" value="Cancel" action="{!cancel}" immediate="true" />                    
+                <apex:actionStatus id="saveStatus" onmousedown="wait(true);"  onstart="wait(true);" onstop="wait(false);" />
+                <script>
+                function wait(on) {
+                    document.body.style.cursor = (on) ? 'wait' : 'auto';
+                    document.getElementById("{!$Component.bsave}").className    = (on) ? 'btnDisabled' : 'btn';
+                    document.getElementById("{!$Component.bcancel}").className  = (on) ? 'btnDisabled' : 'btn';
+                    document.getElementById("{!$Component.bqsave}").className   = (on) ? 'btnDisabled' : 'btn';
+                    document.getElementById("{!$Component.bUndo}").className    = (on) ? 'btnDisabled' : 'btn';
+                    return true;
+                }   
+                </script>
+            </apex:pageBlockButtons>
+            
+            
+            <!--  <apex:outputpanel id="gridGroupScroll" layout="block" style="overflow:auto;width:1024px;height:390px"> -->
+            <apex:variable id="rowcounter" var="i" value="{!0}"/>
+            <apex:repeat value="{!ds.groups}" var="grp">
+                <apex:variable id="rowcounter" var="i" value="{!i+1}"/>
+                <apex:outputpanel id="gridGroup" layout="none" >
+                    <apex:pageBlock id="pb" title="{!grp.name}">
+                        <table id="TableFreeze" class="header list" cellpadding="0" cellspacing="0" border="1" style="width:4000px">
+                            <thead>
+                                <tr style="width:100% ;border-width:0px;">
+                                    <td style="background:white;border-width:0px 0px 1px 1px;border-left-color: #eee;" id='tdTableFreeze'></td>
+                                    <apex:repeat value="{!grp.Columns}" var="col" >
+                                        <td class="rowCls{!i}" id='calMonth' style="text-align: center; background:{!IF(col.isPostPeriod,'#424F66','#1468B6')}; color:white;border-width:0px 1px 0px 0px;" colspan="{!col.totalSubColumns+(CASE(infoType,'n',0,1))}">
+                                            <apex:outputText value="{0,date,MMMM - yyyy}">
+                                                <apex:param value="{!col.period}" />
+                                            </apex:outputText></td>
+                                    </apex:repeat> 
+                                </tr>
+                                <tr  style="width:100%;">
+                                    <td class="dataRow{!i}" style="width:150px;border-width:0px 0px 1px 1px;border-left-color: #eee;font-weight:bold;">
+                                        Product/Segment
+                                    </td>
+                                    <apex:repeat value="{!grp.Columns}" var="col" >
+                                        <apex:outputPanel rendered="{!infoType!='n'}" layout="none">
+                                            <td class="rowCls{!i}" style="width:20px;border-width:0px 0px 1px 1px;border-left-color: #eee;background:#D4DADC;font-weight:bold;">Info</td>
+                                        </apex:outputPanel>
+                                        <apex:repeat value="{!col.fieldSet.fields}" var="fs">
+                                            <td class="rowCls{!i}" style="border-width:0px 0px 1px 1px;border-left-color: #eee;background:#D4DADC;font-weight:bold;">{!fs.label}</td>
+                                        </apex:repeat>
+                                    </apex:repeat>
+                                </tr>          
+                            </thead>
+                            
+                            <tbody>
+                                
+                                <apex:repeat value="{!grp.items}" var="li" >        
+                                    <tr class="dataRow" >
+                                        <td class="dataRow{!i}">{!li.DI.Name}</td>    
+                                        <apex:repeat value="{!li.schedules}" var="s" >
+                                            <!--  <td style="border-width:0 0 1px 1px;border-style:solid;border-color:#D4DADC;"><img src="{!URLFOR($Resource.icons16,'information.png')}" title="{!s.infoText}"/></td>-->
+                                            <apex:outputPanel rendered="{!infoType!='n'}" layout="none">
+                                                <td style="border-width:0 0 1px 1px;border-style:solid;border-color:#D4DADC;">
+                                                    <apex:outputPanel id="tt" layout="block" styleClass="tooltip" style="z-index:10;">
+                                                        <apex:pageBlock id="pbInfo">
+                                                            <apex:outputPanel rendered="{!infoType!='q'}" layout="none" style="zIndex:10;"> 
+                                                                <apex:pageBlockSection title="Revenue" columns="1">
+                                                                    <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Period -1"/><apex:outputField value="{!s.item.RevFcst1__c}"/></apex:pageBlockSectionItem>
+                                                                    <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Period -2"/><apex:outputField value="{!s.item.RevFcst2__c}"/></apex:pageBlockSectionItem>
+                                                                    <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Prior Yr Mnth Act Rev"/><apex:outputField value="{!s.item.PYMSchedule__r.RevActual__c}"/></apex:pageBlockSectionItem>
+                                                                </apex:pageBlockSection>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel rendered="{!infoType!='r' && ds.isQuantityDisplayed==true}" layout="none">
+                                                                <apex:pageBlockSection title="Quantity" columns="1">
+                                                                    <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Period -1"/><apex:outputField value="{!s.item.QtyFcst1__c}"/></apex:pageBlockSectionItem>
+                                                                    <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Period -2"/><apex:outputField value="{!s.item.QtyFcst2__c}"/></apex:pageBlockSectionItem>
+                                                                    <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Prior Yr Mnth Act Qty"/><apex:outputField value="{!s.item.PYMSchedule__r.QtyActual__c}"/></apex:pageBlockSectionItem>
+                                                                </apex:pageBlockSection>
+                                                            </apex:outputPanel>
+                                                        </apex:pageBlock>
+                                                        
+                                                    </apex:outputPanel>
+                                                    <apex:image id="inf" styleClass="infoIco" value="/s.gif" />
+                                                    <script>
+                                                    var j$ = jQuery.noConflict();
+                                                    j$(document).ready(function() {
+                                                        j$(esc('{!$Component.inf}')).tooltip({
+                                                            tip: esc('{!$Component.tt}'),   // use div.tooltip as our tooltip
+                                                            effect: 'fade',              // use the fade effect instead of the default
+                                                            fadeOutSpeed: 500,            // make fadeOutSpeed similar to the browser's default
+                                                            predelay: 200,                // the time before the tooltip is shown
+                                                            position: "top left",          // tweak the position
+                                                            offset: [{!IF(infoType=='b','150','35')}, -15]            // vert,horiz
+                                                        });
+                                                    });
+                                                    </script>
+                                                </td>
+                                            </apex:outputPanel>
+                                            <apex:repeat id="fs" value="{!s.column.fieldSet.fields}" var="fs" >
+                                                <apex:outputPanel rendered="{!fs.FieldPath=='RevFcst__c'}" layout="none">
+                                                    <td style="border-width:0 0 1px 1px;border-style:solid;border-color:#D4DADC;"> 
+                                                        <apex:inputField rendered="{!s.column.isPostPeriod==false}" style="width:100px;" id="fld" value="{!s.item[fs.FieldPath]}" required="{!fs.required}" />
+                                                        <apex:outputField rendered="{!s.column.isPostPeriod==true}" style="width:100px;background-color:{!IF(s.revDirty,'#FFFFEE','')};" id="postrevfld" value="{!s.item[fs.FieldPath]}" />                                      
+                                                    </td>
+                                                    
+                                                </apex:outputPanel> 
+                                                <apex:outputPanel rendered="{!fs.FieldPath=='QtyFcst__c'}" layout="none"> 
+                                                    <td style="border-width:0 0 1px 1px;border-style:solid;border-color:#D4DADC;">
+                                                        <apex:inputField rendered="{!s.column.isPostPeriod==false}" style="width:100px;" id="fld2" value="{!s.item[fs.FieldPath]}" required="{!fs.required}"/>
+                                                        <apex:outputField rendered="{!s.column.isPostPeriod==true}" style="width:100px;background-color:{!IF(s.qtyDirty,'#FFFFEE','')};" id="postqtyfld" value="{!s.item[fs.FieldPath]}" />
+                                                    </td>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!fs.FieldPath!='RevFcst__c' && fs.FieldPath!='QtyFcst__c'}" layout="none">
+                                                    <td style="border-width:0 0 1px 1px;border-style:solid;border-color:#D4DADC;"> <!-- {!fs.FieldPath!='RevFcst__c'}-{!s.column.isPostPeriod}-{!s.item[fs.FieldPath]}-{!fs.required}-{!ds.isActRevEditablePur}-{!ds.dsType}-{!ds.isActRevEditableSaIn} -->
+                                                        <apex:inputField rendered="{!s.column.isPostPeriod==false}" style="width:100px;" id="fld3" value="{!s.item[fs.FieldPath]}" required="{!fs.required}"/>
+                                                        <apex:inputField rendered="{!s.column.isPostPeriod==true && (ds.isActRevEditablePur && ds.dsType=='Purchases') && (fs.FieldPath=='RevActual__c' || fs.FieldPath=='QtyActual__c')}" style="width:100px;background-color:{!IF(s.revDirty,'#FFFFEE','')};" id="postfldInputPur3" value="{!s.item[fs.FieldPath]}" required="{!fs.required}"/>
+                                                        <apex:inputField rendered="{!s.column.isPostPeriod==true && (ds.isActRevEditableSaIn && ((ds.dsType=='Sales')||(ds.dsType=='Inventory'))) && (fs.FieldPath=='RevActual__c' || fs.FieldPath=='QtyActual__c')}" style="width:100px;background-color:{!IF(s.revDirty,'#FFFFEE','')};" id="postfldInputSaIn3" value="{!s.item[fs.FieldPath]}" required="{!fs.required}"/>
+                                                        <apex:outputField rendered="{!s.column.isPostPeriod==true && (!ds.isActRevEditablePur && ds.dsType=='Purchases')&& (fs.FieldPath=='RevActual__c' || fs.FieldPath=='QtyActual__c')}" style="width:100px;"  id="postpur3" value="{!s.item[fs.FieldPath]}" />
+                                                        <apex:outputField rendered="{!s.column.isPostPeriod==true && (!ds.isActRevEditableSaIn && ((ds.dsType=='Sales')||(ds.dsType=='Inventory')))&& (fs.FieldPath=='RevActual__c' || fs.FieldPath=='QtyActual__c')}" style="width:100px;"  id="postsain3" value="{!s.item[fs.FieldPath]}" />
+                                                        <apex:outputField rendered="{!s.column.isPostPeriod==true  && !(fs.FieldPath=='RevActual__c' || fs.FieldPath=='QtyActual__c')}" style="width:100px;"  id="postothrfld3" value="{!s.item[fs.FieldPath]}" />
+                                                    </td>
+                                                </apex:outputPanel>              
+                                            </apex:repeat>
+                                            
+                                        </apex:repeat>
+                                        
+                                    </tr>
+                                </apex:repeat>
+                                <tr class="dataRow">
+                                    <td class="dataRow1"><table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+                                        <tr >
+                                            <td style="border-width:0px;"><b>Totals</b></td>
+                                            <td align="right" style="border-width:0px;" >
+                                                
+                                            </td>
+                                        </tr></table></td>
+                                    <apex:repeat value="{!grp.Columns}" var="col" >
+                                        <apex:outputPanel rendered="{!infoType!='n'}" layout="none">
+                                            <td>&nbsp;</td>
+                                        </apex:outputPanel>
+                                        <apex:repeat value="{!col.fieldSet.fields}" var="fs">
+                                            <apex:outputPanel rendered="{!fs.FieldPath=='RevFcst__c'}" layout="none">
+                                                <td style="border-top-color:#000;">
+                                                    <b><apex:outputField id="revtot" value="{!col.total.item[fs.FieldPath]}" /></b>
+                                                </td>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!fs.FieldPath=='QtyFcst__c' }" layout="none">
+                                                <td style="border-top-color:#000;">
+                                                    <b><apex:outputField id="qtytot" value="{!col.total.item[fs.FieldPath]}"/></b>
+                                                </td>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!fs.FieldPath='RevActual__c'}" layout="none">
+                                                <td style="border-top-color:#000;"><b><apex:outputField id="actualrevtot" value="{!col.total.item[fs.FieldPath]}"/></b></td>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!fs.FieldPath='QtyActual__c'}" layout="none">
+                                                <td style="border-top-color:#000;"><b><apex:outputField id="actualqtytot" value="{!col.total.item[fs.FieldPath]}"/></b></td>
+                                            </apex:outputPanel>
+                                        </apex:repeat>
+                                    </apex:repeat>
+                                </tr> 
+                                
+                            </tbody>
+                            
+                        </table>
+                        
+                    </apex:pageBlock>
+                </apex:outputpanel>
+            </apex:repeat>
+            
+            <apex:repeat var="grp1" value="{!ds.groups}" rows="1">
+                <apex:outputpanel id="gridGroup">
+                    <apex:pageBlock id="pbGrandTotal" title="Grand Total"  >
+                        <table id="TableFreeze" class="header list" cellpadding="0" cellspacing="0" border="1" style="width: 4000px;">
+                            <thead>
+                                <tr class="headerRow" >
+                                    <td style="background:white;border-width:0px 1px 0px 0px;"></td>
+                                    <apex:repeat value="{!grp1.Columns}" var="col" >
+                                        <td style="text-align: center;border-width:0px 1px 0px 0px; background:{!IF(col.isPostPeriod,'#424F66','#1468B6')}; color:white;" colspan="{!col.totalSubColumns+(CASE(infoType,'n',0,1))}">
+                                            <apex:outputText style="width: 550px;" value="{0,date,MMMM - yyyy}">
+                                                <apex:param value="{!col.period}" />
+                                            </apex:outputText></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr class="headerRow" >
+                                    <td style="width:150px;border-width:0px 1px 1px 0px;border-color:#D4DADC;"></td>
+                                    <apex:repeat value="{!grp1.Columns}" var="col" >
+                                        <apex:outputPanel rendered="{!infoType!='n'}" layout="none">
+                                            <td style="width:20px;border-width:0px 1px 1px 0px;border-color:#eee;background:#D4DADC;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        </apex:outputPanel>
+                                        <apex:repeat value="{!col.fieldSet.fields}" var="fs">
+                                            <td style="border-width:0px 1px 1px 0px;border-color:#eee;font-weight:bold;background:#D4DADC; ">{!fs.label}</td>
+                                        </apex:repeat>
+                                    </apex:repeat>
+                                </tr>          
+                            </thead>
+                            <!------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                            <tbody>
+                                <tr class="dataRow">
+                                    <td style="150px" class="dataRow100">
+                                        <table cellpadding="0" cellspacing="0" border="0" >
+                                            <tr >
+                                                <td style="width:150px;border-width:0px;" >
+                                                    <b>Grand Totals</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <!--  <apex:commandLink type="image/png" action="{!refresh}" rerender="frm">
+<apex:Image value="{!URLFOR($Resource.icons16,'refresh.png')}" title="Recalculate" alt="Refresh"/>
+</apex:commandLink> -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    
+                                    <apex:repeat value="{!grp1.Columns}" var="col" >
+                                        <apex:outputPanel rendered="{!infoType!='n'}" layout="none">
+                                            <td>
+                                                <apex:outputPanel id="tt" layout="block" styleClass="tooltip" style="z-index:10;">
+                                                    <apex:pageBlock id="pbInfo">
+                                                        <apex:outputPanel rendered="{!infoType!='q'}" layout="none" style="zIndex:10;"> 
+                                                            <apex:pageBlockSection title="Revenue" columns="1">
+                                                                <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Grand TotalPeriod -1"/>
+                                                                    <apex:repeat value="{!ds.GT.revFcst1Keys}" var="key">
+                                                                        <apex:outputtext rendered="{!col.period==key }" value="USD {0, number,###,###,###.00}">
+                                                                            <apex:param value="{!ds.GT.revFcst1GrandTotal[key]}" />
+                                                                        </apex:outputtext>
+                                                                    </apex:repeat>
+                                                                </apex:pageBlockSectionItem>
+                                                                <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Grand Total Period -2"/>
+                                                                    <apex:repeat value="{!ds.GT.revFcst2Keys}" var="key">
+                                                                        <apex:outputtext rendered="{!col.period==key }" value="USD {0, number,###,###,###.00}">
+                                                                            <apex:param value="{!ds.GT.revFcst2GrandTotal[key]}" />
+                                                                        </apex:outputtext>
+                                                                    </apex:repeat>
+                                                                </apex:pageBlockSectionItem>
+                                                                <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Grand Total Prior Yr Mnth Act Rev"/>
+                                                                    <apex:repeat value="{!ds.GT.revPYMActualKeys}" var="key">
+                                                                        <apex:outputtext rendered="{!col.period==key }" value="USD {0, number,###,###,###.00}">
+                                                                            <apex:param value="{!ds.GT.revPYMActualGrandTotal[key]}" />
+                                                                        </apex:outputtext>
+                                                                    </apex:repeat>
+                                                                </apex:pageBlockSectionItem>
+                                                            </apex:pageBlockSection>
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel rendered="{!infoType!='r' && ds.isQuantityDisplayed==true}" layout="none">
+                                                            <apex:pageBlockSection title="Quantity" columns="1">
+                                                                <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Grand Total Period -1"/>
+                                                                    <apex:repeat value="{!ds.GT.qtyFcst1Keys}" var="key">
+                                                                        <apex:outputtext rendered="{!col.period==key }" value="USD {0, number,###,###,###.00}">
+                                                                            <apex:param value="{!ds.GT.qtyFcst1GrandTotal[key]}" />
+                                                                        </apex:outputtext>
+                                                                    </apex:repeat>
+                                                                </apex:pageBlockSectionItem>
+                                                                <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Grand Total Period -2"/>
+                                                                    <apex:repeat value="{!ds.GT.qtyFcst2Keys}" var="key">
+                                                                        <apex:outputtext rendered="{!col.period==key }" value="USD {0, number,###,###,###.00}">
+                                                                            <apex:param value="{!ds.GT.qtyFcst2GrandTotal[key]}" />
+                                                                        </apex:outputtext>
+                                                                    </apex:repeat>   
+                                                                </apex:pageBlockSectionItem>
+                                                                <apex:pageBlockSectionItem dataStyle="padding:0px 2px;" labelStyle="padding:0px 2px;width:100px;"><apex:outputLabel value="Grand TotalPrior Yr Mnth Act Qty"/>
+                                                                    <apex:repeat value="{!ds.GT.qtyPYMActualKeys}" var="key">
+                                                                        <apex:outputtext rendered="{!col.period==key }" value="USD {0, number,###,###,###.00}">
+                                                                            <apex:param value="{!ds.GT.qtyPYMActualGrandTotal[key]}" />
+                                                                        </apex:outputtext>
+                                                                    </apex:repeat> 
+                                                                </apex:pageBlockSectionItem>
+                                                            </apex:pageBlockSection>
+                                                        </apex:outputPanel>
+                                                    </apex:pageBlock>
+                                                    
+                                                </apex:outputPanel>
+                                                <apex:image id="inf" styleClass="infoIco" value="/s.gif" />
+                                                <script>
+                                                var j$ = jQuery.noConflict();
+                                                j$(document).ready(function() {
+                                                    j$(esc('{!$Component.inf}')).tooltip({
+                                                        tip: esc('{!$Component.tt}'),   // use div.tooltip as our tooltip
+                                                        effect: 'fade',              // use the fade effect instead of the default
+                                                        fadeOutSpeed: 500,            // make fadeOutSpeed similar to the browser's default
+                                                        predelay: 200,                // the time before the tooltip is shown
+                                                        position: "top left",          // tweak the position
+                                                        offset: [{!IF(infoType=='b','150','35')}, -15]            // vert,horiz
+                                                    });
+                                                });
+                                                </script>
+                                                
+                                            </td>
+                                        </apex:outputPanel>
+                                        <apex:repeat value="{!col.fieldSet.fields}" var="fs" >
+                                            <apex:outputPanel rendered="{!fs.FieldPath=='RevActual__c'}" layout="none">
+                                                <td><b>
+                                                    <apex:repeat value="{!ds.GT.revActKeys}" var="actrevkey"><!-- <AB20141110> starts -->
+                                                        <apex:outputtext rendered="{!col.period==actrevkey }" value="USD {0, number,###,###,###.00}">
+                                                            <apex:param value="{!ds.GT.actualRevGrandTotal[actrevkey]}"/>
+                                                        </apex:outputtext>
+                                                    </apex:repeat><!-- <AB20141110> Ends -->
+                                                    </b></td>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!fs.FieldPath=='RevFcst__c'}" layout="none">
+                                                <td><b>
+                                                    <apex:repeat value="{!ds.GT.revKeys}" var="key">
+                                                        <apex:outputtext rendered="{!col.period==key }" value="USD {0, number,###,###,###.00}">
+                                                            <apex:param value="{!ds.GT.revGrandTotal[key]}" />
+                                                        </apex:outputtext>
+                                                    </apex:repeat>
+                                                    </b></td>
+                                            </apex:outputPanel>
+                                            
+                                            <apex:outputPanel rendered="{!fs.FieldPath=='QtyFcst__c'}" layout="none">
+                                                <td><b>
+                                                    <apex:repeat value="{!ds.GT.qtyKeys}" var="key">
+                                                        <apex:outputtext rendered="{!col.period==key}" value="{0, number,###,###,###}">
+                                                            <apex:param value="{!ds.GT.qtyGrandTotal[key]}" />
+                                                        </apex:outputtext>
+                                                    </apex:repeat>
+                                                    </b></td>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!fs.FieldPath=='QtyActual__c' }" layout="none">
+                                                <td><b>
+						<!-- <AB20141110> starts -->
+                                                    <apex:repeat value="{!ds.GT.qtyActKeys}" var="actqtykey">
+                                                        <apex:outputtext rendered="{!col.period==actqtykey}" value="{0, number,###,###,###}">
+                                                            <apex:param value="{!ds.GT.actualQtyGrandTotal[actqtykey]}" />
+                                                        </apex:outputtext>
+                                                    </apex:repeat><!-- <AB20141110> Ends -->
+                                                    </b></td>
+                                            </apex:outputPanel>
+                                            
+                                        </apex:repeat>
+                                    </apex:repeat>
+                                </tr>
+                                <!---------------------------------------------------------------------------------->
+                                <apex:outputPanel rendered="{!dsType=='Purchases'}" layout="none" id="GoalTotalGroup">
+                                    <tr class="dataRow">
+                                        <td class="dataRow100"><table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+                                            <tr>
+                                                <td style="border-width:0px;">
+                                                    <b>Goal Totals</b></td>
+                                                <td align="right" style="border-width:0px;"></td>
+                                            </tr>
+                                            </table>
+                                        </td>
+                                        
+                                        <apex:repeat value="{!grp1.Columns}" var="col" >
+                                            <apex:outputPanel rendered="{!infoType!='n'}" layout="none">
+                                                <td>&nbsp;</td>
+                                            </apex:outputPanel>
+                                            <apex:repeat value="{!col.fieldSet.fields}" var="fs">
+                                                <apex:outputPanel rendered="{!fs.FieldPath=='RevFcst__c' || fs.FieldPath=='RevActual__c'}" layout="none"><!--  AB20141103 To Filter in Revenue Actuals As well-->
+                                                    <td><b>
+                                                        
+                                                        
+                                                        <apex:repeat value="{!ds.DG.GoalKeys}" var="key">
+                                                            <apex:repeat value="{!ds.GT.revActKeys}" var="actrevkey"><!--  AB20141118 To map goal keys with revenue actual grand total keys -->
+                                                                <apex:outputtext rendered="{!col.period==key && actrevkey == key  && fs.FieldPath=='RevFcst__c' && col.isPostPeriod && ds.GT.actualRevGrandTotal[key]<=0}" value="{!ds.GT.DynamicFormatString}"><!--  AB20141103 If Actual Revenue Not Available  and column is forecast and of post period  <AB20141110> moved in last to avoid map does not contain key error  -->
+                                                                    <apex:param value="{!ds.DG.mapRevenueGoals[key]}"/>
+                                                                </apex:outputtext>
+                                                                <apex:outputtext rendered="{!col.period==key && actrevkey == key && fs.FieldPath=='RevActual__c' && col.isPostPeriod && ds.GT.actualRevGrandTotal[key]>0}" value="{!ds.GT.DynamicFormatString}"><!--  AB20141103 If Actual Revenue is Available  and column is Actuals and of post period  <AB20141110> moved in last to avoid map does not contain key error -->
+                                                                    <apex:param value="{!ds.DG.mapRevenueGoals[key]}"/>
+                                                                </apex:outputtext>
+                                                                <apex:outputtext rendered="{!col.period==key && actrevkey == key && !col.isPostPeriod}" value="{!ds.GT.DynamicFormatString}"><!--  AB20141103 If column is not post period-->
+                                                                    <apex:param value="{!ds.DG.mapRevenueGoals[key]}"/>
+                                                                </apex:outputtext>
+                                                            </apex:repeat>
+                                                        </apex:repeat>
+                                                        
+                                                        </b></td>
+                                                </apex:outputPanel>
+                                                
+                                                <apex:outputPanel rendered="{!fs.FieldPath=='QtyFcst__c'}" layout="none">
+                                                    <td><b>
+                                                        <apex:repeat value="{!ds.DG.GoalKeys}" var="key">
+                                                            <apex:outputtext rendered="{!col.period==key}" value="{!ds.DG.mapQuantityGoals[key]}"/>                                     
+                                                        </apex:repeat>
+                                                        </b></td>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!fs.FieldPath!='RevFcst__c'&&fs.FieldPath!='QtyFcst__c'}" layout="none">
+                                                    
+                                                </apex:outputPanel> 
+                                            </apex:repeat>
+                                        </apex:repeat>
+                                        
+                                    </tr>
+                                </apex:outputPanel>
+                                <!--------------------------------------------------------------------->
+                                <apex:outputPanel rendered="{!dsType=='Purchases'}" layout="none" id="GoalPercentageGroup">
+                                    <tr class="dataRow">
+                                        <td class="dataRow100"><table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+                                            <tr>
+                                                <td style="border-width:0px;">
+                                                    <b>Goal Percentage</b></td>
+                                                <td align="right" style="border-width:0px;"></td>
+                                            </tr>
+                                            </table>
+                                        </td>
+                                        
+                                        <apex:repeat value="{!grp1.Columns}" var="col" >
+                                            <apex:outputPanel rendered="{!infoType!='n'}" layout="none">
+                                                <td>&nbsp;</td>
+                                            </apex:outputPanel>
+                                            <apex:repeat value="{!col.fieldSet.fields}" var="fs">
+                                                <apex:outputPanel rendered="{!fs.FieldPath=='RevFcst__c' ||  fs.FieldPath=='RevActual__c'}" layout="none"><!--  AB20141103 For Actual Revenue Filtering-->
+                                                    <td><b>&nbsp;
+                                                        <apex:variable var="iGoal"  value="{!0}"/>
+                                                        <apex:variable var="iGT" value="{!0}"/>
+                                                        <apex:repeat value="{!ds.DG.GoalKeys}" var="keyGoal">
+                                                            <apex:variable var="iGoal" rendered="{!col.period==keyGoal}" value="{!ds.DG.mapRevenueGoals[keyGoal]}"/>
+                                                        </apex:repeat>
+                                                        <apex:repeat value="{!ds.GT.revKeys}" var="keyRevGT">
+                                                            <apex:variable var="iGT" rendered="{!col.period==keyRevGT }" value="{!ds.GT.revGrandTotal[keyRevGT]}"/>
+                                                        </apex:repeat> 
+							<!-- <AB20141110> starts -->
+                                                        <apex:repeat value="{!ds.GT.revActKeys}" var="actRevGT">
+                                                            <apex:variable var="iGT" rendered="{! col.isPostPeriod && col.period==actRevGT && ds.GT.actualRevGrandTotal[actRevGT]>0 && fs.FieldPath=='RevActual__c'}" value="{!ds.GT.actualRevGrandTotal[actRevGT]}"/><!--  AB20141103 Create variable If Actual Revenue is Available  and column is forecast and of post period Otherwise don't override-->
+              											 </apex:repeat> 
+                                                        <!-- <AB20141110> Ends -->
+                                                        
+                                                        <apex:outputtext rendered="{!col.isPostPeriod && (iGT>0 && iGoal>0) && ds.GT.actualRevGrandTotal[col.period]<=0 && fs.FieldPath=='RevFcst__c'}" value="{0, number,##} %"><!--  AB20141103 If Actual Revenue Not Available  and column is forecast and of post period--> <!-- <AB20141110>  -->
+                                                            <apex:param value="{!(iGT/iGoal)*100}"/>
+                                                        </apex:outputtext>
+                                                        <apex:outputtext rendered="{!col.isPostPeriod && (iGT>0 && iGoal>0) && ds.GT.actualRevGrandTotal[col.period]>0 && fs.FieldPath=='RevActual__c'}" value="{0, number,##} %"><!--  AB20141103 If Actual Revenue is Available  and column is Actual and of post period--><!-- <AB20141110>  -->
+                                                            <apex:param value="{!(iGT/iGoal)*100}"/>
+                                                        </apex:outputtext>
+                                                        <apex:outputtext rendered="{! !col.isPostPeriod && (iGT>0 && iGoal>0) }" value="{0, number,##} %"><!--  AB20141103 If period is not post period-->
+                                                            <apex:param value="{!(iGT/iGoal)*100}"/>
+                                                        </apex:outputtext>
+                                                        
+                                                        
+                                                        </b></td>
+                                                    
+                                                </apex:outputPanel>
+                                                
+                                                <apex:outputPanel rendered="{!fs.FieldPath=='QtyFcst__c'}" layout="none">
+                                                    <td><b>
+                                                        <apex:variable var="iGoal1"  value="{!0}"/>
+                                                        <apex:variable var="iGT1" value="{!0}"/>
+                                                        <apex:repeat value="{!ds.DG.GoalKeys}" var="keyGoal1">
+                                                            <apex:variable var="iGoal1" rendered="{!col.period==keyGoal1}" value="{!ds.DG.mapRevenueGoals[keyGoal1]}"/>
+                                                        </apex:repeat>
+                                                        <apex:repeat value="{!ds.GT.qtyKeys}" var="keyQtyGT">
+                                                            <apex:variable var="iGT" rendered="{!col.period==keyQtyGT }" value="{!ds.GT.qtyGrandTotal[keyQtyGT]}"/>
+                                                        </apex:repeat>
+                                                        
+                                                        <apex:outputtext rendered="{!iGT1>0 && iGoal1>0 }" value="{0, number,###,###,###}">
+                                                            <apex:param value="{!(iGT1/iGoal1)*100}"/>
+                                                        </apex:outputtext>
+                                                        
+                                                        <apex:repeat value="{!ds.DG.GoalKeys}" var="key">
+                                                            <apex:outputtext rendered="{!col.period==key}" value="{!ds.DG.mapQuantityGoals[key]}"/>                                     
+                                                        </apex:repeat>
+                                                        </b></td>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!fs.FieldPath!='RevFcst__c'&&fs.FieldPath!='QtyFcst__c' && fs.FieldPath!='RevActual__c'}" layout="none"><!--  AB20141103 Filtering Actual Revenue Also-->
+                                                    <td></td>
+                                                </apex:outputPanel> 
+                                            </apex:repeat>
+                                        </apex:repeat>
+                                        
+                                    </tr>
+                                </apex:outputPanel>
+                                
+                            </tbody>
+                        </table>
+                        
+                    </apex:pageBlock>
+                </apex:outputpanel>
+            </apex:repeat>
+            <!-- </apex:outputpanel> -->
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+    
+    var textInputs;
+    var getInputFieldsInEachRow = 0;
+    $(window).load(bindEnterEvent());//<AB20141001>Bind the enter event on loading of the page
+    function rebindEnterEvent(){
+        bindEnterEvent();
+    }
+    function bindEnterEvent(){
+        
+        if (document.querySelectorAll)
+        {
+            textInputs = document.querySelectorAll('input[type=text]');
+            getInputFieldsInEachRow = getInputFieldsPerRow();
+        }
+        else
+        {
+            getInputFieldsInEachRow = getInputFieldsPerRow();
+            textInputs = [];
+            var unfiltered = document.getElementsByTagName("input"),
+                i = unfiltered.length,
+                input;
+            while(i--)
+            {
+                input = unfiltered[i];
+                if (!input.type || input.type === 'text')
+                {
+                    textInputs.push(input);
+                    tabindex++;
+                }
+            }
+        }
+    }
+    
+    // alert(textInputs[1].id);
+    
+    function getInputFieldsPerRow(){
+        var totals = new Array();        
+        var tbl = document.getElementById('TableFreeze');        
+        var rows = tbl.getElementsByTagName('tr');        
+        var inputRow;
+        
+        for (var i = 0; i < rows.length; i++) {   
+            if(rows[i].className ==='dataRow'){
+                inputRow = rows[i];
+                break;
+            }            
+        }
+        
+        
+        
+        var cols = inputRow.getElementsByTagName('td');
+        var count = 0;
+        for (var i = 0; i < cols.length; i++) {
+            
+            if(cols[i].getElementsByTagName('input').length >0){
+                count++;
+            }
+            
+        }
+        
+        return count;
+    }
+    
+    
+    document.onkeydown = function(event)
+    {
+        var caller;
+        var key;
+        if (window.event)
+        {
+            caller = window.event.srcElement; //Get the event caller in IE.
+            key = window.event.keyCode; //Get the keycode in IE.
+        }
+        else
+        {
+            caller = event.target; //Get the event caller in Firefox.
+            key = event.which; //Get the keycode in Firefox.
+        }
+        if (key == 13) //Enter key was pressed.
+        {
+            //get focused input text Id
+            var curElement = document.activeElement;
+            var inputTabIndex = 0;
+            //alert(curElement.id);
+            for(var i=0;i<textInputs.length;i++){
+                if(curElement.id==textInputs[i].id){
+                    inputTabIndex = i;
+                    break;
+                }
+            }
+            var newTabIndex = inputTabIndex;
+            inputTabIndex = inputTabIndex+getInputFieldsInEachRow;
+            if(inputTabIndex==0){
+                return;//if in search field
+            }
+            else if(inputTabIndex==textInputs.length){
+                newTabIndex = 2;//for the first input element apart from search box
+            }
+                else if(inputTabIndex<textInputs.length){
+                    newTabIndex = inputTabIndex;//if last row focus first row next col element
+                }else if(inputTabIndex>textInputs.length){ 
+                    newTabIndex = (inputTabIndex%getInputFieldsInEachRow)+1;
+                }
+            
+            textInputs[newTabIndex].focus();           
+            textInputs[newTabIndex].select();
+            return false;
+        }
+    }
+    
+    
+    TL_tables = new Array();
+    var collapsibleMargin = -1;
+    
+    function TL_settings(table_id, left_class_name, headline_class_name, 
+                         lock_class_name) 
+    
+    { 
+        
+        this.row_elements = new Array();
+        this.col_elements = new Array();
+        this.lock_elements = new Array();
+        this.table_id = table_id;
+        this.left_class_name = left_class_name;
+        this.headline_class_name = headline_class_name;
+        this.lock_class_name = lock_class_name;
+    }
+    
+    function TL_struct(node, oldnode, xpos, ypos)
+    {
+        this.node = node;
+        this.oldnode = oldnode;
+        this.x = xpos;
+        this.y = ypos;
+    }
+    
+    function recurTableLock(table_id, 
+                            left_class_name,
+                            headline_class_name, 
+                            lock_class_name){
+        
+        var nodeList =  document.querySelectorAll(left_class_name);//document.querySelectorAll(left_class_name);
+        // alert(nodeList+' '+nodeList.length+ '  '+left_class_name);
+        for (var index = 0; index < nodeList.length; index++) {
+            var j=index;
+            j+=1;
+            
+            if(nodeList[index].innerHTML.indexOf('rowCls'+j)>-1){
+                TableLock(table_id,left_class_name,headline_class_name+j,lock_class_name+j);
+            }
+        }
+        
+    }
+    
+    function TableLock(table_id, 
+                       left_class_name,
+                       headline_class_name, 
+                       lock_class_name) 
+    {
+        
+        var tlt = new TL_settings(table_id, left_class_name, headline_class_name, lock_class_name);
+        TableLock_resize(tlt);
+        TL_tables.push(tlt);
+        this.onscroll = TableLock_update;
+        // var v = document.getElementById('j_id0:frm:pageGroup:gridGroupScroll');
+        // v.onscroll = TableLock_update;
+        TableLock_update();
+        
+        // Detect resize every second
+        window.setInterval(function(){
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            
+            
+            if(tlt.innerwidth != width &&
+               tlt.innerheight != height){
+                TableLock_resize(tlt);
+                TableLock_update();
+                
+            }
+        }, 1000);
+    }
+    
+    // Detect resize every second
+    window.setInterval(function(){
+        
+        
+        if(collapsibleMargin != document.getElementById('sidebarDiv').offsetWidth){
+            collapsibleMargin = document.getElementById('sidebarDiv').offsetWidth;
+            //alert('collapsibleMargin' +collapsibleMargin);
+            
+            $(".divFreezePane" ).remove();//<AB21040918> Replaced JS to find the classname and remove the Div content
+            recurTableLock('TableFreeze','Table[class = "header list"]', 'rowCls', 'dataRow');
+            
+        }
+    }, 1000);
+    
+    
+    function TableLock_resize(tlt) 
+    {
+        tlt.table_element = document.getElementById(tlt.table_id);
+        if (tlt.table_element == undefined) {
+            //alert("TableLock can't find table " + tlt.table_id);
+            return;
+        }
+        
+        
+        // Remove any old objects
+        for(var i = 0; i < tlt.row_elements.length; i++){
+            var obj = tlt.row_elements[i];
+            document.body.removeChild(obj.node);
+        }
+        for(var i = 0; i < tlt.col_elements.length; i++){
+            var obj = tlt.col_elements[i];
+            document.body.removeChild(obj.node);
+        }
+        for(var i = 0; i < tlt.lock_elements.length; i++){
+            var obj = tlt.lock_elements[i];
+            document.body.removeChild(obj.node);
+        }
+        
+        // Reset settings
+        tlt.innerwidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        tlt.innerheight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+        tlt.last_x = -1;
+        tlt.row_elements = new Array();
+        tlt.col_elements = new Array();
+        tlt.lock_elements = new Array();
+        
+        tlt.min_x = 10000;
+        tlt.min_y = 10000;
+        
+        tlt.max_x = 0;
+        tlt.max_y = 0;
+        
+        
+        var tags = new Array("td", "th");
+        var max = 2000;
+        for(var t = 0; t < tags.length; t++){
+            var tag = tags[t];
+            var elements = document.getElementsByTagName(tag);
+            for(var i = 0; i < elements.length; i++){
+                var node = elements.item(i);
+                for(var j = 0; j < node.attributes.length; j++) {
+                    var n = node.attributes.item(j); 
+                    if(n.nodeName == 'class' &&
+                       (n.nodeValue.indexOf(tlt.left_class_name) >= 0 ||
+                        n.nodeValue.indexOf(tlt.lock_class_name) >= 0 ||
+                        n.nodeValue.indexOf(tlt.headline_class_name) >= 0)) {
+                        
+                        var newNode = document.createElement("div");
+                        newNode.className = "divFreezePane";
+                        var pos = TL_getPos(node);
+                        for (var p in node.style) {
+                            try {
+                                newNode.style[p] = node.style[p];
+                                
+                            }
+                            catch (e) {
+                            }
+                        }
+                        
+                        newNode.innerHTML = node.innerHTML;
+                        newNode.style.position = "absolute";
+                        newNode.style.fontSize= 90+'%';
+                        
+                        if(node.style.background==''){//for left col
+                            newNode.style.background='white';  
+                            pos.x = pos.x+2;
+                            pos.y = pos.y+1.25;
+                            newNode.style.width = node.clientWidth-.25+"px";
+                            newNode.style.height = node.clientHeight+"px";
+                        }else{
+                            newNode.style.width = node.clientWidth+"px";
+                            newNode.style.height = node.clientHeight+"px";
+                            newNode.style.left = (pos.x+1.75) + "px";
+                            newNode.style.top = (pos.y-2) + "px";
+                            pos.x=pos.x+1.75;
+                            pos.y=pos.y-2;
+                            
+                        }
+                        
+                        // Store bounderies for table.
+                        if (pos.x < tlt.min_x)
+                            tlt.min_x = pos.x;
+                        if (pos.y < tlt.min_y)
+                            tlt.min_y = pos.y;
+                        
+                        if (pos.x > tlt.max_x)
+                            tlt.max_x = pos.x;
+                        if (pos.y > tlt.max_y)
+                            tlt.max_y = pos.y;
+                        
+                        
+                        if (max-- == 0) return;
+                        if (node.attributes.item(j).nodeValue.indexOf(tlt.headline_class_name) >= 0)
+                            tlt.col_elements.push(new TL_struct(newNode, node, pos.x, pos.y));
+                        else if (node.attributes.item(j).nodeValue.indexOf(tlt.lock_class_name) >= 0)
+                            tlt.lock_elements.push(new TL_struct(newNode, node, pos.x, pos.y));
+                            else
+                                tlt.row_elements.push(new TL_struct(newNode, node, pos.x, pos.y));//left col
+                    }
+                }
+            }
+        }
+        for(var i = 0; i < tlt.row_elements.length; i++){
+            var obj = tlt.row_elements[i];
+            //obj.oldnode.parentNode.insertBefore(obj.node, obj.oldnode);
+            document.body.appendChild(obj.node);
+        }
+        for(var i = 0; i < tlt.col_elements.length; i++){
+            var obj = tlt.col_elements[i];
+            document.body.appendChild(obj.node);
+        }
+        for(var i = 0; i < tlt.lock_elements.length; i++){
+            var obj = tlt.lock_elements[i];
+            document.body.appendChild(obj.node);
+        }
+    }
+    
+    function TableLock_update() 
+    {
+        var iebody=(document.compatMode && document.compatMode != "BackCompat")? document.documentElement : document.body;
+        
+        var scroll_left=document.all? iebody.scrollLeft : pageXOffset;
+        var scroll_top=document.all? iebody.scrollTop : pageYOffset;
+        
+        for(var t = 0; t < TL_tables.length; t++){
+            var tlt = TL_tables[t];
+            for(var i = 0; i < tlt.row_elements.length; i++){
+                var obj = tlt.row_elements[i];
+                var x = obj.x;
+                if (scroll_left > tlt.min_x)
+                    x = scroll_left - tlt.min_x + x;
+                if (x > tlt.max_x)
+                    x = tlt.max_x;
+                obj.node.style.left = x + "px";
+            }
+            for(var i = 0; i < tlt.col_elements.length; i++){
+                var obj = tlt.col_elements[i];
+                var y = obj.y+3;
+                if (scroll_top > tlt.min_y)
+                    y = scroll_top - tlt.min_y + y;
+                if (y > tlt.max_y)
+                    y = tlt.max_y;
+                obj.node.style.top = y + "px";
+            }
+            for(var i = 0; i < tlt.lock_elements.length; i++){
+                var obj = tlt.lock_elements[i];
+                var x = obj.x;
+                if (scroll_left > tlt.min_x)
+                    x = scroll_left - tlt.min_x + x;
+                if (x > tlt.max_x)
+                    x = tlt.max_x;
+                obj.node.style.left = x + "px";
+                var y = obj.y;
+                if (scroll_top > tlt.min_y)
+                    y = scroll_top - tlt.min_y + y;
+                if (y > tlt.max_y)
+                    y = tlt.max_y+3;
+                obj.node.style.top = obj.y + "px";
+            }
+        }
+    }
+    
+    function TL_getPos( oElement )
+    {
+        var y = 0;
+        var x = 0;
+        while( oElement != null ) {
+            y += oElement.offsetTop;
+            x += oElement.offsetLeft;
+            oElement = oElement.offsetParent;
+        }
+        return {x:x, y:y};
+        
+        
+    } 
+    
+    
+    recurTableLock('TableFreeze','Table[class = "header list"]', 'rowCls', 'dataRow');    
+    </script>
+    
+</apex:page>

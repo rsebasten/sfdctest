@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Letter to an end customer.  Fabricator is no QN-member.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Letter To End Customer - Fab not QN NL</name>
+    <style>formalLetter</style>
+    <subject>Garantievraag (case: {!Case.CaseNumber})</subject>
+    <textOnly>Geachte {!Case.Contact},
+
+We hebben uw vraag over garantie goed ontvangen.
+ 
+De DuPont™ Corian® 10 jarige beperkte installatiegarantie geldt enkel voor DuPont™ Corian® installaties (werkbladen en/of decoratieve oppervlakken), die door een erkend verwerker of installateur van het DuPont™ Corian® Quality Network werden verwerkt en welke werden uitgevoerd volgens de huidige gepubliceerde DuPont™ Corian® verwerkings- en installatievoorschriften.
+ 
+De firma &quot;XXXXX&quot; is helaas geen lid van ons DuPont™ Corian® Quality Network, waardoor DuPont in dit geval geen garantie kan toekennen.
+ 
+We kunnen u wel een erkend verwerker in uw regio aanraden voor de reparatie van uw DuPont™ Corian® installatie:
+XXXX
+ 
+We hopen u hiermee voldoende te hebben geïnformeerd en danken u voor uw begrip.
+
+Met vriendelijke groeten,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

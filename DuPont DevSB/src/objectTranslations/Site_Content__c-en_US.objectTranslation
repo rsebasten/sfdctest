@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Site Content</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Site Content</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <picklistValues>
+            <masterLabel>Customer Service</masterLabel>
+            <translation><!-- Customer Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Category --></label>
+        <name>Contact_Category__c</name>
+        <picklistValues>
+            <masterLabel>Competency Leader</masterLabel>
+            <translation><!-- Competency Leader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Questions</masterLabel>
+            <translation><!-- General Questions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subject Matter Experts(SME)</masterLabel>
+            <translation><!-- Subject Matter Experts(SME) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Full_text2__rtf --></label>
+        <name>Full_text2_rtf__c</name>
+    </fields>
+    <fields>
+        <help><!-- Detailed description of news/stage/step --></help>
+        <label><!-- Full text --></label>
+        <name>Full_text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image Id --></label>
+        <name>ImageId__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Name --></label>
+        <name>Parent_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>Parent__c</name>
+        <relationshipLabel><!-- Site Content --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Row number on the page layout --></help>
+        <label><!-- Row Number --></label>
+        <name>Row_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Description --></label>
+        <name>Short_Desc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staging</masterLabel>
+            <translation><!-- Staging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tags --></label>
+        <name>Tags1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- CS Notification Banner --></label>
+        <name>CS_Notification_Banner</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Contact Us --></label>
+        <name>Contact_Us</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Course --></label>
+        <name>Course</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Course Detail --></label>
+        <name>Course_Detail</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Curricula --></label>
+        <name>Curricula</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Left Navigation --></label>
+        <name>Left_Navigation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- News --></label>
+        <name>News</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Both Image and Image id can not be entered --></errorMessage>
+        <name>Both_imageID_Image</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Column Number can not be greater than 2 --></errorMessage>
+        <name>ColNumber_Greater_2_News</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Column Number can not  be empty. --></errorMessage>
+        <name>ColNumber_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Either ImageId OR Image should be entered. --></errorMessage>
+        <name>Imageid_or_image_News</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Parent can&apos;t be empty. --></errorMessage>
+        <name>Parent_not_null_in_sme_ContactUs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Row Number can not  be empty. --></errorMessage>
+        <name>RowNumber_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Select the Status. --></errorMessage>
+        <name>Status_not_null_News</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Edit_Full_Text2 --></label>
+        <name>Edit_Full_Text2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Rich_Text --></label>
+        <name>Edit_Rich_Text</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Preview --></label>
+        <name>Preview</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,37 @@
+<apex:page controller="ctrlConvertCaseToAccount" >
+  <apex:form >
+      <apex:pageBlock title="Convert Case to Account" id="pageblock">
+          <apex:outputPanel >
+              <apex:outputLabel >Please select one Choice</apex:outputLabel>
+              <apex:selectList size="1" value="{!selectedChoice}" id="selectedChoice">
+                <apex:selectOption itemLabel="---None---" itemvalue="" > </apex:selectOption>              
+                <apex:selectOption itemLabel="Create new Account" itemvalue="Create new Account" > </apex:selectOption>              
+                <apex:selectOption itemLabel="Use existing Account" itemvalue="Use existing Account" > </apex:selectOption>              
+              </apex:selectList>
+              <apex:commandButton value="Go" action="{!redirect}" status="status"/>
+              <apex:actionStatus id="status" startText="Please wait..." stopText=""></apex:actionStatus>
+          </apex:outputPanel>
+          <apex:pageblockSection title="Account Search" rendered="{!If(selectedChoice =='Use existing Account' ,true,false) }" columns="1" >
+          <apex:outputPanel >    
+              <apex:inputText id="searchText" value="{!searchText}"/>
+              <apex:commandButton value="Search" action="{!searchAccount}" rerender="pageblock" status="status2"/>
+              <apex:actionStatus id="status2" startText="Please wait..." stopText=""></apex:actionStatus>
+              <apex:pageBlockTable value="{!accList}" var="item" id="block" rendered="{!IF(accList!=null && accList.size>0,true,false)}">
+                  <apex:column width="20%" title="Account Name" headerValue="Account Name">
+                      <apex:outputLink value="/{!item.id}" target="_blank">{!item.name}</apex:outputLink>
+                  </apex:column>
+                  <apex:column value="{!item.ERP_Company_Code__c}"/>
+                  <apex:column value="{!item.ShippingStreet}"/>
+                  <apex:column value="{!item.ShippingCity}"/>
+                  <apex:column value="{!item.ShippingState}"/>
+                  <apex:column value="{!item.ShippingCountry}"/>
+              </apex:pageBlockTable>
+              <br/><apex:outputText rendered="{!IF(accList!=null && accList.size==0 && showNoRecords==True,true,false)}">
+                  No Records to show with given criteria!!
+              </apex:outputText>
+           </apex:outputPanel>
+           </apex:pageblockSection>
+      </apex:pageBlock>
+  
+  </apex:form>
+</apex:page>

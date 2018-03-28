@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Settlement proposal to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Settlement  Proposal Customer FR</name>
+    <style>formalLetter</style>
+    <subject>Proposition (case: {!Case.CaseNumber})</subject>
+    <textOnly>Cher client,
+
+Suite à votre réclamation {!Case.CaseNumber} du {!Case.Date_Entered__c}, veuillez trouver notre proposition afin de pouvoir répondre à votre demande et de clôturer le dossier ensuite.
+
+{!Case.Special_Instructions__c}
+
+Sauf si vous êtes en désaccord, la demande d’avoir/de remplacement avec charge/de remplacement à titre gracieux  sera transmise à notre département du service clientèle pour exécution.
+
+Nous sommes désolés des désagréments causés mais nous espérons de vous avoir répondu à votre satisfaction. Veuillez référer au numéro mentionné ci-dessus dans vos communications.
+
+En vous remerciant de votre réponse par retour. 
+
+Sincères salutations,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

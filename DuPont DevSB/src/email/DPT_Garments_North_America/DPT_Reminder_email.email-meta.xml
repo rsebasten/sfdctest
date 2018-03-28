@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>DPT Reminder email</name>
+    <style>none</style>
+    <subject>Reminder for the Opportunity: {!Opportunity.Name} status</subject>
+    <textOnly>This is a reminder that the opportunity:  {!Opportunity.Name} has a {!Opportunity.Status__c} as of {!Opportunity.LastModifiedDate}.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

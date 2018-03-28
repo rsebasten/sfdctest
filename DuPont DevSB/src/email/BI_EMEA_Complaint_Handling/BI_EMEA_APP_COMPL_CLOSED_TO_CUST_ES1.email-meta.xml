@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP COMPL CLOSED TO CUST - ES</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Compl Closed To Cust - ES</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: Reclamación {!Case.CaseNumber} cerrada.</subject>
+    <textOnly>Estimado cliente:
+
+
+En referencia a su reclamación {!Case.CaseNumber} de fecha {!Case.Date_Entered__c}, quisiéramos informarle de que hemos cerrado el expediente.
+
+
+Lamentamos los inconvenientes que le haya podido causar y esperamos que pueda seguir disfrutando de su instalación Corian® Solid Surface por muchos años.
+
+
+Si tiene cualquier pregunta, no dude en ponerse en contacto conmigo.
+
+
+
+Saludos cordiales,
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+
+
+Nos gustaría informarle que recopilamos su información con el fin de identificar sus intereses comerciales, proporcionarle productos o servicios y ofrecerle una experiencia positiva como cliente durante las interacciones comerciales. Su información personal (nombre, dirección de correo electrónico, número de teléfono y otros datos de contacto) se almacenará en el sistema de clientes hospedado principalmente en Estados Unidos. Es posible que esta información se comparta con el mismo propósito en DuPont, con compañías filiales, asociados o terceras partes determinadas en otros países. Si desea acceder a su información, modificarla, eliminarla, o cancelar su procesamiento, utilice este vínculo.
+
+
+
+DuPont™ y Corian® son marcas registradas o marcas comerciales de E.I. du Pont de Nemours and Company y de sus entidades afiliadas. El uso de logos, marcas registradas y marcas comerciales de E.I. du Pont de Nemours and Company debe autorizarlo E. I. du Pont de Nemours and Company o una de sus entidades afiliadas.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

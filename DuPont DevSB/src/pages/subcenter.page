@@ -1,0 +1,173 @@
+<apex:page standardStylesheets="false"  cache="false" controller="ctrlSubCenter" action="{!init}" showHeader="false" id="SubscriptionCenter" language="{!isoLang}">
+ 
+<apex:stylesheet value="{!$Resource.CSS_dupont_master}"/>
+<apex:includeScript value="{!$Resource.Omniture}" />
+
+
+<!--===============================================================
+    Header
+================================================================-->
+<apex:outputpanel id="pHeader" rendered="{!(headerFooter!='0')}">
+    <apex:insert name="header">
+    <br/><table width="732px">
+    <tr><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:image url="{!$Resource.dupontLogoOnWhite}"/></td></tr>
+    <tr><td width="100%"><apex:image url="{!$Resource.top_navbar}"/></td></tr>
+    </table>
+    </apex:insert>
+</apex:outputpanel>
+
+
+<!-- ===============================================================
+    Body
+==================================================================-->
+<apex:insert name="body">
+<apex:form >
+<table width="{!IF(headerFooter!='0','732px','582px')}">
+<tr><td>
+    <apex:outputpanel id="plnav" rendered="{!(headerFooter!='0')}">
+    <td><hr width="150px" style="color: white; border-width: 0px;"/></td>
+    </apex:outputpanel>
+    
+    <td width="582px" ALIGN="CENTER">
+    <table width="100%"><tr><td align="center">
+    
+        <apex:outputpanel id="errorMsg" rendered="{!err}">
+            <br/>{!errMsg}<br/>
+        </apex:outputpanel>
+        
+        <!-- =================================================================
+            Thank you
+        =================================================================== -->
+        <apex:outputpanel id="thankyou" rendered="{!NOT(err)&&showThankYou}">
+            <apex:repeat var="item" value="{!center.items}">
+                <apex:outputpanel id="OmnitureTrackOpt" rendered="{!item.isdirty}">
+                <script>
+                    var s=s_gi("{!$Label.Omniture_SubscriptionCenter}");
+                    s.linkTrackVars="prop1,prop2,prop3,prop4";
+                    s.prop1="[{!item.globalcampaignId}]-{!item.name}";
+                    s.prop2="{!IF(item.checked,'Opt-In','Opt-Out')}";
+                    s.prop3="{!$CurrentPage.parameters.em}";
+                    s.tl(true,"o","{!item.name}:{!IF(item.checked,'Opt-In','Opt-Out')}");
+                    //alert("{!item.globalCampaignId}:{!IF(item.checked,'Opt-In','Opt-Out')}");
+                </script>
+                </apex:outputpanel>
+            </apex:repeat>
+
+            <br/><apex:outputText escape="false" value="{!$Label.Site_Thankyou_Subscription}"/><br/>
+            
+            <table width="100%"><tr><td align="right">
+                <a class="footerLink" href="{!moreSubscriptionsUrl}">{!$Label.Site_MoreSubscriptions}...</a>    
+            </td></tr></table>
+        </apex:outputpanel>
+        
+        <!-- =================================================================
+            Subscription for: email@company.com
+            click here if this is not your email
+        =================================================================== -->
+        <apex:outputpanel id="existingLead" rendered="{!(NOT(err)&&ISNULL(frm)&&showForm)}" >
+                <b>{!$Label.Site_SubscriptionsFor} </b>
+                <apex:outputText value="{!email}"/><br/>
+                <apex:commandLink action="{!notme}" value="{!$Label.Site_NotMyEmail}"/>     
+            <br/><br/>
+        </apex:outputpanel> 
+    
+    
+        <!--======================================================
+        Subscription Center
+        ========================================================-->
+        <apex:outputpanel id="CenterOptions" rendered="{!(NOT(err)&&showForm)}" >
+            <table width="100%"><tr><td colspan="2" align="left">
+                    <b><h3 class="pageHeader">{!center.name}</h3></b><br/>
+                    <apex:outputText escape="false" value="{!center.description}"/><br/><br/>
+                    <apex:repeat var="item" value="{!center.items}">
+                        <tr><td valign="top" align="left">
+                            <apex:inputCheckbox value="{!item.checked}"  disabled="{!item.readonly}"/>
+                        </td>
+                        <td valign="bottom" align="left">
+                        <b><apex:outputText value="{!item.name}"/></b><br/>
+                        <apex:outputpanel id="listDesc" rendered="{!If(isNull(item.description),'false','true')}"><apex:outputText escape="false" value="{!item.description}"/><br/></apex:outputpanel>
+                        </td></tr>
+                    </apex:repeat>
+            </td></tr></table><br/>
+        </apex:outputpanel>
+        <!--========================================================-->
+        
+        
+        <!--======================================================
+        ValidationError
+        ========================================================-->
+        <apex:outputpanel id="ValidationError" rendered="{!showValidationError}">
+            <table width="100%"><tr><td align="left">
+                <span style="color:red;">{!$Label.Site_MustSelectAList}</span>
+             </td></tr></table>
+        </apex:outputpanel>
+    
+    
+        <!--======================================================
+        New Lead Form
+        ========================================================-->
+        <apex:outputpanel id="newLeadForm" rendered="{!( NOT(err) && showForm && NOT(ISNULL(frm)) ) }">
+            <c:SubForm frm="{!frm}"/><br/>
+        </apex:outputpanel>
+
+
+        <!--======================================================
+        Right Nav and submit Button
+        ========================================================-->
+        <apex:outputpanel id="submitbutton" rendered="{!(NOT(err)&&showForm)}" >
+            <table width="100%">
+            <tr><td align="left">
+                <apex:commandbutton action="{!save}" value="{!$Label.Site_ButtonOpt}"/>
+            </td></tr>
+            <tr><td align="right">
+                <a class="footerLink" target="_blank" href="{!moreSubscriptionsUrl}">{!$Label.Site_MoreSubscriptions}...</a>    
+            </td></tr>
+            <tr><td align="right">
+                <apex:outputpanel id="myProfile" rendered="{!(NOT(err) && showForm && ISNULL(frm)) }">
+                <a class="footerLink" target="_blank" href="{!myProfileUrl}">{!$Label.Site_UpdateProfile}...</a>
+                </apex:outputpanel> 
+            </td></tr>
+            <tr><td align="left">
+                <apex:outputText escape="false" value="{!IF(ISNULL(frm),$Label.Site_LegalOptInput,$Label.Site_LegalOptDataInput)}">
+                    <apex:param name="PrivacyInquiryURL" value="/apex/PrivacyInquiry?nlf=a1q300000004ELj&l={!isoLang}&cid={!center.id}"/>
+                </apex:outputText>
+            
+            </td></tr>
+            </table>
+        </apex:outputpanel>
+    </td></tr></table>
+</td></tr></table>
+</apex:form>
+
+</apex:insert>
+
+
+
+<script language="JavaScript" type="text/javascript">
+    s.pageName="subcenter:[{!center.id}]-{!center.name}";
+    s.server="";
+    s.channel="";
+    s.pageType="";
+    s.prop1="{!isolang}";s.prop2="";s.prop3="";s.prop4="";s.prop5="";
+    /* Conversion Variables */
+    s.campaign="{!$CurrentPage.parameters.src}";s.state="";s.zip="";s.events="";s.products="";s.purchaseID="";
+    s.eVar1="";s.eVar2="";s.eVar3="";s.eVar4="";s.eVar5="";
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+    if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+</script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="{!$Label.Omniture_SubscriptionCenter}"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.20.3. -->
+
+
+<!-- ===============================================================
+    Footer
+==================================================================-->
+<apex:outputpanel id="pFooter" rendered="{!(headerFooter!='0')}">
+<apex:insert name="footer"> <c:SubscriptionFooter /></apex:insert>
+</apex:outputpanel>
+
+</apex:page>

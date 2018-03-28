@@ -1,0 +1,29 @@
+<apex:component id="headerDupont_1">
+<apex:attribute name="page" type="PageBase" description="reference to pagebase" required="true"/> 
+<head>
+<style>
+#colorbar{height: 17px;background-color: #D42233;}
+#accent1{float: left;height: 17px;width: 25%;background-color: #B50038;}
+#accent2{float: left;height: 17px;width: 2%;background-color: #E53A2B;}
+#accent3{float: left;height: 17px;width: 15%;background-color: #E0007A;}
+#accent4{float: left;height: 17px;width: 2%;background-color: #B11319;}
+#accent5{float: left;height: 17px;width: 5%;background-color: #87002F;}
+body {text-align: left;}
+</style>
+</head>
+        <br/><table width="{!page.pageWidth}">
+        <tr><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:image url="{!$Resource.dupontLogoOnWhite}"/></td>
+        <td align="left" valign="middle">
+        </td></tr>
+        <tr><td colspan="2" style="background-color: #ededed; border:none; padding:0px; text-align:left; white-space: nowrap; width:100%;" width="100%">
+                <div id="colorbar" style="height: 17px;background-color: #D42233; width:720px;"> 
+                    <div style="float: left;height: 17px;width: 25%;background-color: #B50038;"><!-- accent 1 --></div> 
+                    <div style="float: left;height: 17px;width: 2%;background-color: #E53A2B;"><!-- accent 2 --></div> 
+                    <div style="float: left;height: 17px;width: 15%;background-color: #E0007A;"><!-- accent 3 --></div> 
+                    <div style="float: left;height: 17px;width: 2%;background-color: #B11319;"><!-- accent 4 --></div> 
+                    <div style="float: left;height: 17px;width: 5%;background-color: #87002F;"><!-- accent 5 --></div> 
+                    <div style="float: left;height: 17px;width: 51%;background-color: #ededed;"><!-- accent 6 --></div>
+                </div>
+        </td></tr>
+        </table>
+</apex:component>

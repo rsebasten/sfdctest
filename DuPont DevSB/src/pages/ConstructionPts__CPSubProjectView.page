@@ -1,0 +1,11 @@
+<apex:page standardController="ConstructionPts__Sub_Projects__c" tabStyle="ConstructionPts__CP_Project__c">
+        
+	<c:CPHeader_Detail title="Sub Project" subtitle="{!ConstructionPts__Sub_Projects__c.name}" ShowDodgeLogo="true"/>
+    <chatter:feedWithFollowers entityId="{!ConstructionPts__Sub_Projects__c.Id}"></chatter:feedWithFollowers> 
+      
+    <apex:detail relatedList="true" title="false" />
+    <br/>    
+    <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+    
+      
+</apex:page>

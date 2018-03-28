@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DuPont™ Kevlar®  Shelf Life Letter</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS - DuPont™ Kevlar®  Shelf Life Letter</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Kevlar® Shelf Life Statement</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.FirstName} {!Lead.LastName},
+
+Thank you for your interest in Kevlar®.
+
+Attached is the document on Kevlar® shelf life.
+
+For additional information, please refer to DuPont Kevlar® Technical Guide.  Copy the following web address into your web browser. http://www2.dupont.com/Kevlar/en_US/assets/downloads/KEVLAR_Technical_Guide.pdf
+
+
+DuPont Protection Solutions</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

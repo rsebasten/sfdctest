@@ -1,0 +1,85 @@
+<apex:page Controller="ConstructionPts.CPRoleTypeList" TabStyle="ConstructionPts__CP_Roles__c" >
+    <c:CPHeader title="Role Selection" ShowDodgeLogo="true" ShowCPLinks="true" ShowTitle="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+    <apex:includeScript value="/soap/ajax/32.0/connection.js" />
+    <apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__jquerynew, 'css/redmond/jquery-ui-1.8.21.custom.css')}" />
+   
+    <apex:Form >
+        <apex:pageMessages />
+        <apex:outputPanel styleClass="cpmessages" id="pnlCustomError">
+            <div id="customPageError"></div>
+            <br></br>
+        </apex:outputPanel>
+        <br/>
+        <br/>
+        <div id="RolesList">
+            <b>Select which Dodge Roles to import - role selection determines which Dodge Companies will be imported in the next data feed.</b>
+            <br/>
+            <br/>
+            <apex:pageBlock >
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!saveRoles}" />
+                </apex:pageBlockButtons>
+                <apex:pageBlockTable value="{!OrderedRolesList}" var="role">
+                    <apex:column headerValue="Available roles">
+                        <div style="display: {!IF(role.ConstructionPts__RoleTypeID__c==0,'none','inline')}">
+                            <apex:inputCheckbox value="{!role.ConstructionPts__ShowRoleType__c}" />
+                        </div>
+                        <div style="display: inline; font-weight: {!IF(role.ConstructionPts__RoleTypeID__c==0,'bold','normal')}">{!role.Name}</div>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
+        <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false" />
+        <apex:actionFunction action="{!saveOrderToNull}" name="saveRoleOrderToNull" rerender="none" />
+        <apex:actionFunction action="{!populateOrderedList}" name="populateOrderedList" rerender="none"/>
+        <apex:actionFunction action="{!populateSelectedList}" name="populateSelectedList" rerender="none"/>
+        <apex:actionFunction action="{!saveRoles}" name="saveRoles" rerender="none"/>
+        </apex:Form>
+        
+         <script>
+      
+
+        
+            j$ = jQuery.noConflict(); 
+        
+  
+        function GotoCPEditRoles(){
+            var currURL = window.location.href;
+            var baseURL = currURL.substring(0,currURL.indexOf("CPEditRoles"));
+            var gotoURL = baseURL + "CPEditRoles";
+            if (sforce.console.isInConsole()){                
+                gotoURL= gotoURL+ '&isdtp=vw';
+                console.log("gotoURL " + gotoURL);
+            }
+        }    
+
+        function jsEditViewFields() {
+            'use strict';
+            //clear any custom page messages before moving on to editing fields
+            setPageErrorMessage('');
+            j$("#dialog-form").dialog("open");
+        }
+
+        function setPageErrorMessage(message) {
+            var errBox = document.getElementById('customPageError');
+            if (errBox === undefined)
+                return;
+            while (errBox.firstChild) {
+                errBox.removeChild(errBox.firstChild);
+            }
+            if (!isStringNullOrEmpty(message)) {
+                errBox.appendChild(document.createTextNode(message));
+                j$(errBox).error();
+            }
+        }
+        
+        function isStringNullOrEmpty(myString) {
+            if (myString !== '' && myString !== undefined && myString !== null)
+                return false;
+            else
+                return true;
+        }
+    </script>
+
+</apex:page>

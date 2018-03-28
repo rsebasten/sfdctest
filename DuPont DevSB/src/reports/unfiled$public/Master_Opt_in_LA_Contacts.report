@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.fEmail__c</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.fRegion__c</field>
+    </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>MEMBER_LAST_UPDATE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Contacts who has LA region in the Master Opt-in list</description>
+    <filter>
+        <criteriaItems>
+            <column>CampaignMember.fRegion__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Latin America</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Master-Opt-in_LA_Contacts</name>
+    <params>
+        <name>scopeid</name>
+        <value>70141000000knTa</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

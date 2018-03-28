@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Check_if_Member_is_Already_on_Case_Team</name>
+        <label>Check if Member is Already on Case Team</label>
+        <locationX>246</locationX>
+        <locationY>353</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Need_To_Add_Case_Team_Member</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case_Team_Record</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetCaseTeamRoleID</targetReference>
+            </connector>
+            <label>Need To Add Case Team Member</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_that_UserID_is_Valid_and_Not_a_Queue</name>
+        <label>Check that UserID is Valid and Not a Queue</label>
+        <locationX>569</locationX>
+        <locationY>214</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>UserID_is_Valid</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Look_Up_UserID</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Case_Team_Record</targetReference>
+            </connector>
+            <label>UserID is Valid</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_User_ID_Not_Null</name>
+        <label>Is User ID Not Null?</label>
+        <locationX>240</locationX>
+        <locationY>85</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>User_ID_is_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UserID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Look_Up_UserID</targetReference>
+            </connector>
+            <label>User ID is Not Null</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Create Case Team Member {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Case Team Member</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Case_Team_Member</name>
+        <label>Create Case Team Member</label>
+        <locationX>248</locationX>
+        <locationY>583</locationY>
+        <inputAssignments>
+            <field>MemberId</field>
+            <value>
+                <elementReference>UserID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>CaseID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TeamRoleId</field>
+            <value>
+                <elementReference>CaseTeamRoleID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CaseTeamMember</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Case_Team_Record</name>
+        <label>Get Case Team Record</label>
+        <locationX>244</locationX>
+        <locationY>240</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_Member_is_Already_on_Case_Team</targetReference>
+        </connector>
+        <filters>
+            <field>MemberId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>UserID</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseID</elementReference>
+            </value>
+        </filters>
+        <object>CaseTeamMember</object>
+    </recordLookups>
+    <recordLookups>
+        <name>GetCaseTeamRoleID</name>
+        <label>GetCaseTeamRoleID</label>
+        <locationX>246</locationX>
+        <locationY>470</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Case_Team_Member</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseTeamRole</elementReference>
+            </value>
+        </filters>
+        <object>CaseTeamRole</object>
+        <outputAssignments>
+            <assignToReference>CaseTeamRoleID</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Look_Up_UserID</name>
+        <label>Look Up UserID</label>
+        <locationX>568</locationX>
+        <locationY>117</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_that_UserID_is_Valid_and_Not_a_Queue</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>UserID</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+    </recordLookups>
+    <startElementReference>Is_User_ID_Not_Null</startElementReference>
+    <variables>
+        <description>Input parameter for the ID of the subject case.  A case team member will be added to this case.</description>
+        <name>CaseID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Input parameter for the name o fthe case team role to be used when the case team member is added to the case.</description>
+        <name>CaseTeamRole</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>ID of the case team role that corresponds to the CaseTeamRole name.</description>
+        <name>CaseTeamRoleID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Input parameter containing the user ID to be added toe the case team.</description>
+        <name>UserID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

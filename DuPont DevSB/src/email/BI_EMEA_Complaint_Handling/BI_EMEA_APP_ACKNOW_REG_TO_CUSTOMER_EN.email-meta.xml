@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP ACKNOW REG TO CUST - EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Acknow Reg To Cust - EN</name>
+    <style>formalLetter</style>
+    <subject>Corian® Solid Surface: Acknowledgement registration of complaint {!Case.CaseNumber}</subject>
+    <textOnly>Dear customer,
+Thank you for registering your complaint. We’ll do our utmost to have yourcomplaint solved in the shortest time possible.
+
+
+Upon completion of your file, we will contact our service centre or IndustrialPartner to settle a date for an inspection / repair.
+
+
+Our service centre / Industrial Partner will inspect the damage and if possible repair immediately.   May we remind you to free up space and keep Corian® Solid Surface rest material available to avoid colour mismatch. Be aware that the intervention might cause inconveniences.    If your request falls under the Corian® Solid Surface 10 Year Limited Installed Warranty, the cost of the intervention will be paid by DuPont. In case the damages fall outside this warranty, the service centre / Industrial Partner will make you an offer for repair.   Upon completion, the service centre / Industrial Partner will ask you tosign a satisfaction form which serves as the confirmation for his services.
+
+
+Should you have any questions or remarks, do not hesitate to contact us.   Friendly Regards,
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+We want to inform you that we collect your information to identify your business interests, provide you with products or
+
+services and offer a positive customer experience during business interactions. Your personal information (name,
+
+e-Mail, phone number, and other contact data) will be stored in chosen customer systems primarily hosted in the
+
+United States. This information may be shared within DuPont, its affiliates, partners, and selected third parties in other
+
+countries for the same purpose. In order to access, amend, delete or oppose to the processing of your information,
+
+use this link.
+
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its
+
+affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must
+
+be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-lA - Proposta final do caso para o cliente PT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-LA Proposta final do caso para o cliente PT</name>
+    <style>formalLetter</style>
+    <subject>Resolução Proposta ao Cliente (case: {!Case.CaseNumber})</subject>
+    <textOnly>Prezado Vendedor
+Posterior a análise da reclamação {!Case.CaseNumber} enviada na data {!Case.Date_Entered__c}, determinou-se {!Case.Resolution_Description__c}. A fim de orientar no tratamento deste caso, apresentamos a baixo o parecer técnico e sugestões corretivas:
+
+
+
+{!Case.Special_Instructions__c}
+{!Case.Primary_Corrective_Action__c}
+{!Case.Secondary_Corrective_Action__c}
+
+
+
+
+
+Muito Obrigado
+
+
+Atenciosamente,
+
+Time Técnico
+{!Case.OwnerFullName}
+Corian® Design
+{!Case.OwnerTitle}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

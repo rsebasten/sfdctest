@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Certification-Notification For the DuPont Admin</name>
+    <style>none</style>
+    <subject>To DuPont Admin notice to review Certification Nomination</subject>
+    <textOnly>DuPont Admin,
+
+Candidate {!Qualification__c.Account_Name__c} has completed training and exam for certification. Please review the candidate contact and nomination information for completeness and select appropriate next stage. Click on this link to access account.
+
+Click on this link to View the Record</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

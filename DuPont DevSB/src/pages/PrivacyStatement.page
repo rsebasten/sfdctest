@@ -1,0 +1,32 @@
+<apex:page sidebar="false" showHeader="false">
+ <apex:pageBlock tabStyle="Task" Title="Privacy Statement">
+   {!$Label.PrivacyStatement}<br/><br/>
+<br/>
+&nbsp;<apex:outputLink value="http://www2.dupont.com/DuPont_Home/en_US/privacy.html" target="_blank">DuPont Privacy Statements</apex:outputLink>
+</apex:pageBlock>
+
+<script>
+
+function addLoadEvent(func) { 
+	var oldonload = window.onload; 
+		if (typeof window.onload != 'function') { 
+		window.onload = func; 
+	  } else { 
+	    window.onload = function() { 
+	      if (oldonload) { 
+	        oldonload(); 
+	      } 
+	      func(); 
+	    } 
+	  } 
+	} 
+
+function checkPrivacy() {
+	if('{!$User.PrivacyAgreementDate__c}'=='')
+		window.open('/apex/privacy','privacy','width=500,height=500,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,copyhistory=no, resizable=yes');
+
+}
+
+addLoadEvent(checkPrivacy);
+</script>
+</apex:page>

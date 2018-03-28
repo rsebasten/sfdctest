@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DELETION - Inform customer contact details deleted (Spanish)</name>
+    <style>formalLetter</style>
+    <subject>DuPont Customer Privacy request</subject>
+    <textOnly>Estimado cliente,
+
+Hemos recibido su solicitud para que DuPont elimine la información personal que tiene de Vd.al respecto.
+Tenga en cuenta que su información personal ha sido borrada de nuestra base(s) de datos .
+Para otras preguntas y asistencia, por favor póngase en contacto con nosotros utilizando los datos que aparecen a continuación.
+
+Atentamente,
+
+{!User.Username}
+
+DuPont Information Center
+Phone: 1-800-441-7515 or 1-302-774-1000
+Address: Chestnut Run Plaza 705/GS38
+PO Box 80705
+Wilmington, DE 19880-0705</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

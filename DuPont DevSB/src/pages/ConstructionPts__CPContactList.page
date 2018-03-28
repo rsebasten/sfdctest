@@ -1,0 +1,20 @@
+<apex:page standardController="ConstructionPts__CP_Contact__c" recordsetVar="contacts" tabStyle="Dodge_Projects__tab" sideBar="false" extensions="ConstructionPts.CPExportAnalytics">      
+     <c:CPHeader title="All Contacts" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" MessageColor="green" message="<b>{!if(GetNumberOfContacts != '', GetNumberOfContacts, '')}</b>" /> 
+	  
+	<br />
+    <div id="divList">
+          <apex:ListViews type="ConstructionPts__CP_Contact__c"/> 
+    </div>
+    <script type="text/javascript">
+      var j$ = jQuery.noConflict(); 
+       j$(document).ready(function(){
+          j$("td.actionColumn").each( function (){
+               j$(this).html( ( j$(this).children("[type=checkbox]").length > 0 ? j$(this).children("[type=checkbox]").clone().wrap("<p>").parent().html(): " " ) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + j$(this).children("a.chatterFollowUnfollowAction ").clone().wrap("<p>").parent().html());             
+          });
+       }); 
+       setSelectedTab(j$, "All Contacts");  
+           
+    </script>  
+        
+    <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/> 
+</apex:page>

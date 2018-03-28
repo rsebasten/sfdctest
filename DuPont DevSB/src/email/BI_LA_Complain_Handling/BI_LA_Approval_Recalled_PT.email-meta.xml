@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI LA - Aprovação de Queixa Retirada PT</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI LA - Aprovação de Queixa Retirada PT</name>
+    <style>formalLetter</style>
+    <subject>Aprovação de queixa retirada (caso: {!Case.CaseNumber})</subject>
+    <textOnly>Prezado Aprovador ,
+Por gentileza revisar  o seguinte pedido de aprovação de queixa{!Case.CaseNumber} que foi retirado. Até que uma nova solicitação de queixa seja criado não será necessário realizar nenhuma outra ação sobre esta queixa.
+
+
+Caso queira revisar este caso , por gentileza acesse o link abaixo
+
+Link: {!Case.Link}
+
+
+Atenciosamente,
+
+
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

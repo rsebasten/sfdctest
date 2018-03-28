@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email notification when a case has been approved</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Case: DPT Case Approval</name>
+    <style>freeForm</style>
+    <subject>DPT Case {!Case.CaseNumber} Has Been Approved.</subject>
+    <textOnly>Investigator: {!Case.OwnerFullName}
+
+
+The Complaint that you recently investigated, {!Case.Id}, for {!Case.Account} has been approved.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

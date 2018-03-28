@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Letter to an end customer. Fabricator is no QN-member.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Letter To End-cust Inst Done By Non-Ind Partner - NL</name>
+    <style>freeForm</style>
+    <subject>Garantievraag (case: {!Case.CaseNumber})</subject>
+    <textOnly>Geachte {!Case.Contact},
+
+We hebben uw vraag over garantie goed ontvangen.
+
+
+De Corian® Solid Surface 10 jarige beperkte installatiegarantie geldt enkel voor Corian® Solid Surface installaties (werkbladen en/of decoratieve oppervlakken), die door een erkend verwerker of installateur van het Corian® Solid Surface Quality Network werden verwerkt en welke werden uitgevoerd volgens de huidige gepubliceerde Corian® Solid Surface verwerkings- en installatievoorschriften.
+
+
+De firma &quot;XXXXX&quot; is helaas geen lid van ons Corian® Solid Surface Quality Network, waardoor DuPont in dit geval geen garantie kan toekennen.
+
+
+We kunnen u wel een erkend verwerker in uw regio aanraden voor de reparatie van uw Corian® Solid Surface installatie:
+
+XXXX
+
+
+We hopen u hiermee voldoende te hebben geïnformeerd en danken u voor uw begrip.
+
+
+Met vriendelijke groeten,
+
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com
+
+
+
+We willen u op de hoogte stellen dat we uw gegevens verzamelen om uw zakelijke interesses vast te stellen, u te voorzien van producten of diensten, en u als klant een positieve ervaring te bieden als u met ons zaken doet. Uw persoonlijke informatie (naam, e-mailadres, telefoonnummer en andere contactgegevens) worden bewaard in geselecteerde klanteninformatiesystemen die zich hoofdzakelijk in de Verenigde Staten bevinden. Deze informatie kan gedeeld worden binnen DuPont en haar ondernemingen en partners, en, met dezelfde doelstellingen, met geselecteerde derden in andere landen. U kunt deze link gebruiken om toegang te krijgen tot uw gegevens, deze te wijzingen of te wissen, of bezwaar te maken tegen de verwerking ervan.
+
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

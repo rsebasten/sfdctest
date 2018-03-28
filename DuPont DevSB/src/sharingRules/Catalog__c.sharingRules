@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Catalog_MigrationUser_RS_RO_PSCRM</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>(06-JUL-17) - Issue fix for IS ID-00082857.  This is a &quot;generic&quot; share to extend &apos;Data Migration User&apos; owned records with PS CRM role and subordinates ---due to original owners being inactive in OneDuPont.</description>
+        <label>Catalog Migration User RO to RS PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Catalogs_DPT_EMEA_PG_DPT_Catalog_Manager_PG_DPT_Nomex_Garment_RO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Catalogs_ DPT_EMEA _PG_ DPT_Catalog_Manager - PG_DPT_Nomex_Garment_RO</label>
+        <sharedTo>
+            <group>DPTNomexGarment</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPT_Nomex_Catalog_Manager</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Catalogue_PS_All_R_IS_Protection_Solutions_Group_DPS_CRM_Specialists_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>as per issue IS ID-00083462</description>
+        <label>Catalogue_PS_All_R&amp;IS-Protection Solutions_Group-DPS CRM Specialists_RW</label>
+        <sharedTo>
+            <group>DPS_CRM_Specialists</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTAramidsNAA</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DPT - Aramids NAA</label>
+        <sharedTo>
+            <role>DPTAramidsNA</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTNASalesAidSpecialist</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTDPPEMEAMarketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT-DPP-EMEA Marketing</label>
+        <sharedTo>
+            <group>DPTDPPEMEAMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTEMEAI</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DPT - EMEAI</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTIPPNAI</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DPT - IPP NAI</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DPTIPPNA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTNASalesAidSpecialist</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTNASalesAidSpecialist</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT NA Sales Aid Specialist</label>
+        <sharedTo>
+            <group>DPTNASalesAidSpecialist</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTNASalesAidSpecialist</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTNOWNAA</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DPT - NOW NAA</label>
+        <sharedTo>
+            <role>DPTNOWNA</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTNOWSalesAidSpecialists</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTNOWSalesAidSpecialists</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT-NOW Sales Aid Specialists</label>
+        <sharedTo>
+            <group>DPTNOWSalesAidSpecialists</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTNOWSalesAidSpecialists</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Protection_Solutions_Readonly</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Protection Solutions - Readonly</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

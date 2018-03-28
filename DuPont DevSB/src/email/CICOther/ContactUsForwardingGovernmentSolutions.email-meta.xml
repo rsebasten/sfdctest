@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To be used for routing leads from www.dupont.com/government (Lead Routing Template)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Contact-Us - Forwarding Government Solutions</name>
+    <style>none</style>
+    <subject>Contact-Us: {!Lead_Routing__c.Owning_Organization__c}-{!Lead_Routing__c.Solution_1__c}-{!Lead_Routing__c.CreatedDate}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

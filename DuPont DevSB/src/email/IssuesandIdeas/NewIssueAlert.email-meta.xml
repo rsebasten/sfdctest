@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Workflow alert notification when Issue is created or reassigned</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>New Issue Alert</name>
+    <style>none</style>
+    <subject>{!Issue__c.RecordType} : {!Issue__c.Name}  Submitted by: {!Issue__c.Submitted_By__c} in {!Issue__c.Region__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

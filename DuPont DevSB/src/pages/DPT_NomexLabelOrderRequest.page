@@ -1,0 +1,202 @@
+<apex:page cache="true" sidebar="true" showheader="true"
+    controller="ctrlNewRequest" action="{!initNomex}">
+
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:messages />
+
+    <script type='text/javascript'>
+       // This script assists the search bar functionality
+       // It will execute a search only after the user has stopped typing for more than 1 second
+       // To raise the time between when the user stops typing and the search, edit the following variable:
+       
+       var waitTime = 1;       
+       var countDown = waitTime+1;
+       var started = false;  
+       function resetTimer(){       
+           countDown=waitTime+1;           
+           if(started==false){
+               started=true;
+               runCountDown();
+           }
+       }       
+       function runCountDown(){
+           countDown--;      
+           if(countDown<=0){
+               fetchResults();
+               started=false;
+           }
+           else{
+               window.setTimeout(runCountDown,20);
+           }
+       } 
+           funcion clearbox () {
+            obj = document.getElementById('searchresults');
+            obj.value='';
+            } 
+   </script>
+
+    <apex:form >
+        <apex:pageBlock id="createSection"
+            rendered="{!IF(cart.size!=0,true,false)}">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!onSave}" value="Create"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="true" id="Record" columns="1"
+                rendered="{!Cart<>null}">
+                <apex:facet name="header">
+                    <span style="color: black">Selected Items</span>
+                </apex:facet>
+                <apex:pageBlockTable value="{!sortedCart}" var="cartitem">
+                    <apex:column >
+                        <apex:facet name="header">Action</apex:facet>
+                        <apex:commandLink action="{!deleteItem}">
+                            <div
+                                style="color: red; font-style: italic; font-weight: bold; font-family: Arial">Remove</div>
+                            <apex:param name="cartid" value="{!cartitem.indx}" />
+                            <apex:param name="removedQualId"
+                                value="{!cartitem.requestitem.Related_Qualification__r.name}" />
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <apex:inputText value="{!cartitem.requestItem.Quantity__c}"
+                            style="color:black; font-style:normal; font-weight:bold; font-family:Arial" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Unit of Measure</apex:facet>
+                        <apex:outputText value="{!cartitem.catalogItem.Unit_of_Measure__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Material</apex:facet>
+                        <a href="/DPTNomexCustomerCommunity/{!cartitem.catalogItem.Material__c}"
+                            style="left: 100px; right: 1000px; top: 277px;" target="_blank"
+                            id="{!cartitem.catalogItem.Material__c}"
+                            onblur="LookupHoverDetail.getHover('{!cartitem.catalogItem.Material__c}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!cartitem.catalogItem.Material__c}', '/DPTNomexCustomerCommunity/{!cartitem.catalogItem.Material__c}/m?retURL=%2FDPTNomexCustomerCommunity%2F{!cartitem.catalogItem.Material__c}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!cartitem.catalogItem.Material__c}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!cartitem.catalogItem.Material__c}', '/DPTNomexCustomerCommunity/{!cartitem.catalogItem.Material__c}/m?retURL=%2FDPTNomexCustomerCommunity%2F{!cartitem.catalogItem.Material__c}&isAjaxRequest=1').show();">{!cartitem.catalogItem.Material__r.Name}</a>
+                    </apex:column>
+                    <apex:column >
+                        <a href="/DPTNomexCustomerCommunity/{!cartitem.requestitem.Related_Qualification__r.id}"
+                            style="left: 100px; top: 277px;" target="_blank"
+                            id="{!cartitem.requestitem.Related_Qualification__r.id}"
+                            onblur="LookupHoverDetail.getHover('{!cartitem.requestitem.Related_Qualification__r.id}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!cartitem.requestitem.Related_Qualification__r.id}', '/{!cartitem.requestitem.Related_Qualification__r.id}/m?retURL=%2F{!cartitem.requestitem.Related_Qualification__r.id}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!cartitem.requestitem.Related_Qualification__r.id}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!cartitem.requestitem.Related_Qualification__r.id}', '/{!cartitem.requestitem.Related_Qualification__r.id}/m?retURL=%2F{!cartitem.requestitem.Related_Qualification__r.id}&isAjaxRequest=1').show();">{!cartitem.requestitem.Related_Qualification__r.Name}</a>
+                        <apex:facet name="header">Qualification Id</apex:facet>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Reference Id</apex:facet>
+                        <apex:outputText value="{!cartitem.requestitem.Related_Qualification__r.Reference_Id__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Construction</apex:facet>
+                        <apex:outputText value="{!cartitem.requestitem.Related_Qualification__r.Construction__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Colour</apex:facet>
+                        <apex:outputText value="{!cartitem.requestitem.Related_Qualification__r.Colour_Comments__c}" />
+                    </apex:column>
+
+                    <apex:column >
+                        <apex:facet name="header">Comments</apex:facet>
+                        <apex:inputTextArea style="width:70%;"
+                            value="{!cartitem.requestitem.Special_Handling__c}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+    <apex:form rendered="{!IF(searchResults.size!=0,true,false)}">
+        <apex:pageBlock id="selectedContact">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!Add_onClick}" value="Add to Selection"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="true" id="Record1" columns="1">
+                <apex:facet name="header">
+                    <span style="color: black">Items Available for Selection</span>
+                </apex:facet>
+                <apex:pageBlockTable id="searchResults" value="{!SearchResults}"
+                    var="sr" width="732px">
+                    <apex:column headerValue="Ordered Quantity">
+                        <apex:inputText value="{!sr.quantity}" size="4"
+                            style="color:black; font-style:normal; font-weight:bold; font-family:Arial"></apex:inputText>
+                    </apex:column>
+                    <apex:column headerValue="Unit of Measure"
+                        value="{!sr.catalogItem.Unit_of_Measure__c}" />
+                    <apex:column >
+                        <a href="/DPTNomexCustomerCommunity/{!sr.catalogItem.Material__c}"
+                            style="left: 100px; top: 277px;" target="_blank"
+                            id="{!sr.catalogItem.Material__c}"
+                            onblur="LookupHoverDetail.getHover('{!sr.catalogItem.Material__c}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!sr.catalogItem.Material__c}', '/{!sr.catalogItem.Material__c}/m?retURL=%2F{!sr.catalogItem.Material__c}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!sr.catalogItem.Material__c}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!sr.catalogItem.Material__c}', '/{!sr.catalogItem.Material__c}/m?retURL=%2F{!sr.catalogItem.Material__c}&isAjaxRequest=1').show();">{!sr.catalogItem.Material__r.Name}</a>
+                        <apex:facet name="header">Material</apex:facet>
+                    </apex:column>
+                    <apex:column headerValue="Reference Id"
+                        value="{!theQual.Reference_Id__c}" />
+                    <apex:column headerValue="Construction"
+                        value="{!theQual.Construction__c}" />
+                    <apex:column headerValue="Colour"
+                        value="{!theQual.Colour_Comments__c}" />
+                    <apex:column >
+                        <a href="/DPTNomexCustomerCommunity/{!theQual.id}" style="left: 100px; top: 277px;"
+                            id="{!theQual.id}" target="_blank"
+                            onblur="LookupHoverDetail.getHover('{!theQual.id}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!theQual.id}', '/{!theQual.id}/m?retURL=%2F{!theQual.id}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!theQual.id}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!theQual.id}', '/{!theQual.id}/m?retURL=%2F{!theQual.id}&isAjaxRequest=1').show();">{!theQual.Name}</a>
+                        <apex:facet name="header">Selected Qualification id</apex:facet>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection collapsible="true" id="Record" columns="1">
+                <apex:facet name="header">
+                    <span style="color: black">Active Garments in DuPont™ Nomex®
+                        Garment Catalogue </span>
+                </apex:facet>
+                <apex:pageBlockTable value="{!activegarmentcerts}" var="activecerts">
+                    <apex:column >
+                        <apex:facet name="header">Action</apex:facet>
+                        <apex:commandLink action="{!Search_onClick}" title="Order Label">
+                            <div
+                                style="color: green; font-style: normal; font-weight: bold; font-family: Arial">Order
+                                Label</div>
+                            <apex:param name="qualid" value="{!activecerts.Id}" />
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Reference id</apex:facet>
+                        <apex:outputText value="{!activecerts.Reference_Id__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Construction</apex:facet>
+                        <apex:outputText value="{!activecerts.Construction__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Colour</apex:facet>
+                        <apex:outputText value="{!activecerts.Colour_Comments__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Qualification Program</apex:facet>
+                        <apex:outputText value="{!activecerts.Qualification_Program__r.name}" />
+                    </apex:column>
+                    <apex:column >
+                        <a href="/DPTNomexCustomerCommunity/{!activecerts.id}" target="_blank">{!activecerts.Name}</a>
+                        <apex:facet name="header">Qualification Id</apex:facet>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:form >
+    </apex:form>
+</apex:page>

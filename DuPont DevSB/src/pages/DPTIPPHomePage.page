@@ -1,0 +1,23 @@
+<apex:page docType="html-5.0">
+<style type="text/css">
+        .BoldBlue { font-weight: bold; color:#000066;font-size:large;}
+        .BackgrndWhite{background-color:yellow}
+    </style>
+<div id='parent' style='background:white;'>
+<apex:outputText styleClass="BoldBlue " value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_01}"/>
+<p><apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_02}"/></p>
+<p>
+<apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_03}"/></p>
+&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_04}"/>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_05}"/>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_06}"/>
+<p><apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_07}"/></p>
+<p><apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_08}"/>&nbsp;
+<apex:outputLink value="https://one-dupont.my.salesforce.com/DPTPartnerCommunity/apex/CreateCase" target="_blank">{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_09}</apex:outputLink></p>
+
+<p><apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_10}"/>&nbsp;
+<apex:outputLink value="http://protectiontechnologies.dupont.com/LP=880" target="_blank">{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_09}</apex:outputLink></p>
+<p><apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_11}"/></p><br/>
+<p><apex:outputText value="{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Page_Custom_Label_12}"/></p>
+</div>
+</apex:page>

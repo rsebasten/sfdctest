@@ -1,0 +1,71 @@
+<apex:page docType="html-5.0" standardStylesheets="true" sidebar="false" controller="ConstructionPts.MobileCustomSearchListController">
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/CPMobile.css')}"/>  
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.min.css')}"/>    
+<apex:includeScript value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master,'Mobile-Design-Templates-master/common/js/jQuery2.0.2.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master,'Mobile-Design-Templates-master/common/js/jquery.touchwipe.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master,'Mobile-Design-Templates-master/common/js/main.min.js')}"/>
+
+<apex:form >
+<div id="data">
+<ul>
+<li id='top' class='sf1ListHeader'></li>
+</ul>
+</div>
+</apex:form>
+
+<script>
+ $(function() {
+      
+    var fieldList = null;
+    var offset = 0;
+    var endOfList = false;
+    var customSearchId = '{!CASESAFEID($CurrentPage.Parameters.customSearchId)}';
+        
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.MobileCustomSearchListController.customSearchName}',customSearchId , setHeader,{escape: false} );
+               
+    function setHeader(result, event) {
+        $('#top').text(result.replace(/\\\\\\\'/g, "'").replace(/\\\\\\/g, "\\").replace(/\\\\/g, "\\"));
+    }  
+     
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.MobileCustomSearchListController.retrieveCustomSearchListItems}', customSearchId , offset, displayElements);
+    
+    function displayElements(sReturn) {
+      if (sReturn != null){
+        var objectList = sReturn;
+        if (objectList.length < 20) endOfList = true;
+        
+        // delete old load button
+        $( "#load" ).remove();
+        
+        // remove all click events
+        $("#data li").off("click");
+        
+        for (var i = 0; i < objectList.length; i++) {
+            var r = objectList[i];
+            $("#data ul").append("<li id="+r.recId+" class='sf1List'>"+r.recName+"</li>");
+            $("#data ul li:last").append("<table></table>");
+            for (var j = 0; j < r.recFields.length; j++) { 
+                if (r.recFields[j]  != undefined) $("#data ul li:last table").append("<tr><td class='fieldName'>" +r.recDisplayFields[j]+ "</td><td>&nbsp;&nbsp;</td><td class='fie/*ldValue '>" +  r.recFields[j] + "</td></tr>");
+            } 
+        }
+        $("#data li").not("#top").not("#load").click(function() {
+            sforce.one.navigateToSObject($(this).attr("id"));
+        });
+        
+        // create new load button
+        if (offset <= 2000 && endOfList == false) {
+            $("#data ul").append("<li id='load' class='sf1List'>Load more</li>");
+         
+             $("#load").click(function() {
+                 offset += 20;
+                 Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.MobileCustomSearchListController.retrieveCustomSearchListItems}', customSearchId , offset, displayElements);
+             });
+        }
+      }
+    }   
+    });
+</script>
+</apex:page>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Route - direto ao lead (antiga Task)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DTS_Templates_Brasil_Timbre</letterhead>
+    <name>*** Route 2017 - BR ***</name>
+    <style>freeForm</style>
+    <subject>DuPont Customer Care - contato: {!Lead_Routing__c.Lead_Name__c}</subject>
+    <textOnly>Bom dia, XXXXXXXXXXXXXXXX !
+
+Recebemos a solicitação abaixo através do nosso site/telefone corporativo, por gentileza atender assim que possível.
+
+Ao fazer uma solicitação, automaticamente o cliente é informado que será atendido em até 2 dias úteis.
+
+Agradecemos a parceria.
+
+Equipe
+DuPont TeleSolutions
+
+______________________________________________________
+
+
+
+Informações do Chamado
+
+
+Campo especial: {!Lead_Routing__c.Name}
+Criado por: {!Lead_Routing__c.CreatedBy}
+Data criação: {!Lead_Routing__c.Lead_Created_Time__c}
+Link de referência: {!Lead_Routing__c.Link}
+Origem Contato: {!Lead_Routing__c.Origin_Name__c}
+Response Type: {!Lead_Routing__c.Response_Type__c}
+
+
+Informações do Cliente
+
+
+Empresa: {!Lead_Routing__c.Lead_Company__c}
+
+Contato: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c}
+Endereço: {!Lead_Routing__c.Lead_Address__c}
+País: {!Lead_Routing__c.Lead_Country__c}
+Email: {!Lead_Routing__c.Lead_Email__c}
+Celular: {!Lead_Routing__c.Lead_Mobilephone__c}
+Telefone: {!Lead_Routing__c.Lead_Phone__c}
+
+
+Informações Adicionais
+
+Soube da DuPont através de: {!Lead_Routing__c.Leadsource__c}
+Motivo contato: {!Lead_Routing__c.Type__c}
+Segmento de Interesse: {!Lead_Routing__c.Market_Segment__c}
+
+
+Solicitação:
+
+{!Lead_Routing__c.Description__c}
+
+
+Produto:
+
+{!Lead_Routing__c.Solution_1__c} {!Lead_Routing__c.Solution_2__c} {!Lead_Routing__c.Solution_3__c} {!Lead_Routing__c.Solution_4__c} {!Lead_Routing__c.Solution_5__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

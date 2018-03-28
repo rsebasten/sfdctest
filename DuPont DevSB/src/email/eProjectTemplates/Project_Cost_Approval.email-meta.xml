@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>eMail template for approving eProjects cost</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Project Cost Approval</name>
+    <style>freeForm</style>
+    <subject>approval needed: {!eProject__c.Name}</subject>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

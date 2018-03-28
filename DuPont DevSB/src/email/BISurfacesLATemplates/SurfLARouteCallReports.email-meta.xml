@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template used to share call report info within the SBU (through link)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Surf LA Route Call Reports</name>
+    <style>freeForm</style>
+    <subject>SFDC Surfaces LA - Liga a call report de la cuenta {!Call_Report__c.Account__c}</subject>
+    <textOnly>A continuación encontrarás la liga al call report titulado {!Call_Report__c.Name}, de la cuenta {!Call_Report__c.Account__c}.
+ 
+Cualquier duda estoy a tus ordenes.
+ 
+Liga: {!Call_Report__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

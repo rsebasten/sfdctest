@@ -1,0 +1,40 @@
+<apex:page sidebar="true" showHeader="true"  controller="ctrlBIeWarrantyCodeCreation" >
+    <apex:form >
+        <apex:pageBlock title="Warranty Code generation page">
+            <center>
+                <apex:outputPanel >
+                    <table>
+                        <tr>
+                            <td align="right" width="20%">
+                                <apex:outputLabel value="Start Code" for="stCode"/>
+                            </td>
+                            <td align="left" width="20%">
+                                <apex:inputText id="stCode" value="{!startCode}"/>
+                            </td>
+                        </tr>              
+                        <tr>
+                            <td align="right" width="20%">
+                                <apex:outputLabel value="End Code" for="enCode"/>
+                            </td>
+                            <td align="left" width="20%">
+                                <apex:inputText id="enCode" value="{!endCode}"/> 
+                            </td>
+                        </tr>  
+                        <tr>
+                            <td align="right" width="20%">
+                                <apex:outputLabel value="Owing Organisation" for="ownOrg"/>
+                            </td>
+                            <td align="left" width="20%">                       
+                                <apex:outputText id="ownOrg" value="{!owingOrg}"></apex:outputText>
+                            </td>
+                        </tr> 
+                    </table> 
+                </apex:outputPanel>
+                <apex:pageMessages />
+                <b><apex:commandButton id="submit" value="Submit" action="{!generateWarCodes}"/></b>
+            </center>
+        </apex:pageBlock> 
+        <b><apex:commandButton id="exportWarCodes" value="Export to CSV" action="/apex/BI_WarrantyCodesToExcel"/></b>
+        <b><apex:commandButton id="exportExistingCodes" value="Existing Codes" action="/apex/BI_ExistingCodesToExcel"/></b>
+    </apex:form>
+</apex:page>

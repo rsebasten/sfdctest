@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SFAR - Use to send email to Key User re: pending reactivations that need myAccess requests</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>SFAR: Reactivate User - Still Pending myAccess</name>
+    <style>none</style>
+    <subject>ACTION: {!SFDC_Access_Request__c.First_Name__c} {!SFDC_Access_Request__c.Last_Name__c} {!SFDC_Access_Request__c.Type__c} : {!SFDC_Access_Request__c.Status__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

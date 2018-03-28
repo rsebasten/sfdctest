@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Thermal Industrial</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Aramids</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-ES</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-PM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Public Sector-ER</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Public Sector-LE</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Public Sector-MIL</values>
+        </dashboardFilterOptions>
+        <name>Owning Organization</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>notEqual</operator>
+            <values>01241000001E71X</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>01241000001E71X</values>
+        </dashboardFilterOptions>
+        <name>Case Record Type</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>Filter out Quick Complaints using the Case Record Type Filter.
+Filter by Market Segment using Owning Organization Filter(s). Does not include &quot;Invalid Complaints&quot;
+Hover over for details, click to go to data in report format for exporting</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Complnt_by_MfgPlt</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Manufacturing Plant</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Complnt_by_Reason1</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>By Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Complnt_by_Acct</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>By Customer</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Complnt_xStatus_Typ</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Status and Type</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Complnt_by_Reason_2</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>By SubReason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Cmplnt_by_Acct_Reas</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>By Customer by Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Right</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Cmplnt_Reg_Created</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Region of Complaint Origin</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Complnt_by_Reas_1_2</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>By Reason and SubReason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Owning_Organization__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Current Month&apos;s Nomex Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Curr_Mnth_Nomex_Complnt_by_SubCat</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>By SubCategory</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>ramona.y.haskins@dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>DPT Nomex Complaint Dashboard - Current Month</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

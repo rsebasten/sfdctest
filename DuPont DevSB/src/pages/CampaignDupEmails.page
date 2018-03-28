@@ -1,0 +1,88 @@
+<apex:page controller="ctrlCampaignDupEmails" ReadOnly="true" cache="true" contenttype="{!IF(ISNULL($CurrentPage.parameters.ctype),null,$CurrentPage.parameters.ctype+'#dupEmails.xls')}">
+
+<apex:includescript value="{!URLFOR($Resource.DataTables1_7_5,'/DataTables-1.7.5/media/js/jquery.js')}" />
+<apex:includescript value="{!URLFOR($Resource.DataTables1_7_5,'/DataTables-1.7.5/media/js/jquery.dataTables.js')}" />
+<head>
+<style>
+	table.messageTable td { border-width:0px; } 
+	body .pbBody table.list tr.dataRow table.messageTable td { border-width:0px; } 
+</style>
+<script type="text/javascript">
+        var j$ = jQuery.noConflict();   
+        j$(document).ready(function() {
+            j$('.report').dataTable( {
+                "bPaginate": false,
+                "bLengthChange": false,
+                "bFilter": true,
+                "bSort": true,
+                "bInfo": false,
+                "bAutoWidth": false } );
+
+            //j$('.datepicker').html('');  
+            
+            });
+            
+          
+</script>
+</head>
+
+<apex:pageMessage rendered="{!DuplicateMembers.size==0}" summary="No Duplicate Emails Found!" severity="INFO" strength="3" />
+<apex:pageMessage rendered="{!DuplicateMembers.size!=0}" summary="This email address appears multiple times in Campaigns for the current wave.  Review and assign this email address to only one Campaign for this Wave.  You may need to contact another Campaign Owner to reconcile which Campaign is the most appropriate for this email address." severity="Error" strength="3" /><!-- AB20150821 Increasing severity from Warning to Error -->
+    <!--AB20150909 Replaced the Message above - The records shown below reflect the emails that appear multiple times in Campaign and Sibling Campaigns if a parent Campaign is specified. -->
+
+
+
+<apex:pageBlock title="Campaign Member Duplicates">
+
+<apex:pageBlockButtons location="top">
+<apex:outputPanel rendered="{!ISNULL($CurrentPage.parameters.ctype)}">
+<apex:form >
+	<apex:commandLink styleClass="btn" style="text-decoration:none;" value="Back to Campaign" action="{!back}" />
+	<apex:commandLink styleClass="btn" style="text-decoration:none;" value="Export To Excel" action="{!$CurrentPage.url}?id={!camp.id}&ctype=application/vnd.ms-excel" target="x"/>
+	<iframe id="x" name="x" style="width:0px;height:0px;border:0px;"></iframe>
+</apex:form>
+</apex:outputPanel>
+</apex:pageBlockButtons>
+
+ 	    <table class="report list" cellpadding="0" cellspacing="0" border="0" style="width:100%">
+        <thead><tr class="headerRow" style="width:100%">
+			<th>Member Email</th>
+			<th>Contact</th>
+			<th>Account</th>
+			<th>Contact Owner</th>
+			<th>Campaign.Name</th>
+			<th>Campaign Owning Org</th>
+			<th>Campaign Owner</th>
+			<apex:outputPanel rendered="{!!ISNULL($CurrentPage.parameters.ctype)}" layout="none">                
+				<th>CampaignMemberId</th>
+                <th>CampaignId</th>
+                <th>ContactId</th>
+                <th>AccountId</th>
+			</apex:outputPanel>
+			
+        </tr></thead>
+        <tbody>
+         <apex:repeat value="{!DuplicateMembers}" var="r" >
+            <tr class="dataRow">
+				<td><apex:outputLink value="/{!r.Id}?retURL={!$CurrentPage.url}&saveURL={!$CurrentPage.url}">{!r.contact.email}</apex:outputLink></td>
+				<td><apex:outputField value="{!r.contactid}"/></td>
+				<td><apex:outputField value="{!r.contact.accountid}"/></td>
+				<td><apex:outputField value="{!r.contact.ownerid}"/></td>
+				<td><apex:outputField value="{!r.campaignid}"/></td>
+				<td><apex:outputField value="{!r.campaign.Owning_Org__c}"/></td>
+				<td><apex:outputField value="{!r.campaign.ownerid}"/></td>
+			<apex:outputPanel rendered="{!!ISNULL($CurrentPage.parameters.ctype)}" layout="none">                
+				<td>{!r.Id}</td>
+                <td>{!r.CampaignId}</td>
+                <td>{!r.Contact.Id}</td>
+                <td>{!r.Contact.AccountId}</td>
+			</apex:outputPanel>				
+            </tr>
+        </apex:repeat>
+        </tbody>
+        </table>       
+</apex:pageBlock> 
+
+
+
+</apex:page>

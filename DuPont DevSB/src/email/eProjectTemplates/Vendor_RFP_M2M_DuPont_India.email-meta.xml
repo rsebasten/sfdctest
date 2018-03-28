@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>USE FOR M2M PROJECTS: Vendor RFP - DuPont India/TCS &amp; Elemica</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>M2M - Vendor RFP - DuPont India/TCS &amp; Elemica</name>
+    <style>formalLetter</style>
+    <subject>DuPont {!eProject__c.Business_Unit__c} {!eProject__c.TradingPartner__c}  EDI Project RFP</subject>
+    <textOnly>INSTRUCTIONS:
+
+This process is to be used for all global M2M projects
+Use this version when DuPont India has lead for eConnect activities
+Check Accuracy of Content
+Attach relevant document(s)
+Remove this instruction before sending this request via email to TCS and Elemica
+Copy email addresses below to the &quot;Additional To&quot; field
+
+eConnect email address:
+
+TCSDuPontAMS.EconnectMiddleware@tcs.com
+
+
+Elemica email address:
+
+projectrequests@elemica.com
+** Note to TCS: no additional PQR is needed for Elemica**
+
+
+DuPont is requesting that TCS and Elemica respond with their proposals within 2 weeks from date of this request.
+
+
+DuPont SBU: {!eProject__c.Business_Unit__c}
+
+
+DuPont Trading Partner: {!eProject__c.TradingPartner__c}
+
+
+Project Background
+
+DuPont&apos;s {!eProject__c.Business_Unit__c} business unit is requesting an EDI implementation with {!eProject__c.TradingPartner__c} due to {!eProject__c.Project_Driver__c}.
+
+
+{!eProject__c.Background__c}
+
+
+Currently, DuPont and {!eProject__c.TradingPartner__c} exchange
+
+{!eProject__c.Annual_Transactions__c} messages annually.
+
+Scope of Work
+
+{!eProject__c.Message_Type__c}
+
+Project Goal/Project Concept
+
+{!eProject__c.Project_Concept__c}
+
+Desired Go-Live Timeframe
+
+{!eProject__c.Requested_Date__c}.  Assume execution to start as soon as possible - please submit compressed schedule where possible.
+
+Comments/Miscellaneous (i.e. required timing if applies)
+
+{!eProject__c.Requested_Date_Issues__c}
+
+Requestor/Contacts
+
+Please submit your proposal to:
+
+
+Delivery Manager: {!eProject__c.OwnerFullName}
+Technical Requirements/TP Setup form:
+
+
+--------------------------------------
+
+
+TCS Specific Information:
+
+
+Work description/expected work output:
+
+This request is to gain assistance from TCS e-Connect to support the development work of DuPont IT India.
+TCS eConnect will provide a consulting role in conjunction with DuPont IT India.
+TCS eConnect will review work outputs from DuPont IT India following the standard eConnect project process.
+TCS eConnect will attend meetings as required, review work outputs, respond to questions and consult on issues resolution with DuPont IT India following the established eConnect project process.
+TCS eConnect will deploy the reviewed and approved code for the
+in-scope messages in NEW ICAN 5.0.5.
+Submit proposal/estimate in eConnectDuPontShared Lotus Notes database
+
+RFP effort NTE:
+
+20 Hours, To determine requirements &amp; prepare estimate &amp; Project Approval Request document.
+
+
+Note: a technical walkthrough may be scheduled depending on the project complexity.
+
+
+This request should be billed against SOW #
+
+
+--------------------------------------
+
+
+Elemica Specific Information:
+
+
+Work description/expected work output
+
+Gain assistance from Elemica in support of development, testing and implementation of messages and routing for this project.
+
+
+RFP effort NTE
+
+20 Hours, To determine requirements &amp; prepare Statement of Work &amp; Project Approval Request document
+
+
+Note: a technical walkthrough may be scheduled depending on the project complexity.
+
+
+This request should be billed against Elemica 2016 Small/Medium Projects and Enhancement Services – SOW #.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

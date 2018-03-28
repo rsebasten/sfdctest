@@ -1,0 +1,75 @@
+<apex:page controller="ctrlMetadataConsole" action="{!init}" tabstyle="Metadata__c">
+
+
+<apex:sectionHeader subtitle="Refresh Metadata"  Title="Console"/> 
+
+<apex:form >
+
+
+<apex:pageBlock >
+
+        <apex:pageMessage rendered="{!jobInProcess}"  severity="info" strength="3"
+        summary="A Job has been send to refresh the metadata. You will be notified by email when complete." />
+        <apex:pageMessages />
+    <br></br>
+    
+    
+<apex:pageBlockSection columns="1" title="Refresh Metadata Database Assets">
+Database Assets consist of: SObjects, Fields, and PicklistEntrys.
+including:  multiPicklists values, Lookup and Master/Detail Relationships
+<br/><b>Delete Handling:</b> field, Sobjects are soft deletes, picklists are hard deletes and may take 24hrs to reflect.
+<br/><br/><b>Note:  This will run as a batch job for All sObjects.  You will be notified by email on completion. (Excludes __History, __Sharing and other SFDC support tables.)</b>
+
+<apex:commandButton value="Refresh Database" action="{!RefreshDatabase}" disabled="{!jobInProcess}"/>
+</apex:pageBlockSection>
+
+
+<apex:pageBlockSection columns="1" title="Refresh Metadata Layout Assets">
+    <apex:selectList id="sl" value="{!selectedSObject}" multiselect="false" size="1">
+        <apex:selectOptions value="{!sObjects}" />
+    </apex:selectList>
+Layout Assets consist of: Recordtype, Layouts, LayoutField and RecordTypePicklist (filtered Picklists) records.
+including:  RecordType to Layout Relationship.
+<br/><b>Delete Handling:</b> soft deletes. 
+<br/><br/><b>Note:  This will run as a batch job.  You will be notified by email on completion.</b>
+<apex:commandButton value="Refresh Layout" action="{!RefreshLayout}" disabled="{!jobInProcess}"/>
+</apex:pageBlockSection>
+
+
+<apex:pageBlockSection columns="1" title="Refresh Other Assets">
+    <apex:selectList id="s2" value="{!selectedCategory}" multiselect="false" size="1">
+        <apex:selectOptions value="{!mtypeCategories}" />
+    </apex:selectList>
+Other assets consist of the following metadata types: {!otherTypes}
+<br/><br/>
+<b>Security Types:</b> Profile, PermissionSet, Role, Group
+<br/><br/>
+<br/><b>Delete Handling:</b> soft deletes. 
+<br/><br/>
+<b>Note:  This will run as a batch job for all sObjects.  You will be notified by email on completion.</b>
+<apex:commandButton value="Refresh Other MetadataTypes" action="{!refreshOtherTypes}" disabled="{!jobInProcess}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="1" title="Refresh Metadata Logic Assets">
+Logic Assets consist of: ApexClass,  ApexTrigger,  VisualforcePage, VisualforceComponent records.  
+<br/><b>Delete Handling:</b> soft deletes.
+<br/><br/>
+<b>Note:  This will run as a batch job.  You will be notified by email on completion.</b>
+<apex:commandButton value="Refresh Logic" action="{!RefreshLogic}" disabled="{!jobInProcess}"/>
+</apex:pageBlockSection>
+
+
+</apex:pageBlock>
+
+
+<apex:outputPanel rendered="{!!(IsNull(DmlResult) || IsNull(DmlResult.results) || DmlResult.results.size=0)}">
+<apex:pageBlock title="Unsuccessful Results:  (INVALID_FIELD Items are common)">
+    <apex:repeat value="{!DmlResult.results}" var="r" id="theRepeat">
+        <b>Record:</b>{!r.record}<br/>
+        <b>Error(s):</b>{!r.errors}<br/>
+        <hr/>
+    </apex:repeat>
+</apex:pageBlock>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

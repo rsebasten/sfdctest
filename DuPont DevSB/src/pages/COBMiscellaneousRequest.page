@@ -1,0 +1,324 @@
+<apex:page controller="ctrlCOBCustomerDataRequest" tabstyle="Customer_Data_Request__c" id="MiscellaneousPageId">
+<head>
+<style>
+.buttons a.btn{width:70px;height:200px;}
+.spinnerCt {
+    left: 50%;
+    position: fixed;
+    top: 35%;
+    z-index: 1050;
+    padding: 20px 40px;
+    box-shadow: 0pt 2px 5px rgb(172, 172, 172);
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid rgb(206, 236, 255);
+    background-color: rgb(206, 236, 255);
+    background-style: solid;
+}
+
+.spinner {
+    padding: 10px 15px 10px 0pt;
+    vertical-align: middle;F
+    float: left
+}
+.bPageBlock .dataCol{
+    padding-right:0px;
+}
+.spinnerCt .loadingIndicator {
+    display: inline;
+    font-size: 135%;
+    font-weight: bold;
+    float: left
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.45;
+    filter: alpha(opacity =     45);
+    position: absolute;
+    z-index: 1000;
+    top: 0pt;
+    left: 0pt;
+}
+
+
+.custPopup {
+background-color : white;
+border-width : 5px;
+border-style: groove;
+border-color: black;
+border-width: thin;
+left : 50%;
+padding : 10px;
+position : fixed;
+width : 400px;
+margin-left : -150px;
+height : 100px;
+top : 225px;
+z-index: 1050;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;
+}
+
+.popupBackground {
+background-color : grey;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50);
+opacity: .5;
+position : absolute;
+width : 100%;
+height : 100%;
+top : 0;
+left : 0;
+z-index: 1000;
+}
+</style>
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script>
+<script type="text/javascript">
+
+function sellingCompanyDependents(){
+var txtVal11 = document.getElementById("{!$Component.MainPage.pb.Pb1.CompanyCode}").value;
+
+rerenderCompanyDependents(txtVal11);
+
+}
+function SBUDependents(){
+var txtVal12 = document.getElementById("{!$Component.MainPage:pb:Pb1:PbsI1:SBUId}").value;
+
+rerenderSBUDependents(txtVal12);
+}
+function SubBusiness(){
+var txtVal13 = document.getElementById("{!$Component.MainPage:pb:Pb1:PbsI3:SubBusinessId}").value;
+
+rerenderSubBusiness(txtVal13);
+}
+var previousOnload = window.onload; 
+window.onload = function() { 
+    if (previousOnload) { 
+        previousOnload(); 
+    } 
+    
+    MiscellaneousIntent();
+}
+
+function GroupKeyLoad(){
+var txtVal5 = document.getElementById("{!$Component.MainPage.pb.Pb1.GKey}").value;
+OtherGroupKey(txtVal5);
+}
+
+function MiscellaneousIntent(){
+var txtVal16 = document.getElementById("{!$Component.MainPage.pb.Pb1.Pbs5.intent}").value;
+rerenderMiscellaenousIntent(txtVal16);
+}
+
+</script>
+<body>
+<apex:form id="MainPage" rendered="{!IF((displayMainPage==true && showEditErrorPage==false && showErrorPage==false && showNewCustomerErrorPage==false),true,false)}" >
+
+<apex:sectionHeader title="" subtitle="Miscellaneous customer data request"/>
+    <apex:actionStatus id="counterStatus">
+        <apex:facet name="start">
+            <div class="spinnerMask" id="spinnerMask">
+                <div class="spinnerCt">
+                    <img src="/img/analytics/reportbuilder/icons/spinner32.gif" alt="Loading..." width="32" height="32" class="spinner" title="Loading..." />
+                    <div class="loadingIndicator">Loading...</div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+
+<apex:actionFunction name="rerenderCompanyDependents" status="counterStatus" immediate="true" rerender="Pb1,pwPanel,taxcategory,propcurreCode1,propcurreCode2,propcurreCode,sbu,proposedcreditrep,proposedcreditrep1,custcurrency" action="{!fetchSellingCompanyDependents}"  >
+    <apex:param name="EleventhParam" assignTo="{!sellingCompanyCode}" value="" />
+</apex:actionFunction>  
+<apex:actionFunction name="rerenderSBUDependents" rerender="SalesOrgId,SubBusinessId,GKey,multiselectId" status="counterStatus" immediate="true" action="{!fetchSBUDependents}">
+<apex:param name="TwelthParam"  assignTo="{!SBUCode}" value=""/>
+</apex:actionFunction>
+<apex:actionFunction name="rerenderSubBusiness" rerender="multiselectId" status="counterStatus" immediate="true" action="{!NotifyUsersAvailable}">
+<apex:param name="ThirteenthParam"  assignTo="{!SubBusinessCode}" value=""/>
+</apex:actionFunction>
+<apex:actionFunction name="OtherGroupKey" rerender="Pb1" status="counterStatus" immediate="true" action="{!checkOtherGroupKey}">
+<apex:param name="fifthParam" value=""/>
+</apex:actionFunction>
+<apex:actionFunction name="rerenderMiscellaenousIntent" rerender="approvalId,approvalId2" status="counterStatus" immediate="true" action="{!requireCreditApproval}" >
+<apex:param name="SixteenthParam" assignTo="{!MiscIntent}" value="" />
+</apex:actionFunction>  
+
+<apex:pageBlock title="Request Information" id="pb"> 
+<apex:outputPanel id="errorMsgId"><apex:pagemessages ></apex:pagemessages></apex:outputPanel>
+                <apex:pageBlockButtons location="both">
+        <b><apex:commandLink value="    Save    " action="{!redirectLink}" styleClass="btn" rerender="pb,openpopUp,errorMsgId" style="text-decoration:none;" status="counterStatus"><apex:param id="param1" name="IsSaveOrSubmit1" assignTo="{!IsSaveOrSubmit}" value="Save"/></apex:commandLink>
+        <apex:commandLink value="    Cancel    " action="{!Cancel}" styleClass="btn" style="text-decoration:none;" immediate="true" status="counterStatus"></apex:commandLink>     
+        <apex:commandLink value="    Save & Submit    " action="{!redirectLink}" rerender="pb,openpopUp,errorMsgId" styleClass="btn" style="text-decoration:none;" status="counterStatus"><apex:param name="IsSaveOrSubmit" id="param2" assignTo="{!IsSaveOrSubmit}" value="Submit"/></apex:commandLink>
+        <apex:commandLink value="    Close    " action="{!RedirectCancelAndClose}" immediate="true" rendered="{!IF(((PageAccess==true) && (isEdit ==true) && (Ishide == false) && (OnboardingReq.Request_Status__c != 'Request Completed in SAP' || OnboardingReq.Request_Status__c !='Request Sent for Re-Work') &&(!RecordLocked)),true,false)}" styleClass="btn" style="text-decoration:none;" status="counterStatus1"></apex:commandLink> </b>
+        </apex:pageBlockButtons>
+        <center> 
+        <apex:outputLabel style="font-weight:bold;text-align:center;background-color:yellow;">Warning:  Use Miscellenous requests only when the request cannot be processed using the standard record types.</apex:outputLabel>
+        </center>
+        <apex:outputText ></apex:outputText>
+        <apex:pageBlockSection Id="Pb1" Title="Request Details" columns="2">
+        <apex:outputField value="{!OnboardingReq.Name}" id="cdrname"/>
+        <apex:outputText />
+        <apex:outputField value="{!OnboardingReq.Customer__c}" rendered="{!IF(RecordTypeName != 'New Customer Creation' && accountid!='null',true,false)}"/>
+        <apex:outputfield value="{!OnboardingReq.Account__c}" id="cdrId" rendered="{!IF(accountid!='null',true,false)}" />
+        <apex:outputField value="{!OnboardingReq.Requestor_Name__c}"/>
+        <apex:inputField value="{!OnboardingReq.Requestor_Phone_Number__c}" required="true"/>
+        <apex:outputField value="{!OnboardingReq.Requestor_Email__c}"/>
+        
+        <c:MultiSelectPicklist id="multiselectId" leftLabel=" Dupont Marketing Rep/Manager"
+                        leftOptions="{!NotifyUsers}"
+                        rightLabel="Selected Users"
+                        rightOptions="{!SelectedNotifyUsers}"
+                        size="6"
+                        width="120px" />
+        <!--<apex:inputField value="{!OnboardingReq.Dupont_Marketing_Rep_Manager__c}" required="true"/>--> 
+        
+        <!--<apex:outputText ></apex:outputText>-->
+        <apex:inputField value="{!OnboardingReq.Request_Description__c}" required="true" style="width: 300px; height: 100px;"/>
+
+            <apex:outputText ></apex:outputText>
+       
+                       
+        
+        <!-- <apex:outputText rendered="{!IF(accountid!='null',false,true)}" ></apex:outputText> -->
+        <!--<apex:outputText ></apex:outputText>-->
+        <!-- <AL2015/12/02>Added by support team for Contact Look up-->
+        <!--<apex:inputField id="Contact" value="{!OnboardingReq.Partner_Contact__c}"  />-->
+        <apex:outputText value="{!RecordTypeName}" label="Type of Request"></apex:outputText>
+        <apex:inputField value="{!OnboardingReq.Priority__c}"/>
+        <apex:outputField value="{!OnboardingReq.Request_Status__c}"/>
+        <apex:outputText ></apex:outputText>
+        <apex:inputField value="{!OnboardingReq.SF_Region__c}" required="true"/>
+        <!-- Fix for dependent picklist starts -->
+        <apex:inputField id="CompanyCode" value="{!OnboardingReq.Company_Code__c}" onChange="sellingCompanyDependents();" required="true" >
+          <!-- <apex:actionSupport event="onChange" reRender="outputpanel1,Pb2,pwPanel" action="{!testing}"/>-->
+        </apex:inputField>
+         <apex:pageBlockSectionItem id="PbsI1">
+        <apex:outputLabel value="SBU" for="SBUId"/>
+        <apex:outputPanel styleClass="requiredInput" id="ouputPanelId1" layout="block">
+        <apex:outputPanel styleClass="requiredBlock" id="outputPanelId2" layout="block"/>
+         <apex:selectList id="SBUId" value="{!OnboardingReq.SBU__c}" size="1" required="true" onChange="SBUDependents();">
+                            <apex:selectOptions value="{!SBUOptions}"  /> 
+                        </apex:selectList>
+         </apex:outputPanel>               
+           </apex:pageBlockSectionItem>             
+            <apex:pageBlockSectionItem id="PbsI2">
+        <apex:outputLabel value="Sales Organization" for="SalesOrgId"/>
+        <apex:outputPanel styleClass="requiredInput"  layout="block">
+        <apex:outputPanel styleClass="requiredBlock"  layout="block"/>
+                  
+                        <apex:selectList id="SalesOrgId" value="{!OnboardingReq.Sales_Organization__c}" size="1" required="true">
+                            <apex:selectOptions value="{!SalesOrgOptions}" /> 
+                        </apex:selectList>
+            </apex:outputPanel>               
+           </apex:pageBlockSectionItem>              
+             <apex:pageBlockSectionItem id="PbsI3">
+        <apex:outputLabel value="Sub – Business" for="SubBusinessId"/>
+        <apex:outputPanel styleClass="requiredInput"  layout="block">
+        <apex:outputPanel styleClass="requiredBlock"  layout="block"/>            
+                        <apex:selectList id="SubBusinessId" value="{!OnboardingReq.Sub_Business__c}" size="1" required="true" onChange="SubBusiness();">
+                            <apex:selectOptions value="{!SubBusinessOptions}" /> 
+                        </apex:selectList>
+         </apex:outputPanel>               
+           </apex:pageBlockSectionItem>                
+              <apex:pageBlockSectionItem id="PbsI4">
+        <apex:outputLabel value="Group Key" for="GKey"/>
+        <apex:outputPanel styleClass="requiredInput"  layout="block">
+        <apex:outputPanel styleClass="requiredBlock"  layout="block"/>           
+                        <apex:selectList id="GKey" value="{!OnboardingReq.Group_Key__c}" size="1" onchange="GroupKeyLoad();" required="true">
+                            <apex:selectOptions value="{!GroupKeyOptions}" /> 
+                        </apex:selectList>
+         </apex:outputPanel>               
+           </apex:pageBlockSectionItem> 
+        <apex:inputField id="othergroupkey" value="{!OnboardingReq.Other_Group_Key__c}" required="{!if(OnboardingReq.Group_Key__c =='Other' ,true,false)}" rendered="{!openOtherGroupKey}"/>
+        <apex:inputField value="{!OnboardingReq.Distribution_Channel__c}" required="true"/>
+        <apex:inputField value="{!OnboardingReq.Account_Group__c}" />
+       <!-- <apex:outputField value="{!OnboardingReq.Account_Group__c}" rendered="{!IF(RecordTypeName != 'Miscellaneous customer data request',true,false)}" /> -->
+        <apex:inputField value="{!OnboardingReq.Division__c}" required="true"/>
+        <apex:inputField value="{!OnboardingReq.Leveraged_CSR__c}" rendered="{!leveragechkFlag}"  />
+        <apex:outputtext rendered="{!!leveragechkFlag}"/>
+         
+      
+    
+ 
+     <!--<apex:PageBlockSectionItem > 
+       <apex:outputLabel value="Intent of Miscellaneous Type" style="width:30px;font-weight:bold;color:#4a4a56;font-size: 11px;white-space:nowrap;"></apex:outputLabel> 
+       <apex:actionRegion > 
+       <apex:inputField value="{!OnboardingReq.Miscellaneous_Type_Intent__c}"  required="true">
+       <apex:actionSupport event="onchange" status="counterStatus"  reRender="output"/>
+       </apex:inputfield>
+       </apex:actionRegion>
+       </apex:PageBlockSectionItem>--> 
+       <apex:pageBlockSectionItem id="Pbs5" >
+          <apex:outputLabel value="Miscellaneous Type Intent" for="intent"/>
+       <apex:outputPanel styleClass="requiredInput"  layout="block">
+        <apex:outputPanel styleClass="requiredBlock"  layout="block"/>  
+       <apex:selectList id="intent" value="{!OnboardingReq.Miscellaneous_Type_Intent__c}" size="1" required="true" onChange="MiscellaneousIntent();">
+            <apex:selectOptions value="{!items}"/>
+           
+        </apex:selectList>
+       </apex:outputPanel>
+         </apex:pageBlockSectionItem>
+       
+         <apex:outputPanel id="approvalId">
+           
+          <apex:pageBlockSectionItem >  
+          <apex:outputLabel value="Requires Credit Approval"  rendered="{!if(flagIntent== true && (MiscIntent== 'Others'), true, false)}"  style="margin-left:30px;width:30px;font-weight:bold;color:#4a4a56;font-size: 11px;white-space:nowrap;"  />           
+           
+            <apex:inputField label="Requires Credit Approval" value="{!OnboardingReq.Credit_Approval_Required__c}" rendered="{!if(flagIntent== true && (MiscIntent== 'Others'), true, false)}" style="margin-left:24px" />
+           
+          </apex:pageBlockSectionItem>
+          
+          
+          <apex:outputLabel value="Requires Credit Approval"  rendered="{!if(flagIntent== true && (MiscIntent== 'Block' || MiscIntent== 'Unblock' || MiscIntent== 'Mass load - non finance data'  || MiscIntent== 'Mass load - finance data'), true, false)}"  style="margin-left:30px;width:30px;font-weight:bold;color:#4a4a56;font-size: 11px;white-space:nowrap;"  /> 
+            <span style="margin-left:18px"> </span> <apex:outputField label="Requires Credit Approval" value="{!OnboardingReq.Credit_Approval_Required__c}" rendered="{!if(flagIntent== true && (MiscIntent== 'Block' || MiscIntent== 'Unblock' || MiscIntent== 'Mass load - non finance data' || MiscIntent== 'Mass load - finance data'), true, false)}"  />
+          </apex:outputPanel>
+        
+       <apex:inputField value="{!OnboardingReq.Business_Justification__c}" style="width: 300px; height: 100px;" required="true" />
+         <apex:outputField value="{!OnboardingReq.Case_Number__c}" rendered="{!If(OnboardingReq.Case_Number__c!=null,true, false)}"  />
+
+    </apex:pageBlockSection>
+</apex:pageBlock>   
+</apex:form>
+<!-- Show Edit Error Page -->
+
+<apex:form id="EditErrorPage" rendered="{!IF((showEditErrorPage == true && OnboardingReq.Request_Status__c != 'Request Completed in SAP'),true,false)}" >
+<b><apex:pageMessage summary="You cannot Edit this record now as it is locked." severity="error" strength="1" ></apex:pageMessage></b>
+</apex:form>
+
+<!-- Show error page when account is not null but customer is null for miscellaneous-->
+<apex:form id="AccoutErrorMessage" rendered="{!IF((showNewCustomerErrorPage== true && OnboardingReq.Request_Status__c != 'Request Completed in SAP'),true,false)}" >
+<b><apex:pageMessage summary="You cannot create this record as there is not customer linked." severity="error" strength="1" ></apex:pageMessage></b>
+</apex:form>
+<!-- Show Comments Section to Re-open the Request -->
+
+<apex:form id="Reopen" rendered="{!IF((showEditErrorPage == true && OnboardingReq.Request_Status__c == 'Request Completed in SAP'),true,false)}" >
+<apex:sectionHeader title="" subtitle="Customer Onboarding Request"/>
+    <apex:actionStatus id="counterStatus1">
+        <apex:facet name="start">
+            <div class="spinnerMask" id="spinnerMask">
+                <div class="spinnerCt">
+                    <img src="/img/analytics/reportbuilder/icons/spinner32.gif" alt="Loading..." width="32" height="32" class="spinner" title="Loading..." />
+                    <div class="loadingIndicator">Loading...</div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+<apex:pageBlock title="Request Information" id="pbext" rendered="{!IF(((PageAccess==true || ProfileName=='System Administrator') && (!RecordLocked)),true,false)}"> 
+<apex:pagemessages />
+    <apex:pageBlockButtons location="both">
+        <b><apex:commandLink value="    Save    " action="{!redirectLink}" styleClass="btn" rerender="pbext,openpopUp,errorMsgId" style="text-decoration:none;" status="counterStatus1"><apex:param id="param1ext" name="IsSaveOrSubmit1" assignTo="{!IsSaveOrSubmit}" value="Save"/></apex:commandLink>
+        <apex:commandLink value="    Cancel    " action="{!Cancel}" styleClass="btn" style="text-decoration:none;" immediate="true" status="counterStatus1"></apex:commandLink>     
+        <apex:commandLink value="    Save & Submit    " action="{!redirectLink}" rerender="pbext,openpopUp,errorMsgId" styleClass="btn" style="text-decoration:none;" status="counterStatus1"><apex:param name="IsSaveOrSubmit" id="param2ext" assignTo="{!IsSaveOrSubmit}" value="Submit"/></apex:commandLink>
+        <apex:commandLink value="    Close/Cancel    " action="{!RedirectCancelAndClose}" immediate="true" rendered="{!IF(((PageAccess==true) && (isEdit ==true) &&(Ishide == false)&& (!RecordLocked)),true,false)}"  styleClass="btn" style="text-decoration:none;" status="counterStatus1"></apex:commandLink> </b>
+    </apex:pageBlockButtons>
+  <apex:PageBlockSection Title="Re-Open Request : CSR Comments" Columns="1">
+  <apex:inputField value="{!OnboardingReq.CSR_Comments__c}" style="width: 300px; height: 100px;" required="true"/>
+  </apex:PageBlockSection>
+  </apex:pageBlock>
+</apex:form>
+
+</body>  
+</apex:page>

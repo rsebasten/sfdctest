@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>10 UPDATE Notify Contact-Lead of Corian database Registration - GERMAN</name>
+    <style>formalLetter</style>
+    <subject>DuPont</subject>
+    <textOnly>Sehr geehrte/r Herr/Frau {!Lead.Name},&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+Sie haben uns vor kurzem gebeten Ihre Kontaktdaten aus der
+
+DuPont™ Corian® Datenbank zu löschen.
+
+
+Wir möchten Sie darauf hinweisen, das bei einer Löschung Ihrer Daten auch die Daten Ihrer DuPont™ Corian® Küchenarbeitsplatten-Registrierung verloren gehen.
+
+Wenn diese Daten NICHT gelöscht werden sollen, Antworten Sie uns bitte auf diese E-Mail und geben Sie uns Ihr Einverständnis
+
+Ihre Kontaktdaten weiterhin speichern zu dürfen.
+
+
+Wir versichern Ihnen, dass Sie keine Mailings von uns erhalten, da wir Ihre Daten nicht anderweitig nutzen.
+
+
+Sollten wir innerhalb von 7 Arbeitstagen keine Nachricht von Ihnen erhalten, werden wir alle gespeicherten Daten löschen.
+
+
+Mit freundlichen Grüßen
+
+
+
+{!User.Username}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

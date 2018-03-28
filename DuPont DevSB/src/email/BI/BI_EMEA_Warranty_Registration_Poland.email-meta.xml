@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI EMEA warranty Registration end customer template in Polish</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Warranty_Registration_LOGO</letterhead>
+    <name>BI-EMEA Warranty Registration Poland</name>
+    <style>freeForm</style>
+    <subject>DuPont ™ Corian ® - zarejestrowany w pełnym zakresie gwarancji</subject>
+    <textOnly>data,  {!Entitlement.LastModifiedDate}
+
+
+
+Kod gwarancyjny {!Entitlement.Entitlement_Code__c}
+
+
+
+
+Szanowny Panie/ Szanowna Pani {!Entitlement.Primary_Contact__c},
+
+
+Dziękujemy za  wybór blatu kuchennego DuPont™ Corian®. Jesteśmy pewni, że marka DuPont™ Corian®,  znana z wysokiej jakości estetycznej i funkcjonalności,  zapewni elegancję w Państwa kuchni.
+
+
+Uprzejmie informujemy, że rejestracja Państwa blatu – poprzez naszą stronę www.corian.pl - przebiegła pomyślnie.
+
+
+Prosimy o zwrócenie uwagi na to, że 10-letnia Ograniczona Gwarancja DuPont™ Corian® jest ważna od daty widniejącej na dokumencie zakupu. W celu udokumentowania zasadności reklamacji, prosimy o zachowanie faktury zakupu lub paragonu. Zachęcamy również Państwa do zapoznania się z Warunkami 10-letniej Ograniczonej Gwarancji DuPont™ Corian® zamieszczonej w broszurze ‘DuPont™ Corian®, Wskazówki dotyczące użytkowania i konserwacji’ oraz na stronie www.corian.pl.
+
+
+
+Niektóre kolory wymagają większej dbałości, dlatego zalecamy Państwu uważne przeczytanie broszury o użytkowaniu blatów Corian dostępnej na www.corian.pl
+
+
+W celu uzyskania wsparcia przy rejestracji Państwa blatu kuchennego lub dodatkowych informacji  o materiale DuPont™ Corian®,
+
+prosimy o kontakt telefoniczny:  +48 22 320 09 74
+
+
+W celu uzyskania informacji na temat działania gwarancji DuPont™ Corian®:
+
+Infolinia: 0 801 800 083
+
+
+Z wyrazami szacunku,
+
+DuPont Building Innovations
+
+
+Owalne logo DuPont, DuPont ™, The miracles of science ™ oraz wszystkie produkty oznaczone ® lub ™ są zarejestrowanymi znakami towarowymi lub znakami towarowymi firmy EI du Pont de Nemours and Company lub jej filii.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+<!--/*******************************************************************************
+Copyright © 2015 DuPont. All rights reserved. 
+Author: Sanchit Dua
+Email: sanchit.dua@accenture.com
+Description:  VF page for displaying the corresponding home page component into SFSC.
+********************************************************************************/-->
+ <apex:page standardController="User">
+    <apex:composition template="page_CSBannerScriptsStyles"></apex:composition>
+    <a id="sys" class="thick" onclick="slideComponents();setBannerMsg(this);"></a>
+</apex:page>

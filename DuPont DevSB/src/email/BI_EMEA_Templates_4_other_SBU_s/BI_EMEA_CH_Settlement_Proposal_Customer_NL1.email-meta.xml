@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Settlement proposal to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Settlement  Proposal Customer NL</name>
+    <style>formalLetter</style>
+    <subject>Voorstel tot schikking (case: {!Case.CaseNumber})</subject>
+    <textOnly>Geachte klant,
+
+Met betrekking tot uw klacht {!Case.CaseNumber} gedateerd {!Case.Date_Entered__c}, gelieve ons voorstel tot schikking te willen vinden:
+
+{!Case.Special_Instructions__c}
+
+Tenzij U het niet eens met bovenstaande regeling zijnde kredietnota / vervanging / gratis materiaal, zal uw dossier worden doorgegeven aan onze afdeling klantenservice voor de uitvoering ervan.
+
+Wij verontschuldigen ons voor de veroorzaakte ongemakken, en hopen dat we deze klacht op een voor U bevredigende wijze hebben kunnen oplossen. Mogen wij U vragen bovengenoemd referentienummer bij alle correspondentie te vermelden.
+
+Wij danken U voor Uw snelle reactie.
+
+Met vriendelijke groeten,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

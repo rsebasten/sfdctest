@@ -1,0 +1,20 @@
+<apex:page controller="ctrlPunchoutBPHandler" action="{!init}">
+<apex:form >
+<apex:messages />
+<apex:outputpanel id="debug" rendered="{!showResponse}">
+<h1>SFDC - POOM Handler</h1> 
+<br/>
+	Browser post:
+   <br/>
+  <textarea name="payload" style="width:600px;height:600px;" encoded="false">{!cxml}</textarea>
+    <br/>
+	Headers:
+    <br/>
+  <textarea name="payload" style="width:600px;height:600px;" encoded="false">{!headers}</textarea>
+ <br/>
+   <br/>
+   <br/>
+<apex:commandButton action="{!parsePOOM}" value="Continue"/>
+</apex:outputpanel>
+</apex:form>
+</apex:page>

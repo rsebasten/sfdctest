@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Demand_MigrationUser_RS_RW_PSCRM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>(06-JUL-17) - Issue fix for IS ID-00082857.  This is a &quot;generic&quot; share to extend &apos;Data Migration User&apos; owned records with PS CRM role and subordinates ---due to original owners being inactive in OneDuPont.</description>
+        <label>Demand Migration User RW to RS PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

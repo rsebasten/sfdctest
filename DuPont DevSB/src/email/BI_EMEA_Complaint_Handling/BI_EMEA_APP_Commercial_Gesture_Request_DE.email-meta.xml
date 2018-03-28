@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA Request for commercial gesture to sales</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Commercial Gesture Request - DE</name>
+    <style>formalLetter</style>
+    <subject>Anfrage für kommerzielle Vereinbarung (case: {!Case.CaseNumber})</subject>
+    <textOnly>Liebe Kollegin, lieber Kollege,
+In Bezug auf unsere Reklamation {!Case.CaseNumber} vom {!Case.Date_Entered__c}, bitte ich Sie uns zu informieren ob Sie diese Beanstandung als kommerzielle Kulanz abhandeln wollen, weil wir sie gemäß den aktuellen Garantie-Richtlinien nicht anerkennen können.
+
+Link: {!Case.Link}
+Subject: {!Case.Subject}
+Description: {!Case.Description}
+
+Bitte erklären Sie auch den Grund der Annahme.
+
+Vielen Dank für Ihre schnelle Rückantwort.
+
+
+Mir freundlichen Grüssen,
+
+
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

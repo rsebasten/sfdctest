@@ -1,0 +1,50 @@
+<apex:page cache="true" controller="ctrlDPT_NomexPartnerSearch"
+    contenttype="application/vnd.ms-excel#Qualification.xls" showHeader="false">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    </head>
+    <apex:outputPanel id="QualificationList">
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!QualificationListNext}" var="cl"
+                rendered="{!QualificationListNext<>null}" border="1" columns="11">
+                <apex:column value="{!cl.accountName}">
+                    <apex:facet name="header">Account/Weaver</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.productReference}">
+                    <apex:facet name="header">Product reference</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.color}">
+                    <apex:facet name="header">Colour</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.weight}">
+                    <apex:facet name="header">Weight</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.useAs}">
+                    <apex:facet name="header">Use as/ Sub Type</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.construction}">
+                    <apex:facet name="header">Construction</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.extraComfort}">
+                    <apex:facet name="header">Extra Comfort</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.extraMechanicalPerformance}">
+                    <apex:facet name="header">Extra Mechanical Performance</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.extraWaterAndOilRepellency}">
+                    <apex:facet name="header">Extra Water and Oil repellency</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.extraLongLastingPerformance}">
+                    <apex:facet name="header">Extra Long Lasting Performance</apex:facet>
+                </apex:column>
+                <apex:column value="{!cl.extraAestheticPerformance}">
+                    <apex:facet name="header">Extra Aesthetic Performance</apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+       <br/><br/><br/><br/>
+        <div style="position:relative;color:grey">
+            {!$Label.Nomex_Disclaimer}
+        </div>
+       </apex:outputPanel>
+</apex:page>

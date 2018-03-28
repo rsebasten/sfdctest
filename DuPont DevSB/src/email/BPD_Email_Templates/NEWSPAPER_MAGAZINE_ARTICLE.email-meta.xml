@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>NEWSPAPER/MAGAZINE ARTICLE</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - Notice of Trademark Infringement {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+This is in reference to the ____________ article entitled “_______________” in the _______________ section of your edition of _________________.
+
+
+We appreciate the favorable mention of our company in your article and drawing your readers’ attention to the fact that the {!Case.Product_Selected__c} is a product made by DuPont.  DuPont has invested  a substantial amount of effort and financial resources in advertising and promoting its trademarks in order to establish them as a symbol of our company’s high quality products.  We are sure you will agree with us that trademarks are valuable properties deserving protection.
+
+
+As a reminder and in our endeavor to diligently protect our intellectual property, we would like to emphasize the proper use of our trademarks when cited in published articles.
+
+
+At least once in any article that makes mention of a DuPont trademark, the word DuPont™ (with the ™ superscript) should precede the product trademark that in turn should carry a trademark superscript ™ or registered trademark superscript ® depending upon the specific trademark.  In addition, a footnote should be included indicating the relevant portion of our descriptor, “The DuPont Oval Logo, DuPont™, The miracles of science™ and all products denoted with a ™ and ® are trademarks or registered trademarks of DuPont or its affiliates.”
+
+
+In the case of the subject article, mention of DuPont™ {!Case.Product_Selected__c} along with the footnote “{!Case.Product_Selected__c} are registered trademarks of DuPont or its affiliates” would have been the proper manner in which to describe these trademarks. By the way, the use of DuPont (without the ™) is correct for describing the company when not directly associating it with a trademark.
+
+
+We trust this information will be helpful, and we encourage and would appreciate your publication complying with these guidelines in all future articles that make mention of our company’s trademarks.
+
+
+If you have any questions concerning the proper identification of our trademarks, please feel free to contact us at brand.protection@dupont.com or by fax at 302-380-3509.
+
+
+Thank you for your assistance and cooperation in this matter.
+
+
+Sincerely,
+
+
+DuPont Brand Protection Center
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>SFAR_Issue_Manager_Share_All</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share all SFARs with SFDC Issue Managers</description>
+        <label>SFAR Issue Manager Share All</label>
+        <sharedTo>
+            <group>SFDCIssueManagers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SFAR - Create or Reactivate User,SFAR - Password Reset,SFAR - Deactivate User,SFAR - Create Portal User,SFAR - Modify Access</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SFAR_PA_C_InstanceEqualsDupontUtil_PG_SFDC_Utility_Support_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SFAR_PA_C_InstanceEqualsDupontUtil-PG_SFDC_Utility_Support_RW</label>
+        <sharedTo>
+            <group>SFDC_Utility_Support</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>equals</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SFDC_Access_Approvers_BI</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give read/write access to BI Business Approvers for all BI SFARs.</description>
+        <label>SFDC Access Approvers BI</label>
+        <sharedTo>
+            <group>SFDC_Access_Approvers_BI</group>
+        </sharedTo>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Approving_Business__c</field>
+            <operation>equals</operation>
+            <value>Building Innovations</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>equals</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SFDC_Access_Approvers_BI_PA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give read/write access to BI Business Approvers for all BI-PA SFARs.</description>
+        <label>SFDC Access Approvers BI-PA</label>
+        <sharedTo>
+            <group>SFDC_Access_Approvers_BI_PA</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Approving_Business__c</field>
+            <operation>equals</operation>
+            <value>Building Innovations</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>equals</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SFDC_Access_Approvers_CORP_IT</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give read/write access to IT Business Approvers for all CORP-IT SFARs.</description>
+        <label>SFDC Access Approvers CORP-IT</label>
+        <sharedTo>
+            <group>SFDC_Access_Approvers_CORP_IT</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Approving_Business__c</field>
+            <operation>equals</operation>
+            <value>Corporate - IT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>equals</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SFDC_Access_Approvers_CORP_IT_PA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give Read/Write access to IT Business Approvers for all CORP-IT-PA SFARS.</description>
+        <label>SFDC Access Approvers CORP-IT-PA</label>
+        <sharedTo>
+            <group>SFDC_Access_Approvers_CORP_IT_PA</group>
+        </sharedTo>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Approving_Business__c</field>
+            <operation>equals</operation>
+            <value>Corporate - IT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>equals</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SFDC_Access_Approvers_DPT</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give read/write access to DPT Business Approvers for all DPT SFARs.</description>
+        <label>SFDC Access Approvers DPT</label>
+        <sharedTo>
+            <group>SFDC_Access_Approvers_DPT</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Approving_Business__c</field>
+            <operation>equals</operation>
+            <value>Protection Technologies</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>notEqual</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SFDC_Access_Approvers_DPT_PA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give read/write access to DPT Business Approvers for all DPT-PA SFARs.</description>
+        <label>SFDC Access Approvers DPT-PA</label>
+        <sharedTo>
+            <group>SFDC_Access_Approvers_DPT_PA</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Approving_Business__c</field>
+            <operation>equals</operation>
+            <value>Protection Technologies</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>equals</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>DPT_AP_DAFS_JV_Key_Users_shared_with_group_DPT_AP_DAFS_JV_Access_Approver</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT AP DAFS JV Key Users&quot; shared with group DPT AP DAFS JV Access Approver</label>
+        <sharedTo>
+            <group>DPT_AP_DAFS_JV_Access_Approver</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPT_AP_DAFS_JV_Key_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFAR_PA_PG_SFDC_Utility_IssueMgr_PG_SFDC_Utility_IssueMgr_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>SFAR_PA_PG_SFDC_Utility_IssueMgr-PG_SFDC_Utility_IssueMgr_R</label>
+        <sharedTo>
+            <group>SFDC_Utility_issue_manager</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SFDC_Utility_issue_manager</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFAR_PA_PG_SFDC_Utility_Support_PG_SFDC_Utility_Support_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SFAR_PA_PG_SFDC_Utility_Support-PG_SFDC_Utility_Support_RW</label>
+        <sharedTo>
+            <group>SFDC_Utility_Support</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SFDC_Utility_Support</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFAR_PG_DPT_KY_PG_DPT_KY_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SFAR-PG_DPT_KY-PG_DPT_KY-RW</label>
+        <sharedTo>
+            <group>DPT_Key_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPT_Key_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

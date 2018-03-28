@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>CSAT_CLSMapping - Field mapping between CustomerSat and Customer Loyalty Survey object.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CLS_FieldName__c</fullName>
+        <description>Customer Loyalty Survey Field Name</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Customer Loyalty Survey Field Name</inlineHelpText>
+        <label>CLS_FieldName</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSAT_Desc__c</fullName>
+        <description>CSAT Desc</description>
+        <externalId>false</externalId>
+        <label>CSAT Desc</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSAT_QID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>CustomerSAT Question ID (QID)</description>
+        <externalId>true</externalId>
+        <inlineHelpText>CustomerSAT Question ID (QID)</inlineHelpText>
+        <label>CSAT_QID</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Direction__c</fullName>
+        <description>push / pull or both</description>
+        <externalId>false</externalId>
+        <label>Direction</label>
+        <length>20</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CSAT_CLSMapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

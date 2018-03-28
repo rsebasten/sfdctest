@@ -1,0 +1,54 @@
+<apex:component id="sitePageBody"  allowDML="true" controller="ctrlSitePageBody">
+<apex:attribute name="page" type="PageBase" description="PageBase" required="true" assignTo="{!Base}" />
+<script>
+    function SitePageBody_Done() {
+        window.top.location.replace("{!returnUrl}");
+    }
+</script>
+
+    <!-- script redirect target=top -->
+    <apex:outputpanel id="pNoAtt" rendered="{!(!includeAttachment) && (!ISNULL(Script)) && (!showScript)}">  
+        Thank you! redirecting...
+    <script>
+        window.top.location.replace("{!returnUrl}");
+    </script>
+    </apex:outputpanel> 
+    
+    <apex:outputpanel id="pSS" rendered="{!showScript}">
+        <script>self.scroll(0,0);</script>
+        <c:SiteScript script="{!script}" /> 
+        
+        <!-- Show Button and optionally CAPTCHA -->
+        <apex:outputPanel rendered="{!(script.AllowChange || script.writeToObject.Id==null)}">
+            <apex:outputPanel id="captcha" rendered="{!!ISNULL(ctrlCAPTCHA)}" >
+                <c:reCAPTCHA ctrl="{!ctrlCAPTCHA}"/>
+                <apex:outputText escape="false" style="color:red;font-weight:bold;" value="{!$Label.Site_InvalidCAPTCHA+'<br/>'}"  rendered="{!(CAPTCHA_Msg=='CAPTCHA_INVALID')}" />
+                <br/><apex:commandButton onclick="javascript:captureResponse(this);" value="{!$Label.site.submit}" action="{!save}" />
+            </apex:outputPanel>
+            
+            <apex:commandbutton id="submit" action="{!save}" value="{!$Label.site.submit}" rendered="{!ISNULL(ctrlCAPTCHA)}" />
+        </apex:outputPanel>
+        
+        <br/><br/><br/>
+    </apex:outputpanel>
+
+    <!-- Add Attachment page -->
+    <apex:outputpanel id="pAtt" rendered="{!includeAttachment && (!showScript)}" >  
+        <script>self.scroll(0,0);</script>
+        <BR/><BR/>
+        <c:SiteAttachment maxAttachments="5" CompleteOnClick="SitePageBody_Done();" showAttachments="true" parentId="{!script.writeToObject.Id}" accept="application/pdf, application/x-zip-compressed, application/zip, application/msword, application/vnd.ms-excel,application/vnd.ms-powerpoint ,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.wordprocessingml.document ,image/jpeg, image/pjpeg" />
+    </apex:outputpanel> 
+    
+    <!-- Used for a SiteObject: returnURL redirect -->
+    <apex:outputpanel id="redir" rendered="{!ISNULL(script)}" layout="none">    
+        <center><b>Loading...</b></center>
+            <c:Processing />
+            <SCRIPT src="{!URLFOR($Resource.Jquery_1_7_2,'/js/jquery-1.3.2.min.js')}" type="text/javascript" />
+            <apex:actionFunction name="sitePage_Redirect" action="{!Redirect}"/>
+            <script>
+                var j$ = jQuery.noConflict();
+                j$(document).ready(function() { sitePage_Redirect(); });
+            </script>
+    </apex:outputpanel> 
+
+</apex:component>

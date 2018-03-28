@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>RESPONSE TO PROOF OF USE</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - DuPont Trademark Proper Usage: {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+Thank you for your prompt response to our letter dated _________.  We are in receipt of the product certification documents enclosed in your response dated ________, in the form of _______________________________.  These documents comply with our request for demonstrating authenticity of materials as genuine DuPont™ {!Case.Product_Selected__c}.
+
+
+We appreciate your willingness to take the necessary steps to correct all instances of use of DuPont™ {!Case.Product_Selected__c} on your website (within the next 30 days) and printed materials.  Further to this point and in response to your questions in your letter dated __________, our trademark rules apply to the use of DuPont trademarks for correspondence (internal and external), e-mails, labels, hang tags, packaging, shipping containers, promotional/informational literature, advertisements, invoices, purchase orders, and other trademark related communications.  All DuPont employees, affiliates and downstream partners must abide by these rules, including DuPont subsidiaries, affiliates and joint ventures, customers, distributors and licensees.  The footnote should be applied at least once per page on your website and once per document on printed materials.  Of course, if you have questions regarding trademark usage and/or language, please feel free to submit your draft proofs of printed materials for preview by a DuPont Marketing Brand Professional or consult your sales representative for DuPont™ {!Case.Product_Selected__c}.  We appreciate the fact that such changes to your printed materials are in accordance to your inventory levels and acknowledge that full trademark compliance of printed materials will occur at the next printing.
+
+
+We thank you, again, for your prompt attention to this matter and your continued use of DuPont™ {!Case.Product_Selected__c} products.
+
+
+Sincerely,
+
+
+
+DuPont Brand Protection Center
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

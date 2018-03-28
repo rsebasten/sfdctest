@@ -1,0 +1,15 @@
+Case Owner: {!Case.OwnerFullName} 
+Case Number: {!Case.CaseNumber} 
+Date Opened {!Case.CreatedDate} 
+Subject: {!Case.Subject} 
+Contact: {!Case.Contact} 
+Account: {!Case.Account} 
+Account Site: {!Account.Site} 
+Priority: {!Case.Priority} 
+
+Case Reason: {!Case.primaryReason__c} {!Case.Reason} 
+Case Description: {!Case.Case_Details_rtf__c} {!Case.Description} 
+
+
+You can click the link below to open the Case. 
+{!Case.Link}

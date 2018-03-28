@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Cost related to an eCommerce Project (used to track both Estimated and Actual cost)</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ActualCost__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Cost</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Case_Action__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference of case action.</description>
+        <externalId>false</externalId>
+        <label>Case Action</label>
+        <referenceTo>Case_Action__c</referenceTo>
+        <relationshipLabel>Cost Tracking</relationshipLabel>
+        <relationshipName>Cost_Tracking</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Cost Tracking</relationshipLabel>
+        <relationshipName>Cost_Tracking1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Element_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Element Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Claims/Penalties Paid</fullName>
+                    <default>false</default>
+                    <label>Claims/Penalties Paid</label>
+                </value>
+                <value>
+                    <fullName>Complaint Handling</fullName>
+                    <default>false</default>
+                    <label>Complaint Handling</label>
+                </value>
+                <value>
+                    <fullName>Customer Concessions</fullName>
+                    <default>false</default>
+                    <label>Customer Concessions</label>
+                </value>
+                <value>
+                    <fullName>Customer Credit</fullName>
+                    <default>false</default>
+                    <label>Customer Credit</label>
+                </value>
+                <value>
+                    <fullName>Disposal</fullName>
+                    <default>false</default>
+                    <label>Disposal</label>
+                </value>
+                <value>
+                    <fullName>Freight</fullName>
+                    <default>false</default>
+                    <label>Freight</label>
+                </value>
+                <value>
+                    <fullName>GMC</fullName>
+                    <default>false</default>
+                    <label>GMC</label>
+                </value>
+                <value>
+                    <fullName>Inspection</fullName>
+                    <default>false</default>
+                    <label>Inspection</label>
+                </value>
+                <value>
+                    <fullName>Inventory Write-Offs</fullName>
+                    <default>false</default>
+                    <label>Inventory Write-Offs</label>
+                </value>
+                <value>
+                    <fullName>Labour</fullName>
+                    <default>false</default>
+                    <label>Labour</label>
+                </value>
+                <value>
+                    <fullName>Lawsuit Expenses</fullName>
+                    <default>false</default>
+                    <label>Lawsuit Expenses</label>
+                </value>
+                <value>
+                    <fullName>Material</fullName>
+                    <default>false</default>
+                    <label>Material</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>Rework</fullName>
+                    <default>false</default>
+                    <label>Rework</label>
+                </value>
+                <value>
+                    <fullName>Transportation</fullName>
+                    <default>false</default>
+                    <label>Transportation</label>
+                </value>
+                <value>
+                    <fullName>Transportation - Delivery</fullName>
+                    <default>false</default>
+                    <label>Transportation - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Transportation - Return</fullName>
+                    <default>false</default>
+                    <label>Transportation - Return</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>Travel-Lodging</fullName>
+                    <default>false</default>
+                    <label>Travel-Lodging</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EstimatedCost__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Cost</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SOW_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>SOW_Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>eProject__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>eProject</label>
+        <referenceTo>eProject__c</referenceTo>
+        <relationshipLabel>Cost Tracking</relationshipLabel>
+        <relationshipName>Cost_Tracking</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Cost Tracking</label>
+    <nameField>
+        <displayFormat>CT-{00}</displayFormat>
+        <label>Cost Tracking Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Cost Tracking</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>BI_Cost_Tracking</fullName>
+        <active>true</active>
+        <label>BI Cost Tracking</label>
+        <picklistValues>
+            <picklist>Cost_Element_Type__c</picklist>
+            <values>
+                <fullName>Customer Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inspection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lawsuit Expenses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Return</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel-Lodging</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Cost_Tracking</fullName>
+        <active>false</active>
+        <label>Cost Tracking</label>
+        <picklistValues>
+            <picklist>Cost_Element_Type__c</picklist>
+            <values>
+                <fullName>Customer Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inspection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lawsuit Expenses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Return</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel-Lodging</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_7949397</developerName>
+        <masterLabel>Segment</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>CUST_CREATED_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Stephen Cheng</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jerry Han</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Benson Shao</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alice Zhang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andy Shen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Terry Wang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alex Yu</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bob Zhu</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Li</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hanwen Huang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Helina Zhou</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lloyd Gao</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jessie Liang</sourceValue>
+            </sourceValues>
+            <value>Auto &amp; PM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Icy Gao</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jia Zhen Feng (Bob)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeffrey Pan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Zhu</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Zhang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nickel huang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Richard Zhang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bert Li</sourceValue>
+            </sourceValues>
+            <value>ES</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Bruce Zhou</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Wu</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Yang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jimmy Li</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Diana Dai</sourceValue>
+            </sourceValues>
+            <value>IPP &amp; PS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Coy Li</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Leo Li</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lily Yue</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hong Zhang</sourceValue>
+            </sourceValues>
+            <value>MPP &amp; BCA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Jessica Chen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robbie Mok</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Max Li</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jack Hou</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Min Zong</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vivian Bao</sourceValue>
+            </sourceValues>
+            <value>GPP &amp; Optical</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Dominic Weng</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Xu</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ann Wang</sourceValue>
+            </sourceValues>
+            <value>BD</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1 AND 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.User_Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CHINA,HONG KONG,TAIWAN</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Fred Wang,Lloyd Gao,Benson Shao,Ava Gu,Tim Liao,Daniel Xu,Rankin Zhu,Alfred Xue,Debbie Huang,Hui Kou,Iris Xu,April Zhao,Kontopher Li,Maolei Zhen</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>Call_Report__c.Call_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_CREATED_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Owning_Organization__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>G.China Kevlar(R) Call Reports Summary2</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Call_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Call_Report__c.Call_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-01-01</startDate>
+    </timeFrameFilter>
+</Report>

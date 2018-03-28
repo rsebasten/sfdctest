@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to terminate QN partnership with a service center</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA QN Termination Letter EN</name>
+    <style>formalLetter</style>
+    <subject>Termination Letter - QN Contract ({!Qualification__c.Reference_Id__c})</subject>
+    <textOnly>Dear Partner,
+
+We hereby terminate the above-mentioned Agreement between our companies dated {!Qualification__c.Start_Date__c} by giving you thirty (30) days written notice from the date of receipt of this letter, in accordance with Article 9 thereof.  
+Please return any support material i.e. embosser, warranty cards, quality marks, to DuPont within 14 days.
+
+Very truly yours,
+ 
+Patrick S. Schriber
+Director
+DuPont™ Corian® / DuPont Building Innovations
+BI-Warranty@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

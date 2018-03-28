@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Medical Packaging</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Chemical Industrial,DPT Cleanroom/Pharma,DPT-IPP</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Envelopes,DPT-Graphics,DPT-Graphics &amp; Protective Packaging,DPT-Ind Pkg &amp; Protection</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>BI-Env,BI</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>notEqual</operator>
+            <values>BI-Env,BI,DPT-Envelopes,DPT-Graphics,DPT-Graphics &amp; Protective Packaging,DPT-Ind Pkg &amp; Protection,DPT-Chemical Industrial,DPT Cleanroom/Pharma,DPT-IPP,DPT-Medical Packaging</values>
+        </dashboardFilterOptions>
+        <name>Segments</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>All dates are currently based on the Opportunity Close Date. This will change in the future to First Ship Date. All Amounts and Expected Revenue have been converted to USD.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Gauge</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <footer>Probability adjusted based on Stage : will be changed in future</footer>
+            <gaugeMax>1.5E7</gaugeMax>
+            <gaugeMin>0.0</gaugeMin>
+            <header>Total Pipeline vs Target</header>
+            <indicatorBreakpoint1>5000000.0</indicatorBreakpoint1>
+            <indicatorBreakpoint2>1.0E7</indicatorBreakpoint2>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>Public_Sector_NA/LA_Open_Opps_Total_Amt_not_adj</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <title>Open Opps - Fwd looking CQ + next 3Q</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Total Pipeline - Ideally 1/3:2/3</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Public_Sector_NA/LA_Tyvek_Offensive_vs_Defensive1</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelDescending</sortBy>
+            <title>Defensive vs Offensive</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Total Pipeline</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Public_Sector_NA/LA_Tyvek_by_country_segment1</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>All Opps by Country and Segment</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Gauge</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <footer>target is 8 to 10% of Regional revenue</footer>
+            <gaugeMax>5000000.0</gaugeMax>
+            <gaugeMin>0.0</gaugeMin>
+            <header>Total Won vs Target</header>
+            <indicatorBreakpoint1>1500000.0</indicatorBreakpoint1>
+            <indicatorBreakpoint2>3000000.0</indicatorBreakpoint2>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>Public_Sector_NA/LA_Won_Opps_vs_Target1</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <title>Won Opps QC + Previous 3Q</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Line</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>All Won Opps</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Public_Sector_NA/LA_Tyvek_Won_Trend_past_2_years</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Won Opps Past 2 FY</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Total Pipeline</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Public_Sector_NA/LA_Tyvke_by_Segment_country</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>All Opps by Segment</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>All Opportunities</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <maxValuesDisplayed>20</maxValuesDisplayed>
+            <report>Public_Sector_NA/LA_Open_Opps_Top_20</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Top 20 QC + Next 3Q</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>Top 20 QC + Next 3 Q by country</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>Public_Sector_NA/LA_Top_20_by_country</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Qc + next 3Q by country</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>BarStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Fiscal period is based on Closed date</footer>
+            <header>$</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Public_Sector_NA/LA_Opps_Top_20</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>LA High Priority Opportunities</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>true</expandOthers>
+            <header>All End-Lost</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Public_Sector_NA/LA_Tyvek_Lost_by_reason1</report>
+            <showPercentage>true</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>All Lost Opportunities CY by Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>marnick.dewilde@lux.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>LA T&amp;T Opps Dashboard</title>
+    <titleColor>#3333FF</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test Scenario</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Scenarios</value>
+    </caseValues>
+    <fields>
+        <help><!-- Any assumptions or dependencies required for this scenario to work --></help>
+        <label><!-- Assumptions --></label>
+        <name>Assumptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- By checking this box, you are indicating that this Test Scenario will be tested during each Wave, even if it passes. --></help>
+        <label><!-- Business Critical --></label>
+        <name>Business_Critical__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Process --></label>
+        <name>Business_Process__c</name>
+        <relationshipLabel><!-- Test Scenarios --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If the business has accepted the ALL of the Test Results for this Scenario, this box should be checked. --></help>
+        <label><!-- Business Sign-off --></label>
+        <name>Business_Sign_off__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Result --></label>
+        <name>Expected_Result__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked means - Test Scenario that has failed, and cannot be resolved during the Current Wave.  By Checking, Workflow will automatically move to next Wave of Testing. --></help>
+        <label><!-- Move to Next Wave --></label>
+        <name>Move_to_Next_Wave__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Overall Status of the Testing Scenario and Testing Results --></help>
+        <label><!-- Overall Status --></label>
+        <name>Overall_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fix Post Production</masterLabel>
+            <translation><!-- Fix Post Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Final Test</masterLabel>
+            <translation><!-- Ready for Final Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Sign-off</masterLabel>
+            <translation><!-- Ready for Sign-off --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What happened when you performed the test Scenario?  Did it meet your Expected Results? --></help>
+        <label><!-- Post Go Live Actual Results --></label>
+        <name>PGL_Actual_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- The base reason that the Test Failed --></help>
+        <label><!-- Post Go Live Root Cause --></label>
+        <name>PGL_Root_Cause__c</name>
+        <picklistValues>
+            <masterLabel>User Issue</masterLabel>
+            <translation><!-- User Issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If any portion of this scenario Fails, Mark this Fail --></help>
+        <label><!-- Post Go Live Test Result --></label>
+        <name>PGL_Test_Result__c</name>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Parent - or overriding Master of a series or grouping of Test Scenarios --></help>
+        <label><!-- Parent Scenario --></label>
+        <name>Parent_Scenario__c</name>
+        <relationshipLabel><!-- Test Scenarios --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The analysis by the SFDC Team of the Test Scenario Failure Reason --></help>
+        <label><!-- SFDC Analysis --></label>
+        <name>SFDC_Analysis__c</name>
+        <picklistValues>
+            <masterLabel>1 - Extraction Query</masterLabel>
+            <translation><!-- 1 - Extraction Query --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Metadata Issue</masterLabel>
+            <translation><!-- 2 - Metadata Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Special Characters</masterLabel>
+            <translation><!-- 3 - Special Characters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Other Errors</masterLabel>
+            <translation><!-- 4 - Other Errors --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SFDC Instance --></label>
+        <name>SFDC_Instance__c</name>
+        <picklistValues>
+            <masterLabel>New Org</masterLabel>
+            <translation><!-- New Org --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA Sandbox</masterLabel>
+            <translation><!-- QA Sandbox --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The detailed Description of this Test Scenario --></help>
+        <label><!-- Scenario Description --></label>
+        <name>Scenario_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sign Off Date --></label>
+        <name>Sign_Off_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Type of tests that are needed to be performed in order to completely test this scenario.  Ultimately, there should be at least one Test Result for each Test Type. --></help>
+        <label><!-- Test Types --></label>
+        <name>Test_Types__c</name>
+        <picklistValues>
+            <masterLabel>Analytics (Reports, Dashboards &amp; Views)</masterLabel>
+            <translation><!-- Analytics (Reports, Dashboards &amp; Views) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Design Element</masterLabel>
+            <translation><!-- Custom Design Element --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration</masterLabel>
+            <translation><!-- Data Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data/Design Cleanup</masterLabel>
+            <translation><!-- Data/Design Cleanup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Record Creation</masterLabel>
+            <translation><!-- New Record Creation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Page Layout</masterLabel>
+            <translation><!-- Page Layout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- To indicate the date to complete the scenario test. --></help>
+        <label><!-- Testing Completion Target Date --></label>
+        <name>Testing_Completion_Target_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide the data needed to accomplish this Testing Scenario.  If extensive, provide link or attach files. --></help>
+        <label><!-- Testing Data --></label>
+        <name>Testing_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- A long Text field to capture the Original Testing Results, as well as any comments &amp; discussion regarding the Results. --></help>
+        <label><!-- Testing Results Discussion --></label>
+        <name>Testing_Results_Discussion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Testing Wave --></label>
+        <name>Testing_Wave__c</name>
+        <picklistValues>
+            <masterLabel>Post Go Live Validation</masterLabel>
+            <translation><!-- Post Go Live Validation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wave 1</masterLabel>
+            <translation><!-- Wave 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wave 2</masterLabel>
+            <translation><!-- Wave 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What happened when you performed the test Scenario?  Did it meet your Expected Results? --></help>
+        <label><!-- Wave 1 Actual Results --></label>
+        <name>Wave1Actual_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- What happened when you performed the test Scenario?  Did it meet your Expected Results? --></help>
+        <label><!-- Wave 2 Actual Results --></label>
+        <name>Wave2Actual_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- The base reason that the Test Failed --></help>
+        <label><!-- Wave 1 Root Cause --></label>
+        <name>Wave_1_Root_Cause__c</name>
+        <picklistValues>
+            <masterLabel>Data Issue</masterLabel>
+            <translation><!-- Data Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Issue</masterLabel>
+            <translation><!-- Design Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Issue</masterLabel>
+            <translation><!-- User Issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If any portion of the Test Scenario Fails, select Fail --></help>
+        <label><!-- Wave 1 Test Result --></label>
+        <name>Wave_1_Test_Result__c</name>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retest</masterLabel>
+            <translation><!-- Retest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The base reason that the Test Failed --></help>
+        <label><!-- Wave  2 Root Cause --></label>
+        <name>Wave_2_Root_Cause__c</name>
+        <picklistValues>
+            <masterLabel>Data Issue</masterLabel>
+            <translation><!-- Data Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Issue</masterLabel>
+            <translation><!-- Design Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Issue</masterLabel>
+            <translation><!-- User Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workflow Issue</masterLabel>
+            <translation><!-- Workflow Issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If any portion of this scenario Fails, Mark this Fail --></help>
+        <label><!-- Wave 2 Test Result --></label>
+        <name>Wave_2_Test_Result__c</name>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retest</masterLabel>
+            <translation><!-- Retest --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Test Scenario-Post Go Live Validation --></label>
+        <name>Test_Scenario_PostGoLiveValidation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Test Scenario-Sign-off --></label>
+        <name>Test_Scenario_Sign_off</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Test Scenario-Wave 1 --></label>
+        <name>Test_Scenario_Wave_1</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Test Scenario-Wave 2 --></label>
+        <name>Test_Scenario_Wave_2</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please fill in the name of the Person who performed the Test and documented the Test Results --></errorMessage>
+        <name>Test_Scenario_Tester_is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please document the Actual Results - If Pass - note &quot;As Expected&quot;, if Fail - Include information that can help the followup team to determine the issue - including Error messages, when failure occurred, etc. --></errorMessage>
+        <name>Test_Scenario_Wave1_Results_are_Req</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please document the Actual Results - If Pass - note &quot;As Expected&quot;, if Fail - Include information that can help the followup team to determine the issue - including Error messages, when failure occurred, etc. --></errorMessage>
+        <name>Test_Scenario_Wave2_Results_are_Req</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please document the Actual Results - If Pass - note &quot;As Expected&quot;, if Fail - Include information that can help the followup team to determine the issue - including Error messages, when failure occurred, etc. --></errorMessage>
+        <name>Test_Scenario_Wave3_Results_are_Req</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Test_Result_Discussion --></label>
+        <name>Test_Result_Discussion</name>
+    </webLinks>
+</CustomObjectTranslation>

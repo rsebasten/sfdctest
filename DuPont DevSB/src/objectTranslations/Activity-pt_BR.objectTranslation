@@ -1,0 +1,3429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Used for reporting in time increments (via export to EXCEL) --></help>
+        <label><!-- Activity_Time --></label>
+        <name>Activity_Time__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de Atividade</label>
+        <name>Activity_Type__c</name>
+        <picklistValues>
+            <masterLabel>Agronomy Meeting</masterLabel>
+            <translation><!-- Agronomy Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Request</masterLabel>
+            <translation>Solicitação de aprovação</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audit</masterLabel>
+            <translation>Auditoria</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Close</masterLabel>
+            <translation>Fechado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combine Ride</masterLabel>
+            <translation><!-- Combine Ride --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communication</masterLabel>
+            <translation><!-- Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint</masterLabel>
+            <translation>Reclamação</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation>Contrato</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conversion</masterLabel>
+            <translation>Conversão</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation>Crédito</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Feedback</masterLabel>
+            <translation><!-- Customer Feedback --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Follow-up</masterLabel>
+            <translation>Follow up do cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Interaction</masterLabel>
+            <translation>Interação do cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Notification</masterLabel>
+            <translation>Notificação do cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Service</masterLabel>
+            <translation><!-- Customer Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Support</masterLabel>
+            <translation>Suporte do cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Maintenance</masterLabel>
+            <translation>Manutenção de informações</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demand Generation</masterLabel>
+            <translation>Geração de demanda</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demo Request</masterLabel>
+            <translation>Solicitação de demonstração</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Solution</masterLabel>
+            <translation>Solução de design</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discovery</masterLabel>
+            <translation><!-- Discovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment</masterLabel>
+            <translation>Equipamento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalation / Follow Up</masterLabel>
+            <translation><!-- Escalation / Follow Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Farm Show</masterLabel>
+            <translation><!-- Farm Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field 360 FxF Planting Plan</masterLabel>
+            <translation><!-- Field 360 FxF Planting Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field 360 Notes/Scouting</masterLabel>
+            <translation><!-- Field 360 Notes/Scouting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field 360 VRS prescription</masterLabel>
+            <translation><!-- Field 360 VRS prescription --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fly-In</masterLabel>
+            <translation><!-- Fly-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Large Summer Tour</masterLabel>
+            <translation><!-- Large Summer Tour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation>Marketing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing Event</masterLabel>
+            <translation>Evento de marketing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Gen</masterLabel>
+            <translation><!-- Next Gen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outlook</masterLabel>
+            <translation><!-- Outlook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plot/IMPACT Tour</masterLabel>
+            <translation><!-- Plot/IMPACT Tour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation>Preços</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product /Agronomy Trial Placement</masterLabel>
+            <translation><!-- Product /Agronomy Trial Placement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Setup</masterLabel>
+            <translation><!-- Product Setup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production Support</masterLabel>
+            <translation><!-- Production Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal Delivery</masterLabel>
+            <translation><!-- Proposal Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal Request</masterLabel>
+            <translation><!-- Proposal Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal and Invoice Confirmation</masterLabel>
+            <translation><!-- Proposal and Invoice Confirmation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Propose</masterLabel>
+            <translation>Proposta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualify</masterLabel>
+            <translation>Qualificar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation>Cotar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research/Facilities Tour</masterLabel>
+            <translation><!-- Research/Facilities Tour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sale</masterLabel>
+            <translation>Venda</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample</masterLabel>
+            <translation>Amostra</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selling</masterLabel>
+            <translation><!-- Selling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Request</masterLabel>
+            <translation>Solicitação de serviço</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ship and Support</masterLabel>
+            <translation>Entrega e suporte</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Target</masterLabel>
+            <translation><!-- Target --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Feasibility</masterLabel>
+            <translation><!-- Technical Feasibility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing</masterLabel>
+            <translation><!-- Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tool Support</masterLabel>
+            <translation>Suporte da ferramenta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation>Treinamento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visit</masterLabel>
+            <translation><!-- Visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Report --></label>
+        <name>Call_Report__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Call Type --></label>
+        <name>Call_Type__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Canal</label>
+        <name>Channel__c</name>
+        <picklistValues>
+            <masterLabel>Data File</masterLabel>
+            <translation>Arquivo de dados</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation>Evento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Face to Face</masterLabel>
+            <translation>Pessoalmente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation>Fax</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper mail</masterLabel>
+            <translation>Carta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation>Telefone</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar</masterLabel>
+            <translation>Seminário</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation>Exposição comercial</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Meeting</masterLabel>
+            <translation>Reunião na internet</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website</masterLabel>
+            <translation>Website</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>With Distributor</masterLabel>
+            <translation>Com o distribuidor</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eMail</masterLabel>
+            <translation>Email</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Check Out Latitude --></label>
+        <name>CheckOutLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Out Longitude --></label>
+        <name>CheckOutLongitude__c</name>
+    </fields>
+    <fields>
+        <label>Data que foi concluída</label>
+        <name>Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion Time (Days) --></label>
+        <name>Completion_Time_Days__c</name>
+    </fields>
+    <fields>
+        <label>Custo</label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Changed --></label>
+        <name>Date_Changed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Desired Start Date --></label>
+        <name>Desired_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label>Direção</label>
+        <name>Direction__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Due Days_Custom --></label>
+        <name>Due_Days_Custom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geography --></label>
+        <name>Geography__c</name>
+        <picklistValues>
+            <masterLabel>AP</masterLabel>
+            <translation><!-- AP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA</masterLabel>
+            <translation><!-- EMEA-ECE/MEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-CE</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-CE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-EE</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-EE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-SSA</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-SSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE</masterLabel>
+            <translation><!-- EMEA-WE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- indicates whether this record has a related attachment(s) --></help>
+        <label><!-- HasAttachment --></label>
+        <name>HasAttachment__c</name>
+    </fields>
+    <fields>
+        <label>Impácto nas vendas</label>
+        <name>Impact_on_Sale__c</name>
+        <picklistValues>
+            <masterLabel>Formal Agreement</masterLabel>
+            <translation>Acordo formal</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informal Agreement</masterLabel>
+            <translation>Acordo informal</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loss of  Business</masterLabel>
+            <translation>Perda de negócio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loss of Goodwill</masterLabel>
+            <translation>Perda de clientela</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Agreement</masterLabel>
+            <translation>Sem acordo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Impact</masterLabel>
+            <translation>Sem impacto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Discussed</masterLabel>
+            <translation>Não discutido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduction of Business</masterLabel>
+            <translation>Redução do negócio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Involved Org --></label>
+        <name>Involved_Org__c</name>
+        <picklistValues>
+            <masterLabel>AGCP</masterLabel>
+            <translation><!-- AGCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGNH</masterLabel>
+            <translation><!-- AGNH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP</masterLabel>
+            <translation><!-- CORP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS</masterLabel>
+            <translation><!-- CORS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR&amp;D</masterLabel>
+            <translation><!-- CR&amp;D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF</masterLabel>
+            <translation><!-- DCF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol</masterLabel>
+            <translation><!-- DCF ChemSol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-Aniline</masterLabel>
+            <translation><!-- DCF ChemSol-Aniline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-C&amp;D</masterLabel>
+            <translation><!-- DCF ChemSol-C&amp;D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-C&amp;D-DAHS</masterLabel>
+            <translation><!-- DCF ChemSol-C&amp;D-DAHS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-C&amp;D-DWT</masterLabel>
+            <translation><!-- DCF ChemSol-C&amp;D-DWT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-C&amp;D-Industrial</masterLabel>
+            <translation><!-- DCF ChemSol-C&amp;D-Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-Cyanides</masterLabel>
+            <translation><!-- DCF ChemSol-Cyanides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-MAP/DMS</masterLabel>
+            <translation><!-- DCF ChemSol-MAP/DMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-RMS</masterLabel>
+            <translation><!-- DCF ChemSol-RMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-SET</masterLabel>
+            <translation><!-- DCF ChemSol-SET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF ChemSol-Vazo</masterLabel>
+            <translation><!-- DCF ChemSol-Vazo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH</masterLabel>
+            <translation><!-- DCF FLCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Clean Agent Fire Extinguishants</masterLabel>
+            <translation><!-- DCF FLCH-Clean Agent Fire Extinguishants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Electronic Gases</masterLabel>
+            <translation><!-- DCF FLCH-Electronic Gases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Fluoromonomer Intermediates</masterLabel>
+            <translation><!-- DCF FLCH-Fluoromonomer Intermediates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Foam</masterLabel>
+            <translation><!-- DCF FLCH-Foam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Pharmaceutical Propellants</masterLabel>
+            <translation><!-- DCF FLCH-Pharmaceutical Propellants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Propellants</masterLabel>
+            <translation><!-- DCF FLCH-Propellants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Refrigerants</masterLabel>
+            <translation><!-- DCF FLCH-Refrigerants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FLCH-Vertrel</masterLabel>
+            <translation><!-- DCF FLCH-Vertrel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS</masterLabel>
+            <translation><!-- DCF FPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-AFFF</masterLabel>
+            <translation><!-- DCF FPS-AFFF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Catalyst</masterLabel>
+            <translation><!-- DCF FPS-Catalyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Chemoswed</masterLabel>
+            <translation><!-- DCF FPS-Chemoswed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Coatings &amp; Releases</masterLabel>
+            <translation><!-- DCF FPS-Coatings &amp; Releases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Consumer Finishes</masterLabel>
+            <translation><!-- DCF FPS-Consumer Finishes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-FPS Other</masterLabel>
+            <translation><!-- DCF FPS-FPS Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Fluoropolymers</masterLabel>
+            <translation><!-- DCF FPS-Fluoropolymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Fluoropolymers PTFE</masterLabel>
+            <translation><!-- DCF FPS-Fluoropolymers PTFE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Industrial Finishes</masterLabel>
+            <translation><!-- DCF FPS-Industrial Finishes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Lubes</masterLabel>
+            <translation><!-- DCF FPS-Lubes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Monomers</masterLabel>
+            <translation><!-- DCF FPS-Monomers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Nafion®</masterLabel>
+            <translation><!-- DCF FPS-Nafion® --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Oil Wells-StreaMax®</masterLabel>
+            <translation><!-- DCF FPS-Oil Wells-StreaMax® --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Polymer Specialties</masterLabel>
+            <translation><!-- DCF FPS-Polymer Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-SPS</masterLabel>
+            <translation><!-- DCF FPS-SPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-SPS Carpets</masterLabel>
+            <translation><!-- DCF FPS-SPS Carpets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-SPS Paper</masterLabel>
+            <translation><!-- DCF FPS-SPS Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-SPS Textiles</masterLabel>
+            <translation><!-- DCF FPS-SPS Textiles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Stone Care</masterLabel>
+            <translation><!-- DCF FPS-Stone Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-StoneTech</masterLabel>
+            <translation><!-- DCF FPS-StoneTech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Surfactants &amp; Coating Additives</masterLabel>
+            <translation><!-- DCF FPS-Surfactants &amp; Coating Additives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Teflon® Licensing</masterLabel>
+            <translation><!-- DCF FPS-Teflon® Licensing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Melts</masterLabel>
+            <translation><!-- DCF-Melts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Melts Films</masterLabel>
+            <translation><!-- DCF-Melts Films --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Melts Polymers</masterLabel>
+            <translation><!-- DCF-Melts Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Sulfur Products</masterLabel>
+            <translation><!-- DCF-Sulfur Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDIS</masterLabel>
+            <translation><!-- DDIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC</masterLabel>
+            <translation><!-- DEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPE</masterLabel>
+            <translation><!-- DPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Aramids</masterLabel>
+            <translation><!-- DPT-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-DPP</masterLabel>
+            <translation><!-- DPT-DPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NOW</masterLabel>
+            <translation><!-- DPT-NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSPG</masterLabel>
+            <translation><!-- DSPG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSRB</masterLabel>
+            <translation><!-- DSRB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSUR</masterLabel>
+            <translation><!-- DSUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTF</masterLabel>
+            <translation><!-- DTF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT</masterLabel>
+            <translation><!-- DTT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC</masterLabel>
+            <translation><!-- ELEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENGR</masterLabel>
+            <translation><!-- ENGR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP</masterLabel>
+            <translation><!-- EP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FIN</masterLabel>
+            <translation><!-- FIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR</masterLabel>
+            <translation><!-- FLPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FS&amp;RE</masterLabel>
+            <translation><!-- FS&amp;RE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HOSP</masterLabel>
+            <translation><!-- HOSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB</masterLabel>
+            <translation><!-- IB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT&amp;S</masterLabel>
+            <translation><!-- IT&amp;S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEGL</masterLabel>
+            <translation><!-- LEGL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S</masterLabel>
+            <translation><!-- M&amp;S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP</masterLabel>
+            <translation><!-- P&amp;IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHBI</masterLabel>
+            <translation><!-- PHBI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;L</masterLabel>
+            <translation><!-- S&amp;L --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHEC</masterLabel>
+            <translation><!-- SHEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOLAE</masterLabel>
+            <translation><!-- SOLAE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legacy Activity ID --></label>
+        <name>Legacy_Activity_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label>Valor Capturável USD</label>
+        <name>Level_Of_Effort__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Attachment --></label>
+        <name>Link_to_Attachment__c</name>
+    </fields>
+    <fields>
+        <label>Objetivo</label>
+        <name>Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Origin Name --></label>
+        <name>Origin_Name__c</name>
+        <picklistValues>
+            <masterLabel>4-1000</masterLabel>
+            <translation><!-- 4-1000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Help</masterLabel>
+            <translation><!-- 4-Help --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>800-438-7225 GLS</masterLabel>
+            <translation><!-- 800-438-7225 GLS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>800-628-6208 ECP</masterLabel>
+            <translation><!-- 800-628-6208 ECP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>877-738-9537 Specialty</masterLabel>
+            <translation><!-- 877-738-9537 Specialty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AH-S&amp;L-WTC</masterLabel>
+            <translation><!-- AH-S&amp;L-WTC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR-SR Lit</masterLabel>
+            <translation><!-- AR-SR Lit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agsurf Emergencies</masterLabel>
+            <translation><!-- Agsurf Emergencies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Reports</masterLabel>
+            <translation><!-- Annual Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aramids DPT (800-931-3456 Default)</masterLabel>
+            <translation><!-- Aramids DPT (800-931-3456 Default) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aramids DPT (800-931-3456 P3)</masterLabel>
+            <translation><!-- Aramids DPT (800-931-3456 P3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aramids DPT (800-931-3456 P4)</masterLabel>
+            <translation><!-- Aramids DPT (800-931-3456 P4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audix Esc</masterLabel>
+            <translation><!-- Audix Esc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CDS, PERS IDS</masterLabel>
+            <translation><!-- CDS, PERS IDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIC 30881</masterLabel>
+            <translation><!-- CIC 30881 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada 800-387-2122</masterLabel>
+            <translation><!-- Canada 800-387-2122 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cerenol (888-237-3665)</masterLabel>
+            <translation><!-- Cerenol (888-237-3665) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chem Cust Serv</masterLabel>
+            <translation><!-- Chem Cust Serv --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorproof</masterLabel>
+            <translation><!-- Colorproof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cons Prod</masterLabel>
+            <translation><!-- Cons Prod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cons Prods AH</masterLabel>
+            <translation><!-- Cons Prods AH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corian (800-426-7426)</masterLabel>
+            <translation><!-- Corian (800-426-7426) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corp Remediation</masterLabel>
+            <translation><!-- Corp Remediation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate (800-441-7515)</masterLabel>
+            <translation><!-- Corporate (800-441-7515) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crises</masterLabel>
+            <translation><!-- Crises --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyrel</masterLabel>
+            <translation><!-- Cyrel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DIMC (800-463-8039)</masterLabel>
+            <translation><!-- DIMC (800-463-8039) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPE 4000</masterLabel>
+            <translation><!-- DPE 4000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPE Kalrez</masterLabel>
+            <translation><!-- DPE Kalrez --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPE Technical (800-853-5515 P3)</masterLabel>
+            <translation><!-- DPE Technical (800-853-5515 P3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPE-Kalrez 5-6</masterLabel>
+            <translation><!-- DPE-Kalrez 5-6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPVS (888-387-8337)</masterLabel>
+            <translation><!-- DPVS (888-387-8337) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dial DP First</masterLabel>
+            <translation><!-- Dial DP First --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Printing (888-234-1794)</masterLabel>
+            <translation><!-- Digital Printing (888-234-1794) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Printing Local (302-992-4264)</masterLabel>
+            <translation><!-- Digital Printing Local (302-992-4264) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuPont Magazine</masterLabel>
+            <translation><!-- DuPont Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuPont Tate &amp; Lyle (888-330-3487)</masterLabel>
+            <translation><!-- DuPont Tate &amp; Lyle (888-330-3487) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ducom Info</masterLabel>
+            <translation><!-- Ducom Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EAP</masterLabel>
+            <translation><!-- EAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECP (800-628-6208)</masterLabel>
+            <translation><!-- ECP (800-628-6208) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP 800-268-3943</masterLabel>
+            <translation><!-- EP 800-268-3943 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP CSR AH</masterLabel>
+            <translation><!-- EP CSR AH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP CSR Day</masterLabel>
+            <translation><!-- EP CSR Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP DEF Day</masterLabel>
+            <translation><!-- EP DEF Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP-Distribution Team</masterLabel>
+            <translation><!-- EP-Distribution Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP-Domestic Team</masterLabel>
+            <translation><!-- EP-Domestic Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP-DuPont Direct Team</masterLabel>
+            <translation><!-- EP-DuPont Direct Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EP-General</masterLabel>
+            <translation><!-- EP-General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error/Timeout</masterLabel>
+            <translation><!-- Error/Timeout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exec Call Screening</masterLabel>
+            <translation><!-- Exec Call Screening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR Cust Serv</masterLabel>
+            <translation><!-- FLPR Cust Serv --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fed Govt</masterLabel>
+            <translation><!-- Fed Govt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Find Info</masterLabel>
+            <translation><!-- Find Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire Ext (800-473-7790)</masterLabel>
+            <translation><!-- Fire Ext (800-473-7790) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire Products</masterLabel>
+            <translation><!-- Fire Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fluoro Spec (800-969-4758)</masterLabel>
+            <translation><!-- Fluoro Spec (800-969-4758) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fluoropolymers (800-207-0756)</masterLabel>
+            <translation><!-- Fluoropolymers (800-207-0756) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friends &amp; Family (877-383-3566)</masterLabel>
+            <translation><!-- Friends &amp; Family (877-383-3566) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fueload (866-383-5623)</masterLabel>
+            <translation><!-- Fueload (866-383-5623) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPPC NoMatch</masterLabel>
+            <translation><!-- HPPC NoMatch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haskell</masterLabel>
+            <translation><!-- Haskell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holographics</masterLabel>
+            <translation><!-- Holographics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISCEON (877-683-3566)</masterLabel>
+            <translation><!-- ISCEON (877-683-3566) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IVR Help</masterLabel>
+            <translation><!-- IVR Help --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inquiry Center</masterLabel>
+            <translation><!-- Inquiry Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal DuPont</masterLabel>
+            <translation><!-- Internal DuPont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kalrez (800-323-9806)</masterLabel>
+            <translation><!-- Kalrez (800-323-9806) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Krytox(r) (1-800-424-7502)</masterLabel>
+            <translation><!-- Krytox(r) (1-800-424-7502) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSDS Backup</masterLabel>
+            <translation><!-- MSDS Backup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Med Disability</masterLabel>
+            <translation><!-- Med Disability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Display</masterLabel>
+            <translation><!-- No Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldcastle</masterLabel>
+            <translation><!-- Oldcastle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omega</masterLabel>
+            <translation><!-- Omega --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oper</masterLabel>
+            <translation><!-- Oper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oper Assist</masterLabel>
+            <translation><!-- Oper Assist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Commodities</masterLabel>
+            <translation><!-- P&amp;IP-Commodities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-General</masterLabel>
+            <translation><!-- P&amp;IP-General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Specialties</masterLabel>
+            <translation><!-- P&amp;IP-Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PI 800-387-2122</masterLabel>
+            <translation><!-- PI 800-387-2122 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PI/General</masterLabel>
+            <translation><!-- PI/General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PKG&amp;IP</masterLabel>
+            <translation><!-- PKG&amp;IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parlin Comm Call Ctr</masterLabel>
+            <translation><!-- Parlin Comm Call Ctr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Privacy Breach</masterLabel>
+            <translation><!-- Privacy Breach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof Staffing</masterLabel>
+            <translation><!-- Prof Staffing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualicon</masterLabel>
+            <translation><!-- Qualicon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reclaim (877-662-4322)</masterLabel>
+            <translation><!-- Reclaim (877-662-4322) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrig-AC (800-235-7882 P2)</masterLabel>
+            <translation><!-- Refrig-AC (800-235-7882 P2) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrig-Auto (800-235-7882 P3)</masterLabel>
+            <translation><!-- Refrig-Auto (800-235-7882 P3) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrig-Brand (800-235-7882 P5)</masterLabel>
+            <translation><!-- Refrig-Brand (800-235-7882 P5) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrig-Default (800-235-7882)</masterLabel>
+            <translation><!-- Refrig-Default (800-235-7882) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrig-Other (800-235-7882 P4)</masterLabel>
+            <translation><!-- Refrig-Other (800-235-7882 P4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sorona</masterLabel>
+            <translation><!-- Sorona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sorona (866-476-7662)</masterLabel>
+            <translation><!-- Sorona (866-476-7662) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spec Resins</masterLabel>
+            <translation><!-- Spec Resins --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stone Tech AH</masterLabel>
+            <translation><!-- Stone Tech AH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stone Tech DAY</masterLabel>
+            <translation><!-- Stone Tech DAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>StreaMax (877-873-2620)</masterLabel>
+            <translation><!-- StreaMax (877-873-2620) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surfaces Commercial (800-436-6072)</masterLabel>
+            <translation><!-- Surfaces Commercial (800-436-6072) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surfaces Countertops (866-888-2802)</masterLabel>
+            <translation><!-- Surfaces Countertops (866-888-2802) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surfaces Iphone App (800-906-7844)</masterLabel>
+            <translation><!-- Surfaces Iphone App (800-906-7844) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surfaces Outbound (888-938-7833)</masterLabel>
+            <translation><!-- Surfaces Outbound (888-938-7833) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surfaces Web (800-906-7765)</masterLabel>
+            <translation><!-- Surfaces Web (800-906-7765) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teflon (866-205-1664)</masterLabel>
+            <translation><!-- Teflon (866-205-1664) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teflon AD (877-283-3566)</masterLabel>
+            <translation><!-- Teflon AD (877-283-3566) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teflon Fab Pro (866-667-8246)</masterLabel>
+            <translation><!-- Teflon Fab Pro (866-667-8246) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teflon Spare 1 (888-938-7833)</masterLabel>
+            <translation><!-- Teflon Spare 1 (888-938-7833) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tyvek</masterLabel>
+            <translation><!-- Tyvek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tyvek Construction (800-448-9835)</masterLabel>
+            <translation><!-- Tyvek Construction (800-448-9835) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tyvek DPT (800-448-9835)</masterLabel>
+            <translation><!-- Tyvek DPT (800-448-9835) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vespel 800-222-8377</masterLabel>
+            <translation><!-- Vespel 800-222-8377 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vespel 800-972-7252</masterLabel>
+            <translation><!-- Vespel 800-972-7252 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WW Geography</masterLabel>
+            <translation><!-- WW Geography --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WW Qualifies</masterLabel>
+            <translation><!-- WW Qualifies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>We-R-Fine</masterLabel>
+            <translation><!-- We-R-Fine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Well Water Survey</masterLabel>
+            <translation><!-- Well Water Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zodiaq (877-996-3427)</masterLabel>
+            <translation><!-- Zodiaq (877-996-3427) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zonyl Fluoro (800-262-2745)</masterLabel>
+            <translation><!-- Zonyl Fluoro (800-262-2745) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provides a short description of the outcome, conclusions and learnings related to this specific activity --></help>
+        <label>Descrição do resultado</label>
+        <name>Outcome_Description__c</name>
+    </fields>
+    <fields>
+        <label>Resultado</label>
+        <name>Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Busy</masterLabel>
+            <translation>Ocupado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Later</masterLabel>
+            <translation>Ligar depois</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation>Cancelado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete Qualified</masterLabel>
+            <translation>Qualificação completa</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete Unqualified</masterLabel>
+            <translation>Desqualificação completa</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation>Duplicado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation>Falhou</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inconclusive</masterLabel>
+            <translation>Inconclusivo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Left Message with Coworker</masterLabel>
+            <translation>Deixou a mensagem com o colega</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maxed Out</masterLabel>
+            <translation><!-- Maxed Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Contact provided</masterLabel>
+            <translation>Novo contato fornecido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Answer</masterLabel>
+            <translation>Sem resposta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Listing</masterLabel>
+            <translation>Sem anúncio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Longer with Company</masterLabel>
+            <translation>Não pertence mais à companhia</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Interested</masterLabel>
+            <translation>Não interessado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number Disconnected</masterLabel>
+            <translation>Número desconectado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Outro</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out of Business</masterLabel>
+            <translation>Fora do negócio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Postponed</masterLabel>
+            <translation>Adiado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successful</masterLabel>
+            <translation>Sucesso</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task also resolved with a 3rd party*</masterLabel>
+            <translation><!-- Task also resolved with a 3rd party* --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task also resolved with the customer</masterLabel>
+            <translation><!-- Task also resolved with the customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task resolved with 3+ entities including customer</masterLabel>
+            <translation><!-- Task resolved with 3+ entities including customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task resolved with just the Task assigner</masterLabel>
+            <translation><!-- Task resolved with just the Task assigner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Desconhecido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voicemail</masterLabel>
+            <translation>Email de voz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Number</masterLabel>
+            <translation>Número errado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Organização</label>
+        <name>Owning_Organization__c</name>
+        <picklistValues>
+            <masterLabel>AGCP</masterLabel>
+            <translation><!-- AGCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGCP-Agsurf</masterLabel>
+            <translation><!-- AGCP-Agsurf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGCP-CPC</masterLabel>
+            <translation><!-- AGCP-CPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGCP-Griffin</masterLabel>
+            <translation><!-- AGCP-Griffin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGNH</masterLabel>
+            <translation><!-- AGNH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGNH-Biotech</masterLabel>
+            <translation><!-- AGNH-Biotech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGNH-Qualicon</masterLabel>
+            <translation><!-- AGNH-Qualicon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Env</masterLabel>
+            <translation><!-- BI-Env --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Landscape Systems</masterLabel>
+            <translation><!-- BI-Landscape Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf</masterLabel>
+            <translation><!-- BI-Surf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf-Cons Prod</masterLabel>
+            <translation><!-- BI-Surf-Cons Prod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf-Cons Prod-Fire Safety</masterLabel>
+            <translation><!-- BI-Surf-Cons Prod-Fire Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP</masterLabel>
+            <translation><!-- CORP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-Admin General</masterLabel>
+            <translation><!-- CORP-Admin General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-BU Inactive</masterLabel>
+            <translation><!-- CORP-BU Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-CIC Support</masterLabel>
+            <translation><!-- CORP-CIC Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-Core</masterLabel>
+            <translation><!-- CORP-Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-Corporate Plans</masterLabel>
+            <translation><!-- CORP-Corporate Plans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-Non-Aligned</masterLabel>
+            <translation><!-- CORP-Non-Aligned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-Non-DuPont Information</masterLabel>
+            <translation><!-- CORP-Non-DuPont Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS</masterLabel>
+            <translation><!-- CORS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-Aviation</masterLabel>
+            <translation><!-- CORS-Aviation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-Corp Remediation</masterLabel>
+            <translation><!-- CORS-Corp Remediation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-Government Affairs</masterLabel>
+            <translation><!-- CORS-Government Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-IT-DSAP</masterLabel>
+            <translation><!-- CORS-IT-DSAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-Investor Relations</masterLabel>
+            <translation><!-- CORS-Investor Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-Public Affairs</masterLabel>
+            <translation><!-- CORS-Public Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COZR</masterLabel>
+            <translation><!-- COZR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR&amp;D</masterLabel>
+            <translation><!-- CR&amp;D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DA-Nano LLC</masterLabel>
+            <translation><!-- DA-Nano LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF</masterLabel>
+            <translation><!-- DCF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF FPS-Polymer Specialties</masterLabel>
+            <translation><!-- DCF FPS-Polymer Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Aramids</masterLabel>
+            <translation><!-- DCF-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol</masterLabel>
+            <translation><!-- DCF-ChemSol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol Aniline</masterLabel>
+            <translation><!-- DCF-ChemSol Aniline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol C&amp;D</masterLabel>
+            <translation><!-- DCF-ChemSol C&amp;D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol C&amp;D-DAHS</masterLabel>
+            <translation><!-- DCF-ChemSol C&amp;D-DAHS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol C&amp;D-DWT</masterLabel>
+            <translation><!-- DCF-ChemSol C&amp;D-DWT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol C&amp;D-Industrial</masterLabel>
+            <translation><!-- DCF-ChemSol C&amp;D-Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol Cyanides</masterLabel>
+            <translation><!-- DCF-ChemSol Cyanides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol MAP/DMS</masterLabel>
+            <translation><!-- DCF-ChemSol MAP/DMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol RMS</masterLabel>
+            <translation><!-- DCF-ChemSol RMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol SET</masterLabel>
+            <translation><!-- DCF-ChemSol SET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-ChemSol Vazo</masterLabel>
+            <translation><!-- DCF-ChemSol Vazo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH</masterLabel>
+            <translation><!-- DCF-FLCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Electronic Gases</masterLabel>
+            <translation><!-- DCF-FLCH Electronic Gases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Fire Extinguishants</masterLabel>
+            <translation><!-- DCF-FLCH Fire Extinguishants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Fluoromonomer Intermediates </masterLabel>
+            <translation><!-- DCF-FLCH Fluoromonomer Intermediates  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Foam </masterLabel>
+            <translation><!-- DCF-FLCH Foam  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Pharmaceutical Propellants </masterLabel>
+            <translation><!-- DCF-FLCH Pharmaceutical Propellants  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Propellants </masterLabel>
+            <translation><!-- DCF-FLCH Propellants  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Refrigerants </masterLabel>
+            <translation><!-- DCF-FLCH Refrigerants  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FLCH Vertrel </masterLabel>
+            <translation><!-- DCF-FLCH Vertrel  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS</masterLabel>
+            <translation><!-- DCF-FPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS AFFF </masterLabel>
+            <translation><!-- DCF-FPS AFFF  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Catalyst </masterLabel>
+            <translation><!-- DCF-FPS Catalyst  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Chemoswed </masterLabel>
+            <translation><!-- DCF-FPS Chemoswed  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Coatings &amp; Releases </masterLabel>
+            <translation><!-- DCF-FPS Coatings &amp; Releases  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Consumer Finishes</masterLabel>
+            <translation><!-- DCF-FPS Consumer Finishes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Films</masterLabel>
+            <translation><!-- DCF-FPS Films --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Fluoropolymers</masterLabel>
+            <translation><!-- DCF-FPS Fluoropolymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Fluoropolymers PTFE</masterLabel>
+            <translation><!-- DCF-FPS Fluoropolymers PTFE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Fuel Cells</masterLabel>
+            <translation><!-- DCF-FPS Fuel Cells --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Industrial Finishes</masterLabel>
+            <translation><!-- DCF-FPS Industrial Finishes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Lubes</masterLabel>
+            <translation><!-- DCF-FPS Lubes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Monomers</masterLabel>
+            <translation><!-- DCF-FPS Monomers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Nafion®</masterLabel>
+            <translation><!-- DCF-FPS Nafion® --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Oil Wells-StreaMax®</masterLabel>
+            <translation><!-- DCF-FPS Oil Wells-StreaMax® --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Other</masterLabel>
+            <translation><!-- DCF-FPS Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS SPS</masterLabel>
+            <translation><!-- DCF-FPS SPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS SPS Carpets</masterLabel>
+            <translation><!-- DCF-FPS SPS Carpets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS SPS Paper</masterLabel>
+            <translation><!-- DCF-FPS SPS Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS SPS Textiles</masterLabel>
+            <translation><!-- DCF-FPS SPS Textiles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS StoneCare </masterLabel>
+            <translation><!-- DCF-FPS StoneCare  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS StoneTech </masterLabel>
+            <translation><!-- DCF-FPS StoneTech  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Surfactants &amp; Coating Additives </masterLabel>
+            <translation><!-- DCF-FPS Surfactants &amp; Coating Additives  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-FPS Teflon® Licensing</masterLabel>
+            <translation><!-- DCF-FPS Teflon® Licensing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Melts</masterLabel>
+            <translation><!-- DCF-Melts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Melts Films</masterLabel>
+            <translation><!-- DCF-Melts Films --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Melts Polymers</masterLabel>
+            <translation><!-- DCF-Melts Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCF-Sulfur Products</masterLabel>
+            <translation><!-- DCF-Sulfur Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCM</masterLabel>
+            <translation><!-- DCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE</masterLabel>
+            <translation><!-- DCSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-ACRN</masterLabel>
+            <translation><!-- DCSE-ACRN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Aniline</masterLabel>
+            <translation><!-- DCSE-Aniline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-C&amp;D</masterLabel>
+            <translation><!-- DCSE-C&amp;D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-C&amp;D-DAHS</masterLabel>
+            <translation><!-- DCSE-C&amp;D-DAHS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-C&amp;D-IDI</masterLabel>
+            <translation><!-- DCSE-C&amp;D-IDI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-C&amp;D-Industrial</masterLabel>
+            <translation><!-- DCSE-C&amp;D-Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Catalyst</masterLabel>
+            <translation><!-- DCSE-Catalyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Coating &amp; Release</masterLabel>
+            <translation><!-- DCSE-Coating &amp; Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Cons Prod</masterLabel>
+            <translation><!-- DCSE-Cons Prod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Cons Prod-Pool/Spa</masterLabel>
+            <translation><!-- DCSE-Cons Prod-Pool/Spa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Cons Prod-Stone Care</masterLabel>
+            <translation><!-- DCSE-Cons Prod-Stone Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Cyanides</masterLabel>
+            <translation><!-- DCSE-Cyanides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-DMS</masterLabel>
+            <translation><!-- DCSE-DMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-DPP</masterLabel>
+            <translation><!-- DCSE-DPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Lubes</masterLabel>
+            <translation><!-- DCSE-Lubes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-MAP</masterLabel>
+            <translation><!-- DCSE-MAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Methacrols</masterLabel>
+            <translation><!-- DCSE-Methacrols --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Misc SCD</masterLabel>
+            <translation><!-- DCSE-Misc SCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Poly Specialties</masterLabel>
+            <translation><!-- DCSE-Poly Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Polymer Specialties</masterLabel>
+            <translation><!-- DCSE-Polymer Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Reactive Metals</masterLabel>
+            <translation><!-- DCSE-Reactive Metals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-SET</masterLabel>
+            <translation><!-- DCSE-SET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-SPS</masterLabel>
+            <translation><!-- DCSE-SPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Spec Intermediates</masterLabel>
+            <translation><!-- DCSE-Spec Intermediates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Sulfur</masterLabel>
+            <translation><!-- DCSE-Sulfur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Sulfur Products</masterLabel>
+            <translation><!-- DCSE-Sulfur Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Sulfur-Belco</masterLabel>
+            <translation><!-- DCSE-Sulfur-Belco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Sulfur-Stratco</masterLabel>
+            <translation><!-- DCSE-Sulfur-Stratco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Surface Prot Sol</masterLabel>
+            <translation><!-- DCSE-Surface Prot Sol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Vazo</masterLabel>
+            <translation><!-- DCSE-Vazo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCSE-Wastewater</masterLabel>
+            <translation><!-- DCSE-Wastewater --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDIS</masterLabel>
+            <translation><!-- DDIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDIS-Display Solutions</masterLabel>
+            <translation><!-- DDIS-Display Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDIS-Films</masterLabel>
+            <translation><!-- DDIS-Films --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDIS-LCD</masterLabel>
+            <translation><!-- DDIS-LCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDIS-OLED</masterLabel>
+            <translation><!-- DDIS-OLED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDIS-PDP</masterLabel>
+            <translation><!-- DDIS-PDP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-Circuit Packaging Materials</masterLabel>
+            <translation><!-- DEC-Circuit Packaging Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-PVFM</masterLabel>
+            <translation><!-- DEC-PVFM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPE</masterLabel>
+            <translation><!-- DPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Filaments</masterLabel>
+            <translation><!-- DPP-Filaments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Parts</masterLabel>
+            <translation><!-- DPP-Parts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Polymers</masterLabel>
+            <translation><!-- DPP-Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS-BE</masterLabel>
+            <translation><!-- DPS-BE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS-Kevlar</masterLabel>
+            <translation><!-- DPS-Kevlar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS-Nomex</masterLabel>
+            <translation><!-- DPS-Nomex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS-Surfaces</masterLabel>
+            <translation><!-- DPS-Surfaces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS-Tyvek</masterLabel>
+            <translation><!-- DPS-Tyvek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT Cleanroom/Pharma</masterLabel>
+            <translation><!-- DPT Cleanroom/Pharma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-A&amp;HF</masterLabel>
+            <translation><!-- DPT-A&amp;HF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ASPS</masterLabel>
+            <translation><!-- DPT-ASPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Agriculture</masterLabel>
+            <translation><!-- DPT-Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Air and Filtration</masterLabel>
+            <translation><!-- DPT-Air and Filtration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Aramids</masterLabel>
+            <translation><!-- DPT-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Automotive</masterLabel>
+            <translation><!-- DPT-Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Chemical Industrial</masterLabel>
+            <translation><!-- DPT-Chemical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Covers</masterLabel>
+            <translation><!-- DPT-Covers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Critical Clean</masterLabel>
+            <translation><!-- DPT-Critical Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-DPP</masterLabel>
+            <translation><!-- DPT-DPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ES</masterLabel>
+            <translation><!-- DPT-ES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Envelopes</masterLabel>
+            <translation><!-- DPT-Envelopes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Graphics</masterLabel>
+            <translation><!-- DPT-Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Ind Pkg &amp; Protection</masterLabel>
+            <translation><!-- DPT-Ind Pkg &amp; Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Mechanical Industrial</masterLabel>
+            <translation><!-- DPT-Mechanical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Fabrics</masterLabel>
+            <translation><!-- DPT-Medical Fabrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Packaging</masterLabel>
+            <translation><!-- DPT-Medical Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Specialties</masterLabel>
+            <translation><!-- DPT-Medical Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NOW</masterLabel>
+            <translation><!-- DPT-NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Optical</masterLabel>
+            <translation><!-- DPT-Optical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-PM</masterLabel>
+            <translation><!-- DPT-PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-ER</masterLabel>
+            <translation><!-- DPT-Public Sector-ER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-LE</masterLabel>
+            <translation><!-- DPT-Public Sector-LE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-MIL</masterLabel>
+            <translation><!-- DPT-Public Sector-MIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Sontara</masterLabel>
+            <translation><!-- DPT-Sontara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Thermal Industrial</masterLabel>
+            <translation><!-- DPT-Thermal Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Tyvek</masterLabel>
+            <translation><!-- DPT-Tyvek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPVS</masterLabel>
+            <translation><!-- DPVS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSPG</masterLabel>
+            <translation><!-- DSPG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSS</masterLabel>
+            <translation><!-- DSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSS-CKM</masterLabel>
+            <translation><!-- DSS-CKM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSS-CleanTech</masterLabel>
+            <translation><!-- DSS-CleanTech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSS-Consulting</masterLabel>
+            <translation><!-- DSS-Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTF</masterLabel>
+            <translation><!-- DTF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT</masterLabel>
+            <translation><!-- DTT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT-Coatings</masterLabel>
+            <translation><!-- DTT-Coatings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT-Minerals</masterLabel>
+            <translation><!-- DTT-Minerals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT-Paper</masterLabel>
+            <translation><!-- DTT-Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT-Plastics</masterLabel>
+            <translation><!-- DTT-Plastics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT-Specialties</masterLabel>
+            <translation><!-- DTT-Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC</masterLabel>
+            <translation><!-- ELEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-EKC Technology</masterLabel>
+            <translation><!-- ELEC-EKC Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-Flexible Circuit Materials</masterLabel>
+            <translation><!-- ELEC-Flexible Circuit Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-Flexible Circuit Materials-Pyralux</masterLabel>
+            <translation><!-- ELEC-Flexible Circuit Materials-Pyralux --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-HDMicrosystems</masterLabel>
+            <translation><!-- ELEC-HDMicrosystems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-Interconnect Pkg</masterLabel>
+            <translation><!-- ELEC-Interconnect Pkg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-Microcircuit Materials</masterLabel>
+            <translation><!-- ELEC-Microcircuit Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-Printed Circuit Materials</masterLabel>
+            <translation><!-- ELEC-Printed Circuit Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-Printed Circuit Materials-APL</masterLabel>
+            <translation><!-- ELEC-Printed Circuit Materials-APL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELEC-Semiconductor Fabrication Mat</masterLabel>
+            <translation><!-- ELEC-Semiconductor Fabrication Mat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENGR</masterLabel>
+            <translation><!-- ENGR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FIN</masterLabel>
+            <translation><!-- FIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR</masterLabel>
+            <translation><!-- FLPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC</masterLabel>
+            <translation><!-- FLPR-FC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-AC/Auto</masterLabel>
+            <translation><!-- FLPR-FC-AC/Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-AC/Stationary</masterLabel>
+            <translation><!-- FLPR-FC-AC/Stationary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-DSOS</masterLabel>
+            <translation><!-- FLPR-FC-DSOS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Dymel</masterLabel>
+            <translation><!-- FLPR-FC-Dymel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Dymel-Industrial</masterLabel>
+            <translation><!-- FLPR-FC-Dymel-Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Dymel-Pharma</masterLabel>
+            <translation><!-- FLPR-FC-Dymel-Pharma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Electronic Gases</masterLabel>
+            <translation><!-- FLPR-FC-Electronic Gases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Fire Extinguishants</masterLabel>
+            <translation><!-- FLPR-FC-Fire Extinguishants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Foam Expansion Agents</masterLabel>
+            <translation><!-- FLPR-FC-Foam Expansion Agents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Formacel</masterLabel>
+            <translation><!-- FLPR-FC-Formacel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Government</masterLabel>
+            <translation><!-- FLPR-FC-Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-HF Sales</masterLabel>
+            <translation><!-- FLPR-FC-HF Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Inter-SBU Transfer</masterLabel>
+            <translation><!-- FLPR-FC-Inter-SBU Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Other FC</masterLabel>
+            <translation><!-- FLPR-FC-Other FC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Pharmaceutical</masterLabel>
+            <translation><!-- FLPR-FC-Pharmaceutical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Propellants</masterLabel>
+            <translation><!-- FLPR-FC-Propellants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Refineries &amp; Glass</masterLabel>
+            <translation><!-- FLPR-FC-Refineries &amp; Glass --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Refrig-Mobile Aftermarket</masterLabel>
+            <translation><!-- FLPR-FC-Refrig-Mobile Aftermarket --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Refrig-Mobile OEM</masterLabel>
+            <translation><!-- FLPR-FC-Refrig-Mobile OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Refrig-Stationary Aftermarket</masterLabel>
+            <translation><!-- FLPR-FC-Refrig-Stationary Aftermarket --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Refrig-Stationary OEM</masterLabel>
+            <translation><!-- FLPR-FC-Refrig-Stationary OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Refrigeration</masterLabel>
+            <translation><!-- FLPR-FC-Refrigeration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-STOM</masterLabel>
+            <translation><!-- FLPR-FC-STOM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Specialty Fluids</masterLabel>
+            <translation><!-- FLPR-FC-Specialty Fluids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Vertrel</masterLabel>
+            <translation><!-- FLPR-FC-Vertrel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FC-Zyron</masterLabel>
+            <translation><!-- FLPR-FC-Zyron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS</masterLabel>
+            <translation><!-- FLPR-FPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Abandoned Cable Services</masterLabel>
+            <translation><!-- FLPR-FPS-Abandoned Cable Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-C&amp;A Additives</masterLabel>
+            <translation><!-- FLPR-FPS-C&amp;A Additives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-C&amp;A Compounds</masterLabel>
+            <translation><!-- FLPR-FPS-C&amp;A Compounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-CFP Food</masterLabel>
+            <translation><!-- FLPR-FPS-CFP Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-CFP Food FMF</masterLabel>
+            <translation><!-- FLPR-FPS-CFP Food FMF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-CFP Harsh Chemical</masterLabel>
+            <translation><!-- FLPR-FPS-CFP Harsh Chemical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-CFP Harsh Chemical FMF</masterLabel>
+            <translation><!-- FLPR-FPS-CFP Harsh Chemical FMF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-CFP Industrial Bakeware</masterLabel>
+            <translation><!-- FLPR-FPS-CFP Industrial Bakeware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-CFP Pharm / Medical</masterLabel>
+            <translation><!-- FLPR-FPS-CFP Pharm / Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-CFP Pharma Processing</masterLabel>
+            <translation><!-- FLPR-FPS-CFP Pharma Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Cabling Solutions</masterLabel>
+            <translation><!-- FLPR-FPS-Cabling Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Const-Architectural</masterLabel>
+            <translation><!-- FLPR-FPS-Const-Architectural --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Const-Fabric Structures</masterLabel>
+            <translation><!-- FLPR-FPS-Const-Fabric Structures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Const-Fabric Structures FMF</masterLabel>
+            <translation><!-- FLPR-FPS-Const-Fabric Structures FMF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Const-Graphics (signs and labels)</masterLabel>
+            <translation><!-- FLPR-FPS-Const-Graphics (signs and labels) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Consumer</masterLabel>
+            <translation><!-- FLPR-FPS-Consumer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Electronics-Displays</masterLabel>
+            <translation><!-- FLPR-FPS-Electronics-Displays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Electronics-Electrical</masterLabel>
+            <translation><!-- FLPR-FPS-Electronics-Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Electronics-General</masterLabel>
+            <translation><!-- FLPR-FPS-Electronics-General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Electronics-Office Automation</masterLabel>
+            <translation><!-- FLPR-FPS-Electronics-Office Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Electronics-PCB</masterLabel>
+            <translation><!-- FLPR-FPS-Electronics-PCB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Electronics-PhotoVoltaics</masterLabel>
+            <translation><!-- FLPR-FPS-Electronics-PhotoVoltaics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Fine Chemicals</masterLabel>
+            <translation><!-- FLPR-FPS-Fine Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Finishes</masterLabel>
+            <translation><!-- FLPR-FPS-Finishes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-HW-Consumer BW</masterLabel>
+            <translation><!-- FLPR-FPS-HW-Consumer BW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-HW-SEA &amp; Rice Cookers</masterLabel>
+            <translation><!-- FLPR-FPS-HW-SEA &amp; Rice Cookers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-HW-TOR</masterLabel>
+            <translation><!-- FLPR-FPS-HW-TOR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-LAN</masterLabel>
+            <translation><!-- FLPR-FPS-LAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Mobile Telephony</masterLabel>
+            <translation><!-- FLPR-FPS-Mobile Telephony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Monomers</masterLabel>
+            <translation><!-- FLPR-FPS-Monomers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Oil Lined Pipe</masterLabel>
+            <translation><!-- FLPR-FPS-Oil Lined Pipe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Polymers</masterLabel>
+            <translation><!-- FLPR-FPS-Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Semiconductor</masterLabel>
+            <translation><!-- FLPR-FPS-Semiconductor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Spec-Apparel</masterLabel>
+            <translation><!-- FLPR-FPS-Spec-Apparel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Spec-Food</masterLabel>
+            <translation><!-- FLPR-FPS-Spec-Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Spec-General Industry</masterLabel>
+            <translation><!-- FLPR-FPS-Spec-General Industry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Spec-General Industry FMF</masterLabel>
+            <translation><!-- FLPR-FPS-Spec-General Industry FMF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Spec-Packaging</masterLabel>
+            <translation><!-- FLPR-FPS-Spec-Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Spec-Transfer Print</masterLabel>
+            <translation><!-- FLPR-FPS-Spec-Transfer Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Spec-Wire &amp; Cable Misc</masterLabel>
+            <translation><!-- FLPR-FPS-Spec-Wire &amp; Cable Misc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Tedlar</masterLabel>
+            <translation><!-- FLPR-FPS-Tedlar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Teflon AF</masterLabel>
+            <translation><!-- FLPR-FPS-Teflon AF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Trans-Automotive</masterLabel>
+            <translation><!-- FLPR-FPS-Trans-Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Trans-Automotive FMF</masterLabel>
+            <translation><!-- FLPR-FPS-Trans-Automotive FMF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Trans-Composite Release</masterLabel>
+            <translation><!-- FLPR-FPS-Trans-Composite Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Trans-Military Aero</masterLabel>
+            <translation><!-- FLPR-FPS-Trans-Military Aero --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Trans-Military Aero FMF</masterLabel>
+            <translation><!-- FLPR-FPS-Trans-Military Aero FMF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Trans-Surface Trans</masterLabel>
+            <translation><!-- FLPR-FPS-Trans-Surface Trans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-W&amp;C Oil Well</masterLabel>
+            <translation><!-- FLPR-FPS-W&amp;C Oil Well --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-WL Gore</masterLabel>
+            <translation><!-- FLPR-FPS-WL Gore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLPR-FPS-Zonyl</masterLabel>
+            <translation><!-- FLPR-FPS-Zonyl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FS&amp;RE</masterLabel>
+            <translation><!-- FS&amp;RE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HASK</masterLabel>
+            <translation><!-- HASK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HOSP</masterLabel>
+            <translation><!-- HOSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB</masterLabel>
+            <translation><!-- IB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-Biomaterials-Cerenol</masterLabel>
+            <translation><!-- IB-Biomaterials-Cerenol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-Biomaterials-Sorona</masterLabel>
+            <translation><!-- IB-Biomaterials-Sorona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-Biomaterials-Tate &amp; Lyle</masterLabel>
+            <translation><!-- IB-Biomaterials-Tate &amp; Lyle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-Biorefineries-Biofuels</masterLabel>
+            <translation><!-- IB-Biorefineries-Biofuels --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-Corp Intellectual Assets Business</masterLabel>
+            <translation><!-- IB-Corp Intellectual Assets Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-Corp New Bus Dev&apos;t</masterLabel>
+            <translation><!-- IB-Corp New Bus Dev&apos;t --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-New Harvest</masterLabel>
+            <translation><!-- IB-New Harvest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT&amp;S</masterLabel>
+            <translation><!-- IT&amp;S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEGL</masterLabel>
+            <translation><!-- LEGL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S</masterLabel>
+            <translation><!-- M&amp;S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S-Bus Improve Resource</masterLabel>
+            <translation><!-- M&amp;S-Bus Improve Resource --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S-CIC</masterLabel>
+            <translation><!-- M&amp;S-CIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S-Corp Marketing</masterLabel>
+            <translation><!-- M&amp;S-Corp Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S-Customer Care</masterLabel>
+            <translation><!-- M&amp;S-Customer Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S-eBusiness</masterLabel>
+            <translation><!-- M&amp;S-eBusiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTEC</masterLabel>
+            <translation><!-- MTEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTEC-Authentication</masterLabel>
+            <translation><!-- MTEC-Authentication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTEC-Color Communication</masterLabel>
+            <translation><!-- MTEC-Color Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTEC-Colorants</masterLabel>
+            <translation><!-- MTEC-Colorants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTEC-Digital Printing</masterLabel>
+            <translation><!-- MTEC-Digital Printing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTEC-Digital Printing-Aftermarket</masterLabel>
+            <translation><!-- MTEC-Digital Printing-Aftermarket --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTEC-Packaging Graphics</masterLabel>
+            <translation><!-- MTEC-Packaging Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP</masterLabel>
+            <translation><!-- P&amp;IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-DLPS</masterLabel>
+            <translation><!-- P&amp;IP-DLPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Ethylene Copolymers</masterLabel>
+            <translation><!-- P&amp;IP-Ethylene Copolymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Glass Laminating Sol</masterLabel>
+            <translation><!-- P&amp;IP-Glass Laminating Sol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Glycol</masterLabel>
+            <translation><!-- P&amp;IP-Glycol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Intermediates</masterLabel>
+            <translation><!-- P&amp;IP-Intermediates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Modified Polymers</masterLabel>
+            <translation><!-- P&amp;IP-Modified Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-PV</masterLabel>
+            <translation><!-- P&amp;IP-PV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Specialty Resins</masterLabel>
+            <translation><!-- P&amp;IP-Specialty Resins --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHBI</masterLabel>
+            <translation><!-- PHBI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pioneer</masterLabel>
+            <translation><!-- Pioneer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;L</masterLabel>
+            <translation><!-- S&amp;L --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;L-Logistics</masterLabel>
+            <translation><!-- S&amp;L-Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;L-Sourcing</masterLabel>
+            <translation><!-- S&amp;L-Sourcing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHE</masterLabel>
+            <translation><!-- SHE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHE-Sustainable Growth</masterLabel>
+            <translation><!-- SHE-Sustainable Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOLAE</masterLabel>
+            <translation><!-- SOLAE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOLAE-Agribusiness</masterLabel>
+            <translation><!-- SOLAE-Agribusiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOLAE-Lecithin</masterLabel>
+            <translation><!-- SOLAE-Lecithin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOLAE-Polymer</masterLabel>
+            <translation><!-- SOLAE-Polymer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solae-Meat Solutions</masterLabel>
+            <translation><!-- Solae-Meat Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solae-Specialty</masterLabel>
+            <translation><!-- Solae-Specialty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Owning SBU --></label>
+        <name>Owning_SBU__c</name>
+        <picklistValues>
+            <masterLabel>Building Innovations</masterLabel>
+            <translation><!-- Building Innovations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Management</masterLabel>
+            <translation><!-- Capital Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemical Solutions Enterprise</masterLabel>
+            <translation><!-- Chemical Solutions Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals &amp; Fluoroproducts</masterLabel>
+            <translation><!-- Chemicals &amp; Fluoroproducts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Services</masterLabel>
+            <translation><!-- Corporate Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cozaar</masterLabel>
+            <translation><!-- Cozaar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crop Protection</masterLabel>
+            <translation><!-- Crop Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Displays</masterLabel>
+            <translation><!-- Displays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuPont Teijin Films</masterLabel>
+            <translation><!-- DuPont Teijin Films --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics &amp; Communications</masterLabel>
+            <translation><!-- Electronics &amp; Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facilities Services &amp; Real Estate</masterLabel>
+            <translation><!-- Facilities Services &amp; Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Affairs</masterLabel>
+            <translation><!-- Government Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haskell</masterLabel>
+            <translation><!-- Haskell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Resources</masterLabel>
+            <translation><!-- Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imaging Technologies</masterLabel>
+            <translation><!-- Imaging Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Biosciences</masterLabel>
+            <translation><!-- Industrial Biosciences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Technology</masterLabel>
+            <translation><!-- Information Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Operations &amp; Engineering</masterLabel>
+            <translation><!-- Integrated Operations &amp; Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing &amp; Sales</masterLabel>
+            <translation><!-- Marketing &amp; Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nonwovens</masterLabel>
+            <translation><!-- Nonwovens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nutrition &amp; Health</masterLabel>
+            <translation><!-- Nutrition &amp; Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaging &amp; Industrial Polymers</masterLabel>
+            <translation><!-- Packaging &amp; Industrial Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Coatings</masterLabel>
+            <translation><!-- Performance Coatings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Elastomers</masterLabel>
+            <translation><!-- Performance Elastomers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Polymers</masterLabel>
+            <translation><!-- Performance Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pioneer Hi-Bred</masterLabel>
+            <translation><!-- Pioneer Hi-Bred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Protection Technologies</masterLabel>
+            <translation><!-- Protection Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Affairs</masterLabel>
+            <translation><!-- Public Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safety Health &amp; Environment</masterLabel>
+            <translation><!-- Safety Health &amp; Environment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Science &amp; Technology</masterLabel>
+            <translation><!-- Science &amp; Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solae</masterLabel>
+            <translation><!-- Solae --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sourcing &amp; Logistics</masterLabel>
+            <translation><!-- Sourcing &amp; Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surfaces</masterLabel>
+            <translation><!-- Surfaces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustainable Solutions</masterLabel>
+            <translation><!-- Sustainable Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Titanium Technologies</masterLabel>
+            <translation><!-- Titanium Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Porcentagem concluída</label>
+        <name>Percentage_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code 2 --></label>
+        <name>Product_Code_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code --></label>
+        <name>Product_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <picklistValues>
+            <masterLabel>DEC</masterLabel>
+            <translation><!-- DEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-AUTH</masterLabel>
+            <translation><!-- DEC-AUTH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-CPM</masterLabel>
+            <translation><!-- DEC-CPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-DEP</masterLabel>
+            <translation><!-- DEC-DEP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-DP</masterLabel>
+            <translation><!-- DEC-DP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-EKC</masterLabel>
+            <translation><!-- DEC-EKC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-ENH</masterLabel>
+            <translation><!-- DEC-ENH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-MCM</masterLabel>
+            <translation><!-- DEC-MCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-PG</masterLabel>
+            <translation><!-- DEC-PG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-PVFM</masterLabel>
+            <translation><!-- DEC-PVFM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPVS</masterLabel>
+            <translation><!-- DPVS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHI</masterLabel>
+            <translation><!-- PHI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pioneer NA</masterLabel>
+            <translation><!-- Pioneer NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Purpose &amp; Agenda --></label>
+        <name>Purpose_Agenda__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Object ID --></label>
+        <name>Related_Object_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rpt Activity Type --></label>
+        <name>Rpt_Activity_Type__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Behind Schedule</masterLabel>
+            <translation>Atrasado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation>Completado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation>Em espera</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation>Planejado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation>Programado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting</masterLabel>
+            <translation>Aguardando</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Subtipo</label>
+        <name>SubType__c</name>
+        <picklistValues>
+            <masterLabel>Add SFDC Mobility</masterLabel>
+            <translation><!-- Add SFDC Mobility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Add SFDC User</masterLabel>
+            <translation><!-- Add SFDC User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alleged Incident</masterLabel>
+            <translation><!-- Alleged Incident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bankruptcy Management</masterLabel>
+            <translation><!-- Bankruptcy Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Information</masterLabel>
+            <translation><!-- Benefit Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Block / unblock clients</masterLabel>
+            <translation>Bloqueio/desbloqueio de clientes</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonus</masterLabel>
+            <translation><!-- Bonus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brand Building</masterLabel>
+            <translation><!-- Brand Building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Approval</masterLabel>
+            <translation><!-- Business Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Career Opportunities</masterLabel>
+            <translation><!-- Career Opportunities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Color</masterLabel>
+            <translation><!-- Color --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitive Referral</masterLabel>
+            <translation><!-- Competitive Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint</masterLabel>
+            <translation><!-- Complaint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corrective Action</masterLabel>
+            <translation><!-- Corrective Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create New RC/ERC</masterLabel>
+            <translation>Criação de novo RC/ERC</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Assessment</masterLabel>
+            <translation><!-- Credit Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Collection</masterLabel>
+            <translation><!-- Credit Collection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeActivate Related Record</masterLabel>
+            <translation><!-- DeActivate Related Record --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeActivate SFDC User</masterLabel>
+            <translation><!-- DeActivate SFDC User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery</masterLabel>
+            <translation><!-- Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Directory Assistance</masterLabel>
+            <translation><!-- Directory Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discount</masterLabel>
+            <translation><!-- Discount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EAP Contact</masterLabel>
+            <translation><!-- EAP Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency</masterLabel>
+            <translation><!-- Emergency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Contact Request</masterLabel>
+            <translation><!-- Executive Contact Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Export procedures</masterLabel>
+            <translation><!-- Export procedures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Company Info</masterLabel>
+            <translation><!-- General Company Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Terms Of Sales</masterLabel>
+            <translation><!-- General Terms Of Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HSE</masterLabel>
+            <translation><!-- HSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inspection</masterLabel>
+            <translation><!-- Inspection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installed</masterLabel>
+            <translation><!-- Installed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investigation</masterLabel>
+            <translation><!-- Investigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor Relations</masterLabel>
+            <translation><!-- Investor Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invitation</masterLabel>
+            <translation><!-- Invitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue - Public Affairs</masterLabel>
+            <translation><!-- Issue - Public Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Generation</masterLabel>
+            <translation><!-- Lead Generation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legacy Activity</masterLabel>
+            <translation><!-- Legacy Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Literature</masterLabel>
+            <translation><!-- Literature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M/SDS</masterLabel>
+            <translation><!-- M/SDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management</masterLabel>
+            <translation><!-- Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing-Campaign</masterLabel>
+            <translation><!-- Marketing-Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media Relations</masterLabel>
+            <translation><!-- Media Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multiple</masterLabel>
+            <translation><!-- Multiple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurturing</masterLabel>
+            <translation><!-- Nurturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order/Pricing</masterLabel>
+            <translation><!-- Order/Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ordered</masterLabel>
+            <translation><!-- Ordered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Locator</masterLabel>
+            <translation><!-- Partner Locator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Install Checklist</masterLabel>
+            <translation><!-- Post Install Checklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-install Checklist</masterLabel>
+            <translation><!-- Pre-install Checklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preventative Action</masterLabel>
+            <translation><!-- Preventative Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Support</masterLabel>
+            <translation><!-- Process Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Information</masterLabel>
+            <translation><!-- Product Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Sample</masterLabel>
+            <translation><!-- Product Sample --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product_From DuPont</masterLabel>
+            <translation><!-- Product_From DuPont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product_From Partner</masterLabel>
+            <translation><!-- Product_From Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospecting</masterLabel>
+            <translation><!-- Prospecting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation><!-- Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rebate</masterLabel>
+            <translation><!-- Rebate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimburse</masterLabel>
+            <translation><!-- Reimburse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship Builiding</masterLabel>
+            <translation><!-- Relationship Builiding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repair</masterLabel>
+            <translation><!-- Repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repeat Caller</masterLabel>
+            <translation><!-- Repeat Caller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporting Complete</masterLabel>
+            <translation><!-- Reporting Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed with Shop</masterLabel>
+            <translation><!-- Reviewed with Shop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC Application Enhancement</masterLabel>
+            <translation><!-- SFDC Application Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales-Price</masterLabel>
+            <translation><!-- Sales-Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample</masterLabel>
+            <translation><!-- Sample --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sell to DuPont</masterLabel>
+            <translation><!-- Sell to DuPont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Information</masterLabel>
+            <translation><!-- Service Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Level</masterLabel>
+            <translation><!-- Service Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settlement</masterLabel>
+            <translation><!-- Settlement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy</masterLabel>
+            <translation><!-- Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain</masterLabel>
+            <translation><!-- Supply Chain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tech Assigned</masterLabel>
+            <translation><!-- Tech Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Assistance</masterLabel>
+            <translation><!-- Technical Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terms Of Payment</masterLabel>
+            <translation><!-- Terms Of Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terms Of Sales</masterLabel>
+            <translation><!-- Terms Of Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tested</masterLabel>
+            <translation><!-- Tested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trainer Assigned</masterLabel>
+            <translation><!-- Trainer Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trial</masterLabel>
+            <translation><!-- Trial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Troubleshoot</masterLabel>
+            <translation><!-- Troubleshoot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit Price</masterLabel>
+            <translation><!-- Unit Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Details of Related Record</masterLabel>
+            <translation><!-- Update Details of Related Record --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Record Owner</masterLabel>
+            <translation><!-- Update Record Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update of address</masterLabel>
+            <translation>Atualização de endereço</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update of delivery plant</masterLabel>
+            <translation>Alteração de planta de faturamento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update of district</masterLabel>
+            <translation>Alteração de distrito</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update of e-mail</masterLabel>
+            <translation>Alteração de e-mail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update of package discard</masterLabel>
+            <translation>Alteração descarte de embalagem</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update of state subscription</masterLabel>
+            <translation>Alteração de inscrição estadual</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update or Add Territory</masterLabel>
+            <translation><!-- Update or Add Territory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update/inclusion of RC</masterLabel>
+            <translation>Alteração/inclusão de RC</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verify SFDC Input</masterLabel>
+            <translation><!-- Verify SFDC Input --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Info</masterLabel>
+            <translation><!-- Warranty Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website Assistance</masterLabel>
+            <translation><!-- Website Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Number/Hang Up</masterLabel>
+            <translation><!-- Wrong Number/Hang Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Subtipo 2</label>
+        <name>Sub_Type_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Base Object --></label>
+        <name>sma__BaseObjectId__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Layer Id --></label>
+        <name>sma__LayerId__c</name>
+    </fields>
+</CustomObjectTranslation>

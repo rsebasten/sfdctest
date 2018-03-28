@@ -1,0 +1,8 @@
+<apex:page standardController="case"  extensions="ctrlBINA_SurfaceProdVFPanel" showHeader="false" readOnly="false" title="Products Selected">
+<apex:form >
+        <apex:selectList value="{!counter}" multiselect="false" size="{!size}" style="margin-left:250px;width:350px;height:100px;" >
+            <apex:selectOptions value="{!SelectedMaterials}"/>
+        </apex:selectList>
+</apex:form>
+
+</apex:page>

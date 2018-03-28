@@ -1,0 +1,243 @@
+<apex:page controller="ctrlAddressVerifier" title="Address Verifier" action="{!init}" showHeader="true" sidebar="true" tabstyle="Geography__c">
+<script src="/soap/ajax/14.0/connection.js" type="text/javascript"></script>
+<script>
+/********************************************************************************
+    Unfortunatly no SOAP headers can be applied in APEX so the address change 
+    does not trigger a Territory Refresh,  therefor we need to make another callback
+    to changed account via the AJAX toolkit to refresh the territory.  Hopefully APEX will
+    support this in the future, so we can do away with this secondary hit.
+
+    V.15 DMLOptions does works for leads but not Account and Terr Mgmt.
+ **********************************************************************************/
+sforce.connection.sessionId="{!$Api.Session_ID}";
+function refreshTerritoryRule(id) {
+	if ( id.substring(0,3)=='001' ) {
+		var acc=new sforce.SObject("Account");
+		acc.id=id;
+		sforce.connection.assignmentRuleHeader = {};
+		sforce.connection.assignmentRuleHeader.useDefaultRule = "true";
+		result=sforce.connection.update([acc]);
+		if (! result[0].getBoolean("success"))
+			alert('Unable to refresh Territory Rule...'+result[0]);
+	}
+	closeForm();
+}
+</script>
+<apex:form >
+
+<apex:actionFunction action="{!updateCurrentAddress}" name="radioAddress_onClick" rerender="SourceAddress, panelResult_Edit"/>
+<apex:actionFunction action="{!done}" name="closeForm"/>
+
+<apex:sectionHeader title="Address Verifier" subtitle="{!ObjectName}"/> 
+
+<apex:outputPanel id="SourceAddress">
+<apex:message />
+<apex:pageBlock title="{!$Label.av_CurrentAddress}" mode="edit" id="currentAddress" > 
+<apex:pageBlockSection columns="1">
+<apex:pageBlockSectionItem ><apex:outputLabel value=""/>
+<apex:selectRadio value="{!useSecondaryAddress}" onclick="radioAddress_onClick();"> 
+<apex:selectOptions value="{!RadioAddress}"/>
+</apex:selectRadio></apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<hr/>
+<table><tr>
+<td>
+<apex:pageBlockSection columns="1">
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.Street.label}"/><apex:inputTextArea value="{!currAddress.address.Street}" title="Street" style="width:150px;"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.City.label}"/><apex:inputText value="{!currAddress.address.City}" title="City"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.State.label}"/><apex:inputText value="{!currAddress.address.State}" title="State"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.PostalCode.label}"/><apex:inputText value="{!currAddress.address.PostalCode}" title="PostalCode"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.Country.label}"/><apex:selectList id="ddCountry" value="{!currAddress.address.Country}" multiselect="false" size="1" style="width:155px;">
+<apex:selectOptions value="{!CountryPicklist}"/>
+</apex:selectList></apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</td>
+<td>
+<apex:pageBlockSection columns="1">
+
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.County__c.label}"/><apex:outputText value="{!currAddress.County}" title="County"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.FIPS__c.label}"/><apex:outputText value="{!currAddress.fips}" title="fips"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.CityDistrict__c.label}" escape="false"/><apex:outputText value="{!currAddress.citydistrict}" title="citydistrict"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.Region__c.label}" escape="false"/><apex:outputText value="{!currAddress.Region}" title="Region"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.SubRegion__c.label}" escape="false"/><apex:outputText value="{!currAddress.SubRegion}" title="SubRegion"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$Label.av_Geocode}"/><a target="_blank" href="http://maps.google.com/maps?q={!currAddress.LngLat.Lat},{!currAddress.LngLat.Lng}">{!currAddress.LngLat.Lat},{!currAddress.LngLat.Lng}</a></apex:pageBlockSectionItem> 
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$Label.av_GeoAccuracy}"  escape="false"/>{!currAddress.Accuracy}</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</td>
+</tr></table>
+<apex:pageBlockButtons location="bottom">  
+
+<!-- <apex:actionFunction action="{!verify}" name="radioProv_onClick" rerender="SourceAddress, panelResult_Edit"/> onclick="radioProv_onClick();" -->
+<apex:commandButton id="btnVerify" rerender="panelResult_Edit" action="{!Verify}" 
+onclick="document.body.style.cursor = 'wait'; document.getElementById('{!$Component.panelResult_Edit}').style.display='none';"  
+oncomplete="document.body.style.cursor='auto';"
+value="{!$Label.av_Verify}" timeout="10000" status="statusSearching"/>
+<apex:outputPanel rendered="{!debug}" layout="none">
+&nbsp;<span>using:</span>&nbsp; 
+<apex:selectList value="{!geocodeProvider}" size="1" style="width:100px;" > 
+<apex:selectOption itemValue="MAPQUEST2" itemLabel="MapQuest"/>
+<apex:selectOption itemValue="GOOGLE" itemLabel="Google"/>
+<apex:selectOption itemValue="BING" itemLabel="Bing"/>
+</apex:selectList> 
+</apex:outputPanel>
+
+
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:outputPanel>
+
+<!-- 
+//////////////////////////////////////////////////////////////////////////////////////
+Wait actions for Verify
+/////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<apex:actionstatus id="statusSearching">
+<apex:facet name="start"><image id="imgSearch" src="/img/loading.gif" height="20px" />
+&nbsp;&nbsp;<b>Searching...</b></apex:facet>
+</apex:actionstatus>
+<!-- 
+//////////////////////////////////////////////////////////////////////////////////////
+Edit panel used for modifying result prior to Save.
+/////////////////////////////////////////////////////////////////////////////////////
+-->
+<apex:outputPanel id="panelResult_Edit">
+<apex:outputText style="color:red;font-weight:bold;" value="{!searchError}" rendered="{!NOT(ISNULL(SearchError))}"/>
+<apex:messages />   
+<apex:pageBlock title="{!$Label.av_VerfiedAddressResults}" mode="edit" id="geoAddresses" rendered="{!NOT(ISNULL(selectedGeoAddress))}" > 
+<table><tr>
+<td>
+<apex:pageBlockSection columns="1">
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.Street.label}"/><apex:inputTextArea value="{!geoAddress.Address.Street}" title="Street" style="width:150px;"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.City.label}"/><apex:inputText value="{!geoAddress.Address.City}" title="City"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.State.label}"/><apex:inputText value="{!geoAddress.Address.State}" title="State"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.PostalCode.label}"/><apex:inputText value="{!geoAddress.Address.PostalCode}" title="PostalCode"/></apex:pageBlockSectionItem>     
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.County__c.label}"/><apex:inputText value="{!geoAddress.County}" title="County"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.CityDistrict__c.label}" escape="false"/><apex:inputText value="{!geoAddress.citydistrict}" title="citydistrict"/></apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</td>
+<td>
+<apex:pageBlockSection columns="1">
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.Country.label}"/><apex:outputText value="{!geoAddress.Address.Country}" title="Country"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.StateName__c.label}"/><apex:outputText value="{!geoAddress.stateinfo.fullname}" title="statename"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.FIPS__c.label}"/><apex:outputText value="{!geoAddress.countyInfo.fips}" title="fips"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.Region__c.label}" escape="false"/><apex:outputText value="{!geoAddress.countryInfo.Region}" title="Region"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.SubRegion__c.label}" escape="false"/><apex:outputText value="{!geoAddress.countryInfo.SubRegion}" title="SubRegion"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$Label.av_Geocode}"/><a target="_blank" href="http://maps.google.com/maps?q={!geoAddress.LngLat.Lat},{!geoAddress.LngLat.Lng}">{!geoAddress.LngLat.Lat},{!geoAddress.LngLat.Lng}</a></apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</td>
+<td>
+<!--  <apex:pageBlockSectionItem ><apex:outputLabel value="Geocode Accuracy"/><a target="_blank" href="http://www.mqdemo.com/mqdemoserver/FullGeocodeDef.asp?result={!geoAddress.Accuracy}">{!geoAddress.Accuracy}</a></apex:pageBlockSectionItem> -->
+<apex:pageBlockSection columns="1">
+<apex:pageBlockSectionItem ><apex:outputLabel value="Geo {!$ObjectType.Lead.fields.Country.label}" escape="false"/><a target="_blank" href="/{!geoAddress.countryInfo.id}">{!geoAddress.countryInfo.id}</a></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="Geo {!$ObjectType.Lead.fields.State.label}" escape="false"/><a target="_blank" href="/{!geoAddress.stateInfo.id}">{!geoAddress.stateInfo.id}</a></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="Geo {!$ObjectType.Lead.fields.County__c.label}" escape="false"/><a target="_blank" href="/{!geoAddress.countyInfo.id}">{!geoAddress.countyInfo.id}</a></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.AddressAccuracy__c.label}" escape="false"/>{!geoAddress.Accuracy}</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ><apex:outputLabel value="{!$ObjectType.Lead.fields.AddressAccuracy__c.label}&nbsp;{!$Label.av_Desc}" escape="false"/><apex:outputText escape="false" value="{!AccuracyDesc}" /></apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<br/>
+<apex:image id="googMapView" rendered="{!(UPPER(geocodeProvider)=='GOOGLE')}" value="https://maps.googleapis.com/maps/api/staticmap?center={!geoAddress.LngLat.Lat},{!geoAddress.LngLat.Lng}&zoom=12&size=320x200&sensor=false&markers=color:green%7C{!geoAddress.LngLat.Lat},{!geoAddress.LngLat.Lng}" width="320" height="200"/>
+<!--
+<apex:image id="googStreetView" value="https://maps.googleapis.com/maps/api/streetview?size=320x320&location={!geoAddress.LngLat.Lat},{!geoAddress.LngLat.Lng}&fov=90&heading=235&pitch=10&sensor=false" width="320" height="200"/>
+
+c:GoogleMap mapType="normal" 
+mapkey="ABQIAAAAPLrQOk6V3OomqbGx5dhO6hSiPqC6cYP_G4uopfVOWWQjDCoUiBT5zvggCqnytIeQIma5J6IHa6CP8A" lat="49.490014" lon="11.099518"
+height="200" width="300"
+/--> 
+</td>
+</tr>
+</table>
+<apex:pageBlockButtons >
+
+<!-- no need to use AJAX anymore to do the refreshTerritoryRule.  can now be done in v.15 via APEX 
+<apex:commandButton rerender="panelResult_Edit,SourceAddress" action="{!Save}" onclick="document.body.style.cursor = 'wait';" value="{!$Label.av_Save}" oncomplete="refreshTerritoryRule('{!objectId}');"  rendered="{!NOT(ISNULL(objectId))}" status="statusSaving" /> 
+-->
+<apex:commandButton rerender="panelResult_Edit,SourceAddress" action="{!Save}" onclick="document.body.style.cursor = 'auto';" value="{!$Label.av_Save}" rendered="{!NOT(ISNULL(objectId))}" status="statusSaving" oncomplete="refreshTerritoryRule('{!objectId}');"/> 
+<apex:commandButton rerender="panelResult_Edit,SourceAddress" action="{!Done}" onclick="document.body.style.cursor = 'wait';" value="{!$Label.av_Cancel}" rendered="{!NOT(ISNULL(objectId))}"/>
+<!--  List does not disappear     <apex:commandButton action="{!unselectGeoAddress}" value="Back to List" rendered="{!ResultCount>1}" rerender="panelResult_Edit,panelResult_List" /> -->
+</apex:pageBlockButtons>
+
+</apex:pageBlock>
+
+
+
+<!-- 
+</apex:outputPanel>
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+List View panel used for when the geoProvider returns multiple addresses
+/////////////////////////////////////////////////////////////////////////////////////
+
+<apex:outputPanel id="panelResult_List">
+-->
+<apex:pageBlock title="Multiple Address Results" id="results" rendered="{!ResultCount>1}">
+<apex:pageBlockSection title="Search Results" columns="1">
+<apex:pageBlockTable value="{!GeoAddresses}" var="ga" width="100%">
+<apex:column >
+<apex:commandLink action="{!selectGeoAddress}" value="select" rerender="panelResult_Edit">
+<apex:Param name="selectedGeoAddress" assignTo="{!selectedGeoAddress}" value="{!ga.index}"/>
+</apex:commandLink>
+</apex:column>
+<!--   <apex:column headerValue="Id" value="{!ga.Id}"/> -->
+<apex:column headerValue="{!$ObjectType.Lead.fields.Street.label}" value="{!ga.Address.Street}"/>
+<apex:column headerValue="{!$ObjectType.Lead.fields.City.label}" value="{!ga.Address.City}"/>
+<apex:column headerValue="{!$ObjectType.Lead.fields.State.label}" value="{!ga.Address.State}"/>
+<apex:column headerValue="{!$ObjectType.Lead.fields.PostalCode.label}" value="{!ga.Address.PostalCode}"/>
+<apex:column headerValue="{!$ObjectType.Lead.fields.Country.label}" value="{!ga.Address.Country}"/>
+<apex:column headerValue="{!$ObjectType.Lead.fields.County__c.label}" value="{!ga.County}"/>
+<apex:column headerValue="{!$ObjectType.Lead.fields.AddressAccuracy__c.label}" value="{!ga.Accuracy}"/>
+<apex:column headerValue="Geocode" value="{!ga.LngLat.Lng},{!ga.LngLat.Lat}"/> 
+</apex:pageBlockTable> 
+</apex:pageBlockSection>
+</apex:pageBlock>  
+
+<!-- 
+//////////////////////////////////////////////////////////////////////////////////////
+Debug Panel used to see stats on the geoProvider
+/////////////////////////////////////////////////////////////////////////////////////
+-->   
+
+<apex:pageBlock id="debugresults" rendered="{!debug}" >
+<apex:pageBlockSection title="Debug Info" columns="1">
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Provider"/>
+<apex:outputText value="{!geocodeProvider}"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Request EndPoint"/>
+<apex:outputText value="{!geocodeEndPoint}"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Request"/>
+<apex:outputText value="{!geocodeRequest}"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Response"/>
+<apex:inputTextarea cols="140" rows="10" id="mq_xml" value="{!geocodeResponse}"></apex:inputTextarea>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="ResponseTime"/>
+<apex:outputText value="{!geocodeTime}"/>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>  
+
+
+</apex:outputPanel>
+<!-- </apex:actionRegion>  -->
+
+
+<!-- 
+//////////////////////////////////////////////////////////////////////////////////////
+Wait actions for Save
+/////////////////////////////////////////////////////////////////////////////////////
+-->
+<apex:actionstatus id="statusSaving">
+<apex:facet name="start"><image id="imgSave" src="/img/loading.gif" height="20px" />
+&nbsp;&nbsp;<b>Saving...<br/></b></apex:facet>
+</apex:actionstatus>
+
+</apex:form>
+
+</apex:page>

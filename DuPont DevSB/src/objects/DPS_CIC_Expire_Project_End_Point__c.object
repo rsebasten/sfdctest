@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Fetch the data through URL from CIC system to update the Expire Project in SFDC</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CIC_Expire_Project_End_Point__c</fullName>
+        <description>Used to store URL provided by CIC system</description>
+        <externalId>false</externalId>
+        <label>DPS CIC Expire Project End Point</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CIC_Expire_Project_Job_Time_Stamp__c</fullName>
+        <description>To update the time after successfully completion of jobs</description>
+        <externalId>false</externalId>
+        <label>CIC Expire Project Job Time Stamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>DPS CIC Expire Project End Point</label>
+    <visibility>Public</visibility>
+</CustomObject>

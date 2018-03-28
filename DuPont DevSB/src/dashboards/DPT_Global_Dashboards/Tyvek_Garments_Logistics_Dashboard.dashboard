@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Tyvek</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Garments - Chemical Industrial</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Garments - Thermal</values>
+        </dashboardFilterOptions>
+        <name>Product Category</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>Filter out Quick Complaints using the Case Record Type Filter.
+Filter by Market Segment using Owning Organization Filter(s). Does not include &quot;Invalid Complaints&quot;
+Hover over for details, click to go to data in report format for exporting.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Case.fReason_Level_2__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tyv_Gar_Complaints_by_Reason_2</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>by Reason 2</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Case.fAccount_Region__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tyvek_Last_Month_Reas1_Log_RegofOrig</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>by Originating Region</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATEONLY</groupingColumn>
+            <groupingColumn>Case.Manufacturing_Plant__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tvk_Gar_Complaints_by_Q_by_Owning_org</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>by Mfg plant</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATEONLY</groupingColumn>
+            <groupingColumn>Case.Owning_Organization__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tyv_Gar_Complaints_mxm_owning_org</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>by Owning Org</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATEONLY</groupingColumn>
+            <groupingColumn>Case.Product_Category__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tvy_Gar_Complants_MXM_by_Product_Cat</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>by Product Category</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATEONLY</groupingColumn>
+            <groupingColumn>Case.Owning_Organization__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tyv_GAR_Log_Complaints_by_Q_by_Owning_Or</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>by Owning Org by Quarter</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Case.Manufacturing_Plant__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tyvek_Last_Month_Logistics_Complaints</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>by Mfg Plant</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATEONLY</groupingColumn>
+            <groupingColumn>Case.fReason_Level_2__c</groupingColumn>
+            <header>Last Month&apos;s Tvy&amp;Garm Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/Tyv_Gar_Log_Complaints_by_Q_by_Reason2</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>by Reason 2 by Quarter</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>wendy.c.youell@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Tyvek &amp; Garments Logistics Dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

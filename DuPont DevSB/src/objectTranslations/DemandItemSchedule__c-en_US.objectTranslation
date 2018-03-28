@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Demand Item Schedule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Demand Item Schedule</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Quantity --></label>
+        <name>Quantity</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- QuantityRevenue --></label>
+        <name>QuantityRevenue</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- QuantityRevenueGoalwithActualQuantity --></label>
+        <name>QuantityRevenueGoalwithActualQuantity</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- QuantityRevenuewithActualQuantity --></label>
+        <name>QuantityRevenuewithActualQuantity</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- QuantityRevenuewithActualQuantityRevenue --></label>
+        <name>QuantityRevenuewithActualQuantityRevenue</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- QuantitywithActualQuantity --></label>
+        <name>QuantitywithActualQuantity</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Revenue --></label>
+        <name>Revenue</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- RevenuewithActualRevenue --></label>
+        <name>RevenuewithActualRevenue</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Date that indicates the month this record represents. Typically beginning of month. --></help>
+        <label><!-- Base Date --></label>
+        <name>BaseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand Item --></label>
+        <name>DemandItem__c</name>
+        <relationshipLabel><!-- Demand Item Schedule --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Read Only field for when the last snapshot was taken --></help>
+        <label><!-- Last Snapshot Date --></label>
+        <name>Last_Snapshot_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Snapshot Taken By User --></help>
+        <label><!-- Last Snapshot Taken By --></label>
+        <name>Last_Snapshot_Taken_By__c</name>
+        <relationshipLabel><!-- Demand Item Schedule --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prior Year Month Demand Schedule Lookup --></help>
+        <label><!-- Prior Year Month Demand Schedule --></label>
+        <name>PYMSchedule__c</name>
+        <relationshipLabel><!-- Demand Item Schedule --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Actual quantity of a given material (demand item) for the given month. --></help>
+        <label><!-- Actual Quantity --></label>
+        <name>QtyActual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Qty Snapshot for current Month --></label>
+        <name>QtyFcst0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Qty Snapshot - 1 Months ago --></label>
+        <name>QtyFcst1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Forecast Qty Snapshot - 2 Months ago --></help>
+        <label><!-- Forecast Qty Snapshot - 2 Months ago --></label>
+        <name>QtyFcst2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Quantity --></label>
+        <name>QtyFcst__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the predefined quantity goal for the month, this is defined one year in advance for the year --></help>
+        <label><!-- Quantity Goal --></label>
+        <name>QtyGoal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual revenue of a given material (demand item) for the given month --></help>
+        <label><!-- Actual Revenue --></label>
+        <name>RevActual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Rev Snapshot for current Month --></label>
+        <name>RevFcst0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Rev Snapshot  - 1 Months ago --></label>
+        <name>RevFcst1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Rev Snapshot - 2 Months ago --></label>
+        <name>RevFcst2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Revenue --></label>
+        <name>RevFcst__c</name>
+    </fields>
+    <fields>
+        <help><!-- Predefined revenue goal for the month, this is defined one year in advance for the year --></help>
+        <label><!-- Revenue Goal --></label>
+        <name>RevGoal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to actual quantity from 1 year earlier --></help>
+        <label><!-- Prior YR/Month Actual Quantity --></label>
+        <name>fQtyPYMActual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to actual revenue from 1 year earlier --></help>
+        <label><!-- Prior YR/Month Actual --></label>
+        <name>fRevPYMActual__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

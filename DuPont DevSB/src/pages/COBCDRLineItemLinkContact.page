@@ -1,0 +1,294 @@
+<apex:page controller="ctrlCOBCustomerDataRequestLineItemNew" tabstyle="Customer_Data_Request_Line_Item__c">
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js" loadOnReady="false"/>
+    <head>
+<style>
+.buttons a.btn{width:70px;height:200px;}
+.spinnerCt {
+    left: 50%;
+    top: 35%;
+    position: fixed;
+    z-index: 1050;
+    padding: 20px 40px;
+    box-shadow: 0pt 2px 5px rgb(172, 172, 172);
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid rgb(206, 236, 255);
+    background-color: rgb(206, 236, 255);
+    background-style: solid;
+}
+
+.spinner {
+    padding: 10px 15px 10px 0pt;
+    vertical-align: middle;
+    float: left
+}
+
+.spinnerCt .loadingIndicator {
+    display: inline;
+    font-size: 135%;
+    font-weight: bold;
+    float: left
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.45;
+    filter: alpha(opacity =     45);
+    position: absolute;
+    z-index: 1000;
+    top: 0pt;
+    left: 0pt;
+}
+
+
+ .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 600px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+</style>
+</head>
+    
+    <apex:form id="pageError" rendered="{!IF((showEditErrorPage == false && showNewErrorPage==false && showErrorPage==false ),true,false)}">
+        <apex:sectionHeader title="Request Item " subtitle="New Request Item"/>
+        <apex:actionStatus id="counterStatus">
+        <apex:facet name="start">
+            <div class="spinnerMask" id="spinnerMask">
+                <div class="spinnerCt">
+                    <img src="/img/analytics/reportbuilder/icons/spinner32.gif" alt="Loading..." width="32" height="32" class="spinner" title="Loading..." />
+                    <div class="loadingIndicator">Loading...</div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+   
+    
+    
+    <apex:pageBlock title="Request Item" id="COB" >
+            <apex:pagemessages />
+            
+            <apex:pageBlockSection columns="2" id="firstSection"  title="Request Information" collapsible="false">
+                    <apex:outputField value="{!CustDataReqLineItem.Name}" /> 
+                    <apex:outputText label="Customer Master Data Request Number" id="cdrLineItem" value="{!custOnboardingReq.Name}"/>
+                    <apex:outputText label="Customer Number" value="{!custOnboardingReq.Customer__r.Customer_Code__c}"/>
+                    <apex:outputText label="Company Code" value="{!custOnboardingReq.Company_Code__c}"/> 
+                    <apex:outputText label="Sales Organization" value="{!custOnboardingReq.Sales_Organization__c}"/> 
+                    <apex:outputText label="Distribution Channel" value="{!custOnboardingReq.Distribution_Channel__c}"/>
+                    <apex:outputText ></apex:outputText> 
+                    <apex:outputText label="Division" value="{!custOnboardingReq.Division__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlock id="check1" title="Search and Select Contact" >
+    
+         <apex:pageBlockTable value="{!accountContacts}" var="con" id="tableId" >
+             <apex:column >
+             <apex:selectRadio value="{!con.ischeck}" >
+                           <apex:selectOption itemValue="True" ></apex:selectOption>
+                           <apex:actionSupport event="onclick" reRender="tableId,check1,linkContact" action="{!clearContactList}" status="counterStatus" >
+                          <apex:param name="first" id="contactselected"  assignTo="{!selectedcontact}" value="{!con.Id}"/> 
+                           </apex:actionSupport> 
+              </apex:selectRadio> 
+              </apex:column>
+              <apex:column value="{!con.name}" headerValue="Contact Name"> 
+              </apex:column>
+              <apex:column value="{!con.email}" headerValue="Email">
+              </apex:column>
+              <apex:column value="{!con.phone}" headerValue="Phone">
+              </apex:column>
+              <apex:column value="{!con.department}" headerValue="Department">
+              </apex:column>
+              <apex:column value="{!con.role}" headerValue="Role">
+              </apex:column>
+             
+         </apex:pageBlockTable>
+          <!--<Santhosh20161006> Changed code for adding previous and next buttons for pagination -->
+          <apex:pageblockbuttons location="bottom" style="align:center"> 
+          <apex:commandButton disabled="{!DisablePrevious}" value="{!$Label.Button_Previous}" status="counterStatus" action="{!Previous}" />
+          <apex:commandButton disabled="{!DisableNext}" status="counterStatus" value="{!$Label.Button_Next}" action="{!Next}" />
+          <apex:commandButton value="Proceed" action="{!customerLinkage}" reRender="linkContact,pageError,check1,tableId" immediate="true"  status="counterStatus"  />
+          <apex:commandButton action="{!newContactCreation}" value="New Contact" reRender="newContact"  status="counterStatus" />
+          </apex:pageblockbuttons>
+          <!--<Santhosh20161006> :End--> 
+          <table width="100%"><tr>
+          <td width="90%" align="right"><td width="10%"><b> <apex:outputlabel value="Page: {!PageNumber} of {!TotalPages}"/> </b></td></td></tr></table>
+     </apex:pageBlock>
+     
+          <apex:pageBlock title="Link Contact" id="linkContact" rendered="{!flaga}"  >
+           <apex:pageBlockSection >
+             <apex:pageblockSectionItem >
+             <apex:outputLabel value="Customer Contact First Name" rendered="{!flaga}" ></apex:outputLabel>
+             <apex:outputField value="{!contact.FirstName}" rendered="{!flaga}"  ></apex:outputField>    
+             </apex:pageblockSectionItem>
+             <apex:pageBlockSectionItem id="ccf">
+                   <!-- <apex:outputLabel >Customer Contact Function</apex:outputLabel>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock" rendered="{!flaga}"> </apex:outputPanel>
+                    <apex:inputField id="cf" label="Customer Contact Function" value="{!CustDataReqLineItem.Customer_Contact_Function__c}"/>
+                    </apex:outputPanel> -->
+                    <apex:outputLabel value="Customer Contact Function" rendered="{!flaga}"></apex:outputLabel>
+                    <apex:inputField id="cf" label="Customer Contact Function" value="{!CustDataReqLineItem.Customer_Contact_Function__c}" required="true"/>                                                 
+                </apex:pageBlockSectionItem>
+                
+             
+             <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Customer Contact Last Name" rendered="{!flaga}"></apex:outputLabel>
+                 <apex:outputField value="{!contact.LastName}" rendered="{!flaga}" ></apex:outputField>    
+             </apex:pageblockSectionItem>
+             <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Customer Contact Department" rendered="{!flaga}"></apex:outputLabel>
+                 <apex:outputField value="{!contact.department}" rendered="{!flaga}" ></apex:outputField>    
+             </apex:pageblockSectionItem>
+             <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Customer Contact Telephone" rendered="{!flaga}"></apex:outputLabel>
+                 <apex:outputField value="{!contact.phone}" rendered="{!flaga}" ></apex:outputField>    
+             </apex:pageblockSectionItem>
+          
+             <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Customer Contact Fax" rendered="{!flaga}"></apex:outputLabel>
+                 <apex:outputField value="{!contact.Fax}" rendered="{!flaga}"></apex:outputField>    
+             </apex:pageblockSectionItem>
+             <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Customer Contact Email" rendered="{!flaga}"></apex:outputLabel>
+                 <apex:outputField value="{!contact.email}" rendered="{!flaga}"></apex:outputField>    
+             </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem ></apex:pageblockSectionItem>
+              <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Notes" rendered="{!flaga}"></apex:outputLabel>
+                 <apex:inputField value="{!CustDataReqLineItem.Comments__c}" rendered="{!flaga}"></apex:inputField>    
+             </apex:pageblockSectionItem>
+          
+          </apex:pageblockSection>
+          <!--System Information section-->
+        <apex:pageBlockSection columns="2" title="System Information" >
+        <apex:outputText label="Record type" value="{!RecTypeName}" id="rectype"/>
+        <apex:outputText label="Parent Record type" value="{!ParentRecordTypeName}" id="rectype1"/>
+        </apex:pageBlockSection>
+        <!--System Information section ends here -->
+        
+          <apex:pageBlockButtons >
+            
+            <apex:commandButton value="Save" action="{!saveContactnew}" status="counterStatus" reRender="pageError"/> 
+            <apex:commandButton value="Cancel" action="{!Cancel}" styleClass="btn" immediate="true"></apex:commandButton> 
+            </apex:pageBlockButtons>
+     </apex:pageBlock>
+         <apex:outputPanel id="newContact">
+               <apex:outputPanel layout="block" styleClass="popupBackground "
+                    rendered="{!displayPopUpFlag}" />
+                    <apex:outputPanel styleClass="custPopup" layout="block"
+                    rendered="{!displayPopUpFlag}">
+                 <apex:pageBlock title="Contact Information">
+                    <apex:pageblockSection >
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Account Name"></apex:outputLabel>
+                      
+                      <apex:outputField value="{!custOnboardingReq.Account__c}"/>
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                       <apex:outputLabel value="First Name"></apex:outputLabel>
+                      <apex:inputField value="{!contactNew.FirstName}" />
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                       <apex:outputLabel value="Phone"></apex:outputLabel>
+                      <apex:inputField value="{!contactNew.Phone}" />
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                       <apex:outputLabel value="Last Name"></apex:outputLabel>
+                      <apex:inputField value="{!contactNew.LastName}" />
+                      </apex:pageblockSectionItem>
+                       <apex:pageblockSectionItem >
+                       <apex:outputLabel value="Mobile"></apex:outputLabel>
+                      <apex:inputField value="{!contactNew.MobilePhone}" />
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                       <apex:outputLabel value="Email"></apex:outputLabel>
+                      <apex:inputField value="{!contactNew.Email}" />
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                       <apex:outputLabel value="Department"></apex:outputLabel>
+                      <apex:inputField value="{!contactNew.Department}" />
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                       <apex:outputLabel value="Fax"></apex:outputLabel>
+                      <apex:inputField value="{!contactNew.Fax}" />
+                      </apex:pageblockSectionItem>
+                      </apex:pageblockSection>
+                    
+                      <div align="center">
+                    <apex:commandButton value=" Save " action="{!saveContact}" status="counterStatus" reRender="tableId,newContact" style="width:75px;text-align:center !important;" />
+                    <apex:commandButton value="Cancel" action="{!cancelContact}" immediate="true" style="width:75px;text-align:center !important;" />
+                     </div>
+                      
+                      </apex:pageBlock> 
+                      
+   
+           
+        
+              
+          </apex:outputPanel>
+      </apex:outputPanel> 
+       
+            </apex:pageBlock>
+          </apex:form>
+          
+     <apex:form id="EditErrorPage" rendered="{!showEditErrorPage}" >
+     <br/>
+     <br/>
+     <b><center><apex:pageMessage summary="You cannot Edit this record as it is locked." severity="error" strength="1" >
+     </apex:pageMessage></center></b>
+     <br/>
+     <br/>
+     <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <center><font>Click&nbsp;</font><apex:commandLink action="{!goBack}" value="here"/><font>&nbsp; to return to the Request</font></center>
+     </apex:form>
+     
+     <apex:form id="NewErrorPage" rendered="{!showNewErrorPage}" >
+     <br/>
+     <br/>
+     <b><center><apex:pageMessage summary="You cannot create new request Item record if request record is locked." severity="error" strength="1" >
+     </apex:pageMessage></center></b>
+     <br/>
+     <br/>
+     <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <center><font>Click&nbsp;</font><apex:commandLink action="{!Done}" value="here"/><font>&nbsp; to return to the Request</font></center>
+     </apex:form>
+     
+     <apex:form id="partnerErrorPage" rendered="{!showErrorPage}" >
+     <br/>
+     <br/>
+     <b><center><apex:pageMessage summary="Creating Line items is not possible on Miscellaneous transactions." 
+     severity="error" strength="1" >
+     </apex:pageMessage></center></b>
+     <br/>
+     <br/>
+     <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <center><font>Click&nbsp;</font><apex:commandLink action="{!Done}" value="here"/><font>&nbsp; to return to the Request</font></center>
+     </apex:form>
+</apex:page>

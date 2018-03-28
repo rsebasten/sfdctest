@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Sample Analysis Template</name>
+    <style>freeForm</style>
+    <subject>Sample Analysis Results for Sample {!Trademark_Abuse_Sample_Analysis__c.Sample_Name__c}</subject>
+    <textOnly>Here are the details of the Sample Analysis for the Sample {!Trademark_Abuse_Sample_Analysis__c.Sample_Name__c}.
+
+Link to the Sample Analysis: {!Trademark_Abuse_Sample_Analysis__c.Link}
+
+Case: {!Trademark_Abuse_Sample_Analysis__c.Case__c}
+Sample Name: {!Trademark_Abuse_Sample_Analysis__c.Sample_Name__c}
+Sample ID: {!Trademark_Abuse_Sample_Analysis__c.Trademark_Abuse_Sample__c}
+Date Received: {!Trademark_Abuse_Sample_Analysis__c.Date_Received__c}
+Lab Name: {!Trademark_Abuse_Sample_Analysis__c.Lab_Name__c}
+Date Completed: {!Trademark_Abuse_Sample_Analysis__c.Date_Completed__c}Analysis Type: {!Trademark_Abuse_Sample_Analysis__c.Analysis_type__c}
+Summary: {!Trademark_Abuse_Sample_Analysis__c.Summary__c}
+
+Technical Details
+Overall Conclusion: {!Trademark_Abuse_Sample_Analysis__c.Overall_Conclusion__c}
+Active (s) found by HPLC: {!Trademark_Abuse_Sample_Analysis__c.Active_for_Brand_found_in_HPLC__c}
+Compound (s) found by FTIR: {!Trademark_Abuse_Sample_Analysis__c.Compounds_found_in_FTIR__c}
+A.I. Percentage: {!Trademark_Abuse_Sample_Analysis__c.A_I__c}
+Appearance: {!Trademark_Abuse_Sample_Analysis__c.Appearance__c}
+%Assay: {!Trademark_Abuse_Sample_Analysis__c.Assay__c}
+Quality of Formulation: {!Trademark_Abuse_Sample_Analysis__c.Quality_of_Formulation__c}
+Quality of Packaging: {!Trademark_Abuse_Sample_Analysis__c.Quality_of_Packaging__c}
+Impurity Profile: {!Trademark_Abuse_Sample_Analysis__c.Impurity_Profile__c}
+S.U. Contaminants: {!Trademark_Abuse_Sample_Analysis__c.S_U_Contaminants__c}
+Any Other Impurities: {!Trademark_Abuse_Sample_Analysis__c.Any_Other_Impurities__c}
+Known Impurities: {!Trademark_Abuse_Sample_Analysis__c.Known_Impurities__c}
+Unknown Impurities: {!Trademark_Abuse_Sample_Analysis__c.Unkown_Impurities__c}
+FTIR Conclusion about A.I.: {!Trademark_Abuse_Sample_Analysis__c.FTIR_Conclusion_about_A_I__c}
+FTIR Conclusion about Formulation: {!Trademark_Abuse_Sample_Analysis__c.FTIR_Conclusion_about_Formulation__c}
+Comments on Formulation Ingredients: {!Trademark_Abuse_Sample_Analysis__c.Comments_on_Formulation_Ingredients__c}
+Toxic Solvents Detected: {!Trademark_Abuse_Sample_Analysis__c.Toxic_Solvents_Detected__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

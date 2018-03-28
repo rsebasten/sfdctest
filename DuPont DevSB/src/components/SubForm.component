@@ -1,0 +1,139 @@
+<apex:component >
+<apex:attribute name="frm"  type="SubForm" description="Subform to render" required="true"/>
+<apex:attribute name="lang" type="string" description="language" required="false"/>
+<apex:attribute name="title" type="string" description="title" required="false"/>
+<apex:attribute name="desc" type="string" description="desc" required="false"/>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr><td align="left">
+                    <apex:outputpanel id="subformTitleA" rendered="{!NOT(ISBLANK(title))}">
+                    <br/><b><h3 class="pageHeader">{!title}</h3></b><br/>
+                    <apex:outputText escape="false" value="{!desc}"/><br/><br/>
+                    </apex:outputpanel>
+                    <apex:outputpanel id="subformTitleB" rendered="{!ISBLANK(title)}">
+                    <br/><b><h3 class="pageHeader">{!frm.Title}</h3></b><br/>
+                    <apex:outputText escape="false" value="{!frm.description}"/><br/><br/>
+                    </apex:outputpanel>
+                </td></tr>
+                <tr><td align="right"><span style="color:red;"align=right"">*</span> = <apex:outputText value="{!$Label.Site_RequiredInformation}" />
+                </td></tr>
+                <tr><td align="left">
+            <apex:pageblock mode="{!if(isNull(frm.newLead.id),'edit','detail')}" >
+            
+                <apex:pageblockSection columns="1" title="" showheader="false">
+                
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_PrivacyInquiryType))}" labelstyle="width:120px">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.PrivacyInquiryType__c.label}" for="site_PrivacyInquiryType"><span style="color:red;">{!IF(frm.site_PrivacyInquiryType.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="site_PrivacyInquiryType" value="{!frm.siteField.PrivacyInquiryType__c}" required="{!frm.site_PrivacyInquiryType.required}"/>
+                    </apex:pageblockSectionItem>
+                
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.salutation))}" labelstyle="width:120px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.salutation.label}" for="email"><span style="color:red;">{!IF(frm.salutation.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="salutation" value="{!frm.newlead.salutation}" required="{!frm.salutation.required}"/>
+                    </apex:pageblockSectionItem>
+
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.firstname))}" labelstyle="width:120px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.firstname.label}"><span style="color:red;">{!IF(frm.firstname.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="FirstName" value="{!frm.newlead.firstname}" required="{!frm.lastname.required}"/>
+                    </apex:pageblockSectionItem>
+                        
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.lastname))}" labelstyle="width:130px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.lastname.label}" for="LastName"><span style="color:red;">{!IF(frm.lastname.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="LastName" value="{!frm.newlead.lastname}" required="{!frm.lastname.required}"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.email))}" labelstyle="width:130px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.email.label}" for="email"><span style="color:red;">{!IF(frm.email.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="email" value="{!frm.newlead.email}" required="{!frm.email.required}" style="width:180px"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.phone))}" labelstyle="width:130px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.phone.label}" for="email"><span style="color:red;">{!IF(frm.phone.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="phone" value="{!frm.newlead.phone}" required="{!frm.phone.required}" style="width:180px"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.street))}" labelstyle="width:130px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.street.label}" for="street"><span style="color:red;">{!IF(frm.street.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="street" value="{!frm.newlead.street}" required="{!frm.street.required}" style="width:180px"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.city))}" labelstyle="width:130px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.city.label}" for="city"><span style="color:red;">{!IF(frm.city.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="city" value="{!frm.newlead.city}" required="{!frm.city.required}" style="width:180px"/>
+                    </apex:pageblockSectionItem>
+
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.state))}" labelstyle="width:130px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.state.label}" for="state"><span style="color:red;">{!IF(frm.state.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="state" value="{!frm.newlead.state}" required="{!frm.state.required}" style="width:180px"/>
+                    </apex:pageblockSectionItem>
+
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.postalcode))}" labelstyle="width:130px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.postalcode.label}" for="postalcode"><span style="color:red;">{!IF(frm.postalcode.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="postalcode" value="{!frm.newlead.postalcode}" required="{!frm.postalcode.required}" style="width:180px"/>
+                    </apex:pageblockSectionItem>
+                    
+                    
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.lead_country))}" labelstyle="width:120px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.Lead_Country__c.label}" for="lead_country"><span style="color:red;">{!IF(frm.lead_country.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="lead_country" value="{!frm.newlead.Lead_Country__c}" required="{!frm.lead_country.required}"/>
+                    </apex:pageblockSectionItem>
+
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_country))}" labelstyle="width:120px">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Country__c.label}" for="site_country"><span style="color:red;">{!IF(frm.site_country.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="site_country" value="{!frm.siteField.Country__c}" required="{!frm.site_country.required}"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.company))}" labelstyle="width:120px">
+                        <apex:outputLabel value="{!$ObjectType.lead.fields.company.label}" for="company"><span style="color:red;">{!IF(frm.company.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="company" value="{!frm.newlead.company}" required="{!frm.company.required}"/>
+                    </apex:pageblockSectionItem>    
+
+                    <!--==============================================================================================
+                        ROLES:
+                     ==============================================================================================-->
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role1))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role1__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role1.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role1__c}" required="{!frm.site_role1.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role2))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role2__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role2.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role2__c}" required="{!frm.site_role2.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role3))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role3__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role3.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role3__c}" required="{!frm.site_role3.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role4))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role4__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role4.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role4__c}" required="{!frm.site_role4.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role5))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role5__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role5.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role5__c}" required="{!frm.site_role5.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role6))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role6__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role6.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role6__c}" required="{!frm.site_role6.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role7))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role7__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role7.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role7__c}" required="{!frm.site_role7.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role8))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role8__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role8.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role8__c}" required="{!frm.site_role8.required}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role9))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role9__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role9.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role9__c}" required="{!frm.site_role9.required}"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem rendered="{!(!IsNULL(frm.site_role10))}" labelstyle="width:120px" datastyle="width:300px;align:left">
+                        <apex:outputLabel value="{!$ObjectType.SiteField__c.fields.Role10__c.label}" for="email"><span style="color:red;">{!IF(frm.site_role10.required,'*','')}</span></apex:outputLabel>
+                        <apex:inputField id="role" value="{!frm.siteField.Role10__c}" required="{!frm.site_role10.required}"/>
+                    </apex:pageblockSectionItem>    
+                                
+                </apex:pageblockSection>
+            </apex:pageblock>
+            </td></tr></table>
+
+</apex:component>

@@ -1,0 +1,92 @@
+<!--<SA20180310>  Removed the hardoced references as part of the issue IS ID-00084379 -->
+
+<apex:page standardcontroller="Opportunity_Products__c" extensions="NewOppProductEndUser" tabstyle="Opportunity_Products__c">
+<apex:sectionHeader title="Opportunity-Product New" subtitle="New Opportunity-Indirect Product"/>
+<apex:form >
+<apex:pageBlock title="Opportunity-Product New" mode="edit">
+<apex:pageBlockButtons location="top">
+<apex:commandButton value="Save" action="{!savechange}"/>
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+</apex:pageblockbuttons>
+<apex:pageBlockSection title="Information on Indirect Product" columns="2">
+
+<tr>
+<td class="labelCol first ">
+<label for="accountname">Account</label>
+<apex:outputLink value="/{!accid}">{!accname}</apex:outputlink>
+<apex:inputhidden id="accidd" value="{!accidd}"/>
+<apex:inputhidden id="accnma" value="{!accnma}"/>
+</td>
+</tr>
+<apex:outputField id="opportunity" value="{!oppprods.Opportunity__c}">
+</apex:outputfield>
+
+<tr>
+
+<apex:panelgrid columns="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+    <td class="labelCol first " colspan="2">
+  <label for="j_id0:j_id2:j_id3:j_id7:tsk3"><span class="requiredMark">*</span><b>Product</b></label>&nbsp;&nbsp;</td>
+<apex:panelgroup >
+<span class="lookupInput">
+<div class="requiredInput"><div class="requiredBlock"></div>
+<input id="tsk3" type="text" required="true" maxlength="255" name="j_id0:j_id2:j_id3:j_id7:tsk3" onchange="document.getElementById('j_id0:j_id2:j_id3:j_id7:tsk3_lkid').value='';document.getElementById('j_id0:j_id2:j_id3:j_id7:tsk3_mod').value='1';" size="20" tabindex="30" title="Related To">
+</input>
+
+   <input id="j_id0:j_id2:j_id3:j_id7:tsk3_lkid" name="j_id0:j_id2:j_id3:j_id7:tsk3_lkid" type="hidden" value="000000000000000"/>
+
+  <input id="j_id0:j_id2:j_id3:j_id7:tsk3_lkold" name="j_id0:j_id2:j_id3:j_id7:tsk3_lkold" value="" type="hidden"/>
+  
+<a href="JavaScript: openLookup('/_ui/common/data/LookupPage?lkfm=j_id0:j_id2&lknm=j_id0:j_id2:j_id3:j_id7:tsk3&lkrf=&lktp=01t&sn=1&go=+Go%21+&oper0=s&fval0='+document.getElementById('j_id0:j_id2:j_id3:j_id7:accnma').value+'&col0='+document.getElementById('j_id0:j_id2:j_id3:j_id7:accidd').value+'&lksrch='+document.getElementById('j_id0:j_id2:j_id3:j_id7:tsk3').value)" id="tsk3" onclick="setLastMousePosition(event)" tabindex="31" title="Related To Lookup (New Window)">
+
+   <img alt="Related To Lookup (New Window)" class="lookupIcon" onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" src="/s.gif"/></a></div></span>
+
+   <input id="j_id0:j_id2:j_id3:j_id7:tsk3_lkid" name="j_id0:j_id2:j_id3:j_id7:tsk3_lkid" type="hidden" value="000000000000000"/>
+  <input id="j_id0:j_id2:j_id3:j_id7:tsk3_lktp" name="j_id0:j_id2:j_id3:j_id7:tsk3_lktp" type="hidden" value="01t"/>
+  <input id="j_id0:j_id2:j_id3:j_id7:tsk3_lspf" name="j_id0:j_id2:j_id3:j_id7:tsk3_lspf" type="hidden" value="0"/>
+  <input id="j_id0:j_id2:j_id3:j_id7:tsk3_mod" name="j_id0:j_id2:j_id3:j_id7:tsk3_mod"  type="hidden" value="0"/>
+
+<input id="tsk31_lkid" name="tsk31_lkid" type="hidden" value="000000000000000"/>
+  <input id="tsk31_lkold" name="tsk31_lkold" type="hidden" value="0"/>
+  <input id="tsk31_lktp" name="tsk31_lktp" type="hidden" value="01t"/>
+  <input id="tsk31_lspf" name="tsk31_lspf" type="hidden" value="0"/>
+  <input id="tsk31_mod" name="tsk31_mod"  type="hidden" value="0"/>
+
+
+ 
+</apex:panelgroup>
+
+</apex:panelgrid>
+<apex:inputhidden id="tsk3" value="{!oppprods.ProductOfOpportunity__c}">
+</apex:inputhidden>
+
+</tr>
+
+
+<apex:inputField id="LineDescription" value="{!oppprods.Line_Description__c}"/>
+<apex:inputField id="Salesprice" value="{!oppprods.Sales_Price__c}"/>
+
+<apex:inputField id="Quantity" value="{!oppprods.Quantity__c}"/>
+
+<apex:inputField id="currency" value="{!oppprods.CurrencyIsoCode}"/>
+
+
+
+</apex:pageBlockSection>
+<apex:pageBlockSection title="System Information" columns="2">
+<tr><td>
+<apex:outputtext /></td>
+<td><apex:panelgrid >
+<apex:panelgroup >
+<label for="recordtype"><b>Record Type</b></label>
+<apex:outputlabel id="recordtype" value="{!rectype}"/>
+</apex:panelgroup>
+</apex:panelgrid></td>
+</tr></apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

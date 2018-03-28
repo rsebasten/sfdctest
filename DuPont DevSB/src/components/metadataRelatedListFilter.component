@@ -1,0 +1,71 @@
+<apex:component >
+<apex:attribute name="data" type="sobject[]" description="data" />
+<apex:attribute name="title" type="string" description="title" default=" " />
+<apex:attribute name="fitlerField" type="string" description="fitlerField" default="Type__c" />
+<apex:attribute name="fitlerValue" type="string" description="fitlerValue" default="" />
+<apex:attribute name="tabname" type="string" description="unique name for table" default="rlist" />  
+<apex:attribute name="fieldset" type="string[]" description="VisualforceArrayList"  />
+  
+    <apex:includescript value="{!URLFOR($Resource.DataTables1_7_5,'/DataTables-1.7.5/media/js/jquery.js')}" />
+
+    <apex:includescript value="{!URLFOR($Resource.DataTables1_7_5,'/DataTables-1.7.5/media/js/jquery.dataTables.js')}" />
+        
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();   
+        j$(document).ready(function() {
+            j$('.{!tabname}').dataTable( {
+                "bPaginate": false,
+                //"bJQueryUI": true,
+                //"sPaginationType": "full_numbers",
+                "bLengthChange": false,
+                "bFilter": true,
+                "bSort": true,
+                "bInfo": false,
+                "bAutoWidth": false } );
+            } );
+  
+  </script>
+  
+    <apex:variable var="datasize" value="{!0}" />
+        <apex:repeat value="{!data}" var="md" id="check">
+            <apex:variable var="datasize" value="{!datasize+1}" />
+        </apex:repeat>
+        
+        
+  <apex:pageBlock >
+    <apex:pageBlockSection title="{!title}" columns="1">
+  
+    <apex:outputPanel rendered="{!datasize<>0}" layout="block"> 
+    <table class="{!tabname} list" cellpadding="0" cellspacing="0" border="0" style="width:100%">
+        <thead><tr class="headerRow" style="width:100%">
+            <apex:repeat value="{!fieldset}" var="f">
+                <th>
+                <apex:OutputLabel rendered="{!BEGINS(data[0].id,$ObjectType.Metadata__c.keyPrefix)}" value="{!$ObjectType.Metadata__c.fields[f].label}"/>
+                <apex:OutputLabel rendered="{!BEGINS(data[0].id,$ObjectType.MetadataItem__c.keyPrefix)}" value="{!$ObjectType.MetadataItem__c.fields[f].label}"/>
+                </th>           
+            </apex:repeat>      
+        </tr></thead>
+        <tbody>
+        <apex:repeat value="{!data}" var="md" id="theRepeat">
+            <apex:outputPanel rendered="{!fitlerValue=='' || md[fitlerField]==FitlerValue}">
+            <tr class="dataRow">
+                <apex:repeat value="{!fieldset}" var="f">
+                    <td>
+                        <apex:outputField rendered="{!(f<>'Name')}"  value="{!md[f]}"/>
+                        <apex:outputLink rendered="{!(f=='Name')}"  value="/{!md['Id']}">{!md['Name']}</apex:outputLink>
+                    </td>              
+                </apex:repeat>  
+            </tr>
+            </apex:outputPanel>
+        </apex:repeat>
+        </tbody>
+  </table>
+  </apex:outputPanel>
+    <apex:outputPanel rendered="{!datasize==0}" layout="block"> 
+        No Records.
+    </apex:outputPanel>
+  </apex:pageBlockSection>
+  </apex:pageBlock>    
+    
+
+</apex:component>

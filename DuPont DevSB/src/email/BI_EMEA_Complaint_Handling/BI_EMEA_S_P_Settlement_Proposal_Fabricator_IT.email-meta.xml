@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA S&amp;P Settlement  Proposal Fabricator IT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA S&amp;P Settlement  Proposal Fabricator - IT</name>
+    <style>freeForm</style>
+    <subject>Pratica per la chiusura del reclamo (case: {!Case.CaseNumber})</subject>
+    <textOnly>Gentile {!Case.Contact},
+In riferimento al vostro reclamo {!Case.CaseNumber} in data {!Case.Date_Entered__c}, Le invio la Pratica per la Chiusura del  Reclam.
+
+{!Case.Special_Instructions__c}
+
+La nota di credito/sostituzione/materiale gratuito sara’ transferita per esecuzione al nostro dipartimento del Servizio Cliente, a parte se non siete d’accordo con la proposta indicata sopra.
+
+Siamo spiacenti dell’ inconveniente causato, cercheremo di poter risolvere il reclamo in un maniera soddisfacente. Grazie di riferire in ogni communicazione al numero di riferenza menzionata qui sopra.
+
+La ringrazio e resto in attesa di Sua pronta risposta.
+
+Cordiali Saluti,
+
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+
+Desideriamo informarla che i suoi dati verranno utilizzati per individuare i suoi interessi commerciali, offrirle prodotti e servizi e assicurare una customer experience positiva nell&apos;ambito dei nostri rapporti commerciali. I suoi dati personali (nome, e-mail, telefono e altre informazioni di contatto) saranno archiviati su sistemi informatici selezionati, situati principalmente negli Stati Uniti. Queste informazioni potranno essere utilizzate da DuPont, dai suoi affiliati e partner e da terze parti selezionate in altri paesi per lo stesso scopo. Per accedere, modificare, eliminare o non autorizzare l&apos;elaborazione dei suoi dati, la invitiamo a collegarsi a questo link.
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

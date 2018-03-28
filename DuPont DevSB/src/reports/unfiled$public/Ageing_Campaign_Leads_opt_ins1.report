@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_OWNER</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Lead.Role__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Lead_Country__c</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.fEmail__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Product__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>Report for Sandra</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead.Role__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Architect,Builder,Building Contractor/ Entrepreneur,Building Controller,Building Engineer,Building Owner,Commercial Manager,Contractor,Controller,Decision Maker,Designer,Engineer,Engineering Manager,General Manager,Influencer,Installer,Insulator,Management,Manager,Managing Director,Material Engineer,Material Supplier,Merchant,President,Private Owner,Production Manager,Purchaser,Purchasing,Quality,Quality assurance,Quality Manager,Representative,Roofer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Ireland,United Kingdom</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Member-Opt-In</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Product__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>includes</operator>
+            <value>Tyvek (range)</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Ageing Campaign Leads opt-ins</name>
+    <params>
+        <name>scopeid</name>
+        <value>000000000000000</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

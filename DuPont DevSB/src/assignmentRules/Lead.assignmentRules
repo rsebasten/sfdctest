@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Primary</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <formula>NOT( ISBLANK(Business_User_Record_Id__c))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Trashleadsfordelete</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Description</field>
+                <operation>contains</operation>
+                <value>href</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Trashleadsfordelete</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.LastName</field>
+                <operation>contains</operation>
+                <value>=</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Trashleadsfordelete</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.FirstName</field>
+                <operation>contains</operation>
+                <value>=</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Trashleadsfordelete</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Company</field>
+                <operation>equals</operation>
+                <value>Google,google</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Trashleadsfordelete</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>trash</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Trashleadsfordelete</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>www.dupont.com/NOW Tyvek Envelopes generic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Origin_URL__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Trashleadsfordelete</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>www.dupont.com/South_Africa</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.FirstName</field>
+                <operation>contains</operation>
+                <value>Parajumpers Winter Coat</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Company</field>
+                <operation>contains</operation>
+                <value>Parajumpers Winter Coat</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Subject__c</field>
+                <operation>contains</operation>
+                <value>Parajumpers Winter Coat</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Level_1_Global_Privacy</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>contains</operation>
+                <value>privacy.dupont.com</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMCLevel1LABRAZ</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI,DPT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>Latin America</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>Brazil</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMCLevel1LAARG</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI,DPT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>Latin America</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>Argentina</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMCLevel1LAMEX</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI,DPT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>Latin America</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>notEqual</operation>
+                <value>Argentina,Brazil</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMCLevel2ANA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR (2 AND 3) OR 4</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DIMC Level 2A NA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>Tyvek NA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Owning_SBU__c</field>
+                <operation>equals</operation>
+                <value>Protection Technologies</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>www.dupont.com/NOW Tyvek Envelopes Lit and Sample</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2NA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-DPP Level 2 NA ISR</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPP Level 2 EMEA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-IPP Level 2 EMEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_Level_2_AP_China</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT Level 2 AP-China</value>
+            </criteriaItems>
+            <template>DPT_China_Email_Template/DPT_China_Lead_Reassignment_Email_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_Level_2_AP_India</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT Level 2 AP-India</value>
+            </criteriaItems>
+            <template>DPT_India_Email_Template/New_lead_in_queue_reminder</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2ECEMEAECE</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPP Level 2 ECEMEA-ECE</value>
+            </criteriaItems>
+            <template>DIMCEmailTemplates/NewLeadAlertWithLink</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2ECEMEAMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPP Level 2 ECEMEA-MEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_NA_Landscape_Solutions</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-NA Landscape Solutions</value>
+            </criteriaItems>
+            <template>DIMCEmailTemplates/NewLeadinQueue</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_NA_Marketing_Automation</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-NA Marketing Automation</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_LA_Marketing_Automation</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-LA Marketing Automation</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_AP_Marketing_Automation</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-AP Marketing Automation</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_EMEA_Marketing_Automation</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-EMEA Marketing Automation</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>www.dupont.com/BI-Corian EC Tech Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.First_Referrer_Name__c</field>
+                <operation>equals</operation>
+                <value>Corian EC Technical Request</value>
+            </criteriaItems>
+            <template>BI/BI_Corian_EC_Tech_Auto_Response</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-EMEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BITyvekEMEAUK</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-EMEA-UK-T</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BIEMEAGermany</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-EMEA-Germany</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BISurfEMEAUK</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-EMEA-UK-S</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_EMEA_Marketing</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>www.dupont.com/BI-Corian EC Lit Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.First_Referrer_Name__c</field>
+                <operation>equals</operation>
+                <value>Corian EC Lit/Cert Request</value>
+            </criteriaItems>
+            <template>BI/BI_Corian_EC_Lit_Auto_Response</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BIEMEAFrance</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>France</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BIEMEALandscape</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-EMEA - Landscape</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_EMEA_Italy</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DIMC Level 1 EMEA Italy</value>
+            </criteriaItems>
+            <template>EMEATemplates/EMEALeadEmailTemplate</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BIEMEAGermany</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>Germany,Austria,Switzerland</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BIEMEAFrance</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-EMEA-France</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>notEqual</operation>
+                <value>France,Austria,Germany,Switzerland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTNOWLevel2EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>NOW Level 2 EMEA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-NOW Level 2 EMEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTNOWLevel2NA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>NOW Level 2 NA</value>
+            </criteriaItems>
+            <template>DIMCEmailTemplates/NewLeadinQueue</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTNOWLevel2NA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-NOW Level 2 NA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTNOWLevel2LA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-NOW Level 2 LA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>NOW Level 2 LA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTNOWLevel2AP</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>NOW Level 2 AP</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-NOW Level 2 AP</value>
+            </criteriaItems>
+            <template>DIMCEmailTemplates/NewLeadinQueue</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Surf_Level_2_AP_Japan</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Surf Level 2 AP-Japan</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Surf_Level_2_AP_Taiwan_HongKong_Macao</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Surf Level 2 AP-China</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>Taiwan,Hong Kong,Macao</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Level_2_AP_India</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>India</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/P_IP_ECP_AP_Email_Alert1</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Surf_Level_2_AP_China</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Surf Level 2 AP-China</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>notEqual</operation>
+                <value>Taiwan,Hong Kong,Macao</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Corian_China_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMC_BI_NA_Samples</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>startsWith</operation>
+                <value>BI</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>commercial,residential</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_NA_Corian_Design_Studio_NYC</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>www.dupont.com/BI-NA Corian Design Studio</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.BU_Answer1__c</field>
+                <operation>equals</operation>
+                <value>New York City</value>
+            </criteriaItems>
+            <template>BI_NA_Partners/New_Lead_in_Queue1</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_IPP_Level_2_NA_Consumer</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-IPP Level 2 NA Consumer</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2EMEAMLA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-DPP Level 2 EMEA TMLA</value>
+            </criteriaItems>
+            <template>EMEATemplates/EMEALeadEmailTemplate</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTAFSLevel2AP</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-Aramids Level 2 AP</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTAFSLevel2EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-Aramids Level 2 EMEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMCLevel2ANA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-Aramids Level 2 NA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTAFSLevel2LA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>AFS Level 2 LA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2NA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-IPP Level 2 NA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_NA_eMarketing</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-NA eMarketing</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_EMEA_eMarketing</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-EMEA eMarketing</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_EMEA_MA_Lead_development</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-EMEA MA Lead development</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_EMEA_MA_Lead_follow_up</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-EMEA MA Lead follow-up</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_NA_Tyvek_Technical_Inquiries</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Origin_Name__c</field>
+                <operation>equals</operation>
+                <value>www.dupont.com/BI NA Tyvek Contact Us</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>North America</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Flooring</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ RealTouch Laminate Flooring</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Vinyl</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Vinyl Flooring</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Caulk</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Caulks &amp; Sealants</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Autoprotection</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Auto Protection Package</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Performancelubricants</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Lubricants &amp; Greases</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Waterfiltration</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Water Filters</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Airfiltration</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Residential Air Filters</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Syntheticgrass</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ ForeverLawn®</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Car_Care</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Pro-Fusion Color</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ Wiper Blades</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>M_S_Consumer_Stormroom</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Product__c</field>
+                <operation>equals</operation>
+                <value>DuPont™ StormRoom™ with Kevlar®</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>United States</value>
+            </criteriaItems>
+            <template>Workflow_Email_Alert_Templates/DPS_M_S_Consumer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Tyvek_NA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>Tyvek NA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_AP_eMarketing</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-AP eMarketing</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_Korea</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP- Korea</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Corian_China_Email_Alert1</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_NZ_Tyvek</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP-NZ-Tyvek</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Tyvek_NZ_Email_Alert1</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_China_Tyvek</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP-China-Tyvek</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Tyvek_China_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Surf_Level_2_AP_China_Montelli</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Surf Level 2 AP-China-Montelli</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Montelli_China_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_China_Xavan</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP-China-Xavan</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Xavan_China_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Surf_Level_2_AP_ASEAN</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Surf Level 2 AP-ASEAN</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Corian_ASEAN_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_Japan_Xavan</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP-Japan-Xavan</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Xavan_Japan_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_Tyvek</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP-Tyvek</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_AP_Tyvek_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_China_Typar</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP-China-Typar</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Typar_China_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Env_Level_2_AP_AU_Tyvek</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 AP-AU-Tyvek</value>
+            </criteriaItems>
+            <template>BI_AP_Email_Templates/BI_Tyvek_AU_Email_Alert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BIEnvLevel2EMEAWE</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI-Env Level 2 EMEA-WE</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Surf_Level_2_AP_Taiwan_HongKong_Macao</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DIMC-BI NA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>Asia Pacific</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>equals</operation>
+                <value>BI-Surf</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>equals</operation>
+                <value>Taiwan,Hong Kong,Macao</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Tyvek_Protec</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>contains</operation>
+                <value>Tyvek Protec</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_Surf_Level_2_AP_China</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DIMC-BI NA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>Asia Pacific</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Owning_Organization__c</field>
+                <operation>equals</operation>
+                <value>BI-Surf</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Country__c</field>
+                <operation>notEqual</operation>
+                <value>Taiwan,Hong Kong,Macao</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMC_BI_NA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DIMC-BI NA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Region__c</field>
+                <operation>equals</operation>
+                <value>North America</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2ECEMEAECE</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-IPP Level 2 ECEMEA-ECE</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2ECEMEAMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-IPP Level 2 ECEMEA-MEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTNOWLevel2EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-NOW Level 2 EMEA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPTIPPLevel2NA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-DPP Level 2 NA</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPT_LA_eMarketing</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DPT-LA eMarketing</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPS_Kevlar_Auto_Technical</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>DPS-Kevlar-Lead</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Type__c</field>
+                <operation>equals</operation>
+                <value>Certifications and Specifications,Technical Assistance</value>
+            </criteriaItems>
+            <template>DIMCEmailTemplates/NewLeadAlert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DPS_Kevlar_Auto_Sales</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>DPS-Kevlar-Lead</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Type__c</field>
+                <operation>equals</operation>
+                <value>Design &amp; Product Selection,Literature,Other,Product Information,Product Sample,Price Request,Purchasing Information</value>
+            </criteriaItems>
+            <template>DIMCEmailTemplates/NewLeadAlert</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DIMCLevel1LAARG</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Queue__c</field>
+                <operation>equals</operation>
+                <value>DIMC Level 1 LA ARG</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

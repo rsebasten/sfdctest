@@ -1,0 +1,136 @@
+<!-- *****************************************************************************
+This page is to edit the fields of Sample Analysis object
+******************************************************************************/ -->
+<apex:page cache="false" sidebar="true" standardController="Trademark_Abuse_Sample_Analysis__c" extensions="ctrlBPDSampleAnalysisEdit" showHeader="true">
+<apex:sectionHeader title="Sample Analysis Edit" />
+
+<style>
+        .quant:hover { font-size: 80%; color: #EDEDED; cursor: pointer;}
+        .quant { cursor: pointer; font-size: 80%; }
+</style>
+
+<apex:form >
+<apex:actionRegion >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlockButtons location="top">
+<apex:commandButton action="{!dosave}" value="Save"/>
+<apex:commandButton action="{!Cancel}" value="Cancel" immediate="true" html-formnovalidate="formnovalidate"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection columns="2" title="Product Analysis">
+<apex:facet name="header">
+<span style="color: black">Product Analysis</span>
+</apex:facet>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Lab Name" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputField style="width:40%;" value="{!initialSample.Lab_Name__c}"/>
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputField value="{!initialSample.Date_Received__c}"/>
+<apex:inputField value="{!initialSample.Analysis_type__c}"/>
+<apex:inputField value="{!initialSample.Date_Completed__c}"/>
+<apex:inputField style="width:250%;" value="{!initialSample.Summary__c}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:actionRegion>
+
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:outputLabel value="Report(s) : " styleClass="labelCol vfLabelColTextWrap" >&nbsp;&nbsp;&nbsp;&nbsp;
+<br/><br/>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!attachmentIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank">
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel>&nbsp;&nbsp;&nbsp;&nbsp;
+</apex:outputLabel>
+<apex:inputFile value="{!bl}" filename="{!fileName}"/><br/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+<apex:actionRegion >
+<apex:pageBlock >
+<apex:pageBlockSection columns="1" title="Technical Details">
+<apex:facet name="header">
+<span style="color: black">Technical Details</span>
+</apex:facet>
+
+<apex:inputField style="width:30%;" value="{!initialSample.Overall_Conclusion__c}"/>
+<apex:outputpanel id="Brand">
+<apex:pageBlockSection id="Active" columns="1" >
+<apex:outputText label="Active(s) found by HPLC">
+<apex:inputText value="{!searchActiveForBrand}" style="margin-left:14px;" />&nbsp;&nbsp;
+<apex:commandButton value="Search" action="{!SearchActiveForBrandvalue}" status="cStatus" reRender="rendering"/>
+</apex:outputText>
+<apex:actionStatus id="cStatus" startText=" Please Wait..."  stopText="" startStyle="padding-LEFT:18em;font-weight:bold;"/>
+</apex:pageblockSection> 
+</apex:outputpanel> 
+<apex:outputpanel id="rendering" >
+<div style="margin-left:220px;">    
+<c:BI_NA_MultiSelectMaterials leftLabel="Available"
+                leftOption="{!AllMaterials}"
+                rightLabel="Chosen"
+                rightOption="{!SelectedMaterials}"
+                size="5"
+                width="180px" helptext="hello" /> 
+</div>
+</apex:outputpanel>
+   
+  
+<apex:outputpanel id="Compound">
+<apex:pageBlockSection id="found" columns="1" >
+<apex:outputText label="Compounds found in FTIR">
+<apex:inputText value="{!searchCompound}" style="margin-left:14px;" />&nbsp;&nbsp;
+<apex:commandButton value="Search" action="{!SearchCompoundValue}" status="aStatus" reRender="renderingCompound"/>
+</apex:outputText>
+<apex:actionStatus id="cStatus" startText=" Please Wait..."  stopText="" startStyle="padding-LEFT:18em;font-weight:bold;"/>
+</apex:pageblockSection> 
+</apex:outputpanel> 
+<apex:outputpanel id="renderingCompound" >
+<div style="margin-left:220px;">    
+<c:BI_NA_MultiSelectMaterials leftLabel="Available"
+                leftOption="{!AllMaterialsCompound}"
+                rightLabel="Chosen"
+                rightOption="{!SelectedMaterialsCompound}"
+                size="5"
+                width="180px" helptext="hello" /> 
+   </div>
+   </apex:outputpanel>
+       
+<apex:inputField style="width:30%;" value="{!initialSample.A_I__c}"  />
+<apex:inputField style="width:30%;" value="{!initialSample.Appearance__c }"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Assay__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Quality_of_Formulation__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Quality_of_Packaging__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Impurity_Profile__c}" />
+<apex:inputField style="width:30%;" value="{!initialSample.S_U_Contaminants__c}" />
+<apex:inputField style="width:30%;" value="{!initialSample.Any_Other_Impurities__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Known_Impurities__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Unkown_Impurities__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.FTIR_Conclusion_about_A_I__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.FTIR_Conclusion_about_Formulation__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Comments_on_Formulation_Ingredients__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Similar_to_previous_cases__c}"/>
+<apex:inputField style="width:30%;" value="{!initialSample.Identical_to_Previous_Cases__c}"/>
+<apex:inputField value="{!initialSample.Toxic_Solvents_Detected__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton action="{!dosave}" value="Save"/>
+<apex:commandButton action="{!Cancel}" value="Cancel" immediate="true" html-formnovalidate="formnovalidate"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:actionRegion> 
+</apex:form>
+</apex:page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to remind the Case Owner to submit the Case to the Queue for followup</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Case Not Submitted to Queue</name>
+    <style>formalLetter</style>
+    <subject>Complaint {!Case.CaseNumber} for {!Account.Name} Has Not Been Submitted</subject>
+    <textOnly>TO:   {!Case.OwnerFullName}
+
+The Case that you created {!Case.CaseNumber} for {!Account.Name} has not been submitted to the queue.
+
+You may need to add attachments or additional detail; please review and when the data input is complete,
+
+Save the Case and then
+Click on the Submit to Queue button for Investigation followup.
+
+Attached is a link to the Case: {!Case.Thread_Id}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

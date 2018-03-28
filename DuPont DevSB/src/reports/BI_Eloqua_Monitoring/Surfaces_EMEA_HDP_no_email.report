@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$fId18__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts$Email</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts$Role__c</field>
+    </columns>
+    <columns>
+        <field>Account$Mb_of_Marketing_Program__c</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Role__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Company Mailing Address</value>
+        </criteriaItems>
+        <operation>without</operation>
+        <primaryTableColumn>Account$Id</primaryTableColumn>
+        <relatedTable>Contact</relatedTable>
+        <relatedTableJoinColumn>Account</relatedTableJoinColumn>
+    </crossFilters>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account$RecordType</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.ConstructionEMEA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Mb_of_Marketing_Program__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>HDP Benelux</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Mb_of_Marketing_Program__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>Dealer Locator</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Country__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Surfaces EMEA HDP no email</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accountsandcontacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

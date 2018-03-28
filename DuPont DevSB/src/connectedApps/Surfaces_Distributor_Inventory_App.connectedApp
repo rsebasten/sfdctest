@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>divya.y1@tcs.com</contactEmail>
+    <description>SFDC is acting as an IDP system here to connect to Surface Business application</description>
+    <label>Surfaces Distributor Inventory App</label>
+    <samlConfig>
+        <acsUrl>https://CorianDesignNetworkInventory.dupont.com/UI/ACS.aspx</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://CorianDesignNetworkInventory.dupont.com/UI/HomePage.aspx</entityUrl>
+        <issuer>https://ps-crm-dupont.my.salesforce.com</issuer>
+        <samlNameIdFormat>Unspecified</samlNameIdFormat>
+        <samlSubjectType>Username</samlSubjectType>
+    </samlConfig>
+    <startUrl>https://pscrm.force.com/BuildingInnovationPartnerCommunity</startUrl>
+</ConnectedApp>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Name of member of the Project Team</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Access__c</fullName>
+        <externalId>false</externalId>
+        <label>Access</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Read/Write</fullName>
+                    <default>false</default>
+                    <label>Read/Write</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CRM_IT_Project__c</fullName>
+        <description>Persons accountable IT Controls related to Project Management, Execution, Testing and Deployment of this CRM Project.</description>
+        <externalId>false</externalId>
+        <label>CRM-IT Project</label>
+        <referenceTo>CRM_IT_Project__c</referenceTo>
+        <relationshipName>CRM_Project_Member</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CRM_Project_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Member of CRM IT Project Team who is not a user of SFDC (Lookup to Contact)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Team Contact who is not an SFDC User</inlineHelpText>
+        <label>CRM Project Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>CRM_Project_Contact</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>SFDC Users who are members of the project team for this CRM-IT Project</description>
+        <externalId>false</externalId>
+        <label>Project Member</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CRM_IT_Project_Members</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <description>Role of this person on this CRM IT Project</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business/Region IT Leader</fullName>
+                    <default>false</default>
+                    <label>Business/Region IT Leader</label>
+                </value>
+                <value>
+                    <fullName>Business Key User</fullName>
+                    <default>false</default>
+                    <label>Business Key User</label>
+                </value>
+                <value>
+                    <fullName>DISO Contact</fullName>
+                    <default>false</default>
+                    <label>DISO Contact</label>
+                </value>
+                <value>
+                    <fullName>Engagement Leader</fullName>
+                    <default>false</default>
+                    <label>Engagement Leader</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S IT Leader</fullName>
+                    <default>false</default>
+                    <label>M&amp;S IT Leader</label>
+                </value>
+                <value>
+                    <fullName>SFDC Admin Support  (InfoSys)</fullName>
+                    <default>false</default>
+                    <label>SFDC Admin Support  (InfoSys)</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>SFDC Admin Support (TCS)</fullName>
+                    <default>false</default>
+                    <label>SFDC Admin Support (TCS)</label>
+                </value>
+                <value>
+                    <fullName>IT Solution Delivery</fullName>
+                    <default>false</default>
+                    <label>IT Solution Delivery</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>CRM IT Project Member</label>
+    <nameField>
+        <displayFormat>PM-{000000}</displayFormat>
+        <label>Project Member ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CRM IT Project Members</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Project_Member</fullName>
+        <active>true</active>
+        <description>CRM IT Project Team Member (updates sharing on the record)</description>
+        <label>Project Member</label>
+        <picklistValues>
+            <picklist>Access__c</picklist>
+            <values>
+                <fullName>Read%2FWrite</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>Business Key User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business%2FRegion IT Leader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DISO Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engagement Leader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Solution Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M%26S IT Leader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC Admin Support %28TCS%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,133 @@
+<apex:page standardController="Lead" extensions="extLeadRouting" action="{!init}" >
+
+<script>
+
+//for some really odd reson I had to put this function first otherwise 
+// other functions were not interpreted properly by the DOM????????????????
+function getElementValue(aObj)
+    {
+    var delim=',';
+    if (typeof(aObj.type) != "undefined")
+        {
+        switch (aObj.type)
+            {
+            case "select-one":
+                return aObj.options[aObj.selectedIndex].value;
+
+            case "select-multiple":
+                var rtn='';
+                for (var j=0; j<aObj.options.length; j++) {
+                    if (aObj.options[j].selected)
+                        if (aObj.options[j].value.length>0)
+                        { rtn+=delim+aObj.options[j].value; }
+                    }
+                if (rtn.length>0) { rtn=rtn.substr(delim.length,rtn.length-delim.length); }
+                return rtn;
+
+            case 'radio':
+            case 'checkbox':
+               if (aObj.checked) { return aObj.value; }
+               else return '';
+                
+            default:
+                return aObj.value;
+            }
+        }
+    else {
+        //multi-element item
+        var rtn='';
+        try {
+            for (var i=0; i<aObj.length; i++) {
+                switch (aObj[i].type)
+                    {
+                    case "radio":
+                    case "checkbox":
+                        if (aObj[i].checked) { rtn+=delim+aObj[i].value; }
+                        break;
+
+                    case "select-one":
+
+                        if (+aObj[i].options[aObj[i].selectedIndex].value.length>0)
+                            rtn+=delim+aObj[i].options[aObj[i].selectedIndex].value;
+                        break;
+
+                    case "select-multiple":
+                        for (var j=0; j<aObj[i].options.length; j++) {
+                            if (aObj[i].options[j].selected)
+                                if (aObj[i].options[j].value.length>0)
+                                { rtn+=delim+aObj[i].options[j].value; }
+                            }
+                        break;
+
+                    default:
+                        rtn+=delim+aObj[i].value;
+                     }
+                 }
+
+            } //end try
+       catch(e) { }
+       if (rtn.length>0) { rtn=rtn.substr(delim.length,rtn.length-delim.length); }
+        return rtn;
+        }
+
+    }
+
+function addScript__OnClick(e) {
+        apexClearScript();
+        
+        /***
+        var rb=document.getElementsByName("radioScripts");
+        var len=rb.length;
+    for (var i=0;i<len;i++){
+            if (e.checked) {
+                rb[i].checked=false;
+                rb[i].disabled=true;
+            }
+            else {
+                rb[i].checked=false;
+                rb[i].disabled=false;   
+            }
+        }
+       */
+       
+}
+
+function save__OnClick(ename) {
+    //alert(ename);
+    var sel=getElementValue(document.getElementsByName("radioScripts"));
+    //alert(sel);
+    document.getElementById(ename).value=sel;
+    apexSave();
+}
+
+
+</script>
+<apex:form >
+
+<b><apex:messages /></b>
+<apex:actionFunction name="apexClearScript" action="{!clearScript}" rerender="ScriptsList"/>
+<apex:actionFunction name="apexSave" action="{!save}" rerender="ScriptsList" onComplete="document.body.style.cursor = 'auto';"/>
+<apex:outputPanel id="ScriptsList" rendered="{!showScriptlist}">
+
+<apex:inputHidden value="{!selectedScript}" id="selectedScript"/>
+
+<apex:pageBlock title="Select a Script to Route">
+    <apex:pageBlockButtons >
+            <apex:commandButton action="{!cancel}" value="Cancel"/>
+            <!--  <apex:commandButton action="{!save}" value="Save" onClick="save__OnClick();"/> -->
+            <input type="button" class="button" value="Save and Email" onClick="document.body.style.cursor = 'wait'; save__OnClick('{!$Component.selectedScript}');"/>
+    </apex:pageBlockButtons>
+    <apex:pageBlockSection ><input type="checkbox" name="addScript" onclick="javascript:addScript__OnClick(this);"/><b>Do not add script</b></apex:pageBlockSection>
+    <apex:pageBlockTable value="{!Scripts}" var="item">
+        <apex:column ><input type="radio" name="radioScripts" {!IF(item.Id=selectedScript,"checked=\"checked\"",'')} value="{!item.Id}"  /></apex:column>
+        <apex:column headerValue="Header"><apex:outputLink value="/{!item.Id}">{!item.name}</apex:outputLink></apex:column>
+        <apex:column value="{!item.Script__r.Name}"/>
+        <apex:column value="{!item.Score__c}"/>    
+        <apex:column value="{!item.Date_Taken__c}"/>    
+        <apex:column headerValue="Header"><apex:outputLink value="/{!item.CreatedById}">{!item.CreatedBy.Name}</apex:outputLink></apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+</apex:outputPanel>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Request for commercial gesture to sales</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Commercial gesture request SP</name>
+    <style>formalLetter</style>
+    <subject>Solicitud de gesto comercial (case: {!Case.CaseNumber})</subject>
+    <textOnly>Estimado compañero:
+
+En referencia a la reclamación {!Case.CaseNumber} de fecha 
+{!Case.Date_Entered__c}, os ruego me informéis en caso de que queráis 
+compensar al cliente con un gesto comercial ya que nosotros no podemos 
+aceptarla siguiendo los actuales procedimientos de garantía.
+
+Link: {!Case.Link}
+Subject: {!Case.Subject}
+Description: {!Case.Description}
+
+Por favor, indicad la razón por la que se acepta. 
+
+Os agradecemos una rápida respuesta.
+
+Saludos cordiales,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,270 @@
+<apex:page tabStyle="Dodge_Projects__tab" sideBar="false"  standardController="ConstructionPts__CP_Project__c" extensions="ConstructionPts.CPProjectsBin" > 
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__jquerynew, 'css/redmond/jquery-ui-1.8.21.custom.css')}" />
+<c:CPHeader title="" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true" ShowTitle="true"  ShowSubTitle="true"/> 
+<apex:form > 
+
+ 
+   <br/><br/>
+        <apex:pageBlock >
+             <apex:actionFunction name="excludeProjectRunQuery" action="{!runQuery}" rerender="deleteList" status="excludeProject">
+                  <apex:param name="excludeRelatedRecord"
+                                value=""
+                                assignTo="{!runQuery}"/>
+            </apex:actionFunction>
+             <apex:actionFunction name="deleteAll" action="{!delete_all}" rerender="deleteList" status="deleteAllStatus">
+                 <apex:param name="excludeProjectFromImporting"
+                                value="1"
+                                assignTo="{!delete_all}"/>
+             </apex:actionFunction>
+             <apex:actionFunction name="deleteAllSalesforce" action="{!delete_all}" rerender="deleteList" status="deleteAllStatusSalesforce">
+             <apex:param name="excludeProjectFromImporting"
+                            value="0"
+                            assignTo="{!delete_all}"/> 
+             </apex:actionFunction>
+             <apex:actionFunction name="deleteSelected" action="{!delete_checked}" rerender="deleteList" status="deleteStatus">
+              <apex:param name="excludeProjectFromImporting"
+                            value="1"
+                            assignTo="{!delete_checked}"/>
+             </apex:actionFunction>
+             <apex:actionFunction name="deleteSelectedSalesforce" action="{!delete_checked}" rerender="deleteList" status="deleteStatusSalesforce">
+             <apex:param name="excludeProjectFromImporting"
+                            value="0"
+                            assignTo="{!delete_checked}"/>
+              </apex:actionFunction>
+             
+            <!-- <apex:actionStatus id="excludeProject"  onstart="localStatusShow(updateStatus, 'Excluding/Including projects...')" onstop="localStatusHide(updateStatus);"/> -->
+            <apex:actionStatus id="deleteStatus" onstart="localStatusShow(updateStatus, 'Deleting...')" onstop="localStatusHide(updateStatus);"/>
+            <apex:actionStatus id="deleteAllStatus" onstart="localStatusShow(updateStatus, 'Deletion has been queued, please check in later')" onstop="localStatusHide(updateStatus);"/>
+            <apex:actionStatus id="deleteStatusSalesforce" onstart="localStatusShow(updateStatus, 'Deleting from Salesforce...')" onstop="localStatusHide(updateStatus);"/>
+            <apex:actionStatus id="deleteAllStatusSalesforce" onstart="localStatusShow(updateStatus, 'Deletion from salesforce has been queued, please check in later.')" onstop="localStatusHide(updateStatus);"/>
+            <apex:actionStatus id="reactivateStatus" onstart="localStatusShow(updateStatus, 'Reactivating...')" onstop="localStatusHide(updateStatus);"/>
+           
+            <br/>
+            <select id= "deleteSelect">
+                <option value="" selected="selected">Select one...</option>
+                <option value="0">Delete current version &amp; permit re-import</option>
+                <option value="1"> Delete permanently &amp; block re-import</option>
+            </select>
+            <input id="deleteSelectedButton" class = "btn" type="button" value = "Delete Selected"/>
+            <input id="deleteAllButton" class = "btn" type="button" value = "Delete All"/>
+            &nbsp;&nbsp; <apex:commandButton action="{!change_status}" value="Reactivate Selected" rerender=" deleteList"  status="reactivateStatus"  />
+            <br/>
+            <br/>
+            <span id = "deleteCurrentDetails" style = "display:none;">  Deletes current Dodge project(s) but permits re-import if updated by Dodge.</span>  
+            <span id = "deletePermanentlyDetails" style = "display:none;">  Deletes current Dodge project(s) and blocks from re-import if updated by Dodge.</span>     
+            
+           <!--  </apex:pageBlockButtons> -->
+            <!-- <span style = "font-size:1.2em;"><strong>Exclude projects with related records(Opportunities/Leads)</strong></span> <input type= "checkbox" id= "excludeProject" checked = "true"/>  -->
+           
+               
+            <span id="updateStatus" style="font-weight:bold;color:orange;font-size:1.5em;"></span>
+            <apex:pageMessages />
+            
+            <br/>
+            <br/>
+            <br/>
+            <div id="divResults">
+             <table Style= "float:right;">
+                    <tr>
+                        <td nowrap="true" width="50px">&nbsp;</td>
+                        <td nowrap="true">
+                            <apex:outputPanel id="PagingLinks" rendered="{!hasRecords}">
+                                <apex:commandLink styleClass="listItem" action="{!first}" rendered="{!hasPrevious}"><b>&lt;&lt;</b></apex:commandlink>
+                                &nbsp;
+                                <apex:commandLink styleClass="listItem" action="{!previous}" rendered="{!hasPrevious}"><b>&lt;&nbsp;Previous</b></apex:commandlink>
+                                &nbsp;
+                                <apex:commandLink styleClass="listItem" action="{!next}" rendered="{!hasNext}"><b>Next&nbsp;&gt;</b></apex:commandlink>
+                                &nbsp;
+                                <apex:commandLink styleClass="listItem" action="{!last}" rendered="{!hasNext}"><b>&gt;&gt;</b></apex:commandlink>
+                            </apex:outputPanel>
+                        </td>
+                    </tr>
+                </table>
+             <span Style = "font-size:1.2em; display:block;"><strong>There are {!nProjectFlagged} projects or more flagged to be deleted</strong></span>
+            <apex:pageBlockTable id="deleteList" value="{!projectsToDelete}" var="p">
+              <apex:column width="25px">
+                <apex:facet name="header">
+                    <span title="Select/Deselect all"><input type="checkbox" id="chkCP4SF_Tag_All" onclick="SelectAllActionCheckBoxes(this);"/></span> 
+                </apex:facet>                   
+                <apex:inputCheckbox value="{!p.checked}"/>              
+                
+              </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Current export date</apex:facet>      
+                    {!DAY(p.project.ConstructionPts__Current_export_date__c)}/{!MONTH(p.project.ConstructionPts__Current_export_date__c)}/{!YEAR(p.project.ConstructionPts__Current_export_date__c)}
+                </apex:column>            
+                <apex:column >
+                    <apex:facet name="header">Name</apex:facet>      
+                    <apex:outputLink value="/{!p.project.Id}">{!p.project.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Tag</apex:facet>      
+                    {!p.project.ConstructionPts__Customer_Tracking__c}
+                </apex:column>
+                <apex:column rendered="{!viewRelatedOpps}">
+                    <apex:facet name="header">Opps</apex:facet>      
+                    {!p.project.ConstructionPts__Related_Opportunities__c}
+                </apex:column>  
+                <apex:column rendered="{!viewRelatedLeads}">
+                    
+                    <apex:facet name="header">Leads</apex:facet>      
+                    {!p.project.ConstructionPts__Related_Leads__c}
+                </apex:column>     
+                <apex:column >
+                    <apex:facet name="header">Address</apex:facet>      
+                    {!p.project.ConstructionPts__Address__c}
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">City</apex:facet>      
+                    {!p.project.ConstructionPts__City__c}
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">County</apex:facet>      
+                    {!p.project.ConstructionPts__County__c}
+                </apex:column>  
+                <apex:column >
+                    <apex:facet name="header">State</apex:facet>      
+                    {!p.project.ConstructionPts__State__c}
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Zipcode</apex:facet>      
+                    {!p.project.ConstructionPts__Zipcode__c}
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Project type</apex:facet>      
+                    {!p.project.ConstructionPts__Project_Type__c}
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Stage</apex:facet>      
+                    {!p.project.ConstructionPts__Stage__c}
+                </apex:column>                                                  
+            </apex:pageBlockTable>
+            </div> 
+          
+        </apex:pageBlock>        
+    </apex:form>  
+ <br/>
+ <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/> 
+
+<script language="javascript">
+    console.log('ViewRelatedOpps ' + '{!viewRelatedOpps}');
+    console.log('ViewRelatedLeads ' + '{!viewRelatedLeads}');
+    var j$ = jQuery.noConflict(); 
+    var excludeProject;
+    setSelectedTab(j$, "Deleted Projects");
+    
+    function localStatusShow( object, statusText) {
+       'use strict';
+       j$( object ).text(statusText);
+    }
+    
+    function localStatusHide( object) { 
+         'use strict';
+        j$( object ).text('');
+    }
+    j$("#deleteSelectedButton").prop("disabled",true).addClass().addClass("btnDisabled");
+    j$("#deleteAllButton").prop("disabled", true).addClass().addClass("btnDisabled");
+    /* j$("#deletePermanentlyDetails").css("Display","none");
+    j$("#deleteCurrentDetails").css("Display","none"); */
+    
+j$(document).ready(function(){
+    j$("#deleteSelect").change(function(){
+        if(j$("#deleteSelect").val() == "1"){
+            j$("#deletePermanentlyDetails").css("display","block");
+            j$("#deleteCurrentDetails").css("display","none");
+            j$("#deleteSelectedButton").prop("disabled",false).addClass().removeClass("btnDisabled");
+            j$("#deleteAllButton").prop("disabled", false).addClass().removeClass("btnDisabled");
+            excludeProject = j$("#deleteSelect").val();
+            
+        }else if(j$("#deleteSelect").val() == "0"){
+            j$("#deletePermanentlyDetails").css("display","none");
+            j$("#deleteCurrentDetails").css("display","block");
+            j$("#deleteSelectedButton").prop("disabled",false).addClass().removeClass("btnDisabled");
+            j$("#deleteAllButton").prop("disabled", false).addClass().removeClass("btnDisabled");
+            excludeProject = j$("#deleteSelect").val();
+        }else{
+            j$("#deletePermanentlyDetails").css("display","none");
+            j$("#deleteCurrentDetails").css("display","none");
+            j$("#deleteSelectedButton").prop("disabled",true).addClass().addClass("btnDisabled");
+            j$("#deleteAllButton").prop("disabled", true).addClass().addClass("btnDisabled");
+        }
+    
+    });
+    
+    j$("#deleteSelectedButton").click(function(){
+        if(excludeProject == "1"){
+            deleteSelected();
+        }else if(excludeProject == "0"){
+            deleteSelectedSalesforce();
+        }
+    });
+    
+    j$("#deleteAllButton").click(function(){
+        if(excludeProject == "1"){
+            deleteAll();
+        }else if(excludeProject == "0"){
+            deleteAllSalesforce();
+        }
+    });
+    
+    /* if(j$("#excludeProject").is(':checked')){
+        console.log("chcekd");
+        var excludeBoolean = 1; 
+        excludeProjectRunQuery(excludeBoolean);
+    }
+
+     j$("#excludeProject").change(function(){
+        var excludeBoolean;
+        
+        if(j$("#excludeProject").is(':checked')){
+            excludeBoolean = 1;
+            excludeProjectRunQuery(excludeBoolean);
+        }else{
+            excludeBoolean = 0;
+            excludeProjectRunQuery(excludeBoolean);     
+        }       
+    }); */
+
+
+
+});
+ 
+    j$("#deleteAllButton").click(function(){
+        j$("#deleteAllButton").prop("disabled", true).addClass().addClass("btnDisabled");
+    
+     
+    });   
+
+
+
+    
+       
+    
+    function SelectAllActionCheckBoxes(CheckAll){
+        var divResults = document.getElementById("divResults");
+        if(divResults){            
+            //loop thru all action checkboxes            
+            var ctrls = divResults.getElementsByTagName("input");           
+            var currCtrlId;
+            var sSelectedItems = "";
+            var sProjectID = "";
+            for(var i=0; i<ctrls.length; i++){
+                if(ctrls[i].type == "checkbox"){                
+                    currCtrlId = ctrls[i].id;       
+                    if(currCtrlId != "chkCP4SF_Tag_All"){       
+                        sProjectID = sProjectID + currCtrlId.replace("chkCP4SF_Tag_", "") + ",";
+                        if(CheckAll.checked){
+                            ctrls[i].checked = true;
+                        }else{
+                            ctrls[i].checked = false;
+                        }                       
+                    }                   
+                }               
+            } 
+        }
+     }
+
+    
+</script>
+
+</apex:page>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test Result</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Results</value>
+    </caseValues>
+    <fields>
+        <help><!-- If the business has accepted the Test Results, this box should be checked. --></help>
+        <label><!-- Business Sign-off --></label>
+        <name>Business_Sign_off__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you leave blank, the Expected Results from the Test Scenario will be copied into this field on Save.  You can then edit and add additional information. --></help>
+        <label><!-- Expected Result --></label>
+        <name>Expected_Result__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Retest</masterLabel>
+            <translation><!-- Waiting for Retest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provide a list of the Data needed to perform this test.  If needed, attach or provide links to the documentation. --></help>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Result ID --></label>
+        <name>Test_Result_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Scenario --></label>
+        <name>Test_Scenario__c</name>
+        <relationshipLabel><!-- Test Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Test Type --></label>
+        <name>Test_Type__c</name>
+        <picklistValues>
+            <masterLabel>New Record Creation</masterLabel>
+            <translation><!-- New Record Creation --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If test result equals fail, comments need to be input --></errorMessage>
+        <name>Fail_Comments</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>1/1/2017 12:00 AM</values>
+            <values>2/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>2/1/2017 12:00 AM</values>
+            <values>3/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>3/1/2017 12:00 AM</values>
+            <values>4/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>4/1/2017 12:00 AM</values>
+            <values>5/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>5/1/2017 12:00 AM</values>
+            <values>6/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>6/1/2017 12:00 AM</values>
+            <values>7/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>7/1/2017 12:00 AM</values>
+            <values>8/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>8/1/2017 12:00 AM</values>
+            <values>9/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>9/1/2017 12:00 AM</values>
+            <values>10/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>10/1/2017 12:00 AM</values>
+            <values>11/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>11/1/2017 12:00 AM</values>
+            <values>12/1/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>12/1/2017 12:00 AM</values>
+            <values>1/1/2018 12:00 AM</values>
+        </dashboardFilterOptions>
+        <name>Created Date</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Funnel</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Thousands</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads converted into businesses opportunities, classified by stages: Target/Qualify/Propose means that BU team is working to close it and END-WON means that the opportunity was successfully closed.</footer>
+            <header>Opportunities / projects reported from lead requests</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/Converted_Leads_into_Opportunities_DPM</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>YTD 2016</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads requests converted into sales, the status Track means that the opportunity is pending to be closed | End/End-Won means sales were closed.</footer>
+            <header>Sales reported from lead requests</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/Leads_with_Opportunity_Amount_DPM</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2016</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>All leads received through corporate channels.</footer>
+            <header>Leads received (Annual)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/Current_and_Previous_14_16_DPM_MACC</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2015-2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Line</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Average of customer response time.</footer>
+            <header>Customer service level by quarter</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/X2016_Leads_Status_DPM_MACC</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads requests received by website, phone or email.</footer>
+            <header>Leads received by channel type</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/X2016_Origin_Channel_Type_DPM_MACC</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>What kind of support or request are we receiving from our customers or prospects?</footer>
+            <header>Leads received by Type</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/DPM_MACC_type_MEX</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads requests classified by sales representatives.</footer>
+            <groupingColumn>OWNER</groupingColumn>
+            <header>Leads by owner</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/DPM_MACC_by_Owner</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>2016</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Number of leads received by quarter.</footer>
+            <header>Leads received (Quarterly)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/X2016_Leads_by_year_quarter_DPM_MACC</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2015-2017</title>
+            <useReportChart>true</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads requests classified by status: Capture/Route/Respond: all requests that are pending to be closed. End/End-Won/End-Lost: all requests that were closed.</footer>
+            <header>*Pending &amp; Completed Lead requests</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/Pending_completed_leads_DPM_MEX</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Average of customer response time.</footer>
+            <header>Open time</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care_P_IP/X2016_Leads_Open_Time_DPM</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2016</title>
+            <useReportChart>true</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardTableColumn>
+                <column>Lead.Response_Type__c</column>
+                <sortBy>RowLabelAscending</sortBy>
+            </dashboardTableColumn>
+            <dashboardTableColumn>
+                <calculatePercent>false</calculatePercent>
+                <column>RowCount</column>
+                <showTotal>true</showTotal>
+            </dashboardTableColumn>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <footer>All leads sent to be handled by BU.</footer>
+            <header>Leads sent to BUs</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>CMS_LA_Customer_Care_P_IP/X2016_Leads_enviados_a_DPM_por_mes</report>
+            <showPicturesOnTables>false</showPicturesOnTables>
+            <title>2016</title>
+        </components>
+    </rightSection>
+    <runningUser>sfdc-admin.dps@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>2017 Dashboard para reportes mensuales OneDuPont DPM MACC</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>9</titleSize>
+</Dashboard>

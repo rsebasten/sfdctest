@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_81004510</developerName>
+        <masterLabel>Lead Open Time</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Lead.Lead_Open_Time__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>7</to>
+            </sourceValues>
+            <value>0 to 7 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>7</from>
+                <to>30</to>
+            </sourceValues>
+            <value>8 to 30 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>30</from>
+                <to>60</to>
+            </sourceValues>
+            <value>30 to 60 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>60</from>
+            </sourceValues>
+            <value>Over 60 days</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_13856080</developerName>
+        <masterLabel>Request Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead.Type__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Payment Information</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Purchasing Information</sourceValue>
+            </sourceValues>
+            <value>Commercial Information</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Data Sheet</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Literature</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Product Information</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>General Company Info</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Certifications and Specifications</sourceValue>
+            </sourceValues>
+            <value>Product Info. Request</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Registration</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Subscription Request</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Unsubscription Request</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Access</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Deletion</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Update</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Processing Information</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Career Opportunities</sourceValue>
+            </sourceValues>
+            <value>Subscription Request</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Complaint</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Technical Assistance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Environmental Information</sourceValue>
+            </sourceValues>
+            <value>Technical Information</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Product Sample</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Demo Request</sourceValue>
+            </sourceValues>
+            <value>Sample Request</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Partnership Interest</sourceValue>
+            </sourceValues>
+            <value>Partnership Interest</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Partner locator</sourceValue>
+            </sourceValues>
+            <value>Distributor Info.</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sell to DuPont</sourceValue>
+            </sourceValues>
+            <value>Sell to DuPont</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Price Request</sourceValue>
+            </sourceValues>
+            <value>Price Request</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_4354350</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead.Type__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Career Opportunities</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Data Sheet</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Human Resources</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Registration</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sell to DuPont</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Subscription Request</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Unsubscription Request</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Partner locator</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>General Company Info</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lead Nurturing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Literature</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Access</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Deletion</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Privacy Inquiry: Update</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Product Information</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Environmental Information</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Partnership Interest</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Payment Information</sourceValue>
+            </sourceValues>
+            <value>Customer Care</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Complaint</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Fabrication Assistance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Price Request</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Product Performance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Product Quality</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Product Sample</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Technical Assistance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Purchasing Information</sourceValue>
+            </sourceValues>
+            <value>Sales team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBarGrouped</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_4354350</groupingColumn>
+        <legendPosition>Bottom</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>BucketField_13856080</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Leads with Team&amp;Type</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Lead.Owning_SBU__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Type__c</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(((1 OR 2 OR 3) AND 4 AND 5 AND 6  AND 7))</booleanFilter>
+        <criteriaItems>
+            <column>CREATED_ALIAS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>M&amp;S-Arg,M&amp;S-Mex,M&amp;S-Braz,TS-Crop,gospi,lpira,lpere,ecama,cvale</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>DIMC Level 1 LA,Level 1 leads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALIAS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>M&amp;S-Arg,M&amp;S-Mex,M&amp;S-Braz,TS-Crop,gospi,lpira,lpere,ecama,cvale</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Axalta</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FIRST_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Owning_SBU__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Building Innovations,Protection Technologies</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_4354350</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_13856080</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2017 Estudo de Leads Team&amp;Type</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2017-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-01</startDate>
+    </timeFrameFilter>
+</Report>

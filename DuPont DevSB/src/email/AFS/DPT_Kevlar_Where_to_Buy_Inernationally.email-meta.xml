@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DuPont™ Where to Buy Internationally</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS - DuPont™ Where to Buy Internationally</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Protection Solutions</subject>
+    <textOnly>Dear {!Lead.FirstName} {!Lead.LastName},
+
+
+Thank you for your interest in DuPont™ products.
+
+Please visit out DuPont website which provides additional information on where to buy products internationally. (Please copy and paste the web address below into your web browser.)
+
+http://www.dupont.com/select-a-country.html
+
+
+DuPont Protection Soltuions</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

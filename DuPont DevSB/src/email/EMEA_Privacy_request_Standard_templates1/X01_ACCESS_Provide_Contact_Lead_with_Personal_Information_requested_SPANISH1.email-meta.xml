@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>01 ACCESS - Provide Contact-Lead with Personal Information requested-SPANISH</name>
+    <style>formalLetter</style>
+    <subject>DuPont Customer Privacy Access Request</subject>
+    <textOnly>Estimado Señor/ Estimada Señora {!Lead.LastName},
+ 
+Hemos recibido su petición de consulta de los datos  que DuPont tiene sobre usted.
+ 
+A continuación le adjuntamos la información que actualmente tenemos en nuestra base de datos :
+ 
+• Nombre : {!Lead.Name}
+• Compañía:  {!Lead.Company}
+• Dirección: {!Lead.Address}
+• Número de teléfono: {!Lead.Phone}
+• Número de fax: {!Lead.Fax}
+• Número de móvil : {!Lead.MobilePhone}
+• E-mail:  {!Lead.Email}
+• Website: {!Lead.Website}
+ 
+Para cualquier otra consulta o asistencia, por favor no dude en ponerse en contacto con nosotros.
+ 
+Atentamente,
+ 
+DuPont Inquiry Management  Center
+Toll-free number : 00800 3876 68 38
+Phone : 0034 985 12 37 73
+Fax : 0034 912 72 52 37
+E-mail: eu-info@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

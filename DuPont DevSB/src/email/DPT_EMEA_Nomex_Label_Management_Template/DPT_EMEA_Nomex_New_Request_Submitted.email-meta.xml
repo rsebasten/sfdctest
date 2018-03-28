@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify DPT EMEA Nomex Key User upon Label Request Submission</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPT EMEA Nomex New Request Submitted</name>
+    <style>freeForm</style>
+    <subject>New Request has been submitted for the Account {!Request__c.Account__c}</subject>
+    <textOnly>A new label request has been submitted for the Account: {!Request__c.Account__c} whose details are below: 
+
+
+Contact: {!Request__c.Contact__c} 
+Shipping Street : {!Request__c.Request_Shipping_Street__c} 
+
+Shipping State : {!Request__c.Request_Shipping_State__c} 
+Shipping City : {!Request__c.Request_Shipping_City__c} 
+Shipping Postal Code : {!Request__c.Request_Shipping_Postal_Code__c} 
+
+Shipping Country : {!Request__c.Request_Shipping_Country__c} 
+
+Requested Completion Date : {!Request__c. Requested_Completion_Date__c } 
+
+
+Click here to go to the request: 
+
+{!Request__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

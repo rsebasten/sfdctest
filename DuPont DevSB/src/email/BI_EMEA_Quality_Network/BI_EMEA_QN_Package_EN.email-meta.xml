@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <attachedDocuments>BI_EMEA_Quality_Network/Corian_Quality_Network_41px.jpg</attachedDocuments>
+    <available>true</available>
+    <description>QN Package Corian® Quality Network - EN Version</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA QN Package - EN</name>
+    <style>formalLetter</style>
+    <subject>Welcome to the Quality Network of DuPont CORIAN® !</subject>
+    <textOnly>Dear Quality Network Member,
+
+Welcome to the Quality Network of DuPont™ Corian®!
+
+Having completed the requirements and demonstrated your proficiency in the fabrication and installation of DuPont™ Corian® products, you are now entitled to place your Quality Network Number ({!Qualification__c.Reference_Id__c}) on invoices of installations as carrying the 10-year limited installed warranty from DuPont.
+
+We hereby gladly send you the link with pdf-files which you can download. This link contains the list with documents:
+* Your signed contract with your quality network number {!Qualification__c.Reference_Id__c} of  {!Qualification__c.Last_Contract_Date__c}
+* Your quality network certificate
+* The DuPont™ Corian® abridged fabrication booklet, the installation booklet
+* Our Chemical Resistance, Performance Properties, Fire Resistance and Product Overview, which can also be found on www.corian.com
+* Caring for Corian® guidelines (PDF-file)
+* Free telephone numbers of the warranty department
+* Quality Network brochure
+
+A package of 25 Use &amp; Care brochures will be sent by separate mail.
+
+We are proud to have you as a member of our DuPont™ Corian® Quality Network team and wish you continued success for the future.
+
+Sincerely,
+
+{!Qualification__c.Owner__c}
+DuPont Building Innovations – Surfaces
+Quality Network Assistant
+Warranty Centre Corian®
+Email: BI-Warranty@dupont.com
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

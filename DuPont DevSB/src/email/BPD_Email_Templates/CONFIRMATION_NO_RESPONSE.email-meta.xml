@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>CONFIRMATION-NO RESPONSE</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber} - Confirmation of Trademark Compliance: {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+
+We have not received a response to our letter dated _____________ regarding the unauthorized use or misuse of our DuPont™ {!Case.Product_Selected__c} trademark. Nevertheless, upon confirmation and verification of your current website &quot;{!Case.Profit_Center__c}&quot; (or place where the misuse/infringement was reported), we have noticed that you have taken the necessary actions to remove or correct all use of DuPont™ {!Case.Product_Selected__c} to our satisfaction. This letter, therefore, confirms compliance to our requests. Please be advised that we will continue to monitor your website and should any unauthorized use or misuse of DuPont™ {!Case.Product_Selected__c} be seen or brought to our attention as a repeat offense, we reserve the right to enforce our trademark to the fullest extent of the law.
+
+
+
+Thank you for your cooperation.
+
+
+
+Sincerely,
+
+
+
+DuPont Brand Protection Center</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

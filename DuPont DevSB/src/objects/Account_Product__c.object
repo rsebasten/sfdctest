@@ -1,0 +1,2711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Products related to an account (e.g. products they are buying, products they are interested in)
+May also be related to Materials (secure products).</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Product_Material__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product or Material for this Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Account Product Material</inlineHelpText>
+        <label>Account-Product Material</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Material__c.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>ERP Material – General Data</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Material__c</referenceTo>
+        <relationshipLabel>Account-Products (Material)</relationshipLabel>
+        <relationshipName>R00N30000002Uh6sEAC</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>Name of the account this product is related to</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account-Products</relationshipLabel>
+        <relationshipName>Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Application_Comment__c</fullName>
+        <description>Specific comments about the application of this product at this Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specific comments about the application of this product at this Account</inlineHelpText>
+        <label>Application Comment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Competition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Main Competition for this Product at this account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Main Competition for this Product at this account</inlineHelpText>
+        <label>Competition</label>
+        <referenceTo>Competition__c</referenceTo>
+        <relationshipLabel>Account-Products</relationshipLabel>
+        <relationshipName>R00N30000001tZ9uEAE</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DuPont_of_Revenue_Potential__c</fullName>
+        <externalId>false</externalId>
+        <formula>Revenue_PYR__c   /   Total_Revenue_Potential__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DuPont % of Revenue Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ERP_Ship_Point_Code__c</fullName>
+        <description>ERP Ship-Point Code = Identifier of physical location (for example, a warehouse or collection of loading ramps) in ERP System (i.e. SAP) from which an item is shipped.</description>
+        <externalId>false</externalId>
+        <label>ERP Ship-Point Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Site_Code__c</fullName>
+        <description>Site Code = 4 digit identifier for a Plant Site in SAP. In the Account-Product, this field identifies a location where material is purchased for or stored at. (Note: Site Code or Plant is used in SAP to denote a location where material is produced at, purchased for, shipped from or stored at.)</description>
+        <externalId>false</externalId>
+        <label>ERP Site Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Use__c</fullName>
+        <description>End Use this Product is used in at this customer</description>
+        <externalId>false</externalId>
+        <label>End Use</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>516 Furn &amp; Bedding</fullName>
+                    <default>false</default>
+                    <label>516 Furn &amp; Bedding</label>
+                </value>
+                <value>
+                    <fullName>517 TYPAR PACKAGING</fullName>
+                    <default>false</default>
+                    <label>517 TYPAR PACKAGING</label>
+                </value>
+                <value>
+                    <fullName>546 Carpet Backing</fullName>
+                    <default>false</default>
+                    <label>546 Carpet Backing</label>
+                </value>
+                <value>
+                    <fullName>602 Screen Printer</fullName>
+                    <default>false</default>
+                    <label>602 Screen Printer</label>
+                </value>
+                <value>
+                    <fullName>60A Mailing Envelope</fullName>
+                    <default>false</default>
+                    <label>60A Mailing Envelope</label>
+                </value>
+                <value>
+                    <fullName>60C EMP/FLOPPY</fullName>
+                    <default>false</default>
+                    <label>60C EMP/FLOPPY</label>
+                </value>
+                <value>
+                    <fullName>60D Env/POSTAL</fullName>
+                    <default>false</default>
+                    <label>60D Env/POSTAL</label>
+                </value>
+                <value>
+                    <fullName>619 Other Small Pkg</fullName>
+                    <default>false</default>
+                    <label>619 Other Small Pkg</label>
+                </value>
+                <value>
+                    <fullName>627 Sterile Pkg</fullName>
+                    <default>false</default>
+                    <label>627 Sterile Pkg</label>
+                </value>
+                <value>
+                    <fullName>64B COATING/PS</fullName>
+                    <default>false</default>
+                    <label>64B COATING/PS</label>
+                </value>
+                <value>
+                    <fullName>64C Roll Converter</fullName>
+                    <default>false</default>
+                    <label>64C Roll Converter</label>
+                </value>
+                <value>
+                    <fullName>64D ShtConv/pr mrcht</fullName>
+                    <default>false</default>
+                    <label>64D ShtConv/pr mrcht</label>
+                </value>
+                <value>
+                    <fullName>64J Banner Conv/Prt</fullName>
+                    <default>false</default>
+                    <label>64J Banner Conv/Prt</label>
+                </value>
+                <value>
+                    <fullName>64L REINFORCING TAPE</fullName>
+                    <default>false</default>
+                    <label>64L REINFORCING TAPE</label>
+                </value>
+                <value>
+                    <fullName>663 INDUSTRIAL</fullName>
+                    <default>false</default>
+                    <label>663 INDUSTRIAL</label>
+                </value>
+                <value>
+                    <fullName>668 CAR COVERS</fullName>
+                    <default>false</default>
+                    <label>668 CAR COVERS</label>
+                </value>
+                <value>
+                    <fullName>Agricultural services</fullName>
+                    <default>false</default>
+                    <label>Agricultural services</label>
+                </value>
+                <value>
+                    <fullName>Apparel</fullName>
+                    <default>false</default>
+                    <label>Apparel</label>
+                </value>
+                <value>
+                    <fullName>Apparel Roll Goods</fullName>
+                    <default>false</default>
+                    <label>Apparel Roll Goods</label>
+                </value>
+                <value>
+                    <fullName>Asbestos Removal</fullName>
+                    <default>false</default>
+                    <label>Asbestos Removal</label>
+                </value>
+                <value>
+                    <fullName>Bodyshop</fullName>
+                    <default>false</default>
+                    <label>Bodyshop</label>
+                </value>
+                <value>
+                    <fullName>Chemical Handling</fullName>
+                    <default>false</default>
+                    <label>Chemical Handling</label>
+                </value>
+                <value>
+                    <fullName>Cleanroom</fullName>
+                    <default>false</default>
+                    <label>Cleanroom</label>
+                </value>
+                <value>
+                    <fullName>Cleanroom-Roll Goods</fullName>
+                    <default>false</default>
+                    <label>Cleanroom-Roll Goods</label>
+                </value>
+                <value>
+                    <fullName>Consumer Apparel</fullName>
+                    <default>false</default>
+                    <label>Consumer Apparel</label>
+                </value>
+                <value>
+                    <fullName>Contaminated land clean up</fullName>
+                    <default>false</default>
+                    <label>Contaminated land clean up</label>
+                </value>
+                <value>
+                    <fullName>Contaminated plant / building clean up</fullName>
+                    <default>false</default>
+                    <label>Contaminated plant / building clean up</label>
+                </value>
+                <value>
+                    <fullName>Controlled Environment</fullName>
+                    <default>false</default>
+                    <label>Controlled Environment</label>
+                </value>
+                <value>
+                    <fullName>Disease management</fullName>
+                    <default>false</default>
+                    <label>Disease management</label>
+                </value>
+                <value>
+                    <fullName>Emergency Response</fullName>
+                    <default>false</default>
+                    <label>Emergency Response</label>
+                </value>
+                <value>
+                    <fullName>Envelopes Packaging</fullName>
+                    <default>false</default>
+                    <label>Envelopes Packaging</label>
+                </value>
+                <value>
+                    <fullName>Environmental disaster management</fullName>
+                    <default>false</default>
+                    <label>Environmental disaster management</label>
+                </value>
+                <value>
+                    <fullName>Fibre glass</fullName>
+                    <default>false</default>
+                    <label>Fibre glass</label>
+                </value>
+                <value>
+                    <fullName>Filtration</fullName>
+                    <default>false</default>
+                    <label>Filtration</label>
+                </value>
+                <value>
+                    <fullName>Firefighting</fullName>
+                    <default>false</default>
+                    <label>Firefighting</label>
+                </value>
+                <value>
+                    <fullName>Fire fighting - non industrial</fullName>
+                    <default>false</default>
+                    <label>Fire fighting - non industrial</label>
+                </value>
+                <value>
+                    <fullName>FP-EE Appliance  / consumer electronics</fullName>
+                    <default>false</default>
+                    <label>FP-EE Appliance  / consumer electronics</label>
+                </value>
+                <value>
+                    <fullName>FS-Commercial  FRP</fullName>
+                    <default>false</default>
+                    <label>FS-Commercial  FRP</label>
+                </value>
+                <value>
+                    <fullName>FS-Trans  -  Aircraft</fullName>
+                    <default>false</default>
+                    <label>FS-Trans  -  Aircraft</label>
+                </value>
+                <value>
+                    <fullName>General Industrial</fullName>
+                    <default>false</default>
+                    <label>General Industrial</label>
+                </value>
+                <value>
+                    <fullName>Geotextiles</fullName>
+                    <default>false</default>
+                    <label>Geotextiles</label>
+                </value>
+                <value>
+                    <fullName>Glass Handling</fullName>
+                    <default>false</default>
+                    <label>Glass Handling</label>
+                </value>
+                <value>
+                    <fullName>Graphics Export</fullName>
+                    <default>false</default>
+                    <label>Graphics Export</label>
+                </value>
+                <value>
+                    <fullName>Industrial cleaning and maintenance</fullName>
+                    <default>false</default>
+                    <label>Industrial cleaning and maintenance</label>
+                </value>
+                <value>
+                    <fullName>Laboratory</fullName>
+                    <default>false</default>
+                    <label>Laboratory</label>
+                </value>
+                <value>
+                    <fullName>Law enforcement</fullName>
+                    <default>false</default>
+                    <label>Law enforcement</label>
+                </value>
+                <value>
+                    <fullName>Manufacturing</fullName>
+                    <default>false</default>
+                    <label>Manufacturing</label>
+                </value>
+                <value>
+                    <fullName>Manufacturing / production</fullName>
+                    <default>false</default>
+                    <label>Manufacturing / production</label>
+                </value>
+                <value>
+                    <fullName>Medical Softgoods</fullName>
+                    <default>false</default>
+                    <label>Medical Softgoods</label>
+                </value>
+                <value>
+                    <fullName>Metal Finishing</fullName>
+                    <default>false</default>
+                    <label>Metal Finishing</label>
+                </value>
+                <value>
+                    <fullName>Metal mining</fullName>
+                    <default>false</default>
+                    <label>Metal mining</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Other Medical</fullName>
+                    <default>false</default>
+                    <label>Other Medical</label>
+                </value>
+                <value>
+                    <fullName>Packaging</fullName>
+                    <default>false</default>
+                    <label>Packaging</label>
+                </value>
+                <value>
+                    <fullName>Paint spraying</fullName>
+                    <default>false</default>
+                    <label>Paint spraying</label>
+                </value>
+                <value>
+                    <fullName>Patient Apparel</fullName>
+                    <default>false</default>
+                    <label>Patient Apparel</label>
+                </value>
+                <value>
+                    <fullName>Personal masks</fullName>
+                    <default>false</default>
+                    <label>Personal masks</label>
+                </value>
+                <value>
+                    <fullName>Remediation industry</fullName>
+                    <default>false</default>
+                    <label>Remediation industry</label>
+                </value>
+                <value>
+                    <fullName>Retail Wipes</fullName>
+                    <default>false</default>
+                    <label>Retail Wipes</label>
+                </value>
+                <value>
+                    <fullName>Rooflining</fullName>
+                    <default>false</default>
+                    <label>Rooflining</label>
+                </value>
+                <value>
+                    <fullName>Small Rolls</fullName>
+                    <default>false</default>
+                    <label>Small Rolls</label>
+                </value>
+                <value>
+                    <fullName>Sterile</fullName>
+                    <default>false</default>
+                    <label>Sterile</label>
+                </value>
+                <value>
+                    <fullName>Sterile Controlled Environment</fullName>
+                    <default>false</default>
+                    <label>Sterile Controlled Environment</label>
+                </value>
+                <value>
+                    <fullName>Tapes &amp; Bandages</fullName>
+                    <default>false</default>
+                    <label>Tapes &amp; Bandages</label>
+                </value>
+                <value>
+                    <fullName>Typar Rooflining</fullName>
+                    <default>false</default>
+                    <label>Typar Rooflining</label>
+                </value>
+                <value>
+                    <fullName>United States Postal</fullName>
+                    <default>false</default>
+                    <label>United States Postal</label>
+                </value>
+                <value>
+                    <fullName>Utilities</fullName>
+                    <default>false</default>
+                    <label>Utilities</label>
+                </value>
+                <value>
+                    <fullName>Utility (electricity)</fullName>
+                    <default>false</default>
+                    <label>Utility (electricity)</label>
+                </value>
+                <value>
+                    <fullName>Utility (gas)</fullName>
+                    <default>false</default>
+                    <label>Utility (gas)</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Description__c</fullName>
+        <description>Free text descriptions of this product at this account</description>
+        <externalId>false</externalId>
+        <label>Line Description</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>List_Price__c</fullName>
+        <description>List price offered by DuPont to the distributor</description>
+        <externalId>false</externalId>
+        <label>List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Material_Level_3__c</fullName>
+        <description>Formula pulls Product Level 3 from Material object</description>
+        <externalId>false</externalId>
+        <formula>Account_Product_Material__r.ERP_Product_Hierarchy_Level_3__c</formula>
+        <label>Material Level 3</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Material_Level_4__c</fullName>
+        <description>Formula field to pull Product Level 4 from Material Object</description>
+        <externalId>false</externalId>
+        <formula>Account_Product_Material__r.ERP_Product_Hierarchy_Level_4__c</formula>
+        <label>Material Level 4</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Material_Level_5__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Product_Material__r.ERP_Product_Hierarchy_Level_5__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Material Level 5</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Material_Level_6__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Product_Material__r.ERP_Product_Hierarchy_Level_6__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Material Level 6</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Owning Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BI</fullName>
+                    <default>false</default>
+                    <label>BI</label>
+                </value>
+                <value>
+                    <fullName>BI-Env</fullName>
+                    <default>false</default>
+                    <label>BI-Env</label>
+                </value>
+                <value>
+                    <fullName>BI-Surf</fullName>
+                    <default>false</default>
+                    <label>BI-Surf</label>
+                </value>
+                <value>
+                    <fullName>DPT-Aramids</fullName>
+                    <default>false</default>
+                    <label>DPT-Aramids</label>
+                </value>
+                <value>
+                    <fullName>DPT-DPP</fullName>
+                    <default>false</default>
+                    <label>DPT-DPP</label>
+                </value>
+                <value>
+                    <fullName>DPT-ES</fullName>
+                    <default>false</default>
+                    <label>DPT-ES</label>
+                </value>
+                <value>
+                    <fullName>DPT-NOW</fullName>
+                    <default>false</default>
+                    <label>DPT-NOW</label>
+                </value>
+                <value>
+                    <fullName>DPT-PM</fullName>
+                    <default>false</default>
+                    <label>DPT-PM</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-MIL</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-MIL</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PO_Revenue_CY__c</fullName>
+        <description>This is the planned commitment for revenue - current year</description>
+        <externalId>false</externalId>
+        <label>PO Revenue CY</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PO_Volume_CY__c</fullName>
+        <description>The projected Volume of the current year for this account.</description>
+        <externalId>false</externalId>
+        <label>PO Volume CY</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product related to this account</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Account-Products</relationshipLabel>
+        <relationshipName>R00N30000001UcSHEA0</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Category__c</fullName>
+        <description>Product Category</description>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Activator</fullName>
+                    <default>false</default>
+                    <label>Activator</label>
+                </value>
+                <value>
+                    <fullName>Clear Coat</fullName>
+                    <default>false</default>
+                    <label>Clear Coat</label>
+                </value>
+                <value>
+                    <fullName>Color</fullName>
+                    <default>false</default>
+                    <label>Color</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Stage__c</fullName>
+        <description>Stage this Product is in at this Customer</description>
+        <externalId>false</externalId>
+        <label>Product Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Interested</fullName>
+                    <default>false</default>
+                    <label>Interested</label>
+                </value>
+                <value>
+                    <fullName>Pre-booking</fullName>
+                    <default>false</default>
+                    <label>Pre-booking</label>
+                </value>
+                <value>
+                    <fullName>Requesting</fullName>
+                    <default>false</default>
+                    <label>Requesting</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Buying</fullName>
+                    <default>false</default>
+                    <label>Buying</label>
+                </value>
+                <value>
+                    <fullName>Using</fullName>
+                    <default>false</default>
+                    <label>Using</label>
+                </value>
+                <value>
+                    <fullName>Recommending</fullName>
+                    <default>false</default>
+                    <label>Recommending</label>
+                </value>
+                <value>
+                    <fullName>Dormant</fullName>
+                    <default>false</default>
+                    <label>Dormant</label>
+                </value>
+                <value>
+                    <fullName>Lost</fullName>
+                    <default>false</default>
+                    <label>Lost</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Qty_Outlook_CY__c</fullName>
+        <description>This is the volume (sales Qty) outlook based on current buying patterns</description>
+        <externalId>false</externalId>
+        <label>Qty Outlook CY</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account-Products (Related Account)</relationshipLabel>
+        <relationshipName>Account_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_CM__c</fullName>
+        <description>Revenue Current Month</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Revenue Current Month</inlineHelpText>
+        <label>Revenue CM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_CYTD__c</fullName>
+        <description>Revenue Current Year-To-Date (as of Sales History Updated date on Account)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last refreshed as of  &lt;Sales History Updated&gt; date on Account</inlineHelpText>
+        <label>Revenue CYTD</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_CYTD_vs_PYTD__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Revenue_CYTD__c - Revenue_PYTD__c) / Revenue_PYTD__c</formula>
+        <label>Revenue CYTD vs PYTD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Outlook_CY__c</fullName>
+        <description>This is the revenue outlook based on current buying patterns</description>
+        <externalId>false</externalId>
+        <label>Revenue Outlook CY</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_PYR__c</fullName>
+        <description>Total revenue for prior year for this product at this account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Prior Year Revenue for this product at this account</inlineHelpText>
+        <label>Revenue PYR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_PYTD__c</fullName>
+        <description>Prior Year-To-Date Revenue for this product at this account</description>
+        <externalId>false</externalId>
+        <label>Revenue PYTD</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_PY_1__c</fullName>
+        <description>Total Revenue - Previous Year - Minus 1 (Previous, Previous Year)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Revenue - Previous Year - Minus 1 (Previous, Previous Year)</inlineHelpText>
+        <label>Revenue PY-1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Qty_CM__c</fullName>
+        <description>Total volume Sales quantity - current month</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total volume Sales quantity - current month</inlineHelpText>
+        <label>Sales Qty CM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Share_of_Product_Category__c</fullName>
+        <description>Percentage of share of this product in the total purchases of this customer in this Product Category</description>
+        <externalId>false</externalId>
+        <label>Share of Product Category</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Revenue_Potential__c</fullName>
+        <description>The total revenue combined of product purchased from DuPont as well as Competitors, in other words, the total revenue for this customer)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total revenue combined of product purchased from DuPont as well as Competitors, in other words, the total revenue for this customer)</inlineHelpText>
+        <label>Total Revenue Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Sales__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the total annual sales of the related Account</inlineHelpText>
+        <label>Total Sales</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actual</fullName>
+                    <default>false</default>
+                    <label>Actual</label>
+                </value>
+                <value>
+                    <fullName>Inventory</fullName>
+                    <default>false</default>
+                    <label>Inventory</label>
+                </value>
+                <value>
+                    <fullName>Outlook</fullName>
+                    <default>false</default>
+                    <label>Outlook</label>
+                </value>
+                <value>
+                    <fullName>PO</fullName>
+                    <default>false</default>
+                    <label>PO</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unit_Of_Measure__c</fullName>
+        <description>Unit Of Measure applied to quantities in this record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unit Of Measure applied to quantities in this record</inlineHelpText>
+        <label>Unit Of Measure</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>150MK</fullName>
+                    <default>false</default>
+                    <label>150MK</label>
+                </value>
+                <value>
+                    <fullName>50LBS</fullName>
+                    <default>false</default>
+                    <label>50LBS</label>
+                </value>
+                <value>
+                    <fullName>60MK</fullName>
+                    <default>false</default>
+                    <label>60MK</label>
+                </value>
+                <value>
+                    <fullName>72MK</fullName>
+                    <default>false</default>
+                    <label>72MK</label>
+                </value>
+                <value>
+                    <fullName>80MK</fullName>
+                    <default>false</default>
+                    <label>80MK</label>
+                </value>
+                <value>
+                    <fullName>Acre</fullName>
+                    <default>false</default>
+                    <label>Acre</label>
+                </value>
+                <value>
+                    <fullName>Cubic meter</fullName>
+                    <default>false</default>
+                    <label>Cubic meter</label>
+                </value>
+                <value>
+                    <fullName>Day</fullName>
+                    <default>false</default>
+                    <label>Day</label>
+                </value>
+                <value>
+                    <fullName>each</fullName>
+                    <default>false</default>
+                    <label>each</label>
+                </value>
+                <value>
+                    <fullName>Gallon UK</fullName>
+                    <default>false</default>
+                    <label>Gallon UK</label>
+                </value>
+                <value>
+                    <fullName>Gallon US</fullName>
+                    <default>false</default>
+                    <label>Gallon US</label>
+                </value>
+                <value>
+                    <fullName>Gram</fullName>
+                    <default>false</default>
+                    <label>Gram</label>
+                </value>
+                <value>
+                    <fullName>Hectare</fullName>
+                    <default>false</default>
+                    <label>Hectare</label>
+                </value>
+                <value>
+                    <fullName>Hour</fullName>
+                    <default>false</default>
+                    <label>Hour</label>
+                </value>
+                <value>
+                    <fullName>Jumbo</fullName>
+                    <default>false</default>
+                    <label>Jumbo</label>
+                </value>
+                <value>
+                    <fullName>Kilogram</fullName>
+                    <default>false</default>
+                    <label>Kilogram</label>
+                </value>
+                <value>
+                    <fullName>Liter</fullName>
+                    <default>false</default>
+                    <label>Liter</label>
+                </value>
+                <value>
+                    <fullName>Milliliter</fullName>
+                    <default>false</default>
+                    <label>Milliliter</label>
+                </value>
+                <value>
+                    <fullName>Ounce</fullName>
+                    <default>false</default>
+                    <label>Ounce</label>
+                </value>
+                <value>
+                    <fullName>Pound</fullName>
+                    <default>false</default>
+                    <label>Pound</label>
+                </value>
+                <value>
+                    <fullName>Square foot</fullName>
+                    <default>false</default>
+                    <label>Square foot</label>
+                </value>
+                <value>
+                    <fullName>Square meter</fullName>
+                    <default>false</default>
+                    <label>Square meter</label>
+                </value>
+                <value>
+                    <fullName>Tests/Yr</fullName>
+                    <default>false</default>
+                    <label>Tests/Yr</label>
+                </value>
+                <value>
+                    <fullName>Ton, metric</fullName>
+                    <default>false</default>
+                    <label>Ton, metric</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>dsfs_fAgreement_Brand__c</fullName>
+        <description>formula field to address trademark for docusign
+
+(11/6/2017) - Removed Agreement_Brand__c reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agreement Brand (dsfs)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dsfs_fBrand__c</fullName>
+        <description>formula field to address trademark for docusign
+
+(11/6/2017) - Removed &quot;Brand__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brand (dsfs)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Total_Sales__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Sales__c  * Share_of_Product_Category__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>% of Total Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Account-Product</label>
+    <nameField>
+        <displayFormat>ACPR{YY}{MM}-{0000}</displayFormat>
+        <label>Account-Product ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account-Products</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>BI_Account_Product</fullName>
+        <active>true</active>
+        <label>BI Account Product</label>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Env</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Surf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Stage__c</picklist>
+            <values>
+                <fullName>Buying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recommending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requesting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Acre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hectare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tests%2FYr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPTIPP</fullName>
+        <active>true</active>
+        <description>DPT - DPP-NA account Product</description>
+        <label>DPT-IPP</label>
+        <picklistValues>
+            <picklist>End_Use__c</picklist>
+            <values>
+                <fullName>Chemical Handling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Controlled Environment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Firefighting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Glass Handling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metal Finishing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paint spraying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sterile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sterile Controlled Environment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Env</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Surf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Activator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear Coat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Color</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Stage__c</picklist>
+            <values>
+                <fullName>Buying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPT_AP_Sales_Capture</fullName>
+        <active>true</active>
+        <description>DPT AP Account Product for Sales Capture</description>
+        <label>DPT-AP Sales Capture</label>
+        <picklistValues>
+            <picklist>End_Use__c</picklist>
+            <values>
+                <fullName>516 Furn %26 Bedding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>517 TYPAR PACKAGING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>546 Carpet Backing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>602 Screen Printer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60A Mailing Envelope</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60C EMP%2FFLOPPY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60D Env%2FPOSTAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>619 Other Small Pkg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>627 Sterile Pkg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64B COATING%2FPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64C Roll Converter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64D ShtConv%2Fpr mrcht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64J Banner Conv%2FPrt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64L REINFORCING TAPE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>663 INDUSTRIAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>668 CAR COVERS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel Roll Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleanroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleanroom-Roll Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consumer Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Envelopes Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filtration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Geotextiles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graphics Export</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Softgoods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal masks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Wipes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rooflining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Rolls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tapes %26 Bandages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Typar Rooflining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United States Postal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Activator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear Coat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Color</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Stage__c</picklist>
+            <values>
+                <fullName>Buying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPT_IPPEMEA</fullName>
+        <active>true</active>
+        <description>DPT - DuPont Personal Protection EMEA Account Products</description>
+        <label>DPT-IPP EMEA</label>
+        <picklistValues>
+            <picklist>End_Use__c</picklist>
+            <values>
+                <fullName>Agricultural services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asbestos Removal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bodyshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleanroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contaminated land clean up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contaminated plant %2F building clean up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental disaster management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fibre glass</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fire fighting - non industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial cleaning and maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laboratory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law enforcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing %2F production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metal mining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paint spraying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remediation industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility %28electricity%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility %28gas%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Env</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Surf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Activator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear Coat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Color</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Stage__c</picklist>
+            <values>
+                <fullName>Buying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPT_NOW</fullName>
+        <active>true</active>
+        <description>DPT - Based on DPP Record Type</description>
+        <label>DPT-NOW</label>
+        <picklistValues>
+            <picklist>End_Use__c</picklist>
+            <values>
+                <fullName>516 Furn %26 Bedding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>517 TYPAR PACKAGING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>546 Carpet Backing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>602 Screen Printer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60A Mailing Envelope</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60C EMP%2FFLOPPY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60D Env%2FPOSTAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>619 Other Small Pkg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>627 Sterile Pkg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64B COATING%2FPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64C Roll Converter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64D ShtConv%2Fpr mrcht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64J Banner Conv%2FPrt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64L REINFORCING TAPE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>663 INDUSTRIAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>668 CAR COVERS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel Roll Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleanroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleanroom-Roll Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consumer Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Envelopes Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filtration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Geotextiles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graphics Export</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Softgoods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal masks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Wipes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rooflining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Rolls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tapes %26 Bandages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Typar Rooflining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United States Postal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Activator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear Coat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Color</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Stage__c</picklist>
+            <values>
+                <fullName>Buying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>IB</fullName>
+        <active>false</active>
+        <description>Based on DPP Record Type</description>
+        <label>IB</label>
+        <picklistValues>
+            <picklist>End_Use__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Env</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Surf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Activator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear Coat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Color</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Stage__c</picklist>
+            <values>
+                <fullName>Buying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OneDuPont</fullName>
+        <active>true</active>
+        <description>OneDuPont Account Products</description>
+        <label>OneDuPont</label>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Env</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Surf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Stage__c</picklist>
+            <values>
+                <fullName>Buying</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recommending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requesting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Acre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hectare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tests%2FYr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Account_Product_Format</fullName>
+        <availability>online</availability>
+        <description>Used by DPC AUS for defining account products</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Account Product Format</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/servlet/servlet.FileDownload?file=01530000000fYRe</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SelectSegment</fullName>
+        <availability>online</availability>
+        <description>Launch Segmentation Wizard</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Select Segment</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/segmentationwizard?scope=a2k30000000GmbR&amp;ancor={! Account_Product__c.Id }</url>
+    </webLinks>
+</CustomObject>

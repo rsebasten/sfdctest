@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email used to send a notice to SFAR submitter to let them know their request was rejected by the business approver.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>SFAR Business Approval - Request Rejected</name>
+    <style>none</style>
+    <subject>SFDC Access Request Approval was rejected by Business Approver - {!SFDC_Access_Request__c.Program__c} - {!SFDC_Access_Request__c.User_Region__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

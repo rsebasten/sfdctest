@@ -1,0 +1,278 @@
+<apex:page tabStyle="Dodge_Projects__tab" sideBar="false" recordSetVar="cpprojects" StandardController="ConstructionPts__CP_Project__c" extensions="ConstructionPts.MyViewsController,ConstructionPts.CPProjectListEditTracking,ConstructionPts.CPExportAnalytics,ConstructionPts.CPProjectOppCounts">
+
+<c:CPHeader title="Projects" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true" ShowTitle="true" MessageColor="green" message="<b>{!if(GetNumberOfProjects != '', GetNumberOfProjects, '')}</b>" />  
+
+<br/>
+<div id="divList">
+        <apex:outputPanel id="opSelected">          
+             <apex:ListViews type="ConstructionPts__CP_Project__c" id="lstCP_Projects"/>               
+        </apex:outputPanel>
+        </div>
+<br/>           
+<c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+    
+    <apex:includeScript value="{!URLFOR($Resource.ConstructionPts__jquery)}"/>
+    <script type="text/javascript">       
+        jQuery.noConflict(); 
+               
+        function HideLinksForNoActionCheckBox(){
+            jQuery("#divList").find("a.actionLink:contains('Edit')").css("display","none");    
+            jQuery("#divList").find("a.actionLink:contains('Del')").css("display","none");          
+            var el = jQuery("#divList").find("td.actionColumn");
+            if (el.length > 0) {
+                jQuery(el).html(el.html().replace("|", "").replace("|", "").replace("|", ""));      
+            }            
+        }
+    
+ 
+        function SaveTrackingForCPProjects(DeleteFlag){
+            //loop thru all 
+            var ctrls = document.getElementsByTagName("input");
+            var currCtrlId;
+            var sSelectedItems = "";
+            for(var i=0; i<ctrls.length; i++){
+            
+                if(ctrls[i].type == "checkbox"){
+                    currCtrlId = ctrls[i].id;
+                    if(currCtrlId.length > 3){
+                        if(currCtrlId.substring(0,3) == "ids"){
+                            if(ctrls[i].checked == true){
+                                sSelectedItems = sSelectedItems + ctrls[i].value + ",";
+                            }
+                        }
+                    }
+                    
+                }
+                
+            } 
+            if(sSelectedItems.length > 0){
+                sSelectedItems = sSelectedItems.substring(0,sSelectedItems.length-1);
+            }
+            
+        var sStatus = '';
+        if (DeleteFlag == 1)
+            sStatus = 'Delete';
+
+        Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPProjectListEditTracking.FlagProjects}', sSelectedItems, sStatus, doCallBack);
+    }
+ 
+    function doCallBack(sReturn, event){
+          GetListIds();
+    }
+         
+        function HideActionLinks(sNumOpps, event){ 
+            //NOTE: user profile should have "Modify All" for project custom object
+            var divList = document.getElementById("divList");
+            if(divList){
+                var tds = divList.getElementsByTagName("td");
+                var blnActionFound = false;          
+                for(var z=0; z<tds.length; z++){  
+                    var ctrls = tds[z].getElementsByTagName("input");                   
+                    var currCtrlId;
+                    var sSelectedItems = "";                    
+                    for(var i=0; i<ctrls.length; i++){                      
+                        if(ctrls[i].type == "checkbox"){
+                            currCtrlId = ctrls[i].id;
+                            
+                            if(currCtrlId.length > 3){
+                                if(currCtrlId.substring(0,3) == "ids"){
+                                    
+                                    var parentCell = ctrls[i].parentNode;
+                                    if(parentCell){
+                                        
+                                        var anchors = parentCell.getElementsByTagName("a");
+                                        var replaceCnt = 0;
+                                        var ObjectID = "";
+                                        var s = "";
+                                        for(var p=0; p<anchors.length; p++){  
+                                            var inHTML = anchors[p].innerHTML;                                                                      
+                                            if(inHTML  == "Edit" || inHTML.indexOf("Opp") > -1 ){
+                                                blnActionFound = true;
+                                                ObjectID = getObjectIDFromHref(anchors[p].href);
+                                                RelOppCnts = GetNumRelOpps(ObjectID, sNumOpps);
+                                                
+                                                if(RelOppCnts != ""){   
+                                                    if(RelOppCnts == "1"){
+                                                        s = "";
+                                                    }else{
+                                                        s = "s";
+                                                    }
+                                                    
+                                                    anchors[p].href = "javascript: ShowOpps('" + ObjectID + "');";
+                                                    anchors[p].innerHTML = "<span title=\"1 opportunity related to this project.\nClick to view opportunity name.\">" + RelOppCnts + " Opp" + s + "</span><div id=\"div_" + ObjectID + "\" style=\"position:absolute;z-index:100;left:40px\"/>";    
+                                                }else{
+                                                    anchors[p].innerHTML = "";
+                                                }                                               
+                                                replaceCnt = replaceCnt + 1;
+                                            }
+                                            if(anchors[p].innerHTML == "Del"){
+                                                anchors[p].innerHTML = "";
+                                                replaceCnt = replaceCnt + 1;
+                                            }                                           
+                                        }
+                                    
+                                        var newHTML = tds[z].innerHTML;
+                                        for(x=0; x<replaceCnt+1; x++){
+                                            newHTML = newHTML.replace("|","");
+                                        }
+                                        tds[z].innerHTML = newHTML;
+                                    }                                   
+                                }                               
+                            }                           
+                        }                                           
+                    }               
+                }
+             }              
+             if(blnActionFound == false){
+                HideLinksForNoActionCheckBox();
+             }
+         }
+         
+         function ShowOpps(ObjectID)
+         {
+             Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPProjectOppCounts.GetRelatedOppsForProject}', 
+             ObjectID, DisplayRelatedOpps
+            ); 
+         }
+         
+          function GetListIds(){
+            var divList = document.getElementById("divList");
+            var strIds = "";
+            if(divList){
+                var tds = divList.getElementsByTagName("td");       
+                for(var z=0; z<tds.length; z++){  
+                    var ctrls = tds[z].getElementsByTagName("input");                   
+                    var currCtrlId;                
+                    for(var i=0; i<ctrls.length; i++){                      
+                        if(ctrls[i].type == "checkbox"){
+                            currCtrlId = ctrls[i].id;
+                            if(currCtrlId.length > 3){
+                                if (strIds.length > 0)
+                                {
+                                    strIds = strIds + "," + ctrls[i].value;
+                                }
+                                else
+                                {
+                                    strIds = ctrls[i].value;
+                                }
+                                
+                            }
+                        }
+                    }
+                 }
+             }
+             Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPProjectOppCounts.GetRelatedOppsForList}', strIds, HideActionLinks);           
+        }
+
+         function CloseDiv(CPProjectObjectID){
+            var div = document.getElementById("div_" + CPProjectObjectID);
+            if(div){
+                div.style.display = "none";
+            }           
+         }
+         
+         function DisplayRelatedOpps(sRelOppJS, event){
+            var arrRelOppJS = sRelOppJS.split('|');
+            var CPProjectObjectID = arrRelOppJS[0];
+            
+            var div = document.getElementById("div_" + CPProjectObjectID);
+            if(div){
+                var divRelOpps = document.getElementById("div_" + CPProjectObjectID);
+                if(divRelOpps){
+                    var arrRelOpps = arrRelOppJS[1].split(',');
+                    var sHTML = "";
+                    var sCloseRow = "<tr><td align=\"left\">Related opportunities</td><td align=\"right\"><a href=\"javascript: CloseDiv('" +  CPProjectObjectID + "');\">Hide</a></td></tr>";
+                    for(var i=0; i<arrRelOpps.length; i++){
+                        sHTML = sHTML + "<tr><td bgcolor=\"#FFFFCC\" colspan=\"2\"><a href=\"../" + arrRelOpps[i] + "\">" + arrRelOpps[i+1] + "</a></td></tr>";
+                        i = i+1;
+                    }
+                    if(sHTML != ""){
+                        sHTML = "<table cellpadding=\"2\" cellspacing=\"2\">" + sCloseRow + sHTML + "</table>";
+                    }
+                    divRelOpps.innerHTML = sHTML;
+                    divRelOpps.style.display = "";
+                    divRelOpps.style.position = "absolute";
+                    divRelOpps.style.left = "40px";
+                    divRelOpps.style.zindex = 100;
+                    divRelOpps.style.background = "#FFFFCC";
+                    divRelOpps.style.border = "2px solid #000000";              
+                }
+            }
+         }
+   
+         function GetNumRelOpps(sObjectID, sOpps){
+            var arrNumOpps = sOpps.split(',');
+
+            var sCurrObjID;
+            var blnMatch = false;
+            var sNumOpps = 0;
+            
+            if (sOpps.indexOf(sObjectID) != -1)
+            {               
+                for(var i=0; i<arrNumOpps.length; i++){
+                    sCurrObjID = arrNumOpps[i]; 
+                    if(sCurrObjID.indexOf(sObjectID) == 0){             
+                        blnMatch = true;
+                        sNumOpps = arrNumOpps[i+1];
+                    }        
+                    i=i+1;      
+                }                   
+            }
+            return sNumOpps;
+         }
+         
+         function getObjectIDFromHref(strIn){
+            var nStart = strIn.indexOf("salesforce.com/") + 15;
+            var sObjectID = strIn.substring(nStart, strIn.length);
+            sObjectID = sObjectID.substring(0, sObjectID.indexOf("/"));
+            return sObjectID;           
+         }
+         
+         //to do with New Private Project button
+    function goToNewPrivProj() {
+        'use strict';
+
+        Visualforce.remoting.Manager.invokeAction( sGoToPrivProjMethName,
+                '' , function(result, event) {
+                    if (event.type === 'exception' || result == false) {
+                        setPageErrorMessage("There was an error loading a New Private Project!  Please re-load the page.");
+                    }
+
+                    var sRetPage =  window.location.pathname;
+
+                    if (result.indexOf("?") >0){
+                        sRetPage = "&retURL=" +  winLocHref;
+                    } else {
+                        sRetPage = "?retURL=" + winLocHref;
+                    }
+                    var gotoURL = String(winLocHref).substring(0, String(winLocHref).lastIndexOf("/apex/")) + result + sRetPage;
+                    if (bIsInConsole) {
+                         sforce.console.openPrimaryTab(null, gotoURL, true, 'New CP Project');
+                    } else {
+                         parent.window.location = gotoURL;
+                    }
+              },
+            {escape: true} );
+     }
+         
+         
+         
+         var sPrivProjBtnOn = '{!PrivateProjectsOn}';
+         var sGoToPrivProjMethName = '{!$RemoteAction.MyViewsController.RedirectToNewPrivateProject}';
+        
+         jQuery(document).ready(function () {
+             'use strict';    
+             showHidePrivProjBtn();
+            
+             //change style of the selected tab
+             setSelectedTab(jQuery, "All Projects");  
+             
+             GetListIds();
+         });
+ 
+
+    </script>   
+</apex:page>

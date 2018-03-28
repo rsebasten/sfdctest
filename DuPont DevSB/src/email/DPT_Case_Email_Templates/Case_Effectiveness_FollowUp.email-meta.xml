@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>communicate need to follow-up for effectiveness check</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Case: Effectiveness FollowUp</name>
+    <style>formalLetter</style>
+    <subject>DPT Case {!Case.CaseNumber} Requires an Effectiveness Check.</subject>
+    <textOnly>It&apos;s time to followup on Case: {!Case.CaseNumber} for the Effectiveness Check. Please click on the following link for more complete Case Information: {!Case.Id}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

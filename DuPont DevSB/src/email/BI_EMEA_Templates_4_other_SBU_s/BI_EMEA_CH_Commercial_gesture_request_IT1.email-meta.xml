@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Request for commercial gesture to sales</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Commercial gesture request IT</name>
+    <style>formalLetter</style>
+    <subject>Richiesta per proposta commerciale (case: {!Case.CaseNumber})</subject>
+    <textOnly>Gent. Collega,
+
+In riferimento al nostro reclamo {!Case.CaseNumber} in data di 
+{!Case.Date_Entered__c}, grazie per informarci se ci sono intenzioni di 
+accettare il reclamo indicato come proposta commerciale visto che non 
+rientra nelle procedure di garanzia. 
+
+Link: {!Case.Link}
+Subject: {!Case.Subject}
+Description: {!Case.Description}
+
+Grazie di indicare la ragione di accetazione. 
+
+Resto in attesa di una vostra pronta risposta.
+
+Cordiali Saluti,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

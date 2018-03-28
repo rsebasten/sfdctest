@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP SAT NOTE - ES</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Sat Note - ES</name>
+    <style>formalLetter</style>
+    <subject>Corian® Solid Surface: SATISFACTION NOTE - ES (Case {!Case.CaseNumber})</subject>
+    <textOnly>Corian® Solid Surface
+CASO {!Case.CaseNumber}
+DuPont se disculpa por todos los inconvenientes causados. Estamos comprometidos a ofrecerle una buena calidad y esperamos que usted disfrutará de su instalación de Corian® Solid Surface durante mucho tiempo.
+
+Esperamos que la información suministrada en relación con el mantenimiento le ayudará a mantener su instalación de Corian® Solid Surface en buena forma.
+
+Necesitamos a efectos de registro, un formulario firmado que el trabajo en garantía se ha ejecutado y que está satisfecho. ¿Por favor sería tan amable de firmar este formulario y darlo al centro de servicio ({! Case.OwnerFullName}) que hizo la intervención?
+
+Confirmo que la encimera se ha reparado y que DuPont ha cumplido con su compromiso por la garantía. Reconozco que esta instalación que está cubierta inicialmente por la garantía de DuPont sigue siendo válida en las condiciones limitadas estipuladas. El tiempo de vida de la garantía de su encimera se calcula a partir de la fecha de instalación inicial, que incluye reparaciones / intercambios en garantía.
+
+CON LA PRESENTE DECLARO QUE EL CENTRO DE SERVICIO SERVTEC 053 ({!Case.OwnerFullName}) HA REALIZADO EL SIGUIENTE TRABAJO EN NOMBRE DE DUPONT, EN RELACIÓN CON LA GARANTÍA LIMITADA DE 10 AÑOS:
+
+O Inspección
+
+
+O   Sustitución parcial en garantía
+
+O Reparación en garantía
+
+
+
+NOMBRE: {!Case.Alt_Contact__c}
+
+DIRECCIÓN: {!Case.City__c}
+
+{!Case.State__c}
+
+TEL: {!Case.Alt_Phone__c}
+
+CORREO: {!Case.Alt_Contact_Email__c}
+
+
+FECHA: …………………………………………………………………………………………………………
+
+FIRMA:
+
+
+
+COMENTARIOS: ……………………………………………………………………………………………………………………………
+
+……………………………………………………………………………………………………………………………
+
+……………………………………………………………………………………………………………………………
+
+……………………………………………………………………………………………………………………………
+
+
+……………………………………………………………………………………………………………………………
+Nos gustaría informarle que recopilamos su información con el fin de identificar sus intereses comerciales, proporcionarle productos o servicios y ofrecerle una experiencia positiva como cliente durante las interacciones comerciales. Su información personal (nombre, dirección de correo electrónico, número de teléfono y otros datos de contacto) se almacenará en el sistema de clientes hospedado principalmente en Estados Unidos. Es posible que esta información se comparta con el mismo propósito en DuPont, con compañías filiales, asociados o terceras partes determinadas en otros países. Si desea acceder a su información, modificarla, eliminarla, o cancelar su procesamiento, utilice este vínculo.
+
+
+
+DuPont™ y Corian® son marcas comerciales o marcas comerciales registradas de E.I. du Pont de Nemours and Company o sus afiliadas. El uso de logotipos, marcas comerciales y marcas comerciales registradas de E.I. du Pont de Nemours and Company debe ser autorizado por EI du Pont de Nemours and Company o por una de sus empresas filiales.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

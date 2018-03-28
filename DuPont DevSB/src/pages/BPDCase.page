@@ -1,0 +1,214 @@
+<!-- *****************************************************************************
+ This is Case creation page with record and target information
+  Ver   Date        Author               Modification 
+* ---   ---------   ----------- ----------------------------------------------- 
+* 1.1   14-Apr-15  Isha Taneja   Added checkbox to enable/disable the sample creation section as well as added sample result insertion.
+<IT 20150414>
+* 1.2   12-May-15  Isha Taneja   Added Date Opened field on the Case creation page with default value as today.
+<IT 20150512>
+* 1.3    22-May-15  Anup kumar    Replaced "Description" Field with "Facts of the case" field.
+<AK20150522>
+*1.4     10-Jun-15  Isha Taneja    Removed required='true' from div tag & Facts of the case field made mandatory
+<IT20150610>
+*1.5     14-Jul-16  <Bhargavi 20160714> Made Crop/Phase Status' Filed not visible and uncheck the 'Click checkbox to enter samplle details' 
+                    for other than Crop protection Users as Part of issue IS ID-00070805
+******************************************************************************/ -->
+<apex:page cache="false" sidebar="true"  controller="ctrlBPDCase"   showHeader="true" tabStyle="Case">
+<style>
+        .quant:hover { font-size: 80%; color: #EDEDED; cursor: pointer;}
+        .quant { cursor: pointer; font-size: 80%; }
+    </style>
+
+<apex:sectionHeader title="Create Record" subtitle="Record Information"/>
+<apex:form >
+<apex:pagemessages />
+<apex:pageBlock >
+<apex:pageBlockSection columns="1">
+<apex:facet name="header">
+<span style="color: black">Record Information</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="center" width="100%">
+<apex:commandButton action="{!doSave}" value="Save"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:commandButton value="Cancel" action="{!doCancel}" immediate="true" html-formnovalidate="formnovalidate" />
+</div></apex:outputPanel>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Owning SBU"/>
+<apex:outputpanel >
+<!--<IT20150610> Removed required='true' from div-->
+<div>  
+<c:BI_NA_MultiSelectMaterials leftLabel="Available Owning SBU"
+                leftOption="{!finalSBUs}"
+                rightLabel="Selected Owning SBU"
+                rightOption="{!SelectedSBUs}"
+                size="5"
+                width="220px" helptext="hello">
+</c:BI_NA_MultiSelectMaterials>
+<apex:actionSupport event="onmouseout" action="{!brandselect}" reRender="rendering">
+</apex:actionsupport>
+</div>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+
+<apex:outputpanel id="Brand">
+<apex:pageBlockSection id="Brand1" columns="1" >
+<apex:outputText label="Brand">
+<apex:inputText value="{!searchBrand}" style="margin-left:14px;"/>
+<apex:commandButton value="Search" action="{!SearchBrandvalue}" status="cStatus" reRender="rendering"/>
+</apex:outputText>
+<apex:actionStatus id="cStatus" startText=" Please Wait..."  stopText="" startStyle="padding-LEFT:18em;font-weight:bold;"/>
+<apex:outputText id="NoBrand" rendered="{!noBrand}" styleClass="labelCol" value=" No Brand Found... Please search other brand" style="margin-LEFT:150px; color:Brown !important; font-weight:bold!important;"></apex:outputText>
+</apex:pageblockSection>  
+</apex:outputpanel> 
+
+<apex:outputpanel id="rendering">
+<div style="margin-left:220px;">    
+<c:BI_NA_MultiSelectMaterials leftLabel="Available Brands"
+                leftOption="{!AllMaterials}"
+                rightLabel="Selected Brands"
+                rightOption="{!SelectedMaterials}"
+                size="5"
+                width="220px" helptext="hello"/> 
+</div>
+</apex:outputpanel> 
+
+<apex:inputField style="width:15%;" value="{!createCase.Priority}"/>
+
+<!-- <AK20150522> Replaced the field "description" with "Facts of the case"
+<apex:inputField style="width:15%;" value="{!createCase.Description}"  /> -->
+<!-- <IT20150610> Made Facts of Case required-->
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Facts of the Case" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputField value="{!initialCaseDetail.Facts_of_the_Case__c}"/>
+</div>
+</apex:outputpanel> </apex:pageBlockSectionItem>
+<apex:inputField style="width:15%;" value="{!initialCaseDetail.Type_of_Record__c }" />
+
+<!--<IT 20150512> Added Date Opened-->
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Date Opened" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputField value="{!initialCaseDetail.Date_Opened__c}"/>
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Record Origination" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputField value="{!initialCaseDetail.Record_Origination__c}"/>
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputField value="{!initialCaseDetail.How_Trademark_is_Used__c}"/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Infringement Type" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputField value="{!initialCaseDetail.Infringement_Type__c}"/>
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputField style="width:15%;" value="{!initialCaseDetail.Infringing_Product_Description__c}"  />
+<apex:inputField style="width:25%;" value="{!initialCaseDetail.Procedural_Status__c}"/>
+<apex:inputField style="width:15%;" value="{!initialCaseDetail.Crop_Phase_Status__c}" rendered="{!if(flagVar==true,true,false)}"/> <!-- <Bhargavi 20160714> added if condition  to hide for corporate users-->
+   
+       
+</apex:pageBlockSection> 
+<apex:pageBlockSection columns="2">
+<apex:facet name="header">
+<span style="color: black">Target Information</span>
+</apex:facet>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Company" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputtextarea id="autoCompany" value="{!initialCaseDetail.Company__c}"
+style="width:150px;height:40px" label="{!$ObjectType.Case_Details__c.fields.Company__c.Label}" >
+<c:BPDautoComplete_General sObjectType="Case_Details__c"  for="{!$Component.autoCompany}" minLength="3"
+where="" fields="Company__c" />
+</apex:inputtextarea>
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputField style="width:40%;" value="{!initialCaseDetail.Address__c}"/>
+<apex:inputField style="width:40%;" value="{!initialCaseDetail.City__c}"/>
+<apex:inputField style="width:40%;" value="{!initialCaseDetail.State__c}"/>
+<apex:inputField style="width:40%;" value="{!initialCaseDetail.Zip_Postal_Code__c}"/>
+
+
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Target Country" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputField style="width:40%;" value="{!initialCaseDetail.Target_Country__c}" />
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+
+</apex:pageBlockSection>
+
+<!--- <IT 20150414> Checkbox Code--> 
+<apex:outputPanel >  <!-- <Bhargavi 20160714> removed flagVar condition -->
+ <apex:outputLabel value="Click Checkbox to Enter Sample Details" style="background-color: #C0BE72;font-weight:bold;"/>    
+       <apex:actionRegion > 
+       <apex:inputCheckbox id="sampleDetails" value="{!flagSample}" >  
+       <apex:actionSupport event="onchange" action="{!chkBox}" />  
+       </apex:inputCheckbox> 
+       </apex:actionRegion> 
+</apex:outputPanel> 
+
+<apex:pageBlockSection columns="2"  rendered="{!if(flagSample1==true && flagsample==true,true,false)}">  <!-- <Bhargavi 20160714> added flagsample condition and removed flagVar to hide for corporate users-->
+<apex:facet name="header">
+<span style="color: black">Sample Details</span>
+</apex:facet>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Country" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput"   >
+<div class="requiredBlock" ></div>
+<apex:inputField value="{!initialSample.Country__c}" />
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Identification Date" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput" >
+<div class="requiredBlock"></div>
+<apex:inputField value="{!initialSample.Identification_Date__c}" />
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Active Ingredients" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput" >
+<div class="requiredBlock"></div>
+<apex:inputField value="{!initialSample.Active_Ingredients__c}" />
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<!--- <IT 20150414> Sample result creation-->
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Lab Name" style="color:#333;"/>
+<apex:outputPanel >
+<div class="requiredInput"  >
+<div class="requiredBlock"></div>
+<apex:inputField value="{!initialSampleResult.Lab_Name__c}"/>
+</div>
+</apex:outputPanel></apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<table style="border:0px; width:100%;">
+<tr style="text-align:center;">
+<td ><apex:commandButton action="{!doSave}" value="Save"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:commandButton value="Cancel" action="{!doCancel}" immediate="true" html-formnovalidate="formnovalidate" />
+</td>
+</tr>   
+</table>
+</apex:pageBlock> 
+
+</apex:form>
+</apex:page>

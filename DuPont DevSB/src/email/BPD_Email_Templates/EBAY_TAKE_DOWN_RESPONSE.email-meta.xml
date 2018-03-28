@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>EBAY TAKE DOWN RESPONSE</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - DuPont™ {!Case.Product_Selected__c} Trademark</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+Many thanks for your message.
+
+
+The fact that you source genuine DuPont™ KEVLAR® in Pakistan to reinforce your garments does NOT give you any right in the UK to promote with the trademark KEVLAR® and certainly not to call your garments “KEVLAR jean.&quot;  You are however selling goods in the UK over Ebay which you call XXX KEVLAR YYY.  This is a trademark infringement and not allowed.
+
+
+You have two choices:
+
+
+•   You can refrain from using our trademark KEVLAR® in ANY promotional manner whatsoever, be it in product names, marketing materials titles or highlighted in text, on labels, hang tags, etc.
+
+What you can do is to mention the following reference in your technical description, but it cannot be highlighted, it has to be in same font as all the other surrounding technical descriptions: “reinforced with DuPont™ KEVLAR® aramid fibers” this followed by the following mention: “DuPont™ and KEVLAR® are trademarks or registered trademarks by E.I. Du Pont de Nemours and Company”. You can also state on the ingredient label as sewn into the jean that the “liner material = 100% DuPont™ KEVLAR® aramid”.
+
+
+•   You can apply for a trademark license which will, if agreed, give you promotional rights to the trademark in a selected territory. But even in this case, you cannot state the product is a “KEVLAR jean”, because this suggests the jean is made by DuPont. You can state the “jean is reinforced with DuPont™ KEVLAR® fibers”, but if you have a license, you can do this in a highlighted way and on different promotional materials.
+
+
+To help you, I enclose a document that explains above with some pictures.
+
+
+As trademark owners, we are continuing our efforts to protect our Intellectual Property and will relentlessly follow up on any infringements we will identify.
+
+
+Sincerely,
+
+
+
+DuPont Brand Protection Center
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,42 @@
+<apex:page sidebar="false" showHeader="false" controller="ctrlBIeWarrantyInput" language="{!$CurrentPage.parameters.lang}">
+    <apex:form >
+        <style>body { color: grey; font: normal normal bold 11px Trebuchet MS, Helvetica;} </style>
+        <apex:outputPanel >
+        <apex:pageBlock title="{!$Label.title_enterWarranty}" >
+        <apex:OutputLink value="{!InfoLink}"  target="_blank" shape="circle" >
+            <apex:image value="/img/msg_icons/info16.png"/>
+        </apex:OutputLink>
+                <center>
+                    <apex:outputPanel >
+                        <span style="color: red; font: normal normal bold 11px Trebuchet MS, Helvetica;">
+                            <apex:outputText value="{!FetchedData}" />                         
+                        </span>
+                    </apex:outputPanel> 
+                    <apex:outputPanel >                 
+                    <table>
+                        <tr>
+                            <td align="right" width="20%">
+                                <apex:outputLabel value="{!$Label.outLabel_warrantyCode}" for="warCode"><span style="color:red;font-size:small;vertical-align:top;">*</span></apex:outputLabel>
+                            </td>
+                            <td align="left" width="20%">
+                                <apex:inputText id="warCode" style="width: 180px" value="{!entitlementCode}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" width="20%">
+                                <apex:outputLabel value="{!$Label.outLabel_dateOfPurchase}" for="dop"><span style="color:red;font-size:small;vertical-align:top;">*</span></apex:outputLabel>
+                            </td>
+                            <td align="left" width="20%">
+                                <apex:inputText id="dop" style="width: 180px" value="{!dateofPurchase}" size="12" onfocus="DatePicker.pickDate(false, '{!$Component.dop}', false);" />
+                                <apex:outputLink styleClass="dateFormat" value="javascript:DatePicker.insertDate('{!$Component.dop}', true);"></apex:outputLink>         
+                            </td>
+                        </tr> 
+                    </table>   
+                    </apex:outputPanel>            
+                    <b><apex:commandButton id="submit" style="width: 100px;font: normal normal bold 9px Trebuchet MS, Helvetica;" value="{!$Label.button_submit}" action="{!verifyWarrantyCode}"/></b>
+                    <apex:pageMessages />
+                </center>
+        </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

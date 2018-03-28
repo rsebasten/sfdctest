@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Used to terminate QN partnership with a service center</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA QN Termination Letter ES</name>
+    <style>formalLetter</style>
+    <subject>Contrato de Fabricante/Instalador autorizado de Corian® Nr. ({!Qualification__c.Reference_Id__c})</subject>
+    <textOnly>Estimado Sr.,
+
+Por la presente, le comunicamos la terminación del contrato arriba mencionado entre nuestras empresas de fecha {!Qualification__c.Start_Date__c}, dándole un  preaviso escrito  de treinta  (30) días desde la fecha de recepción de esta carta de acuerdo a la cláusula 9 del contrato supramencionado. Le rogamos nos devuelva a DuPont en el plazo de catorce (14) días,  cualesquiera materiales promocionales o de apoyo que obren en su poder, tales como las tarjetas de garantía, marcas de calidad, etc).
+
+
+Atentamente,
+
+
+Patrick S. Schriber
+Director
+DuPont™ Corian® / DuPont Building Innovations
+BI-Warranty@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

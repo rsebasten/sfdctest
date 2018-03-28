@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Medical Packaging</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Chemical Industrial,DPT Cleanroom/Pharma,DPT-IPP</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>DPT-Envelopes,DPT-Graphics,DPT-Graphics &amp; Protective Packaging,DPT-Ind Pkg &amp; Protection</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>BI-Env,BI</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>notEqual</operator>
+            <values>BI-Env,BI,DPT-Envelopes,DPT-Graphics,DPT-Graphics &amp; Protective Packaging,DPT-Ind Pkg &amp; Protection,DPT-Chemical Industrial,DPT Cleanroom/Pharma,DPT-IPP,DPT-Medical Packaging</values>
+        </dashboardFilterOptions>
+        <name>Segments</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Asia Pacific</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>EMEA</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Latin America,North America</values>
+        </dashboardFilterOptions>
+        <name>Region</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>All dates are currently based on the Opportunity Close Date. This will change in the future to First Ship Date. All Amounts and Expected Revenue have been converted to USD.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>EXP_AMOUNT.CONVERT</column>
+            </chartSummary>
+            <componentType>Gauge</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <footer>Probability adjusted based on Stage : will be changed in future</footer>
+            <gaugeMax>3.2E8</gaugeMax>
+            <gaugeMin>0.0</gaugeMin>
+            <header>Total Pipeline vs Target</header>
+            <indicatorBreakpoint1>1.5E8</indicatorBreakpoint1>
+            <indicatorBreakpoint2>2.8E8</indicatorBreakpoint2>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_Global_Reports/DPS_Tyvek_Opps_Total_Pipeline_vs_Target</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <title>Open Opps - Fwd looking CQ + next 3Q</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Total Pipeline - Ideally 1/3:2/3</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Reports/DPS_Tyvek_Offensive_vs_Defensive</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Defensive vs Offensive</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Total Pipeline</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Reports/DPS_Tyvek_by_Geo_Region</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>All Opps by Region and Segment</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>EXP_AMOUNT.CONVERT</column>
+            </chartSummary>
+            <componentType>Gauge</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <footer>target is 8 to 10% of LOB revenue</footer>
+            <gaugeMax>1.2E8</gaugeMax>
+            <gaugeMin>0.0</gaugeMin>
+            <header>Total Won vs Target</header>
+            <indicatorBreakpoint1>4.0E7</indicatorBreakpoint1>
+            <indicatorBreakpoint2>8.0E7</indicatorBreakpoint2>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_Global_Reports/DPS_Tyvek_Opps_Won_vs_Target</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <title>Won Opps QC + Previous 3Q</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Line</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>All Won Opps</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Reports/DPS_Tyvek_Won_Trend_Past_2_years</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Won Opps Past 2 FY</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Total Pipeline</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Reports/DPS_Tyvek_by_Segment_Geo_Region</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>All Opps by Segment and Region</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>All Opportunities</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <maxValuesDisplayed>20</maxValuesDisplayed>
+            <report>DPT_Global_Reports/DPS_Tyvek_Opps_Top_20</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Top 20 QC + Next 3Q</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>Opportunity.Owning_Organisation__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>User.User_Region__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>true</expandOthers>
+            <groupingColumn>Opportunity.Main_Ending_Reason__c</groupingColumn>
+            <header>All End-Lost</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Reports/DPS_Tyvek_Opps_Lost_by_Reason</report>
+            <showPercentage>true</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>All Lost Opportunities CY by Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>lisa.mcshane@lux.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Global DPS Tyvek/Typar Opportunity Dashboard</title>
+    <titleColor>#3333FF</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

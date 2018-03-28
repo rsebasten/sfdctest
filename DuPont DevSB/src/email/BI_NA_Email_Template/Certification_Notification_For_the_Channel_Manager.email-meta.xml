@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Certification-Notification For the Channel Manager</name>
+    <style>none</style>
+    <subject>Notice to Dupont Channel Manager-New candidate nominated for Certification</subject>
+    <textOnly>DuPont Channel Manager {!Qualification__c.Channel_Manager__c},
+
+This is a notification to inform you that {!Qualification__c.Account_Name__c} has been nominated for certification as a &apos;{!Qualification__c.Certified_In_Area__c}&apos; by {!Qualification__c.CreatedBy}. Please contact {!Qualification__c.CreatedBy} if you have any questions, otherwise no action is required. Click on this link to access the candidate profile.
+
+Click on this link to View the Record</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

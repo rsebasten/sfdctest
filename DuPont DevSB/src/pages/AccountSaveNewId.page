@@ -1,0 +1,34 @@
+<!-- 
+
+Ex button:
+
+	{!URLFOR($Action.Plan__c.New, null, [ 
+		retURL="/"+Account.Id, 
+		saveURL="/apex/AccountSaveNewId?id="+Account.Id ])}
+
+ -->
+<apex:page standardController="Account">
+    <apex:form id="formid">
+    	Saving...
+    	<c:Processing />
+        <apex:actionFunction name="apexSave" action="{!save}"/>
+        <apex:inputHidden id="planid" value="{!Account.Account_Plan__c}"/>
+    </apex:form>
+    
+    <script type="text/javascript">
+
+	var newid='{!$CurrentPage.parameters.newid}';
+	try {
+		var prefx=newid.substring(0,3);
+	    switch(prefx) {
+			case '{!$ObjectType.Plan__c.keyPrefix}': //Account Plan
+				document.getElementById('{!$Component.formid.planid}').value=newid;
+				break;
+			default:
+		}
+		apexSave(); 
+	} catch(ex) {
+		self.location('/{!$CurrentPage.parameters.id}');
+	}
+</script>
+</apex:page>

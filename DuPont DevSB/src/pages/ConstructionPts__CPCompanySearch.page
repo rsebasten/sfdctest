@@ -1,0 +1,15 @@
+<apex:page tabStyle="Dodge_Projects__tab" StandardController="ConstructionPts__CP_Company__c" extensions="ConstructionPts.MyViewsController" sideBar="false">
+
+<c:CPHeader title="" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true" ShowTitle="true" MessageColor="green" message="" /> 
+
+<apex:outputPanel rendered="{!ShowCompaniesTab}">
+<c:GenericSearch searchObject="CP_Company__c"></c:GenericSearch>
+</apex:outputPanel>
+<br/>         
+<c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>  
+<script>
+ var j$ = jQuery.noConflict(); 
+ setSelectedTab(j$, "Companies");
+</script>
+	 
+</apex:page>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.CampaignMembers$FirstName</field>
+    </columns>
+    <columns>
+        <field>Campaign.CampaignMembers$LastName</field>
+    </columns>
+    <columns>
+        <field>Campaign.CampaignMembers$Status</field>
+    </columns>
+    <currency>EUR</currency>
+    <format>Tabular</format>
+    <name>Vendere Nomex - Member Germany</name>
+    <params>
+        <name>scopeid</name>
+        <value>000000000000000</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_with_Campaign_Members_and_Acct__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Campaign$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

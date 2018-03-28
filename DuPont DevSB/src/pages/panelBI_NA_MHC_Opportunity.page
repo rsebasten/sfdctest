@@ -1,0 +1,49 @@
+<!--<AS20161015> Modified by: Arjun Sharma, new custom fields 'Data Overage' is added as per CP for salesforce requirement -->
+<!--<AS20161024> Description field added CP for salesforce requirement -->
+<!--<VL20161102> Added the rendered function to hide other fields not required on CIC Opportunity    -->
+<apex:page standardController="Opportunity" sidebar="true">
+    <apex:form >
+        <apex:pageBlock title="{!opportunity.External_Initiative__r.Name}" id="thePageBlock" mode="read">
+            <apex:pageMessages />
+            <apex:actionRegion >
+                <apex:pageBlockSection title="Project Detail" >
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Name}" /> 
+                    <apex:outputField value="{!opportunity.External_Initiative__r.External_URL__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.External_ID__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Value__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Last_Import_Date__c}" />
+                </apex:pageblocksection>
+            </apex:actionregion>
+            <apex:actionRegion >
+                <apex:pageBlockSection title="Project Stratification">
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Stage__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Bid_Due_Date__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Project_Status__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Segment_L1__c}"  rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Specification_L1__c}"  rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Segment_L2__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Specification_L2__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Segment_L3__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Initiative_Size__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Segment_L4__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.UOM__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}"  />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Data_Overage__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />                   
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Floors_Above_Ground__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Description__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Floors_Below_Ground__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+             </apex:pageblocksection>
+            </apex:actionregion>
+            <apex:actionRegion >
+                <apex:pageBlockSection title="Project Address" >
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Street__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.County__c}" rendered="{!opportunity.External_Initiative__r.Data_Source__c!='CIC - Construction'}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.City__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.Country__c}" />
+                    <apex:outputField value="{!opportunity.External_Initiative__r.State__c}"/>
+                    <br/>
+                    <apex:outputField value="{!opportunity.External_Initiative__r.PostalCode__c}"/>
+                </apex:pageblocksection>
+            </apex:actionregion>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>FAIR USE LETTER</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - Notice of Trademark Infringement</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+
+We have noticed your use of the DuPont™ {!Case.Product_Selected__c} trademark in association with your products. DuPont has invested a substantial amount of effort and financial resources in advertising and promoting its trademarks in order to establish them as a symbol of our company’s high quality products. We are sure you will agree with us that trademarks are valuable properties deserving protection.
+
+
+A review of our records does not indicate any sales of DuPont™ {!Case.Product_Selected__c} to your company.  Therefore, we have no proof that the products you market as containing {!Case.Product_Selected__c} actually do contain our product.   If {!Case.Company__c} products, in fact, contain DuPont™ {!Case.Product_Selected__c} then all &lt;Company&gt; marketing and sales materials -- as well as those of {!Case.Company__c} customers --  must be modified to reflect “Fair Use” unless a license agreement is entered. Fair Use means that {!Case.Company__c} may state, for example, {!Case.Company__c} contain DuPont™ {!Case.Product_Selected__c}.” The brand may not be used in the name of the product, in advertising or promotion headlines for the company or its products, or in any manner that makes {!Case.Product_Selected__c} prominent in the selling message and product position without a Trademark License Agreement.
+
+
+We ask that you provide a certification from your supplier(s) of DuPont™ {!Case.Product_Selected__c} (e.g., copy of an invoice or a letter) verifying {!Case.Company__c} is purchasing and using {!Case.Product_Selected__c}.
+
+Without certification confirming the purchase of authentic DuPont material, we ask that you cease and desist the use of the {!Case.Product_Selected__c} trademark immediately.
+
+
+Please provide proof-of-use certification no later than ____________. If we do not hear from you by this date, and the {!Case.Product_Selected__c} brand continues to be used in a promotional manner, this matter will be turned over to DuPont Legal.  If you have any questions, please feel free to contact us at brand.protection@dupont.com or by fax at 302-380-3509.
+
+
+Thank you for your attention to this matter.
+
+
+Sincerely,
+
+
+
+DuPont Brand Protection Center
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

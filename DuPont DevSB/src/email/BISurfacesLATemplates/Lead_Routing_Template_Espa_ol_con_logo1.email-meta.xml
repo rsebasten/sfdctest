@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Utilizar para enviar leads via correo a no-usuarios de Salesforce</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Lead Routing Template - Español (con logo)</name>
+    <style>freeForm</style>
+    <subject>Solicitud cliente_ {!Lead_Routing__c.Type__c}</subject>
+    <textOnly>La siguiente solicitud ha sido recibida a través de la página de internet y está siendo enviada a usted para su atención y seguimiento. 
+
+Creado por: {!Lead_Routing__c.CreatedBy} 
+Fecha: {!Lead_Routing__c.CreatedDate} 
+Origen: {!Lead_Routing__c.Origin_Channel_Type__c} 
+{!Lead_Routing__c.Origin_Name__c} 
+URL: {!Lead_Routing__c.Origin_URL__c} 
+
+Nombre del cliente: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c} 
+Puesto: {!Lead_Routing__c.Title__c} 
+Empresa: {!Lead_Routing__c.Lead_Company__c} 
+Giro o Actividad: {!Lead_Routing__c.Market_Segment__c} 
+Industria: {!Lead_Routing__c.Industry__c} 
+
+Dirección completa: {!Lead_Routing__c.Lead_Address__c}, 
+País: {!Lead_Routing__c.Lead_Country__c} 
+Región: {!Lead_Routing__c.Region__c} 
+Tel(s): {!Lead_Routing__c.Lead_Phone__c}, {!Lead_Routing__c.Lead_Mobilephone__c} 
+Fax. {!Lead_Routing__c.Lead_Fax__c} 
+E-mail: {!Lead_Routing__c.Lead_Email__c} 
+
+Tipo de Solicitud: {!Lead_Routing__c.Type__c} 
+
+Información solicitada: 
+
+{!Lead_Routing__c.Description__c} 
+
+Canalizado a: {!Lead_Routing__c.Response_Type__c} 
+
+Comentarios: {!Lead_Routing__c.Close_Comments__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

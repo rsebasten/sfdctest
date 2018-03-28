@@ -1,0 +1,7 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<P><FONT size=3 face=Verdana,Helvetica,Sans-Serif>Dear Approver.<BR>Please find attached a request&nbsp; "{!Initiative__c.Name}" that requires your review and approval for the greensheeting process. <BR><SPAN style="COLOR: blue"><BR>Please review in SFDC and accept or reject no later than <B>{!Initiative__c.End_Date__c}.</B></SPAN><BR><BR>Thank you very much for your review.<BR><BR>From {!Initiative__c.OwnerFullName}<BR>----------------------------------------------------------------------<BR>Follow this link to access the document in SFDC and see attached files: <A href="https://cs1.salesforce.com/{!Initiative__c.Id}">https://cs1.salesforce.com/{!Initiative__c.Id}</A><BR></FONT></P>
+<P><FONT size=3 face=Verdana,Helvetica,Sans-Serif><BR>Description: {!Initiative__c.Description__c}<BR><BR>Document type: {!Initiative__c.Media_Type__c}<BR><BR>Language: {!Initiative__c.Language__c}<BR><BR>Market Segment: {!Initiative__c.Market_Segment__c}<BR></P></FONT>]]></td>
+</tr>
+</table>

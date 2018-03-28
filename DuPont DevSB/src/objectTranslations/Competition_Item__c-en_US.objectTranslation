@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Competition Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Competition Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account-Material --></label>
+        <name>Account_Material__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application Comments --></label>
+        <name>Application_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competition Product --></label>
+        <name>Competition_Product__c</name>
+        <relationshipLabel><!-- Competitive Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Competition Type --></label>
+        <name>Competition_Type__c</name>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Competition --></label>
+        <lookupFilter>
+            <errorMessage><!-- Competition Type must match &quot;Type&quot; on Competition --></errorMessage>
+        </lookupFilter>
+        <name>Competition__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Competitor Product --></label>
+        <name>Competitor_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Person who provided this competitive information. --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <picklistValues>
+            <masterLabel>Bulgaria</masterLabel>
+            <translation><!-- Bulgaria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Czech Republic</masterLabel>
+            <translation><!-- Czech Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denmark</masterLabel>
+            <translation><!-- Denmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation><!-- France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hungary</masterLabel>
+            <translation><!-- Hungary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italy</masterLabel>
+            <translation><!-- Italy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norway</masterLabel>
+            <translation><!-- Norway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poland</masterLabel>
+            <translation><!-- Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portugal</masterLabel>
+            <translation><!-- Portugal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Romania</masterLabel>
+            <translation><!-- Romania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian Federation</masterLabel>
+            <translation><!-- Russian Federation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Serbia</masterLabel>
+            <translation><!-- Serbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spain</masterLabel>
+            <translation><!-- Spain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sweden</masterLabel>
+            <translation><!-- Sweden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkey</masterLabel>
+            <translation><!-- Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ukraine</masterLabel>
+            <translation><!-- Ukraine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Kingdom</masterLabel>
+            <translation><!-- United Kingdom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Crop --></label>
+        <name>Crop__c</name>
+        <picklistValues>
+            <masterLabel>Pigeon Peas</masterLabel>
+            <translation><!-- Pigeon Peas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date Received --></label>
+        <name>Date_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distribution Type --></label>
+        <name>Distribution_Type__c</name>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution</masterLabel>
+            <translation><!-- Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- DuPont comments about this competition item (competitive share or competitive analysis). --></help>
+        <label><!-- DuPont Recommendations --></label>
+        <name>DuPont_Recommendations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equivalent DuPont Material --></label>
+        <name>Equivalent_DuPont_Material__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Equivalent DuPont Product --></label>
+        <name>Equivalent_DuPont_Product__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Estimated Price of the DuPont Equivalent Product or Material --></help>
+        <label><!-- Equivalent Product Price --></label>
+        <name>Equivalent_Product_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equivalent Product Quantity --></label>
+        <name>Equivalent_Product_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Est. Share of Product % --></label>
+        <name>Est_Share_of_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Est. Total Revenue Potential --></label>
+        <name>Est_Total_Revenue_Potential__c</name>
+    </fields>
+    <fields>
+        <label><!-- Est. Total Sales --></label>
+        <name>Est_Total_Sales__c</name>
+    </fields>
+    <fields>
+        <help><!-- The estimated percent of business at risk to this Competitor for this product at this customer. Enter as a whole number (i.e., 25% = 25). --></help>
+        <label><!-- Est. % of Business at Risk --></label>
+        <name>Est_of_Business_at_Risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Discount % --></label>
+        <name>Estimated_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geography --></label>
+        <name>Geography__c</name>
+        <picklistValues>
+            <masterLabel>AP</masterLabel>
+            <translation><!-- AP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AP-ANZ</masterLabel>
+            <translation><!-- AP-ANZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AP-ASEAN</masterLabel>
+            <translation><!-- AP-ASEAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AP-GCHINA</masterLabel>
+            <translation><!-- AP-GCHINA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AP-INDIA</masterLabel>
+            <translation><!-- AP-INDIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AP-JAPAN</masterLabel>
+            <translation><!-- AP-JAPAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AP-KOREA</masterLabel>
+            <translation><!-- AP-KOREA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA</masterLabel>
+            <translation><!-- EMEA-ECE/MEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-CE</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-CE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-CE-Czech Republic</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-CE-Czech Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-CE-Greece</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-CE-Greece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-CE-Poland</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-CE-Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-CE-Slovakia</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-CE-Slovakia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-CE-Slovenia</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-CE-Slovenia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-EE</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-EE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-EE-Belarus</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-EE-Belarus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-EE-Russian Federation</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-EE-Russian Federation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-EE-Ukraine</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-EE-Ukraine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-SSA</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-SSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-SSA-South Africa</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-SSA-South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Bahrain</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Bahrain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Egypt</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Egypt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Israel</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Israel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Morocco</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Morocco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Pakistan</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Pakistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Qatar</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Qatar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Romania</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Romania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Saudi Arabia</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Saudi Arabia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-Turkey</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-ECE/MEA-TMENA-United Arab Emirates</masterLabel>
+            <translation><!-- EMEA-ECE/MEA-TMENA-United Arab Emirates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE</masterLabel>
+            <translation><!-- EMEA-WE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Austria</masterLabel>
+            <translation><!-- EMEA-WE-Austria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Belgium</masterLabel>
+            <translation><!-- EMEA-WE-Belgium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Cyprus</masterLabel>
+            <translation><!-- EMEA-WE-Cyprus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Estonia</masterLabel>
+            <translation><!-- EMEA-WE-Estonia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-France</masterLabel>
+            <translation><!-- EMEA-WE-France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Germany</masterLabel>
+            <translation><!-- EMEA-WE-Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Iceland</masterLabel>
+            <translation><!-- EMEA-WE-Iceland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Ireland</masterLabel>
+            <translation><!-- EMEA-WE-Ireland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Italy</masterLabel>
+            <translation><!-- EMEA-WE-Italy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Latvia</masterLabel>
+            <translation><!-- EMEA-WE-Latvia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Lithuania</masterLabel>
+            <translation><!-- EMEA-WE-Lithuania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Luxembourg</masterLabel>
+            <translation><!-- EMEA-WE-Luxembourg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Netherlands</masterLabel>
+            <translation><!-- EMEA-WE-Netherlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Nordic</masterLabel>
+            <translation><!-- EMEA-WE-Nordic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Nordic-Denmark</masterLabel>
+            <translation><!-- EMEA-WE-Nordic-Denmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Nordic-Finland</masterLabel>
+            <translation><!-- EMEA-WE-Nordic-Finland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Nordic-Sweden</masterLabel>
+            <translation><!-- EMEA-WE-Nordic-Sweden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Portugal</masterLabel>
+            <translation><!-- EMEA-WE-Portugal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Spain</masterLabel>
+            <translation><!-- EMEA-WE-Spain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-Switzerland</masterLabel>
+            <translation><!-- EMEA-WE-Switzerland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA-WE-United Kingdom</masterLabel>
+            <translation><!-- EMEA-WE-United Kingdom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA-Andean</masterLabel>
+            <translation><!-- LA-Andean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA-Brazil</masterLabel>
+            <translation><!-- LA-Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA-Central America</masterLabel>
+            <translation><!-- LA-Central America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA-Mexico</masterLabel>
+            <translation><!-- LA-Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA-South Cone</masterLabel>
+            <translation><!-- LA-South Cone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA-Canada</masterLabel>
+            <translation><!-- NA-Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA-United States</masterLabel>
+            <translation><!-- NA-United States --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Worldwide</masterLabel>
+            <translation><!-- Worldwide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Information Source --></label>
+        <name>Information_Source__c</name>
+        <picklistValues>
+            <masterLabel>Association</masterLabel>
+            <translation><!-- Association --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Visit</masterLabel>
+            <translation><!-- Customer Visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Research</masterLabel>
+            <translation><!-- Market Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting - External</masterLabel>
+            <translation><!-- Meeting - External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting - Internal</masterLabel>
+            <translation><!-- Meeting - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print Media</masterLabel>
+            <translation><!-- Print Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade show</masterLabel>
+            <translation><!-- Trade show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website</masterLabel>
+            <translation><!-- Website --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Type --></label>
+        <name>Opportunity_Type__c</name>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Owning Org --></label>
+        <name>Owning_Org__c</name>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Env</masterLabel>
+            <translation><!-- BI-Env --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Landscape Systems</masterLabel>
+            <translation><!-- BI-Landscape Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf</masterLabel>
+            <translation><!-- BI-Surf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-Government Affairs</masterLabel>
+            <translation><!-- CORS-Government Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT</masterLabel>
+            <translation><!-- DPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-A&amp;HF</masterLabel>
+            <translation><!-- DPT-A&amp;HF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ASPS</masterLabel>
+            <translation><!-- DPT-ASPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Agriculture</masterLabel>
+            <translation><!-- DPT-Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Air and Filtration</masterLabel>
+            <translation><!-- DPT-Air and Filtration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Aramids</masterLabel>
+            <translation><!-- DPT-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Automotive</masterLabel>
+            <translation><!-- DPT-Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Chemical Industrial</masterLabel>
+            <translation><!-- DPT-Chemical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Cleanroom/Pharma</masterLabel>
+            <translation><!-- DPT-Cleanroom/Pharma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Covers</masterLabel>
+            <translation><!-- DPT-Covers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Critical Clean</masterLabel>
+            <translation><!-- DPT-Critical Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ES</masterLabel>
+            <translation><!-- DPT-ES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Envelopes</masterLabel>
+            <translation><!-- DPT-Envelopes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Graphics</masterLabel>
+            <translation><!-- DPT-Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-IPP</masterLabel>
+            <translation><!-- DPT-IPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Ind Pkg &amp; Protection</masterLabel>
+            <translation><!-- DPT-Ind Pkg &amp; Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Mechanical Industrial</masterLabel>
+            <translation><!-- DPT-Mechanical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Fabrics</masterLabel>
+            <translation><!-- DPT-Medical Fabrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Packaging</masterLabel>
+            <translation><!-- DPT-Medical Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Specialties</masterLabel>
+            <translation><!-- DPT-Medical Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NOW</masterLabel>
+            <translation><!-- DPT-NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Optical</masterLabel>
+            <translation><!-- DPT-Optical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-PM</masterLabel>
+            <translation><!-- DPT-PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-LE</masterLabel>
+            <translation><!-- DPT-Public Sector-LE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-MIL</masterLabel>
+            <translation><!-- DPT-Public Sector-MIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Sontara</masterLabel>
+            <translation><!-- DPT-Sontara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Thermal Industrial</masterLabel>
+            <translation><!-- DPT-Thermal Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Tyvek</masterLabel>
+            <translation><!-- DPT-Tyvek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Tier 1 --></label>
+        <name>Partner_Tier1__c</name>
+        <relationshipLabel><!-- Competition Items (Partner Tier 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Tier 2 --></label>
+        <name>Partner_Tier2__c</name>
+        <relationshipLabel><!-- Competition Items (Partner Tier 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Type of partner in relation to this Competition Item record --></help>
+        <label><!-- Partner Type --></label>
+        <name>Partner_Type__c</name>
+        <picklistValues>
+            <masterLabel>End User</masterLabel>
+            <translation><!-- End User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attributes --></label>
+        <name>Primary_Attribute__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Primary Value Chain Partner (i.e. OEM, Distributor, etc.) involved in competitive share --></help>
+        <label><!-- Primary Partner --></label>
+        <name>Primary_Partner__c</name>
+        <relationshipLabel><!-- Competition Items (Primary Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Category --></label>
+        <name>Product_Category__c</name>
+        <picklistValues>
+            <masterLabel>Corian® Adhesives</masterLabel>
+            <translation><!-- Corian® Adhesives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corian® shapes</masterLabel>
+            <translation><!-- Corian® shapes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corian® sheets</masterLabel>
+            <translation><!-- Corian® sheets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discreted Paper</masterLabel>
+            <translation><!-- Discreted Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laminated Paper</masterLabel>
+            <translation><!-- Laminated Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pressboard</masterLabel>
+            <translation><!-- Pressboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Typar®</masterLabel>
+            <translation><!-- Typar® --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tyvek® accessories</masterLabel>
+            <translation><!-- Tyvek® accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tyvek® roll goods</masterLabel>
+            <translation><!-- Tyvek® roll goods --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quality Perception --></label>
+        <name>Quality_Perception__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- The reason the business, market, etc is at risk. --></help>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+        <picklistValues>
+            <masterLabel>Policy</masterLabel>
+            <translation><!-- Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rebate Type --></label>
+        <name>Rebate_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Material --></label>
+        <name>Related_Material__c</name>
+        <relationshipLabel><!-- Competition Items (Related Material) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Perception --></label>
+        <name>Service_Perception__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide specific source information like contact person or name of event, magazine etc --></help>
+        <label><!-- Source Comments --></label>
+        <name>Source_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supply Perception --></label>
+        <name>Supply_Perception__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supply Strategy --></label>
+        <name>Supply_Strategy__c</name>
+        <picklistValues>
+            <masterLabel>Central Warehouse</masterLabel>
+            <translation><!-- Central Warehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Technical Perception --></label>
+        <name>Technical_Perception__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms of Payment --></label>
+        <name>Terms_of_Payment__c</name>
+        <picklistValues>
+            <masterLabel>End of Month 30 days</masterLabel>
+            <translation><!-- End of Month 30 days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Estimated Price information --></help>
+        <label><!-- Unit Price --></label>
+        <name>Unit_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit of Measure --></label>
+        <name>Unit_of_Measure__c</name>
+        <picklistValues>
+            <masterLabel>Each</masterLabel>
+            <translation><!-- Each --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inch</masterLabel>
+            <translation><!-- Inch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kilogram</masterLabel>
+            <translation><!-- Kilogram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sheet</masterLabel>
+            <translation><!-- Sheet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Square Inch</masterLabel>
+            <translation><!-- Square Inch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Square Meter</masterLabel>
+            <translation><!-- Square Meter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ton, Metric</masterLabel>
+            <translation><!-- Ton, Metric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tons</masterLabel>
+            <translation><!-- Tons --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attribute 3 --></label>
+        <name>fAttribute3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 2 --></label>
+        <name>fAttribute_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Revenue of Equivalent (DuPont) Product for this competitive share analysis --></help>
+        <label><!-- Equivalent Product Revenue --></label>
+        <name>fEquivalent_Product_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Est. Competitive Revenue --></label>
+        <name>fEst_Competitive_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated price difference between the Competitor product and Equivalent (DuPont) product --></help>
+        <label><!-- Est. Price Difference --></label>
+        <name>fEst_Price_Difference__c</name>
+    </fields>
+    <fields>
+        <help><!-- The estimated amount of revenue of business at risk (Equivalent Product Revenue * Est. Risk %). --></help>
+        <label><!-- Est. Revenue at Risk --></label>
+        <name>fEst_Revenue_at_Risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment L2 --></label>
+        <name>fSegment_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment L3 --></label>
+        <name>fSegment_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment L1 --></label>
+        <name>fSegment_L1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment L4 --></label>
+        <name>fSegment_L4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment --></label>
+        <name>primarySegment__c</name>
+        <relationshipLabel><!-- Competition Items --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <label><!-- BI Competitive Information --></label>
+        <name>BI_Competitive_Information</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- BI Global Competition Item --></label>
+        <name>BI_Global_Competition_Item</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT AP Competition Share --></label>
+        <name>DPT_AP_Competition_Share</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please choose Account, as Information Source chosen by you is &quot;Customer Visit&quot; --></errorMessage>
+        <name>Account_mandatory_for_customer_visit</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Select_Segment --></label>
+        <name>Select_Segment</name>
+    </webLinks>
+</CustomObjectTranslation>

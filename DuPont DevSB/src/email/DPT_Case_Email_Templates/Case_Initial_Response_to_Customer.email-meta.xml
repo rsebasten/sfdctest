@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used for initial response to customer that we received their complaint.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Case: Initial Response to Customer</name>
+    <style>freeForm</style>
+    <subject>Your DuPont Protection Technologes Complaint Number {!Case.CaseNumber}</subject>
+    <textOnly>Dear {!Contact.Salutation} {!Contact.LastName},
+
+We have received your complaint and will process
+
+Regards,
+DuPont Quality Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

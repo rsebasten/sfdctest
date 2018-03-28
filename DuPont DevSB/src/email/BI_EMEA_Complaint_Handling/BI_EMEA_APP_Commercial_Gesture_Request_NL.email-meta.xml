@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA Request for commercial gesture to sales</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Commercial Gesture Request - NL</name>
+    <style>formalLetter</style>
+    <subject>Verzoek voor commerciële coulance (case: {!Case.CaseNumber})</subject>
+    <textOnly>Beste Collega,
+Met betrekking tot onze klacht {!Case.CaseNumber} van {!Case.Date_Entered__c}, vragen wij U ons te contacteren indien U wenst dat wij deze klacht als een commercieel gebaar afhandelen.  Strikt genomen, kunnen we deze klacht niet accepteren onder de huidige garantievoorwaarden.
+
+Link: {!Case.Link}
+Subject: {!Case.Subject}
+Description: {!Case.Description}
+
+Gelieve Uw redenen voor aanvaarding van deze klacht toe te lichten.
+
+Wij danken U voor Uw snelle reactie.
+
+
+Met vriendelijke groeten,
+
+
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

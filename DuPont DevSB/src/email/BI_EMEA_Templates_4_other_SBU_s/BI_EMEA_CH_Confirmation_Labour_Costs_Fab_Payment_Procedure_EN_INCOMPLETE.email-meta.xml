@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>BI-EMEA CH Confirmation Labour Costs Fab &amp; Payment Procedure EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Confirmation Labour Costs Fab &amp; Payment Procedure EN - INCOMPLETE</name>
+    <style>formalLetter</style>
+    <subject>Confirmation Labour Costs &amp; Payment Procedure (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear XXXXX,
+
+We thank you for your price offer for the repair of the complaint {!Case.CaseNumber}.
+ 
+This email can be considered as a written confirmation for the labour costs (repair DuPont™ Corian® installation) for a total of XXXXX incl. VAT. 
+ 
+Enclosed you will find the execution form (Customer’s Satisfaction Form for DuPont™ Corian® warranty).  Please ask the end customer to sign this document, since this will be the proof for payment of your invoice. 
+May we please ask you to execute the repair works in any case within 45 days after this confirmation? 
+The completed, signed form as well as your invoice can be send, either directly to the DuPont™ Corian® Surfaces Warranty Centre (BI-Warranty@dupont.com) or directly to your Warranty Coordinator ({!Case.OwnerFullName}).
+Only after receipt of both the above mentioned documents, we will proceed to pay your invoice for the amount mentioned above.
+        
+Many thanks in advance for your help in solving this matter.
+ 
+Payment Procedure Labour Costs
+
+The DuPont address mentioned on the invoice should be:
+DuPont De Nemours International sarl
+2, Chemin Du Pavillon 
+Le Grand Saconnex (Genève) 
+Switzerland
+(Please do NOT send the invoice to this address)
+
+Please specify the labour cost on your invoice (Complaint-Reference, # man-hours / Person,...).
+
+We will pay the Nett amount (without VAT)
+
+The original invoice should be send to the below address (do NOT send to the Geneva Address):
+DuPont™ de Nemours (Belgium) BVBA 
+Building Innovations - Warranty Dept.-  KGB 4
+Att.  {!Case.OwnerFullName} - “Confidential” 
+Antoon Spinoystraat 6 
+2800 Mechelen 
+Belgium
+
+Please ensure that you put the following information on the invoice to avoid delays in payment:
+Your international VAT number
+The name of your bank and its address (P.O. box included)
+IBAN and BIC code
+Currency
+Upon receipt of the original invoice, we will send the invoice to our Finance Department.  Upon receipt the Finance Department will organize your payment according your terms of payment.
+ 
+We thank you for your co-operation.
+ 
+With kind regards,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

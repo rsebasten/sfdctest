@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Asia Pacific</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>EMEA</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>North America</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Latin America</values>
+        </dashboardFilterOptions>
+        <name>Geo Region</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Military - Body Armor</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Military - Helmets</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Military - Vehicle Armor</values>
+        </dashboardFilterOptions>
+        <name>End Use</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>All amounts are summarized from the OPPORTUNITIES. All campaigns are linked to the Parent - DPT Global Ballistics Tenders.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Region__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Opportunity.S_P_Market_Segment__c</column>
+            </dashboardFilterColumns>
+            <dashboardTableColumn>
+                <column>CAMPAIGN_NAME</column>
+                <sortBy>RowLabelDescending</sortBy>
+            </dashboardTableColumn>
+            <dashboardTableColumn>
+                <aggregateType>Sum</aggregateType>
+                <calculatePercent>false</calculatePercent>
+                <column>AMOUNT</column>
+                <showTotal>false</showTotal>
+            </dashboardTableColumn>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>true</drillToDetailEnabled>
+            <footer>Linked to Parent Campaign - DPT Global Ballistics Tenders.</footer>
+            <indicatorBreakpoint1>10.0</indicatorBreakpoint1>
+            <indicatorBreakpoint2>120.0</indicatorBreakpoint2>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_Public_Sector_North_America/Campaign_Revenue_Report1</report>
+            <showPicturesOnTables>false</showPicturesOnTables>
+            <title>Top Ballistics Tenders</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Region__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Opportunity.S_P_Market_Segment__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Linked to Parent Campaign - DPT Global Ballistics Tenders.</footer>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Public_Sector_North_America/Ballistics_Tenders_Revenue</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Top Ballistics Tenders</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Region__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Opportunity.S_P_Market_Segment__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>true</expandOthers>
+            <footer>Tenders in each Geography (from Campaign).</footer>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Public_Sector_North_America/Ballistics_Tenders_Rev_by_Geography</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Open Tenders by Region</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>EXP_AMOUNT.CONVERT</column>
+            </chartSummary>
+            <componentType>Funnel</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Region__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Opportunity.S_P_Market_Segment__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>STAGE_NAME</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Public_Sector_North_America/Ballistics_Tenders_Rev_by_Stage</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Open Tenders by Stage</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>AMOUNT</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Region__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Opportunity.S_P_Market_Segment__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Revenue in the Close Month for Opportuntiies that are not End-Won or End-Lost.</footer>
+            <groupingColumn>CLOSE_MONTH</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Public_Sector_North_America/Ballistics_Tenders_Rev_by_Close_Month</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Open Opportunties Expected to Close</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Region__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Opportunity.S_P_Market_Segment__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer># of Opportunities for each Solicitation.</footer>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Public_Sector_North_America/Ballistics_Campaigns_with_Opportunity</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Open Tenders</title>
+            <useReportChart>true</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>Account.Region__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Opportunity.S_P_Market_Segment__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Public_Sector_North_America/Ballistics_Tenders_Rev_by_End_Use</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Open Tenders by End Use</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>laura.e.russell@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>DPT Global Life Protection Dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

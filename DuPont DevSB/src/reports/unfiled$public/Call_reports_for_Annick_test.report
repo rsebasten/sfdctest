@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Call_Report__c$Account__c</field>
+    </columns>
+    <columns>
+        <field>Call_Report__c$Id</field>
+    </columns>
+    <columns>
+        <field>Call_Report__c$Name</field>
+    </columns>
+    <columns>
+        <field>Call_Report__c$Summary__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <filter>
+        <criteriaItems>
+            <column>Call_Report__c$RecordType</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Call_Report__c.OneDuPont</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Call reports for Annick test</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Call_Reports_with_Lookup_Fields__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Call_Report__c$CreatedDate</dateColumn>
+        <endDate>2016-09-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-06-01</startDate>
+    </timeFrameFilter>
+</Report>

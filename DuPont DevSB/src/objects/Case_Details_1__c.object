@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Black__c</fullName>
+        <externalId>false</externalId>
+        <label>Black</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Details</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cyan__c</fullName>
+        <externalId>false</externalId>
+        <label>Cyan</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Distortion__c</fullName>
+        <externalId>false</externalId>
+        <label>Distortion (%)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Data_Delivery__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Data Delivery</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Magenta__c</fullName>
+        <externalId>false</externalId>
+        <label>Magenta</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_Orientation__c</fullName>
+        <description>Image readable or not readable on plate for reverse or surface print</description>
+        <externalId>false</externalId>
+        <label>Print Orientation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Surface (Plate not readable)</fullName>
+                    <default>false</default>
+                    <label>Surface (Plate not readable)</label>
+                </value>
+                <value>
+                    <fullName>Reverse (Plate readable)</fullName>
+                    <default>false</default>
+                    <label>Reverse (Plate readable)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Related_Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Case Details</relationshipLabel>
+        <relationshipName>Case_Details1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Screen_Ruling_lpi__c</fullName>
+        <externalId>false</externalId>
+        <label>Screen Ruling (lpi)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Screen_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Screen Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Classic</fullName>
+                    <default>false</default>
+                    <label>Classic</label>
+                </value>
+                <value>
+                    <fullName>Hd Flexo</fullName>
+                    <default>false</default>
+                    <label>Hd Flexo</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Shape__c</fullName>
+        <externalId>false</externalId>
+        <label>Shape</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Circular</fullName>
+                    <default>false</default>
+                    <label>Circular</label>
+                </value>
+                <value>
+                    <fullName>Elliptical</fullName>
+                    <default>false</default>
+                    <label>Elliptical</label>
+                </value>
+                <value>
+                    <fullName>Double Circular</fullName>
+                    <default>false</default>
+                    <label>Double Circular</label>
+                </value>
+                <value>
+                    <fullName>Round Forga</fullName>
+                    <default>false</default>
+                    <label>Round Forga</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Spot_Color_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Spot Color 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Spot_Color_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Spot Color 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Spot_Color_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Spot Color 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Spot_Color_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Spot Color 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Technical_Comments__c</fullName>
+        <description>Needed to enter additional information with regard to the Job Detail created.</description>
+        <externalId>false</externalId>
+        <label>Technical Comments</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Yellow__c</fullName>
+        <externalId>false</externalId>
+        <label>Yellow</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCase_Owning_Organization__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Related_Case__r.Owning_Organization__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Owning Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCase_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Related_Case__r.Type)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Case Details</label>
+    <nameField>
+        <displayFormat>CD1-{0000}</displayFormat>
+        <label>Case Details1 ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Case Details</pluralLabel>
+    <recordTypes>
+        <fullName>Case_Details</fullName>
+        <active>false</active>
+        <label>Case Details</label>
+        <picklistValues>
+            <picklist>Print_Orientation__c</picklist>
+            <values>
+                <fullName>Reverse %28Plate readable%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surface %28Plate not readable%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Screen_Type__c</picklist>
+            <values>
+                <fullName>Classic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hd Flexo</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Shape__c</picklist>
+            <values>
+                <fullName>Circular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Double Circular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elliptical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Round Forga</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

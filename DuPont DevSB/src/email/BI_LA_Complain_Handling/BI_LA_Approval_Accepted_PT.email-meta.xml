@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-LA Complaint - Aprovação Aceita PT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-LA - Aprovação Aceita PT</name>
+    <style>formalLetter</style>
+    <subject>Aprovação Aceita (case: {!Case.CaseNumber})</subject>
+    <textOnly>Caro Processador,
+Posterior a análise de sua reclamação, {!Case.CaseNumber}, enviada na data {!Case.Date_Entered__c}, determinou-se a aplicação da garantia. A baixo segue um parecer técnico do problema ocorrido:
+
+
+
+{!Case.Special_Instructions__c}
+
+
+
+Lamentamos o transtorno e esperamos ter resolvido de forma satisfatória o seu problema.
+
+
+
+Qualquer dúvida entrar em contato com o vendedor de sua região, quem se encontra em copia neste e-mail.
+
+
+Muito Obrigado
+
+Atenciosamente,
+
+Time Técnico
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

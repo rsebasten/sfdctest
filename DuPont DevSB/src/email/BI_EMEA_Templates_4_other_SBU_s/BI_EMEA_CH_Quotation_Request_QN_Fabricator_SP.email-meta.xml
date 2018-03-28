@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA Quotation request template for QN Fabricators</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Quotation Request QN Fabricator SP</name>
+    <style>formalLetter</style>
+    <subject>Solicitud de presupuesto para reparación  (case: {!Case.CaseNumber})</subject>
+    <textOnly>Estimado fabricante QN:
+
+En referencia a la reclamación {!Case.CaseNumber} de fecha 
+{!Case.Date_Entered__c}, quisiéramos pedirle un presupuesto detallado 
+para la reparación de problem description del cliente:
+
+{!Case.Contact}
+{!Account.BillingAddress}
+{!Account.BillingCity}
+{!Contact.Phone}
+{!Case.Description}
+
+Por favor indique detalladamente los kilómetros y el coste del trabajo (precio/hora) y si necesita que le enviemos material de nuestro almacén.
+
+Encontrará adjunta una foto de la encimera/ problema donde se ilustra el problema junto a los datos del cliente. 
+
+Cuando recibamos su presupuesto; le enviaremos nuestra confirmación junto a la declaración de reparación del cliente y la información para facturar. 
+
+Si tiene cualquier pregunta, no dude en ponerse en contacto conmigo.
+
+Saludos cordiales,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

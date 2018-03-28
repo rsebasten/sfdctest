@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI EMEA warranty Registration end customer template in Spanish</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Warranty_Registration_LOGO</letterhead>
+    <name>BI-EMEA Warranty Registration Spain</name>
+    <style>freeForm</style>
+    <subject>DuPont ™ Corian ® - Garantía registrado correctamente</subject>
+    <textOnly>fecha,  {!Entitlement.LastModifiedDate}
+
+
+
+Código de la garantía {!Entitlement.Entitlement_Code__c}
+
+
+
+
+Apreciado {!Entitlement.Primary_Contact__c},
+
+
+Le agradecemos que haya elegido DuPont™ Corian® para su encimera de cocina. Estamos seguros de que DuPont™ Corian®, con su elevada calidad estética y funcional, aportará elegancia y un valor añadido a su cocina.
+
+
+Le confirmamos que su encimera de cocina ha sido registrada correctamente a través de la página web www.corian.es.
+
+
+Tenga en cuenta que la Garantía Limitada de 10 años de DuPont™ Corian® es efectiva a partir de la fecha de compra que aparece en la factura. Para poder beneficiarse de la Garantía de Instalación Limitada de 10 años, es preciso adjuntar a la reclamación una prueba de compra (copia de la factura). Asimismo, le invitamos a leer los Términos y Condiciones de la Garantía de Instalación Limitada de 10 años de DuPont™ Corian® que se incluyen en el folleto “DuPont™ Corian® - Instrucciones para el uso y el cuidado” o en la página web www.corian.es.
+
+
+Algunos de los colores, necesitan más  mantenimiento, por lo tanto, le aconsejamos que lea detenidamente las Directrices U &amp; C disponibles en la web www.corian.es
+
+
+Si necesita ayuda a la hora de registrar su encimera de cocina o precisa información general sobre DuPont™ Corian®,
+puede llamarnos al teléfono gratuito 901 120 089.
+
+
+Para recibir asistencia sobre la garantía que cubre su encimera de cocina DuPont™ Corian®, póngase en contacto con nosotros a través del teléfono gratuito 901 120 089.
+
+
+Reciba un cordial saludo.
+
+
+Atentamente,
+
+
+DuPont Building Innovations
+
+
+El logotipo del óvalo de DuPont, DuPont™ y Corian® son marcas comerciales o marcas registradas de E. I. du Pont de Nemours and Company o de sus compañías filiales.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email used in Lead assignment rule to confirm receipt of TLMA request to the customer</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPP Nomex® TMLA received confirmation</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Nomex® - Trademark Licensee Agreement request received</subject>
+    <textOnly>Dear {!Lead.FirstName} {!Lead.LastName},
+
+Thank you for having filled in DuPont(TM) 
+Nomex(R) Trademark License Agreement questionnaire, all submitted 
+information have been received successfully. 
+
+
+
+
+Your request has been forwarded and we will soon revert to you. 
+
+
+
+Should you have any question, do not hesitate to contact christel.pavlousek@che.dupont.com
+
+Again thank you for your interest. 
+
+
+
+Your DuPont(TM) Nomex® Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

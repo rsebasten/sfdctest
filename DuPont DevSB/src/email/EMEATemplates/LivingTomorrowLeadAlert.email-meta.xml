@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Leads from Living Tomorrow</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Living Tomorrow Lead Alert</name>
+    <style>freeForm</style>
+    <subject>Living Tomorrow: {!Lead.Company}</subject>
+    <textOnly>Lead Name: {!Lead.Name} 
+Lead Company: {!Lead.Company} 
+Lead Address: {!Lead.Address} 
+Lead Country: {!Lead.Country} 
+Lead Phone: {!Lead.Phone} 
+Lead Email: {!Lead.Email} 
+ 
+Account Type: {!Lead.Account_Type__c} 
+Main Role: {!Lead.Main_Role__c} 
+Industry: {!Lead.Industry} 
+
+Type: {!Lead.Type__c} 
+Product Comments: {!Lead.Product_Comments__c} 
+Description: {!Lead.Description} 
+
+Response Type: {!Lead.Response_Type__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

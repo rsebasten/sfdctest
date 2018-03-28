@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Acknowledgement of registration of complaint to the customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Acknowledgement to Customer Surf IT</name>
+    <style>formalLetter</style>
+    <subject>Conferma di registrazione del Cliente (case: {!Case.CaseNumber})</subject>
+    <textOnly>Gent. Cliente,
+Grazie per la registrazione del vostro reclamo. 
+Il numero di riferimento della vostra pratica è: {!Case.CaseNumber}.  
+Faremo quanto possibile per risolvere la vostra richiesta al più presto possibile.
+ 
+Quando la Vostra pratica sarà completa ,contatteremo il nostro centro servizio o fabbricatore QN per stabilire una data per un sopralluogo/intervento.
+ 
+Il nostro centro servizio / fabbricatore QN controllerà l’entità del danno ed effettuerà la riparazione immediatamente, se possibile, in loco.
+ 
+Vi consigliamo di conservare il resto del materiale DuPont™ Corian® a disposizione per evitare una possibile differenza di colore. Vi chiediamo di considerare che l’intervento può causare inconveniente. 
+ 
+Se la Vostra richiesta rientra nella garanzia decennale limitata di DuPont™ Corian®, il costo del intervento sarà coperto interamente da DuPont. Se il danno invece non è in garanzia, il centro servizio/fabbricatore QN Vi proporrà un preventivo per la realizzazione dell’intervento.
+ 
+Ad intervento ultimato, il centro servizio / fabbricatore QN  Vi chiederà di firmare un modulo di soddisfazione cliente che servirà quale prova del suo pagamento. 
+ 
+Per qualsiasi chiarimento, non esitate a contattarmi. 
+ 
+Cordiali Saluti,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

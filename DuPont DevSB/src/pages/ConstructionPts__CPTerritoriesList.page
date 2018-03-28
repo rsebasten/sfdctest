@@ -1,0 +1,10 @@
+<apex:page standardController="ConstructionPts__CPTerritory__c" recordsetVar="territories" tabStyle="ConstructionPts__CPTerritory__c">
+
+<c:CPHeader title="All CP Territories" ShowDodgeLogo="true" ShowCPLinks="true"   ShowTitle="true" /> 
+  <br/><br/>
+
+<apex:ListViews type="ConstructionPts__CPTerritory__c" id="lstCPTerritories"/>
+
+<br/>
+    <c:CPFooter ShowMHCInfo="false" ShowMHCLogo="false"/>
+</apex:page>

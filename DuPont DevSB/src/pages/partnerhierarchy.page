@@ -1,0 +1,60 @@
+<!-- 
+*******************************************************************************
+Copyright © 2010 DuPont. All rights reserved. 
+Author: Sreedhar T Jagannath
+Email: Sreedhar.Jagannath@ind.dupont.com
+Description: Visualforce Page to display the Partner Hierarchy
+********************************************************************************/
+-->
+
+<apex:page cache="true" standardcontroller="Account" extensions="ctrlHierarchy">
+    <apex:form >
+        <center>
+                    <h1><b>View Partner Hierarchy</b></h1><br/><br/><br/></center><center>
+                    <b> Account Name:&nbsp;&nbsp;</b> <apex:inputText value="{!AccountName}" disabled="true" required="true" /><br/><br/>
+                    <apex:outputText >&nbsp;&nbsp;&nbsp;&nbsp;<b>Partner Role:&nbsp;&nbsp;</b></apex:outputText>
+                    <apex:selectList value="{!PartnerRole}" title="Choose the Role" size="1">
+                    <apex:selectOptions value="{!Roles}"/>
+                    </apex:selectList><br/><br/><br/></center>
+                    <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Find Partners" action="{!searchPartner}"/></center>
+                    <br/><br/><br/>
+    </apex:form>
+
+<apex:pageBlock >
+            <apex:repeat rows="1" var="str" value="{!Accnt1}">
+                <apex:outputPanel id="res" rendered="{!str.Name<>null}">
+                    <apex:pageBlockSection >
+                        <apex:pageBlockTable var="part1" value="{!Accnt1}" border="2" columns="7">
+                        
+                            <apex:column headerValue="Account Id">
+                            <apex:outputLabel value="{!part1.Id}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Account Name">
+                            <apex:outputLabel value="{!part1.Name}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Account Stage">
+                            <apex:outputLabel value="{!part1.Account_Stage__c}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Account Type">
+                            <apex:outputLabel value="{!part1.Type}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Program">
+                            <apex:outputLabel value="{!part1.Program__c}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Country">
+                            <apex:outputLabel value="{!part1.Country__c}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Owning Organization">
+                            <apex:outputLabel value="{!part1.Owning_Organization__c}" rendered="true"/>
+                            </apex:column>
+                            
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+            </apex:repeat>
+</apex:pageBlock>
+
+<apex:form >
+<center><br/><apex:commandButton value="Export Account Information" action="/apex/ExportToExcel"/>
+</center></apex:form> 
+</apex:page>

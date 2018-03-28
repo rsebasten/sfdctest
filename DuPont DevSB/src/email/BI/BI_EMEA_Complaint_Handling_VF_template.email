@@ -1,0 +1,145 @@
+<messaging:emailTemplate subject="Your Case has been Registered" recipientType="User" relatedToType="Case">
+<messaging:htmlEmailBody >
+<html>
+<body>
+
+<apex:outputText rendered="{!relatedTo.Submitted_By_First_Name_Last_Name__c='English'}">
+<p>
+Dear customer,<br/>
+With this message we acknowledge your application for an intervention under warranty as follows:<br/><br/>
+Complaint Number: "{!relatedTo.CaseNumber}" <br/>
+Complaint Subject: "{!relatedTo.Subject}" <br/>
+Problem Description: "{!relatedTo.Problem_Description__c}" <br/>
+Contact Details: <br/>
+Contact Name: "{!relatedTo.Alt_Contact__c}" <br/>
+Contact Phone: "{!relatedTo.Alt_Phone__c}" <br/>
+
+In case you want to correct your entries or you have supplementary observations contact us at 
+<a href="bi-warranty@dupont.com.">"bi-warranty@dupont.com."</a><br/><br/>
+We will react within the next days.<br/>
+Yours faithfully,<br/>
+The DuPont BI Warranty Team.<br/>
+</p>
+</apex:outputText>
+
+
+
+
+
+
+<apex:outputText rendered="{!relatedTo.Submitted_By_First_Name_Last_Name__c='Spanish'}">
+<p>
+Estimado Cliente,<br/>
+Le confirmamos que hemos recibido su solicitud de intervención amparándose en la garantía:<br/><br/>
+
+Número de la Queja: "{!relatedTo.CaseNumber}" <br/>
+Asunto de la Queja: "{!relatedTo.Subject}" <br/>
+Descripción del problema: "{!relatedTo.Problem_Description__c}" <br/>
+Contacto: <br/>
+Nombre de contacto: "{!relatedTo.Alt_Contact__c}" <br/>
+Contacto teléfono: "{!relatedTo.Alt_Phone__c}" <br/>
+
+Si desea corregir alguno de los datos o detalles de la reclamación, o quiere añadir algún comentario adicional, puede enviarnos un correo electrónico a la siguiente dirección: 
+<a href="bi-warranty@dupont.com.">"bi-warranty@dupont.com."</a><br/><br/>
+Intentaremos contestarle en la mayor brevedad posible.<br/>
+Atentamente, ,<br/>
+El Equipo de Garantía de DuPont BI.<br/>
+</p>
+</apex:outputText>
+
+
+
+
+
+<apex:outputText rendered="{!relatedTo.Submitted_By_First_Name_Last_Name__c='French'}">
+Cher client,<br/>
+Par la présente, nous accusons bonne réception de votre demande d'une intervention sous garantie comme suit:<br/><br/>
+
+Numéro de réclamation: "{!relatedTo.CaseNumber}" <br/>
+Objet de la réclamation: "{!relatedTo.Subject}" <br/>
+Description du problème: "{!relatedTo.Problem_Description__c}" <br/>
+Coordonnées: <br/>
+Nom de contact: "{!relatedTo.Alt_Contact__c}" <br/>
+Téléphone:  "{!relatedTo.Alt_Phone__c}" <br/>
+
+Dans le cas où vous souhaitez corriger vos données ou si vous avez des observations complémentaires contactez-nous au 
+<a href="bi-warranty@dupont.com.">"bi-warranty@dupont.com."</a><br/><br/>
+Dans le prochains jours vous recevrez notre réaction.<br/>
+Cordialement.<br/>
+L’Équipe de Garantie DuPont Corian®.<br/>
+</apex:outputText>
+
+
+
+
+
+
+<apex:outputText rendered="{!relatedTo.Submitted_By_First_Name_Last_Name__c='Italian'}">
+Gentile Cliente,<br/>
+Con questo messaggio confermiamo di aver ricevuto la seguente richiesta <br/><br/>
+
+Numero della Denuncia: "{!relatedTo.CaseNumber}" <br/>
+Oggetto della Denuncia: "{!relatedTo.Subject}" <br/>
+Descrizione del problema: "{!relatedTo.Problem_Description__c}" <br/>
+Dettagli di contatto: <br/>
+Nome del contatto: "{!relatedTo.Alt_Contact__c}" <br/>
+Contatto telefonico: "{!relatedTo.Alt_Phone__c}" <br/>
+
+Per  modificare i dati trasmessi o  fornire  ulteriori informazioni contattateci all'indirizzo <br/><br/>
+<a href="bi-warranty@dupont.com.">"bi-warranty@dupont.com."</a><br/>
+Riceverete nostre comunicazioni nei prossimi giorni.<br/>
+Cordiali saluti<br/>
+Il Warranty Team di DuPont BI.<br/>
+</apex:outputText>
+
+
+
+
+
+
+<apex:outputText rendered="{!relatedTo.Submitted_By_First_Name_Last_Name__c='Dutch'}">
+Geachte klant,<br/>
+Met dit bericht bevestigen wij de ontvangst voor uw aanvraag onder garantie die als volgt luidt:<br/><br/>
+Nummer van de klacht: "{!relatedTo.CaseNumber}" <br/>
+Onderwerp van de klacht:"{!relatedTo.Subject}" <br/>
+Beschrijving van het probleem: "{!relatedTo.Problem_Description__c}" <br/>
+Contactgegevens: <br/>
+Naam Contact: "{!relatedTo.Alt_Contact__c}" <br/>
+Contact Telefoon: "{!relatedTo.Alt_Phone__c}" <br/>
+
+Indien u uw gegevens wil wijzigen of bijkomende opmerkingen wil overmaken kan u contact met ons opnemen via 
+<a href="bi-warranty@dupont.com.">"bi-warranty@dupont.com."</a><br/><br/>
+U ontvangt van ons een reactie in de komende dagen.<br/>
+Met vriendelijke groeten,<br/>
+Het DuPont BI Garantieteam.<br/>
+</apex:outputText>
+
+
+
+
+
+
+<apex:outputText rendered="{!relatedTo.Submitted_By_First_Name_Last_Name__c='German'}">
+Sehr geehrter Kunde,<br/>
+wir haben den folgenden Antrag auf Gewährleistung im Rahmen unserer eingeschränkten zehn-(10)-Jahresgarantie erhalten:<br/><br/>
+
+Zeichen der Beschwerde: "{!relatedTo.CaseNumber}" <br/>
+Gegenstand der Beschwerde: "{!relatedTo.Subject}" <br/>
+Beschreibung des Problems: "{!relatedTo.Problem_Description__c}" <br/>
+Einzelheiten der Kontaktperson: <br/>
+Name der Kontaktperson: "{!relatedTo.Alt_Contact__c}" <br/>
+Anrufnummer: "{!relatedTo.Alt_Phone__c}" <br/>
+
+Für den Fall, dass Sie Ihre Angaben ändern oder Sie weitere Bemerkungen mitteilen möchten, wenden Sie sich bitte an unsere Garantieabteilung unter:
+<a href="bi-warranty@dupont.com.">"bi-warranty@dupont.com."</a><br/><br/>
+Wir werden uns in den nächsten Tagen mit Ihnen in Verbindung setzen.<br/>
+Mit freundlichen Grüßen<br/>
+Ihre DuPont BI Garantieabteilung<br/>
+</apex:outputText>
+
+
+</body>
+</html>
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

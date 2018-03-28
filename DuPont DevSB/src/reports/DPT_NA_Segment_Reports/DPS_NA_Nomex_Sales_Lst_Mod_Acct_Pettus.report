@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_43703435</developerName>
+        <masterLabel>Team Members</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>CONTACT_OWNER</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Norris Brooks</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Sullivan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jay Hooper</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William Dunnagan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Todd Barnes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dale Reese</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Helen Campbell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brad Thompson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jimmie Garland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Patricia Humble</sourceValue>
+            </sourceValues>
+            <value>LP/MT/ES Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Jack Yant</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bill Goodwin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nathan Love</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Randy Pettus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bruce Pearce</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gianliugi Molteni</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kerry King</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Beth Taylor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Diane Andrews</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kelly LeClear</sourceValue>
+            </sourceValues>
+            <value>Auto/MRG/Ind Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Marta Hilton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Reardon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pamela Langston-Vaughn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Karen Polkinghorne</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jose Arevalo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Leslie Love</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dale Boyle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Anthony J Palermo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Debra Ackerman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Josee Ricard-Matthews</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susan Davis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Demond Chapman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mark Fahey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Deanna A Salvati</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Barbara Catana</sourceValue>
+            </sourceValues>
+            <value>NOW team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Pie</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>OWNER_FULL_NAME</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Account.Owning_Organization__c</field>
+    </columns>
+    <columns>
+        <field>Account.S_P_Market_Segment__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Contact.Status__c</field>
+    </columns>
+    <columns>
+        <field>CONTACT_CREATED</field>
+    </columns>
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>SALUTATION</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>Account.Legacy_Account_ID__c</field>
+    </columns>
+    <columns>
+        <field>Account.Legacy_System__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.Region__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>North America</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER_FULL_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Laura Spangler,Brad Thompson,Dale Reese,Helen Campbell,Randy Pettus</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.S_P_Market_Segment__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>excludes</operator>
+            <value>Chemical Industrial,Mechanical Industrial</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER_FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>LAST_UPDATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPS NA Nomex Sales-Lst Mod Acct (Pettus)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>LAST_UPDATE</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

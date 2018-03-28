@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Enviar a clientes que buscan Tyvek® para construcción // BC Maria.Guzman@dupont.com,gerardo.e.ramirez-ramirez@dupont.com</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>BI Distribuidores Tyvek® construcción</name>
+    <style>freeForm</style>
+    <subject>DuPont - Distribuidores Tyvek® StuccoWrap®</subject>
+    <textOnly>¡Gracias por contactarnos!
+
+
+Estimad(o) {!Lead.FirstName} {!Lead.LastName},
+
+Referente a su solicitud, le pedimos contactar a nuestros distribuidores autorizados, quienes con gusto le apoyarán en XX.
+
+O bien, puede responder por este medio que autoriza compartir sus datos personales con nuestros 3 distribuidores, de manera que puedan ponerse en contacto con usted.
+
+Panel Rey S.A de C.V.
+Claudia Reyna Sánchez
+creyna@gpromax.com
+Serafín Peña 935 Sur, Centro, 64000 Monterrey, N.L., México
++52 81 8345 0055
+http://www.panelrey.com/
+
+Kemzus S.A de C.V.
+Rodrigo Güemes
+raguemesg@ppg.com
+Av. La Noria No. 123, Santa Rosa Jáuregui, Querétaro, 76220
++52 442 2274000 ext 4172
+Cel. 55 41844172
+http://www.plaka.com.mx/
+
+USG S.A de C.V.
+Paseo De Tamarindos 400 B, Bosque de las Lomas, Cuajimalpa de Morelos, 05120, D.F, México
+(55) 52 61 6300
+https://www.usg.com/content/usgcom/spanish.html
+
+Le invitamos a visitar nuestro sitio web www.dupont.com.mx
+--------------------------------------------------------------------
+Datos del solicitante:
+Fecha recepción solicitud: {!Lead.CreatedDate}
+Nombre: {!Lead.FirstName} {!Lead.LastName}
+Empresa: {!Lead.Company}
+Dirección: {!Lead.Address}
+Teléfono(s): {!Lead.Phone}
+Cel: {!Lead.MobilePhone}
+Email: {!Lead.Email}
+
+Solicitud:
+{!Lead.Product_Comments__c}
+{!Lead.Description}
+--------------------------------------------------------------------
+Quedamos atentos a cualquier sugerencia o requerimiento adicional.
+
+Reciba un cordial saludo de parte del equipo de DuPont México.
+
+Centro de Información de Productos en México, Centroamérica y Caribe
+Lada nacional sin costo: 01800-849-7514
+Tel. del D.F. y Zona Metropolitana: +52 (55) 5722-1150
+E-mail: info.mexico@dupont.com | Página web: www.dupont.com.mx
+Twitter @DuPontMexico | YouTube: DuPontdeMexico
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -
+Copyright © 2018 DuPont. Reservados todos los derechos. Todos los productos señalados con ® o ™ son marcas registradas o marcas de E. I. du Pont de Nemours and Company o sus afiliadas.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+&quot;Su información personal (Nombre, correo electrónico, etc.) será ingresada en el Sistema de Clientes actualmente localizado en Estados Unidos de América. Dicha información será utilizada por DuPont, otras filiales y terceros seleccionados en otros países, para brindarle información de productos y servicios por la cual contacto a DuPont. Para revisar nuestra política completa de privacidad, acceder, enmendar, borrar u oponerse al procesamiento de su información personal, favor de utilizar el siguiente link, en la sección de &quot;Opciones y Acceso&quot;-www.privacy.dupont.com
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Si usted no desea recibir más comunicados de DuPont por favor envíenos un mensaje a info.mexico@dupont.com con el Subject &quot;Dar de baja&quot;.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

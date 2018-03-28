@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Request for S Request for NC to S&amp;L</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA S Request for NC to S&amp;L GK EN</name>
+    <style>freeForm</style>
+    <subject>NC Entry Request: BI EMEA {!Case.Delivery__c} (Case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear Sam, dear Bart,
+Please log an NC entry for the complaint below and provide us your NC complaint reference in return. Upon completion of your investigation please provide your resolution outcome by replying to this message.
+
+Title: {!Case.Subject}
+BI Complaint ID: {!Case.CaseNumber} / {!Case.Link}
+Originator: {!Case.OwnerFullName}
+Classification: {!Case.Severity__c}
+Customer: {!Case.Account} / {!Case.AccountId}
+Contact: {!Case.Contact}
+
+Ship To Country: {!Account.BillingCountry}
+Ship Point: {!Case.Ship_Point__c}
+Carrier name: {!Case.Carrier_Name__c}
+Carrier ID: {!Case.Carrier_NameId__c}
+Carrier Ref ID: {!Case.Carrier_Reference__c}
+Order Ref:{!Case.Order_Number__c}
+Delivery: {!Case.Delivery__c}
+
+Additional info:
+{!Case.Description}
+
+
+
+Best regards,
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

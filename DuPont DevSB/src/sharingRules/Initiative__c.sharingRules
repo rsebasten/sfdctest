@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Initiative_MigrationUser_RS_RW_PSCRM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>(06-JUL-17) - Issue fix for IS ID-00082857.  This is a &quot;generic&quot; share to extend &apos;Data Migration User&apos; owned records with PS CRM role and subordinates ---due to original owners being inactive in OneDuPont.</description>
+        <label>Initiative Migration User RW to RS PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>DPS_Initiatives</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Initiatives_RI_DPS_PG_DPSE_RW</description>
+        <label>DPS Initiatives</label>
+        <sharedTo>
+            <group>DPS_Editors</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTEMEAI790111</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DPT - EMEAI</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DuPontProtectionTechnologiesI</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DuPont Protection TechnologiesI</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DuPontProtectionTechnologies</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPontProtectionTechnologies</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>EMEAMBInitiativeOwners</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>EMEA M&amp;B Initiative Owners</label>
+        <sharedTo>
+            <group>EMEAMBInitiativeOwners</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>EMEAMBInitiativeOwners</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Initiative_BI_EMEA_PG_BIEMEAIM_PG_BIEMEAIM_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Initiative_BI_EMEA_PG_BIEMEAIM_PG_BIEMEAIM_RW</label>
+        <sharedTo>
+            <group>BI_EMEA_Initiative_Managers</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BI_EMEA_Initiative_Managers</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Initiative_NA_RIS_DPT_NA_RIS_DPT_NA_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Initiative_NA_RIS-DPT-NA_RIS-DPT-NA_RW</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DPTNA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DPTNA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Initiative_RI_DPS_RI_DPS_RO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Initiative_RI_DPS_RI_DPS_RO</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Initiatives_DPT_EMEA_PG_DPT_Catalog_Manager_PG_DPT_Nomex_Garment_RO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Initiatives_ DPT_EMEA _PG_ DPT_Catalog_Manager - PG_DPT_Nomex_Garment_RO</label>
+        <sharedTo>
+            <group>DPTNomexGarment</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPT_Nomex_Catalog_Manager</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Initiatives_RIS_PS_CRM_with_GRP_BPC_R_W</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>(Read/Write) Initiatives Owned by: 
+Role &amp; Internal Subordinates PS CRM share with Public Group: Brand Protection Center</description>
+        <label>Initiatives RIS PS CRM with GRP BPC R/W</label>
+        <sharedTo>
+            <group>Brand_Protection_Center</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Marketing_Automation_Leaders</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>IS ID-00071424
+All Initiatives owned by a member of &quot; Marketing Automation Leaders should be visible in READ mode; by all &quot;Marketing Automation Leaders&quot;</description>
+        <label>Marketing Automation Leaders</label>
+        <sharedTo>
+            <group>Marketing_Automation_Leaders</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Marketing_Automation_Leaders</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

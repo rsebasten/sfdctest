@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Setting used to personalize the UI. Typically use in VisualForce.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Search_Account_Address_Format__c</fullName>
+        <description>Account Address Format using in Search results.
+S - Shipping Only (no Heading prefix)
+B - Billing Only (no Heading prefix)
+Default Shipping and Billing w/ Prefix</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account Address Format using in Search results.
+S - Shipping Only (no Heading prefix)
+B - Billing Only (no Heading prefix)
+Default Shipping and Billing w/ Prefix</inlineHelpText>
+        <label>Search Account Address Format</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Search_Account_External_ID_Format__c</fullName>
+        <description>Account External ID Format using in Search results.
+&quot;A&quot; = External_Account_ID__c
+&quot;N&quot; = Non_unique_External_ID__c 
+&quot;E&quot; = External_ID__c
+&quot;L&quot; = Legacy_Account_ID__c
+Default (blank) =  shows all these Ids.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account External ID Format using in Search results.
+&quot;A&quot; = External_Account_ID__c
+&quot;N&quot; = Non_unique_External_ID__c 
+&quot;E&quot; = External_ID__c
+&quot;L&quot; = Legacy_Account_ID__c
+Default (blank) =  shows all these Ids.</inlineHelpText>
+        <label>Search Account External ID Format</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tab_Override__c</fullName>
+        <description>V=show listview (last one used by user) 
+else: default Tab</description>
+        <externalId>false</externalId>
+        <inlineHelpText>V=show listview (last one used by user) 
+else: default Tab</inlineHelpText>
+        <label>Tab_Override__c</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>UI Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Encuesta de servicio DuPont</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>Encuesta de servicio</name>
+    <style>freeForm</style>
+    <subject>DuPont Encuesta de servicio</subject>
+    <textOnly>Estimad(o) {!Lead.FirstName} {!Lead.LastName},
+
+Gracias por su interés en los productos y servicios de DuPont. El no. de reporte de su solicitud es: {!Lead.Id}
+
+Queremos saber cómo fue su experiencia al ser atendido por nosotros. Por favor, haga clic en el siguiente enlace para completar una breve encuesta.
+
+Es muy importante su retroalimentación para mejorar nuestro servicio.
+
+Su Solicitud:
+{!Lead.Product_Comments__c} {!Lead.Description}
+
+Reciba un cordial saludo,
+
+Centro de Información de Productos en México, Centroamérica y Caribe
+Lada nacional sin costo: 01800-849-7514
+Tel. del D.F. y Zona Metropolitana: +52 (55) 5722-1150
+Página web: www.dupont.com.mx | Contáctenos en línea
+Líneas gratuitas para Centro América y Caribe
+Twitter @DuPontMexico | YouTube: DuPontdeMexico
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Copyright © 2018 DuPont. Reservados todos los derechos. Todos los productos señalados con ® o ™ son marcas registradas o marcas de E. I. du Pont de Nemours and Company o sus afiliadas.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Política de Privacidad www.privacy.dupont.com. Si usted no desea recibir más comunicados de DuPont, también puede enviarnos un mensaje a info.mexico@dupont.com con el Asunto: &quot;Dar de baja&quot;.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

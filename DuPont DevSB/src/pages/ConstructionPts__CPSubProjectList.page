@@ -1,0 +1,61 @@
+<apex:page tabStyle="ConstructionPts__CP_Project__c" recordSetVar="cpsubprojects" sideBar="false" StandardController="ConstructionPts__Sub_Projects__c" >
+
+<c:CPHeader title="" subtitle="All Sub Projects" ShowDodgeLogo="true"/>
+<div id="divList">
+ <apex:ListViews type="ConstructionPts__Sub_Projects__c" id="lstCP_Projects"/> 
+</div>
+ 
+<c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+
+<script language="javascript">
+       	function HideActionLinks(){	
+	       	var divList = document.getElementById("divList");
+	        if(divList){
+	         	var tds = divList.getElementsByTagName("td");	         
+	         	for(var z=0; z<tds.length; z++){  
+	         		var ctrls = tds[z].getElementsByTagName("input");
+	         		
+		    		var currCtrlId;		    		
+		    		var blnActionFound;
+		    		
+		    		for(var i=0; i<ctrls.length; i++){		    			
+		    			if(ctrls[i].type == "checkbox"){
+		    				currCtrlId = ctrls[i].id;
+		    				if(currCtrlId.length > 3){
+		    					if(currCtrlId.substring(0,3) == "ids"){
+		    					    
+		    					    var parentCell = ctrls[i].parentNode;
+		    					    if(parentCell){
+		    					    	
+		    					    	var anchors = parentCell.getElementsByTagName("a");
+		    					    	var replaceCnt = 0;
+		    					    	for(var p=0; p<anchors.length; p++){
+		    					    	
+							    			if(anchors[p].innerHTML == "Edit"){
+							    				anchors[p].innerHTML = "";
+							    				replaceCnt = replaceCnt + 1;
+							    			}
+							    			if(anchors[p].innerHTML == "Del"){
+							    				anchors[p].innerHTML = "";
+							    				replaceCnt = replaceCnt + 1;
+							    			}							    			
+							    		}
+							    	
+							    		var newHTML = tds[z].innerHTML;
+							    		for(x=0; x<replaceCnt+1; x++){
+							    			newHTML = newHTML.replace("|","");
+							    		}
+							    		tds[z].innerHTML = newHTML;
+		    					    }		    						
+		    					}		    					
+		    				}		    				
+		    			}		    				    			
+		    		}		    	
+	         	}
+	         }	     
+	     }
+	     
+	     HideActionLinks();
+
+</script>
+</apex:page>

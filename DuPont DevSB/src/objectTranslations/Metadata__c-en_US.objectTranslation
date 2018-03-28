@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Metadata</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Metadata</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- RL_ChildRelationship --></label>
+        <name>RL_ChildRelationship</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- RL_Default --></label>
+        <name>RL_Default</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- RL_Fields --></label>
+        <name>RL_Fields</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- test --></label>
+        <name>test</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Business Owner --></label>
+        <name>BusinessOwner__c</name>
+        <relationshipLabel><!-- Metadata (Business Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Determine the level of CRIM supported functionality. --></help>
+        <label><!-- CRIM Support --></label>
+        <name>CRIM_Support__c</name>
+        <picklistValues>
+            <masterLabel>Categorized</masterLabel>
+            <translation><!-- Categorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inherited</masterLabel>
+            <translation><!-- Inherited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System</masterLabel>
+            <translation><!-- System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Cascade Delete from a Parent Deletion (This flag can also be used to Identify a Master Detail Relationship) --></help>
+        <label><!-- CascadeDelete --></label>
+        <name>CascadeDelete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Child Relationship used only for fields of type &apos;reference&apos; --></help>
+        <label><!-- ChildRelationshipName --></label>
+        <name>ChildRelationshipName__c</name>
+    </fields>
+    <fields>
+        <help><!-- -Corp. Standard = Encourage use in BUs, owned by Data Model
+-BU Select = Optional use in BUs, owned by Data Model 
+-BU Specific = Used &amp; owned by individual BU
+-System = User cannot modify
+-Managed package = 3rd party app
+-Contained=Limited use only --></help>
+        <label><!-- Control --></label>
+        <name>Control__c</name>
+        <picklistValues>
+            <masterLabel>Business Select</masterLabel>
+            <translation><!-- Business Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Specific</masterLabel>
+            <translation><!-- Business Specific --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contained</masterLabel>
+            <translation><!-- Contained --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core (All Orgs)</masterLabel>
+            <translation><!-- Core (All Orgs) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core Extended (Org - Select)</masterLabel>
+            <translation><!-- Core Extended (Org - Select) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Standard</masterLabel>
+            <translation><!-- Corporate Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Package</masterLabel>
+            <translation><!-- Managed Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pilot</masterLabel>
+            <translation><!-- Pilot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System</masterLabel>
+            <translation><!-- System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Created By --></label>
+        <name>CreatedBy__c</name>
+        <relationshipLabel><!-- Metadata (Created By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Created --></label>
+        <name>CreatedDT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- FileName from FileProperties.  ( Metadata API method: metadataList()) --></help>
+        <label><!-- FileName --></label>
+        <name>FileName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Force.com Identifier --></help>
+        <label><!-- ForceId --></label>
+        <name>ForceId__c</name>
+    </fields>
+    <fields>
+        <label><!-- FullName --></label>
+        <name>FullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Functionality --></label>
+        <name>Functionality__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Owner --></label>
+        <name>ITOwner__c</name>
+        <relationshipLabel><!-- Metadata (IT Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Is Custom --></label>
+        <name>IsCustom__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDeleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- KeyPrefix --></label>
+        <name>KeyPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Label --></label>
+        <name>Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By --></label>
+        <name>LastModifiedBy__c</name>
+        <relationshipLabel><!-- Metadata (Last Modified By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Last Modified --></label>
+        <name>LastModifiedDT__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lifecycle Comments --></label>
+        <name>Lifecycle_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Migration Notes --></label>
+        <name>Migration_Notes_rft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Migration Status --></label>
+        <name>Migration_Status__c</name>
+        <picklistValues>
+            <masterLabel>Issue - Needs to be fixed</masterLabel>
+            <translation><!-- Issue - Needs to be fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK as is</masterLabel>
+            <translation><!-- OK as is --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- managed package namespace --></help>
+        <label><!-- Namespace --></label>
+        <name>Namespace__c</name>
+    </fields>
+    <fields>
+        <help><!-- Parent --></help>
+        <label><!-- Parent --></label>
+        <name>Parent__c</name>
+        <relationshipLabel><!-- Children (Metadata) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ReferenceTo --></label>
+        <name>ReferenceToMetadata__c</name>
+        <relationshipLabel><!-- ReferenceTo (Metadata) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Object name a reference field references.  If a polymorphic key (IsNamePointing) then the value will be &apos;polymorphic; --></help>
+        <label><!-- ReferenceTo Name --></label>
+        <name>ReferenceTo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of Relationship --></help>
+        <label><!-- RelationshipName --></label>
+        <name>RelationshipName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shared By BU --></label>
+        <name>Shared_By_BU__c</name>
+        <picklistValues>
+            <masterLabel>CORP</masterLabel>
+            <translation><!-- CORP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-BRAND</masterLabel>
+            <translation><!-- CORP-BRAND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-COB</masterLabel>
+            <translation><!-- CORP-COB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-CS</masterLabel>
+            <translation><!-- CORP-CS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-DIMC</masterLabel>
+            <translation><!-- CORP-DIMC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-IAL</masterLabel>
+            <translation><!-- CORP-IAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-IS</masterLabel>
+            <translation><!-- CORP-IS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP-OTHER</masterLabel>
+            <translation><!-- CORP-OTHER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPC</masterLabel>
+            <translation><!-- CPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC</masterLabel>
+            <translation><!-- DEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPM</masterLabel>
+            <translation><!-- DPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPM-DPP</masterLabel>
+            <translation><!-- DPM-DPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPM-DPP-KV</masterLabel>
+            <translation><!-- DPM-DPP-KV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPM-P&amp;IP</masterLabel>
+            <translation><!-- DPM-P&amp;IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS</masterLabel>
+            <translation><!-- DPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS-BI</masterLabel>
+            <translation><!-- DPS-BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS-DPT</masterLabel>
+            <translation><!-- DPS-DPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSS</masterLabel>
+            <translation><!-- DSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB</masterLabel>
+            <translation><!-- IB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-CleanTech</masterLabel>
+            <translation><!-- IB-CleanTech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB-DTL</masterLabel>
+            <translation><!-- IB-DTL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH-QUAL</masterLabel>
+            <translation><!-- NH-QUAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHI</masterLabel>
+            <translation><!-- PHI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Size --></label>
+        <name>Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used By OwningBU --></label>
+        <name>Used_By_OwningBU__c</name>
+        <picklistValues>
+            <masterLabel>BU Shared</masterLabel>
+            <translation><!-- BU Shared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP BU Shared</masterLabel>
+            <translation><!-- CORP BU Shared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP Only</masterLabel>
+            <translation><!-- CORP Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPC</masterLabel>
+            <translation><!-- CPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC</masterLabel>
+            <translation><!-- DEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPM</masterLabel>
+            <translation><!-- DPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS</masterLabel>
+            <translation><!-- DPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSS</masterLabel>
+            <translation><!-- DSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted</masterLabel>
+            <translation><!-- Deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB</masterLabel>
+            <translation><!-- IB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Used by SpinCo</masterLabel>
+            <translation><!-- Not Used by SpinCo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHI</masterLabel>
+            <translation><!-- PHI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SpinCo Only</masterLabel>
+            <translation><!-- SpinCo Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SpinCo Shared</masterLabel>
+            <translation><!-- SpinCo Shared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System</masterLabel>
+            <translation><!-- System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Version --></help>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- describe --></help>
+        <label><!-- describe --></label>
+        <name>describe__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active Status --></label>
+        <name>fActiveStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- Demo inline Edit Layout, link can be used in view, related lists --></help>
+        <label><!-- Edit Layout --></label>
+        <name>fEditLayout__c</name>
+    </fields>
+    <fields>
+        <label><!-- SObject --></label>
+        <name>fSObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes about this field such as dependencies, suggestions, critical requirements.  A general catch all for data that is not already designated a field on this object. --></help>
+        <label><!-- Administrator Notes (rtf) --></label>
+        <name>rtfAdminNotes__c</name>
+    </fields>
+    <fields>
+        <label><!-- subtype --></label>
+        <name>subtype__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Field --></label>
+        <name>Field</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- General Asset --></label>
+        <name>GeneralAsset</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Layout --></label>
+        <name>Layout</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Logic --></label>
+        <name>Logic</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Picklist --></label>
+        <name>Picklist</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SObject --></label>
+        <name>SObject</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- DataAnalysis --></label>
+        <name>DataAnalysis</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- DescribeLayout --></label>
+        <name>DescribeLayout</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Diff --></label>
+        <name>Diff</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ERD --></label>
+        <name>ERD</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- EnhancedView --></label>
+        <name>EnhancedView</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Field_Dictionary --></label>
+        <name>Field_Dictionary</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- MetadataConsole --></label>
+        <name>MetadataConsole</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ShowField --></label>
+        <name>ShowField</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ShowSObject --></label>
+        <name>ShowSObject</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Standard_View --></label>
+        <name>Standard_View</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Welcome email to the DPT Partner Community Users</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>StandardCorporateLetterhead</letterhead>
+    <name>Partner Community Welcome Email</name>
+    <style>freeForm</style>
+    <subject>{!$Label.DPT_IPP_Value_Chain_Platform_Welcome_Email_01}</subject>
+    <textOnly>Your access to the Protection Technology Partner Community has been authorized.
+
+Welcome to the DuPont Protection Technologies Partner Community! This community was created to help you find out about current product promotions, relevant information, and provide the necessary resources to help promote DuPont products.
+Please use this URL to login for the first time and set up your password:
+{!Community_Url}
+
+For any future visits to the community, please use the URL below to login:
+
+http://Personalprotection.dupont.com/distributorportal
+
+If you have any issues accessing this site or logging in, please contact partner-community@dupont.com
+
+Thank You,
+
+DuPont Protection Technologies Team
+
+
+
+
+
+Copyright (c) 2014 DuPont. All rights reserved. The DuPont Oval Logo, DuPont(TM), The miracles of science(TM) and all products denoted with (R) or (TM) are registered trademarks or trademarks of E. I. du Pont de Nemours and Company or its affiliates.
+www.dupont.com | Legal Notices &amp; Terms of Use | PRIVACY</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

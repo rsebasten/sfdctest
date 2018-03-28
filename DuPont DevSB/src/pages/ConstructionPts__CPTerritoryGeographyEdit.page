@@ -1,0 +1,672 @@
+<apex:page standardController="ConstructionPts__CPTerritory__c" extensions="ConstructionPts.CPTerritoryGeography">
+ <apex:form >
+
+<div id="divGetAction" style="display: none">
+<apex:inputText id="hdnSelGeographyValue" />
+<apex:inputText id="hdnSelGeographyDiv" />
+<apex:inputText id="hdnSelGeographyType" />
+<apex:inputText id="hdnCPStates"/>
+</div>
+
+<c:CPHeader title="CP Territory" subtitle="{!ConstructionPts__CPTerritory__c.Name} - Geography" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" ShowSubTitle="true" /> 
+
+<br/>
+&lt;&lt;<apex:commandLink onclick="doGoBack(); return false;" value="Back to Detail: {!ConstructionPts__CPTerritory__c.Name}" id="lnkGoBack"/>
+<br/><br/>
+<apex:pageBlock >
+<div id="divCPGeo"></div>
+<br/>
+     <c:CPFooter ShowMHCInfo="false" ShowMHCLogo="false"/>
+    
+<script language="javascript">
+    var HighlightColor = "#DFEFFC";
+    var TerritoryDefaultBGColor = "#5C9CCC";
+    var StateDefaultBGColor = "#FFFFFF";
+    var CountyDefaultBGColor = "#FFFFFF";
+    var ZipDefaultBGColor = "#FFFF99";
+    
+    function SetBackToDefaultBGColor(Id){       
+        var obj = document.getElementById(Id);        
+        if(obj){       
+            if(Id.indexOf("tdCPTerritory") == 0){   //zip last highlighted              
+                obj.style.backgroundColor = TerritoryDefaultBGColor;
+            }           
+            if(Id.indexOf("tdCPZip_") == 0){    //zip last highlighted              
+                obj.style.backgroundColor = ZipDefaultBGColor;
+            }
+            if(Id.indexOf("tdCPCounty_") == 0){ //county last highlighted
+                obj.style.backgroundColor = CountyDefaultBGColor;
+            }
+            if(Id.indexOf("tdCPState_") == 0){  //state last highlighted
+                obj.style.backgroundColor = StateDefaultBGColor;
+            }
+        }
+    }
+    
+    function doGoBack(){
+        var terrId = '{!CASESAFEID(id)}';
+        var currUrl = window.location.href; 
+        currUrl = currUrl.toLowerCase();    
+        var backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + "/apex/CPTerritoryDetail?id=" + terrId;
+         if (sforce.console.isInConsole()){                
+             backUrl = backUrl + '&isdtp=vw';
+         }   
+        window.location = backUrl;
+    }
+
+    function ShowHideButtons(IsCreate){
+        var divLoad = document.getElementById("divLoad");
+        var divCreateNew = document.getElementById("divCreateNew");
+        if(divLoad && divCreateNew){            
+            var btnLoad = divLoad.childNodes[1];
+            var btnNew = divLoad.childNodes[2];
+            var btnSave; 
+            var btnCancel; 
+            if(IsCreate == true){
+                divLoad.style.display = 'none';
+                divCreateNew.style.display = '';               
+            }else{
+                divLoad.style.display = '';
+                divCreateNew.style.display = 'none';
+                btnSave = divLoad.childNodes[3];
+                btnCancel = divLoad.childNodes[4];
+                btnSave.style.display = '';
+                btnCancel.style.display = '';              
+            }
+        }
+    }
+    
+    function getGeography(GeoType, GeoValue, divGeoTarget){
+
+       var divTarget = document.getElementById(divGeoTarget);    
+       if(divTarget.innerHTML == ""){
+            var divGetAction = document.getElementById("divGetAction");
+    
+            var hdnSelGeographyValue = divGetAction.childNodes[0];
+            var hdnSelGeographyDiv = divGetAction.childNodes[1];
+            var hdnSelGeographyType = divGetAction.childNodes[2];
+      
+            hdnSelGeographyValue.value = GeoValue;
+            hdnSelGeographyDiv.value = divGeoTarget;
+            hdnSelGeographyType.value = GeoType;            
+                        
+            callGetGeographyFunction(GeoType, GeoValue);                        
+       }else{
+           if(divTarget.style.display == "none"){
+               divTarget.style.display = "";
+           }else{
+               divTarget.style.display = "none";
+           }
+       } 
+    }
+    
+    function callGetGeographyFunction(GeoType, GeoValue){
+        //alert('callGetGeographyFunction-type' + GeoType + 'value' + GeoValue);
+        if(GeoType == 'COUNTY')
+        {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.CreateCPCountyHTML}', GeoValue, CreateCountyHTML);
+        }
+        if(GeoType == 'ZIP'){
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.CreateCPZipHTML}', GeoValue, CreateZipHTML);
+        }
+        if(GeoType == 'SAVED_STATE')
+        {
+            var terrId = '{!CASESAFEID(id)}';
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.LoadSavedCPGeographyCountyForState}', terrId, GeoValue, CreateCountyHTML);
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.LoadSavedCPGeographyZipForState}', terrId, GeoValue, LoadSavedCPGeographyZipForStateReturn);
+        }       
+    }
+        
+    function getSavedGeographyForState(StateGID){
+
+       var divTarget = document.getElementById("divState_" + StateGID);
+     
+       if(divTarget.innerHTML == ""){
+            var divGetAction = document.getElementById("divGetAction"); 
+            var hdnSelGeographyValue = divGetAction.childNodes[0];
+            var hdnSelGeographyDiv = divGetAction.childNodes[1];
+            var hdnSelGeographyType = divGetAction.childNodes[2];           
+            hdnSelGeographyValue.value = StateGID;         
+            hdnSelGeographyType.value = 'SAVED_STATE';
+            hdnSelGeographyDiv.value = "divState_" + StateGID;
+            var btnGetGeography = divGetAction.childNodes[3];                        
+           callGetGeographyFunction("SAVED_STATE", StateGID);
+       }else{
+           if(divTarget.style.display == "none"){
+               divTarget.style.display = "";
+           }else{
+               divTarget.style.display = "none";
+           }
+       } 
+    }
+    
+    function CreateStateHTML(sReturn, event){       
+        //alert('State' + sReturn);
+        var divCPGeo = document.getElementById("divCPGeo");
+        var arrReturn = sReturn.split('|');   
+        
+        var arrCPStates = '';
+        var arrCPStates_Saved = '';
+        var arrCPStates_InTerr = '';
+        
+        var divGetAction = document.getElementById("divGetAction");
+        var hdnCPStates = divGetAction.childNodes[3];
+        hdnCPStates.value = arrReturn[0];          
+        if(arrReturn[0].indexOf(',')){
+            arrCPStates = arrReturn[0].split(','); 
+        }
+        else
+        {
+            arrCPStates = arrReturn[0];
+        }
+        if(arrReturn[1].indexOf(',')){
+            arrCPStates_Saved = arrReturn[1].split(',');
+        }
+        else
+        {
+            arrCPStates_Saved = arrReturn[1];
+        }
+        if(arrReturn[2].indexOf(',')){
+            arrCPStates_InTerr = arrReturn[2].split(',');
+        }
+        else
+        {
+            arrCPStates_InTerr = arrReturn[2];
+        }
+
+        if(divCPGeo){
+            var sHTML = "";
+            var sIsChecked;
+            var blnStatePartOfTerr;
+            sHTML = sHTML + "<table border='0'>";
+                
+            for(var i=0; i<arrCPStates.length; i++){
+                sIsChecked = "";
+                blnStatePartOfTerr = false;
+                //check if entire state was saved for territory
+                for(var z=0; z<arrCPStates_Saved.length; z++){                      
+                   if(arrCPStates[i] == arrCPStates_Saved[z]){                      
+                        sIsChecked = "checked='true'";
+                        blnStatePartOfTerr = true;
+                    }
+                }
+                
+                //check if a county or zip from the state was saved for territory
+                if(sIsChecked == ""){
+                    for(var y=0; y<arrCPStates_InTerr.length; y++){
+                        
+                        if(arrCPStates[i] == arrCPStates_InTerr[y]){ 
+                            blnStatePartOfTerr = true;
+                        }
+                    }
+                }
+                
+                sHTML = sHTML + "<tr>";
+                
+                sHTML = sHTML + "<td style='width: 50px'>";
+                sHTML = sHTML + "<div id='divSaveMsg_CPState_" + arrCPStates[i] + "' style='display:none'><b><font color='green'>Saved!</font></b></div>";
+                sHTML = sHTML + "<div id='divSaveBtn_CPState_" + arrCPStates[i] + "' style='display: none'><input type='button' value='Save' onclick=\"javascript: doSaveStateGeo('" + arrCPStates[i] + "','" + arrCPStates[i+1] + "');\"/></div>";
+                sHTML = sHTML + "</td>";
+                
+                if(blnStatePartOfTerr){
+                    //sHTML = sHTML + "<td bgcolor='#5C9CCC' id='tdCPState_" + arrCPStates[i] + "'>";
+                    sHTML = sHTML + "<td bgcolor='" + HighlightColor + "' id='tdCPState_" + arrCPStates[i] + "'>";
+                }else{                      
+                    sHTML = sHTML + "<td id='tdCPState_" + arrCPStates[i] + "'>";
+                }
+                sHTML = sHTML + "<input type='checkbox' id='chkCPState_" + arrCPStates[i] + "' onclick=\"javascript: CheckUnCheckAllChildren('chkCPState_" + arrCPStates[i] + "','divState_" + arrCPStates[i] + "'); DisplaySaveBtnForState('" + arrCPStates[i] + "');\" " + sIsChecked + "/>"
+                sHTML = sHTML + "</td>";
+
+                if(blnStatePartOfTerr){
+                    sHTML = sHTML + "<td bgcolor='" + HighlightColor + "' valign='bottom' id='tdCPState_" + arrCPStates[i] + "_Name'>";                     
+                    sHTML = sHTML + "<b><a href=\"javascript: getSavedGeographyForState('" + arrCPStates[i] + "');\">" + arrCPStates[i+1] + "</a></b>";
+                }else{         
+                    sHTML = sHTML + "<td valign='bottom' id='tdCPState_" + arrCPStates[i] + "_Name'>";             
+                    sHTML = sHTML + "<a href=\"javascript: getGeography('COUNTY', '" + arrCPStates[i] + "','divState_" + arrCPStates[i] + "');\">" + arrCPStates[i+1] + "</a>";
+                }
+                sHTML = sHTML + "</td>";
+                sHTML = sHTML + "</tr>";
+                sHTML = sHTML + "<tr>";
+                sHTML = sHTML + "<td></td>";
+                sHTML = sHTML + "<td></td>";
+                sHTML = sHTML + "<td>";
+                sHTML = sHTML + "<div id=\"divState_" + arrCPStates[i] + "\"></div>";
+                sHTML = sHTML + "</td>";                
+                sHTML = sHTML + "</tr>";
+                i = i + 1;
+            }
+            sHTML = sHTML + "</table>";
+            divCPGeo.innerHTML = sHTML;
+        }
+    }
+    
+    function DisplaySaveBtnForState(StateGID){
+        var divSaveBtn = document.getElementById("divSaveBtn_CPState_" + StateGID);
+        if(divSaveBtn){
+            divSaveBtn.style.display = "";
+        }
+    }
+       
+    function CheckUnCheckAllChildren(chkBoxID, divChildren){
+        //alert('checkBoxID=' + chkBoxID + ' divChildren=' + divChildren);
+        var ChkBox = document.getElementById(chkBoxID);
+        
+        var Div = document.getElementById(divChildren);
+        if(ChkBox && Div){          
+            var IsChecked;
+            if(ChkBox.checked){
+                IsChecked = true;
+            }else{
+                IsChecked = false;
+            }
+               
+            var ChildCheckBoxes = Div.getElementsByTagName("input");
+            var arrIds
+            for(var i=0; i<ChildCheckBoxes.length; i++){            
+                ChildCheckBoxes[i].checked = IsChecked;
+            }  
+                    
+        }
+    }
+    
+    function HighlightCounty(chkBoxID, tdCounty)
+    {
+       var chkBox = document.getElementById(chkBoxID);
+       var tdCountyName = document.getElementById(tdCounty + '_Name');
+       var tdCountyChkBox = document.getElementById(tdCounty + '_Checkbox');
+       //alert(tdCountyChkBox);     
+       if(chkBox && tdCountyName&& tdCountyChkBox){          
+            if(chkBox.checked){
+                tdCountyName.style.backgroundColor = HighlightColor;
+                tdCountyChkBox.style.backgroundColor = HighlightColor;
+            }else{
+                tdCountyName.style.backgroundColor = CountyDefaultBGColor;
+                tdCountyChkBox.style.backgroundColor = CountyDefaultBGColor;
+            }
+        }
+    }
+      
+    function CheckUnCheckParent(chkBoxID, chkParentID, divParentID){
+        var ChkBox = document.getElementById(chkBoxID);
+        var ChkParent = document.getElementById(chkParentID);
+        if(ChkBox && ChkParent){
+            if(ChkBox.checked == false){
+                ChkParent.checked = false;
+            }else{
+                //loop thru all the parents child checkboxes to see if all are checked
+                var divParent = document.getElementById(divParentID);
+                if(divParent){
+                    var ChildCheckBoxes = divParent.getElementsByTagName("input");
+                    var blnAllChecked = true;
+                    for(var i=0; i<ChildCheckBoxes.length; i++){
+                        if(ChildCheckBoxes[i].checked == false){
+                            blnAllChecked = false;
+                        }
+                    }
+                    if(blnAllChecked){
+                        ChkParent.checked = true;
+                    }else{
+                        ChkParent.checked = false;
+                    }
+                }
+            }
+        }
+    }
+    
+   
+    function doSaveStateGeo(SelStateGID, SelStateName){
+        var chkboxState = document.getElementById("chkCPState_" + SelStateGID);          
+        var sAllCountyGIDs = '';
+        var sZips = '';
+        var sChecked = '';
+        
+        var nStart = SelStateName.indexOf("(") + 1;
+        var nEnd = SelStateName.indexOf(")");
+        var StateAbbr = SelStateName.substring(nStart, nEnd);
+
+        if(chkboxState){
+            if(chkboxState.checked){
+                sChecked = "1";
+            }else{
+                sChecked = "0";
+                //loop thru all county checkboxes
+                var currStateDiv = document.getElementById("divState_" + SelStateGID);
+                if(currStateDiv){                                   
+                    
+                    var InputFields = currStateDiv.getElementsByTagName("input");
+                    var currCountyChkBox, currCountyDiv;
+                    var sID, arrId;
+                    var InputFields_Zip;
+                    var currZipChkBox;
+                    var sID_Zip, arrId_Zip;
+                    for(var z=0; z<InputFields.length; z++){ 
+                        sID = InputFields[z].id;                    
+                        if(sID.indexOf("chkCPCounty_") > -1){
+                            currCountyChkBox = InputFields[z];      
+                            arrId = sID.split("_");                     
+                            if(currCountyChkBox.checked){                                       
+                                sAllCountyGIDs = sAllCountyGIDs + arrId[1] + ",";
+                            }else{
+                                //loop thru all zips for county (if they are viewable)
+                                currCountyDiv = document.getElementById("divCounty_" + arrId[1]);
+                                if(currCountyDiv){
+                                    InputFields_Zip = currCountyDiv.getElementsByTagName("input");
+                                    for(var y=0; y<InputFields_Zip.length; y++){
+                                        currZipChkBox = InputFields_Zip[y];
+                                        if(currZipChkBox.checked){
+                                            sID_Zip = currZipChkBox.id;
+                                            arrId_Zip = sID_Zip.split("_");
+                                            sZips = sZips + arrId_Zip[2] + ",";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if(sAllCountyGIDs.length > 0){
+                sAllCountyGIDs = sAllCountyGIDs.substring(0, sAllCountyGIDs.length-1);
+            }
+            else
+            {
+                sAllCountyGIDS = '';
+            }
+            if(sZips.length > 0){
+                sZips = sZips.substring(0, sZips.length-1);
+            }
+            else
+            {
+                sZips = '';
+            }
+
+            //alert('{!$CurrentPage.parameters.id}' + ' SelStateGID=' + SelStateGID + ' SelStateName=' + SelStateName + ' sAllCountyGIDs=' + sAllCountyGIDs);
+            //alert('StateAbbr=' + StateAbbr+ '  sZips=' + sZips + '  chkboxState.checked=' + sChecked);
+           Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.SaveStateGeo}', '{!CASESAFEID(id)}', SelStateGID, SelStateName, sAllCountyGIDs, StateAbbr, sZips, sChecked, saveCallBack);
+          }
+    }
+    
+    function saveCallBack(sReturn, event){
+        var arrReturn = sReturn.split('|');
+        var sCPCountyGeoIdsToSave = arrReturn[1];
+        var sStateName = arrReturn[2];
+        var sMsg = arrReturn[3];
+        if (arrReturn[0] == '1'){    
+         HighlightStateAfterSave(sCPCountyGeoIdsToSave);
+        }
+        else
+        {
+           DeselectState(sCPCountyGeoIdsToSave, sStateName);
+        }
+        ShowSavedMsg(sCPCountyGeoIdsToSave);
+    }
+    
+    function HighlightStateAfterSave(StateGID){  
+        var tdCPState = document.getElementById("tdCPState_" + StateGID);
+        var tdCPStateName = document.getElementById("tdCPState_" + StateGID +  "_Name");
+        if(tdCPState){          
+            //tdCPState.style.backgroundColor = "#CCFF00";
+            //tdCPState.style.backgroundColor = "#5C9CCC";
+            tdCPState.style.backgroundColor = HighlightColor;
+        }
+        if(tdCPStateName){  
+            tdCPStateName.style.backgroundColor = HighlightColor;    
+        }
+        var divSaveBtn_CPState = document.getElementById("divSaveBtn_CPState_" + StateGID);
+        if(divSaveBtn_CPState){
+           divSaveBtn_CPState.style.display = "none";
+        }    
+    }
+    
+    function ShowSavedMsg(StateGID){
+        var divSaveMsg_CPState = document.getElementById("divSaveMsg_CPState_" + StateGID);
+        if(divSaveMsg_CPState){
+            divSaveMsg_CPState.style.display = "";
+        }
+        setTimeout('HideSavedMsg(\'' + StateGID + '\')',3000);
+    }
+     
+    function HideSavedMsg(StateGID){
+        var divSaveMsg_CPState = document.getElementById("divSaveMsg_CPState_" + StateGID);
+        divSaveMsg_CPState.style.display = "none";
+    }
+    
+    function DeselectState(SelStateGID, StateName){
+        var tdCPState = document.getElementById("tdCPState_" + SelStateGID);
+        var tdCPStateName = document.getElementById("tdCPState_" + SelStateGID +  "_Name");
+        if(tdCPState){          
+            tdCPState.style.backgroundColor = StateDefaultBGColor ; 
+        }   
+        if(tdCPStateName){  
+            tdCPStateName.style.backgroundColor = StateDefaultBGColor ;    
+            var sHTML = "<a href=\"javascript: getGeography('COUNTY', '" + SelStateGID + "','divState_" + SelStateGID + "');\">" + StateName + "</a>";
+            tdCPStateName.innerHTML = sHTML;
+        }
+        var divSaveBtn_CPState = document.getElementById("divSaveBtn_CPState_" + SelStateGID);
+        if(divSaveBtn_CPState){
+            divSaveBtn_CPState.style.display = "none";
+        }
+    }
+     
+    function ShowSaveButton(StateGID){
+        var divSaveBtn_CPState = document.getElementById("divSaveBtn_CPState_" + StateGID);
+        if(divSaveBtn_CPState){
+            divSaveBtn_CPState.style.display = "";
+        }
+    } 
+    
+    function CreateCountyHTML(sReturn, event){
+        //alert('county' + sReturn);
+        var arrReturn = sReturn.split('|');  
+        var StateGID = arrReturn[0];
+        var arrCPCounties = '';
+        var arrCPCounties_Saved = '';
+        if(arrReturn[1].indexOf(',')){
+            arrCPCounties = arrReturn[1].split(',');
+        }
+        else
+        {
+            arrCPCounties = arrReturn[1];
+        }
+        if(arrReturn[2].indexOf(',')){
+            arrCPCounties_Saved = arrReturn[2].split(',');
+        }
+        else
+        {
+            arrCPCounties_Saved = arrReturn[2];
+        }        
+        var sHTML = "";
+        var sIsChecked;
+        var blnIsEdit = false;
+        sHTML = sHTML + "<table border='0'>";
+        for(var i=0; i<arrCPCounties.length; i++){
+            sIsChecked = "";
+            for(var z=0; z<arrCPCounties_Saved.length; z++){                                    
+                if(arrCPCounties[i] == arrCPCounties_Saved[z]){
+                    sIsChecked = "checked='true'";
+                    blnIsEdit = true;
+                }
+            }
+            sHTML = sHTML + "<tr>";
+            if (sIsChecked.length > 0){
+                sHTML = sHTML + "<td id=\"tdCPCounty_" + arrCPCounties[i] + "_Checkbox\" bgcolor='" + HighlightColor + "' >";
+            }
+            else {
+                sHTML = sHTML + "<td id=\"tdCPCounty_" + arrCPCounties[i] + "_Checkbox\">";
+            }
+            sHTML = sHTML + "<input type='checkbox' id='chkCPCounty_" + arrCPCounties[i] + "' onclick=\"javascript: ";
+            sHTML = sHTML + "CheckUnCheckAllChildren('chkCPCounty_" + arrCPCounties[i] + "','divCounty_" + arrCPCounties[i] + "');";
+            sHTML = sHTML + "HighlightCounty('chkCPCounty_" + arrCPCounties[i] + "','tdCPCounty_" + arrCPCounties[i] + "');";
+            sHTML = sHTML + "CheckUnCheckParent('chkCPCounty_" + arrCPCounties[i] + "', 'chkCPState_" + StateGID + "', 'divState_" + StateGID + "'); "
+            sHTML = sHTML + "DisplaySaveBtnForState('" + StateGID + "');"
+            sHTML = sHTML + "\" " + sIsChecked + "/>"
+            
+            sHTML = sHTML + "</td>";
+            if (sIsChecked.length > 0){
+                sHTML = sHTML + "<td id=\"tdCPCounty_" + arrCPCounties[i] + "_Name\" valign='bottom' bgcolor='" + HighlightColor + "' >";
+            }
+            else {
+                sHTML = sHTML + "<td id=\"tdCPCounty_" + arrCPCounties[i] + "_Name\" valign='bottom'>";
+            }
+            sHTML = sHTML + "<a href=\"javascript: getGeography('ZIP', '" + arrCPCounties[i] + "','divCounty_" + arrCPCounties[i] + "');\">" + arrCPCounties[i+1] + "</a>";
+            sHTML = sHTML + "</td>";
+            sHTML = sHTML + "</tr>";
+            sHTML = sHTML + "<tr>";
+            sHTML = sHTML + "<td></td>";
+            sHTML = sHTML + "<td>";
+            sHTML = sHTML + "<div id=\"divCounty_" + arrCPCounties[i] + "\"></div>";
+            sHTML = sHTML + "</td>";
+            sHTML = sHTML + "</tr>";
+            i = i + 1;
+        }
+        sHTML = sHTML + "</table>";
+        var divSelState = document.getElementById("divState_" + StateGID);
+        if(divSelState){
+            divSelState.innerHTML = sHTML;
+        }
+        if(blnIsEdit == false){
+            CheckUnCheckAllChildren("chkCPState_" + StateGID, "divState_" + StateGID);
+        }               
+    }
+    
+    function LoadSavedCPGeographyZipForStateReturn(sReturn, event){
+        //alert('Zip' + sReturn);
+        var arrReturn = sReturn.split('|');
+        var StateGID = arrReturn[0]; 
+        var CountyGID = '';
+        for (var i=1; i<arrReturn.length; i++){
+            CountyGID  = arrReturn[i];  
+            CreateSavedZipHTML(StateGID, CountyGID, arrReturn[i+1]);
+            i = i + 1;
+        } 
+    }
+    
+    function CreateSavedZipHTML(StateGID, CountyGID, CPZips){
+        var arrCPZips = CPZips.split(',');   
+        
+        var sHTML = "";
+        var sIsChecked;
+        var chkParentCounty = document.getElementById("chkCPCounty_" + CountyGID);
+        var blnCheckAll = false;
+        if(chkParentCounty){
+            if(chkParentCounty.checked){
+                blnCheckAll = true;
+            }
+        }
+        sHTML = sHTML + "<table border='0'>";
+        for(var i=0; i<arrCPZips.length; i++){        
+            sIsChecked = "";
+            if(blnCheckAll == false){               
+                if(arrCPZips[i+1] == '1'){
+                    sIsChecked = "checked='true'";
+                }
+               
+            }else{
+                sIsChecked = "checked='true'";
+            }           
+            sHTML = sHTML + "<tr>";            
+            sHTML = sHTML + "<td>";          
+            sHTML = sHTML + "<input type='checkbox' id='chkCPZip_" + CountyGID + "_" + arrCPZips[i] + "' onclick=\"javascript: ";
+            sHTML = sHTML + "CheckUnCheckParent('chkCPZip_" + CountyGID + "_" + arrCPZips[i] + "', 'chkCPCounty_" + CountyGID + "', 'divCounty_" + CountyGID + "');"
+            sHTML = sHTML + "CheckUnCheckParent('chkCPCounty_" + CountyGID + "', 'chkCPState_" + StateGID + "', 'divState_" + StateGID + "'); ";
+            sHTML = sHTML + "DisplaySaveBtnForState('" + StateGID + "');";
+            sHTML = sHTML + "\" " + sIsChecked + "/>"            
+            sHTML = sHTML + "</td>";           
+            sHTML = sHTML + "<td valign='bottom'>";
+            sHTML = sHTML + arrCPZips[i];
+            sHTML = sHTML + "</td>";
+            sHTML = sHTML + "</tr>";            
+            i = i + 1; 
+        }
+        sHTML = sHTML + "</table>";
+       
+        var divSelCounty = document.getElementById("divCounty_" + CountyGID);               
+        if(divSelCounty){             
+            divSelCounty.innerHTML = sHTML;            
+        }        
+    }
+
+    function CreateZipHTML(sReturn, event){
+        //alert('Zip' + sReturn);
+        var arrReturn = sReturn.split('|');
+        var CountyGID = arrReturn[0];    
+        var StateGID = arrReturn[1];  
+        
+        var arrCPZips = '';
+        var arrCPZips_Saved = '';
+        if(arrReturn[2].indexOf(','))
+        {
+            arrCPZips = arrReturn[2].split(',');
+        }
+        else
+        {
+            arrCPZips = arrReturn[2];
+        }
+        if(arrReturn[3].indexOf(','))
+        {
+            arrCPZips_Saved = arrReturn[3].split(',');
+        }
+        else
+        {
+            arrCPZips_Saved = arrReturn[3];
+        }
+        var sHTML = "";
+        var sIsChecked;
+        var chkParentCounty = document.getElementById("chkCPCounty_" + CountyGID);
+        var blnCheckAll = false;
+        if(chkParentCounty){
+            if(chkParentCounty.checked){
+                blnCheckAll = true;
+            }
+        }
+        sHTML = sHTML + "<table border='0'>";
+        for(var i=0; i<arrCPZips.length; i++){        
+            sIsChecked = "";
+            if(blnCheckAll == false){
+                for(var z=0; z<arrCPZips_Saved.length; z++){                    
+                    if(arrCPZips[i] == arrCPZips_Saved[z]){
+                        sIsChecked = "checked='true'";
+                    }
+                }
+            }else{
+                sIsChecked = "checked='true'";
+            }            
+            sHTML = sHTML + "<tr>";            
+            sHTML = sHTML + "<td>";          
+            sHTML = sHTML + "<input type='checkbox' id='chkCPZip_" + CountyGID + "_" + arrCPZips[i] + "' onclick=\"javascript: ";
+            sHTML = sHTML + "CheckUnCheckParent('chkCPZip_" + CountyGID + "_" + arrCPZips[i] + "', 'chkCPCounty_" + CountyGID + "', 'divCounty_" + CountyGID + "');"
+            sHTML = sHTML + "CheckUnCheckParent('chkCPCounty_" + CountyGID + "', 'chkCPState_" + StateGID + "', 'divState_" + StateGID + "'); ";
+            sHTML = sHTML + "DisplaySaveBtnForState('" + StateGID + "');";
+            sHTML = sHTML + "\" " + sIsChecked + "/>"            
+            sHTML = sHTML + "</td>";           
+            sHTML = sHTML + "<td valign='bottom'>";
+            sHTML = sHTML + arrCPZips[i];
+            sHTML = sHTML + "</td>";
+            sHTML = sHTML + "</tr>";            
+            
+        }
+        sHTML = sHTML + "</table>";
+       
+        var divSelCounty = document.getElementById("divCounty_" + CountyGID);               
+        if(divSelCounty){               
+            divSelCounty.innerHTML = sHTML;            
+        }  
+    }
+    
+    function LoadSavedCPGeography()
+    {
+        Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.LoadSavedCPGeography}', '{!CASESAFEID(id)}', CreateStateHTML);
+    }
+        
+     LoadSavedCPGeography();  
+    </script>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_Retailer_Authorization</letterhead>
+    <name>BI Authorization-Thank You E-Mail</name>
+    <style>freeForm</style>
+    <subject>Thank You</subject>
+    <textOnly>We have received updated information for {!Qualification__c.Account_Name__c}. You are a Corian® Design Authorized Retailer. Thank You!
+
+Do you have any questions? Do you need updated Corian® Solid Surface or Corian® Quartz  merchandising materials? Please contact your local representative, {!Account.OwnerFullName}, at {!Account.OwnerEmail}, or call us at 800-906-7765
+
+We have attached a copy of our trademark proper use guidelines.
+
+Thank you for your business and your continued support of Corian® Solid Surface and Corian® Quartz!
+
+Corian® Design
+Corian® Solid Surface and Corian® Quartz</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

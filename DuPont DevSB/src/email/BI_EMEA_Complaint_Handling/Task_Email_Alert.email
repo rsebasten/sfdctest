@@ -1,0 +1,9 @@
+<messaging:emailTemplate subject="Task has been Completed for the Case whose Case Id is {!relatedTo.Id}" recipientType="User" relatedToType="Case">
+    <messaging:htmlEmailBody >
+    <apex:image url="https://c.cs3.content.force.com/servlet/servlet.ImageServer?id=015Q00000000zbQ&oid=00DQ0000000HBoD&lastMod=1312542939000"/>
+    <br/><br/><br/>
+        Hello &nbsp;<apex:outputText value="{!relatedTo.Owner.Name}"></apex:outputText>,<br/><br/>        
+        <c:EmailTaskDetails TaskId="{!relatedTo.Activity_Id__c}"/> <br/><br/>
+    <apex:image url="https://c.cs3.content.force.com/servlet/servlet.ImageServer?id=015Q00000000zbV&oid=00DQ0000000HBoD&lastMod=1312542865000"/>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

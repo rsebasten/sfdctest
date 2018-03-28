@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Send to contractors that don&apos;t meet criteria or that request info emailed.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Tyvek® Follow the Vinyl</name>
+    <style>freeForm</style>
+    <subject>DuPont™ Tyvek® ThermaWrap™ R5.0</subject>
+    <textOnly>Dear {!Lead.Name},
+
+Thank you for your interest in DuPont™ Tyvek® ThermaWrap™ R5.0. We have an extensive North American network of construction specialists trained to help with specifications, installation questions, and on-site consultation/training.
+
+Unique to the construction industry, a DuPont certified Tyvek® specialist can assist with questions relating to water intrusion problems, proper flashing techniques, or customizing a sales or marketing program.
+
+Please click here for the First Time Buyers Program information.
+
+Please contact your regional Tyvek® Specialist:
+
+*****INSERT TYVEK SPECIALIST NAME, EMAIL AND PHONE****
+
+
+Sincerely,
+
+{!Lead.LastModifiedBy}
+DuPont Building Innovations
+1-800-448-9835</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

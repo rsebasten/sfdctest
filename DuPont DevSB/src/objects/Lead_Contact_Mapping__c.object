@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Custom Setting used to link the incoming Lead to an existing contact based on the email Id</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Campaign_Id__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Example format : Campaign ID = 701Q00000006h2r.  
+(Maximum 5 Campaign ID&apos;s in Comma separated format)</inlineHelpText>
+        <label>Campaign Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Geo_Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Geo Region</label>
+        <length>70</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Program</label>
+        <length>70</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Record_Type__c</fullName>
+        <description>Contacts&apos; Record Type</description>
+        <externalId>false</externalId>
+        <label>Contact Record Type</label>
+        <length>60</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Origin_Name__c</fullName>
+        <description>Lead&apos;s Origin Name</description>
+        <externalId>false</externalId>
+        <label>Lead Origin Name</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lead Contact Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

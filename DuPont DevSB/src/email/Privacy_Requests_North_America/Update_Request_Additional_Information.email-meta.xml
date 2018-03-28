@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send to customers when no updates are noted on their email.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Update - Request Additional Information</name>
+    <style>formalLetter</style>
+    <subject>DuPont Customer Privacy Update Request</subject>
+    <textOnly>Dear {!Lead.Name}
+
+We have received your request to update the personal information that DuPont has concerning you but your email did not contain any changes.  Please reply and let us know what changes need to be made or how we can help you.
+
+
+Sincerely,
+
+
+
+{!Lead.LastModifiedBy}
+DuPont Corporate Contact 
+974 Centre Road
+Chestnut Run Plaza 735 2175-1
+Wilmington, DE  19805
+Toll-free: 1-855-569-0964</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

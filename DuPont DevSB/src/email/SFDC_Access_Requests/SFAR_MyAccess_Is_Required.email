@@ -1,0 +1,35 @@
+{!SFDC_Access_Request__c.CreatedBy}, 
+
+Thank you for putting in a SFDC Access Request for {!SFDC_Access_Request__c.Subtype__c}.
+
+In addition to this SFDC Access Request, a request must also be submitted to MyAccess for DuPont users.  A user cannot be created or reactivated in SFDC until both the MyAccess request and SFDC Request are completed.
+
+Please follow the next steps (if MyAccess Request has not yet been submitted)
+
+(0) Go to https://myaccess.dupont.com:
+(1) Select "Request access to an asset"
+(2) Select whether request is for you or someone else.
+(3) If requesting for someone else, search & select  the user's name.
+(4) Select the Asset from the list or Search for:  Salesforce-PS-CRM-DuPont (note: if you include ".com" the asset will NOT be found, so be sure to search for Salesforce or SFDC or Salesforce-PS-CRM-DuPont)
+(5) Provide a business justification for the request (required)
+(6) In the field “Please describe the access you require” copy and paste the following text:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Please setup a new Salesforce.com User:
+
+{!SFDC_Access_Request__c.Name}
+
+{!SFDC_Access_Request__c.First_Name__c}  {!SFDC_Access_Request__c.Last_Name__c}
+Email: {!SFDC_Access_Request__c.Email_Address__c}
+Key User: {!SFDC_Access_Request__c.Key_User__c}
+{!SFDC_Access_Request__c.User_Country__c}
+{!SFDC_Access_Request__c.User_Region__c}
+
+Link to SFDC:  {!SFDC_Access_Request__c.Link}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(7) Confirm and Submit the request.
+(more detailed instructions can be found on the MyAccess website) :  https://myaccess.dupont.com
+
+
+After approval by the DuPont user's supervisor in MyAccess, the SFDC Team will be notified to complete the user set-up and implementation in SFDC.

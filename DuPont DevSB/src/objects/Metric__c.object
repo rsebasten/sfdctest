@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>R00N30000001EnMcEAK</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName> Australian Dollar</fullName>
+                    <default>false</default>
+                    <label> Australian Dollar</label>
+                </value>
+                <value>
+                    <fullName> Canadian Dollar</fullName>
+                    <default>false</default>
+                    <label> Canadian Dollar</label>
+                </value>
+                <value>
+                    <fullName> Swiss Franc</fullName>
+                    <default>false</default>
+                    <label> Swiss Franc</label>
+                </value>
+                <value>
+                    <fullName> Chinese Yuan</fullName>
+                    <default>false</default>
+                    <label> Chinese Yuan</label>
+                </value>
+                <value>
+                    <fullName> Danish Krone</fullName>
+                    <default>false</default>
+                    <label> Danish Krone</label>
+                </value>
+                <value>
+                    <fullName> Euro</fullName>
+                    <default>false</default>
+                    <label> Euro</label>
+                </value>
+                <value>
+                    <fullName> British Pound</fullName>
+                    <default>false</default>
+                    <label> British Pound</label>
+                </value>
+                <value>
+                    <fullName> Japanese Yen</fullName>
+                    <default>false</default>
+                    <label> Japanese Yen</label>
+                </value>
+                <value>
+                    <fullName> Polish Zloty</fullName>
+                    <default>false</default>
+                    <label> Polish Zloty</label>
+                </value>
+                <value>
+                    <fullName> Swedish Krona</fullName>
+                    <default>false</default>
+                    <label> Swedish Krona</label>
+                </value>
+                <value>
+                    <fullName> Turkish Lira</fullName>
+                    <default>false</default>
+                    <label> Turkish Lira</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Has_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Has Opportunity</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Metric_ID__c</fullName>
+        <description>Auto number for reconciling metrics with other records.</description>
+        <externalId>false</externalId>
+        <label>Metric ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metric_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Metric Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actual</fullName>
+                    <default>true</default>
+                    <label>Actual</label>
+                </value>
+                <value>
+                    <fullName>COT</fullName>
+                    <default>false</default>
+                    <label>COT</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Outcome__c</fullName>
+        <externalId>false</externalId>
+        <label>Outcome Summary</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>Corian</fullName>
+                    <default>false</default>
+                    <label>Corian</label>
+                </value>
+                <value>
+                    <fullName>Zodiaq</fullName>
+                    <default>false</default>
+                    <label>Zodiaq</label>
+                </value>
+                <value>
+                    <fullName>Joint Adhesive</fullName>
+                    <default>false</default>
+                    <label>Joint Adhesive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unit_of_Measure__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit of Measure</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cubic meter</fullName>
+                    <default>false</default>
+                    <label>Cubic meter</label>
+                </value>
+                <value>
+                    <fullName>Day</fullName>
+                    <default>false</default>
+                    <label>Day</label>
+                </value>
+                <value>
+                    <fullName>each</fullName>
+                    <default>false</default>
+                    <label>each</label>
+                </value>
+                <value>
+                    <fullName>Gallon UK</fullName>
+                    <default>false</default>
+                    <label>Gallon UK</label>
+                </value>
+                <value>
+                    <fullName>Gallon US</fullName>
+                    <default>false</default>
+                    <label>Gallon US</label>
+                </value>
+                <value>
+                    <fullName>Gram</fullName>
+                    <default>false</default>
+                    <label>Gram</label>
+                </value>
+                <value>
+                    <fullName>Hour</fullName>
+                    <default>false</default>
+                    <label>Hour</label>
+                </value>
+                <value>
+                    <fullName>Kilogram</fullName>
+                    <default>false</default>
+                    <label>Kilogram</label>
+                </value>
+                <value>
+                    <fullName>Litre</fullName>
+                    <default>false</default>
+                    <label>Litre</label>
+                </value>
+                <value>
+                    <fullName>Pair</fullName>
+                    <default>false</default>
+                    <label>Pair</label>
+                </value>
+                <value>
+                    <fullName>Piece</fullName>
+                    <default>false</default>
+                    <label>Piece</label>
+                </value>
+                <value>
+                    <fullName>Pound</fullName>
+                    <default>false</default>
+                    <label>Pound</label>
+                </value>
+                <value>
+                    <fullName>Square foot</fullName>
+                    <default>false</default>
+                    <label>Square foot</label>
+                </value>
+                <value>
+                    <fullName>Square inch</fullName>
+                    <default>false</default>
+                    <label>Square inch</label>
+                </value>
+                <value>
+                    <fullName>Square meter</fullName>
+                    <default>false</default>
+                    <label>Square meter</label>
+                </value>
+                <value>
+                    <fullName>tbd</fullName>
+                    <default>false</default>
+                    <label>tbd</label>
+                </value>
+                <value>
+                    <fullName>Ton, metric</fullName>
+                    <default>false</default>
+                    <label>Ton, metric</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>fOpportunity_Name__c</fullName>
+        <description>(11/6/2017) - Removed Opportunity__c reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <label>Opportunity Name formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Metric</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Amount__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>BI_NA_Metrics</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Product_Category__c</columns>
+        <columns>Amount__c</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Metric__c.BI_NA_Metric</value>
+        </filters>
+        <label>BI-NA Metrics</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BINA</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Metric Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Metrics</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Actual</fullName>
+        <active>false</active>
+        <description>Actual</description>
+        <label>Actual</label>
+        <picklistValues>
+            <picklist>Currency__c</picklist>
+            <values>
+                <fullName>%C2%A0Australian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swedish Krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swiss Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Metric_Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_of_Measure__c</picklist>
+            <values>
+                <fullName>tbd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>BI_NA_Metric</fullName>
+        <active>true</active>
+        <label>BI-NA Metric</label>
+        <picklistValues>
+            <picklist>Currency__c</picklist>
+            <values>
+                <fullName>%C2%A0Australian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swedish Krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swiss Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Metric_Type__c</picklist>
+            <values>
+                <fullName>Actual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>COT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Corian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Adhesive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zodiaq</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_of_Measure__c</picklist>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Litre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square inch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>tbd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>COT</fullName>
+        <active>true</active>
+        <description>COT</description>
+        <label>COT</label>
+        <picklistValues>
+            <picklist>Currency__c</picklist>
+            <values>
+                <fullName>%C2%A0Australian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swedish Krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swiss Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Metric_Type__c</picklist>
+            <values>
+                <fullName>COT</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_of_Measure__c</picklist>
+            <values>
+                <fullName>tbd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CustomerMetric</fullName>
+        <active>false</active>
+        <description>Metric used by the Customer to measure his status and/or objectives</description>
+        <label>Customer Metric</label>
+        <picklistValues>
+            <picklist>Currency__c</picklist>
+            <values>
+                <fullName>%C2%A0Australian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swedish Krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swiss Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_of_Measure__c</picklist>
+            <values>
+                <fullName>tbd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CustomerSatisfaction</fullName>
+        <active>false</active>
+        <description>Measurement of Customer Satisfaction</description>
+        <label>Customer Satisfaction</label>
+        <picklistValues>
+            <picklist>Currency__c</picklist>
+            <values>
+                <fullName>%C2%A0Australian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swedish Krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swiss Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_of_Measure__c</picklist>
+            <values>
+                <fullName>tbd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PO</fullName>
+        <active>false</active>
+        <description>PO</description>
+        <label>PO</label>
+        <picklistValues>
+            <picklist>Currency__c</picklist>
+            <values>
+                <fullName>%C2%A0Australian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swedish Krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Swiss Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%C2%A0Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_of_Measure__c</picklist>
+            <values>
+                <fullName>tbd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

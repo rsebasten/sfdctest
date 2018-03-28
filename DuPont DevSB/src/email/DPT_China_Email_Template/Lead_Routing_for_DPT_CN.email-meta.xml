@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email template is used to notify users when a lead generate from Contact Us Form</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Lead Routing for DPT CN</name>
+    <style>none</style>
+    <subject>New lead assigned to you:  {!Lead_Routing__c.Lead_Name__c} from {!Lead_Routing__c.Lead_Company__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

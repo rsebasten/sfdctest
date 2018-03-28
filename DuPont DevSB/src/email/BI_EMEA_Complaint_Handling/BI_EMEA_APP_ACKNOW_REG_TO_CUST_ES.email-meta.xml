@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP ACKNOW REG TO CUST - ES</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Acknow Reg To Cust - ES</name>
+    <style>formalLetter</style>
+    <subject>Corian® Solid Surface: confirmación de registro de la reclamación {!Case.CaseNumber}</subject>
+    <textOnly>Estimado cliente,
+Gracias por enviarnos su reclamación. Haremos todo lo posible para resolverla cuanto antes.
+
+
+Cuando hayamos completado el expediente nos pondremos en contacto con nuestro servicio técnico o Industrial Partner para fijar una fecha de inspección/intervención.
+
+
+Nuestro servicio técnico / Industrial Partner revisará la incidencia y si es posiblela reparará en el acto.   Queremos recordarle que deje espacio libre y que nos facilite el material Corian® Solid Surface de sobra que recibió para evitar las diferencias de color. Leadvertimos de que la intervención puede causarle molestias.    Si su petición entra dentro de la Garantía Limitada de Instalación de 10 años Corian® Solid Surface el coste de la intervención será pagado por DuPont. En caso de que la incidencia no entre en garantía; el servicio técnico / Industrial Partner le hará un presupuesto para la reparación.   Cuando haya finalizado, el servicio técnico / Industrial Partner le pedirá que firme la declaración de reparación, que sirve como la confirmación por sus servicios.
+
+
+Si tiene cualquier pregunta, no dude en ponerse en contacto con nosotros.   Saludos cordiales,
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+Nos gustaría informarle que recopilamos su información con el fin de identificar sus intereses comerciales, proporcionarle
+
+productos o servicios y ofrecerle una experiencia positiva como cliente durante las interacciones comerciales. Su
+
+información personal (nombre, dirección de correo electrónico, número de teléfono y otros datos de contacto) se
+
+almacenará en el sistema de clientes hospedado principalmente en Estados Unidos. Es posible que esta información
+
+se comparta con el mismo propósito en DuPont, con compañías filiales, asociados o terceras partes determinadas en
+
+otros países. Si desea acceder a su información, modificarla, eliminarla, o cancelar su procesamiento, utilice este vínculo.
+
+
+DuPont™ y Corian® son marcas registradas o marcas comerciales de E.I. du Pont de Nemours and Company y de sus
+
+entidades afiliadas. El uso de logos, marcas registradas y marcas comerciales de E.I. du Pont de Nemours and Company  debe autorizarlo E. I. du Pont de Nemours and Company o una de sus entidades afiliadas.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

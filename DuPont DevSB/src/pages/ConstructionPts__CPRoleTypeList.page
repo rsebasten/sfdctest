@@ -1,0 +1,19 @@
+<apex:page standardController="ConstructionPts__CP_Roles__c" recordsetVar="roles" tabStyle="ConstructionPts__CP_Roles__c"> 
+    
+
+
+    <c:CPHeader title="" subtitle="All Roles" ShowDodgeLogo="true" ShowCPLinks="true"/>
+   
+    <apex:ListViews type="ConstructionPts__CP_Roles__c"/>  
+    <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+    <apex:includeScript value="{!$Resource.ConstructionPts__jquery}"/>
+    <script language="javascript">
+        // Using jQuery, hide all of the actionLinks
+        jQuery.noConflict();
+        jQuery("a.actionLink").css("display","none");      
+        var el = jQuery("td.actionColumn");
+        if (el.length > 0) {
+            jQuery(el).html(el.html().replace("|", "").replace("|", "").replace("|", ""));      
+        }
+    </script>
+    </apex:page>

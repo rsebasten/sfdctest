@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Relates Contacts who are Stakeholders in an eCommerce Project to an eProject record</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Accountability__c</fullName>
+        <externalId>false</externalId>
+        <label>Accountability</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If the CONTACT does not exist, first define a new CONTACT by clicking the CONTACT tab.  Reminder: A CONTACT must always be related to an Account.  Note this sequence: find/create Account,m then find/create, relate CONTACT.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>StakeholderRoles</relationshipLabel>
+        <relationshipName>Stakeholders</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Core_Team_Member__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Core Team Member</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Architect</fullName>
+                    <default>false</default>
+                    <label>Architect</label>
+                </value>
+                <value>
+                    <fullName>BPO</fullName>
+                    <default>false</default>
+                    <label>BPO</label>
+                </value>
+                <value>
+                    <fullName>CPO</fullName>
+                    <default>false</default>
+                    <label>CPO</label>
+                </value>
+                <value>
+                    <fullName>CSR</fullName>
+                    <default>false</default>
+                    <label>CSR</label>
+                </value>
+                <value>
+                    <fullName>Delivery Manager</fullName>
+                    <default>false</default>
+                    <label>Delivery Manager</label>
+                </value>
+                <value>
+                    <fullName>EDI Analyst</fullName>
+                    <default>false</default>
+                    <label>EDI Analyst</label>
+                </value>
+                <value>
+                    <fullName>Engagement Leader</fullName>
+                    <default>false</default>
+                    <label>Engagement Leader</label>
+                </value>
+                <value>
+                    <fullName>Key User</fullName>
+                    <default>false</default>
+                    <label>Key User</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Project Leader</fullName>
+                    <default>false</default>
+                    <label>Project Leader</label>
+                </value>
+                <value>
+                    <fullName>Project Sponsor</fullName>
+                    <default>false</default>
+                    <label>Project Sponsor</label>
+                </value>
+                <value>
+                    <fullName>Solutions Designer</fullName>
+                    <default>false</default>
+                    <label>Solutions Designer</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>eProject__c</fullName>
+        <externalId>false</externalId>
+        <label>eProject</label>
+        <referenceTo>eProject__c</referenceTo>
+        <relationshipLabel>Stakeholders</relationshipLabel>
+        <relationshipName>Stakeholders</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>fCompany__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Account.Name</formula>
+        <label>Company</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fContact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.LastName &amp; &quot;,&quot; &amp;  Contact__r.FirstName</formula>
+        <label>Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fInstantMessageID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Instant_Message_ID__c</formula>
+        <label>Instant Message ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fLocation__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.MailingCity &amp; &apos;,&apos; &amp; Contact__r.MailingState &amp; &apos; &apos; &amp; Contact__r.MailingCountry</formula>
+        <inlineHelpText>Mailing Address</inlineHelpText>
+        <label>Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fPhone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Phone</formula>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>feMail__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Email</formula>
+        <label>eMail</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Stakeholder</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>PersonID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Stakeholders</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Stakeholder</fullName>
+        <active>true</active>
+        <description>Stakeholder Contacts</description>
+        <label>Stakeholder</label>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>Architect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BPO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CSR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EDI Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engagement Leader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Leader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solutions Designer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,78 @@
+<!--/*******************************************************************************
+Copyright © 2015 DuPont. All rights reserved. 
+Author: Prerna Chandak
+Email: prerna.chandak@accenture.com
+Description:  VF page for displaying the Open Cases for that user on home page.
+
+//  <ShashankB20150908> Added Parent Case to My Open Cases Home Page.
+AA02252015 - Changed Function Call to open in new sub tab(Feed View)
+********************************************************************************/-->
+
+<apex:page standardController="Case" extensions="ctrl_CSDisplayMyOpenCases"  action="{!getCaseRecords}" id="page" >
+ <style>
+.pbBody{
+min-height: 300px;
+}
+</style>
+<apex:includeScript id="script" value="/support/console/22.0/integration.js"/ >
+    
+    <script>
+    function openPrimaryTab(thisText, caseNumber) {
+        if (sforce.console.isInConsole()) {
+            // AA02252015 - Changed Function Call to open in new sub tab(Feed View)
+          sforce.console.openPrimaryTab(null,'/'+ thisText, true, caseNumber, openSuccess, caseNumber);
+        } else{
+          window.open('/'+thisText,'_blank');
+        }
+        
+    }
+        
+    var openSuccess = function openSuccess(result) {
+        //Report whether opening the new tab was successful
+        if (result.success == true) {
+            alert('Primary tab successfully opened');
+        } else {
+            alert('Primary tab cannot be opened');
+        }
+    };
+    
+</script>    
+
+<apex:form id="form1">
+ <apex:pageBlock title="My Open Cases" id="details" tabStyle="User" >
+    <apex:pagemessages ></apex:pagemessages> 
+    <apex:pageBlockTable value="{!caseList}" id="pB1" var="c" rendered="{!IF(caseList.size != null && caseList.size > 0, true , false)}"  > 
+      <apex:column headerValue="Case Number" id="col1" > 
+       <A HREF="#" onClick="openPrimaryTab('{!c.id}', '{!c.CaseNumber}');return false">
+         {!c.CaseNumber}</A> 
+  </apex:column>  
+  
+<!--  <ShashankB20150908> Added Parent Case to My Open Cases Home Page -->
+  <apex:column value="{!c.ParentId}"  headerValue="Parent Case" id="col10"/>
+  <apex:column value="{!c.Account.Name}" headerValue=" Account Name" id="col2"/>
+  <apex:column value="{!c.CaseCategory__c}" headerValue="Case Category" id="col3"/> 
+  <apex:column value="{!c.Account.ERP_Account_Code__c}" headerValue="ERP Account Code" id="col4"/> 
+  <apex:column value="{!c.Status}" headerValue="Status" id="col5" />
+  <apex:column value="{!c.Origin}" headerValue="Origin" id="col6"/> 
+  <apex:column value="{!c.Priority }" headerValue="Priority" id="col7"/> 
+  <apex:column value="{!c.CreatedDate}" headerValue="Date/Time Opened" id="col8"/>
+  <apex:column value="{!c.fCaseAge__c}" headerValue="Case Age (HR:MM)" id="col9"/>
+   
+</apex:pageBlockTable>
+<apex:outputPanel layout="block" styleClass="pSearchShowMore" id="otpNav" rendered="{!IF(caseList.size != null && caseList.size > 0, true , false)}">   
+              Total Records Found: <apex:outputText id="otpVal" rendered="{!IF(Con.resultSize==10000,true,false)}">10000 +</apex:outputText><apex:outputText rendered="{!IF(Con.resultSize < 10000,true,false)}">{!Con.resultSize}</apex:outputText>   
+                  <apex:image id="img1" url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(Con.HasPrevious)}"/>   
+                  <apex:image id="img2" url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!Con.HasPrevious}"/>   
+                  <apex:commandLink id="cmLink1" action="{!Previous}" title="Previous Page" value="Previous Page" rendered="{!Con.HasPrevious}"/>   
+                  <apex:outputPanel id="otpPanel1" styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(Con.HasPrevious)}">Previous Page</apex:outputPanel>            
+                  &nbsp;({!IF(Con.PageNumber == 1,1,((Con.PageNumber -1) * Con.PageSize)+1)}-{!IF(Con.resultSize < Con.PageSize,Con.resultSize,Con.PageNumber * Con.pageSize)})&nbsp;   
+                  <apex:outputPanel id="otpPanel2" styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(Con.HasNext)}">Next Page</apex:outputPanel>            
+                  <apex:commandLink id="cmLink2" title="Next Page" value="Next Page" rendered="{!Con.HasNext}" action="{!Next}"/>&nbsp;   
+                  <apex:image id="img3" url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!Con.HasNext}"/>   
+                  <apex:image id="img4" url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(Con.HasNext)}"/>             
+              </apex:outputPanel> 
+  
+  </apex:pageBlock> 
+  
+ </apex:form> 
+</apex:page>

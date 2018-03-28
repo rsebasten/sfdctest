@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TO CUSTOMER - Send a call report to a non DuPont Employee</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>StandardCorporateLetterhead</letterhead>
+    <name>Send an Email DPC-ICS</name>
+    <style>freeForm</style>
+    <subject>New call report from {!Call_Report__c.CreatedBy}</subject>
+    <textOnly>Hi, 
+Find below the new call report from {!Call_Report__c.CreatedBy}. 
+
+Name: {!Call_Report__c.Name}
+
+     Account: {!Call_Report__c.Account__c}
+     Contact: {!Call_Report__c.Contact__c}
+     Channel: {!Call_Report__c.Channel__c}
+     Call Report Date: {!Call_Report__c.CreatedDate}
+
+Report Summary
+
+    Attendees: {!Call_Report__c.DuPont_Attendees__c}
+    Summary: {!Call_Report__c.Summary__c}
+    Next Steps: {!Call_Report__c.Next_Steps__c}
+    Issues: {!Call_Report__c.Issues__c}   
+    Market Competitive Information: {!      Call_Report__c.Market_Competitive_Infomation__c}
+    Unmet Customer Needs: {!Call_Report__c.Unmet_Customer_Needs__c}
+
+
+
+Copyright
+(c) 2007 DuPont. All rights reserved. The DuPont Oval Logo, DuPont(TM), The
+miracles of science(TM) and all products denoted with (R) or (TM) are
+registered trademarks or trademarks of E. I. du Pont de Nemours and Company or
+its affiliates.Legal Notices
+&amp; Terms of Use | PRIVACY</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

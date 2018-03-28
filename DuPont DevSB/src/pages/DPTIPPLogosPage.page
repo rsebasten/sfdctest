@@ -1,0 +1,281 @@
+<apex:page controller="ctrlDPTIPPLogos" docType="html-5.0">
+    <!-- BR20140828    Brundha Rajkumar    28-Aug-2014    addedDisclaimer Page Block for EMEA -->
+    <!-- BR20140901    Brundha Rajkumar    01-Sep-2014    modified rendered for NA in the disclaimer page block(1.1) -->
+    <!-- BR20140901    Brundha Rajkumar    01-Sep-2014    Org Id changed based on the Company profile Information(1.2) -->
+    <!-- BR20140901    Brundha Rajkumar    01-Sep-2014    command link added for EMEA and added rendered condition for NA in the existing command link using user region(1.3) -->
+    <!-- BR20140910    Brundha Rajkumar    10-Sep-2014    Logos(Previews not available) for EMEA -->
+    <!-- BR20140917    Brundha Rajkumar    17-Sep-2014    added Logos title for EMEA -->
+    <!-- BR20140922    Brundha Rajkumar    22-Sep-2014    The form will be rendered only for EMEA and NA user region -->
+<head>
+<apex:stylesheet value="{!$Resource.DPTIPP_ValueChain_CSS}" />
+</head>
+
+<style type="text/css">
+.custPopup {
+background-color : white;
+border-width : 5px;
+border-style: groove;
+border-color: black;
+border-width: thin;
+left : 50%;
+padding : 10px;
+position : fixed;
+width : 400px;
+margin-left : -150px;
+height : 100px;
+top : 225px;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;
+}
+
+.popupBackground {
+background-color : grey;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50);
+opacity: .5;
+position : absolute;
+width : 100%;
+height : 100%;
+top : 0;
+left : 0;
+}
+
+.pEMEA {
+font-weight : normal;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;
+color : #000000;
+font-size : 13px;
+}
+
+.upperCase{
+    text-transform: uppercase;
+}
+</style>
+
+<script >
+    function renderdownloadlink(){
+    document.getElementById('downloadlinkhref').click();
+    }
+</script>
+
+    <!-- Disclaimer Page Block for NA-->
+    <!-- BR20140901    Ver 1.1 starts-->
+    <apex:pageBlock mode="maindetail" rendered="{!(displayDisclaimerPage && userRegion=='North America')}">
+    <!-- BR20140901    Ver 1.1 ends-->
+        <center><h1 class="h1">
+            {!$Label.VC_Disclaimer}
+        </h1></center>
+       
+        <p class="p">{!$Label.PC_Disclaimer_Part1}</p>
+        <p class="p">{!$Label.PC_Disclaimer_Part2}</p>
+        <p class="p">{!$Label.PC_Disclaimer_Part3}</p>
+        <p class="p">{!$Label.PC_Disclaimer_Part4}</p>
+
+        <apex:form id="theForm">
+                   
+            <center>
+                <apex:commandButton value="{!$Label.VC_bAccept}"
+                    action="{!directMainPage}" />
+                <apex:commandButton value="{!$Label.VC_bDecline}"
+                    action="{!showPopUp}" rerender="popUp" />
+            </center>
+
+            <apex:outputPanel id="popUp">
+                <apex:outputPanel styleClass="popupBackground" layout="block"
+                    rendered="{!displayPopUpFlag}" />
+                <apex:outputPanel styleClass="custPopup" layout="block"
+                    rendered="{!displayPopUpFlag}">
+                    <br />
+                    <center>
+                        <b> {!$Label.VC_mDeclineAggrmt}</b>
+                    </center>
+                    <br />
+                    <center>
+                        <apex:commandButton value="{!$Label.VC_bOk}"
+                            action="{!directHomePage}" />
+                        <apex:commandButton value="{!$Label.VC_bCancel}"
+                            action="{!samePage}" />
+                    </center>
+                </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:form>
+    </apex:pageBlock>
+    
+    <!--BR20140828   starts -->
+    <!-- Disclaimer Page Block for EMEA -->
+     
+    <apex:pageBlock mode="maindetail" rendered="{!(displayDisclaimerPage && userRegion=='EMEA')}">
+        <center><h1 class="h1">
+            <U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer}</U>
+        </h1></center>
+       
+        <p class="pEMEA"><b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_01}</b></p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_02}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_03}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_04}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_05}</p>
+        <p class="pEMEA">1.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_06}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_07}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_08}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_09}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_10}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_11}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_12}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_13}{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_49}{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_50}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_14}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_15}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_16}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_17}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_18}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_19}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_20}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_21}{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_53}</p>
+        <p class="pEMEA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h)&nbsp;&nbsp;<b><U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_22}</U>:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_23}</p>
+        <p class="pEMEA">2.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_24}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_25}</p>
+        <p class="pEMEA">3.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_26}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_27}</p>
+        <br/>
+        <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_28}<U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_52}</U>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_54}</center>
+        <p class="pEMEA">4.&nbsp;&nbsp;&nbsp; <b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_29}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_30}</p>
+        <p class="pEMEA">5.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_31}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_32}</p>
+        <p class="pEMEA">6.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_33}</b></p>
+        <p class="pEMEA">7.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_34}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_35}</p>
+        <p class="pEMEA">8.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_36}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_37}</p>
+        <p class="pEMEA">9.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_38}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_39}</p>
+        <p class="pEMEA">10.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_40}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_41}</p>
+        <p class="pEMEA">11.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_42}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_43}</p>
+        <p class="pEMEA">12.&nbsp;&nbsp;&nbsp;<b class="upperCase">{!$Label.VC_Disclaimer}:</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_44}</p>
+        <p class="pEMEA">13.&nbsp;&nbsp;&nbsp;<b>{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_45}</b>&nbsp;&nbsp;{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_46}{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_51}</p>
+        <br/>
+        <apex:form id="theForm">
+            <center>
+                <apex:commandButton value="{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_47}"
+                    action="{!directMainPage}" />
+                <apex:commandButton value="{!$Label.DPT_IPP_Value_Chain_Platform_Disclaimer_48}"
+                    action="{!showPopUp}" rerender="popUp" />
+            </center>
+
+            <apex:outputPanel id="popUp">
+                <apex:outputPanel styleClass="popupBackground" layout="block"
+                    rendered="{!displayPopUpFlag}" />
+                <apex:outputPanel styleClass="custPopup" layout="block"
+                    rendered="{!displayPopUpFlag}">
+                    <br />
+                    <center>
+                        <b> {!$Label.VC_mDeclineAggrmt}</b>
+                    </center>
+                    <br />
+                    <center>
+                        <apex:commandButton value="{!$Label.VC_bOk}"
+                            action="{!directHomePage}" />
+                        <apex:commandButton value="{!$Label.VC_bCancel}"
+                            action="{!samePage}" />
+                    </center>
+                </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:form>
+    </apex:pageBlock>
+   <!-- BR20140828   ends-->
+   
+    <!-- Main Page Block-->
+    <apex:pageBlock mode="maindetail" rendered="{!(displayMainPage)}">
+    
+    <center>
+    <h1 class="h1Title">
+    <!--BR20140917    starts-->
+    <apex:outputPanel rendered="{!userRegion=='North America'}">
+    {!$Label.VC_hMain_Title}
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!userRegion=='EMEA'}">
+    {!$Label.VC_hMain_Title_EMEA}
+    </apex:outputPanel>
+    <!--BR20140917  ends-->
+    </h1>
+    </center>   
+
+    
+    <br/>
+    <!--BR20140922 added rendered-->   
+    <apex:form id="form2"  rendered="{!userRegion=='EMEA' ||userRegion=='North America'}" >
+    <apex:outputPanel id="finaldownloadlink">
+    <apex:outputpanel rendered="{!IsExtensionPresent}">
+    <a href="{!FinalLink}" id="downloadlinkhref" target="_self" download="image"/>
+    </apex:outputPanel>
+    </apex:outputPanel>
+    <apex:pageBlockSection columns="2">
+    <apex:pageblocktable value="{!LogoJPGList1}" var="Logo" columns="1" width="50%">
+    <apex:column >
+    <center><b><apex:outputLabel value="{!Logo.Name}"></apex:outputLabel></b><br/><br/>
+    <!-- BR20140901 Ver 1.2 -->
+    <!---1/2/2017 Merge&Spin - replaced Hardcoded Id with Custom Label DPTIPPLogo_ObjectId------>    
+    <apex:image value="/servlet/servlet.ImageServer?id={!Logo.Id}&oid={!$Label.DPTIPPLogo_ObjectId}" width="200" height="200"></apex:image><br/>
+    <!--BR20140901   Ver 1.3 starts-->
+    <apex:commandLink value="Download Logo" action="{!openDownloadPopUpFlag}" rerender="downloadpopUp" rendered="{!userRegion=='North America'}"><apex:param name="logoname" value="{!Logo.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>    
+    <apex:commandLink value="Download Logo" action="{!downloadLogo}" oncomplete="renderdownloadlink();" rendered="{!userRegion=='EMEA'}" reRender="finaldownloadlink"><apex:param name="logoname" value="{!Logo.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>
+    <!--BR20140901   Ver 1.3 ends-->
+    </center></apex:column>
+    </apex:pageblocktable>
+    <apex:pageblocktable value="{!LogoJPGList2}" var="Logo1" columns="1" width="50%">
+    <apex:column >
+    <center><b><apex:outputLabel value="{!Logo1.Name}"></apex:outputLabel></b><br/><br/>
+    <!-- BR20140901 Ver 1.2 -->
+    <!---1/2/2017 Merge&Spin - replaced Hardcoded Id with Custom Label------>    
+    <apex:image value="/servlet/servlet.ImageServer?id={!Logo1.Id}&oid={!$Label.DPTIPPLogo_ObjectId}" width="200" height="200"></apex:image><br/>
+    <!--BR20140901   Ver 1.3 starts -->
+    <apex:commandLink value="Download Logo" action="{!openDownloadPopUpFlag}" rerender="downloadpopUp" rendered="{!userRegion=='North America'}"><apex:param name="logoname" value="{!Logo1.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>
+    <apex:commandLink value="Download Logo" action="{!downloadLogo}" oncomplete="renderdownloadlink();" rendered="{!userRegion=='EMEA'}" reRender="finaldownloadlink"><apex:param name="logoname" value="{!Logo1.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>
+    <!--BR20140901   Ver 1.3 ends-->
+    </center></apex:column>
+    </apex:pageblocktable>
+    </apex:pageBlockSection>
+    <!--BR20140910 starts-->
+    <BR/>
+    <apex:pageBlockSection title="{!$Label.DPT_IPP_Value_Chain_Platform_Logos}" columns="2" rendered="{!PreviewsNtAvail}">    
+    <apex:pageblocktable value="{!LogoNoPreveiwList1}" var="LogoPrev" columns="1" width="100%">
+    <apex:column >
+    <center><b><apex:outputLabel value="{!LogoPrev.Name}"></apex:outputLabel></b><br/><br/>   
+    <apex:commandLink value="Download Logo" action="{!openDownloadPopUpFlag}" rerender="downloadpopUp" rendered="{!userRegion=='North America'}"><apex:param name="logoname" value="{!LogoPrev.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>    
+    <apex:commandLink value="Download Logo" action="{!downloadLogo}" oncomplete="renderdownloadlink();" rendered="{!userRegion=='EMEA'}" reRender="finaldownloadlink"><apex:param name="logoname" value="{!LogoPrev.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>
+    </center></apex:column>
+    </apex:pageblocktable>
+    <apex:pageblocktable value="{!LogoNoPreveiwList2}" var="LogoPrev2" columns="1" width="100%">
+    <apex:column >
+    <center><b><apex:outputLabel value="{!LogoPrev2.Name}"></apex:outputLabel></b><br/><br/>   
+    <apex:commandLink value="Download Logo" action="{!openDownloadPopUpFlag}" rerender="downloadpopUp" rendered="{!userRegion=='North America'}"><apex:param name="logoname" value="{!LogoPrev2.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>    
+    <apex:commandLink value="Download Logo" action="{!downloadLogo}" oncomplete="renderdownloadlink();" rendered="{!userRegion=='EMEA'}" reRender="finaldownloadlink"><apex:param name="logoname" value="{!LogoPrev2.Name}" assignTo="{!SelectedLogo}"/></apex:commandLink>
+    </center></apex:column>
+    </apex:pageblocktable>
+    </apex:pageBlockSection>
+    <!--BR20140910 ends-->
+    <apex:outputPanel id="downloadpopUp">
+                <apex:outputPanel styleClass="popupBackground" layout="block"
+                    rendered="{!downloadPopUpFlag}" />
+                <apex:outputPanel styleClass="custPopup" layout="block"
+                    rendered="{!downloadPopUpFlag}">
+                    <br/>
+                    <apex:outputPanel rendered="{!IsExtensionPresent}">
+                    <center>
+                        <b> Please select the Image type that you wish to download :</b>&nbsp;
+                        <apex:selectList id="chooseExtension" value="{!Extension}" size="1">
+                            <apex:selectOption itemValue="JPG" itemLabel="JPG"/>
+                            <apex:selectOption itemValue="TIF" itemLabel="TIF"/>
+                            <apex:selectOption itemValue="EPS" itemLabel="EPS"/>
+                        </apex:selectList> 
+                    </center>
+                    <br />
+                    <center>
+                        <apex:commandButton value="{!$Label.VC_bOk}"
+                            action="{!downloadLogo}" oncomplete="renderdownloadlink();" reRender="finaldownloadlink,downloadpopUp"></apex:commandButton>
+                        <apex:commandButton value="{!$Label.VC_bCancel}"
+                            action="{!closeDownloadPopUpFlag}" reRender="downloadpopUp" />
+                    </center>
+                    </apex:outputpanel>
+                    <apex:outputpanel rendered="{!NOT(IsExtensionPresent)}">
+                    <center>
+                        <b>{!$Label.VC_mNoLogoType}</b><br/>
+                    <apex:commandButton value="{!$Label.VC_bOk}"
+                            action="{!logoExtensionNotAvailable}" reRender="downloadpopUp" ></apex:commandButton>
+                    </center>
+                    </apex:outputpanel>
+                    </apex:outputPanel>
+                    </apex:outputPanel>
+    </apex:form>
+    </apex:pageBlock>
+    
+    <!-- Error Message -->
+    <apex:form rendered="{!displayError}" >
+    <br/>
+    <b><apex:pageMessage summary="INSUFFICIENT PRIVILEGES. The licensing agreement for your Company has not been generated correctly. Kindly check with the DuPont internal representative." severity="error" strength="1" ></apex:pageMessage></b>
+    <br/>
+    </apex:form>
+</apex:page>

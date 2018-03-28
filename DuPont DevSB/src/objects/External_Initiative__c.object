@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Detailed information from an external data source provided in an automated feed (project, lead, or opportunity data).</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Bid_Due_Date__c</fullName>
+        <description>The date the bid for this project is due</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the bid for this project is due</inlineHelpText>
+        <label>Bid Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Construction_Start_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <label>Construction Start Quarter</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <externalId>false</externalId>
+        <label>County</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Overage__c</fullName>
+        <externalId>false</externalId>
+        <label>Data Overage</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Data_Source__c</fullName>
+        <description>Identifies external data source.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies external data source.</inlineHelpText>
+        <label>Data Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>McGraw Hill Construction</fullName>
+                    <default>false</default>
+                    <label>McGraw Hill Construction</label>
+                </value>
+                <value>
+                    <fullName>Dodge</fullName>
+                    <default>true</default>
+                    <label>Dodge</label>
+                </value>
+                <value>
+                    <fullName>CIC - Construction</fullName>
+                    <default>false</default>
+                    <label>CIC - Construction</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Additional information about this external initiative</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EI_Region__c</fullName>
+        <externalId>false</externalId>
+        <label>EI_Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Unique identifier from external system.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>External_Search_Name__c</fullName>
+        <description>External search name used by external system.</description>
+        <externalId>false</externalId>
+        <label>External Search Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_URL__c</fullName>
+        <description>Link to external initiative in external system.</description>
+        <externalId>false</externalId>
+        <label>External URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>External_Version__c</fullName>
+        <description>Identifies version of external initiative, can be used to ensure the data is synchronized.</description>
+        <externalId>false</externalId>
+        <label>External Version</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Floors_Above_Ground__c</fullName>
+        <description>Used to classify projects.</description>
+        <externalId>false</externalId>
+        <label>Floors Above Ground</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Floors_Below_Ground__c</fullName>
+        <description>Used to classify projects.</description>
+        <externalId>false</externalId>
+        <label>Floors Below Ground</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_External_Initiative_Name__c</fullName>
+        <description>For CIC Project External Initiative name is more than 80 char to store full name . We have created a field</description>
+        <externalId>false</externalId>
+        <label>Full External Initiative Name</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Initiative_Size__c</fullName>
+        <description>Total size of project.</description>
+        <externalId>false</externalId>
+        <label>Initiative Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Import_Date__c</fullName>
+        <description>Captures date of most recent external update to project.</description>
+        <externalId>false</externalId>
+        <label>Last Import Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Latitude__c</fullName>
+        <description>To store the value of Latitude for CIC Project</description>
+        <externalId>false</externalId>
+        <label>Latitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Longitude__c</fullName>
+        <description>To store the value of Longitude for CIC Project</description>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Owning Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BI</fullName>
+                    <default>false</default>
+                    <label>BI</label>
+                </value>
+                <value>
+                    <fullName>BI-Env</fullName>
+                    <default>false</default>
+                    <label>BI-Env</label>
+                </value>
+                <value>
+                    <fullName>BI-Landscape Systems</fullName>
+                    <default>false</default>
+                    <label>BI-Landscape Systems</label>
+                </value>
+                <value>
+                    <fullName>BI-Surf</fullName>
+                    <default>false</default>
+                    <label>BI-Surf</label>
+                </value>
+                <value>
+                    <fullName>DPT</fullName>
+                    <default>false</default>
+                    <label>DPT</label>
+                </value>
+                <value>
+                    <fullName>DPT-A&amp;HF</fullName>
+                    <default>false</default>
+                    <label>DPT-A&amp;HF</label>
+                </value>
+                <value>
+                    <fullName>DPT-Agriculture</fullName>
+                    <default>false</default>
+                    <label>DPT-Agriculture</label>
+                </value>
+                <value>
+                    <fullName>DPT-Air and Filtration</fullName>
+                    <default>false</default>
+                    <label>DPT-Air and Filtration</label>
+                </value>
+                <value>
+                    <fullName>DPT-Aramids</fullName>
+                    <default>false</default>
+                    <label>DPT-Aramids</label>
+                </value>
+                <value>
+                    <fullName>DPT-ASPS</fullName>
+                    <default>false</default>
+                    <label>DPT-ASPS</label>
+                </value>
+                <value>
+                    <fullName>DPT-Automotive</fullName>
+                    <default>false</default>
+                    <label>DPT-Automotive</label>
+                </value>
+                <value>
+                    <fullName>DPT-Chemical Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Chemical Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Cleanroom/Pharma</fullName>
+                    <default>false</default>
+                    <label>DPT-Cleanroom/Pharma</label>
+                </value>
+                <value>
+                    <fullName>DPT-Covers</fullName>
+                    <default>false</default>
+                    <label>DPT-Covers</label>
+                </value>
+                <value>
+                    <fullName>DPT-Critical Clean</fullName>
+                    <default>false</default>
+                    <label>DPT-Critical Clean</label>
+                </value>
+                <value>
+                    <fullName>DPT-Envelopes</fullName>
+                    <default>false</default>
+                    <label>DPT-Envelopes</label>
+                </value>
+                <value>
+                    <fullName>DPT-ES</fullName>
+                    <default>false</default>
+                    <label>DPT-ES</label>
+                </value>
+                <value>
+                    <fullName>DPT-Graphics</fullName>
+                    <default>false</default>
+                    <label>DPT-Graphics</label>
+                </value>
+                <value>
+                    <fullName>DPT-Ind Pkg &amp; Protection</fullName>
+                    <default>false</default>
+                    <label>DPT-Ind Pkg &amp; Protection</label>
+                </value>
+                <value>
+                    <fullName>DPT-IPP</fullName>
+                    <default>false</default>
+                    <label>DPT-IPP</label>
+                </value>
+                <value>
+                    <fullName>DPT-Mechanical Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Mechanical Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Fabrics</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Fabrics</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Packaging</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Packaging</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Specialties</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Specialties</label>
+                </value>
+                <value>
+                    <fullName>DPT-NOW</fullName>
+                    <default>false</default>
+                    <label>DPT-NOW</label>
+                </value>
+                <value>
+                    <fullName>DPT-Optical</fullName>
+                    <default>false</default>
+                    <label>DPT-Optical</label>
+                </value>
+                <value>
+                    <fullName>DPT-PM</fullName>
+                    <default>false</default>
+                    <label>DPT-PM</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-ER</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-ER</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-LE</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-LE</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-MIL</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-MIL</label>
+                </value>
+                <value>
+                    <fullName>DPT-Sontara</fullName>
+                    <default>false</default>
+                    <label>DPT-Sontara</label>
+                </value>
+                <value>
+                    <fullName>DPT-Thermal Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Thermal Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Tyvek</fullName>
+                    <default>false</default>
+                    <label>DPT-Tyvek</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Parent_External_Initiative__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Store the value of Parent External Iitiative</description>
+        <externalId>false</externalId>
+        <label>Parent External Initiative</label>
+        <referenceTo>External_Initiative__c</referenceTo>
+        <relationshipLabel>External Initiatives</relationshipLabel>
+        <relationshipName>External_Initiatives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Project_Id__c</fullName>
+        <description>To Store the Parent Project Id for Project Level Sub</description>
+        <externalId>false</externalId>
+        <label>Parent Project Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip/Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Sector__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Sector</label>
+        <length>256</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_End_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <label>Project End Quarter</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Parent</fullName>
+                    <default>false</default>
+                    <label>Parent</label>
+                </value>
+                <value>
+                    <fullName>Sub</fullName>
+                    <default>false</default>
+                    <label>Sub</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Detail</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Secondary_Sector__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Sector</label>
+        <length>300</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Segment_L1__c</fullName>
+        <description>Highest level External initiative segment.</description>
+        <externalId>false</externalId>
+        <label>Segment L1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segment_L2__c</fullName>
+        <description>External initiative subsegment.</description>
+        <externalId>false</externalId>
+        <label>Segment L2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segment_L3__c</fullName>
+        <description>Captures further external initiative detail.</description>
+        <externalId>false</externalId>
+        <label>Segment L3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segment_L4__c</fullName>
+        <description>Captures further external initiative detail.</description>
+        <externalId>false</externalId>
+        <label>Segment L4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segments_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Segments Other</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Specification_L1_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Specification L1 Other</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Specification_L1__c</fullName>
+        <description>External initiative specification primary specification.</description>
+        <externalId>false</externalId>
+        <label>Specification L1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Specification_L2__c</fullName>
+        <description>External initiative specification secondary specification.</description>
+        <externalId>false</externalId>
+        <label>Specification L2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Announced</fullName>
+                    <default>false</default>
+                    <label>Announced</label>
+                </value>
+                <value>
+                    <fullName>Study</fullName>
+                    <default>false</default>
+                    <label>Study</label>
+                </value>
+                <value>
+                    <fullName>Pre-Planning</fullName>
+                    <default>false</default>
+                    <label>Pre-Planning</label>
+                </value>
+                <value>
+                    <fullName>Request for Proposals</fullName>
+                    <default>false</default>
+                    <label>Request for Proposals</label>
+                </value>
+                <value>
+                    <fullName>Request for Qualifications</fullName>
+                    <default>false</default>
+                    <label>Request for Qualifications</label>
+                </value>
+                <value>
+                    <fullName>Pre-Design</fullName>
+                    <default>false</default>
+                    <label>Pre-Design</label>
+                </value>
+                <value>
+                    <fullName>Planning</fullName>
+                    <default>false</default>
+                    <label>Planning</label>
+                </value>
+                <value>
+                    <fullName>Planning Schematics</fullName>
+                    <default>false</default>
+                    <label>Planning Schematics</label>
+                </value>
+                <value>
+                    <fullName>Design</fullName>
+                    <default>false</default>
+                    <label>Design</label>
+                </value>
+                <value>
+                    <fullName>Design Development</fullName>
+                    <default>false</default>
+                    <label>Design Development</label>
+                </value>
+                <value>
+                    <fullName>Final Planning</fullName>
+                    <default>false</default>
+                    <label>Final Planning</label>
+                </value>
+                <value>
+                    <fullName>Construction Documents</fullName>
+                    <default>false</default>
+                    <label>Construction Documents</label>
+                </value>
+                <value>
+                    <fullName>Pre-tender</fullName>
+                    <default>false</default>
+                    <label>Pre-tender</label>
+                </value>
+                <value>
+                    <fullName>Pre-qualification</fullName>
+                    <default>false</default>
+                    <label>Pre-qualification</label>
+                </value>
+                <value>
+                    <fullName>Tender</fullName>
+                    <default>false</default>
+                    <label>Tender</label>
+                </value>
+                <value>
+                    <fullName>Bid</fullName>
+                    <default>false</default>
+                    <label>Bid</label>
+                </value>
+                <value>
+                    <fullName>Bidding</fullName>
+                    <default>false</default>
+                    <label>Bidding</label>
+                </value>
+                <value>
+                    <fullName>GC Bidding</fullName>
+                    <default>false</default>
+                    <label>GC Bidding</label>
+                </value>
+                <value>
+                    <fullName>GC Bidding-Invitation</fullName>
+                    <default>false</default>
+                    <label>GC Bidding-Invitation</label>
+                </value>
+                <value>
+                    <fullName>Negotiating</fullName>
+                    <default>false</default>
+                    <label>Negotiating</label>
+                </value>
+                <value>
+                    <fullName>Sub-bidding</fullName>
+                    <default>false</default>
+                    <label>Sub-bidding</label>
+                </value>
+                <value>
+                    <fullName>Sub bidding</fullName>
+                    <default>false</default>
+                    <label>Sub bidding</label>
+                </value>
+                <value>
+                    <fullName>Bid result</fullName>
+                    <default>false</default>
+                    <label>Bid result</label>
+                </value>
+                <value>
+                    <fullName>Bid Results</fullName>
+                    <default>false</default>
+                    <label>Bid Results</label>
+                </value>
+                <value>
+                    <fullName>Epc award</fullName>
+                    <default>false</default>
+                    <label>Epc award</label>
+                </value>
+                <value>
+                    <fullName>Start</fullName>
+                    <default>false</default>
+                    <label>Start</label>
+                </value>
+                <value>
+                    <fullName>Execution</fullName>
+                    <default>false</default>
+                    <label>Execution</label>
+                </value>
+                <value>
+                    <fullName>Sub-Award</fullName>
+                    <default>false</default>
+                    <label>Sub-Award</label>
+                </value>
+                <value>
+                    <fullName>Subcontract Award</fullName>
+                    <default>false</default>
+                    <label>Subcontract Award</label>
+                </value>
+                <value>
+                    <fullName>Construct</fullName>
+                    <default>false</default>
+                    <label>Construct</label>
+                </value>
+                <value>
+                    <fullName>Construction</fullName>
+                    <default>false</default>
+                    <label>Construction</label>
+                </value>
+                <value>
+                    <fullName>Construction complete</fullName>
+                    <default>false</default>
+                    <label>Construction complete</label>
+                </value>
+                <value>
+                    <fullName>Permit</fullName>
+                    <default>false</default>
+                    <label>Permit</label>
+                </value>
+                <value>
+                    <fullName>Occupancy</fullName>
+                    <default>false</default>
+                    <label>Occupancy</label>
+                </value>
+                <value>
+                    <fullName>Notice of Completion</fullName>
+                    <default>false</default>
+                    <label>Notice of Completion</label>
+                </value>
+                <value>
+                    <fullName>Leasing</fullName>
+                    <default>false</default>
+                    <label>Leasing</label>
+                </value>
+                <value>
+                    <fullName>Service bidding</fullName>
+                    <default>false</default>
+                    <label>Service bidding</label>
+                </value>
+                <value>
+                    <fullName>Retrofit</fullName>
+                    <default>false</default>
+                    <label>Retrofit</label>
+                </value>
+                <value>
+                    <fullName>Deferred</fullName>
+                    <default>false</default>
+                    <label>Deferred</label>
+                </value>
+                <value>
+                    <fullName>Delayed</fullName>
+                    <default>false</default>
+                    <label>Delayed</label>
+                </value>
+                <value>
+                    <fullName>On hold</fullName>
+                    <default>false</default>
+                    <label>On hold</label>
+                </value>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <default>false</default>
+                    <label>Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stages_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Stages Other</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <description>State/Province</description>
+        <externalId>false</externalId>
+        <label>State/Province</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Construction-Commercial</fullName>
+                    <default>false</default>
+                    <label>Construction-Commercial</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UOM__c</fullName>
+        <externalId>false</externalId>
+        <label>UOM</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Square Foot</fullName>
+                    <default>false</default>
+                    <label>Square Foot</label>
+                </value>
+                <value>
+                    <fullName>Square Meter</fullName>
+                    <default>false</default>
+                    <label>Square Meter</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <description>Total value of external initiative.</description>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>External Initiative</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>City__c</columns>
+        <columns>Country__c</columns>
+        <columns>Owning_Organization__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Canadian_Surfaces_External_Initiatives</fullName>
+        <columns>NAME</columns>
+        <columns>External_ID__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Value__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>PostalCode__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </filters>
+        <filters>
+            <field>Data_Source__c</field>
+            <operation>equals</operation>
+            <value>Dodge</value>
+        </filters>
+        <filters>
+            <field>External_Search_Name__c</field>
+            <operation>contains</operation>
+            <value>Surfaces</value>
+        </filters>
+        <label>Canadian Surfaces External Initiatives</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinates>BINA</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Canadian_Surfaces_External_Initiatives2</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>External_ID__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Value__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>PostalCode__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </filters>
+        <filters>
+            <field>Data_Source__c</field>
+            <operation>equals</operation>
+            <value>Dodge</value>
+        </filters>
+        <filters>
+            <field>External_Search_Name__c</field>
+            <operation>contains</operation>
+            <value>Surfaces</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2017 12:00 AM</value>
+        </filters>
+        <label>Canadian Surfaces External Initiatives</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BINA</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DPS_CIC_External_Initiatives</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Last_Import_Date__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>NAME</columns>
+        <columns>External_ID__c</columns>
+        <columns>Country__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Value__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Data_Source__c</field>
+            <operation>equals</operation>
+            <value>CIC - Construction</value>
+        </filters>
+        <label>DPS CIC External Initiatives</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DPS_Dodge_External_Initiatives</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>NAME</columns>
+        <columns>External_ID__c</columns>
+        <columns>County__c</columns>
+        <columns>External_Search_Name__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Value__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Data_Source__c</field>
+            <operation>equals</operation>
+            <value>Dodge</value>
+        </filters>
+        <label>DPS Dodge External Initiatives</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinates>BINA</roleAndSubordinates>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>External Initiative Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>External Initiatives</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>BI_NA_External_Initiative</fullName>
+        <active>true</active>
+        <label>BI-NA External Initiative</label>
+        <picklistValues>
+            <picklist>Data_Source__c</picklist>
+            <values>
+                <fullName>Dodge</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>McGraw Hill Construction</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>BI-Env</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Landscape Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Surf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-A%26HF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ASPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Air and Filtration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Chemical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Cleanroom%2FPharma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Covers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Critical Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Envelopes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Graphics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-IPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Ind Pkg %26 Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Mechanical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Specialties</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Optical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-ER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-LE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Sontara</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Thermal Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Tyvek</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Level__c</picklist>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bid Results</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bid result</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delayed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC Bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC Bidding-Invitation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negotiating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice of Completion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Occupancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning Schematics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-qualification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Proposals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Qualifications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retrofit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub-Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub-bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subcontract Award</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Construction-Commercial</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UOM__c</picklist>
+            <values>
+                <fullName>Square Foot</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Square Meter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPS_Surf_CIC</fullName>
+        <active>true</active>
+        <description>CIC External Initiative Record Type</description>
+        <label>DPS-Surf CIC</label>
+        <picklistValues>
+            <picklist>Data_Source__c</picklist>
+            <values>
+                <fullName>CIC - Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dodge</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>McGraw Hill Construction</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Env</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Landscape Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BI-Surf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-A%26HF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ASPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Air and Filtration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Chemical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Cleanroom%2FPharma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Covers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Critical Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Envelopes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Graphics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-IPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Ind Pkg %26 Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Mechanical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Specialties</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Optical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-ER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-LE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Sontara</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Thermal Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Tyvek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Level__c</picklist>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Announced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bid Results</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bid result</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delayed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Epc award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Execution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC Bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC Bidding-Invitation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negotiating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice of Completion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Occupancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planning Schematics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-qualification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-tender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Proposals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Qualifications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retrofit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Study</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub-Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub-bidding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subcontract Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tender</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Construction-Commercial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UOM__c</picklist>
+            <values>
+                <fullName>Square Foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square Meter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>CIC_EI_Not_Editable</fullName>
+        <active>true</active>
+        <description>CIC External Initiatives should not be editable for all users other than Administrator and CIC Construction user.</description>
+        <errorConditionFormula>text(Data_Source__c) = $Label.CIC_External_Initiative_Data_Source &amp;&amp; (CreatedById = $Label.BatchSFDC_DeployUser || OwnerId =$Label.CIC_Construction  ) &amp;&amp; $User.Id != $Label.BatchSFDC_DeployUser &amp;&amp; $Profile.Name != &apos;System Administrator&apos; &amp;&amp; $User.Id != $Label.CIC_Construction &amp;&amp; !ISNEW()</errorConditionFormula>
+        <errorMessage>CIC External Initiatives are not editable.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>View_Legacy_Data</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Legacy Data</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var currentURL = window.location.href; 
+var jsforlegacypocURL; 
+var jquerynewURL; 
+var jqueryuinewURL; 
+var jqcss; 
+var legacymodalcss; 
+var bootstrapcssnew; 
+var urlservice; 
+
+if(currentURL.includes(&apos;BIEMEAFabricators&apos;)){ 
+jqcss = &quot;/BIEMEAFabricators/resource/jqueryuicss&quot;; 
+legacymodalcss = &quot;/BIEMEAFabricators/resource/legacymodalcss&quot;; 
+bootstrapcssnew = &quot;/BIEMEAFabricators/resource/bootstrapcssnew&quot;; 
+urlservice = &quot;/BIEMEAFabricators/services/apexrest/LegacyAPI?tableName=ExternalInitiativehistory&amp;parentId=&quot; 
+} 
+else if(currentURL.includes(&apos;BuildingInnovationPartnerCommunity&apos;)){ 
+jqcss = &quot;/BuildingInnovationPartnerCommunity/resource/jqueryuicss&quot;; 
+legacymodalcss = &quot;/BuildingInnovationPartnerCommunity/resource/legacymodalcss&quot;; 
+bootstrapcssnew = &quot;/BuildingInnovationPartnerCommunity/resource/bootstrapcssnew&quot;; 
+urlservice = &quot;/BuildingInnovationPartnerCommunity/services/apexrest/LegacyAPI?tableName=ExternalInitiativehistory&amp;parentId=&quot; 
+} 
+else if(currentURL.includes(&apos;DPTNomexCustomerCommunity&apos;)){ 
+jqcss = &quot;/DPTNomexCustomerCommunity/resource/jqueryuicss&quot;; 
+legacymodalcss = &quot;/DPTNomexCustomerCommunity/resource/legacymodalcss&quot;; 
+bootstrapcssnew = &quot;/DPTNomexCustomerCommunity/resource/bootstrapcssnew&quot;; 
+urlservice = &quot;/DPTNomexCustomerCommunity/services/apexrest/LegacyAPI?tableName=ExternalInitiativehistory&amp;parentId=&quot; 
+} 
+else if(currentURL.includes(&apos;DPTPartnerCommunity&apos;)){ 
+jqcss = &quot;/DPTPartnerCommunity/resource/jqueryuicss&quot;; 
+legacymodalcss = &quot;/DPTPartnerCommunity/resource/legacymodalcss&quot;; 
+bootstrapcssnew = &quot;/DPTPartnerCommunity/resource/bootstrapcssnew&quot;; 
+urlservice = &quot;/DPTPartnerCommunity/services/apexrest/LegacyAPI?tableName=ExternalInitiativehistory&amp;parentId=&quot; 
+} 
+else if(currentURL.includes(&apos;PRMDuPont&apos;)){ 
+jqcss = &quot;/PRMDuPont/resource/jqueryuicss&quot;; 
+legacymodalcss = &quot;/PRMDuPont/resource/legacymodalcss&quot;; 
+bootstrapcssnew = &quot;/PRMDuPont/resource/bootstrapcssnew&quot;; 
+urlservice = &quot;/PRMDuPont/services/apexrest/LegacyAPI?tableName=ExternalInitiativehistory&amp;parentId=&quot; 
+} 
+else { 
+jqcss = &quot;/resource/jqueryuicss&quot;; 
+legacymodalcss = &quot;/resource/legacymodalcss&quot;; 
+bootstrapcssnew = &quot;/resource/bootstrapcssnew&quot;; 
+urlservice = &quot;/services/apexrest/LegacyAPI?tableName=ExternalInitiativehistory&amp;parentId=&quot;; 
+} 
+
+{!REQUIRESCRIPT(&apos;/soap/ajax/26.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&apos;https://dl.dropboxusercontent.com/s/44fce1ef563gfz0/jquerynew%20%282%29.js?dl=0&apos;)} 
+{!REQUIRESCRIPT(&apos;https://dl.dropbox.com/s/w95f0m3epvyg7a3/jqueryuinew%20%282%29.js?dl=0&apos;)} 
+{!REQUIRESCRIPT(&apos;https://dl.dropbox.com/s/4jeqmbaw2ijrm9b/jsforlegacypoc%20%282%29.js?dl=0&apos;)} 
+
+var __sfdcSessionId = &apos;{!$Api.Session_ID}&apos;; 
+
+var profName = &apos;{!$Profile.Name}&apos;; 
+
+
+requireCssFile(jqcss); 
+requireCssFile(legacymodalcss); 
+requireCssFile(bootstrapcssnew); 
+
+var id=&quot;{!External_Initiative__c.Legacy_One_DuPont_SFID__c}&quot;; 
+var j$ = jQuery.noConflict(); 
+if(id==null ||id.length==0){ 
+//alert(&quot;Legacy OpportunityId not linked&quot;); 
+var j$modalDialog = j$(&apos;&lt;div&gt;&lt;/div&gt;&apos;) 
+.html(&quot;&lt;p&gt;NO Legacy Data Found&lt;/p&gt;&quot;) 
+.dialog({ 
+autoOpen: false, 
+title: &apos;Legacy History Data&apos;, 
+resizable: false, 
+width: 800, 
+height: 200, 
+autoResize: true, 
+modal: true, 
+draggable: true 
+} 
+); 
+
+j$modalDialog.dialog(&apos;open&apos;); 
+
+}else{ 
+
+j$.ajax( 
+urlservice+id, { 
+crossDomain: true, 
+beforeSend: function (request){ 
+request.setRequestHeader(&quot;Authorization&quot;, &quot;Bearer &quot;+__sfdcSessionId); 
+
+}, 
+
+datatype:&apos;jsonp&apos;, 
+success: function(data){ 
+if(data.length==0){ 
+var j$modalDialog = j$(&apos;&lt;div&gt;&lt;/div&gt;&apos;) 
+.html(&quot;&lt;p&gt;No Data Found&lt;/p&gt;&quot;) 
+.dialog({ 
+autoOpen: false, 
+title: &apos;Legacy History Data&apos;, 
+resizable: false, 
+width: 800, 
+height: 200, 
+autoResize: true, 
+modal: true, 
+draggable: true 
+} 
+); 
+
+j$modalDialog.dialog(&apos;open&apos;); 
+}else{ 
+var table =&quot;&lt;table class=&apos;table table-bordered&apos;&gt;&quot;; 
+table+=&quot;&lt;thead&gt;&quot;; 
+table+=&quot;&lt;tr&gt;&quot;; 
+table+=&quot;&lt;th&gt;Date&lt;/th&gt;&quot;; 
+table+=&quot;&lt;th&gt;User&lt;/th&gt;&quot;; 
+table+=&quot;&lt;th&gt;Action&lt;/th&gt;&quot;; 
+table+=&quot;&lt;/tr&gt;&quot;; 
+table+=&quot;&lt;/thead&gt;&quot;; 
+table+=&quot;&lt;tbody&gt;&quot;; 
+-j$(data).each(function(i,val){ 
+console.log(val); 
+if((val.field==&quot;Owner&quot; &amp;&amp; val.oldvalue.length==18 &amp;&amp; val.newvalue.length)||(val.field==&quot;Parent&quot; &amp;&amp; val.newvalue.length == 18)){}else{ 
+table+=&quot;&lt;tr&gt;&quot;; 
+var d=new Date(val.createddate); 
+table+=&quot;&lt;td&gt;&quot;+d+&quot;&lt;/td&gt;&quot;; 
+table+=&quot;&lt;td&gt;&quot;+val.user.firstname+&quot; &quot;+val.user.lastname+&quot;&lt;/td&gt;&quot;; 
+
+if((val.oldvalue==null || val.oldvalue.length==0)&amp;&amp;(val.newvalue==null || val.newvalue.length==0)){ 
+table+=&quot;&lt;td&gt;&quot;+val.field+&quot;.&lt;/td&gt;&quot;; 
+}else{ 
+table+=&quot;&lt;td&gt;Changed &quot;+val.field; 
+if(val.oldvalue!=null &amp;&amp; val.oldvalue.length&gt;0) table+=&quot; from &quot;+val.oldvalue; 
+table+=&quot; to &quot;; 
+table+=(val.newvalue!=null &amp;&amp; val.newvalue.length&gt;0)? val.newvalue:&quot;null&quot;; 
+} 
+} 
+
+table+=&quot;&lt;/td&gt;&lt;/tr&gt;&quot;; 
+}); 
+table+=&quot;&lt;/tbody&gt;&quot;; 
+table+=&quot;&lt;/table&gt;&quot;; 
+var j$modalDialog = j$(&apos;&lt;div&gt;&lt;/div&gt;&apos;) 
+.html(table) 
+.dialog({ 
+autoOpen: false, 
+title: &apos;Legacy History Data&apos;, 
+resizable: false, 
+width: 800, 
+height: 200, 
+autoResize: false, 
+modal: true, 
+draggable: true 
+} 
+); 
+
+j$modalDialog.dialog(&apos;open&apos;); 
+}}, 
+error: function(jqXHR){ 
+alert(jqXHR.responseText); 
+var j$modalDialog = j$(&apos;&lt;div&gt;&lt;/div&gt;&apos;) 
+.html(&quot;&lt;p&gt; No Legacy data found!&lt;/p&gt;&quot;) 
+.dialog({ 
+autoOpen: false, 
+title: &apos;Legacy History Data&apos;, 
+resizable: false, 
+width: 800, 
+height: 200, 
+autoResize: true, 
+modal: true, 
+draggable: true 
+} 
+); 
+
+j$modalDialog.dialog(&apos;open&apos;); 
+} 
+} 
+
+); 
+}</url>
+    </webLinks>
+</CustomObject>

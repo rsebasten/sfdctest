@@ -1,0 +1,1931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to store the details related to sample analysis for samples gathered for brand protection cases.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>A_I__c</fullName>
+        <externalId>false</externalId>
+        <label>A.I. Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active_for_Brand_found_in_HPLC1__c</fullName>
+        <externalId>false</externalId>
+        <label>Active (s) found by HPLC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2,4 D (24D)</fullName>
+                    <default>false</default>
+                    <label>2,4 D (24D)</label>
+                </value>
+                <value>
+                    <fullName>Abamectin</fullName>
+                    <default>false</default>
+                    <label>Abamectin</label>
+                </value>
+                <value>
+                    <fullName>Acetamiprid</fullName>
+                    <default>false</default>
+                    <label>Acetamiprid</label>
+                </value>
+                <value>
+                    <fullName>A-Cypermethrin</fullName>
+                    <default>false</default>
+                    <label>A-Cypermethrin</label>
+                </value>
+                <value>
+                    <fullName>Atrazine</fullName>
+                    <default>false</default>
+                    <label>Atrazine</label>
+                </value>
+                <value>
+                    <fullName>Azimsulfuron (AZM)</fullName>
+                    <default>false</default>
+                    <label>Azimsulfuron (AZM)</label>
+                </value>
+                <value>
+                    <fullName>B-Cypermethrin</fullName>
+                    <default>false</default>
+                    <label>B-Cypermethrin</label>
+                </value>
+                <value>
+                    <fullName>Benomyl</fullName>
+                    <default>false</default>
+                    <label>Benomyl</label>
+                </value>
+                <value>
+                    <fullName>Bensulfuron methyl (BSM)</fullName>
+                    <default>false</default>
+                    <label>Bensulfuron methyl (BSM)</label>
+                </value>
+                <value>
+                    <fullName>Benzanilide</fullName>
+                    <default>false</default>
+                    <label>Benzanilide</label>
+                </value>
+                <value>
+                    <fullName>Beta-cyfluthrin</fullName>
+                    <default>false</default>
+                    <label>Beta-cyfluthrin</label>
+                </value>
+                <value>
+                    <fullName>Beta-veratine</fullName>
+                    <default>false</default>
+                    <label>Beta-veratine</label>
+                </value>
+                <value>
+                    <fullName>Bifenthrin</fullName>
+                    <default>false</default>
+                    <label>Bifenthrin</label>
+                </value>
+                <value>
+                    <fullName>Bromacil (BRO)</fullName>
+                    <default>false</default>
+                    <label>Bromacil (BRO)</label>
+                </value>
+                <value>
+                    <fullName>Bromantraniliprole</fullName>
+                    <default>false</default>
+                    <label>Bromantraniliprole</label>
+                </value>
+                <value>
+                    <fullName>Buprofenzin</fullName>
+                    <default>false</default>
+                    <label>Buprofenzin</label>
+                </value>
+                <value>
+                    <fullName>Carbendazim (CAR)</fullName>
+                    <default>false</default>
+                    <label>Carbendazim (CAR)</label>
+                </value>
+                <value>
+                    <fullName>Carbofuran</fullName>
+                    <default>false</default>
+                    <label>Carbofuran</label>
+                </value>
+                <value>
+                    <fullName>Carbosulfan</fullName>
+                    <default>false</default>
+                    <label>Carbosulfan</label>
+                </value>
+                <value>
+                    <fullName>Chlorantraniliprole</fullName>
+                    <default>false</default>
+                    <label>Chlorantraniliprole</label>
+                </value>
+                <value>
+                    <fullName>Chlorfenapyr</fullName>
+                    <default>false</default>
+                    <label>Chlorfenapyr</label>
+                </value>
+                <value>
+                    <fullName>chlorfluazuron</fullName>
+                    <default>false</default>
+                    <label>chlorfluazuron</label>
+                </value>
+                <value>
+                    <fullName>Chlorimuron Ethyl (CLE)</fullName>
+                    <default>false</default>
+                    <label>Chlorimuron Ethyl (CLE)</label>
+                </value>
+                <value>
+                    <fullName>Chlorpyrifos</fullName>
+                    <default>false</default>
+                    <label>Chlorpyrifos</label>
+                </value>
+                <value>
+                    <fullName>Chlorsulfuron (CLS)</fullName>
+                    <default>false</default>
+                    <label>Chlorsulfuron (CLS)</label>
+                </value>
+                <value>
+                    <fullName>Copper (COP)</fullName>
+                    <default>false</default>
+                    <label>Copper (COP)</label>
+                </value>
+                <value>
+                    <fullName>Cyantraniliprole</fullName>
+                    <default>false</default>
+                    <label>Cyantraniliprole</label>
+                </value>
+                <value>
+                    <fullName>Cyazypyr (CYA)</fullName>
+                    <default>false</default>
+                    <label>Cyazypyr (CYA)</label>
+                </value>
+                <value>
+                    <fullName>Cymoxanil (CYM)</fullName>
+                    <default>false</default>
+                    <label>Cymoxanil (CYM)</label>
+                </value>
+                <value>
+                    <fullName>Cypermethrin</fullName>
+                    <default>false</default>
+                    <label>Cypermethrin</label>
+                </value>
+                <value>
+                    <fullName>Cyromazin</fullName>
+                    <default>false</default>
+                    <label>Cyromazin</label>
+                </value>
+                <value>
+                    <fullName>Diazinon</fullName>
+                    <default>false</default>
+                    <label>Diazinon</label>
+                </value>
+                <value>
+                    <fullName>Dicamba (DIC)</fullName>
+                    <default>false</default>
+                    <label>Dicamba (DIC)</label>
+                </value>
+                <value>
+                    <fullName>Dicyclanil</fullName>
+                    <default>false</default>
+                    <label>Dicyclanil</label>
+                </value>
+                <value>
+                    <fullName>Difenthiuron</fullName>
+                    <default>false</default>
+                    <label>Difenthiuron</label>
+                </value>
+                <value>
+                    <fullName>Diflubenzuron</fullName>
+                    <default>false</default>
+                    <label>Diflubenzuron</label>
+                </value>
+                <value>
+                    <fullName>Diflufenican</fullName>
+                    <default>false</default>
+                    <label>Diflufenican</label>
+                </value>
+                <value>
+                    <fullName>Diuron (DIU)</fullName>
+                    <default>false</default>
+                    <label>Diuron (DIU)</label>
+                </value>
+                <value>
+                    <fullName>E1Y20</fullName>
+                    <default>false</default>
+                    <label>E1Y20</label>
+                </value>
+                <value>
+                    <fullName>ECD73</fullName>
+                    <default>false</default>
+                    <label>ECD73</label>
+                </value>
+                <value>
+                    <fullName>EGG82</fullName>
+                    <default>false</default>
+                    <label>EGG82</label>
+                </value>
+                <value>
+                    <fullName>Emamectin Benzoate</fullName>
+                    <default>false</default>
+                    <label>Emamectin Benzoate</label>
+                </value>
+                <value>
+                    <fullName>EQW78</fullName>
+                    <default>false</default>
+                    <label>EQW78</label>
+                </value>
+                <value>
+                    <fullName>Ethametsulfuron methyle (ETH)</fullName>
+                    <default>false</default>
+                    <label>Ethametsulfuron methyle (ETH)</label>
+                </value>
+                <value>
+                    <fullName>Ethofenprox</fullName>
+                    <default>false</default>
+                    <label>Ethofenprox</label>
+                </value>
+                <value>
+                    <fullName>Famoxadone (FAM)</fullName>
+                    <default>false</default>
+                    <label>Famoxadone (FAM)</label>
+                </value>
+                <value>
+                    <fullName>Fenitrothion</fullName>
+                    <default>false</default>
+                    <label>Fenitrothion</label>
+                </value>
+                <value>
+                    <fullName>Fenoxycarb</fullName>
+                    <default>false</default>
+                    <label>Fenoxycarb</label>
+                </value>
+                <value>
+                    <fullName>Fenpropathrin</fullName>
+                    <default>false</default>
+                    <label>Fenpropathrin</label>
+                </value>
+                <value>
+                    <fullName>Fipronil</fullName>
+                    <default>false</default>
+                    <label>Fipronil</label>
+                </value>
+                <value>
+                    <fullName>Flubendiamide</fullName>
+                    <default>false</default>
+                    <label>Flubendiamide</label>
+                </value>
+                <value>
+                    <fullName>Flupysulfuron methyl (FLU)</fullName>
+                    <default>false</default>
+                    <label>Flupysulfuron methyl (FLU)</label>
+                </value>
+                <value>
+                    <fullName>Flusilazole (FLZ)</fullName>
+                    <default>false</default>
+                    <label>Flusilazole (FLZ)</label>
+                </value>
+                <value>
+                    <fullName>Folpet</fullName>
+                    <default>false</default>
+                    <label>Folpet</label>
+                </value>
+                <value>
+                    <fullName>Fosetyl</fullName>
+                    <default>false</default>
+                    <label>Fosetyl</label>
+                </value>
+                <value>
+                    <fullName>H4J49</fullName>
+                    <default>false</default>
+                    <label>H4J49</label>
+                </value>
+                <value>
+                    <fullName>Hexaconazole</fullName>
+                    <default>false</default>
+                    <label>Hexaconazole</label>
+                </value>
+                <value>
+                    <fullName>Hexaflumuron</fullName>
+                    <default>false</default>
+                    <label>Hexaflumuron</label>
+                </value>
+                <value>
+                    <fullName>Hexazinon (HEX)</fullName>
+                    <default>false</default>
+                    <label>Hexazinon (HEX)</label>
+                </value>
+                <value>
+                    <fullName>imidacloprid</fullName>
+                    <default>false</default>
+                    <label>imidacloprid</label>
+                </value>
+                <value>
+                    <fullName>Indoxacarb (IND)</fullName>
+                    <default>false</default>
+                    <label>Indoxacarb (IND)</label>
+                </value>
+                <value>
+                    <fullName>Isocarbophos</fullName>
+                    <default>false</default>
+                    <label>Isocarbophos</label>
+                </value>
+                <value>
+                    <fullName>Karanjin</fullName>
+                    <default>false</default>
+                    <label>Karanjin</label>
+                </value>
+                <value>
+                    <fullName>Lambda-cyhalothrin</fullName>
+                    <default>false</default>
+                    <label>Lambda-cyhalothrin</label>
+                </value>
+                <value>
+                    <fullName>Lenacil (LEN)</fullName>
+                    <default>false</default>
+                    <label>Lenacil (LEN)</label>
+                </value>
+                <value>
+                    <fullName>Mancozeb (MAN)</fullName>
+                    <default>false</default>
+                    <label>Mancozeb (MAN)</label>
+                </value>
+                <value>
+                    <fullName>Metaflumizone</fullName>
+                    <default>false</default>
+                    <label>Metaflumizone</label>
+                </value>
+                <value>
+                    <fullName>Methamidophos</fullName>
+                    <default>false</default>
+                    <label>Methamidophos</label>
+                </value>
+                <value>
+                    <fullName>Methomyl (MET)</fullName>
+                    <default>false</default>
+                    <label>Methomyl (MET)</label>
+                </value>
+                <value>
+                    <fullName>Methoxyfenozide</fullName>
+                    <default>false</default>
+                    <label>Methoxyfenozide</label>
+                </value>
+                <value>
+                    <fullName>Metsulfuron methyl (MSM)</fullName>
+                    <default>false</default>
+                    <label>Metsulfuron methyl (MSM)</label>
+                </value>
+                <value>
+                    <fullName>Monocrotophos</fullName>
+                    <default>false</default>
+                    <label>Monocrotophos</label>
+                </value>
+                <value>
+                    <fullName>Monosultap</fullName>
+                    <default>false</default>
+                    <label>Monosultap</label>
+                </value>
+                <value>
+                    <fullName>NIcosulfuron (NIC)</fullName>
+                    <default>false</default>
+                    <label>NIcosulfuron (NIC)</label>
+                </value>
+                <value>
+                    <fullName>Noviflumuron</fullName>
+                    <default>false</default>
+                    <label>Noviflumuron</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Other (Not In List)</fullName>
+                    <default>false</default>
+                    <label>Other (Not In List)</label>
+                </value>
+                <value>
+                    <fullName>Oxyamyl (OXA)</fullName>
+                    <default>false</default>
+                    <label>Oxyamyl (OXA)</label>
+                </value>
+                <value>
+                    <fullName>Parathion</fullName>
+                    <default>false</default>
+                    <label>Parathion</label>
+                </value>
+                <value>
+                    <fullName>Parathion methyl</fullName>
+                    <default>false</default>
+                    <label>Parathion methyl</label>
+                </value>
+                <value>
+                    <fullName>Permethrin</fullName>
+                    <default>false</default>
+                    <label>Permethrin</label>
+                </value>
+                <value>
+                    <fullName>Phoxim</fullName>
+                    <default>false</default>
+                    <label>Phoxim</label>
+                </value>
+                <value>
+                    <fullName>Picoxystrobin (PIC)</fullName>
+                    <default>false</default>
+                    <label>Picoxystrobin (PIC)</label>
+                </value>
+                <value>
+                    <fullName>Profenofos</fullName>
+                    <default>false</default>
+                    <label>Profenofos</label>
+                </value>
+                <value>
+                    <fullName>Proquinazid (PRO)</fullName>
+                    <default>false</default>
+                    <label>Proquinazid (PRO)</label>
+                </value>
+                <value>
+                    <fullName>Pymetrozine</fullName>
+                    <default>false</default>
+                    <label>Pymetrozine</label>
+                </value>
+                <value>
+                    <fullName>Pyraxalt (PYR)</fullName>
+                    <default>false</default>
+                    <label>Pyraxalt (PYR)</label>
+                </value>
+                <value>
+                    <fullName>Pyridaben</fullName>
+                    <default>false</default>
+                    <label>Pyridaben</label>
+                </value>
+                <value>
+                    <fullName>Pyrifluquinazon</fullName>
+                    <default>false</default>
+                    <label>Pyrifluquinazon</label>
+                </value>
+                <value>
+                    <fullName>Q8U80</fullName>
+                    <default>false</default>
+                    <label>Q8U80</label>
+                </value>
+                <value>
+                    <fullName>QGU42</fullName>
+                    <default>false</default>
+                    <label>QGU42</label>
+                </value>
+                <value>
+                    <fullName>R0N94</fullName>
+                    <default>false</default>
+                    <label>R0N94</label>
+                </value>
+                <value>
+                    <fullName>RAB55</fullName>
+                    <default>false</default>
+                    <label>RAB55</label>
+                </value>
+                <value>
+                    <fullName>RDS63</fullName>
+                    <default>false</default>
+                    <label>RDS63</label>
+                </value>
+                <value>
+                    <fullName>Rimsulfuron (RIM)</fullName>
+                    <default>false</default>
+                    <label>Rimsulfuron (RIM)</label>
+                </value>
+                <value>
+                    <fullName>Rynaxypyr (RYN)</fullName>
+                    <default>false</default>
+                    <label>Rynaxypyr (RYN)</label>
+                </value>
+                <value>
+                    <fullName>Sodium Benzoate</fullName>
+                    <default>false</default>
+                    <label>Sodium Benzoate</label>
+                </value>
+                <value>
+                    <fullName>Sulfometuron methyl (SMM)</fullName>
+                    <default>false</default>
+                    <label>Sulfometuron methyl (SMM)</label>
+                </value>
+                <value>
+                    <fullName>Surfactant (SUR)</fullName>
+                    <default>false</default>
+                    <label>Surfactant (SUR)</label>
+                </value>
+                <value>
+                    <fullName>Tebufenozide</fullName>
+                    <default>false</default>
+                    <label>Tebufenozide</label>
+                </value>
+                <value>
+                    <fullName>Teflubenzuron</fullName>
+                    <default>false</default>
+                    <label>Teflubenzuron</label>
+                </value>
+                <value>
+                    <fullName>Thiacloprid</fullName>
+                    <default>false</default>
+                    <label>Thiacloprid</label>
+                </value>
+                <value>
+                    <fullName>Thiamethoxam</fullName>
+                    <default>false</default>
+                    <label>Thiamethoxam</label>
+                </value>
+                <value>
+                    <fullName>Thifensulfuron methyl (THI)</fullName>
+                    <default>false</default>
+                    <label>Thifensulfuron methyl (THI)</label>
+                </value>
+                <value>
+                    <fullName>Thiocyclam</fullName>
+                    <default>false</default>
+                    <label>Thiocyclam</label>
+                </value>
+                <value>
+                    <fullName>Thiodicarb</fullName>
+                    <default>false</default>
+                    <label>Thiodicarb</label>
+                </value>
+                <value>
+                    <fullName>Tolfenpyrad</fullName>
+                    <default>false</default>
+                    <label>Tolfenpyrad</label>
+                </value>
+                <value>
+                    <fullName>triazamate</fullName>
+                    <default>false</default>
+                    <label>triazamate</label>
+                </value>
+                <value>
+                    <fullName>triazophos</fullName>
+                    <default>false</default>
+                    <label>triazophos</label>
+                </value>
+                <value>
+                    <fullName>Tribenuron methyl (TBE)</fullName>
+                    <default>false</default>
+                    <label>Tribenuron methyl (TBE)</label>
+                </value>
+                <value>
+                    <fullName>Triflumezopyrim</fullName>
+                    <default>false</default>
+                    <label>Triflumezopyrim</label>
+                </value>
+                <value>
+                    <fullName>Triflusulfuron methyl (TRI)</fullName>
+                    <default>false</default>
+                    <label>Triflusulfuron methyl (TRI)</label>
+                </value>
+                <value>
+                    <fullName>Tyrphostin</fullName>
+                    <default>false</default>
+                    <label>Tyrphostin</label>
+                </value>
+                <value>
+                    <fullName>Veratrine hydrochloride</fullName>
+                    <default>false</default>
+                    <label>Veratrine hydrochloride</label>
+                </value>
+                <value>
+                    <fullName>Ziram</fullName>
+                    <default>false</default>
+                    <label>Ziram</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Active_for_Brand_found_in_HPLC__c</fullName>
+        <externalId>false</externalId>
+        <label>Active1 (s) found by HPLC</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analysis_type__c</fullName>
+        <externalId>false</externalId>
+        <label>Analysis Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Advanced</fullName>
+                    <default>false</default>
+                    <label>Advanced</label>
+                </value>
+                <value>
+                    <fullName>Basic</fullName>
+                    <default>false</default>
+                    <label>Basic</label>
+                </value>
+                <value>
+                    <fullName>FTIR only</fullName>
+                    <default>false</default>
+                    <label>FTIR only</label>
+                </value>
+                <value>
+                    <fullName>Packaging</fullName>
+                    <default>false</default>
+                    <label>Packaging</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Any_Other_Impurities__c</fullName>
+        <externalId>false</externalId>
+        <label>Any Other Impurities</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Appearance__c</fullName>
+        <externalId>false</externalId>
+        <label>Appearance</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assay__c</fullName>
+        <externalId>false</externalId>
+        <label>%Assay</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Does not meet FAO/WHO specification</fullName>
+                    <default>false</default>
+                    <label>Does not meet FAO/WHO specification</label>
+                </value>
+                <value>
+                    <fullName>Meets FAO/WHO specification</fullName>
+                    <default>false</default>
+                    <label>Meets FAO/WHO specification</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <externalId>false</externalId>
+        <formula>Trademark_Abuse_Sample__r.Case__r.fId18__c</formula>
+        <label>Case</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments_on_Formulation_Ingredients__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments on Formulation Ingredients</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Compounds_found_in_FTIR__c</fullName>
+        <externalId>false</externalId>
+        <label>Compound (s) found by FTIR</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2,4 D (24D)</fullName>
+                    <default>false</default>
+                    <label>2,4 D (24D)</label>
+                </value>
+                <value>
+                    <fullName>Abamectin</fullName>
+                    <default>false</default>
+                    <label>Abamectin</label>
+                </value>
+                <value>
+                    <fullName>Acetamiprid</fullName>
+                    <default>false</default>
+                    <label>Acetamiprid</label>
+                </value>
+                <value>
+                    <fullName>A-Cypermethrin</fullName>
+                    <default>false</default>
+                    <label>A-Cypermethrin</label>
+                </value>
+                <value>
+                    <fullName>Atrazine</fullName>
+                    <default>false</default>
+                    <label>Atrazine</label>
+                </value>
+                <value>
+                    <fullName>Azimsulfuron (AZM)</fullName>
+                    <default>false</default>
+                    <label>Azimsulfuron (AZM)</label>
+                </value>
+                <value>
+                    <fullName>B-Cypermethrin</fullName>
+                    <default>false</default>
+                    <label>B-Cypermethrin</label>
+                </value>
+                <value>
+                    <fullName>Benomyl</fullName>
+                    <default>false</default>
+                    <label>Benomyl</label>
+                </value>
+                <value>
+                    <fullName>Bensulfuron methyl (BSM)</fullName>
+                    <default>false</default>
+                    <label>Bensulfuron methyl (BSM)</label>
+                </value>
+                <value>
+                    <fullName>Benzanilide</fullName>
+                    <default>false</default>
+                    <label>Benzanilide</label>
+                </value>
+                <value>
+                    <fullName>Beta-cyfluthrin</fullName>
+                    <default>false</default>
+                    <label>Beta-cyfluthrin</label>
+                </value>
+                <value>
+                    <fullName>Beta-veratine</fullName>
+                    <default>false</default>
+                    <label>Beta-veratine</label>
+                </value>
+                <value>
+                    <fullName>Bifenthrin</fullName>
+                    <default>false</default>
+                    <label>Bifenthrin</label>
+                </value>
+                <value>
+                    <fullName>Bromacil (BRO)</fullName>
+                    <default>false</default>
+                    <label>Bromacil (BRO)</label>
+                </value>
+                <value>
+                    <fullName>Bromantraniliprole</fullName>
+                    <default>false</default>
+                    <label>Bromantraniliprole</label>
+                </value>
+                <value>
+                    <fullName>Buprofenzin</fullName>
+                    <default>false</default>
+                    <label>Buprofenzin</label>
+                </value>
+                <value>
+                    <fullName>Carbendazim (CAR)</fullName>
+                    <default>false</default>
+                    <label>Carbendazim (CAR)</label>
+                </value>
+                <value>
+                    <fullName>Carbofuran</fullName>
+                    <default>false</default>
+                    <label>Carbofuran</label>
+                </value>
+                <value>
+                    <fullName>Carbosulfan</fullName>
+                    <default>false</default>
+                    <label>Carbosulfan</label>
+                </value>
+                <value>
+                    <fullName>Chlorantraniliprole</fullName>
+                    <default>false</default>
+                    <label>Chlorantraniliprole</label>
+                </value>
+                <value>
+                    <fullName>Chlorfenapyr</fullName>
+                    <default>false</default>
+                    <label>Chlorfenapyr</label>
+                </value>
+                <value>
+                    <fullName>chlorfluazuron</fullName>
+                    <default>false</default>
+                    <label>chlorfluazuron</label>
+                </value>
+                <value>
+                    <fullName>Chlorimuron Ethyl (CLE)</fullName>
+                    <default>false</default>
+                    <label>Chlorimuron Ethyl (CLE)</label>
+                </value>
+                <value>
+                    <fullName>Chlorpyrifos</fullName>
+                    <default>false</default>
+                    <label>Chlorpyrifos</label>
+                </value>
+                <value>
+                    <fullName>Chlorsulfuron (CLS)</fullName>
+                    <default>false</default>
+                    <label>Chlorsulfuron (CLS)</label>
+                </value>
+                <value>
+                    <fullName>Copper (COP)</fullName>
+                    <default>false</default>
+                    <label>Copper (COP)</label>
+                </value>
+                <value>
+                    <fullName>Cyantraniliprole</fullName>
+                    <default>false</default>
+                    <label>Cyantraniliprole</label>
+                </value>
+                <value>
+                    <fullName>Cyazypyr (CYA)</fullName>
+                    <default>false</default>
+                    <label>Cyazypyr (CYA)</label>
+                </value>
+                <value>
+                    <fullName>Cymoxanil (CYM)</fullName>
+                    <default>false</default>
+                    <label>Cymoxanil (CYM)</label>
+                </value>
+                <value>
+                    <fullName>Cypermethrin</fullName>
+                    <default>false</default>
+                    <label>Cypermethrin</label>
+                </value>
+                <value>
+                    <fullName>Cyromazin</fullName>
+                    <default>false</default>
+                    <label>Cyromazin</label>
+                </value>
+                <value>
+                    <fullName>Diazinon</fullName>
+                    <default>false</default>
+                    <label>Diazinon</label>
+                </value>
+                <value>
+                    <fullName>Dicamba (DIC)</fullName>
+                    <default>false</default>
+                    <label>Dicamba (DIC)</label>
+                </value>
+                <value>
+                    <fullName>Dicyclanil</fullName>
+                    <default>false</default>
+                    <label>Dicyclanil</label>
+                </value>
+                <value>
+                    <fullName>Difenthiuron</fullName>
+                    <default>false</default>
+                    <label>Difenthiuron</label>
+                </value>
+                <value>
+                    <fullName>Diflubenzuron</fullName>
+                    <default>false</default>
+                    <label>Diflubenzuron</label>
+                </value>
+                <value>
+                    <fullName>Diflufenican</fullName>
+                    <default>false</default>
+                    <label>Diflufenican</label>
+                </value>
+                <value>
+                    <fullName>Diuron (DIU)</fullName>
+                    <default>false</default>
+                    <label>Diuron (DIU)</label>
+                </value>
+                <value>
+                    <fullName>E1Y20</fullName>
+                    <default>false</default>
+                    <label>E1Y20</label>
+                </value>
+                <value>
+                    <fullName>ECD73</fullName>
+                    <default>false</default>
+                    <label>ECD73</label>
+                </value>
+                <value>
+                    <fullName>EGG82</fullName>
+                    <default>false</default>
+                    <label>EGG82</label>
+                </value>
+                <value>
+                    <fullName>Emamectin Benzoate</fullName>
+                    <default>false</default>
+                    <label>Emamectin Benzoate</label>
+                </value>
+                <value>
+                    <fullName>EQW78</fullName>
+                    <default>false</default>
+                    <label>EQW78</label>
+                </value>
+                <value>
+                    <fullName>Ethametsulfuron methyle (ETH)</fullName>
+                    <default>false</default>
+                    <label>Ethametsulfuron methyle (ETH)</label>
+                </value>
+                <value>
+                    <fullName>Ethofenprox</fullName>
+                    <default>false</default>
+                    <label>Ethofenprox</label>
+                </value>
+                <value>
+                    <fullName>Famoxadone (FAM)</fullName>
+                    <default>false</default>
+                    <label>Famoxadone (FAM)</label>
+                </value>
+                <value>
+                    <fullName>Fenitrothion</fullName>
+                    <default>false</default>
+                    <label>Fenitrothion</label>
+                </value>
+                <value>
+                    <fullName>Fenoxycarb</fullName>
+                    <default>false</default>
+                    <label>Fenoxycarb</label>
+                </value>
+                <value>
+                    <fullName>Fenpropathrin</fullName>
+                    <default>false</default>
+                    <label>Fenpropathrin</label>
+                </value>
+                <value>
+                    <fullName>Fipronil</fullName>
+                    <default>false</default>
+                    <label>Fipronil</label>
+                </value>
+                <value>
+                    <fullName>Flubendiamide</fullName>
+                    <default>false</default>
+                    <label>Flubendiamide</label>
+                </value>
+                <value>
+                    <fullName>Flupysulfuron methyl (FLU)</fullName>
+                    <default>false</default>
+                    <label>Flupysulfuron methyl (FLU)</label>
+                </value>
+                <value>
+                    <fullName>Flusilazole (FLZ)</fullName>
+                    <default>false</default>
+                    <label>Flusilazole (FLZ)</label>
+                </value>
+                <value>
+                    <fullName>Folpet</fullName>
+                    <default>false</default>
+                    <label>Folpet</label>
+                </value>
+                <value>
+                    <fullName>Fosetyl</fullName>
+                    <default>false</default>
+                    <label>Fosetyl</label>
+                </value>
+                <value>
+                    <fullName>H4J49</fullName>
+                    <default>false</default>
+                    <label>H4J49</label>
+                </value>
+                <value>
+                    <fullName>Hexaconazole</fullName>
+                    <default>false</default>
+                    <label>Hexaconazole</label>
+                </value>
+                <value>
+                    <fullName>Hexaflumuron</fullName>
+                    <default>false</default>
+                    <label>Hexaflumuron</label>
+                </value>
+                <value>
+                    <fullName>Hexazinon (HEX)</fullName>
+                    <default>false</default>
+                    <label>Hexazinon (HEX)</label>
+                </value>
+                <value>
+                    <fullName>imidacloprid</fullName>
+                    <default>false</default>
+                    <label>imidacloprid</label>
+                </value>
+                <value>
+                    <fullName>Indoxacarb (IND)</fullName>
+                    <default>false</default>
+                    <label>Indoxacarb (IND)</label>
+                </value>
+                <value>
+                    <fullName>Isocarbophos</fullName>
+                    <default>false</default>
+                    <label>Isocarbophos</label>
+                </value>
+                <value>
+                    <fullName>Karanjin</fullName>
+                    <default>false</default>
+                    <label>Karanjin</label>
+                </value>
+                <value>
+                    <fullName>Lambda-cyhalothrin</fullName>
+                    <default>false</default>
+                    <label>Lambda-cyhalothrin</label>
+                </value>
+                <value>
+                    <fullName>Lenacil (LEN)</fullName>
+                    <default>false</default>
+                    <label>Lenacil (LEN)</label>
+                </value>
+                <value>
+                    <fullName>Mancozeb (MAN)</fullName>
+                    <default>false</default>
+                    <label>Mancozeb (MAN)</label>
+                </value>
+                <value>
+                    <fullName>Metaflumizone</fullName>
+                    <default>false</default>
+                    <label>Metaflumizone</label>
+                </value>
+                <value>
+                    <fullName>Methamidophos</fullName>
+                    <default>false</default>
+                    <label>Methamidophos</label>
+                </value>
+                <value>
+                    <fullName>Methomyl (MET)</fullName>
+                    <default>false</default>
+                    <label>Methomyl (MET)</label>
+                </value>
+                <value>
+                    <fullName>Methoxyfenozide</fullName>
+                    <default>false</default>
+                    <label>Methoxyfenozide</label>
+                </value>
+                <value>
+                    <fullName>Metsulfuron methyl (MSM)</fullName>
+                    <default>false</default>
+                    <label>Metsulfuron methyl (MSM)</label>
+                </value>
+                <value>
+                    <fullName>Monocrotophos</fullName>
+                    <default>false</default>
+                    <label>Monocrotophos</label>
+                </value>
+                <value>
+                    <fullName>Monosultap</fullName>
+                    <default>false</default>
+                    <label>Monosultap</label>
+                </value>
+                <value>
+                    <fullName>NIcosulfuron (NIC)</fullName>
+                    <default>false</default>
+                    <label>NIcosulfuron (NIC)</label>
+                </value>
+                <value>
+                    <fullName>Noviflumuron</fullName>
+                    <default>false</default>
+                    <label>Noviflumuron</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Other (Not In List)</fullName>
+                    <default>false</default>
+                    <label>Other (Not In List)</label>
+                </value>
+                <value>
+                    <fullName>Oxyamyl (OXA)</fullName>
+                    <default>false</default>
+                    <label>Oxyamyl (OXA)</label>
+                </value>
+                <value>
+                    <fullName>Parathion</fullName>
+                    <default>false</default>
+                    <label>Parathion</label>
+                </value>
+                <value>
+                    <fullName>Parathion methyl</fullName>
+                    <default>false</default>
+                    <label>Parathion methyl</label>
+                </value>
+                <value>
+                    <fullName>Permethrin</fullName>
+                    <default>false</default>
+                    <label>Permethrin</label>
+                </value>
+                <value>
+                    <fullName>Phoxim</fullName>
+                    <default>false</default>
+                    <label>Phoxim</label>
+                </value>
+                <value>
+                    <fullName>Picoxystrobin (PIC)</fullName>
+                    <default>false</default>
+                    <label>Picoxystrobin (PIC)</label>
+                </value>
+                <value>
+                    <fullName>Profenofos</fullName>
+                    <default>false</default>
+                    <label>Profenofos</label>
+                </value>
+                <value>
+                    <fullName>Proquinazid (PRO)</fullName>
+                    <default>false</default>
+                    <label>Proquinazid (PRO)</label>
+                </value>
+                <value>
+                    <fullName>Pymetrozine</fullName>
+                    <default>false</default>
+                    <label>Pymetrozine</label>
+                </value>
+                <value>
+                    <fullName>Pyraxalt (PYR)</fullName>
+                    <default>false</default>
+                    <label>Pyraxalt (PYR)</label>
+                </value>
+                <value>
+                    <fullName>Pyridaben</fullName>
+                    <default>false</default>
+                    <label>Pyridaben</label>
+                </value>
+                <value>
+                    <fullName>Pyrifluquinazon</fullName>
+                    <default>false</default>
+                    <label>Pyrifluquinazon</label>
+                </value>
+                <value>
+                    <fullName>Q8U80</fullName>
+                    <default>false</default>
+                    <label>Q8U80</label>
+                </value>
+                <value>
+                    <fullName>QGU42</fullName>
+                    <default>false</default>
+                    <label>QGU42</label>
+                </value>
+                <value>
+                    <fullName>R0N94</fullName>
+                    <default>false</default>
+                    <label>R0N94</label>
+                </value>
+                <value>
+                    <fullName>RAB55</fullName>
+                    <default>false</default>
+                    <label>RAB55</label>
+                </value>
+                <value>
+                    <fullName>RDS63</fullName>
+                    <default>false</default>
+                    <label>RDS63</label>
+                </value>
+                <value>
+                    <fullName>Rimsulfuron (RIM)</fullName>
+                    <default>false</default>
+                    <label>Rimsulfuron (RIM)</label>
+                </value>
+                <value>
+                    <fullName>Rynaxypyr (RYN)</fullName>
+                    <default>false</default>
+                    <label>Rynaxypyr (RYN)</label>
+                </value>
+                <value>
+                    <fullName>Sodium Benzoate</fullName>
+                    <default>false</default>
+                    <label>Sodium Benzoate</label>
+                </value>
+                <value>
+                    <fullName>Sulfometuron methyl (SMM)</fullName>
+                    <default>false</default>
+                    <label>Sulfometuron methyl (SMM)</label>
+                </value>
+                <value>
+                    <fullName>Surfactant (SUR)</fullName>
+                    <default>false</default>
+                    <label>Surfactant (SUR)</label>
+                </value>
+                <value>
+                    <fullName>Tebufenozide</fullName>
+                    <default>false</default>
+                    <label>Tebufenozide</label>
+                </value>
+                <value>
+                    <fullName>Teflubenzuron</fullName>
+                    <default>false</default>
+                    <label>Teflubenzuron</label>
+                </value>
+                <value>
+                    <fullName>Thiacloprid</fullName>
+                    <default>false</default>
+                    <label>Thiacloprid</label>
+                </value>
+                <value>
+                    <fullName>Thiamethoxam</fullName>
+                    <default>false</default>
+                    <label>Thiamethoxam</label>
+                </value>
+                <value>
+                    <fullName>Thifensulfuron methyl (THI)</fullName>
+                    <default>false</default>
+                    <label>Thifensulfuron methyl (THI)</label>
+                </value>
+                <value>
+                    <fullName>Thiocyclam</fullName>
+                    <default>false</default>
+                    <label>Thiocyclam</label>
+                </value>
+                <value>
+                    <fullName>Thiodicarb</fullName>
+                    <default>false</default>
+                    <label>Thiodicarb</label>
+                </value>
+                <value>
+                    <fullName>Tolfenpyrad</fullName>
+                    <default>false</default>
+                    <label>Tolfenpyrad</label>
+                </value>
+                <value>
+                    <fullName>triazamate</fullName>
+                    <default>false</default>
+                    <label>triazamate</label>
+                </value>
+                <value>
+                    <fullName>triazophos</fullName>
+                    <default>false</default>
+                    <label>triazophos</label>
+                </value>
+                <value>
+                    <fullName>Tribenuron methyl (TBE)</fullName>
+                    <default>false</default>
+                    <label>Tribenuron methyl (TBE)</label>
+                </value>
+                <value>
+                    <fullName>Triflumezopyrim</fullName>
+                    <default>false</default>
+                    <label>Triflumezopyrim</label>
+                </value>
+                <value>
+                    <fullName>Triflusulfuron methyl (TRI)</fullName>
+                    <default>false</default>
+                    <label>Triflusulfuron methyl (TRI)</label>
+                </value>
+                <value>
+                    <fullName>Tyrphostin</fullName>
+                    <default>false</default>
+                    <label>Tyrphostin</label>
+                </value>
+                <value>
+                    <fullName>Veratrine hydrochloride</fullName>
+                    <default>false</default>
+                    <label>Veratrine hydrochloride</label>
+                </value>
+                <value>
+                    <fullName>Ziram</fullName>
+                    <default>false</default>
+                    <label>Ziram</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Date_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Completed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FTIR_Conclusion_about_A_I__c</fullName>
+        <externalId>false</externalId>
+        <label>FTIR Conclusion about A.I.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active Confirmed</fullName>
+                    <default>false</default>
+                    <label>Active Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Active May be Present</fullName>
+                    <default>false</default>
+                    <label>Active May be Present</label>
+                </value>
+                <value>
+                    <fullName>Active Not Confirmed</fullName>
+                    <default>false</default>
+                    <label>Active Not Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Different Active Confirmed</fullName>
+                    <default>false</default>
+                    <label>Different Active Confirmed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FTIR_Conclusion_about_Formulation__c</fullName>
+        <externalId>false</externalId>
+        <label>FTIR Conclusion about Formulation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DuPont Product Confirmed</fullName>
+                    <default>false</default>
+                    <label>DuPont Product Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Not DuPont Product Confirmed</fullName>
+                    <default>false</default>
+                    <label>Not DuPont Product Confirmed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Identical_to_Previous_Cases__c</fullName>
+        <externalId>false</externalId>
+        <label>Identical to Previous Cases</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Impurity_Profile__c</fullName>
+        <externalId>false</externalId>
+        <label>Impurity Profile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Does not meet FAO/WHO specifications</fullName>
+                    <default>false</default>
+                    <label>Does not meet FAO/WHO specifications</label>
+                </value>
+                <value>
+                    <fullName>Does not meet FAO/WHO recommendations</fullName>
+                    <default>false</default>
+                    <label>Does not meet FAO/WHO recommendations</label>
+                </value>
+                <value>
+                    <fullName>Meets FAO/WHO specifications</fullName>
+                    <default>false</default>
+                    <label>Meets FAO/WHO specifications</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Known_Impurities__c</fullName>
+        <externalId>false</externalId>
+        <label>Known Impurities</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lab_Name__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lab Name</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Business_Partner__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Complaint Manager</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Business_Partner__c</referenceTo>
+        <relationshipLabel>Sample Analysis</relationshipLabel>
+        <relationshipName>Trademark_Abuse_Sample_Analysis</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lab_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Lab Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary</fullName>
+                    <default>false</default>
+                    <label>Primary</label>
+                </value>
+                <value>
+                    <fullName>Secondary</fullName>
+                    <default>false</default>
+                    <label>Secondary</label>
+                </value>
+                <value>
+                    <fullName>Tertiary</fullName>
+                    <default>false</default>
+                    <label>Tertiary</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Overall_Conclusion__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Conclusion</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Original DuPont Product</fullName>
+                    <default>false</default>
+                    <label>Not Original DuPont Product</label>
+                </value>
+                <value>
+                    <fullName>Original DuPont Product</fullName>
+                    <default>false</default>
+                    <label>Original DuPont Product</label>
+                </value>
+                <value>
+                    <fullName>Generic Product meets FAO/WHO specification</fullName>
+                    <default>false</default>
+                    <label>Generic Product meets FAO/WHO specification</label>
+                </value>
+                <value>
+                    <fullName>Generic Product Does Not Meet FAO/WHO Specification</fullName>
+                    <default>false</default>
+                    <label>Generic Product Does Not Meet FAO/WHO Specification</label>
+                </value>
+                <value>
+                    <fullName>Generic Product Does Not Meet DuPont Specification</fullName>
+                    <default>false</default>
+                    <label>Generic Product Does Not Meet DuPont Specification</label>
+                </value>
+                <value>
+                    <fullName>Generic Product Meets DuPont specifications.</fullName>
+                    <default>false</default>
+                    <label>Generic Product Meets DuPont specifications.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quality_of_Formulation__c</fullName>
+        <externalId>false</externalId>
+        <label>Quality of Formulation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Meets FAO/WHO specs</fullName>
+                    <default>false</default>
+                    <label>Meets FAO/WHO specs</label>
+                </value>
+                <value>
+                    <fullName>Does not meet FAO/WHO specs</fullName>
+                    <default>false</default>
+                    <label>Does not meet FAO/WHO specs</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quality_of_Packaging__c</fullName>
+        <externalId>false</externalId>
+        <label>Quality of Packaging</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Comparable</fullName>
+                    <default>false</default>
+                    <label>Comparable</label>
+                </value>
+                <value>
+                    <fullName>Not Comparable</fullName>
+                    <default>false</default>
+                    <label>Not Comparable</label>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                    <label>Not Applicable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>S_U_Contaminants__c</fullName>
+        <externalId>false</externalId>
+        <label>S.U. Contaminants</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sample_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Trademark_Abuse_Sample__r.Sample_Name__c</formula>
+        <label>Sample Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Similar_to_previous_cases__c</fullName>
+        <externalId>false</externalId>
+        <label>Similar to previous cases</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Toxic_Solvents_Detected__c</fullName>
+        <externalId>false</externalId>
+        <label>Toxic Solvents Detected</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Acetone</fullName>
+                    <default>false</default>
+                    <label>Acetone</label>
+                </value>
+                <value>
+                    <fullName>Acetonitrile</fullName>
+                    <default>false</default>
+                    <label>Acetonitrile</label>
+                </value>
+                <value>
+                    <fullName>Benzene</fullName>
+                    <default>false</default>
+                    <label>Benzene</label>
+                </value>
+                <value>
+                    <fullName>Bisphenol A (BPA)</fullName>
+                    <default>false</default>
+                    <label>Bisphenol A (BPA)</label>
+                </value>
+                <value>
+                    <fullName>Chlorinated biphenyls</fullName>
+                    <default>false</default>
+                    <label>Chlorinated biphenyls</label>
+                </value>
+                <value>
+                    <fullName>Chlorinated solvents</fullName>
+                    <default>false</default>
+                    <label>Chlorinated solvents</label>
+                </value>
+                <value>
+                    <fullName>Chloroform</fullName>
+                    <default>false</default>
+                    <label>Chloroform</label>
+                </value>
+                <value>
+                    <fullName>Dioxins</fullName>
+                    <default>false</default>
+                    <label>Dioxins</label>
+                </value>
+                <value>
+                    <fullName>Ethylene Ether</fullName>
+                    <default>false</default>
+                    <label>Ethylene Ether</label>
+                </value>
+                <value>
+                    <fullName>Formaldehyde</fullName>
+                    <default>false</default>
+                    <label>Formaldehyde</label>
+                </value>
+                <value>
+                    <fullName>Gasoline</fullName>
+                    <default>false</default>
+                    <label>Gasoline</label>
+                </value>
+                <value>
+                    <fullName>Glycol</fullName>
+                    <default>false</default>
+                    <label>Glycol</label>
+                </value>
+                <value>
+                    <fullName>Hexane</fullName>
+                    <default>false</default>
+                    <label>Hexane</label>
+                </value>
+                <value>
+                    <fullName>Methanol</fullName>
+                    <default>false</default>
+                    <label>Methanol</label>
+                </value>
+                <value>
+                    <fullName>Naphtha</fullName>
+                    <default>false</default>
+                    <label>Naphtha</label>
+                </value>
+                <value>
+                    <fullName>Nitrobenzene</fullName>
+                    <default>false</default>
+                    <label>Nitrobenzene</label>
+                </value>
+                <value>
+                    <fullName>Perchloroethylene</fullName>
+                    <default>false</default>
+                    <label>Perchloroethylene</label>
+                </value>
+                <value>
+                    <fullName>Phenol</fullName>
+                    <default>false</default>
+                    <label>Phenol</label>
+                </value>
+                <value>
+                    <fullName>Polycyclic Aromatic Hydrocarbons</fullName>
+                    <default>false</default>
+                    <label>Polycyclic Aromatic Hydrocarbons</label>
+                </value>
+                <value>
+                    <fullName>Toluene</fullName>
+                    <default>false</default>
+                    <label>Toluene</label>
+                </value>
+                <value>
+                    <fullName>Xylene</fullName>
+                    <default>false</default>
+                    <label>Xylene</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Trademark_Abuse_Sample__c</fullName>
+        <externalId>false</externalId>
+        <label>Sample ID</label>
+        <referenceTo>Trademark_Abuse_Sample__c</referenceTo>
+        <relationshipLabel>Sample Analysis</relationshipLabel>
+        <relationshipName>Trademark_Abuse_Sample_Analysis</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Unkown_Impurities__c</fullName>
+        <externalId>false</externalId>
+        <label>Unkown Impurities</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Sample Analysis</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SA-{00000000}</displayFormat>
+        <label>Trademark Abuse Sample Analysis Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample Analysis</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Sample_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>A_I__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Received__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Completed__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Lab_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Analysis_type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Sample_Analysis</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Sample Analysis</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/BPDSampleAnalysisSave?sampleId={!Trademark_Abuse_Sample__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Return_to_Case</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Return to Case</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!Trademark_Abuse_Sample_Analysis__c.Case__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Sample_Analysis_Details</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Send Sample Analysis Details</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/_ui/core/email/author/EmailAuthor?p3_lkid={!Trademark_Abuse_Sample_Analysis__c.Id}&amp;template_id=00X13000001rKCT&amp;retURL=%2F{!Trademark_Abuse_Sample_Analysis__c.Id}&amp;p5=</url>
+    </webLinks>
+</CustomObject>

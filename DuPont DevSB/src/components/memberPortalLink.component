@@ -1,0 +1,12 @@
+<apex:component access="global">
+<apex:attribute name="portalId" type="string" description="SiteObject Id" />	
+<apex:attribute name="Contact" type="Contact" description="Contact" />	
+<apex:attribute name="SSL" type="boolean" description="Use Secure Connection SSL/HTTPS" default="false"/>	
+
+<apex:outputpanel rendered="{!NOT(SSL)}" layout="none">
+http://dupont.force.com/apex/sitePage?ekey=<c:encrypt value="{!portalId+MID(contact.id,0,15)+MID(contact.accountid,0,15)}"/>
+</apex:outputpanel>
+<apex:outputpanel rendered="{!SSL}" layout="none">
+https://dupont.secure.force.com/apex/sitePage?ekey=<c:encrypt value="{!portalId+MID(contact.id,0,15)+MID(contact.accountid,0,15)}"/>
+</apex:outputpanel>
+</apex:component>

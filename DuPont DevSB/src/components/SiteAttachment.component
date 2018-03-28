@@ -1,0 +1,85 @@
+<apex:component id="satt" allowDML="true" controller="ctrlSiteAttachment">
+<apex:attribute name="parentId" type="string" description="value" required="true" assignTo="{!parentId}"/>
+<apex:attribute name="accept" type="string" description="Comma diliminated list of context-types accepted" required="true" assignTo="{!accept}"/>	
+<!--  <apex:attribute name="onComplete" type="ApexPages.Action" description="onComplete Listener" required="true"/> -->
+ <apex:attribute name="CompleteOnClick" type="string" description="Complete OnClick event (JS)" required="false" default="void();"/>
+<apex:attribute name="CompleteLabel" type="string" description="label on complete button" required="false" default="Done"/>
+<apex:attribute name="showAttachments" type="boolean" description="value" required="false" default="false" />	
+<apex:attribute name="allowDelete" type="boolean" description="Allow deletion of an attachment (showAttachments must be try)" required="false" default="true" />	
+<apex:attribute name="maxAttachments" type="integer" description="maximum number of attachment" required="false" default="1" />	
+<apex:attribute name="InstuctionsUrl" type="string" description="Url for Upload Instructions" required="false" />	
+
+<head>
+	<style>
+	body {text-align: left;}
+	TD {text-align: left;}
+	.thinborder { border: 1px solid #ededed; }
+	</style>
+</head>
+
+<!-- ===============================================================
+	SHOW Attachments
+==================================================================-->
+<apex:outputpanel id="attlist" rendered="{!showAttachments}">
+	<table width="100%">
+		<tr><td style="text-align: left;"><h3 class="pageHeader">{!$ObjectType.attachment.labelPlural}</h3></td></tr>
+		<apex:outputpanel rendered="{!!isBlank(InstuctionsUrl)}">
+			<tr><td style="text-align: right;"><a target="_blank" href="{!InstuctionsUrl}">File Upload Instructions</a></td></tr>
+		</apex:outputpanel>
+	</table><BR/>
+	<apex:datatable cellpadding="2px" var="att" value="{!Attachments}" width="100%" rowClasses="odd,even" rendered="{!Attachments!=null}" styleClass="thinborder" rules="cols">
+		<apex:column >
+		<apex:facet name="header">&nbsp;</apex:facet>
+			<apex:commandLink action="{!deleteAttachment}" value="X" rendered="{!allowDelete}" >
+			<apex:Param name="selectAtt" assignTo="{!selectAtt}" value="{!att.id}"/>
+		</apex:commandLink>
+	</apex:column>
+		<apex:column >
+			<apex:facet name="header">{!$ObjectType.attachment.fields.name.label}</apex:facet>
+			<apex:outputText value="{!att.name}" />
+		</apex:column>
+		<apex:column >
+			<apex:facet name="header">{!$ObjectType.attachment.fields.createddate.label}</apex:facet>
+			<apex:outputText value="{!att.createddate}"/>
+		</apex:column>
+		<apex:column >
+			<apex:facet name="header">{!$ObjectType.attachment.fields.BodyLength.label} (bytes)</apex:facet>
+			<apex:outputText escape="false" value="{!att.BodyLength}"/>
+		</apex:column>
+	</apex:datatable>
+	<apex:outputpanel rendered="{!Attachments.size==0}">
+	No {!$ObjectType.attachment.labelPlural}.
+	</apex:outputpanel>
+	
+</apex:outputpanel>
+
+<!-- ===============================================================
+	UPLOAD FILE
+==================================================================-->
+<apex:outputpanel id="upld" rendered="{!parentid!=null}">
+<apex:actionRegion >
+		<br/><br/>
+		<apex:outputLabel value="{!$ObjectType.attachment.label}:" />
+		<apex:inputFile value="{!newAttachment.Body}" filename="{!newAttachment.name}" contentType="{!newAttachment.contentType}" />
+		<br/><br/>
+		<!-- Messages -->
+		<b>
+		<apex:outputText id="msg1" value="{!$Label.site.file_not_found}" rendered="{!AttMsg=='file_not_found'}"/>
+		<apex:outputText id="msg3" value="{!$Label.site.error2}: {!$Label.site.sorry_for_inconvenience}" rendered="{!AttMsg=='sorry_for_inconvenience'}"/>
+		<apex:outputText escape="false" value="{!$Label.Invalid_ContentType}" rendered="{!AttMsg=='invalid_contenttype'}">
+			<apex:param value="{!accept}"/>
+			<apex:param value="{!invalidContentType}"/>
+		</apex:outputText>
+		<apex:outputText id="otmax" value="limit_exceeded [{0}]" rendered="{!(maxAttachments<=totalAttachments)}">
+			<apex:param value="{!maxAttachments}"/>
+		</apex:outputText>
+		<apex:outputText id="msgUpSuccess" value="{!$Label.File_Uploaded_Successfully}" rendered="{!AttMsg=='upload_successful'}"/>
+		<apex:outputText id="msgdlSuccess" value="{!$Label.File_Deleted_Successfully}" rendered="{!AttMsg=='delete_successful'}"/>
+		</b>
+		<br/><br/>
+		<apex:commandbutton id="upload" action="{!uploadAttachment}" value="{!$Label.site.submit} {!$ObjectType.attachment.label}" disabled="{!(maxAttachments<=totalAttachments)}" />
+		&nbsp;&nbsp;<input type="button" style="width:100px;" value="{!CompleteLabel}" onclick="{!CompleteOnClick}" />
+</apex:actionRegion>
+</apex:outputpanel>
+
+</apex:component>

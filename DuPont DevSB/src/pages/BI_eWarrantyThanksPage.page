@@ -1,0 +1,76 @@
+<apex:page standardStylesheets="false" cache="true" id="eWarrantyDetailsPage" sidebar="false" showHeader="false" controller="ctrlBIeWarrantyInput" language="{!$CurrentPage.parameters.lang}">
+ <script type="text/javascript">
+ /*window.history.forward(1);*/
+ </script>
+ 
+ <b> {!$Label.msg_thanks}</b> <br/>  
+ <b> {!$Label.msg_successful_register} </b> <br></br>
+ <apex:form >
+  <style> body { color: grey; font: normal normal bold 11px Trebuchet MS, Helvetica;} </style>
+     <apex:pageblock title="{!$Label.title_Summary}">
+        <apex:pageBlockSection title="{!$Label.title_warrantyDetails}">
+                <apex:outputLabel value="{!$Label.outLabel_warrantyCode} : " for="warCode"/>  
+                <apex:outputText id="warCode" value="{!entitlementCode}"/> 
+ 
+                <apex:outputLabel value="{!$Label.outLabel_dateOfPurchase} : " for="dop"/>         
+                <apex:outputText id="dop" value="{0,date,dd'/'MM'/'yyyy}"> 
+                    <apex:param value="{!dtofPurchase}" /> 
+                </apex:outputText>
+       
+                <apex:outputLabel value="{!$Label.outLabel_validTill} : " for="ed"/>  
+                <apex:outputText id="ed" value="{0,date,dd'/'MM'/'yyyy}"> 
+                    <apex:param value="{!custDetails.endDate}" /> 
+                </apex:outputText>             
+        </apex:pageBlockSection>         
+        <apex:pageBlockSection title="{!$Label.title_userDetails}">            
+                <apex:outputLabel value="{!$Label.outLabel_firstName} : " for="fnm"/>  
+                <apex:outputText id="fnm" value="{!custDetails.firstName}"/> 
+ 
+                <apex:outputLabel value="{!$Label.outLabel_lastName} : " for="lnm"/>  
+                <apex:outputText id="lnm" value="{!custDetails.lastName}"/>  
+   
+                <apex:outputLabel value="{!$Label.outLabel_postalAddr} : " for="paddr"/>  
+                <apex:outputText id="paddr" value="{!custDetails.postalAddr}"/>
+ 
+                <apex:outputLabel value="{!$Label.outLabel_postalCode} : " for="zc"/>  
+                <apex:outputText id="zc" value="{!custDetails.zipCode}"/>
+
+                <apex:outputLabel value="{!$Label.outLabel_province} : " for="pro"/>  
+                <apex:outputText id="pro" value="{!custDetails.province}"/>
+ 
+                <apex:outputLabel value="{!$Label.outLabel_city} : " for="ci"/>  
+                <apex:outputText id="ci" value="{!custDetails.city}"/>
+ 
+                <apex:outputLabel value="{!$Label.outLabel_country} : " for="con"/>  
+                <apex:outputText id="con" value="{!custDetails.country}"/>
+ 
+                <apex:outputLabel value="{!$Label.outLabel_email} : " for="em"/>  
+                <apex:outputText id="em" value="{!custDetails.email}"/>
+  
+                <apex:outputLabel value="{!$Label.outLabel_telephone} : " for="tel"/>  
+                <apex:outputText id="tel" value="{!custDetails.telephone}"/>
+                
+                <apex:outputLabel value="{!$Label.outLabel_kitchenBrand} : " for="kitb"/>  
+                <apex:outputText id="kitb" value="{!custDetails.kitchenBrandName}" />                
+ 
+                <apex:outputLabel value="{!$Label.outLabel_brandOther} : " for="kitbo" rendered="{!booOther}" />  
+                <apex:outputText id="kitbo" value="{!custDetails.kitchenBrandOther}" rendered="{!booOther}" />   
+                
+                <apex:outputLabel value="{!$Label.outputLabel_SelectedColor} : " for="selecColor" />  
+                <apex:outputText id="colr" value="{!custDetails.selCorianColor}" />                      
+        </apex:pageBlockSection>        
+        <apex:pageBlockSection title="{!$Label.title_DealerDetails}" >            
+                <apex:outputLabel value="{!$Label.outLabel_dealerName} : " for="dName"/>  
+                <apex:outputText id="dName" value="{!selectedDealerName}" rendered="{!dealerAccount != null}"/>  
+                <apex:outputText id="adName" value="{!completeDealerName}" rendered="{!dealerInfo != null}"/> 
+
+                <apex:outputLabel value="{!$Label.outLabel_DealerAddress} : " for="dAddr"/>  
+                <apex:outputText id="dAddr" value="{!selectedDealerAddr}" rendered="{!selectedDealerAddr != null}"/>  
+                <apex:outputText id="adAddr" value="{!dealerAddr}" rendered="{!dealerAddr != null}"/>                     
+        </apex:pageBlockSection>
+     </apex:pageblock>
+     <br/>
+     <b/><apex:commandButton style="width: 100px;font: normal normal bold 11px Trebuchet MS, Helvetica;" value="{!$Label.button_print}" oncomplete="window.print(); return false;" />
+     <b/><apex:commandlink style="width: 20%" value="{!$Label.link_gotoHomepage}" action="{!HomePageLink}" target="_blank" />
+ </apex:form>
+</apex:page>

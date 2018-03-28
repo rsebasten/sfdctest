@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Id</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Lead$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Lead$Email</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Lead_Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Brazil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Activities$Subject</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>DuPont do Brasil - protocolo de atendimento via 0800</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Origin_Channel_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Phone,Phone-Inbound-Local,Phone-Inbound-Toll Free,Phone-Outbound Cold Call</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Owning_SBU__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Chemicals &amp; Fluoroproducts,Crop Protection,Titanium Technologies</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Origin_Channel_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>eMail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Status</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Capture</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Activities$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Miriam Karina Fachetti,Carlos Teixeira,Lidia Santanna</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Edinei Russi,Fernanda Oliveira,Joao Marcelo Occhiucci,Jabril Hart,Patricia Furini</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>DayInMonth</dateGranularity>
+        <field>Lead$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2015 QDTS PS by day Julho</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_and_Without_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$CreatedDate</dateColumn>
+        <endDate>2015-07-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-07-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>07 DELETE Notify Contact-Lead Record owner-Information deletion request-FRENCH</name>
+    <style>formalLetter</style>
+    <subject>Customer Privacy request - {!Lead_Routing__c.Lead_Name__c}&apos;s deletion</subject>
+    <textOnly>Cher
+
+Nous avons reçu une demande SFDC d&apos;un contact {!Lead_Routing__c.Lead_Name__c} rattaché à un client dont vous êtes propriétaire,
+
+{!Lead_Routing__c.Product_Comments__c}
+
+souhaitant que ses informations soient supprimées de nos bases de données. Conformément à notre Politique de confidentialité, un client / Contact se réserve le droit de revoir, corriger, mettre à jour, supprimer, effacer ou limiter l&apos;utilisation par DuPont d’informations le concernant.
+
+
+S&apos;il vous plaît , supprimez ce contact de notre basse de données et informez nous une fois finis. Selon un norme de l&apos;entreprise il y a 10 jours à partir d&apos;aujoud&apos;hui pour completer la supression.
+
+Pour toute question concernant notre politique, nous vous invitons à contacter  Geryl M. Craft(Geryl.M.Craft@dupont.com) , notre Global Privacy Leader – Marketing &amp; Sales
+
+Cordialement,
+
+
+DuPont Inquiry Management  Center
+
+Toll-free number : 00800 3876 68 38
+
+Phone : 0034 985 12 37
+
+
+Fax : 0034 912 72 52 37
+
+E-mail: eu-info@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

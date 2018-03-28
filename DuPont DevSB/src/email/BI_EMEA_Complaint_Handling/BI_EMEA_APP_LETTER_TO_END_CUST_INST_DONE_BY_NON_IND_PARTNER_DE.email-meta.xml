@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Letter to an end customer. Fabricator is no QN-member.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Letter To End-cust Inst Done By Non-Ind Partner - DE</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: Garantiefrage case: {!Case.CaseNumber}.</subject>
+    <textOnly>Sehr geehrte Herren,
+
+Nach der Überprüfung unserer Unterlagen haben wir herausgefunden, dass der Verarbeiter Ihrer Corian® Solid Surface Installation, von {!Case.Installation_Date__c} datiert, leider nicht zu unserem Qualität Netzwerk der  autorisierter Verarbeiter gehört.
+
+
+Der Corian® Solid Surface 10-Jahres Garantie gilt ausschließlich für Corian® Solid Surface Installationen im Innenbereich (Arbeitsflächen und/oder dekorative Oberflächen), die von einem Verarbeiter-/Installationsbetrieb des Corian® Solid Surface Quality Network gemäß den aktuellen veröffentlichten Corian® Solid Surface Installationsvorschriften durchgeführt wurden.
+
+
+Basiert auf den oben gemachten Erkenntnissen, kann DuPont in diesen Fall keine Garantie genehmigen.
+
+
+Für die Reparatur Ihrer Corian® Solid Surface - Installation empfehlen wir Ihnen gerne unsere Service-Center oder einen autorisierten Quality Network Verarbeiter in Ihrer Nähe.
+
+
+Wenn Sie hieran interessiert sind, kontaktieren Sie uns bitte, damit wir Sie informieren können.
+
+
+Ich hoffe auf Ihr Verständnis.
+
+
+Für weitere Informationen, zögern Sie bitte nicht mich zu kontaktieren.
+
+
+Mit freundlichen Grüßen,
+
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+
+{!Case.OwnerEmail}
+
+
+
+
+Wir möchten Sie darüber informieren, dass wir Ihre Informationen verwenden, um Ihre Geschäftsinteressen zu identifizieren, um Ihnen Produkte oder Dienste anbieten zu können und um im Verlauf unserer geschäftlichen Zusammenarbeit eine erstklassige Kundenzufriedenheit zu gewährleisten. Ihre personenbezogenen Informationen (Name, E-Mail-Adresse, Telefonnummer sowie weitere Kontaktdaten) werden in ausgewählten Kundensystemen gespeichert, die sich hauptsächlich in den Vereinigten Staaten befinden. Diese Informationen können gemeinsam von DuPont, dessen Tochtergesellschaften, Partnerunternehmen und ausgewählten Dritten in anderen Ländern und für die gleichen Zwecke verwendet werden. Falls Sie auf diese Informationen zugreifen, sie korrigieren, löschen oder die Verarbeitung Ihrer persönlichen Informationen ablehnen, klicken Sie bitte auf diesen Link.
+
+
+Das DuPont Oval, DuPont ™, The miracles of science ™ und die mit ® gekennzeichneten Produkte sind markenrechtlich geschützt für E.I. du Pont de Nemours and Company oder eine ihrer Konzerngesellschaften.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

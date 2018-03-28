@@ -1,0 +1,183 @@
+<!-- *****************************************************************************
+ This page is to download the required data as an excel document mapped to specific fields
+******************************************************************************/ -->
+<apex:page standardController="Trademark_Abuse_Sample_Analysis__c" extensions="ctrlBPDExcelDownload" id="page" showHeader="false" Sidebar="false" cache="true" expires="1200" contentType="application/vnd.ms-excel#{!caseSamples.Sample_Name__c} Shipping Request.xls" >
+    
+    <html>
+        <body> 
+            <apex:pageBlock id="results" >
+               <table border="1" cellpadding="1" cellspacing="0" style="width:100%;border:1px solid #000000;font-familyans-serif;font-size:10px">
+<tr>
+ <!---1/2/2017 Merge&Spin - replaced Hardcoded Id with Custom Label BPDExcelDownload_Id------>    
+<td><img src="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+3)}/servlet/servlet.ImageServer?id={!$Label.BPDExcelDownload_Id}&oid={!$Organization.Id}"/></td>
+</tr>
+<tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+<td></td>
+<th>ORDER SHEET</th>
+</tr>
+<tr><td></td></tr>
+
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td rowspan="4" style="width:25%"></td>
+                    <td style="font-weight: bold">Client Order Send Date</td>
+                    <td><apex:outputText value="{!cas.CreatedDate}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Client Order Send Time</td>
+                    <td></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Order Number</td>
+                    <td><apex:outputText value="{!caseSamples.Sample_Name__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Type of Case</td>
+                    <td><apex:outputText value="{!caseSamples.Sample_Reason__c}"/></td>
+                    </tr>
+
+
+
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-family:verdana;font-weight: bold;color:Black;font-size:12px;height=18px;width:25%" rowspan="4">ACC Details</td>
+                    <td style="font-weight: bold">Name</td>
+                    <td><apex:outputText value="{!user.Name}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Phone Number</td>
+                    <td><apex:outputText value="{!user.Phone}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">E-mail address </td>
+                    <td><apex:outputText value="{!user.Email}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">GSM number</td>
+                    <td></td>
+                    </tr>
+
+
+                   
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-family:verdana;font-weight:bold;color:Black;font-size:12px;height=18px;width:25%" rowspan="8">Location details</td>
+                    <td style="font-weight: bold">Company Name</td>
+                    <td><apex:outputText value="{!caseDetails.Company__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Owner Name/ contact person</td>
+                    <td><apex:outputText value="{!caseDetails.Individual_Name__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Phone number</td>
+                    <td><apex:outputText value="{!caseDetails.Phone__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Street Address</td>
+                    <td><apex:outputText value="{!caseDetails.Address__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%"> 
+                    <td style="font-weight: bold">Postal/Zip Code</td>
+                    <td><apex:outputText value="{!caseDetails.Zip_Postal_Code__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">City/Village</td>
+                    <td><apex:outputText value="{!caseDetails.City__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">District/Province</td>
+                    <td></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Country</td>
+                    <td><apex:outputText value="{!caseDetails.Target_Country__c}"/></td>
+                    </tr>   
+
+
+
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-family:verdana;font-weight:bold;color:Black;font-size:12px;height=18px;width:25%" rowspan="6">Product details</td>
+                    <td style="font-weight: bold">Brand Name</td>
+                    <td><apex:outputText value="{!caseSamples.Label_Name__c}"/></td>
+                    </tr> 
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Formulation (%Strength and Type)</td>
+                    <td><apex:outputText value="{!form}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Unit</td>
+                    <td><apex:outputText value="{!caseSamples.Product_Quantity_Collected_Unit__c}"/></td>
+                    </tr>
+                     <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Product Quantity To Be Collected</td>
+                     <td><apex:outputText value="{!caseSamples.Product_Quantity_Collected__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Product Collection Method</td>
+                    <td><apex:outputText value="{!caseSamples.Product_Collection_Method__c}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Value chain Identified</td>
+                    <td></td>
+                    </tr>
+
+
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-family:verdana;font-weight:bold;color:Black;font-size:12px;height=18px;width:25%" rowspan="5">Laboratory info</td>
+                    <td style="font-weight: bold">Primary Lab</td>
+                    <td><apex:outputText value="{!labName}"/></td>
+                    </tr> 
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Primary Lab Analysis Type</td>
+                    <td><apex:outputText value="{!sampleAnalysis.Analysis_type__c}"/></td>
+                    </tr> 
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Secondary Lab</td>
+                    <td></td>
+                    </tr> 
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Secondary Lab Analysis Type</td>
+                    <td></td>
+                    </tr> 
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Packaging analysis</td>
+                    <td></td>
+                    </tr>
+
+
+                    
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-family:verdana;font-weight:bold;color:Black;font-size:12px;height=18px;width:25%" rowspan="4">Internal DuPont Support Person</td>
+                    <td style="font-weight: bold">Name</td>
+                    <td><apex:outputText value="{!user.Name}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Phone number</td>
+                    <td><apex:outputText value="{!user.Phone}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">E-mail address</td>
+                    <td><apex:outputText value="{!user.Email}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">GSM number</td>
+                    <td></td>
+                    </tr>
+
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td rowspan="2" style="width:25%"></td>
+                    <td style="font-weight: bold">Person Collecting Sample (Internal)</td>
+                    <td><apex:outputText value="{!user.Name}"/></td>
+                    </tr>
+                    <tr style="font-family:verdana;color:Black;font-size:12px;height=18px;width:100%">
+                    <td style="font-weight: bold">Person Collecting Sample (External)</td>
+                    <td><apex:outputText value="{!caseSamples.External_Sample_Collector__c}"/></td>
+                    </tr>
+
+                   
+                </table>
+                <br/> <br/> <br/> <br/> <br/>
+
+                <apex:outputtext >Generated By: {!$User.FirstName}  {!$User.LastName}  {!Now()} </apex:outputtext>
+            </apex:pageBlock>
+        </body>
+    </html>
+</apex:page>

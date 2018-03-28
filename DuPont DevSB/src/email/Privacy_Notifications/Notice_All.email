@@ -1,0 +1,15 @@
+<messaging:emailTemplate subject="{!$Label.PRIV_NOTE_Subject}"  recipientType="Lead" relatedToType="Email__c" language="{!relatedTo.fIsoLanguageCode__c}" replyTo="eu-info@dupont.com">
+<messaging:htmlEmailBody >
+<apex:outputtext escape="false" value="{!$Label.PRIV_NOTE_Header_HTML}"/>
+<apex:outputtext escape="false" value="{!$Label.PRIV_NOTE_Opening_HTML}"/>
+<apex:outputtext escape="false" value="{!$Label.PRIV_NOTE_Body_HTML}"/>
+<apex:outputtext escape="false" value="{!$Label.PRIV_NOTE_Closing_HTML}"/>
+<apex:outputtext escape="false" value="{!$Label.PRIV_NOTE_Footer_HTML}"/>
+</messaging:htmlEmailBody>
+
+<messaging:plainTextEmailBody >
+{!$Label.PRIV_NOTE_Opening}
+{!$Label.PRIV_NOTE_Body}
+{!$Label.PRIV_NOTE_Closing}
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>Lead.Close_Comments__c</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Subject</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>DuPont Encuesta de servicio,DuPont Service Survey</value>
+        </criteriaItems>
+        <operation>without</operation>
+        <primaryTableColumn>LEAD_ID</primaryTableColumn>
+        <relatedTable>Activity</relatedTable>
+        <relatedTableJoinColumn>Who</relatedTableJoinColumn>
+    </crossFilters>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead.Response_Type__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Referred to Business,Referred to Marketing,Referred to Sales Rep</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Product_Comments__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Encuesta,cliente sin respuesta,queja</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONVERTED</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Country__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Aruba,Bahamas,Barbados,Belize,Cayman Islands,Costa Rica,Dominican Republic,El Salvador,French Guiana,Guatemala,Guyana,Haiti,Honduras,Jamaica,Mexico,Mozambique,Netherlands Antilles,Nicaragua,Panama,Saint Lucia,Trinidad and Tobago</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Queue__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DIMC Level 1 LA MEX</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.Lead_Queue__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Customer Satisfaction survey biweeklyBIS</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

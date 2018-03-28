@@ -1,0 +1,337 @@
+<apex:page StandardController="Entitlement" extensions="ctrlBINA_RegistrationSurfaces" showheader="true" sidebar="false">
+<apex:pageMessages ></apex:pageMessages>
+
+<script type="text/javascript">
+    function createTabs() {
+        rerenderTopPanel();
+    }
+</script>
+<style type="text/css">
+.bPageBlock .detailList tr td, .bPageBlock .detailList tr th, .hoverDetail .bPageBlock .detailList tr td, .hoverDetail .bPageBlock .detailList tr th
+body .bEditBlock .pbBottomButtons, body .apexp .bPageBlock.apexDefaultPageBlock .pbBottomButtons {
+ border: 0px !important; 
+}
+.labelCol{
+font-size:98% !important;
+font-weight:Bold !important;
+color: #000 !important;
+font-family: Arial,Helvetica,sans-serif;
+padding-left:0px !important;
+padding-right:0px !important;
+}
+
+}
+.outputLabel{
+font-size:100% !important;
+font-weight:normal !important;
+color: #000 !important;
+font-family: Arial,Helvetica,sans-serif;
+padding-left:0px !important;
+padding-right:0px !important;
+margin-left:125px;
+}
+
+
+.span{
+color:red;
+font-size:x-large;
+vertical-align:top;
+margin-left:0px;
+padding-left:0px;
+padding-top:0px !important;
+width:400px;
+}
+     .Global {
+           background-color: #fff; color: #6e6e6e; font-family: Arial, Segoe UI, Sans-Serif; font-size: 12px; font-weight:normal; line-height:18px; margin: 0px; padding: 0px; text-rendering: optimizeLegibility; -webkit-font-smoothing:antialiased; 
+     }
+ 
+               .customPopup{
+                    background-color: white;
+                    border-style: solid;
+                    color: grey;
+                    font: normal normal bold 11px Trebuchet MS, Helvetica;
+                    border-width: 3px;
+                    border-color:grey;
+                    left: 50%;
+                    padding:10px;
+                    position: fixed;
+                    z-index: 9999;
+                    overflow:scroll;           
+                    /* These are the 3 css properties you will need to tweak so the pop  
+                    up displays in the center of the screen. First set the width. Then set 
+                    margin-left to negative half of what the width is. You can also add 
+                    the height property for a fixed size pop up.*/
+                  /*  width: 95%;
+                    left: 0%;
+                    top:150%;
+                    height:40%;*/
+                    width:85%; 
+                    height:55%;
+                    left:0%;
+                    top:25%;
+                }
+        
+                .closeButton {
+                    float: right;
+                    height: 3%;
+                    width: 5%;
+                    
+                }
+                .dataCol{
+padding-top: -2px !important;
+padding-bottom: 0px !important;
+padding-left: 0px !important;
+}
+.data2Col{
+padding-left: 0px !important;
+}
+.btn {
+padding : 5px 3px;
+border : #3f3f3f solid 1px !important ;
+background-color : #F2F2F2 !important ;
+color : #191919 !important ;
+font-weight : bold;
+font-size : 11px !important ;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;
+
+}
+</style>
+
+<br/>
+<apex:form styleclass="Global">
+<apex:outputPanel id="data" rendered="{NOT(!EntEdit)}">
+<h><b><span style="color:brown;font-size:small;left-margin:70px;">Please enter the details for Registration below:</span></b> </h>
+<!--<span style="color:red;font-size:large;vertical-align:top;line-height:20px;margin-left:700px;">* </span><b>=  Required Information</b>
+<br/><br/>-->
+</apex:outputPanel>
+
+
+<apex:pageblock id="mytable1">
+<!--<apex:outputPanel >-->
+<apex:pageblockSection columns="2" rendered="{!accRender}">
+   <span class="span" style="margin-left:350px">*</span> = Required Information
+<apex:outputLabel ></apex:outputLabel>
+<apex:outputText label="First Name"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!con.FirstName}" required="false">
+</apex:inputField></apex:outputText>
+<apex:outputText label="Last Name"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!con.LastName}" required="false">
+</apex:inputField></apex:outputText>
+<!--
+<apex:outputText label="Email Address"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!con.Email}" required="false">
+</apex:inputField></apex:outputText>
+-->
+<apex:outputText label="Email Address"><span class="span">*</span>&nbsp;
+<apex:inputText value="{!conemail}" required="false">
+</apex:inputText></apex:outputText>
+
+<apex:outputText label="Address" ><span class="span">*</span>&nbsp;
+<apex:inputField value="{!con.MailingStreet}" required="false" style="width: 150px; height: 50px">
+</apex:inputField></apex:outputText>
+
+<apex:outputText label="Phone"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!con.Phone}" required="false">
+</apex:inputField></apex:outputText>
+
+<apex:outputText label="City"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!con.MailingCity}" required="false">
+</apex:inputField></apex:outputText>
+
+<apex:outputText label="Mobile"><span class="span"></span>&nbsp;
+<apex:inputText value="{!conPhone}" style="margin-left:12px;" required="false">
+</apex:inputText></apex:outputText>
+
+<apex:outputText label="Country"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!entit.Registration_Country1__c}" required="false">
+</apex:inputField></apex:outputText>
+
+<apex:outputText label="Zip/Postal Code"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!con.MailingPostalCode}" required="false">
+</apex:inputField></apex:outputText>
+
+<apex:outputText label="State/Province"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!entit.Registration_State_Province__c}" required="false">
+</apex:inputField></apex:outputText>
+
+
+
+<!--<apex:selectList value="{!con.Registration_Country1__c}" size="1" multiselect="false" style="width:170px;"><span class="span">*</span>&nbsp;
+<apex:selectOptions value="{!Alloption}"> </apex:selectOptions>
+</apex:selectList>-->
+<apex:outputText label="Date of Installation">
+<apex:inputField value="{!entit.StartDate}" required="false" style="margin-left:14px;" >
+</apex:inputField></apex:outputText>
+
+<apex:outputtext label="Type of Installation" ><span class="span">*</span>&nbsp;
+<apex:inputField value="{!entit.Installation_Type__c}" onchange="createTabs()" required="false" >
+</apex:inputField>
+</apex:outputtext>
+</apex:pageBlockSection>
+
+<apex:pageblockSection columns="2" rendered="{!conRender}">
+   <span class="span" style="margin-left:350px">*</span> = Required Information
+<apex:outputLabel ></apex:outputLabel>
+<apex:outputText label="First Name">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.FirstName}">
+</apex:outputField></apex:outputText>
+<apex:outputText label="Last Name">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.LastName}">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Email Address">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.Email}">
+</apex:outputField></apex:outputText>
+
+
+<apex:outputText label="Address" >&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingStreet}" style="width: 150px; height: 50px">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Phone">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.Phone}">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="City">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingCity}">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Mobile">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MobilePhone}" style="margin-left:12px;">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="State/Province">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingState}">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Zip/Postal Code">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingPostalCode}">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Country">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.Mailingcountry}">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Date of Installation">
+<apex:inputField value="{!entit.StartDate}" required="false" style="margin-left:14px;" >
+</apex:inputField></apex:outputText>
+
+<apex:outputtext label="Type of Installation" ><span class="span">*</span>&nbsp;
+<apex:inputField value="{!entit.Installation_Type__c}" onchange="createTabs()" required="false" >
+</apex:inputField>
+</apex:outputtext>
+</apex:pageBlockSection>
+
+<apex:pageblockSection columns="2" rendered="{!EntEdit}">
+<span class="span" style="margin-left:350px">*</span> = Required Information
+<apex:outputLabel ></apex:outputLabel>
+<apex:outputText label="First Name">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.FirstName}" >
+</apex:outputField></apex:outputText>
+<apex:outputText label="Last Name">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.LastName}" >
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Email Address">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.email}" >
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Address" >&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingStreet}" style="width: 150px; height: 50px">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Phone">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.Phone}" >
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="City">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingCity}" >
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Mobile">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MobilePhone}" style="margin-left:12px;" >
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="State/Province">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingState}" >
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Zip/Postal Code">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingPostalCode}" >
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Country">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputField value="{!con1.MailingCountry}">
+</apex:outputField></apex:outputText>
+
+<apex:outputText label="Registration Name"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!entit.name}" required="false">
+</apex:inputField></apex:outputText>
+<apex:outputText label="Registration Number">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:inputField value="{!entit.Registration_Number__c}">
+</apex:inputField></apex:outputText>
+<apex:outputText label="Status">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:inputField value="{!entit.Status}">
+</apex:inputField></apex:outputText>
+<apex:outputText label="Date of Installation"><span class="span">*</span>&nbsp;
+<apex:inputField value="{!entit.StartDate}" required="false"  >
+</apex:inputField></apex:outputText>
+<apex:outputText label="Type of Installation"  ><span class="span">*</span>&nbsp;
+<apex:inputField value="{!entit.Installation_Type__c}" required="false" >
+</apex:inputField>
+</apex:outputText>
+<apex:outputText label="Account Name"><span class="span">*</span>&nbsp;
+<apex:inputfield value="{!entit.accountid}" required="false" />
+</apex:outputText>
+</apex:pageBlockSection>
+<br/>
+<apex:actionFunction name="rerenderTopPanel" immediate="false" rerender="Account"> </apex:actionFunction>
+<apex:outputPanel id="Account" rendered="{!entnew}" >
+<!--<apex:outputText >
+<apex:outputLabel value="Type of Installation"  style="margin-left:110px; font-weight:Bold !important;" >
+<span class="span">*</span><apex:inputField value="{!entit.Installation_Type__c}" onchange="createTabs()" required="false" Style="padding-left:2px;!important">
+</apex:inputField>
+</apex:outputLabel>
+</apex:outputText>
+-->
+<apex:outputlabel value="Installer" style="margin-left:183px; font-weight:Bold !important" rendered="{!(IF(AND(entit.Installation_Type__c== 'Remodel',entnew),true,false))}">
+<apex:outputLabel title="Installer" value="{!acc.name}" style="padding-left:14px !important; font-weight:Normal !important;"  rendered="{!entnew}"  >
+</apex:outputLabel>
+</apex:outputlabel>
+<apex:outputlabel value="Builder" style="margin-left:190px; font-weight:Bold !important" rendered="{!(IF(entit.Installation_Type__c== 'New Construction',true,false))}" >
+<apex:outputLabel value="{!acc.name}" style="padding-left:16px !important; font-weight:Normal !important;"  rendered="{!entnew}">
+</apex:outputlabel>
+</apex:outputlabel>
+</apex:outputPanel>
+
+<apex:outputPanel >
+
+</apex:outputPanel>
+<apex:outputPanel id="Product">
+<apex:pageBlockSection id="Product1" columns="1" >
+<!--<apex:outputLabel value="Search Product" styleClass="labelCol" style="padding-LEFT:11em;"/> -->
+<apex:outputText label="Product">
+<apex:inputText value="{!searchProduct}" style="margin-left:14px;"/>
+<apex:commandButton value="Search" action="{!searchProductValue}" status="cStatus" reRender="Product"/ >
+</apex:outputText>
+<apex:actionStatus id="cStatus" startText=" Please Wait..."  stopText="" startStyle="padding-LEFT:18em;font-weight:bold;"/>
+<apex:outputText id="NoProduct" rendered="{!noProduct}" styleClass="labelCol" value=" No Product Found... Please search other product" style="margin-LEFT:150px; color:Brown !important; font-weight:bold!important;"></apex:outputText>
+
+</apex:pageblockSection>
+<div style="margin-left:300px;">
+<c:BI_NA_MultiSelectMaterials leftLabel="Product - Application - Color: Available"
+                leftOption="{!AllMaterials}"
+                rightLabel="Product - Application - Color: Selected"
+                rightOption="{!SelectedMaterials}"
+                size="8"
+                width="300px"/>  </div>
+</apex:outputPanel>
+ 
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Save" action="{!SaveEnt}" style="margin-left:220px;"/>
+<apex:commandButton value="Cancel" action="{!cancel}"/> 
+</apex:pageBlockButtons>
+
+</apex:pageblock>
+</apex:form>
+</apex:page>

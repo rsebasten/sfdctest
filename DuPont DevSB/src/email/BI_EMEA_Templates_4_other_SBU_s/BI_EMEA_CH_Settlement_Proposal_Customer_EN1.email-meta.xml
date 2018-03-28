@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Settlement proposal to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Settlement  Proposal Customer EN</name>
+    <style>formalLetter</style>
+    <subject>Settlement proposal (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear customer,
+
+In reference to your complaint {!Case.CaseNumber} dated {!Case.Date_Entered__c}, please find our proposal for settlement.
+
+{!Case.Special_Instructions__c}
+
+Unless you disagree with above mentioned settlement, the credit/replacement/free of charge material will be passed onto our customer service department for execution.
+
+We are sorry for the inconvenience caused but hope that we can solve the complaint in a satisfying way.  Please refer in all communication to above reference number.
+
+Thank you for your prompt response.
+
+Friendly Regards,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

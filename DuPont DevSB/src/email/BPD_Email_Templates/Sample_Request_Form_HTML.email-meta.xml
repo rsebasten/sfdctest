@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Sample Request Form HTML</name>
+    <style>freeForm</style>
+    <subject>test</subject>
+    <textOnly>&amp;lt;table cellpadding=&quot;3&quot; cellspacing=&quot;2&quot; style=&quot;border: thin solid #FFFFFF; font-size: 16px; font-family: &apos;trebuchet MS&apos;;&quot;&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #b9c9fe; color: #039; font-weight: bold;&quot;&amp;gt;
+              Label&amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #b9c9fe; color: #039; font-weight: bold;&quot;&amp;gt;
+              Value&amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Client Order Send Date
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Client Order Send Time
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Order Number
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.OwnerFullName}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              End User:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.Account}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              End User Website:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Account.Website}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Opportunity Value:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.Amount}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Discount Requested:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.Max_Discount__c}%
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Distributor:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.Distributor__c}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Reseller:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.Reseller__c}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Partner Status:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.Partner_Status__c}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+      &amp;lt;tr&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              Opportunity Comments:
+          &amp;lt;/td&amp;gt;
+          &amp;lt;td style=&quot;background-color: #e8edff; color: #669;&quot;&amp;gt;
+              {!Opportunity.OpportunityComments__c}
+          &amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+  &amp;lt;/table&amp;gt;</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,33 @@
+{!SFDC_Access_Request__c.CreatedBy}, 
+
+The SFDC Access Request for New User: {!SFDC_Access_Request__c.First_Name__c} {!SFDC_Access_Request__c.Last_Name__c} 
+(Epass ID: {!SFDC_Access_Request__c.EPass_ID__c}) entered on {!SFDC_Access_Request__c.CreatedDate} is still waiting for an approved MyAccess. 
+
+If we do not receive an approved MyAccess within the next 10 days, this SFAR will be automatically Cancelled and Closed. 
+
+If you wish to process a MyAccess request for this user before that time, please follow these steps: 
+
+(0) Go to https://login.myaccess.dupont.com: 
+(1) Select "Request access to an asset" 
+(2) Select whether request is for you or someone else. 
+(3) If requesting for someone else, search & select the user's name. 
+(4) Select the Asset from the list or Search for: Salesforce-SFDC (note: if you include ".com" the asset will NOT be found, so be sure to search for Salesforce or SFDC or Salesforce-SFDC) 
+(5) Provide a business justification for the request (required) 
+(6) In the field “Please describe the access you require” copy and paste the following text: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Please setup a new Salesforce.com User: 
+
+{!SFDC_Access_Request__c.Name} 
+{!SFDC_Access_Request__c.First_Name__c} {!SFDC_Access_Request__c.Last_Name__c} 
+{!SFDC_Access_Request__c.EPass_ID__c} 
+Email: {!SFDC_Access_Request__c.Email_Address__c} 
+Key User: {!SFDC_Access_Request__c.Key_User__c} 
+{!SFDC_Access_Request__c.User_Country__c} 
+{!SFDC_Access_Request__c.User_Region__c} 
+
+Link to SFDC: {!SFDC_Access_Request__c.Link} 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+(7) Confirm and Submit the request. 
+(more detailed instructions can be found on the MyAccess website) : https://login.myaccess.dupont.com

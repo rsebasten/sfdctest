@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Utilizar para dar respuesta a solicitudes unitarias de Corian® Solid Surface, Corian® Quartz para CA&amp;C en inglés CC: Samuel.Barcenas-1@dupont.com,gabriela.riojas@duwest.com</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>BI_ Duwest Superficie sólida Corian® Solid Surface, Corian® Quartz CA&amp;C - Inglés</name>
+    <style>freeForm</style>
+    <subject>DuPont response to your request Corian® Solid Surface and Corian® Quartz</subject>
+    <textOnly>Dear {!Lead.FirstName} {!Lead.LastName},
+
+Please contact to Duwest Group in COUNTRY.
+
+Duwest Group
+Gabriela Riojas A.
+Corporate relations &amp; Branding Leader
+Torre Platina, Business Center
+5ta. Avenida 16-62, Zona 10, Guatemala
+PBX: (502) 2420-5400 Ext: 1112 • FAX: (502) 2420-5450
+e-mail: gabriela.riojas@ duwest.com
+www.duwest.com • www.axaltaca.com
+
+Below you can find more information about Corian® Solid Surface and Corian® Quartz commercial brochure.
+--------------------------------------------------------------------
+Information request:
+Name: {!Lead.FirstName} {!Lead.LastName}
+Company: {!Lead.Company}
+Phone: {!Lead.Phone}
+Email: {!Lead.Email}
+
+Request:
+{!Lead.Product_Comments__c}
+{!Lead.Description}
+--------------------------------------------------------------------
+Receive a warm greeting from DuPont Mexico.
+
+DuPont Mexico, Central America &amp; Caribbean
+Phone: 52 1 (55) 5722 1150
+Webpage: www.dupont.com.mx | Contact us form
+Tool free for Central America and Caribbean countries
+Twitter @DuPontMexico | YouTube: DuPontdeMexico
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DuPont cares about your privacy.  Your personal information (name, eMail, phone number and other contact data) will be stored in chosen customer systems primarily hosted in the United States.  This information will be used by DuPont, its affiliates, partners, and selected third parties in other countries to provide you with the product or service information requested.  To learn more, please visit www.privacy.dupont.com. By providing your personal information, you agree to the terms and conditions of this Privacy Statement. To access, modify or delete your personal information, please submit a request in the following link: http://www.dupont.com/forms/privacy-request.html?lang=ENG</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

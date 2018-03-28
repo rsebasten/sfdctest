@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Plan_MigrationUser_RS_RW_PSCRM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>(06-JUL-17) - Issue fix for IS ID-00082857.  This is a &quot;generic&quot; share to extend &apos;Data Migration User&apos; owned records with PS CRM role and subordinates ---due to original owners being inactive in OneDuPont.</description>
+        <label>Plan Migration User RW to RS PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>DPTEMEAWEA</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DPT - EMEA-WEA</label>
+        <sharedTo>
+            <role>DPTEMEAWE</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>DPTEMEAWE</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTIPPNA790111</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT IPP NA</label>
+        <sharedTo>
+            <group>DPTIPPNA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTIPPNA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Plan_C_PG_DPT_LA_PG_DPT_LA_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Plan_C_PG_DPT_LA-PG_DPT_LA_R</label>
+        <sharedTo>
+            <group>DPT_LA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPT_LA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Plan_DPT_EMEA_PG_DPT_EMEA_WE_Mgrs_RIS_DPT_EMEA_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Plan_DPT_EMEA_PG_DPT-EMEA-WE Mgrs_RIS_DPT-EMEA_R</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTDPPEMEAManagers</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Plan_DPT_EMEA_RIS_DPT_EMEA_PG_DPT_EMEA_WE_Mgrs_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Plan_DPT_EMEA_RIS_DPT-EMEA_PG_DPT-EMEA-WE Mgrs_R</label>
+        <sharedTo>
+            <group>DPTDPPEMEAManagers</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Plan_DPT_PG_DPT_Admin_RIS_DPT_EMEA_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Plan_DPT_PG_DPT Admin_RIS_DPT - EMEA_RW</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTAdmin</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Plan_GRP_DPT_NA_GRP_DPT_NA_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Plan_GRP-DPT-NA_GRP-DPT-NA_RW</label>
+        <sharedTo>
+            <group>DPTNA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTNA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

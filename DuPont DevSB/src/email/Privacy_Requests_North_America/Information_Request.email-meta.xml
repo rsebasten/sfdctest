@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use to notify North America Privacy Contacts of information request.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Information Request</name>
+    <style>formalLetter</style>
+    <subject>Customer Privacy Information Request - Urgent Action Required</subject>
+    <textOnly>Dear BU Privacy Contact,
+We have received a request from the customer below asking what type of information we have in our database or why we have their information.  Their information is currently recorded in Salesforce.com. 
+
+Customer Information
+{!Lead_Routing__c.Lead_Name__c}
+{!Lead_Routing__c.Lead_Email__c}
+
+Specific Request from the Customer
+{!Lead_Routing__c.Description__c}
+
+
+You may need to search on either their Name or Email.
+
+According to our privacy policy, a customer/contact reserves the right to review, correct, update, suppress, delete or otherwise limit DuPont’s use of their information.
+
+Action Required - Within 10 Business Days of Receiving this Email
+Access Salesforce.com and provide information associated with this customers name and email address.
+Reply to this email and confirm one of the following:
+	- You have informed the customer of their records in Salesforce.com.
+	
+Thank you for your prompt attention.
+
+Sincerely,
+
+{!Lead_Routing__c.Lead_Owner__c}
+
+DuPont Corporate Contact
+974 Centre Road
+Chestnut Run Plaza 735 2185-6
+Wilmington, DE 19805
+Toll-free:  1-855-569-0964</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

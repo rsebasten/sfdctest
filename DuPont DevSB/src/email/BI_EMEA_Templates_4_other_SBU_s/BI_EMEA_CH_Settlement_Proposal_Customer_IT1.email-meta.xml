@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Settlement proposal to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Settlement  Proposal Customer IT</name>
+    <style>formalLetter</style>
+    <subject>Pratica per la chiusura del reclamo (case: {!Case.CaseNumber})</subject>
+    <textOnly>Gent Cliente,
+
+In riferimento al vostro reclamo {!Case.CaseNumber} in data {!Case.Date_Entered__c}, Le invio la Pratica per la Chiusura del  Reclam. 
+
+{!Case.Special_Instructions__c}
+
+La nota di credito/sostituzione/materiale gratuito sara’ transferita per esecuzione al nostro dipartimento del Servizio Cliente, a parte se non siete d’accordo con la proposta indicata sopra.
+
+Siamo spiacenti dell’ inconveniente causato, cercheremo di poter risolvere il reclamo in un maniera soddisfacente. Grazie di riferire in ogni communicazione al numero di riferenza menzionata qui sopra.
+
+La ringrazio e resto in attesa di Sua pronta risposta.
+
+Cordiali Saluti,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

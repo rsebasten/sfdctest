@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify Customer upon Label Order being shipped</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPT Nomex Request Sent to Customer</name>
+    <style>freeForm</style>
+    <subject>Request {!Request__c.Name} has been shipped for Account {!Request__c.Account__c}</subject>
+    <textOnly>Dear Madam, Dear Sir,
+
+
+
+Thank you for your order of DuPont™ Nomex® labels. Your order has now been shipped to “{!Request__c.Send_to_Company__c}” as per the following details:
+
+
+
+Contact :{!Request__c.Send_to_Contact__c}
+
+Shipping Street : {!Request__c.Request_Shipping_Street__c}
+
+Shipping State : {!Request__c.Request_Shipping_State__c}
+Shipping City : {!Request__c.Request_Shipping_City__c}
+Shipping Postal Code : {!Request__c.Request_Shipping_Postal_Code__c}
+
+Shipping Country : {!Request__c.Request_Shipping_Country__c}
+
+
+
+In case you need it, here is the tracking number:{!Request__c.Tracking_Numbers__c}
+
+
+Click here to go to the request:
+
+https://pscrm.force.com/DPTNomexCustomerCommunity/{!Request__c.Id}
+
+
+
+We remain at your disposal for any questions or further orders.
+
+
+With kind regards,
+
+Your DuPont™ Nomex® team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

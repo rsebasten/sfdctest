@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DuPont™ News and Events (Media Contacts)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS - DuPont™ News and Events</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ News and Events</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.FirstName} {!Lead.LastName},
+
+Our central resource area for the latest DuPont updates, releases, and corporate publications for clients, customers, friends of DuPont, and news media professionals. Includes our complete media relations archive of imagery and video.
+
+To visit our DuPont™News and Events website for more information, please copy and paste the following web address into your web browser. This website also contains media contact information .
+
+http://www.dupont.com/corporate-functions/news-and-events.html
+
+
+DuPont Protection Solutions</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

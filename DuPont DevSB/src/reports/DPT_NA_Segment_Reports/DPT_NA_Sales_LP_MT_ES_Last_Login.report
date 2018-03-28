@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_22961497</developerName>
+        <masterLabel>Sales Teams</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>FULL_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Jack Yant</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bruce Pearce</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Randy Pettus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bill Goodwin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Beth Taylor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Diane Andrews</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gianluigi Molteni</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>kerry king</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nathan Love</sourceValue>
+            </sourceValues>
+            <value>Pettus Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Norris Brooks</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Sullivan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Todd Barnes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nigel Retchless</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jay Hooper</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brad Thompson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dale Reese</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Helen Campbell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jimmie Garland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Patricia Humble</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William Dunnagan</sourceValue>
+            </sourceValues>
+            <value>Brooks Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Brad Eaton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brian Foy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>George Sauzer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Norfleet Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Richard Murphy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Richard W Blocker Jr</sourceValue>
+            </sourceValues>
+            <value>Frolov Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumnStacked</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>LAST_LOGIN</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>FULL_NAME</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>User.User_Owning_Org__c</field>
+    </columns>
+    <columns>
+        <field>ROLE</field>
+    </columns>
+    <columns>
+        <field>PROFILE</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>DIVISION</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>DPT NA Sales - LP</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LAST_LOGIN</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPT NA Sales - LP/MT/ES Last Login</name>
+    <params>
+        <name>active</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User</reportType>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>LAST_LOGIN</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

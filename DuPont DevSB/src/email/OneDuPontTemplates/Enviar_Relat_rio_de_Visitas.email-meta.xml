@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Envio de Relatório de Visitas por email</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>StandardCorporateLetterhead</letterhead>
+    <name>Enviar Relatório de Visitas</name>
+    <style>freeForm</style>
+    <subject>Relatório de Visita - {!Call_Report__c.Name}</subject>
+    <textOnly>Prezado,
+
+Segue o resumo do relatório de visita realizada por: {!Call_Report__c.CreatedBy}.
+
+
+Nome: {!Call_Report__c.Name}
+
+Cliente: {!Call_Report__c.Account__c}
+Contato: {!Call_Report__c.Contact__c}
+Data da Visita: {!Call_Report__c.Call_Date__c}
+Localidade: {!Call_Report__c.Geography__c}
+Tópico: {!Call_Report__c.Topic__c}
+Nº de Participantes: {!Call_Report__c.Nb_Of_Participants__c}
+Tempo na Visita (horas): {!Call_Report__c.00N4100000SIpYP}
+Deslocamento (horas): {!Call_Report__c.00N4100000SIpYE}
+
+Resumo da Visita
+
+Motivo:
+{!Call_Report__c.Purpose__c}
+
+Resumo:
+{!Call_Report__c.Summary__c}
+
+Resultados:
+{!Call_Report__c.End_Use_information__c}
+
+Pendências:
+{!Call_Report__c.Unmet_Customer_Needs__c}
+
+Próximos Passos:
+{!Call_Report__c.Next_Steps__c}
+
+
+Copyright (c) 2007 DuPont. All rights reserved. The DuPont Oval Logo, DuPont(TM), The miracles of science(TM) and all products denoted with (R) or (TM) are registered trademarks or trademarks of E. I. du Pont de Nemours and Company or its affiliates.
+
+www.dupont.com | Legal Notices &amp; Terms of Use | PRIVACY</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

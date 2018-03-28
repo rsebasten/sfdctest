@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Use &amp; Care instructions for customers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Use and Care Instruction to Customer EN</name>
+    <style>formalLetter</style>
+    <subject>Use &amp; Care guidelines (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear Sir, Madam,
+
+In reference to your complaint {!Case.CaseNumber} dated {!Case.Date_Entered__c}, we send you hereby our Use &amp; Care booklet.
+
+Most of our Use &amp; Care guidelines, you probably already follow instinctively, but if you have any questions, please contact us.
+
+In case you would like to refresh your counter top, we can provide you with the details of a service center or a list of QN fabricators nearby, who can provide you with a price offer.
+
+Friendly Regards,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+QN &amp; Warranty Assistant
+{!Case.OwnerPhone}
+Email: BI-Warranty@dupont.com
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

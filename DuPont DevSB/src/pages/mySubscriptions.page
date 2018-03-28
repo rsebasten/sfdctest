@@ -1,0 +1,27 @@
+<apex:page controller="ctrlMySubscriptions" action="{!init}">
+
+
+    <apex:pageBlock title="Subscription Center Results for email: {!email}">
+        <apex:pageBlockTable value="{!sovs}" var="item">
+            <apex:column value="{!item.SiteObject__c}"/> 
+            <apex:column value="{!item.Value__c}"/> 
+            <apex:column value="{!item.LastUpdatedLocation__c}"/> 
+            <apex:column value="{!item.LastModifiedDate}"/> 
+            <apex:column value="{!item.LastModifiedById}"/> 
+            
+        </apex:pageBlockTable> 
+    </apex:pageBlock> 
+    
+    <apex:pageBlock title="CampaignMember Results for email: {!email}">
+        <apex:pageBlockTable value="{!members}" var="item">
+            <apex:column value="{!item.CampaignId}"/> 
+            <apex:column value="{!item.campaign.PublicName__c}"/> 
+            <apex:column value="{!item.Status}"/> 
+            <apex:column value="{!item.ContactId}"/> 
+            <apex:column value="{!item.LeadId}"/> 
+            <apex:column value="{!item.HasResponded}"/> 
+            <apex:column value="{!item.FirstRespondedDate}"/> 
+        </apex:pageBlockTable> 
+    </apex:pageBlock> 
+
+</apex:page>

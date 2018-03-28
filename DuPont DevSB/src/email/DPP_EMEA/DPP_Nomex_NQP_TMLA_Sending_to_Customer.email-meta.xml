@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>e-mail template for sending pdf-version of TMLA for Nomex® NQP Quality Partner</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPP Nomex® NQP TMLA Sending to Customer</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Nomex® - TMLA DuPont &amp; {!Qualification__c.Account_Name__c}</subject>
+    <textOnly>Dear Mr. Mrs. {!Qualification__c.Related_Contact__c},
+We would like to thank you for becoming a Nomex® Quality Partner in the DuPont™ Nomex® Quality Program. To formalise our cooperation we hereby send you the agreement text for licensing our DuPont™ Nomex® brand to your company.
+ 
+If you agree with the attached Trademark License Agreement, please print out 2 copies, complete the Exhibit I named &quot;INSURANCE&quot; and sign them. The completed and signed original contracts can then be send by post to our Geneva office, as per the below address details:
+
+DuPont International Operations Sàrl
+European Technical Center
+Route du Nant d&apos;Avril 146
+1217 Meyrin
+Geneva, Switzerland
+ 
+We are looking forward to a very successful cooperation between your company and DuPont. In the meantime, please do not hesitate to contact us if you should have any further questions.
+ 
+ 
+With best regards,
+ 
+{!Qualification__c.Owner__c}
+
+Nomex® Labelling Programme Coordinator
+Tel: +41 22 717 6757
+Fax: +41 22 717 6871
+Copyright (c) 2009 DuPont. All rights reserved. The DuPont Oval Logo, DuPont(TM), The miracles of science(TM) and all products denoted with (R) or (TM) are registered trademarks or trademarks of E. I. du Pont de Nemours and Company or its affiliates.
+ 
+www.dpp-europe.com | Legal Notices &amp; Terms of Use | PRIVACY</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

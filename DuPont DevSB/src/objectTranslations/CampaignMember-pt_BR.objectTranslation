@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Additional Privacy Information --></label>
+        <name>Additional_Privacy_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Next Step User --></label>
+        <name>Default_Next_Step_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailHash --></label>
+        <name>EmailHash__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label>Papel do Próximo Aprovador</label>
+        <name>Next_Step_User_Role__c</name>
+        <picklistValues>
+            <masterLabel>Follow-up Responder</masterLabel>
+            <translation><!-- Follow-up Responder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Papel do Membro da Campanha</label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>End-User</masterLabel>
+            <translation>Usuário Final</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subscription Id --></label>
+        <name>SubscriptionId__c</name>
+    </fields>
+    <fields>
+        <label>País</label>
+        <name>fCountry__c</name>
+    </fields>
+    <fields>
+        <label>Email</label>
+        <name>fEmail__c</name>
+    </fields>
+    <fields>
+        <help><!-- 18 digit unique id for record. Same Id used for dataloader and other API tools. --></help>
+        <label><!-- Id18 --></label>
+        <name>fId18__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Contact Type of the lead or contact related to this campaign member record. --></help>
+        <label><!-- Member Contact Type --></label>
+        <name>fMember_Contact_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Owning Organization of the lead or contact related to this campaign member record. --></help>
+        <label><!-- Member Owning Organization --></label>
+        <name>fMember_Owning_Organization__c</name>
+    </fields>
+    <fields>
+        <label><!-- FollowUp Responder --></label>
+        <name>fNextStepUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geo Region --></label>
+        <name>fRegion__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Customer Loyalty Survey - Business Campaign Member --></label>
+        <name>Customer_Loyalty_Survey_Business_Campaign_Member</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Master NPS Survey Campaign Member --></label>
+        <name>Master_NPS_Survey_Campaign_Member</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Opt-in Management permissions not available, please use another Member Status value or check with your Key User or System Administrator. --></errorMessage>
+        <name>Optin_Management</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Google --></label>
+        <name>Google</name>
+    </webLinks>
+</CustomObjectTranslation>

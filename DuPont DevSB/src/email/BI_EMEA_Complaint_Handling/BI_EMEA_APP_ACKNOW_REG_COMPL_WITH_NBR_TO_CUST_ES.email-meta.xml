@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP ACKNOW REG COMPL WITH NBR TO CUST - ES</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Acknow Reg Compl With Nbr To Cust - ES</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: confirmación de registro de la reclamación {!Case.CaseNumber}.</subject>
+    <textOnly>Estimado cliente:&lt;?xml:namespace prefix = o /&gt;
+
+
+Gracias por enviarnos su reclamación que hemos registrado con el número de referencia {!Case.CaseNumber}. Haremos todo lo posible para resolverla cuanto antes.
+
+
+
+Para poder completar su expediente, necesitaríamos todavía una copia de la factura de la instalación, el formulario adjunto C completado y fotografías de la encimera y el (las) área(s) impactada(s).
+
+
+
+Cuando hayamos completado el expediente nos pondremos en contacto con nuestro servicio técnico o Industrial Partner para fijar una fecha de inspección/intervención.
+
+
+
+Por medio de este correo electrónico, le informamos de nuestros datos de contacto.
+
+
+
+Le rogamos que utilice este número de referencia en cada comunicación.
+
+
+
+Si tiene cualquier pregunta, no dude en ponerse en contacto con nosotros.
+
+
+
+Saludos cordiales
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+Nos gustaría informarle que recopilamos su información con el fin de identificar sus intereses comerciales, proporcionarle productos o servicios y ofrecerle una experiencia positiva como cliente durante las interacciones comerciales. Su información personal (nombre, dirección de correo electrónico, número de teléfono y otros datos de contacto) se almacenará en el sistema de clientes hospedado principalmente en Estados Unidos. Es posible que esta información se comparta con el mismo propósito en DuPont, con compañías filiales, asociados o terceras partes determinadas en otros países. Si desea acceder a su información, modificarla, eliminarla, o cancelar su procesamiento, utilice este vínculo.
+
+
+
+DuPont™ y Corian® son marcas registradas o marcas comerciales de E.I. du Pont de Nemours and Company y de sus entidades afiliadas. El uso de logos, marcas registradas y marcas comerciales de E.I. du Pont de Nemours and Company  debe autorizarlo E. I. du Pont de Nemours and Company o una de sus entidades afiliadas.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,203 @@
+<apex:page standardStylesheets="false" standardController="Case" extensions="ctrlBINA_InvestionReports" showHeader="false" sidebar="false" contentType="application/msWord" cache="true">
+    <br/>
+    <br/>
+    <br/> 
+    <br/>
+    <br/>
+    <br/> 
+    <apex:pageBlock >
+    <center>
+    <apex:pageBlockSection >
+        <u>
+           <center><h1>Field</h1></center>
+           <center><h1>Investigation</h1></center>
+           <center><h1>Report</h1></center>
+        </u>
+    <br/>
+    <br/>
+    <br/>    
+    </apex:pageBlockSection>
+    </center>
+        
+    <apex:pageBlockSection >
+
+    <br/><br/><PRE>                   <u><center><h2>Background Information</h2></center></u></PRE>
+
+    <table>
+    
+    <tr><td><h4>Date - </h4> </td></tr>
+
+    <tr><td><h4>Customer Name - </h4> <apex:outputField Label="" value="{!currentcase.Submitted_By_First_Name_Last_Name__c}"/></td></tr>
+
+    <tr><td><h4>Customer Address And Phone Number - </h4> <apex:outputText value="{!address}"/></td></tr>
+
+    <tr><td><h4>Nature Of Complaint - </h4><apex:outputText Label="" value="{!currentcase.Description}"/></td></tr>
+
+    <tr><td><h4>Does homeowner have original construction pictures?</h4></td></tr>
+
+    <tr><td><h4>Why does customer believe Tyvek played a role?</h4> <apex:outputText label="" value="{!currentcase.Problem_Description__c}"/></td></tr>
+
+    <tr><td><h4>Tyvek samples available (Y/N)-</h4></td></tr>
+
+    <tr><td><h4>When problem observed- </h4></td></tr>
+
+    <tr><td><h4>How observed-</h4></td></tr>
+
+    <tr><td><h4>Is there an insurance claim filed?</h4></td></tr>
+
+    <tr><td><h4>Repair estimate- </h4></td></tr>
+
+    <tr><td><h4>Status of repairs- </h4></td></tr>
+
+    <tr><td><h4>Does complaint warrant a site visit?</h4></td></tr>
+    
+    <tr><td><h4>Date DuPont notified</h4><apex:outputText Label="" value="{!currentcase.CreatedDate}"/></td></tr>
+    
+    <tr><td><h4>Send all information to(Overnight) : </h4></td></tr>
+     </table>
+     
+       
+
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection >
+    
+    <table>   
+    <tr><td><br/>
+    <br/>
+    <br/> 
+    <PRE>                                                                                           <u><center><h2>General Building and Site Visit Information</h2></center></u></PRE>
+    <br/> 
+    <br/>
+    <br/></td></tr>
+    
+    <tr><td><h4>Year Built - </h4></td>
+    <td><h4>Remodeled(Y/N) year - </h4></td></tr>
+    <tr><td><h4>Builder - </h4></td>
+    <td><h4>Remodel Contractor - </h4></td></tr>
+    <br/><tr><td><h4>Damage location(s) - </h4><br/></td></tr>
+     <tr><td><h4>Type of Windows-</h4></td><td><h4>Type of Cladding-</h4> <apex:outputText value="{!caldingType}"/></td></tr> 
+   <tr><td><h4>Exterior Sheathing(Y/N) - </h4></td>
+    <td><h4>Type of Shaething - </h4> <apex:outputText value="{!SheathingType}"/></td></tr>
+    <tr><td><h4>Framing/Studs(Wood/metal)- </h4></td></tr>
+    <tr><td><h4>Stud spacing- </h4><br/></td><td><h4>Framing/Stud dimension - </h4><br/> <apex:outputText value="{!framing}"/></td></tr>
+   <tr><td><h4>Location of Tyvek in wall - </h4></td></tr>
+   <tr><td><h4>Heating system type - </h4><br/></td></tr>
+    <tr><td><h4>Cooling system type-</h4></td></tr>
+    <tr><td><h4>Foundation (basement/crawl/slab) - </h4></td></tr>
+    <tr><td><h4>Moisture in basement or crawl space (Y/N) - </h4></td></tr>
+    <tr><td><h4>Irrigation system installed (Y/N)</h4></td></tr>
+    <tr><td><h4>Additional Information</h4></td></tr>
+    
+       <br/><br/><br/><br/>
+    </table>
+    </apex:pageBlockSection>   
+    
+    <apex:pageBlockSection >
+
+    <center>
+    <PRE>                                                                      <h2>Site Visit Specific Information</h2></PRE>
+    </center>
+    <table>
+    <tr><td><h4>Wall Diagram / Construction Description </h4>
+    <br/> <br/> <br/></td></tr>
+    
+    <tr><td><h4>Type of Tyvek and any identifiable markings or lot numbers- </h4></td></tr>
+    
+    <tr><td><h4>Tyvek® samples (with identifying markers) 36"x36" desired </h4></td></tr>
+    
+    <tr><td><h4>Pictures (check and label as necessary)</h4></td></tr>
+
+<tr><td><h4><PRE>                  Whole Building__</PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Walls N__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  S__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  E__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  W__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Specific damage areas__</PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Close-up of details__ </PRE></h4></td></tr>
+
+
+<tr><td><h4> Tyvek® print assessment </h4></td></tr>
+
+<tr><td><h4><PRE>                  Vivid__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Some Fading__ </PRE></h4></td></tr>
+
+<tr><td><h4><PRE>                  Faded__ </PRE></h4></td></tr>
+    
+    <tr><td><h4>      Tyvek® seams taped (Y/N)- </h4></td></tr>
+     
+    <tr><td><h4>      Type of fasteners used- </h4></td> 
+
+    <td><h4>      Fastener spacing- </h4></td></tr>
+    
+    <tr><td><h4>      Condition of siding- </h4></td></tr>
+    <tr><td><h4>     If brick, size of air-gap - </h4></td>
+    <td><h4>      Weeps visible (Y/N)- </h4></td></tr>
+    <tr><td><h4>      Weep locations </h4></td></tr>
+    <tr><td><h4>      If stucco, condition- </h4></td>
+    <td><h4>      Elastomeric coating (Y/N)-   </h4></td></tr>
+      <tr><td><h4>      Stucco weep screed (Y/N)- </h4></td></tr>
+     <tr><td><h4>      Any wall drainage obstructions- </h4></td></tr>
+   <tr><td><h4>      Is wood siding back primed (Y/N) - </h4></td></tr>
+     <tr><td><h4>     Flashing used (Y/N)  </h4></td>
+   <td><h4>      Condition- </h4></td></tr>
+       <tr><td><h4>      Type of flashing used and locations- </h4></td></tr>
+                                                                
+    <tr><td><h4>      Vapor Barrier  (Y/N) - </h4></td>
+    
+    <td><h4>      Type of Barrier - </h4></td></tr>
+    
+    <tr><td><h4>      Damage assessment- </h4></td>
+    
+    <td><h4>      None__ </h4></td></tr>
+    
+    <tr><td><h4>      Minor__ </h4></td></tr>  
+    
+    <tr><td><h4>      Major__ </h4></td></tr>  
+    
+    <tr><td><h4>      Building exposure  </h4></td></tr>  
+    
+    <tr><td><h4>      Specific locations of damage (wall orientation and location)-</h4></td></tr>  
+    
+    <tr><td><h4>      Moisture readings taken (Y/N)-    </h4></td>
+    
+    <td><h4>      Values- </h4></td></tr>  
+    
+    <tr><td><h4>      Apparent mold evidence (Y/N)- </h4></td>
+    
+    <td><h4>      Location(s)- </h4></td></tr>  
+    
+    <tr><td><h4>      Caulking type, condition and color-  </h4></td></tr>  
+     <tr><td><h4>      Type of interior wall covering- </h4></td></tr>  
+     <tr><td><h4>     Gutters (Y/N)- </h4></td>
+     <td><h4>      Condition of gutters- </h4></td></tr>  
+     <tr><td><h4>     Roof overhangs- </h4></td>
+                        
+    <td><h4>      Approximate depth-  </h4></td></tr>  
+    
+    <tr><td><h4>      Visual appearance of grading around building- </h4></td></tr>  
+    
+    <tr><td><h4>      Location and spray direction of irrigation system spray heads- </h4></td></tr>  
+    
+    <tr><td><h4>      Roof vents (Y/N)- </h4></td>
+    <td><h4>      Vents clear (Y/N) </h4></td></tr>  
+         
+    <tr><td><h4>      HVAC duct work locations- </h4></td></tr> 
+    <tr><td><h4>      Supply </h4></td></tr> 
+                  
+    <tr><td><h4>      Return </h4></td></tr> 
+                  
+<tr><td><h4>      Additional potential moisture sources and comments- </h4></td></tr>                                             
+           </table>
+
+    </apex:pageBlockSection>    
+</apex:pageBlock>
+                   
+</apex:page>

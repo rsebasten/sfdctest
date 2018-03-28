@@ -1,0 +1,1214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Equipment relevant to the understanding of an account or Opportunity</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <description>Account Name</description>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>R00N30000001VTmoEAG</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Agreement_Type__c</fullName>
+        <description>Agreements for equipment related to accounts</description>
+        <externalId>false</externalId>
+        <label>Agreement Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Service Contract</fullName>
+                    <default>false</default>
+                    <label>Service Contract</label>
+                </value>
+                <value>
+                    <fullName>Warranty</fullName>
+                    <default>false</default>
+                    <label>Warranty</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Device_Operating_System__c</fullName>
+        <externalId>false</externalId>
+        <label>Device Operating System</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WinXP</fullName>
+                    <default>true</default>
+                    <label>WinXP</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Device_Type__c</fullName>
+        <description>This is the type of device or computer used to drive this equipment.</description>
+        <externalId>false</externalId>
+        <label>Device Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pentium</fullName>
+                    <default>true</default>
+                    <label>Pentium</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Equipment_Product__c</fullName>
+        <description>Equipment product or model name associated with this account</description>
+        <externalId>false</externalId>
+        <label>Equipment Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BMW - 320i</fullName>
+                    <default>false</default>
+                    <label>BMW - 320i</label>
+                </value>
+                <value>
+                    <fullName>BMW - 328</fullName>
+                    <default>false</default>
+                    <label>BMW - 328</label>
+                </value>
+                <value>
+                    <fullName>DODGE - Journey Com Teto</fullName>
+                    <default>false</default>
+                    <label>DODGE - Journey Com Teto</label>
+                </value>
+                <value>
+                    <fullName>DODGE - Journey sem Teto</fullName>
+                    <default>false</default>
+                    <label>DODGE - Journey sem Teto</label>
+                </value>
+                <value>
+                    <fullName>FIAT - Freemont Com Teto</fullName>
+                    <default>false</default>
+                    <label>FIAT - Freemont Com Teto</label>
+                </value>
+                <value>
+                    <fullName>FIAT - Freemont  Sem Teto</fullName>
+                    <default>false</default>
+                    <label>FIAT - Freemont  Sem Teto</label>
+                </value>
+                <value>
+                    <fullName>FORD - Ecosport</fullName>
+                    <default>false</default>
+                    <label>FORD - Ecosport</label>
+                </value>
+                <value>
+                    <fullName>GM - Agile</fullName>
+                    <default>false</default>
+                    <label>GM - Agile</label>
+                </value>
+                <value>
+                    <fullName>GM - Cruze</fullName>
+                    <default>false</default>
+                    <label>GM - Cruze</label>
+                </value>
+                <value>
+                    <fullName>GM Vectra</fullName>
+                    <default>false</default>
+                    <label>GM Vectra</label>
+                </value>
+                <value>
+                    <fullName>Honda Civic</fullName>
+                    <default>false</default>
+                    <label>Honda Civic</label>
+                </value>
+                <value>
+                    <fullName>HONDA - Civic Antigo</fullName>
+                    <default>false</default>
+                    <label>HONDA - Civic Antigo</label>
+                </value>
+                <value>
+                    <fullName>HONDA - Fit Antigo</fullName>
+                    <default>false</default>
+                    <label>HONDA - Fit Antigo</label>
+                </value>
+                <value>
+                    <fullName>HONDA - Fit Novo</fullName>
+                    <default>false</default>
+                    <label>HONDA - Fit Novo</label>
+                </value>
+                <value>
+                    <fullName>HONDA - HRV</fullName>
+                    <default>false</default>
+                    <label>HONDA - HRV</label>
+                </value>
+                <value>
+                    <fullName>HONDA - New Civic com teto</fullName>
+                    <default>false</default>
+                    <label>HONDA - New Civic com teto</label>
+                </value>
+                <value>
+                    <fullName>HONDA - New Civic sem teto</fullName>
+                    <default>false</default>
+                    <label>HONDA - New Civic sem teto</label>
+                </value>
+                <value>
+                    <fullName>Hyundai Tucson</fullName>
+                    <default>false</default>
+                    <label>Hyundai Tucson</label>
+                </value>
+                <value>
+                    <fullName>HYUNDAY - Tucson</fullName>
+                    <default>false</default>
+                    <label>HYUNDAY - Tucson</label>
+                </value>
+                <value>
+                    <fullName>KIA - Soul</fullName>
+                    <default>false</default>
+                    <label>KIA - Soul</label>
+                </value>
+                <value>
+                    <fullName>KIA - Sportage com Aerofolio</fullName>
+                    <default>false</default>
+                    <label>KIA - Sportage com Aerofolio</label>
+                </value>
+                <value>
+                    <fullName>KIA - Sportage sem Aerofolio</fullName>
+                    <default>false</default>
+                    <label>KIA - Sportage sem Aerofolio</label>
+                </value>
+                <value>
+                    <fullName>MITSUBISHI - ASX</fullName>
+                    <default>false</default>
+                    <label>MITSUBISHI - ASX</label>
+                </value>
+                <value>
+                    <fullName>MITSUBISHI - Dakar</fullName>
+                    <default>false</default>
+                    <label>MITSUBISHI - Dakar</label>
+                </value>
+                <value>
+                    <fullName>MITSUBISHI - L200</fullName>
+                    <default>false</default>
+                    <label>MITSUBISHI - L200</label>
+                </value>
+                <value>
+                    <fullName>MITSUBISHI - Lancer Com Teto</fullName>
+                    <default>false</default>
+                    <label>MITSUBISHI - Lancer Com Teto</label>
+                </value>
+                <value>
+                    <fullName>MITSUBISHI - Lancer Sem Teto</fullName>
+                    <default>false</default>
+                    <label>MITSUBISHI - Lancer Sem Teto</label>
+                </value>
+                <value>
+                    <fullName>MITSUBISHI - Outlander</fullName>
+                    <default>false</default>
+                    <label>MITSUBISHI - Outlander</label>
+                </value>
+                <value>
+                    <fullName>Mitsubishi Pajero TR4</fullName>
+                    <default>false</default>
+                    <label>Mitsubishi Pajero TR4</label>
+                </value>
+                <value>
+                    <fullName>MITSUBISHI - TR4</fullName>
+                    <default>false</default>
+                    <label>MITSUBISHI - TR4</label>
+                </value>
+                <value>
+                    <fullName>NISSAN - Frontier</fullName>
+                    <default>false</default>
+                    <label>NISSAN - Frontier</label>
+                </value>
+                <value>
+                    <fullName>Toyota Corolla</fullName>
+                    <default>false</default>
+                    <label>Toyota Corolla</label>
+                </value>
+                <value>
+                    <fullName>TOYOTA - Corolla antigo</fullName>
+                    <default>false</default>
+                    <label>TOYOTA - Corolla antigo</label>
+                </value>
+                <value>
+                    <fullName>TOYOTA - Corolla Novo</fullName>
+                    <default>false</default>
+                    <label>TOYOTA - Corolla Novo</label>
+                </value>
+                <value>
+                    <fullName>TOYOTA - Hilux</fullName>
+                    <default>false</default>
+                    <label>TOYOTA - Hilux</label>
+                </value>
+                <value>
+                    <fullName>VW - Golf com teto</fullName>
+                    <default>false</default>
+                    <label>VW - Golf com teto</label>
+                </value>
+                <value>
+                    <fullName>VW - Golf sem teto</fullName>
+                    <default>false</default>
+                    <label>VW - Golf sem teto</label>
+                </value>
+                <value>
+                    <fullName>VW - Jetta com teto</fullName>
+                    <default>false</default>
+                    <label>VW - Jetta com teto</label>
+                </value>
+                <value>
+                    <fullName>VW - Jetta sem teto</fullName>
+                    <default>false</default>
+                    <label>VW - Jetta sem teto</label>
+                </value>
+                <value>
+                    <fullName>VW - Tiguan com teto</fullName>
+                    <default>false</default>
+                    <label>VW - Tiguan com teto</label>
+                </value>
+                <value>
+                    <fullName>VW - Tiguan sem teto</fullName>
+                    <default>false</default>
+                    <label>VW - Tiguan sem teto</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Installation_Date__c</fullName>
+        <description>Installation Date for this equipmenth</description>
+        <externalId>false</externalId>
+        <label>Installation Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Required_Documentation_Completed_date__c</fullName>
+        <description>Date when BU sent to 3Party required information</description>
+        <externalId>false</externalId>
+        <label>Required Documentation Completed date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Serial_number__c</fullName>
+        <description>Serial Number uniquely identifying this equipment</description>
+        <externalId>false</externalId>
+        <label>Serial number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Provider__c</fullName>
+        <description>The company providing service for the identified device.</description>
+        <externalId>false</externalId>
+        <label>Service Provider</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SSBC</fullName>
+                    <default>false</default>
+                    <label>SSBC</label>
+                </value>
+                <value>
+                    <fullName>RT</fullName>
+                    <default>false</default>
+                    <label>RT</label>
+                </value>
+                <value>
+                    <fullName>KAV</fullName>
+                    <default>false</default>
+                    <label>KAV</label>
+                </value>
+                <value>
+                    <fullName>CONCEPT</fullName>
+                    <default>false</default>
+                    <label>CONCEPT</label>
+                </value>
+                <value>
+                    <fullName>QUATTRO</fullName>
+                    <default>false</default>
+                    <label>QUATTRO</label>
+                </value>
+                <value>
+                    <fullName>WIN SAFETY</fullName>
+                    <default>false</default>
+                    <label>WIN SAFETY</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Supplier__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supplier</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>R00N30000001VTo6EAG</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Vehicle Armour</fullName>
+                    <default>false</default>
+                    <label>Vehicle Armour</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unit_Of_Measure__c</fullName>
+        <description>Unit Of Measure applied to quantities in this record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unit Of Measure applied to quantities in this record</inlineHelpText>
+        <label>Unit Of Measure</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Acre</fullName>
+                    <default>false</default>
+                    <label>Acre</label>
+                </value>
+                <value>
+                    <fullName>Bags</fullName>
+                    <default>false</default>
+                    <label>Bags</label>
+                </value>
+                <value>
+                    <fullName>Cubic meter</fullName>
+                    <default>false</default>
+                    <label>Cubic meter</label>
+                </value>
+                <value>
+                    <fullName>Day</fullName>
+                    <default>false</default>
+                    <label>Day</label>
+                </value>
+                <value>
+                    <fullName>each</fullName>
+                    <default>false</default>
+                    <label>each</label>
+                </value>
+                <value>
+                    <fullName>Gallon UK</fullName>
+                    <default>false</default>
+                    <label>Gallon UK</label>
+                </value>
+                <value>
+                    <fullName>Gallon US</fullName>
+                    <default>false</default>
+                    <label>Gallon US</label>
+                </value>
+                <value>
+                    <fullName>Gram</fullName>
+                    <default>false</default>
+                    <label>Gram</label>
+                </value>
+                <value>
+                    <fullName>Hectare</fullName>
+                    <default>false</default>
+                    <label>Hectare</label>
+                </value>
+                <value>
+                    <fullName>Hour</fullName>
+                    <default>false</default>
+                    <label>Hour</label>
+                </value>
+                <value>
+                    <fullName>Jumbo</fullName>
+                    <default>false</default>
+                    <label>Jumbo</label>
+                </value>
+                <value>
+                    <fullName>Kilogram</fullName>
+                    <default>false</default>
+                    <label>Kilogram</label>
+                </value>
+                <value>
+                    <fullName>Liter</fullName>
+                    <default>false</default>
+                    <label>Liter</label>
+                </value>
+                <value>
+                    <fullName>Milliliter</fullName>
+                    <default>false</default>
+                    <label>Milliliter</label>
+                </value>
+                <value>
+                    <fullName>Ounce</fullName>
+                    <default>false</default>
+                    <label>Ounce</label>
+                </value>
+                <value>
+                    <fullName>Pound</fullName>
+                    <default>false</default>
+                    <label>Pound</label>
+                </value>
+                <value>
+                    <fullName>Square foot</fullName>
+                    <default>false</default>
+                    <label>Square foot</label>
+                </value>
+                <value>
+                    <fullName>Square meter</fullName>
+                    <default>false</default>
+                    <label>Square meter</label>
+                </value>
+                <value>
+                    <fullName>Tests/Yr</fullName>
+                    <default>false</default>
+                    <label>Tests/Yr</label>
+                </value>
+                <value>
+                    <fullName>Ton, metric</fullName>
+                    <default>false</default>
+                    <label>Ton, metric</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Validation_Date__c</fullName>
+        <description>The date when the equipment information was last validated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the equipment information was last validated.</inlineHelpText>
+        <label>Validation Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Within_City_Limits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>“Yes” or “No” response from a customer concerning whether the location of the Precision Pac dispensing machine is located within the City limits of the Account based on the Shipping Address, required by DuPont Corporate Tax</description>
+        <externalId>false</externalId>
+        <label>Within City Limits</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>fId18__c</fullName>
+        <description>18 digit unique id for record. Same Id used for dataloader and other API tools.</description>
+        <externalId>false</externalId>
+        <formula>Id
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)</formula>
+        <inlineHelpText>18 digit unique id for record. Same Id used for dataloader and other API tools.</inlineHelpText>
+        <label>Id18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Equipment</label>
+    <listViews>
+        <fullName>DPT_Car_Protection</fullName>
+        <columns>Account_Name__c</columns>
+        <columns>Supplier__c</columns>
+        <columns>Equipment_Product__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Equipment__c.DPT_Car_Protect</value>
+        </filters>
+        <label>DPT - Car Protection</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>DPTCarProtection</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Reggiani_equipment_Prova1</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Serial_number__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Reggiani equipment/Prova</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>EQ-{000000}</displayFormat>
+        <label>Equipment ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Equipment</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>DPT_Car_Protect</fullName>
+        <active>true</active>
+        <description>DuPont Protection Technologies - Car Protection</description>
+        <label>DPT Car Protect</label>
+        <picklistValues>
+            <picklist>Agreement_Type__c</picklist>
+            <values>
+                <fullName>Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Device_Operating_System__c</picklist>
+            <values>
+                <fullName>WinXP</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Device_Type__c</picklist>
+            <values>
+                <fullName>Pentium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Equipment_Product__c</picklist>
+            <values>
+                <fullName>BMW - 320i</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BMW - 328</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DODGE - Journey Com Teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DODGE - Journey sem Teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FIAT - Freemont  Sem Teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FIAT - Freemont Com Teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FORD - Ecosport</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GM - Agile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GM - Cruze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GM Vectra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HONDA - Civic Antigo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HONDA - Fit Antigo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HONDA - Fit Novo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HONDA - HRV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HONDA - New Civic com teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HONDA - New Civic sem teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HYUNDAY - Tucson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honda Civic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hyundai Tucson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KIA - Soul</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KIA - Sportage com Aerofolio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KIA - Sportage sem Aerofolio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MITSUBISHI - ASX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MITSUBISHI - Dakar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MITSUBISHI - L200</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MITSUBISHI - Lancer Com Teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MITSUBISHI - Lancer Sem Teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MITSUBISHI - Outlander</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MITSUBISHI - TR4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitsubishi Pajero TR4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NISSAN - Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOYOTA - Corolla Novo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOYOTA - Corolla antigo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOYOTA - Hilux</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toyota Corolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VW - Golf com teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VW - Golf sem teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VW - Jetta com teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VW - Jetta sem teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VW - Tiguan com teto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VW - Tiguan sem teto</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service_Provider__c</picklist>
+            <values>
+                <fullName>CONCEPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KAV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUATTRO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SSBC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WIN SAFETY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Vehicle Armour</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Acre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bags</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hectare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jumbo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ounce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tests%2FYr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FoodEMEAEquipment</fullName>
+        <active>false</active>
+        <description>Food equipment</description>
+        <label>Food-EMEA Equipment</label>
+        <picklistValues>
+            <picklist>Agreement_Type__c</picklist>
+            <values>
+                <fullName>Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Device_Operating_System__c</picklist>
+            <values>
+                <fullName>WinXP</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Device_Type__c</picklist>
+            <values>
+                <fullName>Pentium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Of_Measure__c</picklist>
+            <values>
+                <fullName>Acre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bags</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cubic meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gallon US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hectare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jumbo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milliliter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ounce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Square meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tests%2FYr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ton%2C metric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

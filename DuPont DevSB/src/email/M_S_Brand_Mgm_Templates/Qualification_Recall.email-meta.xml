@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To inform an approver that a Qualification has been recalled</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Qualification Recall</name>
+    <style>freeForm</style>
+    <subject>{!Qualification__c.Type__c} {!Qualification__c.Name} has been rejected</subject>
+    <textOnly>The Qualification {!Qualification__c.Name} has been recalled.
+
+No action is required from your end at the moment.
+
+Account: {!Qualification__c.Account_Name__c}
+Qualification Program: {!Qualification__c.Qualification_Program__c}
+Current Stage: {!Qualification__c.Stage__c}
+Current Stage Reason: {!Qualification__c.Stage_Reason__c}
+Current Status: {!Qualification__c.Status__c}
+
+Detailed Link: {!Qualification__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

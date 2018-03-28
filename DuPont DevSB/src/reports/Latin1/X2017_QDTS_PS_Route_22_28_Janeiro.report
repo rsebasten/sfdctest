@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Origin_Name__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Type__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Id</field>
+    </columns>
+    <columns>
+        <field>Lead$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Lead$Email</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Lead_Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Brazil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Activities$Subject</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>DuPont do Brasil - Pesquisa de Satisfação</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Origin_Channel_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Phone,Phone-Inbound-Local,Phone-Inbound-Toll Free,Phone-Outbound Cold Call,eMail,Web-Mobile App,Website,Website-Local,Website-Secure,Website-Subscription Center,ZZ - Field Not Used</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Owning_SBU__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Chemicals &amp; Fluoroproducts,Titanium Technologies,Corporate,Human Resources</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Status</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Route</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Activities$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Miriam Karina Fachetti,Lidia Santanna,Carlos Teixeira,Deise Balek</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>,Edinei Russi,Niha Saha,Joao Marcelo Occhiucci,Jabril Hart,Patricia Furini,Elizabeth Iasmin Galoni,Silvia Munoz,Katia Silva,Raffaela Ciabattoni,Sheila Queen,Vincent Krouwels,Haider Naseem,Saurabh Agrawal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$FirstName</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Loja</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$IsConverted</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Activities$Origin_Name__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Blog Falando de Protecao,www.dupont.com/BI-LA Surfaces</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Privacy Inquiry</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.Activities$Subject</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>DayInMonth</dateGranularity>
+        <field>Lead$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2017 QDTS PS Route 22-28 Janeiro</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_and_Without_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$CreatedDate</dateColumn>
+        <endDate>2017-01-28</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-22</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,66 @@
+<!--<SA20180310>  Removed the hardoced references as part of the issue IS ID-00084379 -->
+
+<apex:page standardcontroller="Opportunity_Products__c" extensions="EditOppProductEndUser" tabstyle="Opportunity_Products__c">
+<apex:sectionHeader title="Opportunity-Product Edit" subtitle="Edit Opportunity-Indirect Product"/>
+<apex:form >
+<apex:pageBlock title="Opportunity-Product Edit" mode="edit">
+<apex:pageBlockButtons location="top">
+<apex:commandButton value="Save" action="{!savechange}"/>
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+</apex:pageblockbuttons>
+<apex:pageBlockSection title="Information on Indirect Product" columns="2">
+<tr>
+<td class="labelCol first ">
+<label for="accountname">Account</label>
+    <!--<SA20180310>--> 
+<apex:outputLink value="/{!accid}">{!accname}</apex:outputlink>
+<apex:inputhidden id="accidd" value="{!accidd}"/>
+<apex:inputhidden id="accnma" value="{!accnma}"/>
+
+</td>
+</tr>
+<apex:outputfield id="opportunityid" value="{!oppd.name}"/>
+<apex:outputfield id="opportunity" value="{!oppd.Opportunity__c}"/>
+
+
+<tr> 
+  
+<apex:panelgrid columns="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<td class="labelCol first " colspan="2">
+<label for="j_id20_lkold"><span class="requiredMark">*</span><b>Product</b></label>&nbsp;&nbsp;&nbsp;</td>
+<apex:panelgroup >
+<span class="lookupInput">
+<div class="requiredInput"><div class="requiredBlock"></div>
+  <input id="j_id0:j_id2:j_id3:j_id7:j_id20_lkold" name="j_id0:j_id2:j_id3:j_id7:j_id20_lkold" value="{!prname}" required="true"/>
+<a href="JavaScript: openLookup('/_ui/common/data/LookupPage?lkfm=j_id0:j_id2&lknm=j_id0:j_id2:j_id3:j_id7:j_id20&lkrf=&lktp=01t&sn=1&go=+Go%21+&oper0=s&fval0='+document.getElementById('j_id0:j_id2:j_id3:j_id7:accnma').value+'&col0='+document.getElementById('j_id0:j_id2:j_id3:j_id7:accidd').value+'&lksrch='+document.getElementById('j_id0:j_id2:j_id3:j_id7:j_id20_lkold').value+'&width=420&height=490')" id="a" onclick="setLastMousePosition(event)" tabindex="31" title="Related To Lookup (New Window)">
+<img alt="Related To Lookup (New Window)" class="lookupIcon" onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" src="/s.gif"/></a></div></span>
+<apex:inputhidden id="j_id20_lkid" value="{!oppd.ProductOfOpportunity__c}" />
+<input value="{!oppd.ProductOfOpportunity__c}" type="hidden" id="j_id20"  name="j_id0:j_id2:j_id3:j_id7:j_id20" onchange="document.getElementByIdCS('j_id0:j_id2:j_id3:j_id7:j_id20_lkid').value='';document.getElementByIdCS('j_id0:j_id2:j_id3:j_id7:j_id20_mod').value='1';" maxlength="255" size="20" tabindex="30" title="Related To"/>
+</apex:panelgroup>
+<apex:inputhidden value="{!oppd1.ProductOfOpportunity__c}"/>
+</apex:panelgrid>
+<apex:inputField id="Salesprice" value="{!oppd.Sales_Price__c}"/>
+<apex:inputfield id="linedescription" value="{!oppd.Line_Description__c}"/>
+<apex:inputfield value="{!oppd.Total_Price__c}"/>
+<apex:inputField id="Quantity" value="{!oppd.Quantity__c}"/>
+<apex:inputfield id="currency" value="{!oppd.currencyisocode}"/>
+</tr>
+
+</apex:pageBlockSection>
+<apex:pageBlockSection title="System Information" columns="2">
+<tr><td>
+<apex:outputtext /></td>
+<td><apex:panelgrid >
+<apex:panelgroup >
+<label for="recordtype"><b>Record Type</b></label>
+<apex:outputlabel id="recordtype" value="{!oppd.RecordType.name}"/>
+</apex:panelgroup>
+</apex:panelgrid></td></tr>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

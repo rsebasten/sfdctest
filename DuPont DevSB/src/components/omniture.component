@@ -1,0 +1,22 @@
+<!-- <SA20180310> Removed the hardoced references as part of the issue IS ID-00084379 -->
+<apex:component >
+    <apex:attribute name="suite" type="string" description="omniture account suite id" required="true"/>
+    <apex:attribute name="pname" type="string" description="optional page name, otherwise pod.pageName"/>
+    <apex:attribute name="params" type="string" description="optional values appened to pagename"/>
+    <script type="text/javascript">
+        var s_account="{!suite}";
+    </script>
+    <script type="text/javascript" src="{!URLFOR($Resource.OmnitureAnalytics)}"></script>
+    <script type="text/javascript">
+        function getPageName(){
+        // <SA20180310> deleted the commented HardCoded URL
+            arr=fullUrl.split('/');
+            var pod=arr[2].split('.')[1].toUpperCase();
+            var pname=arr[4].substring(0,arr[4].indexOf("?"));
+            return pod+"."+pname;
+        }
+        s.pageName=('{!pname}'=='') ? getPageName():'{!pname}';
+        if ('{!params}'!='') s.pageName=s.pageName+'.'+'{!params}';
+        var s_code=s.t();if(s_code)document.write(s_code);
+    </script>
+</apex:component>

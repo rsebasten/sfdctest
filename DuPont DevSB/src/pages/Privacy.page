@@ -1,0 +1,13 @@
+<apex:page controller="ctrlPrivacy" sidebar="false" showHeader="false" action="{!init}">
+ <apex:pageBlock tabStyle="Task" Title="Privacy Agreement">
+   {!$Label.PrivacyAgreement}<br/><br/>
+<apex:form >
+<apex:outputpanel id="Agreement">
+	&nbsp;&nbsp;<apex:inputCheckbox value="{!agree}" disabled="{!agree}"/>&nbsp;<b>{!$Label.PrivacyCheckbox}</b>			
+</apex:outputpanel>
+<br/><br/>
+<apex:commandButton value="Submit" action="{!save}"/>
+</apex:form>
+<br/>
+</apex:pageBlock>
+</apex:page>

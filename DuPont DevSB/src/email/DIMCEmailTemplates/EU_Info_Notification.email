@@ -1,0 +1,13 @@
+Dear {!Lead.OwnerFullName},
+
+The following customer has recently called our DuPont Product Inquiry Center.
+
+You'll find details of the lead below:
+{!Lead.Salutation}{!Lead.FirstName} {!Lead.LastName}
+{!Lead.Company}
+{!Lead.Phone}
+
+Please don't forget to confirm in Salesforce that the lead has been Processed:  {!Lead.Link} 
+by updating the lead status to end.
+
+{!Lead.Description}

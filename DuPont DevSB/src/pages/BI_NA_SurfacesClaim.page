@@ -1,0 +1,140 @@
+<apex:page standardController="Case" showHeader="true" extensions="ctrlBINA_SurfacesClaim">
+<style type="text/css">
+
+.bPageBlock .detailList tr td, .bPageBlock .detailList tr th, .hoverDetail .bPageBlock .detailList tr td, .hoverDetail .bPageBlock .detailList tr th
+body .bEditBlock .pbBottomButtons, body .apexp .bPageBlock.apexDefaultPageBlock .pbBottomButtons {
+ border: 0px !important; 
+}
+.labelCol{
+font-size:98% !important;
+font-weight:Bold !important;
+color: #000 !important;
+font-family: Arial,Helvetica,sans-serif;
+padding-left:0px !important;
+padding-right:0px !important;
+}
+.span{
+color:red;
+font-size:x-large;
+vertical-align:top;
+margin-left:0px;
+padding-left:0px;
+padding-top:0px !important;
+}
+.dataCol{
+padding-top: 0px !important!
+padding-bottom:0px !important;
+padding-left: 0px !important;
+}
+.data2Col{
+padding-left: 0px !important;
+}
+.btn {
+padding : 5px 3px;
+border : #3f3f3f solid 1px !important ;
+background-color : #F2F2F2 !important ;
+color : #191919 !important ;
+font-weight : bold;
+font-size : 11px !important ;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;
+
+    
+    
+    
+    
+     .Global {
+           background-color: #fff; color: #6e6e6e; font-family: Arial, Segoe UI, Sans-Serif; font-size: 12px; font-weight:normal; line-height:18px; margin: 0px; padding: 0px; text-rendering: optimizeLegibility; -webkit-font-smoothing:antialiased; 
+     }
+ 
+               .customPopup{
+                    background-color: white;
+                    border-style: solid;
+                    color: grey;
+                    font: normal normal bold 11px Trebuchet MS, Helvetica;
+                    border-width: 3px;
+                    border-color:grey;
+                    left: 50%;
+                    padding:10px;
+                    position: fixed;
+                    z-index: 9999;
+                    overflow:scroll;           
+                    /* These are the 3 css properties you will need to tweak so the pop  
+                    up displays in the center of the screen. First set the width. Then set 
+                    margin-left to negative half of what the width is. You can also add 
+                    the height property for a fixed size pop up.*/
+                  /*  width: 95%;
+                    left: 0%;
+                    top:150%;
+                    height:40%;*/
+                    width:85%; 
+                    height:55%;
+                    left:0%;
+                    top:25%;
+                }
+        
+                .closeButton {
+                    float: right;
+                    height: 3%;
+                    width: 5%;
+                    
+                }
+            </style>
+
+<APEX:PAGEMessages ></APEX:PAGEMessages>
+<apex:form style="global">
+<br/>
+<h><b><span style="color:brown;font-size:small;align:center;margin-left:80px;">DuPont BI Building Surfaces Claim Creation Form :</span></b></h>
+<br/>
+<br/>
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:outputText label="Entitlement Number" >
+<apex:outputLabel value="{!entit.Registration_Number__c}"  style="padding-left:14px !important; padding-top:20em !important">
+</apex:outputLabel></apex:outputText>
+<apex:outputText label="Name" >
+<apex:outputLabel value="{!con.name}"  style="padding-left:14px !important; padding-top:20em !important">
+</apex:outputLabel></apex:outputText>
+<apex:outputText label="Installation Date" value="{0,date,M/d/yyyy}" style="padding-left:14px !important; padding-top:20em !important">
+<apex:param value="{!c.Installation_Date__c}"/>
+</apex:outputText>
+<apex:outputText label="Email Address" >
+<apex:outputLabel value="{!con.Email}"  style="padding-left:14px !important; padding-top:20em !important">
+</apex:outputLabel></apex:outputText>
+<apex:outputText label="Phone" >
+<apex:outputLabel value="{!con.Phone}"  style="padding-left:14px !important; padding-top:20em !important">
+</apex:outputLabel></apex:outputText>
+<apex:outputText label="Installer/Builder" >
+<apex:outputLabel value="{!entit.Account.Name}"  style="padding-left:14px !important; padding-top:20em !important">
+</apex:outputLabel></apex:outputText>
+</apex:pageBlockSection>
+<div style="margin-left:183px">
+<c:BI_NA_MultiSelectMaterials leftLabel="Available Materials"
+                leftOption="{!AllMaterials}"
+                rightLabel="Selected Materials"
+                rightOption="{!SelectedMaterials}"
+                size="5"
+                width="280px" helptext="hello"/> 
+</div>
+<apex:pageBlockSection >
+<apex:outputText label="Describe Problem" style="padding-left:14px !important;">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:inputField value="{!c.Description}" required="false" style="Width:250px">
+</apex:inputField></apex:outputText>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:outputText label="Case Details (For Internal Use)" style="padding-left:14px !important;">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:inputTextArea value="{!c.Case_Details_rtf__c}" required="false" style="width:250px !important;height:50px !important;">
+</apex:inputTextArea></apex:outputText>
+</apex:pageBlockSection>
+<apex:pageBlockSection >
+<apex:outputText label="Product Category" style="padding-left:14px !important;">&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:inputField value="{!c.Product_Category__c}" required="false" style="Width:250px">
+</apex:inputField></apex:outputText>
+</apex:pageBlockSection>
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Save" action="{!save}"/>
+<apex:commandButton value="Cancel" action="{!Cancel}"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

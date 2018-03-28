@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI LA - Solicitud de investigación interna SP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI LA - Solicitud de investigación interna SP</name>
+    <style>formalLetter</style>
+    <subject>Solicitud de investigación interna de producto (caso: {!Case.CaseNumber})</subject>
+    <textOnly>Estimado Colega(s),
+
+
+El presente es para comunicarle(s) que ha(n) recibido una notificación sobre la garantía de un producto que necesita una mayor investigación.
+
+
+
+Número de Caso:    {!Case.CaseNumber}
+Asunto: {!Case.Subject}
+Link:      {!Case.Link}
+Descripción:
+{!Case.Problem_Description__c}
+
+
+Necesito de su apoyo para que me envíe(n) su retroalimentación en los próximos 3 días (laborables) y comunicarme si el defecto necesita de mayor investigación en la planta. En caso de ser necesario esta investigación, le(s) agradecería que se creara un plan de acción.
+
+Aunque se ha encontrado una solución para el cliente, esta queja no será cerrada de forma interna hasta que se haya recibido su(s) informe(s) como respuesta a esta notificación.
+
+
+Por favor de enviar toda la comunicación relacionada al número de caso anteriormente mencionado, a Paulo Renato Ferreira, Paulo.Ferreira@dupont.com.
+
+
+Le(s) agradezco de antemano su cooperación.
+
+
+Atentamente,
+
+
+Paulo Renato Ferreira
+Technology Supervisor - Safety &amp; Construction - Corian® Design
+
+
+DuPont Brasil
+( +55 (11) 7076-7048
+( +55 (11) 4706-9136
+* paulo.ferreira@bra.dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

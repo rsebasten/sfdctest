@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Use and Care Instruction to Customer IT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Use and Care Instruction to Customer IT</name>
+    <style>freeForm</style>
+    <subject>Istruzioni per l’uso e la cura (case: {!Case.CaseNumber})</subject>
+    <textOnly>Gent. Signora/e,
+
+In riferimento al vostro reclamo {!Case.CaseNumber} in data {!Case.Date_Entered__c}, vi spediamo le istruzioni per l’uso e la manutenzione di Corian® Solid Surface.
+
+Probabilmente seguite gia le line guide del manuale di uso e manutenzione, ma per qualsiasi domanda siamo a vostra disposizione.
+
+In caso volete levigare il vostro piano per rinnovare l’aspetto, possiamo indicarvi un centro assistenza o una lista di fabbricatore QN piu&apos; vicino che vi potranno spedire un preventivo.
+
+
+Cordiali Saluti,
+
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+Desideriamo informarla che i suoi dati verranno utilizzati per individuare i suoi interessi commerciali, offrirle prodotti e servizi e assicurare una customer experience positiva nell&apos;ambito dei nostri rapporti commerciali. I suoi dati personali (nome, e-mail, telefono e altre informazioni di contatto) saranno archiviati su sistemi informatici selezionati, situati principalmente negli Stati Uniti. Queste informazioni potranno essere utilizzate da DuPont, dai suoi affiliati e partner e da terze parti selezionate in altri paesi per lo stesso scopo. Per accedere, modificare, eliminare o non autorizzare l&apos;elaborazione dei suoi dati, la invitiamo a collegarsi a questo link.
+
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

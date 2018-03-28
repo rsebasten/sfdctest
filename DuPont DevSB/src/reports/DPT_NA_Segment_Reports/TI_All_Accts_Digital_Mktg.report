@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account$Owning_Organization__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT-IPP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Country__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>UNITED STATES</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Contacts$RecordType</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contact.DPTIPP,Contact.DPT_Aramids</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Contacts$Role__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Industrial Hygienist,Influencer,Lab Manager,Maintenance,Plant Manager,Purchasing,Safety Manager</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Contacts$Title</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>EHS,IHS,Manager,Safety</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>TI All Accts Digital Mktg</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accountswithoutcontacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_PREVCURFY</interval>
+    </timeFrameFilter>
+</Report>

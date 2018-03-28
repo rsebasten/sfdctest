@@ -1,0 +1,56 @@
+<!--                      
+@author Sanchit Dua
+@Date 5/26/2015
+email: sanchit.dua@accenture.com
+-->
+<apex:page showHeader="true" sidebar="true" standardController="ERP_Customer__c" extensions="ctrl_CSTriggerAccountUpdate">
+    <apex:includeScript value="/soap/ajax/27.0/connection.js"/>
+    <apex:includeScript value="/support/console/22.0/integration.js"/>
+    <apex:includeScript value="/xdomain/xdomain.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.CS_JQueryUI, '/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.CS_JQueryUI, '/jquery-ui.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.CS_JQueryUI, '/jquery-ui.css')}"/>
+    
+    <p id="newArea"></p> 
+    
+    <!-- End Default Content REMOVE THIS -->
+    
+    <script type="text/javascript">
+        $j = jQuery.noConflict();
+
+        $j(document).ready(function(){
+            $j( 'p[id$=newArea]' ).empty(); 
+            callRemoteupsertAccount();          
+        });
+
+        Visualforce.remoting.timeout = 120000; // Set timeout at page level 
+
+         function callRemoteupsertAccount() {
+            // This remoting call will use the page timeout value -- AA(6/24/2015) : Changed the functionality from Call Batch to Update Account.
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ctrl_CSTriggerAccountUpdate.upsertAccount}','{!$CurrentPage.parameters.eRPID}',
+                handleResult,
+                {escape: false}           
+            );  
+        } // END function callRemoteBatch() 
+
+        function handleResult(result, event) { 
+            //alert('inside handleResult with the event: '+event+' & result: '+result); //console.log '(?_?)'
+            if (sforce.console.isInConsole()) {
+                if(result.search('Insufficient Privileges') != -1 || result.search('unexpected error') != -1 || result.search('meet the criteria') != -1)
+                    sforce.console.setTabTitle('{!$Label.CS_Account_Update_Error_Header}', result.id);
+                else
+                    sforce.console.setTabTitle('{!$Label.CS_Account_Update_Success_Header}', result.id);
+                } // END if (sforce.console.isInConsole())            
+            $j("#newArea").append(result);
+            // AA(6/24/2015) : Added for refreshing the account page after update/insert
+            sforce.console.getEnclosingPrimaryTabId(refreshAcc);
+        } // END function handleResult(result, event)
+        
+        var refreshAcc= function refreshAcc(result) {
+           sforce.console.refreshPrimaryTabById(result.id);
+        };
+
+    </script>
+
+</apex:page>

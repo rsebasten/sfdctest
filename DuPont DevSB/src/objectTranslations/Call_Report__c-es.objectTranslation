@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Informe de Visita/Llamada</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Informe de Visitas/Llamadas</value>
+    </caseValues>
+    <fields>
+        <label>Asistentes de la Cuenta</label>
+        <name>Account_Attendees__c</name>
+    </fields>
+    <fields>
+        <label>Highlight de la Cuenta</label>
+        <name>Account_Highlight__c</name>
+    </fields>
+    <fields>
+        <label>Cuenta</label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Call Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Que acciones se realizaron?</help>
+        <label>Acción realizada</label>
+        <name>Actions_Taken__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de</label>
+        <name>Activity_Date__c</name>
+    </fields>
+    <fields>
+        <label>Descripcion de la Actividad</label>
+        <name>Activity_Description__c</name>
+    </fields>
+    <fields>
+        <label>Iniciador de Actividad</label>
+        <name>Activity_Initiator__c</name>
+        <picklistValues>
+            <masterLabel>DuPont</masterLabel>
+            <translation>DuPont</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How busy is this customer?  Select a number that represents the Activity Level
+0 - Going Out of Business
+1 - Not Busy at All  through 10 - Extremely Busy --></help>
+        <label>Nivel de Actividad</label>
+        <name>Activity_Level__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation>0</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Tipo de Actividad</label>
+        <name>Activity_Type__c</name>
+        <picklistValues>
+            <masterLabel>Competitor Insight</masterLabel>
+            <translation><!-- Competitor Insight --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Interaction</masterLabel>
+            <translation>Interacción con Cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Business Development</masterLabel>
+            <translation><!-- New Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation><!-- Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical-Follow up Visit</masterLabel>
+            <translation>Técnico / Seguimiento de Actividad</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical-Support</masterLabel>
+            <translation><!-- Technical-Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Asistentes</label>
+        <name>Attendees__c</name>
+    </fields>
+    <fields>
+        <label>Fecha</label>
+        <name>Call_Date__c</name>
+    </fields>
+    <fields>
+        <label>Canal</label>
+        <name>Channel__c</name>
+        <picklistValues>
+            <masterLabel>Face To Face</masterLabel>
+            <translation>Presencial</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation>Teléfono</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone-Inbound</masterLabel>
+            <translation>Llamada Entrante</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone-Outbound</masterLabel>
+            <translation>Llamada Saliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Datos Competitivos</label>
+        <name>Competitive_Data__c</name>
+    </fields>
+    <fields>
+        <label>Información Competitiva</label>
+        <name>Competitive_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- DuPont Confidential Information which should be disclosed on a need to know basis only --></help>
+        <label>Información Confidencial</label>
+        <name>Confidential_Information__c</name>
+    </fields>
+    <fields>
+        <label>Confidencial</label>
+        <name>Confidential__c</name>
+    </fields>
+    <fields>
+        <label>Contacto</label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- When insert values for time please write your time according to the following rules:
+
+0.25 = 15 minutes
+0.50 = 30 minutes
+0.75 = 45 minutes
+1.00 = 1 hour
+
+Ex. for 1 hour and 45 minutes write 1.75, for 2 hours and 15 minutes write 2.25. --></help>
+        <label><!-- Displacement Time --></label>
+        <name>Displacement_Time__c</name>
+    </fields>
+    <fields>
+        <label>Asistentes DuPont</label>
+        <name>DuPont_Attendees__c</name>
+    </fields>
+    <fields>
+        <label>Uso final de la información</label>
+        <name>End_Use_information__c</name>
+    </fields>
+    <fields>
+        <label>Ubicación</label>
+        <name>Geography__c</name>
+        <relationshipLabel><!-- Call Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- HasAttachment --></label>
+        <name>HasAttachment__c</name>
+    </fields>
+    <fields>
+        <label>Asuntos</label>
+        <name>Issues__c</name>
+    </fields>
+    <fields>
+        <label>Visita Conjunta</label>
+        <name>Joint_Visit__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label>Información de Mercado</label>
+        <name>Market_Competitive_Infomation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Information Details --></label>
+        <name>Market_Information_Details_rtf__c</name>
+    </fields>
+    <fields>
+        <label>Información Competitiva-Mercado</label>
+        <name>Market_Information__c</name>
+    </fields>
+    <fields>
+        <label>Highlight Mensual</label>
+        <name>Monthly_Highlight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total number of people who have actively participated in this event or call. --></help>
+        <label>Numero de Participantes</label>
+        <name>Nb_Of_Participants__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of next steps agreed upon during the call
+(Formatting and pictures are possible) --></help>
+        <label><!-- Next Steps_ --></label>
+        <name>Next_Steps_R__c</name>
+    </fields>
+    <fields>
+        <label>Próximos Pasos</label>
+        <name>Next_Steps__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the item that reflects the COT or Objective associated with this call report. --></help>
+        <label>Objetivo</label>
+        <name>Objective__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Oportunidad</label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Call Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Fecha Planeada</label>
+        <name>Planned_Date__c</name>
+    </fields>
+    <fields>
+        <label>Programa</label>
+        <name>Program__c</name>
+        <picklistValues>
+            <masterLabel>AFS-CHINA</masterLabel>
+            <translation>AFS-CHINA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS-EAST ASIA</masterLabel>
+            <translation>AFS-EAST ASIA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS-EMEA</masterLabel>
+            <translation>AFS-EMEA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS-EU</masterLabel>
+            <translation>AFS-EU</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS-INDIA</masterLabel>
+            <translation>AFS-INDIA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS-LA</masterLabel>
+            <translation>AFS-LA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS-NA</masterLabel>
+            <translation>AFS-NA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-EMEA</masterLabel>
+            <translation>DPP-EMEA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NA</masterLabel>
+            <translation>DPP-NA</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Propósito y Agenda</label>
+        <name>Purpose__c</name>
+    </fields>
+    <fields>
+        <help><!-- Main Competion mentioned in this call report --></help>
+        <label>Competición Relacionada</label>
+        <name>Related_Competition__c</name>
+        <relationshipLabel><!-- Call Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Iniciativa Relacionada</label>
+        <name>Related_Initiative__c</name>
+        <relationshipLabel><!-- Call Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Fecha de Reporte</label>
+        <name>Report_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scoring Type --></label>
+        <name>Scoring_Type__c</name>
+        <picklistValues>
+            <masterLabel>Automated-SFDC</masterLabel>
+            <translation><!-- Automated-SFDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Estatus</label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Abandoned</masterLabel>
+            <translation>Abandonada</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behind Schedule</masterLabel>
+            <translation>Atrasada</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation>Completada</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed &amp; Reviewed</masterLabel>
+            <translation>Completada &amp; Revisada</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation>En Progreso</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Review</masterLabel>
+            <translation><!-- In Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation>Aparcado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation>Planificada</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation>Agendada</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation>Remitida</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting</masterLabel>
+            <translation>Esperando por Confirmación</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Summary of the call with all main key comments made
+(Formatting and pictures are possible) --></help>
+        <label><!-- Summary_ --></label>
+        <name>Summary_R__c</name>
+    </fields>
+    <fields>
+        <label>Resumen</label>
+        <name>Summary__c</name>
+    </fields>
+    <fields>
+        <label>Conversó con el Gerente</label>
+        <name>Talked_to_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- When insert values for time please write your time according to the following rules:
+
+0.25 = 15 minutes
+0.50 = 30 minutes
+0.75 = 45 minutes
+1.00 = 1 hour
+
+Ex. for 1 hour and 45 minutes write 1.75, for 2 hours and 15 minutes write 2.25. --></help>
+        <label><!-- Time Duration --></label>
+        <name>Time_Duration__c</name>
+    </fields>
+    <fields>
+        <label>Tópico</label>
+        <name>Topic__c</name>
+        <picklistValues>
+            <masterLabel>Logistics</masterLabel>
+            <translation>Logística</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaging</masterLabel>
+            <translation>Empacado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation>Precio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation>Producto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation>Calidad</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Call</masterLabel>
+            <translation>Llamada de Venta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation>Servicio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation>Técnica</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation>Entrenamiento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Tópicos</label>
+        <name>Topics__c</name>
+        <picklistValues>
+            <masterLabel>Competition</masterLabel>
+            <translation>Competición</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation>Contrato</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demo</masterLabel>
+            <translation>Demostración</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation>Finanza</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management</masterLabel>
+            <translation>Gerencia</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation>Mercadeo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation>Precio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation>Calidad</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship Building</masterLabel>
+            <translation>Construcción de Relación</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation>Servicio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain</masterLabel>
+            <translation>Cadena de Suministros</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation>Técnica</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trial</masterLabel>
+            <translation>Prueba</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VOC</masterLabel>
+            <translation>Voz del Cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Tipo</label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Call Report Only</masterLabel>
+            <translation>Informe de Visita</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor Summary</masterLabel>
+            <translation>Informe de competencia</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint</masterLabel>
+            <translation>Reclamaciones</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation>Correo Electrónico</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly Highlight Only</masterLabel>
+            <translation>Destacado Mensual (únicamente)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly Highlight and Call Report</masterLabel>
+            <translation>Destacado Mensual y Reporte de Llamada/Visita</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Call</masterLabel>
+            <translation>Llamada Telefónica / Actualizaciones</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Call Planner</masterLabel>
+            <translation>Planificación - Antes de llamada</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly Highlight</masterLabel>
+            <translation>Destacado de la Semanal</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Necesidades del Cliente No Cumplidas</label>
+        <name>Unmet_Customer_Needs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country name from the Account --></help>
+        <label><!-- Account_Country --></label>
+        <name>fAccount_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Geo Region from the Account --></help>
+        <label><!-- Account_Region --></label>
+        <name>fAccount_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Report Created Time --></label>
+        <name>fCall_Report_Created_Time__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nombre del Call Report</nameFieldLabel>
+    <recordTypes>
+        <label><!-- BI-NA Call Report --></label>
+        <name>BI_NA_Call_Report</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer Survey Report --></label>
+        <name>CustomerSurveyReport</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT EMEA --></label>
+        <name>DPTEMEA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT-Aramids Call Report --></label>
+        <name>DPT_Aramids_Call_Report</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT-IPP --></label>
+        <name>DPT_IPP</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT-IPP EMEA --></label>
+        <name>DPT_IPPEMEA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT-NOW Call Report --></label>
+        <name>DPT_NOWCallReport</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DuPont Canada Call Report --></label>
+        <name>DuPontCanadaCallReport</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- HR - Talent Acq Call Report --></label>
+        <name>HR_Talent_Acq_Call_Report</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- NOW Call Report --></label>
+        <name>NOWCallReport</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OneDuPont --></label>
+        <name>OneDuPont</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OneDuPont Site Visit Report --></label>
+        <name>OneDuPontSiteVisitReport</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OneDuPont Summary --></label>
+        <name>OneDuPont_Summary</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Technical Service Call Report --></label>
+        <name>TechnicalServiceCallReport</name>
+    </recordTypes>
+    <webLinks>
+        <label>Ayuda Reporte de Visita/Llamada</label>
+        <name>CallReportHelp</name>
+    </webLinks>
+    <webLinks>
+        <label>Nuevo Reporte de Visita/Llamada</label>
+        <name>New_Call_Report_AddAccount</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Call_Report_AddAcct_Opp --></label>
+        <name>New_Call_Report_AddAcct_Opp</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Link_by_Email --></label>
+        <name>Send_Link_by_Email</name>
+    </webLinks>
+    <webLinks>
+        <label>Enviar por Correo Electronico a un Contacto Interno</label>
+        <name>Send_To_Internal_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_To_Internal_DPT_Contact --></label>
+        <name>Send_To_Internal_DPT_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_To_Internal_NOW_Contact --></label>
+        <name>Send_To_Internal_NOW_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label>Enviar por Correo Electronico</label>
+        <name>Send_by_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_by_Email_all_Fields --></label>
+        <name>Send_by_Email_all_Fields</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SummaryReport --></label>
+        <name>SummaryReport</name>
+    </webLinks>
+</CustomObjectTranslation>

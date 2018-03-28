@@ -1,0 +1,41 @@
+<!-- 
+
+*******************************************************************************
+Copyright © 2010 DuPont. All rights reserved. 
+Author: Sreedhar T Jagannath
+Email: Sreedhar.Jagannath@ind.dupont.com
+Description: Visualforce Page to export the Partner Hierarchy VF report into Excel 
+********************************************************************************/
+-->
+
+<apex:page cache="true" standardcontroller="Account" extensions="ctrlHierarchy" contenttype="application/vnd.ms-excel">
+    <apex:repeat rows="1" var="str" value="{!Accnt1}">
+        <apex:outputPanel id="res" rendered="{!str.Name<>null}">
+            <apex:pageBlock >
+                    <apex:pageBlockTable var="part1" value="{!Accnt1}" border="2" columns="7">
+                            <apex:column headerValue="Account Id">
+                            <apex:outputLabel value="{!part1.Id}"/>
+                            </apex:column>
+                            <apex:column headerValue="Account Name">
+                            <apex:outputLabel value="{!part1.Name}"/>
+                            </apex:column>
+                            <apex:column headerValue="Account Stage">
+                            <apex:outputLabel value="{!part1.Account_Stage__c}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Account Type">
+                            <apex:outputLabel value="{!part1.Type}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Program">
+                            <apex:outputLabel value="{!part1.Program__c}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Country">
+                            <apex:outputLabel value="{!part1.Country__c}" rendered="true"/>
+                            </apex:column>
+                            <apex:column headerValue="Owning Organization">
+                            <apex:outputLabel value="{!part1.Owning_Organization__c}" rendered="true"/>
+                            </apex:column>
+                    </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:repeat>
+</apex:page>

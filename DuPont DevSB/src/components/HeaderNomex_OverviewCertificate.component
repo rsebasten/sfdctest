@@ -1,0 +1,29 @@
+<apex:component id="headerNomex_2">
+<apex:attribute name="page" type="PageBase" description="reference to pagebase" required="true"/> 
+<head>
+<style>
+#colorbar{height: 10px;background-color: #D42233;}
+#accent1{float: left;height: 12px;width: 77%;background-color:#FF3300;}
+#accent2{float: left;height: 12px;width: 2%;background-color: #CC0033;}
+#accent3{float: left;height: 12px;width: 8%;background-color: #333333;}
+#accent4{float: left;height: 12px;width: 2%;background-color: #CCCCCC;}
+#accent5{float: left;height: 12px;width: 11%;background-color: #660000;}
+body {text-align: center;}
+</style>
+</head>
+        <br/><table width="1000px">
+        <tr>
+        <td align="center" valign="middle">
+        </td></tr>
+        <tr><td colspan="2" style="background-color: #ededed; border:none; padding:0px; text-align:left; white-space: nowrap; width:100%;" width="100%">
+                <div id="colorbar" style="height: 10px;background-color: #D42233; width:1000px;"> 
+                    <div style="float: left;height: 12px;width: 58%;background-color:#FF3300;"><!-- accent 1 --></div> 
+                    <div style="float: left;height: 12px;width: 5%;background-color: #CC0033;"><!-- accent 2 --></div> 
+                    <div style="float: left;height: 12px;width: 3%;background-color: #333333;"><!-- accent 3 --></div> 
+                    <div style="float: left;height: 12px;width: 6%;background-color: #CCCCCC;"><!-- accent 4 --></div> 
+                    <div style="float: left;height: 12px;width: 9%;background-color: #FF3300;"><!-- accent 5 --></div> 
+                    <div style="float: left;height: 12px;width: 19%;background-color: #660000;"><!-- accent 6 --></div>
+                </div>
+        </td></tr>
+        </table>
+</apex:component>

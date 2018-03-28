@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Complaint Approval Request - Accepted EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Approval Accepted EN old</name>
+    <style>formalLetter</style>
+    <subject>Approval request accepted (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear {!Case.OwnerFullName},
+Your request for approval of case {!Case.CaseNumber} has been accepted. Please review the case record for documentation and follow up accordingly.
+
+Link to case: {!Case.Link}
+
+Kind regards
+
+
+The approver</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

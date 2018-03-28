@@ -1,0 +1,21 @@
+<apex:page standardController="DuPontM__MobileAppConfig__c" extensions="DuPontM.CreateConfig">
+    <head><style type="text/css">
+                body {
+                    background-image:url('{!URLFOR($Resource.dsav3_imx, 'BG_Pixel.png')}');
+                }</style>
+    </head><body>
+     <apex:form >
+     <apex:messages />
+         <apex:pageBlock >
+             <apex:pageBlockButtons >
+                 <apex:commandButton value="Create" action="{!save}"/>
+        
+             </apex:pageBlockButtons>
+         
+                 <apex:pageBlockSection >
+                 <apex:inputfield value="{!cmac.DuPontM__TitleText__c}" required="true" />
+                 </apex:pageBlockSection>
+
+         </apex:pageBlock>
+     </apex:form> </body>
+</apex:page>

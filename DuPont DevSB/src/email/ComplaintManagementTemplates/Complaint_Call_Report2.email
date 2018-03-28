@@ -1,0 +1,25 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<FONT size=2>Hi, </FONT>
+<P><FONT size=2>Find below the new call report from {!Call_Report__c.CreatedBy}.&nbsp; Please review the complaint information below - act upon it.&nbsp; <BR></FONT></P>
+<P><BR></P>
+<P><FONT size=2>Then, follow the link below and change the status to Completed and update the summary and/or Next Steps fields with the date and your resolution to the Complaint.<BR></FONT></P>
+<P><FONT size=2><BR></FONT></P>
+<P><FONT size=2><STRONG><EM><U><FONT color=#cc0000>Name: {!Call_Report__c.Name}</FONT></U></EM></STRONG></FONT></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P><FONT size=2><STRONG>Account</STRONG>: {!Call_Report__c.Account__c}</FONT></P>
+<P><FONT size=2><STRONG>Contact</STRONG>: {!Call_Report__c.Contact__c}</FONT></P>
+<P><FONT size=2><STRONG>Channel:</STRONG> {!Call_Report__c.Channel__c}</FONT></P>
+<P><FONT size=2><STRONG>Call Date:</STRONG> {!Call_Report__c.Report_Date__c}</FONT></P></BLOCKQUOTE>
+<P><FONT size=2><STRONG><EM><FONT color=#cc0000>Report Summary</FONT></EM></STRONG></FONT></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P><FONT size=2><STRONG>Topic: </STRONG></FONT><FONT size=2>{!Call_Report__c.Topic__c}</FONT><BR></P>
+<P><FONT size=2><SPAN style="FONT-WEIGHT: bold">Issues: </SPAN>{!Call_Report__c.Issues__c}</FONT></P>
+<P><FONT size=2><STRONG>Next Steps</STRONG>: </FONT><FONT size=2><FONT size=2>{!Call_Report__c.Next_Steps__c}</FONT></FONT></P>
+<P><FONT size=2><STRONG>Summary:</STRONG> </FONT><FONT size=2>{!Call_Report__c.Summary__c}</FONT></P>
+<P><FONT size=2><STRONG><BR></STRONG></FONT></P></BLOCKQUOTE>
+<P><FONT style="COLOR: rgb(255,0,0); FONT-WEIGHT: bold" size=2><SPAN style="FONT-STYLE: italic">Link to Complaint:</SPAN></FONT>&nbsp; <FONT size=2><A href="https://na1.salesforce.com/{!Call_Report__c.Link}">{!Call_Report__c.Link}</A><BR></FONT><FONT size=2><STRONG></STRONG></FONT></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr></BLOCKQUOTE>]]></td>
+</tr>
+</table>

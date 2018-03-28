@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send to customer after adding to Opt Out Campaign.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Update - Unsubscribe Customer</name>
+    <style>formalLetter</style>
+    <subject>DuPont Privacy Request - Unsubscribe Confirmation</subject>
+    <textOnly>Dear {!Lead.Name},
+
+We have received your request to unsubscribe your email address from receiving marketing communications from DuPont.
+
+
+Be advised that your email address has been unsubscribed from our database(s).
+
+
+For further questions and assistance, please contact us using the details provided below.
+
+
+Sincerely,
+
+
+
+DuPont Corporate Contact 
+974 Centre Road
+Chestnut Run Plaza 735 2175-1
+Wilmington, DE 19805
+Toll-free: 1-855-569-0964</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

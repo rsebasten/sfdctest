@@ -1,0 +1,122 @@
+<apex:component allowDML="true">
+<apex:attribute name="script" type="SiteScript" description="SiteScript to render" required="true"/>
+<apex:attribute name="title" type="string" description="Title" required="false" default=""/>
+<apex:attribute name="showButtons" type="boolean" description="show save and Cancel buttons" required="false" default="true"/>
+<apex:attribute name="onSave" type="ApexPages.Action" description="OnSave Listener" required="true" />
+<apex:attribute name="onCancel" type="ApexPages.Action" description="OnCancel Listener" required="true"/>
+
+<apex:outputPanel id="script">
+	<apex:message />
+	<apex:pageBlock title="" mode="edit" id="pb" > 
+	
+	<apex:pageBlockButtons location="both">
+	<apex:outputPanel rendered="{!showButtons}">
+		<apex:commandButton value="Save" action="{!onSave}" />
+		<apex:commandButton value="Cancel" action="{!onCancel}" />
+	</apex:outputPanel>	
+	</apex:pageBlockButtons>
+
+		<!--  <apex:pageBlockSection columns="1" title="Here is a Section">-->
+		<table width="100%">
+		<apex:repeat var="qa" value="{!script.questions}">
+		
+			<apex:outputpanel rendered="{!(qa.AnswerType=='SECTION' && qa.visible)}" layout="none">
+			
+					<apex:outputpanel rendered="{!(qa.datatype=='section - header')}" layout="none">
+					<tr><td colspan="3"><div class="pbSubheader tertiaryPalette"><h3><apex:outputText value="{!qa.question}" title="{!qa.helpText}"/></h3>
+							<!-- <span class="pbSubExtra"><span class="requiredLegend"><span class="requiredExampleOuter"><span class="requiredExample"> </span></span><span class="requiredMark">*</span><span class="requiredText"> = Required Information</span></span></span>  -->
+						</div></td></tr>
+					</apex:outputpanel>
+
+					<apex:outputpanel rendered="{!(qa.datatype=='section - textblock')}" layout="none">
+						<tr><td colspan="3">
+							<apex:outputText escape="false" value="{!qa.question}"/>
+						</td></tr>
+					</apex:outputpanel>	
+						
+					<apex:outputpanel rendered="{!(qa.datatype=='section - richtextblock')}" layout="none">
+						<tr><td colspan="3">
+							<apex:outputText escape="false" value="{!qa.richtext}"/>
+						</td></tr>							
+					</apex:outputpanel>
+						
+			</apex:outputpanel>
+			
+		
+			<apex:outputpanel rendered="{!(qa.AnswerType!='SECTION' && qa.visible)}" layout="none">
+
+				<tr><td class="labelCol requiredInput" style="white-space: nowrap">
+				<apex:outputpanel id="lbl" layout="none">
+					<apex:outputLabel value="{!qa.question}" for="answer" title="{!qa.helpText}"/>
+					<!--  <span style="color:red;font-size:x-large;vertical-align:middle;">{!IF(qa.required,'*','')}</span> -->
+				</apex:outputpanel>
+				</td><td class="dataCol">
+					<div class="requiredInput">
+						<apex:outputPanel id="reqBlock" styleclass="requiredBlock" rendered="{!qa.required}" layout="block"/>
+					
+							<apex:outputpanel id="answer" layout="none">
+								<apex:outputpanel id="protext" layout="none" rendered="{!qa.readonly}" >
+									<apex:outputText id="rotext" value="{!qa.answer}"  />
+								</apex:outputpanel>
+								
+								<apex:outputpanel id="qa_text" layout="none" rendered="{!(qa.AnswerType=='TEXT' && (!qa.readonly))}" >
+									<apex:inputText id="atext" value="{!qa.answer}" style="{!qa.CSSStyle}"/>
+								</apex:outputpanel>
+								
+								<apex:outputpanel id="qa_textarea" layout="none" rendered="{!(qa.AnswerType=='TEXTAREA' && (!qa.readonly))}" >
+									<apex:inputTextarea id="atextarea" value="{!qa.answer}" style="{!qa.CSSStyle}"/><p/>
+								</apex:outputpanel>
+								
+								<apex:outputpanel id="qa_checkbox" layout="none" rendered="{!(qa.AnswerType=='CHECKBOX' && (!qa.readonly))}" >
+									<apex:inputCheckbox id="ckbox" value="{!qa.answer}" style="{!qa.CSSStyle}"/>
+				       		 	</apex:outputpanel>										
+								
+								<apex:outputpanel id="qa_sel" layout="none" rendered="{!(qa.AnswerType=='SELECT' && (!qa.readonly))}" >
+									<apex:SelectList id="apklist" value="{!qa.answer}" size="1" style="{!qa.CSSStyle}">
+					            		<apex:selectOptions value="{!qa.AnswerPicklist}"/>
+					       		 	</apex:SelectList>
+				       		 	</apex:outputpanel>
+				       		
+
+								<apex:outputpanel id="qa_rad" layout="none" rendered="{!(qa.AnswerType=='RADIO' && (!qa.readonly))}" >
+									<apex:SelectRadio id="aradio" value="{!qa.answer}" layout="{!qa.componentLayout}" style="{!qa.CSSStyle}">
+										<apex:selectOptions value="{!qa.AnswerPicklist}"/>
+									</apex:SelectRadio>
+								</apex:outputpanel>
+			
+			
+								<apex:outputpanel id="qa_mck" layout="none" rendered="{!(qa.AnswerType=='MULTICHECK' && (!qa.readonly))}" style="{!qa.CSSStyle}">
+									<apex:SelectCheckboxes id="amscklist" value="{!qa.multiAnswer}" layout="{!qa.componentLayout}" >
+										<apex:selectOptions value="{!qa.AnswerPicklist}"/>
+									</apex:SelectCheckboxes>
+								</apex:outputpanel>
+			
+								<apex:outputpanel id="qa_msel" layout="none" rendered="{!(qa.AnswerType=='MULTISELECT' && (!qa.readonly))}" >
+									<apex:SelectList id="amspklist" value="{!qa.multiAnswer}" multiselect="true" size="{!qa.mutiSelectSize}" style="height:auto;{!qa.CSSStyle}">
+										<apex:selectOptions value="{!qa.AnswerPicklist}"/>
+									</apex:SelectList>
+								</apex:outputpanel>
+
+				       				       		 	       			
+								<apex:outputpanel id="qa_date" layout="none" rendered="{!(qa.AnswerType=='DATE' && (!qa.readonly))}" >
+									<c:jqDatePicker pickDateField="{!qa.questionId}" value="{!qa.answer}" /> 
+									<!--  <c:inputDateString value="{!qa.answer}" default="{!qa.answer}" /> -->
+				       		 	</apex:outputpanel>						       		 			       		 	
+				     		 	
+								<apex:outputpanel layout="block" style="color:red;font-weight:bold;" styleClass="validationErr" id="qa_validerr" rendered="{!NOT(ISNULL(qa.validationError))}">
+									<apex:outputText value="{!qa.validationError}" />
+				       		 	</apex:outputpanel>
+				       		 	
+		       		 		</apex:outputpanel>
+       		 			</div>
+       		 		</td><td style="width:100%;">&nbsp;</td></tr>
+       		 		
+			</apex:outputpanel>
+
+		</apex:repeat>
+		</table>
+		<!--  </apex:pageBlockSection> -->
+	</apex:pageBlock>
+</apex:outputPanel>
+
+</apex:component>

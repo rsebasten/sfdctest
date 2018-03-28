@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Global English - Authorized Distributor - Action Required</name>
+    <style>freeForm</style>
+    <subject>Your Authorized Distributor Request – Action Required</subject>
+    <textOnly>Dear {!Lead.Originator_Name__c},
+
+The Marketing &amp; Brand team has received your recent request for an &apos;Authorized Distributor&apos; logo related to {!Lead.Company}. In order to approve your request, our team needs to ensure a valid/active TMLA is in place.
+
+Please send a PDF Copy of your active TMLA to your regional contact, copying Amy Hurff
+
+AP: xyz@dupont.com
+NA: xyz@dupont.com
+LA: xyz@dupont.com
+EMEA: xyz@dupont.com
+
+Once received, our team will proceed with validation of your request.
+
+Best regards,
+Amy J. Hurff
+DuPont Corporate Communications
+Brand Specialist
+302-996-8361
+amy.j.hurff@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

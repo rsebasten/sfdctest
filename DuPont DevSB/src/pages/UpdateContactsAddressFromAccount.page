@@ -1,0 +1,107 @@
+<apex:page controller="ctrlUpdateContactsAddressFromAccount" action="{!init}" tabstyle="Account">
+
+<apex:form >
+
+<apex:sectionHeader title="Update Contact Addresses From Account" subtitle="{!account.Name}"/> 
+
+<apex:pageblock id="accaddresses" tabStyle="Account" title="Account">
+	<apex:pageblockSection columns="2" title="Account Addresses">
+	<apex:pageblockSectionItem >
+		<apex:outputLabel >Billing Address</apex:outputLabel>
+		<apex:outputText escape="false" value="{!BillingAddress}"/>
+	</apex:pageblockSectionItem>
+	<apex:pageblockSectionItem >
+		<apex:outputLabel >Shipping Address</apex:outputLabel>
+		<apex:outputText escape="false" value="{!ShippingAddress}"/>
+	</apex:pageblockSectionItem>
+	
+	</apex:pageblockSection>
+</apex:pageblock>
+
+<apex:pageblock id="main" tabStyle="Contact" title="Contacts">
+	<apex:pageblockSection columns="1" title="Select Contact Addresses to Update" >
+<!--  
+<apex:PageBlockButtons location="top" >
+	<apex:commandbutton id="toShipping" action="{!selectContacts.AlltoShipping}" value="Set All to Shipping" />
+	<apex:commandbutton id="toBilling" action="{!selectContacts.AlltoBilling}" value="Set All to Billing" />
+	<apex:commandbutton id="toCurrent" action="{!selectContacts.AlltoCurrent}" value="Reset" />
+</apex:PageBlockButtons>
+-->
+<apex:pageBlockTable value="{!selectContacts.Allrows}" var="s" id="selectgrid" cellpadding="4">
+	<apex:column headervalue="Name / Role">
+		<apex:facet name="header">
+			<BR/><BR/><BR/><BR/><u>Name / Role</u>
+		</apex:facet>
+			<b>{!s.Name}</b><br/>{!s.contact.Role__c}
+	</apex:column>
+	
+	<apex:column >
+		<apex:facet name="header">
+			<apex:outputPanel >
+			  Update all mailing addresses to:<apex:selectRadio value="{!selectContacts.MailingRadio}"  layout="lineDirection">
+				<apex:selectOption itemEscaped="false" ItemValue="billing" ItemLabel="Billing"/>
+				<apex:selectOption itemEscaped="false" ItemValue="shipping" ItemLabel="Shipping"/>
+				<apex:selectOption itemEscaped="false" ItemValue="current" ItemLabel="No Change"/>
+			</apex:selectRadio>
+			<apex:actionSupport event="onclick" action="{!selectContacts.AllMailing}" rerender="main"
+		onsubmit="document.body.style.cursor='wait';" oncomplete="document.body.style.cursor='auto';"
+			 status="running"/>
+			<BR/><u>Mailing Address</u>
+			</apex:outputPanel>
+		</apex:facet>
+		<apex:selectRadio value="{!s.MailingOption}"  layout="lineDirection">
+			<apex:selectOption itemEscaped="false" ItemValue="billing" ItemLabel="Billing"/>
+			<apex:selectOption itemEscaped="false" ItemValue="shipping" ItemLabel="Shipping"/>
+			<apex:selectOption itemEscaped="false" ItemValue="current" ItemLabel="No Change"/>
+		</apex:selectRadio>
+		<apex:actionSupport event="onclick" action="{!refresh}" rerender="main"
+		onsubmit="document.body.style.cursor='wait';" oncomplete="document.body.style.cursor='auto';"
+			 status="running"/>
+		<apex:outputText escape="false" value="{!s.selMailingAddress}" style="{!if(s.MailingOption!='current','color:red;','')}"/>
+	</apex:column>
+	
+	<apex:column headervalue="Other Address" >
+		<apex:facet name="header">
+		<apex:outputPanel >
+			Update all other addresses to:<apex:selectRadio value="{!selectContacts.OtherRadio}"  layout="lineDirection">
+				<apex:selectOption itemEscaped="false" ItemValue="billing" ItemLabel="Billing"/>
+				<apex:selectOption itemEscaped="false" ItemValue="shipping" ItemLabel="Shipping"/>
+				<apex:selectOption itemEscaped="false" ItemValue="current" ItemLabel="No Change"/>
+			</apex:selectRadio>
+			<apex:actionSupport event="onclick" action="{!selectContacts.AllOther}" rerender="main"
+			onsubmit="document.body.style.cursor='wait';" oncomplete="document.body.style.cursor='auto';"
+			 status="running" />
+			<BR/><u>Other Address</u>
+			</apex:outputPanel>
+		</apex:facet>
+		<apex:selectRadio value="{!s.OtherOption}" layout="lineDirection">
+				<apex:selectOption itemEscaped="false" ItemValue="billing" ItemLabel="Billing"/>
+				<apex:selectOption itemEscaped="false" ItemValue="shipping" ItemLabel="Shipping"/>
+				<apex:selectOption itemEscaped="false" ItemValue="current" ItemLabel="No Change"/>
+		</apex:selectRadio>
+		<apex:actionSupport event="onclick" action="{!refresh}" rerender="main"
+		onsubmit="document.body.style.cursor='wait';" oncomplete="document.body.style.cursor='auto';"
+			 status="running"/>
+		<apex:outputText escape="false" value="{!s.selOtherAddress}" style="{!if(s.OtherOption!='current','color:red;','')}"/>
+	</apex:column>
+</apex:pageBlockTable>
+
+</apex:pageblockSection>
+
+<apex:PageBlockButtons location="bottom" >
+	<apex:commandbutton id="update" action="{!updateContacts}" value="Save Changes" />
+	<apex:commandbutton id="cancel" action="{!cancel}" value="Cancel" />
+</apex:PageBlockButtons>
+
+</apex:pageblock>
+ 
+<apex:actionstatus id="running">
+ <apex:facet name="start">
+	<c:Processing />
+</apex:facet>
+ </apex:actionstatus>
+
+
+
+</apex:form>
+</apex:page>

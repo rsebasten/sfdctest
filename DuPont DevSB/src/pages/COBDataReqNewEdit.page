@@ -1,0 +1,85 @@
+<apex:page standardController="Customer_Data_Request__c" extensions="ctrlCOBDataReqNewEdit" action="{!newEdit}"> 
+<apex:includeScript value="//code.jquery.com/jquery-1.10.2.js"/>
+<apex:includeScript value="//code.jquery.com/ui/1.10.4/jquery-ui.js"/>
+<apex:stylesheet value="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+ <style>
+ .recordTypesHeading {
+  display: block;
+  font-weight: bold;
+  padding: 1em 0 1em 0;
+}
+.recordTypeInfo.infoTable {
+  border: 1px solid #e0e3e5;
+}
+.recordTypeInfo.infoTable tr .recordTypeName {
+  border-right: 1px solid #ededed;
+}
+.bDescription {
+  padding: 0;
+  margin: 16px 0;
+  font-size: 109%;
+  text-align: left;
+}
+.pageType {
+  font-size: .9em;
+  font-weight: bold;
+  color: #4a4a56;
+  padding-left: 1px;
+}
+ </style>
+<apex:form id="theForm">  
+<apex:pageMessages ></apex:pageMessages>     
+        
+ <div style="float:left">
+   <apex:outputText style="text-align: right; float: right;">
+         <apex:image value="{!$Resource.CustomerDataRequestIcon}" style="border:none;"/>
+   </apex:outputText>
+ </div>
+  <div style="float:left">
+    <apex:outputText styleClass="pageType" value="New Customer Data Request"/><br/>
+    <apex:outputText style="font-size:18pt" value="Select Customer Data Request Record Type" /><br/><br/>
+    <apex:outputText styleClass="bDescription " value="Select a record type for the new customer data request. To skip this page in the future, change your record type settings on your personal setup page." /><br/><br/>
+ </div>
+         <apex:pageBlock title="Select Customer Data Request Record Type">
+          
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Record Type of new record"  />
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"></apex:outputPanel>
+                    <apex:selectList value="{!RTypeSelected}" size="1" >
+                        <apex:selectOptions value="{!RecordTypes}" />
+                    </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                                             
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection >
+              <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+                       
+                 </apex:outputPanel>
+                 <apex:outputPanel >
+                     
+                    <apex:commandButton value="Continue" action="{!redirect}"  />
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                 </apex:outputPanel> 
+              </apex:pageBlockSectionItem>
+           </apex:pageBlockSection>           
+         </apex:pageBlock>      
+    </apex:form>
+    <h3 class="recordTypesHeading">Available Customer Data Request Record Types</h3>
+    <table class="recordTypeInfo infoTable" border="0" cellpadding="0" cellspacing="0">
+    <tr class="headerRow"><th class="recordTypeName" scope="col">Record Type Name</th><th class="recordTypeDescription" scope="col">Description</th></tr>
+    <apex:repeat value="{!recordTypeListSorted}" var="k">
+    <tr><th class="recordTypeName" scope="row"> <apex:outputText value="{!k.name}" /> </th>
+    <td  class="recordTypeDescription"><apex:outputText value="{!k.Description}" /></td>
+    </tr>
+    </apex:repeat>
+    
+    </table> 
+    
+    
+            
+</apex:page>

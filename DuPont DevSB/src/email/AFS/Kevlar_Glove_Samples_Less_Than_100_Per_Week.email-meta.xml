@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DuPont™ Kevlar® Gloves</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Kevlar Glove Samples Less Than 100 Per Week</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Selecting Kevlar® Gloves Samples</subject>
+    <textOnly>Dear {!Lead.FirstName} {!Lead.LastName},
+
+
+Thank you for your interest in a Kevlar® glove samples.
+
+Please contact the following DuPont licensed provider:
+
+(insert licensee name, example below)
+Youngstown Gloves:
+Alan Price (Westerrn Sales Manager)
+Alan@ytgloves.com
+(253) 228-0725
+
+
+
+
+Please let us know if you have additional questions.
+
+DuPont Protection Solutions</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

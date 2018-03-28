@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_81004510</developerName>
+        <masterLabel>Lead Open Time</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Lead.Lead_Open_Time__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>7</to>
+            </sourceValues>
+            <value>0 to 7 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>7</from>
+                <to>30</to>
+            </sourceValues>
+            <value>8 to 30 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>30</from>
+                <to>60</to>
+            </sourceValues>
+            <value>30 to 60 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>60</from>
+            </sourceValues>
+            <value>Over 60 days</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Lead.Owning_SBU__c</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>Lead.Product_Comments__c</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>Lead.Close_Comments__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead.Owning_SBU__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Building Innovations,DuPont Protection Solutions,Protection Technologies</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Aruba,Bahamas,Barbados,Belize,Cayman Islands,Costa Rica,Dominican Republic,El Salvador,French Guiana,Guatemala,Guyana,Haiti,Honduras,Jamaica,Mexico,Mozambique,Netherlands Antilles,Nicaragua,Panama,Saint Lucia,Trinidad and Tobago</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Queue__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DIMC Level 1 LA MEX</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2018 Leads per TypeBIS</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-01-01</startDate>
+    </timeFrameFilter>
+</Report>

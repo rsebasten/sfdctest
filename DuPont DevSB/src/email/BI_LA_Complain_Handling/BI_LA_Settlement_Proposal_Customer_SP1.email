@@ -1,0 +1,22 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font size="3">Prezado Vendedor</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Posterior a análise da reclamação&nbsp;{!Case.CaseNumber}&nbsp;enviad</span><span style="font-size: 12pt; font-family: Arial, sans-serif;">a</span><span style="font-size: 12pt; font-family: Arial, sans-serif;"> na data&nbsp;{!Case.Date_Entered__c}, determinou-se {!Case.Resolution_Description__c}. A fim de orientar no tratamento deste caso, apresentamos a baixo o parecer técnico e sugestões corretivas:&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-size: 12pt; font-family: Arial, sans-serif;"><br></span></p><ul type="disc" style="color: rgb(0, 0, 0);"><li class="MsoNormal"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-fareast-language:PT-BR">{!Case.Special_Instructions__c}<o:p></o:p></span></li><li class="MsoNormal"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-fareast-language:PT-BR">{!Case.Primary_Corrective_Action__c}</span></li><li class="MsoNormal"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-fareast-language:PT-BR">{!Case.Secondary_Corrective_Action__c}</span></li>
+</ul>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif; font-size: 12pt;"><br></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); margin-bottom: 0.0001pt;"><br></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif; font-size: 12pt; line-height: 115%;">Muito Obrigado</span></p><font size="3" style="color: rgb(0, 0, 0);"><br></font><font size="3" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Atenciosamente,&nbsp;<br><br>Time Técnico<br>{!Case.OwnerFullName}<br></font><span style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);">Corian® Design</span><font size="3" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br>{!Case.OwnerTitle}<br>Email: {!Case.OwnerEmail}<br>www.corian.com&nbsp;<br></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Para canalizar una solicitud de Privacy a todos los BUs, cuando no se tiene identificado origen</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Privacy Lead_ Solicitud de apoyo a BUs por route lead</name>
+    <style>freeForm</style>
+    <subject>Solicitud de Privacy recibida en Customer Care</subject>
+    <textOnly>Estimados representantes del equipo de Privacy,
+
+Hemos recibido una solicitud de información de privacidad de datos personales, ingresada a través de nuestros canales corporativos.
+
+Solicitamos su apoyo para identificar si es cliente de sus negocios y qué datos tienen del mismo.
+
+Favor de responder a este mensaje en un plazo no mayor a 72 hrs, ya que por cuestiones legales debemos dar pronta respuesta.
+
+Saludos y gracias de antemano
+
+Datos del solicitante:
+Fecha: {!Lead_Routing__c.CreatedDate}
+Nombre del cliente: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c}
+Empresa: {!Lead_Routing__c.Lead_Company__c}Dirección: {!Lead_Routing__c.Lead_Address_c}
+Teléfono: {!Lead_Routing__c.Lead_Phone__c}
+Celular: {!Lead_Routing__c.Lead_Mobilephone__c}
+E-mail: {!Lead_Routing__c.Lead_Email__c}
+
+Información de la solicitud:{!Lead_Routing__c.Description__c} {!Lead_Routing__c.Product_Comments__c}
+
+DuPont Corporate Customer Care</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

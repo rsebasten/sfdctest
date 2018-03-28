@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Lead routing</name>
+    <style>formalLetter</style>
+    <subject>Request from: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c} , {!Lead_Routing__c.Lead_Company__c}</subject>
+    <textOnly>Liliana Gómez Torre
+
+Elena Medina Suárez
+
+Silvia Orviz Serrano
+
+Servicios Securitas S.A.
+
+DuPont Product Information Service EMEA
+
+Toll free: 00800 38 76 68 38
+
+Phone: +34 985 12 37 73
+
+Fax:  +34 912 72 52 37
+
+____________________________________________
+
+Salutation:  {!Lead_Routing__c.Salutation__c}
+
+Lead Name:  {!Lead_Routing__c.Lead_FirstName__c}    {!Lead_Routing__c.Lead_LastName__c}
+
+Lead Company : {!Lead_Routing__c.Lead_Company__c}
+
+Lead Country: {!Lead_Routing__c.Lead_Country__c}
+
+Lead E-mail: {!Lead_Routing__c.Lead_Email__c}
+
+Lead Phone: {!Lead_Routing__c.Lead_Phone__c}
+
+Lead Mobile: {!Lead_Routing__c.Lead_Mobilephone__c}
+
+Lead Fax : {!Lead_Routing__c.Lead_Fax__c}
+
+Lead Address: {!Lead_Routing__c.Lead_Address__c}
+
+Website: {!Lead_Routing__c.Website__c}
+
+Product :  {!Lead_Routing__c.Product_Details__c}
+
+Lead origin URL: {!Lead_Routing__c.Origin_URL__c}
+
+Comments: {!Lead_Routing__c.Product_Comments__c}
+
+Competitive Info:  {!Lead_Routing__c.Competitive_Info__c}
+
+
+
+Description:
+
+
+{!Lead_Routing__c.Description__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

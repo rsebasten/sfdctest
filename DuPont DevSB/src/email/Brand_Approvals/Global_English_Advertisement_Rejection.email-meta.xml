@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Global English - Marketing Communications Rejection</name>
+    <style>formalLetter</style>
+    <subject>Your Marketing Communications Request Requires Changes</subject>
+    <textOnly>Dear {!Lead.FirstName} :
+
+The “name of collateral” does not follow the DuPont Brand Identity Standards. To be compliant, please make these changes:
+
+· xxxx
+
+· xxxx
+
+· xxxx
+
+
+Amy J. Hurff
+DuPont Corporate Communications
+Brand Specialist
+302-996-8361
+amy.j.hurff@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

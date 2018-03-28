@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Kevlar,Nomex</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Corian® Quartz,Corian® Solid Surface</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Typar,Tyvek</values>
+        </dashboardFilterOptions>
+        <name>Product Category</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>1/1/2017 12:00 AM</values>
+            <values>12/31/2017 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>1/1/2018 12:00 AM</values>
+            <values>12/31/2018 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values></values>
+        </dashboardFilterOptions>
+        <name>Opened Date</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>Overview of Sales Policy Exceptions &amp; Express Transportation Costs logged by the EMEA Customer Service Team</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATEONLY</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATEONLY</groupingColumn>
+            <groupingColumn>Case.Product_Category__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>unfiled$public/Exception_Approvals</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title># Number of cases per MONTH</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y2</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATEONLY</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>true</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Case.primaryReason__c</groupingColumn>
+            <groupingColumn>Case.Product_Category__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>12</maxValuesDisplayed>
+            <report>unfiled$public/Exception_Approvals</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title># Number of cases per REASON</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>Case.Estimated_Impact_Amount__c.CONVERT</column>
+            </chartSummary>
+            <componentType>BarStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATEONLY</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Case.primaryReason__c</groupingColumn>
+            <groupingColumn>Case.Product_Category__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>5</maxValuesDisplayed>
+            <report>unfiled$public/Order_Exception_Approvals_Cost</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>$ Cost related cases</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATEONLY</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>true</drillToDetailEnabled>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>unfiled$public/Order_Exception_Approvals_Reason_Code</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Wrong Reason Code Usage</title>
+        </components>
+    </rightSection>
+    <runningUser>sven.de-winter@dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>CS_EMEA Sales Policy Exception &amp; Express Transportation Cost Overview</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

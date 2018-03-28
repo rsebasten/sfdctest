@@ -1,0 +1,289 @@
+<!--/*******************************************************************************
+Copyright © 2015 DuPont. All rights reserved. 
+Author: Sanchit Dua
+Email: sanchit.dua@accenture.com
+Description:  VF page for displaying the Custom Links of DuPont(Internal/External)into SFSC.
+********************************************************************************/-->
+<apex:page >
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"/>
+    
+    <style>
+        #sidebar .sidebar_body{
+             clear: both;
+             color: #fff;
+             background-color: #555555;
+             height: auto;
+             width: 216px;
+             border: 1px solid #c4c4c4;
+         
+        }
+        #sidebar .sidebar_body ul li{
+             background-image: url(/resource/CS_Collapse);
+             background-repeat: no-repeat;
+             background-position: 198px 12px;
+             border-bottom-width: 1px;
+             border-bottom-style: solid;
+             border-bottom-color: #c4c4c4;
+             padding: 9px 0 9px 23px;
+         
+        }
+        #sidebar .sidebar_body ul{
+             list-style-type: none;
+             width: 216px;
+             height: auto;
+         
+        }
+    
+    
+        a{
+            // text-decoration: none;
+            color: #FF0000;          
+        }
+        
+        #sys:visited {
+            text-decoration: none;
+        }
+        
+        /* unvisited link */
+        #sys:link {
+                    }
+        
+        .thick {
+            color: #FF0000;
+            font-weight: bold;
+            font-size: 150%;
+            
+        }
+
+        /* visited link */
+        #sys:visited {
+            color: #FF0000;
+        }
+        
+        /* mouse over link */
+        #sys:hover {
+            cursor:pointer;   
+            color: #FF0000;                        
+        }
+        
+        /* selected link */
+        #sys:active {
+             color: #0000FF;
+        }
+        
+        #sys:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        $j = jQuery.noConflict();        
+        
+        $j(document).ready(function(){
+            $j('div[class$=message]').hide();
+        });
+        
+        $j("#sys").click(function(e){
+            e.preventDefault();//this will prevent the link trying to navigate to another page
+            var href = $j(this).attr("href");//get the href so we can navigate later
+        
+            //when update has finished, navigate to the other page
+            window.location = href;
+            return;
+        });
+        
+        function slideComponents(thisText){
+            $j(thisText).siblings("div.message").slideToggle(200);
+        } // END function slideComponents()
+    </script>
+    <!-- <div id="sidebar">
+<div class="sidebar_header">
+     <div class="side_head">BROWSE CATEGORIES</div>
+</div>
+<div class="sidebar_body">
+     <ul>
+         <li><a href="#">Category One</a></li>
+         <li class="even"><a href="#">Category Two</a></li>
+         <li><a href="#">Category Three</a></li>
+         <li class="even"><a href="#">Category Four</a></li>
+         <li><a href="#">Category Five</a></li>
+         <li class="even"><a href="#">Category Six</a></li>
+         <li><a href="#">Category Seven</a></li>
+         <li class="even"><a href="#">Category Eight</a></li>
+     </ul>
+</div>
+</div> -->
+    <table>
+        <tr>
+            <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">About Us:</a>
+                    <div class="message">
+                        <li>
+                              <a target="_blank" href="https://inside.dupont.com/OneDuPontOperationalExcellence/Pages/Customer-Service-Transformation.aspx">About DuPont Customer Service Transformation</a>
+                        </li>
+                        
+                    </div>
+                </ul>
+            </td>
+            
+            <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">Customer Service Learning and Development:</a>
+                    <div class="message">
+                        <li>
+                              <a onclick='return false;' href="javascript:;">Customer Service Transformation *Coming Soon!*</a>
+                        </li>
+                        <li>
+                              <a onclick='return false;' href="javascript:;">ECC * Coming Soon!*</a>
+                        </li>
+                        <li>
+                              <a target="_blank" href="http://rtpvmntsap02d.dupontnet.net/gm/PerformSearch?SO=rel&format=EU_SearchXML.shtml&mode=EU&illegals=&O1=any&MH=2000&visibletext=SFSC&P1=SFSC&typeDropDown=course&P7=course&F7=doc_source&O7=any&locationDropDown=1.25.104&CO=1.25.104">ServiceCloud</a>
+                        </li>
+                    </div>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">Partner Portals:</a>
+                    <div class="message">
+                        <li>
+                               <a target="_blank" href="http://www.dupont.com/general/ecommerce/dupont-direct/ddirect.html">About DuPont e-Commerce Solutions (DuPont Direct, EDI, other)</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://www.3eonline.com/EeeOnlinePortal/DesktopDefault.aspx?tabid=1">MSDS (external for DuPont Customers)</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://partners.dupont.com/sites/teams_PSR/SitePages/Home.aspx">Product Stewardship and Regulatory</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://partners.dupont.com/sites/teams_finance/Finance%20SOX%20404/Home.aspx">SOX 404</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_SRLG__sourcing_global/organization/logistics/SitePages/Home.aspx">Sourcing and Logistics</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="http://www.bdpinternational.com/">BDP Smart</a>   
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://partners.dupont.com/sites/teams_finance/Finance%20SOX%20404/Home.aspx">Finance (Credit, Collections, AR)</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="http://pecm.dupontnet.net/otcsp/livelink.exe?func=llworkspace">Content Server</a>
+                        </li>
+                    </div>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">Other:</a>
+                    <div class="message">
+                        <li>
+                               <a target="_blank" href="https://inside.dupont.com/SitePages/Links.aspx">Links Central</a>   
+                        </li>
+                    </div>
+                </ul>
+
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">Frequently Used Applications:</a>
+                    <div class="message">
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_apis_tmo/SD/CustOnboarding/SitePages/Home%20Page.aspx">DuPont Customer Onboarding</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_PricingSolutions/default.aspx">SFDC Pricing Authorization System</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_FSOP/default.aspx">FSOP - Import and Export First and Standard Order Process</a>
+                            
+                        </li>
+                        
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_SRLG__sourcing_global/organization/ap_region/AP_Logistics/SitePages/Home.aspx">Sourcing and Logisitics - Logistics - AP</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_SRLG__sourcing_global/Xfctn_Teams/communications/SitePages/Terminology.aspx">Sourcing and Logistics  - Terminology</a>
+                        </li>
+                        
+                    </div>
+                </ul>
+            </td>
+            
+            <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">About CSCI:</a>
+                    <div class="message">
+                        <li>
+                               <a onclick='return false;' href="javascript:;">Internal Contact Lists *Coming Soon!*</a>
+                        </li>
+                        <li>
+                               <a onclick='return false;' href="javascript:;">Customer Service Business Continuity Plan * Coming Soon!*</a>
+                        </li>
+                    </div>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">Our Operations:</a>
+                    <div class="message">
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/DPI/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FDPI%2FOrder%20Tracking%20sheet&FolderCTID=0x012000246598058F22F547914C389396CABC31&View=%7BC2C681BD-E200-432A-903A-80948F700D18%7D">Trackers</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F05%20-%20Generic%2FApplication%20inventory&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Application inventory</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F03%20-%20CC_R%20related%2FInventory%20of%20CCR&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Inventory of CC&#38;R- Controls, Compliance and Risk Documents</a>
+                        </li>
+                       
+                    </div>
+                </ul>
+            </td>
+              <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">Knowledge Center:</a>
+                    <div class="message">
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F05%20-%20Generic%2FSales%20Policies&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Sales Policies</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F02%20-%20Processes%2FCommon%20how-tos&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Common How-Tos</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F02%20-%20Processes%2FStandard%20Operating%20Procedures&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">SOPs/Process Guidelines</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F04%20-%20Product%20related%2FProduct%20Information&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Product Information</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F04%20-%20Product%20related%2FProduct%20Stewardship&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Product Stewardship</a>
+                        </li>
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F05%20-%20Generic%2FProduct%20Policies&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Product Policies</a>
+                        </li>
+                       
+                    </div>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+        <td>
+                <ul>
+                    <a onclick='slideComponents(this);' class="thick" href="javascript:;">Our Partners:</a>
+                    <div class="message">
+                        <li>
+                               <a target="_blank" href="https://teams.dupont.com/sites/teams_CustomerServiceCenterIndia/Knowledge%20management/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fteams_CustomerServiceCenterIndia%2FKnowledge%20management%2F05%20-%20Generic%2FSites%2C%20Customs%2C%20Logistics%20and%20Warehousing%20%20instructions&FolderCTID=0x012000CE5E4974BBE52341A4742B318E9E1A18&View=%7BBF522CC5-F28F-4813-A266-8B06572F9036%7D">Sites, Customs, Logistics and Warehousing  instructions</a>
+                        </li>
+                    </div>
+                </ul>
+          </td>
+        </tr>
+        
+        
+    </table>
+    
+    
+</apex:page>

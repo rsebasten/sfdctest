@@ -1,0 +1,20 @@
+<apex:component controller="ctrlEmailTaskDetails" allowDML="true"  access="global">
+    <html>
+    <apex:attribute name="TaskId" type="Id" description="Hello" assignTo="{!activityId}"/>
+        
+    New Task Record &nbsp;"<apex:outputText value="{!task.Subject}"/>" assigned to the Case Number &nbsp;"<apex:outputText value="{!casedetails.CaseNumber}"/>" has been completed . <br/><br/>
+    Task Assigned To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!task.owner.Name}"></apex:outputText><br/>    
+    Task Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!task.Subject}"></apex:outputText><br/>
+    Task Status:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!task.Status}"></apex:outputText><br/> 
+    Task Due Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!task.ActivityDate}"> </apex:outputText><br/>
+    Task Completion Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!task.Completion_Date__c}"></apex:outputText><br/>
+    Task SubType:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!task.SubType__c}"></apex:outputText><br/>
+    Task URL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!fullRecordURL}{!task.Id}"></apex:outputText> <br/>
+    Case URL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!fullRecordURL}{!task.whatId}"></apex:outputText><br/> 
+    <br/><br/>
+    
+    <b> Friendly Regards,</b> <br/>
+    <apex:outputText value="{!task.owner.Name}"></apex:outputText> <br/><br/>
+    
+    </html>
+</apex:component>

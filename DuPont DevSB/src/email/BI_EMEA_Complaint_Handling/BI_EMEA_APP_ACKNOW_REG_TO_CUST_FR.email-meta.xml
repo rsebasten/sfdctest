@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP ACKNOW REG TO CUST - FR</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Acknow Reg To Cust - FR</name>
+    <style>formalLetter</style>
+    <subject>Corian® Solid Surface: Confirmation d’enregistrement de la réclamation {!Case.CaseNumber}</subject>
+    <textOnly>Cher client,
+Nous vous remercions de nous avoir fait part de votre réclamation, que nous souhaitons compléter le plus rapidement possible.
+
+
+A réception de la documentation nécessaire pour le dossier, le centre de service ou Industrial Partner sera contacté afin d’établir une date d’expertise/ d’intervention.
+
+
+le centre de service ou Industrial Partner viendra constater le dommage et s’engage à faire la réparation à ce même moment si possible. Nous vous remercions de bien vouloir libérer l’espace de travail et de présenter des chutes éventuelles de Corian® Solid Surface pour éviter une non-conformité de coloris. Veuillez prendre note que l’intervention pourrait causer des désagréments.   Si votre demande rentre sous la garantie Corian® Solid Surface limitée de 10 ans d’installation, les frais de l’intervention seront pris en charge par DuPont. Si la garantie ne peut être appliquée, le centre de service ou Industrial Partner pourrait vous soumettre un devis d’intervention de votre plan.   A la fin de l’intervention, le centre de service ou Industrial Partner vous présentera l’avis d’exécution à signer. Ce document lui servira de base de paiement.   N’hésitez pas à nous contacter si vous avez d’autres questions ou remarques.   Cordialement,
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+
+{!Case.OwnerEmail}
+Nous vous informons que les données collectées à votre sujet ont pour but de nous aider à identifier les informations susceptibles d&apos;intéresser votre entreprise, vous proposer des produits ou des services et vous apporter satisfaction lors de nos échanges commerciaux. Vos données à caractère personnel (nom, adresse e-mail, numéro de téléphone et autres coordonnées) seront conservées dans des systèmes clients que nous avons sélectionnés et qui sont principalement hébergés aux États-Unis. Ces données pourront être communiquées, à ces mêmes fins, au sein de l&apos;entreprise DuPont, à ses filiales, à ses partenaires ainsi qu&apos;à des tiers triés sur le volet établis dans d&apos;autres pays. Cliquez sur ce lien pour accéder à vos données, les modifier ou les supprimer, ou vous opposer à leur traitement.
+
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

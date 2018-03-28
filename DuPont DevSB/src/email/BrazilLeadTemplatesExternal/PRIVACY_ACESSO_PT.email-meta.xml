@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Leads de solicitação de privacy que no campo Type preenchido com: &quot;Privacy Inquriry Access&quot;</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DTS_Templates_Brasil_Timbre</letterhead>
+    <name>PRIVACY - ACESSO (PT)</name>
+    <style>freeForm</style>
+    <subject>DuPont - Solicitação de Acesso de informções</subject>
+    <textOnly>Prezado Cliente,
+
+Recebemos o seu pedido de acesso às informações pessoais que a DuPont possui a seu respeito.
+
+Veja abaixo as informações que temos atualmente em nossos bancos de dados de clientes:
+
+Nome: {!Contact.FirstName} {!Contact.LastName}
+Telefone: {!Contact.Phone}
+Mobile: {!Contact.MobilePhone}
+E-mail: {!Contact.Email}
+
+Para mais perguntas e assistência, entre em contato conosco através dos dados fornecidos abaixo.
+
+Atenciosamente,
+
+DuPont [Nome do Negócio]
+
+[Detalhes do Contato]
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Copyright © 2017 DuPont. Todos os direitos reservados. Todos os produtos marcados com® ou™ são marcas comerciais ou marcas registradas da E. I. du Pont de Nemours and Company ou suas afiliadas.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+A DuPont se importa com sua privacidade. As suas informações pessoais (nome, e-mail, número de telefone e outros dados de contato) serão armazenadas em sistemas de clientes selecionados e hospedados essencialmente nos Estados Unidos. Estas informações serão utilizadas pela DuPont, respectivas empresas afiliadas, parceiros e terceiros selecionados em outros países para lhe fornecer as informações de produto ou serviço solicitadas. Para obter mais informações, visite www.privacy.dupont.com. Ao fornecer as suas informações pessoais, você concorda com os termos e condições da presente Declaração de Privacidade.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

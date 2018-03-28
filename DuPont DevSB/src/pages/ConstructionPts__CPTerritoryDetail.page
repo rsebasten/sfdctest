@@ -1,0 +1,10 @@
+<apex:page standardController="ConstructionPts__CPTerritory__c" >
+
+ <c:CPHeader subtitle="{!ConstructionPts__CPTerritory__c.Name}" title="CP Territories"  ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" ShowSubTitle="true" /> 
+ 
+	<chatter:feedWithFollowers entityId="{!ConstructionPts__CPTerritory__c.Id}"></chatter:feedWithFollowers>
+        <apex:detail relatedList="true" title="false"/>
+    <br/>
+    <c:CPFooter ShowMHCInfo="false" ShowMHCLogo="false"/>
+			
+</apex:page>

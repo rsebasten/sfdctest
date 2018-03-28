@@ -1,0 +1,208 @@
+<apex:page tabStyle="Dodge_Projects__tab" controller="ConstructionPts.CPSettingsRedirect" Extensions="ConstructionPts.MyViewsController,ConstructionPts.CPRoleTypeList" sideBar="false">
+<c:CPHeader title="" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" ShowSubTitle="true" />  
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+<apex:includeScript value="/soap/ajax/32.0/connection.js" />
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__jquerynew, 'css/redmond/jquery-ui-1.8.21.custom.css')}" /> 
+<br/>     
+<apex:form >       
+<apex:actionFunction action="{!populateOrderedList}" name="populateOrderedList" rerender="none"/>
+<apex:actionFunction action="{!populateSelectedList}" name="populateSelectedList" rerender="none"/> 
+<apex:actionFunction action="{!saveOrderToNull}" name="saveRoleOrderToNull" rerender="none" /> 
+<apex:actionFunction action="{!saveRoles}" name="saveRoles" rerender="none"/>
+<font color="red"><b>{!sMsg}</b></font>  
+<br/> 
+<div id="divCustomerInfo" style="display:{!IF(blnIsSetup,'','none')}"> 
+
+<apex:pageBlock >
+
+<table border="0" cellpadding="2" cellspacing="2">
+     <tr>
+       <td colspan="3" align="center">
+            <apex:commandButton action="{!doEditPermissions}" value="Edit Permissions"/>
+        </td>
+        <td align="center">
+            <apex:commandButton action="{!doEditTerritory}" value="Edit CP Territories"/>
+        </td>
+        <td align="center">
+            <apex:commandButton action="{!doEditMatching}" value="Edit CP Matching"/>
+        </td>
+        <td align="center">
+            <apex:commandButton action="{!doEditRoles}" value="Edit Dodge Roles"/> 
+        </td>
+        <td align="center">
+           <apex:commandButton rendered="{!ShowDeletedProjects}" action="{!doDeleteProjects}" value="Delete Projects"/>
+        </td>
+        <td align="center">
+            <input type="button" id="btnEditViewFields" class="btn" onclick="jsEditViewFields();" value="  Edit Role Order " />
+        </td>
+    </tr>
+</table> 
+</apex:pageBlock>
+</div>
+<c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>  
+    <div id="dialog-form" title="Edit Role Order">
+            <div id="errMessageCell"></div>
+            <table style=" margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th style="text-align:center;"><b>Sort Roles</b>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <apex:selectList size="15" title="Selected Columns" multiselect="true" id="Role_Options" >
+                                <apex:selectOptions value="{!SelectOptionlist}" />
+                            </apex:selectList>
+                        </td>
+                        <td valign="middle" align="center">
+                            <small><button id="btn-top">Top</button></small>
+                            <br />
+                            <small><button id="btn-up">Up</button></small>
+                            <br />
+                            <small><button id="btn-down">Down</button></small>
+                            <br />
+                            <small><button id="btn-bottom">Bottom</button></small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</apex:form>       
+
+
+<script>
+       
+             j$ = jQuery.noConflict(); 
+        
+      setSelectedTab(j$, "CP Settings");
+        j$(document).ready(function() {
+            j$('#btn-top').button({
+                icons: {
+                    primary: "ui-icon-arrowthickstop-1-n"
+                }
+            }).bind('click', function() {
+                var before = j$('[id*=Role_Options] option').first();
+                if (before.index() !== j$('[id*=Role_Options] option:selected').first().index()) {
+                    j$('[id*=Role_Options] option:selected').insertBefore(before);
+                }
+            });
+            j$('#btn-up').button({
+                icons: {
+                    primary: "ui-icon-arrowthick-1-n"
+                }
+            }).bind('click', function() {
+                var before = j$('[id*=Role_Options] option:selected').first().prev();
+                j$('[id*=Role_Options] option:selected').insertBefore(before);
+            });
+            j$('#btn-down').button({
+                icons: {
+                    primary: "ui-icon-arrowthick-1-s"
+                }
+            }).bind('click', function() {
+                var after = j$("#[id*=Role_Options] option:selected").last().next();
+                j$("#[id*=Role_Options] option:selected").insertAfter(after);
+            });
+            j$('#btn-bottom').button({
+                icons: {
+                    primary: "ui-icon-arrowthickstop-1-s"
+                }
+            }).bind('click', function() {
+                var after = j$("#[id*=Role_Options] option").last();
+                if (after.index() !== j$("#[id*=Role_Options] option:selected").last().index()) {
+                    j$("#[id*=Role_Options] option:selected").insertAfter(after);
+                }
+            });
+
+            EditRoleOrderManager.createModal();
+            saveRoles();
+        });
+
+        var EditRoleOrderManager = {
+            createModal: function() {
+                j$("#dialog-form").dialog({
+                    autoOpen: false,
+                    height: 450,
+                    width: 570,
+                    modal: true,
+                    buttons: {
+                        "Save": function() {
+                            if (confirm("Are you sure you want to override/save the order?")) {
+                                EditRoleOrderManager.editRoleOrder();                                       
+                                populateOrderedList();
+                                populateSelectedList(); 
+                                
+                                j$(this).dialog("close");
+                                var currURL = window.location.href;
+                                var baseURL = currURL.substring(0,currURL.indexOf("CPSettingsDefault"));
+                                var gotoURL = baseURL + "CPSettingsDefault";
+                                window.location.replace(gotoURL);                       
+                            }
+                        },
+                        Cancel: function() {
+                            j$(this).dialog("close");
+                        }
+                    },
+                    close: function() {}
+                })
+            },
+            editRoleOrder: function() {
+                //set new Sort order by its index
+                var CPRoleTypeUpdates = this.getModalData();
+                try {
+                     sforce.connection.sessionId = "{!$Api.Session_ID}";
+                    if(ns != undefined && ns != null ){
+                    sforce.connection.defaultNamespace = ns; 
+                    }
+                    sforce.connection.update(CPRoleTypeUpdates); 
+
+                } catch (e) {
+                    alert('An Error has occured. Error:' + e);
+                }
+
+            },
+
+            getModalData: function() {
+                return j$("[id*=Role_Options] option").map(function(index) {
+                    var search = new sforce.SObject("CP_Role_Type__c");
+                    search.Id = j$(this).val();
+
+                    if (index < 10) {
+                        search.RoleType_SortOrder__c = "00" + index;
+                    } else if (index >= 10 && index < 100) {
+                        search.RoleType_SortOrder__c = "0" + index;
+                    } else {
+                        search.RoleType_SortOrder__c = "'" + index + "'";
+                    }
+                    return search;
+                });
+
+            },
+        };
+        
+      
+      function jsEditViewFields() {
+            'use strict';
+            //clear any custom page messages before moving on to editing fields
+           // setPageErrorMessage('');
+            j$("#dialog-form").dialog("open");
+      }
+      
+       function setPageErrorMessage(message) {
+            var errBox = document.getElementById('customPageError');
+            if (errBox === undefined)
+                return;
+            while (errBox.firstChild) {
+                errBox.removeChild(errBox.firstChild);
+            }
+            if (!isStringNullOrEmpty(message)) {
+                errBox.appendChild(document.createTextNode(message));
+                j$(errBox).error();
+            }
+            
+        }
+      
+</script>  
+
+</apex:page>

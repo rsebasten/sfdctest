@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to notify appropriate Application Individual to work on TSR</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>StandardCorporateLetterhead</letterhead>
+    <name>Send TSR by email</name>
+    <style>freeForm</style>
+    <subject>New Technical Service Request</subject>
+    <textOnly>Dear {!Request__c.Request_Owner__c},
+
+A Technical Service Request has been fully Approved.
+
+Details associated to the Request are below.  Please help begin work on the Request.  Thank You.
+
+REQUEST DETAILS:
+
+Link Detail:  {!Request__c.Link}
+Related Account: {!Request__c.Account__c}
+Related Account Owner: {!Request__c.OwnerFullName}
+Related Contact: {!Request__c.Contact__c}
+Related Opportunity: {!Request__c.Related_Opportunity__c}
+Description: {!Request__c.Description__c}
+TSR Amount: {!Request__c.Amount__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

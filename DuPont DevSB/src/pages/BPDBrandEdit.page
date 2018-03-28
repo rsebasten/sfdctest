@@ -1,0 +1,46 @@
+<!-- *****************************************************************************
+ Used to edit Brand and SBUs selected on initial case creation page
+******************************************************************************/ -->
+<apex:page standardController="case"  extensions="ctrlBPDBrandEdit" showHeader="false" title="Brands Selected">
+<apex:form >
+<apex:pageblock >
+
+<apex:pageBlockSection columns="1">
+<apex:pageBlockSectionItem >
+<apex:outputpanel >
+<div>  
+<c:BI_NA_MultiSelectMaterials leftLabel="Available Owning SBU"
+                leftOption="{!SBUs}"
+                rightLabel="Selected Owning SBU"
+                rightOption="{!SelectedSBUs}"
+                size="5"
+                width="180px" helptext="hello">
+</c:BI_NA_MultiSelectMaterials>
+<apex:actionSupport event="onmouseout" action="{!brandselect}" reRender="rendering">
+</apex:actionsupport>
+</div>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >   
+<apex:outputpanel id="rendering" >
+<div >    
+<c:BI_NA_MultiSelectMaterials leftLabel="Available Brands"
+                leftOption="{!AllMaterials}"
+                rightLabel="Selected Brands"
+                rightOption="{!SelectedMaterials}"
+                size="5"
+                width="180px" helptext="hello"/> 
+</div>
+</apex:outputpanel> 
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+   <apex:pageBlockButtons location="bottom">
+   
+           <apex:commandButton value="Save" action="{!SaveBrand}"  disabled="False" style="margin-left:180px;"/> 
+           <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          
+  </apex:pageBlockButtons>
+</apex:pageblock>
+</apex:form>
+</apex:page>

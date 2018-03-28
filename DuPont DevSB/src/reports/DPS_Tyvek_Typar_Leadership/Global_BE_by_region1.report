@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_64700565</developerName>
+        <masterLabel>Opp Type Offensive/Defensive</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>TYPE</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Grow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Extension</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Gap Closer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Mix Enrichment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Application</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Customer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Market</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Merger &amp; Acquisition</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Technology</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Recapture</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Share Gain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Share Gain with Pricing Action</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Opportunistic</sourceValue>
+            </sourceValues>
+            <value>Offensive</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Defend</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maintain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maintain: Contract Renewal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maintain: Replacement</sourceValue>
+            </sourceValues>
+            <value>Defensive</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EXP_AMOUNT.CONVERT</field>
+    </columns>
+    <columns>
+        <field>AMOUNT.CONVERT</field>
+    </columns>
+    <columns>
+        <field>EXP_AMOUNT</field>
+    </columns>
+    <columns>
+        <field>BucketField_64700565</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.fsOwner_Name__c</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(((((1 AND 2 AND 3) OR (1 AND 2 AND 4) OR (1 AND 2 AND 5)) AND 6) AND 7) AND 8) AND 9</booleanFilter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Opportunity.DPT_AramidsOpportunity,Opportunity.DPT_Life_Protection,Opportunity.BI_EMEA_Surfaces,Opportunity.BI_NA_Surfaces_Dodge,Opportunity.BI_NA_Surfaces_Manual</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Owning_Organisation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>BI,BI-Env</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.fSegment_Level_1__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Surfaces</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.fSegment_Level_2__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Surfaces</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.fSegment_Level_3__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Surfaces</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Product__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Corian</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Product__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Montelli®</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Involved_Org__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>BI-Surf</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>End - Lost</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Region__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Owning_Organisation__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Global BE by region</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>EXP_AMOUNT.CONVERT</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURNEXT3</interval>
+    </timeFrameFilter>
+</Report>

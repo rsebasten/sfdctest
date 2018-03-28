@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>External Initiative Company</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>External Initiative Companies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Phone --></label>
+        <name>Account_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Role --></label>
+        <name>Account_Role__c</name>
+        <picklistValues>
+            <masterLabel>Architect</masterLabel>
+            <translation><!-- Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction Manager</masterLabel>
+            <translation><!-- Construction Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical Engineer</masterLabel>
+            <translation><!-- Electrical Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineer</masterLabel>
+            <translation><!-- Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Contractor</masterLabel>
+            <translation><!-- General Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical Engineer</masterLabel>
+            <translation><!-- Mechanical Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner</masterLabel>
+            <translation><!-- Owner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- External Initiative Companies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Initiative --></label>
+        <name>External_Initiative__c</name>
+        <relationshipLabel><!-- External Initiative Companies --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- BI-NA External Initiative Company --></label>
+        <name>BI_NA_External_Initiative_Company</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

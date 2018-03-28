@@ -1,0 +1,10 @@
+<!-- *****************************************************************************
+ This page is to override the New Sample button
+******************************************************************************/ -->
+<apex:page standardController="Trademark_Abuse_Sample__c" extensions="ctrlBPDOverideNewSample" action="{!redirectToPage}" >
+<apex:pageMessages ></apex:pageMessages>  
+<apex:form >
+<center><apex:commandButton id="Back" value="Back" action="{!retPage}"/></center>
+<center><apex:commandButton id="Cancel" value="Cancel" action="{!cancel}"/></center>
+</apex:form>
+</apex:page>

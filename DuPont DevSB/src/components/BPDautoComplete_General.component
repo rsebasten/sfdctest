@@ -1,0 +1,86 @@
+<!--------------------------------------------------------------------------------------------- 
+Copyright © 2011 DuPont. All rights reserved. 
+Author: Pranitha S
+Email : Pranitha_S@infosys.com
+ ------------------------------------------------------------------------------------------------>
+<apex:component id="ac" controller="ctrlBPDAutoComplete_General">
+    <apex:attribute name="for" description="parent Component"  type="String" required="true" />
+    <apex:attribute name="sObjectType" description="SObjectType"  type="String" required="true"/>
+    <apex:attribute name="fields" description="Any additional fields you'd like to search and include in the display."  type="String" required="false"/>
+    <apex:attribute name="where" description="Where clause"  type="String" required="false" />
+    <apex:attribute name="minLength" description="Min length of search term before ajax lookup"  type="Integer" default="2"/>
+    <apex:attribute name="onSelect" description="onSelect function" type="String" default="void" />
+    
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.Jquery_1_8_11,'css/sfdc3/jquery-ui-1.8.11.custom.css')}" />
+
+<head>
+    <style>
+    .ui-autocomplete-loading { background: white url({!URLFOR($Resource.ajaxLoaders, 'snake_trans_16.gif')}) right center no-repeat; }
+    .ui-autocomplete li.ui-menu-item { padding: 1px;  }
+    .ui-autocomplete a.ui-menu-item-alternate { background-color: #E6EFF2; }
+    .ui-autocomplete a.ui-state-hover { font-weight: normal !important;}
+    </style>
+</head>
+
+  <script type="text/javascript">
+    
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function() {
+        var sObjects;
+        var queryTerm;
+        
+        //hides the lookup ico
+        j$(esc('{!for}_lkwgt')).hide();
+
+        j$(esc('{!for}')).autocomplete({
+            minLength: {!minLength},
+            source: function(request, response) {
+                        queryTerm = request.term;
+                        ctrlBPDAutoComplete_General.query("{!sObjectType}", request.term, "{!fields}", "{!where}", function(result, event){
+                            if(event.type == 'exception') {
+                                  alert(event.message);
+                            } else {
+                                 sObjects = result;
+                                 response(sObjects);
+                            }
+                        });
+                   },
+            open: function( event, ui ) {
+              j$(this).autocomplete( "widget" )
+                .find( "ui-menu-item-alternate" )
+                  .removeClass( "ui-menu-item-alternate" )
+                .end()
+                .find( "li.ui-menu-item:odd a" )
+                  .addClass( "ui-menu-item-alternate" );
+            },
+            focus: function( event, ui ) {
+
+                    return false;
+                    },
+            select: function( event, ui ) {
+                    var str = j$(document.createElement('div')).html(ui.item.label).text();
+                       j$(esc('{!for}')).val( str );
+                       j$(esc('{!for}_lkid')).val( ui.item.Id );
+                       j$(esc('{!for}_lkold')).val( str );
+                       {!onSelect}(ui.item, 'autocomplete_select');
+                        return false;
+                    },
+         })
+         
+         .data( "autocomplete" )._renderItem = function( ul, item ) {
+             return $( "<li>" )
+            .data( "item.autocomplete-item", item )
+            .append( "<a>" + item.label +  "</a>" )
+            .appendTo( ul );
+        };
+    });
+
+    function esc(myid) {
+           return '#' + myid.replace(/(:|\.)/g,'\\\\$1');
+    }    
+
+  </script>
+  
+</apex:component>

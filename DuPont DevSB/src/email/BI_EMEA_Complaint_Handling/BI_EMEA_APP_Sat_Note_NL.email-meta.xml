@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP SAT NOTE - NL</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Sat Note - NL</name>
+    <style>freeForm</style>
+    <subject>CORIAN® Solid Surface: TEVREDENHEIDSFORMULIER (Schadegeval {!Case.CaseNumber})</subject>
+    <textOnly>CORIAN® Solid Surface
+
+SCHADEGEVAL Nr. {!Case.CaseNumber}
+
+
+DuPont excuseert zich voor al het ongemak. Wij zijn toegewijd om een goede kwaliteit te leveren en we hopen dat u nog voor een lange tijd zal kunnen genieten van uw installatie in Corian® Solid Surface.
+
+Wij hopen dat de verstrekte informatie met betrekking tot het onderhoud u zal helpen.
+
+Voor registratie doeleinden verzoeken wij u dit formulier te willen ondertekenen. Hiermee geeft u aan dat het werk onder de garantie is uitgevoerd en dat u tevreden bent. Wilt u zo vriendelijk zijn dit formulier te ondertekenen en terug te bezorgen aan het service center ({!Case.OwnerFullName}) die de tussenkomst deed?
+
+Ik bevestig dat het werkblad is hersteld en dat DuPont haar engagement met betrekking tot de garantie is nagekomen. Ik erken dat deze installatie, die initieel door  de garantie van DuPont gedekt is, nog steeds geldig is onder de gestelde beperkte voorwaarden. De levensduur van de garantie op uw aanrechtblad wordt berekend vanaf de eerste, initiële installatiedatum.
+
+IK VERKLAAR HIERBIJ DAT HETVOLGENDE WERD UITGEVOERD DOOR {!Case.OwnerFullName}, NAMENS DUPONT, MET BETREKKING TOT 10 JAAR BEPERKTE GARANTIE:
+
+O Inspectie
+
+O Gedeeltelijke vervanging onder garantie
+
+O Herstelling
+
+
+NAAM: {!Case.Alt_Contact__c}
+
+ADRES:  {!Case.City__c}
+
+{!Case.State__c}
+
+TEL: {!Case.Alt_Phone__c}
+
+MAIL:  {!Case.Alt_Contact_Email__c}
+
+
+DATUM:
+
+HANDTEKENING:
+
+
+OPMERKINGEN: ...............................................................................................................................
+
+...............................................................................................................................
+
+...............................................................................................................................
+
+
+We willen u op de hoogte stellen dat we uw gegevens verzamelen om uw zakelijke interesses vast te stellen, u te voorzien van producten of diensten, en u als klant een positieve ervaring te bieden als u met ons zaken doet. Uw persoonlijke informatie (naam, e-mailadres, telefoonnummer en andere contactgegevens) worden bewaard in geselecteerde klanteninformatiesystemen die zich hoofdzakelijk in de Verenigde Staten bevinden. Deze informatie kan gedeeld worden binnen DuPont en haar ondernemingen en partners, en, met dezelfde doelstellingen, met geselecteerde derden in andere landen. U kunt deze link gebruiken om toegang te krijgen tot uw gegevens, deze te wijzingen of te wissen, of bezwaar te maken tegen de verwerking ervan.
+
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates.The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

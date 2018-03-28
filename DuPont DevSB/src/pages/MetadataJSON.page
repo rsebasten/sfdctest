@@ -1,0 +1,27 @@
+<apex:page Controller="MetadataJsonControllerV2">
+    <apex:pageBlock title="JSON Generator">
+        <apex:form id="main">
+            <label for="first_name" style="font-size: 100%;">
+                Please enter a comma seperated list of standard objects that you want to include in the below given list
+            </label>
+            <apex:inputTextarea value="{!objs}" style="width:100%; height:50px;"/><br/>
+            <div style="padding:10px; float: right;">
+            <apex:commandButton value="Add Objects" action="{!addObject}" reRender="main"/>  
+            </div>
+            <apex:pageBlockTable value="{! objectNames}" var="obj">
+                <apex:column value="{!obj}" headerValue="Standard Objects"/>
+            </apex:pageBlockTable>
+            <div style="padding-top:10px;">
+            <apex:commandButton value="Generate JSON File" action="{!getJson}" reRender="main"/>  
+            <apex:variable var="sr" value="{!1}"/>
+            <apex:pageBlockTable rendered="{!UrlPresent}" value="{! DocumentIds}" var="url">
+                <apex:column style="width:50px;">
+                    <apex:outputLink value="{!URLFOR($Action.Attachment.Download, url)}" target="_blank" >Download file {!sr}</apex:outputLink>
+                </apex:column>
+                <apex:variable var="sr" value="{!1}"/>
+            </apex:pageBlockTable>
+            
+            </div>
+        </apex:form>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify Customer upon Label Order being rejected by Business</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPT Nomex Request Rejected by Business</name>
+    <style>freeForm</style>
+    <subject>Request {!Request__c.Name} has been rejected</subject>
+    <textOnly>Dear Madam, Dear Sir,
+
+
+Your order of DuPont™ Nomex® labels has been rejected for the following reason:
+{!ApprovalRequest.Comments}
+
+Click here to go to the request:
+{!Request__c.Link}
+
+We remain at your disposal for any questions or further orders.
+
+
+With kind regards,
+
+Your DuPont™ Nomex® team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

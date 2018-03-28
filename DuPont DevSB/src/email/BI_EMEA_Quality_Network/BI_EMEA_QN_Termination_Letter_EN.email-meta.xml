@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Termination letter send to SLava Troendle</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA QN Termination Letter EN</name>
+    <style>formalLetter</style>
+    <subject>Termination Letter - QN Contract ({!Qualification__c.Reference_Id__c})</subject>
+    <textOnly>Dear Slava,
+Please find attached a termination letter for {!Account.BillingCountry}.&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+Thanks to have it signed and posted and keep me informed.
+
+
+Kind regards,
+
+
+
+{!Qualification__c.Owner__c}
+
+QN &amp; Warranty Assistant
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

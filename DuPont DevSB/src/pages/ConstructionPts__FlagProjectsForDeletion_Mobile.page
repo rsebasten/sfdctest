@@ -1,0 +1,28 @@
+<apex:page standardController="ConstructionPts__CP_Project__c" extensions="ConstructionPts.CPProjectControllerExtension"> 
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.css')}"/>       
+<apex:form >      
+<apex:outputPanel id="pnlMsg">
+     
+<apex:pageMessages rendered="true" id="PageMsg" /> 
+<apex:outputPanel id="opIsDeleted" rendered="{!if(ConstructionPts__CP_Project__c.ConstructionPts__Customer_Tracking__c == 'Delete',true,false)}" layout="inline">
+<table align="center" border="0">
+<tr>
+<td>
+<font color="red"><b>Note: This project has been flagged for deletion.</b></font> 
+</td> 
+</tr>
+</table>
+
+
+</apex:outputPanel>
+</apex:outputPanel>
+<apex:actionFunction name="afFlagForDelete" action="{!FlagProjectForDeletion}" rerender="pnlMsg"/>
+
+ <section class="border-bottom">
+          <input type="button"   id="btnCreateNewAccount"  class="btn" onclick="afFlagForDelete();" value="Flag/Unflag for Deletion" /> 
+          
+        </section>
+
+</apex:form>
+
+</apex:page>

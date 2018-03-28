@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP ACKNOW REG COMPL WITH NBR TO CUST - FR</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Acknow Reg Compl With Nbr To Cust - FR</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: Confirmation d’enregistrement de la réclamation {!Case.CaseNumber}.</subject>
+    <textOnly>Cher client,
+
+
+Nous accusons bonne réception de votre demande d’SAV que nous avons enregistrée sous la référence {!Case.CaseNumber}. Nous nous efforçons que votre réclamation soit résolue dans les plus brefs délais.
+
+
+Afin de compléter votre dossier, nous avons encore besoin d&apos;une copie de la facture de l&apos;installation, le formulaire C ci-joint rempli, des photos du plan de travail et de la (des) zone(s) impactée(s).
+
+
+Une fois le dossier constitué, nous contactons notre centre de service ou notre Industrial Partner pour fixer un rendez-vous pour l’inspection/ la réparation.
+
+
+Moyennant ce message nous sollicitons vos données pour vous contacter.
+
+
+Prière de mentionner la référence dans toute correspondance avec notre service.
+
+
+Nous sommes à votre disposition pour des remarques ou des questions supplémentaires.
+
+
+Cordialement,
+
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+
+{!Case.OwnerEmail}
+
+
+
+Nous vous informons que les données collectées à votre sujet ont pour but de nous aider à identifier les
+
+informations susceptibles d&apos;intéresser votre entreprise, vous proposer des produits ou des services et vous
+
+apporter satisfaction lors de nos échanges commerciaux. Vos données à caractère personnel (nom, adresse
+
+e-mail, numéro de téléphone et autres coordonnées) seront conservées dans des systèmes clients que nous
+
+avons sélectionnés et qui sont principalement hébergés aux États-Unis. Ces données pourront être
+
+communiquées, à ces mêmes fins, au sein de l&apos;entreprise DuPont, à ses filiales, à ses partenaires ainsi qu&apos;à
+
+des tiers triés sur le volet établis dans d&apos;autres pays. Cliquez sur ce lien pour accéder à vos données, les
+
+modifier ou les supprimer, ou vous opposer à leur traitement.
+
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

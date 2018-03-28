@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Use &amp; Care instructions for customers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Use and Care Instruction to Customer IT</name>
+    <style>formalLetter</style>
+    <subject>Istruzioni per l’uso e la cura (case: {!Case.CaseNumber})</subject>
+    <textOnly>Gent. Signora/e,
+
+In reference to your complaint dated {!Case.Date_Entered__c}, we send you hereby our Use &amp; Care booklet.
+
+In riferimento al vostro reclamo {!Case.CaseNumber} in data {!Case.Date_Entered__c}, vi spediamo le istruzioni per l’uso e la manutenzione di  DuPont™ Corian®.
+
+Probabilmente seguite gia le line guide del manuale di uso e manutenzione, ma per qualsiasi domanda siamo a vostra disposizione.
+
+In caso volete levigare il vostro piano per rinnovare l’aspetto, possiamo indicarvi un centro assistenza o una lista di fabbricatore QN piu&apos; vicino che vi potranno spedire un preventivo. 
+
+Cordiali Saluti,,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

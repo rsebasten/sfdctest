@@ -1,0 +1,67 @@
+<apex:page standardController="ConstructionPts__CPTerritory__c" extensions="ConstructionPts.CPTerritoryProjectFields2">
+    <apex:form >
+    <c:CPHeader title="CP Territory" subtitle="{!ConstructionPts__CPTerritory__c.Name} - Project Fields" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" ShowSubTitle="true" /> 
+    
+    <br/>
+        
+    <script language="javascript">        
+       function doGoBack(){
+        var terrId = '{!CASESAFEID(id)}';        
+        var currUrl = window.location.href; 
+        currUrl = currUrl.toLowerCase();  
+        var backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + '/apex/CPTerritoryDetail?id=' + terrId;  
+        if (sforce.console.isInConsole()){                
+             backUrl = backUrl + '&isdtp=vw';
+        }        
+        window.location = backUrl;
+    }
+    </script>
+
+    &lt;&lt;<apex:commandLink onclick="doGoBack(); return false;" value="Back to Detail: {!HTMLENCODE(ConstructionPts__CPTerritory__c.Name)}" id="lnkGoBack"/>
+    <br/><br/>
+    
+    <apex:pageBlock >
+    <table border="0">      
+        <tr>
+            <td colspan="3" align="center">
+                <apex:commandButton style="width:50px" action="{!DoSaveSettings}" value="Save" id="btnSave" onComplete="doGoBack();"/>
+                <apex:commandButton id="btnCancel" onclick="doGoBack(); return false;" value="Cancel" style="width:50px"/> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>       
+        <tr>
+            <td colspan="3">
+                Choose which project fields are displayed for the <i>"Dodge Projects by Territory"</i> list.
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><b>Available Fields</b></td>
+            <td>&nbsp;</td>
+            <td><b>Selected Fields</b></td>
+        </tr>
+        <tr>
+            <td>
+               <apex:selectList size="15" title="CP Project Available Columns" multiselect="true" id="selCPProjectAvailable" value="{!AddList}" style="width:180px">
+                    <apex:selectOptions value="{!AvailableList}" />
+                </apex:selectList> 
+            </td>
+            <td valign="middle" align="center">             
+                <apex:commandButton value=" Add >>" style="width:70px" action="{!DoAdd}"/>
+                <br/>
+                <apex:commandButton value="<< Remove" style="width:70px" action="{!DoRemove}"/>
+            </td>
+            <td>
+                <apex:selectList size="15" title="CP Project Selected Columns" multiselect="true" id="selCPProjectSelected" value="{!RemoveList}" style="width:180px">
+                    <apex:selectOptions value="{!SelectedList}" />       
+                </apex:selectList> 
+            </td>
+        </tr>       
+    </table>
+    </apex:pageBlock>
+    <br/>
+    <c:CPFooter ShowMHCInfo="false" ShowMHCLogo="false"/>            
+        
+     </apex:form>           
+</apex:page>

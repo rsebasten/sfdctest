@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.ERP_Company_Code__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.Owning_Organization__c</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>RECORDTYPE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>with ERP Company Codes</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Owning_Organization__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT-Graphics,DPT-Graphics &amp; Protective Packaging,DPT-Ind Pkg &amp; Protection,DPT-IPP,DPT-NOW</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DESCRIPTION</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>cargo cover</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.ERP_Company_Code__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Cargo Cover accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

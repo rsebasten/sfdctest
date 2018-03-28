@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Acknowledgement of registration of complaint to the customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Acknowledgement to Customer Surf DK</name>
+    <style>formalLetter</style>
+    <subject>Complaint registration confirmation (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear customer,
+
+Thank you for registering your complaint. Your complaint reference is: {!Case.CaseNumber}.  We’ll do our utmost to have your complaint solved in the shortest time possible.
+
+Upon completion of your file, we will contact our service center or QN fabricator to settle a date for an expertise/intervention.
+
+Our service center/QN fabricator will inspect the damage and if possible repair immediately.
+
+May we remind you to free up space and keep Corian® rest material available to avoid colour mismatch. Be aware that the intervention might cause inconvenience. 
+
+If your request falls under the 10 Year Limited Installed Warranty, the cost of the intervention will be accepted. In case the damages fall outside warranty, the service center/QN fabricator will make you an offer for repair or refreshment.
+
+Upon completion, the service center/QN fabricator will ask you to sign a satisfaction form which serves as the basis for his payment. 
+
+Should you have any questions or remarks, do not hesitate to contact us.
+
+Friendly Regards,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

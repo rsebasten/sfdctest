@@ -1,0 +1,41 @@
+<apex:component >
+ 	<apex:attribute name="ctrl" type="reCAPTCHA" description="reCAPTCHA class" required="true" />
+  	<apex:attribute name="theme" type="string" description="theme" default="custom" />	   
+	<apex:includescript value="http://api.recaptcha.net/js/recaptcha_ajax.js" />
+
+    <script>
+    function showRecaptcha(element) {
+      Recaptcha.create("{!ctrl.publicKey}", element, {
+            theme: '{!theme}',
+            tabindex: 0,
+            callback: Recaptcha.focus_response_field 
+      });
+    }
+    </script>
+    <!--  display the challenge form in this output panel 
+    <br/> debug:challange: {!ctrl.challenge} <br/>-->
+    <apex:outputPanel id="pcaptcha" rendered="{!ISNULL(ctrl.challenge)}" style="padding:0px 10px">     
+        <apex:inputhidden value="{!ctrl.challenge}" id="challenge" />
+        <apex:inputhidden value="{!ctrl.response}" id="response" />
+        <script type="text/javascript">
+        function captureResponse(ele) { 
+            document.getElementById('{!$Component.challenge}').value = 
+                document.getElementById('recaptcha_challenge_field').value;
+            
+            document.getElementById('{!$Component.response}').value = 
+                document.getElementById('recaptcha_response_field').value;
+        }
+        </script>
+
+			<div id="recaptcha_container" style="border: 3px ridge; #ededed;width:320px;text-align=left;">
+			    <div style="border: 1px solid #ededed;" id="recaptcha_image" />
+				<label for="recaptcha_response_field">{!$Label.Site_CAPTCHA}</label><br/>
+			    <input style="width:295px " type="text" id="recaptcha_response_field" name="recaptcha_response_field" class="text" />
+			</div>
+        <br />
+
+        <!--  display the image using the reCAPTCHA AJAX API -->
+        <script type="text/javascript">showRecaptcha('recaptcha_container');</script>
+    </apex:outputPanel>
+
+</apex:component>

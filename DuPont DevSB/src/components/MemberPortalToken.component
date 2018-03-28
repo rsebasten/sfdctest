@@ -1,0 +1,6 @@
+<apex:component access="global" controller="ctrlMemberPortal">
+<apex:attribute name="portal" type="string" description="SiteObject Id or External Id" assignTo="{!portalId}"/>	
+<apex:attribute name="email" type="string" description="Email address" assignTo="{!memberemail}"/>	
+<apex:attribute name="escape" type="boolean" description="UNC encode for using in a url (default: true)" default="true" assignTo="{!urlEncode}"/>	
+<apex:outputText escape="false" value="{!token}"/>
+</apex:component>

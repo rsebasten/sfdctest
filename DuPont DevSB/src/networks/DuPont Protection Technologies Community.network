@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowInternalUserLogin>false</allowInternalUserLogin>
+    <allowMembersToFlag>false</allowMembersToFlag>
+    <changePasswordTemplate>DPT_Distributor_Community_Templates/Partner_Community_Changed_Password_Email</changePasswordTemplate>
+    <communityRoles/>
+    <disableReputationRecordConversations>true</disableReputationRecordConversations>
+    <emailFooterText>Copyright © 2018 E. I. du Pont de Nemours and Company. All Rights Reserved  The DuPont Oval, DuPont™</emailFooterText>
+    <emailSenderAddress>SFDC-admin@dupont.com</emailSenderAddress>
+    <emailSenderName>Protection Technology Partner Community</emailSenderName>
+    <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
+    <enableDirectMessages>true</enableDirectMessages>
+    <enableGuestChatter>false</enableGuestChatter>
+    <enableGuestFileAccess>false</enableGuestFileAccess>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>false</enableKnowledgeable>
+    <enableNicknameDisplay>false</enableNicknameDisplay>
+    <enablePrivateMessages>false</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <enableShowAllNetworkSettings>false</enableShowAllNetworkSettings>
+    <enableSiteAsContainer>false</enableSiteAsContainer>
+    <enableTalkingAboutStats>true</enableTalkingAboutStats>
+    <enableTopicAssignmentRules>true</enableTopicAssignmentRules>
+    <enableTopicSuggestions>true</enableTopicSuggestions>
+    <enableUpDownVote>false</enableUpDownVote>
+    <forgotPasswordTemplate>DPT_Distributor_Community_Templates/Partner_Community_Forgot_Password_Email</forgotPasswordTemplate>
+    <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
+    <navigationLinkSet>
+        <navigationMenuItem>
+            <label>Topics</label>
+            <position>1</position>
+            <publiclyAvailable>true</publiclyAvailable>
+            <target>ShowMoreTopics</target>
+            <type>NavigationalTopic</type>
+        </navigationMenuItem>
+    </navigationLinkSet>
+    <networkMemberGroups>
+        <permissionSet>Sales_Aid_Request_Supplier_Community</permissionSet>
+        <profile>admin</profile>
+        <profile>dpt dafs partner community profile</profile>
+        <profile>dps - gpp na distributor partners</profile>
+        <profile>dps kevlar automotive selector app</profile>
+        <profile>dpt-ipp na value chain service distributors</profile>
+        <profile>dpt contract manufacturer</profile>
+        <profile>dpt-ipp emea value chain service distributors</profile>
+        <profile>sales aid request supplier community</profile>
+        <profile>sales aid request supplier community with leads</profile>
+    </networkMemberGroups>
+    <networkPageOverrides>
+        <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
+        <forgotPasswordPageOverrideSetting>Standard</forgotPasswordPageOverrideSetting>
+        <homePageOverrideSetting>Standard</homePageOverrideSetting>
+        <loginPageOverrideSetting>Standard</loginPageOverrideSetting>
+        <selfRegProfilePageOverrideSetting>Standard</selfRegProfilePageOverrideSetting>
+    </networkPageOverrides>
+    <picassoSite>DuPont_Protection_Technologies_Community1</picassoSite>
+    <selfRegistration>false</selfRegistration>
+    <sendWelcomeEmail>false</sendWelcomeEmail>
+    <site>DuPont_Protection_Technologies_Community</site>
+    <status>Live</status>
+    <tabs>
+        <customTab>Call_Report__c</customTab>
+        <customTab>Logos</customTab>
+        <customTab>Hose_Selector</customTab>
+        <customTab>Search_Criteria__c</customTab>
+        <customTab>Ask_a_Question</customTab>
+        <customTab>Request__c</customTab>
+        <defaultTab>home</defaultTab>
+        <standardTab>home</standardTab>
+        <standardTab>Account</standardTab>
+        <standardTab>Contact</standardTab>
+        <standardTab>Case</standardTab>
+        <standardTab>ContentSearch</standardTab>
+        <standardTab>File</standardTab>
+        <standardTab>Lead</standardTab>
+        <standardTab>report</standardTab>
+        <standardTab>Opportunity</standardTab>
+    </tabs>
+    <urlPathPrefix>DPTPartnerCommunity</urlPathPrefix>
+    <welcomeTemplate>DPT_Distributor_Community_Templates/Partner_Community_Welcome_Email</welcomeTemplate>
+</Network>

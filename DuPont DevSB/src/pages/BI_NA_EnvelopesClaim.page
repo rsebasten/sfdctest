@@ -1,0 +1,156 @@
+<apex:page showChat="false" showHeader="true" standardController="Case" extensions="ctrlBINA_EnvelopesCreateClaim" action="{!init}">
+<apex:includeScript value="{!$Resource.JQuery_to_Remove_None}"/>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('[id*=var] option[value=""]').remove();
+    }); 
+</script>
+
+<style type="text/css">
+.bPageBlock .detailList tr td, .bPageBlock .detailList tr th, .hoverDetail .bPageBlock .detailList tr td, .hoverDetail .bPageBlock .detailList tr th
+body .bEditBlock .pbBottomButtons, body .apexp .bPageBlock.apexDefaultPageBlock .pbBottomButtons {
+ border: 0px !important; 
+ color: #000 !important;
+}
+.labelCol{
+font-size:98% !important;
+font-weight:bold !important;
+color: #000 !important;
+font-family: Arial,Helvetica,sans-serif;
+padding-left:0px !important;
+padding-right:0px !important;
+}
+.span{
+color:red;
+font-size:x-large;
+vertical-align:top;
+margin-left:0px;
+padding-left:0px;
+padding-top:0px !important;
+}
+     .Global {
+           background-color: #fff; color: #6e6e6e; font-family: Arial, Segoe UI, Sans-Serif; font-size: 12px; font-weight:normal; line-height:18px; margin: 0px; padding: 0px; text-rendering: optimizeLegibility; -webkit-font-smoothing:antialiased; 
+     }
+ 
+               .customPopup{
+                    background-color: white;
+                    border-style: solid;
+                    color: grey;
+                    font: normal normal bold 11px Trebuchet MS, Helvetica;
+                    border-width: 3px;
+                    border-color:grey;
+                    left: 50%;
+                    padding:10px;
+                    position: fixed;
+                    z-index: 9999;
+                    overflow:scroll;           
+                    /* These are the 3 css properties you will need to tweak so the pop  
+                    up displays in the center of the screen. First set the width. Then set 
+                    margin-left to negative half of what the width is. You can also add 
+                    the height property for a fixed size pop up.*/
+                  /*  width: 95%;
+                    left: 0%;
+                    top:150%;
+                    height:40%;*/
+                    width:85%; 
+                    height:55%;
+                    left:0%;
+                    top:25%;
+                }
+        
+                .closeButton {
+                    float: right;
+                    height: 3%;
+                    width: 5%;
+                    
+                }
+.dataCol{
+padding-top: -2px !important;
+padding-bottom: 0px !important;
+padding-left: 0px !important;
+}
+.data2Col{
+padding-left: 0px !important;
+}
+.btn {
+padding : 5px 3px;
+border : #3f3f3f solid 1px !important ;
+background-color : #F2F2F2 !important ;
+color : #191919 !important ;
+font-weight : bold;
+font-size : 11px !important ;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;}
+</style>
+
+<apex:outputPanel >
+<apex:pagemessages ></apex:pagemessages>
+</apex:outputPanel>
+<br/>
+<apex:form styleClass="Global">
+<h><b><span style="color:black;font-size:small;margin-left:80px;">DuPont BI Building Envelope Claim Creation Form :</span></b> </h>
+  <span class="span" style="margin-left:500px;">* </span> =  Required Information
+  <br/>
+  <apex:pageBlock >
+  <apex:pageBlockSection title="Products Selected" columns="1">
+  <apex:outputText label="Products">
+ <!--<apex:outputText value="{!SUBSTITUTE(JSENCODE(SUBSTITUTE(JSENCODE(productSelected), '\\n', '<br/>&nbsp;&nbsp;&nbsp;&nbsp;')),'[0-9]\','3')}" escape="false"/>-->
+      <apex:outputLabel value="{!entit.Product_Answer1__c}" style="padding-left:10px !important; padding-top:20px !important;"></apex:outputLabel>
+      </apex:outputText> 
+  </apex:pageBlockSection>
+  <apex:pageBlockSection title="Background Information" columns="2">
+  <apex:outputText label="Customer Name"><span class="span">*</span>&nbsp;
+      <apex:inputField value="{!cas.Submitted_By_First_Name_Last_Name__c}"/>
+      </apex:outputText>
+  <apex:outputText label="Customer Phone"><span class="span">*</span>&nbsp;
+  <apex:inputField value="{!cas.Alt_Phone__c}"/>
+  </apex:outputText>
+  <apex:outputText label="Customer Email Address"><span class="span">*</span>&nbsp;
+  <apex:inputText value="{!casemail}"/>
+  </apex:outputText>
+  <apex:outputText label="Customer Address"><span class="span">*</span>&nbsp;
+  <apex:inputfield value="{!cas.Case_Shipping_Address__c}" style="width:150px; height:50px;"/>
+  </apex:outputText>
+  <apex:outputText label="Customer City">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputfield value="{!cas.City__c}"/>
+  </apex:outputText>
+  <apex:outputText label="Customer Country">&nbsp;&nbsp;&nbsp;&nbsp;
+ <!-- <apex:inputfield value="{!entitGet.Registration_Country1__c }" id="var1"/> -->
+  <apex:inputfield value="{!entitGet.Registration_Country1__c }"/>
+  </apex:outputText>
+  <apex:outputText label="Customer Postal Code">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputtext value="{!conPostal}"/>
+  </apex:outputText>
+  <apex:outputText label="Customer State/Province">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputfield value="{!entitGet.Registration_State_Province__c}"/>
+  </apex:outputText>
+  
+  <apex:outputText label="Customer Company">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputfield value="{!cas.Company__c}"/>
+  </apex:outputText>
+  
+  <apex:outputText label="Priority">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputField value="{!cas.Priority}" id="var"/>
+  </apex:outputText>
+  <apex:outputText label="Site Address">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:outputText value="{!SUBSTITUTE(JSENCODE(ent_SiteAddress), '\\n', '<br/>&nbsp;&nbsp;&nbsp;&nbsp;')}" escape="false"/>
+  </apex:outputText>
+  <apex:outputText label="Application Type">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:outputField value="{!entit.Application_Type__c}"/>
+  </apex:outputText>
+  <apex:outputText label="Nature of Complaint" style="margin-left:14px; padding-top:0px !important"><span class="span">*</span>&nbsp;
+  <apex:inputfield value="{!cas.Description}" style="width:200px;"/>
+  </apex:outputText><br/>
+  <apex:outputText label="Why does customer believe DuPont played a role?"><span class="span">*</span>&nbsp;
+  <apex:inputfield value="{!cas.Problem_Description__c}" style="width:200px;"/>
+  </apex:outputText><br/>
+  <apex:outputText label="Additional Information">&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputfield value="{!cas.Special_Instructions__c}" style="width:200px; "/>
+  </apex:outputText>
+  </apex:pageBlockSection>
+  <apex:pageBlockButtons location="bottom">
+      <apex:commandButton value="Save" action="{!Savelist}"/>
+      <apex:commandButton value="Cancel" action="{!Cancel}"/>
+  </apex:pageBlockButtons>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

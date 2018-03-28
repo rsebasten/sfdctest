@@ -1,0 +1,990 @@
+<apex:page tabStyle="Dodge_Projects__tab"
+	StandardController="ConstructionPts__CP_Project__c"
+	extensions="ConstructionPts.CPProjectsFiltered,ConstructionPts.CPTerritoryGeography,ConstructionPts.CPProjectOppCounts,ConstructionPts.MyViewsController"
+	sideBar="false">
+	<c:CPHeader title="" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+	<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__jquerynew, 'css/redmond/jquery-ui-1.8.21.custom.css')}" />
+	<!-- <apex:stylesheet value="{!URLFOR($Resource.jquerynew,'/tablesorter/style.css')}" /> -->
+	<style>
+.cpHeader2,.cpHeader2 table,.cpHeader2 tr,.cpHeader2 td {
+	background: #5C9CCC;
+	color: #FFFFFF;
+}
+
+.cpHeader2 a,.cpHeader2 a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+.cpHeader3,.cpHeader3 table,.cpHeader3 tr,.cpHeader3 td {
+	background: #DFEFFC;
+	color: #2E6E9E;
+}
+
+.cpHeader3 a,.cpHeader3 a:hover {
+	color: #2E6E9E;
+	text-decoration: underline;
+}
+
+.cpHeader4,.cpHeader4 table,.cpHeader4 tr,.cpHeader4 td {
+	background: #FBEC88;
+	color: #000000;
+}
+
+.cpHeader4 a,.cpHeader4 a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+.cpHeader5,.cpHeader5 table,.cpHeader5 tr,.cpHeader5 td {
+	background: #FFFFFF;
+	color: #E17009;
+}
+
+.cpHeader5 a,.cpHeader5 a:hover {
+	color: #E17009;
+	text-decoration: underline;
+}
+</style>
+	<apex:form >
+		<script  type="text/javascript">              
+    var TerritoryName = '';
+    var LastSelectedId = '';
+
+    var HighlightColor = "#DFEFFC";
+    var TerritoryDefaultBGColor = "#5C9CCC";
+    var StateDefaultBGColor = "#FFFFFF";
+    var CountyDefaultBGColor = "#FBEC88";
+    var ZipDefaultBGColor = "#FFFFCC";
+    var ZipTextColor = "#E17009";
+    
+    function SortByLetter(StartsWith){
+        var divGetAction = document.getElementById("divGetAction");
+        var hdnSelGeographyValue = divGetAction.childNodes[0];
+        var hdnSelGeographyDiv = divGetAction.childNodes[1];
+        var hdnSelGeographyType = divGetAction.childNodes[2];
+        var hdnAlphabetSortLetter = divGetAction.childNodes[5];
+        hdnAlphabetSortLetter.value = StartsWith;
+        var Div = hdnSelGeographyDiv.value;
+        if(Div == ""){
+            Div = "tdCPTerritory";
+        }
+        var GeoType = hdnSelGeographyType.value;
+        if(GeoType == ""){
+            GeoType = "TERRITORY";
+        }
+        var GeoValue = hdnSelGeographyValue.value;
+
+        if(GeoType == "SAVED_STATE"){
+            getSavedGeographyForState(GeoValue, '0');
+        }else{
+            getGeography(GeoType, GeoValue, Div, '0');
+        }
+        
+        var divAlphabetLinks = document.getElementById("divAlphabetLinks");
+        if(divAlphabetLinks){
+            var links = divAlphabetLinks.getElementsByTagName("a");
+            for(var i=0; i<links.length; i++){
+                if(links[i].id == "Sort_ALL"){
+                    links[i].setAttribute("className", "listItemLast");
+                }else{
+                    links[i].setAttribute("className", "listItem");
+                }
+            }
+        }
+        var linkClicked;
+        if(StartsWith == "#"){
+            linkClicked = document.getElementById("Sort_OTHER");
+        }else{
+            if(StartsWith == ""){
+                linkClicked = document.getElementById("Sort_ALL");
+            }else{
+                linkClicked = document.getElementById("Sort_" + StartsWith);
+            }
+        }
+        if(linkClicked){
+            linkClicked.setAttribute("className", "listItemSelected");
+        }
+    }
+        
+    function SetBackToDefaultBGColor(Id){       
+        var obj = document.getElementById(Id);        
+        if(obj){       
+            if(Id.indexOf("tdCPTerritory") == 0){   //territory last highlighted              
+                obj.style.backgroundColor = TerritoryDefaultBGColor;
+            }           
+            if(Id.indexOf("tdCPZip_") == 0){    //zip last highlighted              
+                obj.style.backgroundColor = ZipDefaultBGColor;
+            }
+            if(Id.indexOf("tdCPCounty_") == 0){ //county last highlighted
+                obj.style.backgroundColor = CountyDefaultBGColor;
+            }
+            if(Id.indexOf("tdCPState_") == 0){  //state last highlighted
+                obj.style.backgroundColor = StateDefaultBGColor;
+            }
+        }
+    }
+    
+    function getGeography(GeoType, GeoValue, divGeoTarget, DoExpandCollapse){ 
+        var divTarget = document.getElementById(divGeoTarget);
+        var divGetAction = document.getElementById("divGetAction");
+ 
+        var hdnSelGeographyValue = divGetAction.childNodes[0];
+        var hdnSelGeographyDiv = divGetAction.childNodes[1];
+        var hdnSelGeographyType = divGetAction.childNodes[2];
+        var btnGetGeography = divGetAction.childNodes[3];    
+        var btnFilter = divGetAction.childNodes[4];   
+        var hdnSort = divGetAction.childNodes[5];
+        hdnSelGeographyValue.value = GeoValue;
+        hdnSelGeographyDiv.value = divGeoTarget;
+        hdnSelGeographyType.value = GeoType;
+          
+        SetBackToDefaultBGColor(LastSelectedId);      
+       
+        var ObjToHighlight;
+        if(GeoType == "ZIP"){
+            //county node clicked
+            ObjToHighlight = document.getElementById("tdCPCounty_" + GeoValue + "_Name");
+            if(ObjToHighlight){
+                ObjToHighlight.style.backgroundColor = HighlightColor; 
+                LastSelectedId = "tdCPCounty_" + GeoValue + "_Name";
+            }
+        }
+        if(GeoType == "TERRITORY"){
+            //entire territory node clicked
+            ObjToHighlight = document.getElementById("tdCPTerritory");
+            if(ObjToHighlight){
+                ObjToHighlight.style.backgroundColor = HighlightColor; 
+                LastSelectedId = "tdCPTerritory";
+            }
+        }
+       
+       if(divTarget){     
+           if(divTarget.innerHTML == ""){                
+                callGetGeographyFunction(GeoType, GeoValue);                   
+                
+           }else{
+                if(DoExpandCollapse == "1"){
+                   if(GeoType != "TERRITORY"){
+                       if(divTarget.style.display == "none"){
+                           divTarget.style.display = "";
+                       }else{
+                           divTarget.style.display = "none";
+                       }                   
+                   }     
+                 }                   
+               afDoFilter(GeoValue, GeoType, hdnSort.value);
+           } 
+        }
+    }
+    
+    function filterProjectsByZip(Zipcode){
+      var divGetAction = document.getElementById("divGetAction");
+    
+      var hdnSelGeographyValue = divGetAction.childNodes[0];
+      var hdnSelGeographyDiv = divGetAction.childNodes[1];
+      var hdnSelGeographyType = divGetAction.childNodes[2];  
+      var btnFilter = divGetAction.childNodes[4];   
+      hdnSelGeographyValue.value = Zipcode;
+      hdnSelGeographyDiv.value = '';
+      hdnSelGeographyType.value = 'FILTER_BY_ZIP';
+      
+      SetBackToDefaultBGColor(LastSelectedId); 
+     
+      var ObjToHighlight = document.getElementById("tdCPZip_" + Zipcode);
+      if(ObjToHighlight){
+        ObjToHighlight.style.backgroundColor = HighlightColor; 
+        LastSelectedId = "tdCPZip_" + Zipcode;
+      }
+      afDoFilter(Zipcode, 'FILTER_BY_ZIP', '');
+    }
+    
+    function getSavedGeographyForState(StateGID, DoExpandCollapse){
+       var divTarget = document.getElementById("divState_" + StateGID);
+       var divGetAction = document.getElementById("divGetAction");  
+       var hdnSelGeographyValue = divGetAction.childNodes[0];
+       var hdnSelGeographyDiv = divGetAction.childNodes[1];
+       var hdnSelGeographyType = divGetAction.childNodes[2];            
+       hdnSelGeographyValue.value = StateGID;   
+       hdnSelGeographyDiv.value = "tdCPState_" + StateGID;    
+       hdnSelGeographyType.value = 'SAVED_STATE';
+       //var btnGetGeography = divGetAction.childNodes[3];
+       //var btnFilter = divGetAction.childNodes[4];  
+   
+       SetBackToDefaultBGColor(LastSelectedId); 
+       
+       var ObjToHighlight = document.getElementById("tdCPState_" + StateGID + "_Name");
+       ObjToHighlight.style.backgroundColor = HighlightColor; 
+       
+       LastSelectedId = "tdCPState_" + StateGID + "_Name";
+       
+       var divStateZips = document.getElementById("divStateZips_" + StateGID);
+      
+       if(divTarget.innerHTML == ""){ 
+           callGetGeographyFunction(hdnSelGeographyType.value, hdnSelGeographyValue.value, LastSelectedId);       
+       }else{
+           if(DoExpandCollapse == "1"){       
+               if(divTarget.style.display == "none"){
+                   divTarget.style.display = "";
+                   if(divStateZips){
+                        divStateZips.style.display = "";       
+                   }
+               }else{
+                   divTarget.style.display = "none";
+                   var divStateZips = document.getElementById("divStateZips_" + StateGID);
+                   if(divStateZips){
+                        divStateZips.style.display = "none";        
+                   }
+               }
+           }           
+          afDoFilter(StateGID, 'SAVED_STATE', '');
+       } 
+    }
+      
+    function CreateStateHTMLReturn(sReturn, event){       
+        //alert('State=' + sReturn);        
+        var divCPGeo = document.getElementById("divCPGeo");
+        var arrReturn = sReturn.split('|');   
+        var arrCPStates = '';
+        var arrStateNumbers = '';
+        if(arrReturn[0].indexOf(',')){
+            arrCPStates = arrReturn[0].split(','); 
+        }
+        else
+        {
+            arrCPStates = arrReturn[0];
+        }
+        if(arrReturn[1].indexOf(',')){
+            arrStateNumbers = arrReturn[1].split(',');
+        }
+        else
+        {
+            arrStateNumbers = arrReturn[1];
+        }
+        var sStateNumbers = arrReturn[1];
+        if(divCPGeo){
+            var sHTML = "";
+            var sIsChecked;
+            var blnStatePartOfTerr;
+            var NumProjectsInState = 0;
+            sHTML = sHTML + "<table border='0' align='left'>";
+            sHTML = sHTML + "<tr><td align='right' nowrap='true' colspan=\"2\" id=\"tdCPTerritory\"><b><a href=\"javascript: getGeography('TERRITORY', '', 'tdCPTerritory','1');\">" + TerritoryName + "</a> - Geography</b></td></tr>";  
+            var StateAbbr = '';
+
+            for(var i=0; i<arrCPStates.length; i++){
+                StateAbbr = arrCPStates[i+1];
+                NumProjectsInState = 0;
+                if(sStateNumbers.indexOf(StateAbbr) > -1){
+                     for(var j=0; j<arrStateNumbers.length; j++){
+                        if(StateAbbr == arrStateNumbers[j]){
+                            NumProjectsInState = arrStateNumbers[j+1];
+                        }
+                        j++;
+                    }
+                 } 
+                // if (NumProjectsInState != -1){
+                    sHTML = sHTML + "<tr>";
+                    sHTML = sHTML + "<td  align='right' valign='bottom' nowrap='true' id='tdCPState_" + arrCPStates[i] + "_Name' bgcolor=\"" + StateDefaultBGColor + "\">";  
+                    if(NumProjectsInState != 0){  
+                        sHTML = sHTML + "<font color=\"green\">(" + NumProjectsInState + ") </font>";
+                    }else{
+                        sHTML = sHTML + "<font color=\"grey\">(" + NumProjectsInState + ") </font>";
+                    }
+                    
+                    sHTML = sHTML + "<b><a href=\"javascript: getSavedGeographyForState('" + arrCPStates[i] + "','1');\">" + arrCPStates[i+2] + "</a></b>";
+            
+                    sHTML = sHTML + "</td>";
+                    sHTML = sHTML + "</tr>";
+                    sHTML = sHTML + "<tr>";                 
+                    sHTML = sHTML + "<td nowrap=\"true\" align=\"right\">";
+                    sHTML = sHTML + "<div id=\"divState_" + arrCPStates[i] + "\"></div>";
+                    sHTML = sHTML + "</td>";                
+                    sHTML = sHTML + "</tr>";
+                    sHTML = sHTML + "<tr>";           
+                    sHTML = sHTML + "<td align='right' nowrap='true'>";
+                    sHTML = sHTML + "<div id=\"divStateZips_" + arrCPStates[i] + "\"></div>";
+                    sHTML = sHTML + "</td>";                
+                    sHTML = sHTML + "</tr>";
+                    i = i + 2;                    
+                }
+           // }
+            sHTML = sHTML + "</table>";
+            divCPGeo.innerHTML = sHTML;
+            SetBackToDefaultBGColor(LastSelectedId); 
+            
+            var ObjToHighlight;
+            ObjToHighlight = document.getElementById("tdCPTerritory");
+            if(ObjToHighlight){
+                ObjToHighlight.style.backgroundColor = HighlightColor; 
+                LastSelectedId = "tdCPTerritory";
+            }
+           
+           /*j$("a.goToLink").each(function() {
+           
+				j$(this).attr("href", goToItemUrlCreator(j$(this).attr("data-id")));
+				j$(this).attr("target", "_parent");
+				//if (sforce.console.isInConsole()) { 
+					j$(this).click(function (event) {
+						event.preventDefault(); 
+						sforce.console.openPrimaryTab(null, goToItemUrlCreator(j$(this).attr("data-id")), true, j$(this).text());
+					});
+				//}  
+			});*/
+        }
+    }
+    
+    function goToItem(theId, theLabel){    
+				var gotoURL = goToItemUrlCreator(theId);
+			    if (bIsInConsole){
+			    	sforce.console.openPrimaryTab(null, gotoURL, true, theLabel, callback);
+			        var callback = function callback(result) {
+			           if (result.success == true) {
+			              //sforce.console.refreshPrimaryTabById(result.id);
+			            } else {
+			              //alert('Primary tab cannot be opened');
+			            }
+			        }
+			    } else {
+			        parent.window.location = gotoURL;  
+			    }
+			}
+			
+			function goToItemUrlCreator(theId){
+				var sRetPage = "retURL=" +  winLocHref;
+				var gotoURL = String(winLocHref).substring(0, String(winLocHref).lastIndexOf("/apex/")) + '/' + theId;
+				/*if (!bIsInConsole){
+					gotoURL += ('?' + sRetPage); 
+				}*/
+				return gotoURL;
+			}
+    
+    function callGetGeographyFunction(GeoType, GeoValue, thisid){
+        //alert('callGetGeographyFunction-type' + GeoType + 'value' + GeoValue);
+        var terrId = ''; 
+            var divSelCPTerritories = document.getElementById("divSelCPTerritories");
+            if(divSelCPTerritories){
+                var selCPTerritories = divSelCPTerritories.childNodes[0];
+                if(selCPTerritories){
+                    terrId = selCPTerritories.options[selCPTerritories.selectedIndex].value;
+                }
+            }
+        if(GeoType == 'COUNTY')
+        {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.CreateCPCountyHTML}', GeoValue, GetGeographyReturn);
+        }
+        if(GeoType == 'ZIP'){
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPProjectsFiltered.CreateCPZipHTML}', terrId, GeoValue, CreateZipHTMLReturn);
+        }
+        if(GeoType == 'SAVED_STATE')
+        {
+             Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPProjectsFiltered.LoadSavedCPGeographyForState}', terrId, GeoValue, GetGeographyReturn);
+        }  
+    }
+    
+    function GetGeographyReturn(sReturn, event){
+        //alert('GetGeographyReturn' + sReturn);
+        var arrReturn = sReturn.split('|');  
+        var StateGID = arrReturn[0];
+        CreateCountyHTMLReturn(sReturn, event);
+        if (arrReturn.length > 4){
+            if (arrReturn[4].length > 0){
+                CreateSelectedZipHTML(StateGID, arrReturn[3], arrReturn[4]);
+            }
+            
+        }
+        afDoFilter(StateGID, '', ''); 
+    }
+    
+    function CreateCountyHTMLReturn(sReturn, event){
+        //alert('county' + sReturn);
+        var arrReturn = sReturn.split('|');  
+        var StateGID = arrReturn[0];
+        var arrCPCounties = '';
+        var arrCountyNumbers ='';
+        if(arrReturn[1].indexOf(',')){
+            arrCPCounties= arrReturn[1].split(',');
+        } else  {
+            arrCPCounties= arrReturn[1];
+        }
+        if(arrReturn[2].indexOf(',')){
+            arrCountyNumbers = arrReturn[2].split(',');
+        } else {
+            arrCountyNumbers = arrReturn[2];
+        }
+        
+        var sHTML = "";
+        var sIsChecked;
+        var sNumProjects = "?";
+ 
+        sHTML = sHTML + "<table border='0'>";
+        for(var i=0; i<arrCPCounties.length; i++){
+            sIsChecked = "";
+            sNumProjects = "?";
+            if(arrCPCounties[i] == arrCountyNumbers[i]){
+                sNumProjects = arrCountyNumbers[i+1];
+                sHTML = sHTML + "<tr>";
+                sHTML = sHTML + "<td valign=\"bottom\" id=\"tdCPCounty_" + arrCPCounties[i] + "_Name\" align=\"right\" bgcolor=\"" + CountyDefaultBGColor + "\">";
+            
+                if(sNumProjects != "0"){
+                    sHTML = sHTML + "<font color=\"green\">";
+                }else{
+                    sHTML = sHTML + "<font color=\"grey\">";
+                }
+                sHTML = sHTML + "(" + sNumProjects + ") </font>";
+            
+                sHTML = sHTML + "<a href=\"javascript: getGeography('ZIP', '" + arrCPCounties[i] + "','divCounty_" + arrCPCounties[i] + "','1');\"><font color='#000080'>" + arrCPCounties[i+1] + "</font></a>";
+                sHTML = sHTML + "</td>";
+                sHTML = sHTML + "</tr>";
+           
+                sHTML = sHTML + "<tr>";
+                sHTML = sHTML + "<td>";
+                sHTML = sHTML + "<div id=\"divCounty_" + arrCPCounties[i] + "\"></div>";
+                sHTML = sHTML + "</td>";
+                sHTML = sHTML + "</tr>";
+            }
+            i = i + 1;
+        }
+        sHTML = sHTML + "</table>";
+        var divSelState = document.getElementById("divState_" + StateGID);
+        if(divSelState){
+            divSelState.innerHTML = sHTML;
+        } 
+    }
+    
+     function CreateZipHTMLReturn(sReturn, event){
+        var sHTML = "";  
+        //alert('Zip' + sReturn);
+        var arrReturn = sReturn.split('|');
+        var CountyGID = arrReturn[0];    
+        var StateGID = arrReturn[1];  
+        
+        var arrCPZips = '';
+        var arrZipNumbers = '';
+        if(arrReturn[2].indexOf(','))
+        {
+            arrCPZips = arrReturn[2].split(',');
+        }
+        else
+        {
+            arrCPZips = arrReturn[2];
+        }
+        if(arrReturn[3].indexOf(','))
+        {
+            arrZipNumbers= arrReturn[3].split(',');
+        }
+        else
+        {
+            arrZipNumbers= arrReturn[3];
+        }
+        if(arrCPZips.length > 0){
+        
+            var sNumProjects;
+            var z = 1;
+            sHTML = sHTML + "<table border='0'>";           
+            for(var i=0; i<arrCPZips.length; i++){
+                
+                sNumProjects = arrZipNumbers[z];
+              
+                z = z + 2;
+                
+                sHTML = sHTML + "<tr>";
+                sHTML = sHTML + "<td width=\"99%\">&nbsp;</td>"          
+                sHTML = sHTML + "<td align='right' id=\"tdCPZip_" + arrCPZips[i] + "\" align=\"right\" bgcolor=\"" + ZipDefaultBGColor + "\" nowrap=\"true\">";               
+
+                if(sNumProjects != "0"){
+                    sHTML = sHTML + "<font color=\"green\">";
+                 }else{
+                    sHTML = sHTML + "<font color=\"grey\">";
+                }
+                sHTML = sHTML + "(" + sNumProjects + ") </font>";
+
+                sHTML = sHTML + "<a href=\"javascript: filterProjectsByZip('" + arrCPZips[i] + "');\"><font color='#008060'>" + arrCPZips[i] + "</font></a>";
+                sHTML = sHTML + "</td>";
+                sHTML = sHTML + "</tr>";
+            }
+            sHTML = sHTML + "</table>";
+            var divSelCounty = document.getElementById("divCounty_" + CountyGID);
+            if(divSelCounty){
+                divSelCounty.innerHTML = sHTML;
+            }
+        }
+          var hdnSelGeographyValue = divGetAction.childNodes[0];
+          var hdnSelGeographyDiv = divGetAction.childNodes[1];
+          var hdnSelGeographyType = divGetAction.childNodes[2];  
+          hdnSelGeographyValue.value = CountyGID;
+          hdnSelGeographyDiv.value = 'divCounty_' + CountyGID;
+          hdnSelGeographyType.value = 'ZIP';  
+
+        afDoFilter(CountyGID, 'ZIP', ''); 
+    }
+        
+   function DeselectState(SelStateGID, StateName){
+        var tdCPState = document.getElementById("tdCPState_" + SelStateGID);
+        if(tdCPState){          
+            tdCPState.style.backgroundColor = StateDefaultBGColor; 
+        }   
+        var tdCPStateName = document.getElementById("tdCPState_" + SelStateGID + "_Name");
+        if(tdCPStateName){
+            var sHTML = "<a href=\"javascript: getGeography('COUNTY', '" + SelStateGID + "','divState_" + SelStateGID + "','1');\">" + StateName + "</a>";
+            tdCPStateName.innerHTML = sHTML;
+        }
+        var divSaveBtn_CPState = document.getElementById("divSaveBtn_CPState_" + SelStateGID);
+        if(divSaveBtn_CPState){
+            divSaveBtn_CPState.style.display = "none";
+        }
+    }
+ 
+    function SetTerritoryName(){
+        var divSelCPTerritories = document.getElementById("divSelCPTerritories");
+        if(divSelCPTerritories){
+            var selCPTerritories = divSelCPTerritories.childNodes[0];
+            if(selCPTerritories){
+                TerritoryName = selCPTerritories.options[selCPTerritories.selectedIndex].text;
+            }
+        }   
+        var divResults = document.getElementById("divResults");
+        if(divResults){
+            divResults.style.display = "";
+        }   
+    }
+    
+    function CreateSelectedZipHTML(StateGID, CPZip, CPZipNumbers){
+        //alert(CPZipNumbers);
+        var arrCPZips = '';
+        var arrZipNumbers = '';
+        if (CPZip.indexOf(',')){
+            arrCPZips = CPZip.split(',');
+        }
+        else
+        {
+            arrCPZips = CPZip;
+        }
+        if (CPZipNumbers.indexOf(',')){
+            arrZipNumbers= CPZipNumbers.split(',');
+        }
+        else
+        {
+            arrZipNumbers= CPZipNumbers;
+        }        
+        var divStateZips = document.getElementById("divStateZips_" + StateGID);         
+        if(divStateZips){
+            if (arrZipNumbers.length > 0){
+                var sHTML = '';
+                
+                var z = 1;
+                var sNumProjects = "-1";
+                for(var i=0; i<arrCPZips.length; i++){
+                    sNumProjects = arrZipNumbers[z];
+                    sHTML = sHTML + "<tr>";
+                
+                    sHTML = sHTML + "<td width=\"10px\" nowrap>&nbsp;&nbsp;&nbsp;</td>";
+                    sHTML = sHTML + "<td id=\"tdCPZip_" + arrCPZips[i] + "\" align=\"right\" bgcolor=\"" + ZipDefaultBGColor + "\">";
+                
+                    if(sNumProjects != "0"){
+                        sHTML = sHTML + "<font color=\"green\">";
+                    }else{
+                        sHTML = sHTML + "<font color=\"grey\">";
+                    }
+                    sHTML = sHTML + "(" + sNumProjects + ") </font>";
+                 
+                    sHTML = sHTML + "<a href=\"javascript: filterProjectsByZip('" + arrCPZips[i] + "');\"><font color='#008060'>" + arrCPZips[i] + "<font></a>";
+                    sHTML = sHTML + "</td>";                
+                    sHTML = sHTML + "</tr>";
+                    z = z + 2;
+                }
+                if (sNumProjects != "-1"){
+                    var sHTML2 = '';
+                    sHTML2 = sHTML2 + "<table border='0'>" ;
+                    sHTML2 = sHTML2 + "<tr>";
+                    sHTML2 = sHTML2 + "<td nowrap colspan='2'>Selected Zip/Postcodes</td>";
+                    sHTML2 = sHTML2 + "</tr>";
+           
+                    sHTML2 = sHTML2 + sHTML;
+                    sHTML2 = sHTML2 + "</table>";
+                    divStateZips.innerHTML = sHTML2;                
+                }          
+            }
+        }
+        
+        afDoFilter(StateGID, 'ZIP', '');       
+    }
+    
+    function GotoAllProjects(){
+        var currURL = window.location.href;
+        var baseURL = currURL.substring(0,currURL.indexOf("CPProjectsDefault"));
+        var gotoURL = baseURL + "CPProjectsDefault";
+        if (sforce.console.isInConsole()) {                
+              gotoURL= gotoURL+ '&isdtp=vw';
+        }  
+    }
+        
+    function GotoCustomViewProjects(){
+        var currURL = window.location.href;
+        var baseURL = currURL.substring(0,currURL.indexOf("CPProjectsDefault"));
+        var gotoURL = baseURL + "MyViews";
+        if (sforce.console.isInConsole()){                
+              gotoURL= gotoURL+ '&isdtp=vw';
+        } 
+    }
+    
+    function GotoProjectsBin(){
+        var currURL = window.location.href;
+        var baseURL = currURL.substring(0,currURL.indexOf("CPProjectsDefault"));
+        var gotoURL = baseURL + "CPProjectsBin";
+        if (sforce.console.isInConsole()){                
+              gotoURL= gotoURL+ '&isdtp=vw';
+        }
+     }    
+               
+     function SaveTrackingForCPProjects(){
+            //loop thru all 
+            var ctrls = document.getElementsByTagName("input");
+            var currCtrlId;
+            var sSelectedItems = "";
+            var sProjectID = "";
+            for(var i=0; i<ctrls.length; i++){
+            
+                if(ctrls[i].type == "checkbox"){
+                    currCtrlId = ctrls[i].id;
+                    if(currCtrlId != "chkCP4SF_Tag_All"){       
+                        if(currCtrlId.indexOf("chkCP4SF_Tag_") == 0){    
+                            if(ctrls[i].checked == true){
+                                sProjectID = sProjectID + currCtrlId.replace("chkCP4SF_Tag_", "") + ",";
+                                sSelectedItems = sSelectedItems + sProjectID + ",";
+                            }
+                        }
+                    }                    
+                }                
+            } 
+            if(sSelectedItems.length > 0){
+                sSelectedItems = sSelectedItems.substring(0,sSelectedItems.length-1);
+            }
+            
+        var sStatus = 'Delete';
+        Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPProjectsFiltered.FlagProjects}', sSelectedItems, sStatus, doCallBack);
+     }
+     
+    function doCallBack(sReturn, event){
+          alert('Project(s) Flagged for Deletion.');
+    }
+     
+     function SelectAllActionCheckBoxes(CheckAll){
+        var divResults = document.getElementById("divResults");
+        if(divResults){            
+            //loop thru all action checkboxes
+            var ctrls = divResults.getElementsByTagName("input");           
+            var currCtrlId;
+            for(var i=0; i<ctrls.length; i++){            
+                if(ctrls[i].type == "checkbox"){                
+                    currCtrlId = ctrls[i].id;       
+                    if(currCtrlId != "chkCP4SF_Tag_All"){       
+                        if(currCtrlId.indexOf("chkCP4SF_Tag_") == 0){                           
+                            if(CheckAll.checked){
+                                ctrls[i].checked = true;
+                            }else{
+                                ctrls[i].checked = false;
+                            }
+                        }
+                    }                   
+                }               
+            } 
+        }    
+     }
+</script>
+
+	
+
+		<script language="javascript">
+
+     
+     var sPrivProjBtnOn = '{!PrivateProjectsOn}';
+     var sGoToPrivProjMethName = '{!$RemoteAction.MyViewsController.RedirectToNewPrivateProject}';
+         
+    function ShowOpps(ObjectID) {
+        Visualforce.remoting.Manager.invokeAction("{!$RemoteAction.CPProjectOppCounts.GetRelatedOppsForProject}", ObjectID, DisplayRelatedOpps)
+    }
+                
+     function DisplayRelatedOpps(sRelOppJS, event){ 
+       'use strict';
+       var arrRelOppJS = sRelOppJS.split('|');
+       var CPProjectObjectID = arrRelOppJS[0];
+   
+       var divOverlay = j$('#div_' + CPProjectObjectID);
+       var rowPos = divOverlay.siblings('a').position();
+       var bottomLeft = rowPos.left;
+   
+       divOverlay.addClass('ui-dialog-shadow').html('<table cellpadding="2" cellspacing="2"><thead><tr><th style="text-align: left">Related opportunities</th></tr></thead><tbody></tbody></table>');
+       if(divOverlay.length > 0){
+          divOverlay.find('tbody').children().remove();
+          var arrRelOpps = arrRelOppJS[1].split(',');
+          for(var i=0; i<arrRelOpps.length; i++) {
+              divOverlay.find('tbody').append('<tr><td><a href="../' + arrRelOpps[i] + '">' + arrRelOpps[i+1] + '</a></td></tr>');
+              i = i+1;
+            }
+              divOverlay.css({
+                    position: 'absolute',
+                    left: bottomLeft,
+                    background: '#FFFFCC',
+                    border: '2px solid #000000',
+                    display: 'block'
+              }).mouseleave(function(){
+                      CloseDiv(CPProjectObjectID);
+                });
+       }
+    }
+    
+    
+    function CloseDiv(CPProjectObjectID){
+       'use strict';
+       j$('#div_' + CPProjectObjectID).css('display', 'none');        
+    }    
+   
+    function GeoJSCall(){         
+        var divSelCPTerritories = document.getElementById("divSelCPTerritories");
+        var TerritoryId = '';
+        if(divSelCPTerritories){
+            var selCPTerritories = divSelCPTerritories.childNodes[0];
+            if(selCPTerritories){
+                TerritoryId = selCPTerritories.options[selCPTerritories.selectedIndex].value;
+            }
+        }
+       Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPProjectsFiltered.GetStatesNumberForEntireTerritory}', TerritoryId, CreateStateHTMLReturn); 
+     }
+     
+     //showHide newPrivateProject button
+     j$(document).ready(function () {
+        'use strict';    
+        showHidePrivProjBtn(); //this function is the CPNavigation.js
+        //change style of "Projects By Territory" link
+        setSelectedTab(j$, "Projects By Territory");  
+     });
+     
+</script>
+		<br />
+		<apex:pageBlock >
+			<table border="0">
+				<tr>
+					<td style="background-color: #EEEEEE; background-image: none;"
+						nowrap="true">
+						<table border="0">
+							<tr>
+								<td><b>CP Territory&nbsp;</b></td>
+								<td>
+									<div id="divSelCPTerritories">
+										<apex:selectList size="1" title="CP Territory User"
+											multiselect="false" id="selCPTerritories"
+											value="{!CPTerritoryId}">
+											<apex:selectOptions value="{!TerritoriesForUser}" />
+										</apex:selectList>
+										<apex:commandButton id="btnLoadTerritory"
+											onclick="SetTerritoryName();" action="{!LoadTerritory}"
+											reRender="pbProjects, theToolbar, pbJSToRender, PagingLinks, TagAssignment"
+											value="Load" />
+
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input
+											type="button" title="New Private Project" id="btnNewPrivProj"
+											class="btn" onclick="goToNewPrivProj()"
+											value="New Private Project" />
+
+
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="50px">&nbsp;</td>
+					<td style="background-color: #EEEEEE; background-image: none;"
+						valign="bottom" nowrap="true"><apex:outputPanel id="theToolbar"
+							style="background-color:#EEEEEE; background-image:none">
+							<apex:outputPanel rendered="{!hasRecords}">
+								<div class="rolodex" id="divAlphabetLinks"
+									style="background-color: #EEEEEE; background-image: none">
+									<a href="javascript: SortByLetter('A');" class="listItem"
+										id="Sort_A"><span class="listItemPad">A</span></a> <a
+										href="javascript: SortByLetter('B');" class="listItem"
+										id="Sort_B"><span class="listItemPad">B</span></a> <a
+										href="javascript: SortByLetter('C');" class="listItem"
+										id="Sort_C"><span class="listItemPad">C</span></a> <a
+										href="javascript: SortByLetter('D');" class="listItem"
+										id="Sort_D"><span class="listItemPad">D</span></a> <a
+										href="javascript: SortByLetter('E');" class="listItem"
+										id="Sort_E"><span class="listItemPad">E</span></a> <a
+										href="javascript: SortByLetter('F');" class="listItem"
+										id="Sort_F"><span class="listItemPad">F</span></a> <a
+										href="javascript: SortByLetter('G');" class="listItem"
+										id="Sort_G"><span class="listItemPad">G</span></a> <a
+										href="javascript: SortByLetter('H');" class="listItem"
+										id="Sort_H"><span class="listItemPad">H</span></a> <a
+										href="javascript: SortByLetter('I');" class="listItem"
+										id="Sort_I"><span class="listItemPad">I</span></a> <a
+										href="javascript: SortByLetter('J');" class="listItem"
+										id="Sort_J"><span class="listItemPad">J</span></a> <a
+										href="javascript: SortByLetter('K');" class="listItem"
+										id="Sort_K"><span class="listItemPad">K</span></a> <a
+										href="javascript: SortByLetter('L');" class="listItem"
+										id="Sort_L"><span class="listItemPad">L</span></a> <a
+										href="javascript: SortByLetter('M');" class="listItem"
+										id="Sort_M"><span class="listItemPad">M</span></a> <a
+										href="javascript: SortByLetter('N');" class="listItem"
+										id="Sort_N"><span class="listItemPad">N</span></a> <a
+										href="javascript: SortByLetter('O');" class="listItem"
+										id="Sort_O"><span class="listItemPad">O</span></a> <a
+										href="javascript: SortByLetter('P');" class="listItem"
+										id="Sort_P"><span class="listItemPad">P</span></a> <a
+										href="javascript: SortByLetter('Q');" class="listItem"
+										id="Sort_Q"><span class="listItemPad">Q</span></a> <a
+										href="javascript: SortByLetter('R');" class="listItem"
+										id="Sort_R"><span class="listItemPad">R</span></a> <a
+										href="javascript: SortByLetter('S');" class="listItem"
+										id="Sort_S"><span class="listItemPad">S</span></a> <a
+										href="javascript: SortByLetter('T');" class="listItem"
+										id="Sort_T"><span class="listItemPad">T</span></a> <a
+										href="javascript: SortByLetter('U');" class="listItem"
+										id="Sort_U"><span class="listItemPad">U</span></a> <a
+										href="javascript: SortByLetter('V');" class="listItem"
+										id="Sort_V"><span class="listItemPad">V</span></a> <a
+										href="javascript: SortByLetter('W');" class="listItem"
+										id="Sort_W"><span class="listItemPad">W</span></a> <a
+										href="javascript: SortByLetter('X');" class="listItem"
+										id="Sort_X"><span class="listItemPad">X</span></a> <a
+										href="javascript: SortByLetter('Y');" class="listItem"
+										id="Sort_Y"><span class="listItemPad">Y</span></a> <a
+										href="javascript: SortByLetter('Z');" class="listItem"
+										id="Sort_Z"><span class="listItemPad">Z</span></a> <a
+										href="javascript: SortByLetter('#');" class="listItem"
+										id="Sort_OTHER"><span class="listItemPad">Other</span></a> <a
+										href="javascript: SortByLetter('');" class="listItemLast"
+										id="Sort_ALL"><span class="listItemPad">All</span></a>
+								</div>
+							</apex:outputPanel>
+						</apex:outputPanel></td>
+					<td width="50px">&nbsp;</td>
+					<td valign="middle" nowrap="true"><apex:outputPanel id="PagingLinks">
+							<apex:commandLink styleClass="listItem" action="{!MoveFirst}"
+								rendered="{!hasPrevious}" rerender="pbProjects, PagingLinks">
+								<b>&lt;&lt;</b>
+								</apex:commandlink>
+                    &nbsp;
+                    <apex:commandLink styleClass="listItem"
+									action="{!MovePrevious}" rendered="{!hasPrevious}"
+									rerender="pbProjects, PagingLinks">
+									<b>&lt;&nbsp;Previous</b>
+									</apex:commandlink>
+                    &nbsp;
+                    <apex:commandLink styleClass="listItem"
+										action="{!MoveNext}" rendered="{!hasNext}"
+										rerender="pbProjects,PagingLinks">
+										<b>Next&nbsp;&gt;</b>
+										</apex:commandlink>
+                    &nbsp;
+                    <apex:commandLink styleClass="listItem"
+											action="{!MoveLast}" rendered="{!hasNext}"
+											rerender="pbProjects, PagingLinks">
+											<b>&gt;&gt;</b>
+											</apex:commandlink>
+						</apex:outputPanel></td>
+				</tr>
+				<tr>
+					<td colspan="5" align="left"><apex:outputPanel id="TagAssignment">
+							<apex:commandButton id="btnSaveTag"
+								value="Flag Projects for Deletion"
+								onClick="SaveTrackingForCPProjects(1);" rendered="{!hasRecords}" />
+						</apex:outputPanel></td>
+				</tr>
+			</table>
+		</apex:pageBlock>
+		<br />
+
+		<div id="divResults" style="display: none; width: 100%; border: 1px">
+			<apex:pageBlock >
+				<apex:pageBlockSection >
+					<apex:pageBlockSectionItem >
+						<div id="divCPGeo" style="background-color: #EEEEEE"></div>
+						<apex:PageBlockTable columns="{!numFields+3}"
+							value="{!PagingProjects}" var="rowItem" id="pbProjects">
+							<apex:facet name="header">{!TerritoryFilterDesc}{!TerritoryStateDesc}{!TerritoryCountyDesc}{!TerritoryZipDesc}</apex:facet>
+							<apex:column >
+								<apex:facet name="header">
+									<span title="Select/Deselect all"><input type="checkbox"
+										id="chkCP4SF_Tag_All"
+										onclick="SelectAllActionCheckBoxes(this);" /></span>
+								</apex:facet>
+								<input type="checkbox" id="chkCP4SF_Tag_{!rowItem.id}" />
+							</apex:column>
+							<apex:column >
+								<apex:facet name="header">Related Opps</apex:facet>
+								<a href="javascript: ShowOpps('{!rowItem.id}');"><span
+									title="{!mapRelOps[rowItem.id]} opportunities related to this project. Click to view opportunity name">{!if(mapRelOps[rowItem.id]=='0','',mapRelOps[rowItem.id]
+										+ ' Opp' + if(mapRelOps[rowItem.id]=='1','','s'))}</span></a>
+								<div id="div_{!rowItem.id}" style="postition: absolute"></div>
+							</apex:column>
+							<apex:column style="white-space: nowrap">
+								<apex:facet name="header">
+									<apex:commandLink action="{!doSuperSort}"
+										value="Project {!IF('name'==sortField,IF(previousSortField=='name','(asc)','(desc)'),'')}"
+										id="cmdSortBy_Name" reRender="pbProjects">
+										<apex:param value="name" name="sortField"
+											assignTo="{!sortField}"></apex:param>
+									</apex:commandLink>
+								</apex:facet>
+								<a class="goToLink" data-id="{!rowItem.Id}">{!rowItem['name']}</a>
+							</apex:column>
+							<apex:repeat value="{!AvailableFields}" var="colItem"
+								id="rptAvailFields">
+								<apex:column style="white-space: nowrap"
+									rendered="{!IF($ObjectType['CP_Project__c'].Fields[colItem].LocalName == 'Name','false',IF(ISNULL($ObjectType['CP_Project__c'].Fields[colItem]),'false','true'))}">
+									<apex:facet name="header">
+										<apex:commandLink action="{!doSuperSort}"
+											value="{!$ObjectType['CP_Project__c'].Fields[colItem].Label} {!IF($ObjectType['CP_Project__c'].Fields[colItem].LocalName==sortField,IF(previousSortField==$ObjectType['CP_Project__c'].Fields[colItem].LocalName,'(asc)','(desc)'),'')}"
+											id="cmdSortBy" reRender="pbProjects">
+											<apex:param value="{!$ObjectType['CP_Project__c'].Fields[colItem].LocalName}"
+												name="sortField" assignTo="{!sortField}"></apex:param>
+										</apex:commandLink>
+									</apex:facet>
+									<apex:outputField value="{!rowItem[colItem]}"></apex:outputField>
+								</apex:column>
+							</apex:repeat>
+						</apex:PageBlockTable>
+
+					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
+			</apex:pageBlock>
+		</div>
+		<apex:outputPanel id="pbJSToRender">
+			<script language="javascript">
+        GeoJSCall();
+    </script>
+		</apex:outputPanel>
+
+		<div id="divGetAction" style="display: none">
+			<input type="hidden" id="hdnSelGeographyValue" value="" /> <input
+				type="hidden" id="hdnSelGeographyDiv" value="" /> <input
+				type="hidden" id="hdnSelGeographyType" value="" />
+			<apex:commandLink id="btnGetGeographyAndFilter"
+				action="{!CreateJSForSelectedGeography}" value="go1"
+				reRender="pbProjects,pbJSToRender" />
+			<apex:commandLink id="btnFilter"
+				action="{!CreateJSForSelectedGeography}" value="go2"
+				reRender="pbProjects" />
+			<input type="hidden" id="hdnAlphabetSortLetter" value="" />
+
+		</div>
+		<br />
+		<c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false" />
+
+		<br />
+		<apex:actionFunction name="afDoFilter"
+			action="{!CreateJSForSelectedGeography}" reRender="pbProjects">
+			<apex:param name="selGeoValue" value="" />
+			<apex:param name="selGeoType" value="" />
+			<apex:param name="AlphabetSortLetter" value="" />
+		</apex:actionFunction>
+	</apex:form>
+</apex:page>

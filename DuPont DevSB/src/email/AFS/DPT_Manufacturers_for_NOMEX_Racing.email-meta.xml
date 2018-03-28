@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Manufacturers for DuPont™ NOMEX® Racing</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS - DuPont™ NOMEX® Manufacturers for Racing</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Manufacturers for Nomex® Racing</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.FirstName} {!Lead.LastName},
+
+Thank you for your interest in Nomex®. 
+ 
+DuPont makes the Nomex® fiber. We have customers that take our fiber to manufacture for Nomex® Racing.  Below is the web address of a list of companies that manufacture for Nomex® Racing. (To view the web address, cut and paste the web address below into your browser.)
+ 
+http://www2.dupont.com/NOWApp/DPPRequestGateway/sales/dl/?command=VCDealerByProductStates&amp;prodId=10&amp;prodNum=10
+ 
+DuPont Protection Soltuions
+ 
+ 
+ 
+This source list is designed to present a representative group of suppliers. It may not necessarily include all the companies selling or making these products and is subject to revision at any time. It is not an endorsement of any specific manufacturer.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

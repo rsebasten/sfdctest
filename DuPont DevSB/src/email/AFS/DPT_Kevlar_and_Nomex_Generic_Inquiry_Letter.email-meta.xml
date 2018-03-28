@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DuPont™ Used to answer leads w/ no company name, generic email address, students, teachers and edu addresses</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS - DuPont™ Kevlar® and Nomex® Generic Inquiry Letter</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Kevlar® and Nomex®</subject>
+    <textOnly>Dear {!Lead.FirstName}{!Lead.LastName},
+
+Thank you for your interest in Nomex® and Kevlar® products. Due to a high volume of inquiries, we are unable to respond to you on a personal level.
+
+For information on Kevlar®, please refer to the following web addresses:
+
+· http://www.dupont.com/products-and-services/fabrics-fibers-nonwovens/fibers/brands/kevlar.html
+
+· http://www2.dupont.com/Kevlar/en_US/assets/downloads/KEVLAR_Technical_Guide.pdf
+
+· http://www2.dupont.com/Personal_Protection/en_GB/technical-information/technical-information-kevlar.html
+
+For information on Nomex®, please refer to the following web addresses:
+
+·  http://www.dupont.com/products-and-services/personal-protective-equipment/thermal-protective/brands/nomex.html
+
+· http://www2.dupont.com/Personal_Protection/en_GB/technical-information/technical-information-nomex.html
+
+· http://www.dupont.com/search.html?ss=&amp;site=default_collection&amp;output=xml_no_dtd&amp;q=trademark+and+Licensong&amp;SiteSearch_SiteSearch2Button=
+
+· http://www2.dupont.com/Personal_Protection/en_US/assets/downloads/nomex/Nomex_Technical_Guide.pdf
+
+· http://www2.dupont.com/Energy_Solutions/en_US/products/paper/index.html
+
+
+For information on Trademark, please refer to the following web address:
+
+· http://www.dupont.com/products-and-services/fabrics-fibers-nonwovens/fibers/articles/trademarks-licensing.html
+
+For information on where to buy product, please refer to the following web addresses:
+
+· http://www2.dupont.com/NOWApp/DPPRequestGateway/sales/dl/?command=VCDealerByProduct
+
+For a MSDS for Nomex® and Kevlar®, please refer to the following web address:
+
+·  http://www.dupont.com  look in bottom right side of the web page.  There will be an MSDS finder.
+
+For information on other DuPont Products, please refer to the following web address:
+
+· http://duponttools.force.com/ppf?lang=en_US&amp;country=USA&amp;level0=Categories
+
+DuPont Protection Solutions</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

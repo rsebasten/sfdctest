@@ -1,0 +1,43 @@
+++++++++++++CASE REPORT +++++++++++++
+
+CASE ID: {!Case.CaseNumber} 
+ORDER NUMBER: {!Case.Order_Number__c} 
+DELIVERY NUMBER: {!Case.Delivery__c} 
+RETURN ORDER NUMBER: {!Case.Return_Order__c}
+DATE CREATED: {!Case.CreatedDate} 
+TYPE OF COMPLAINT: {!Case.Case_SubType__c}
+STATUS: {!Case.Status} 
+IMPACT: {!Case.Impact__c} 
+
+SEVERITY: {!Case.Severity__c} 
+REGION: {!Case.Region__c} 
+
+CUSTOMER COMPANY: {!Case.Account} 
+SHIP-TO : {!Account.ShippingCity}, {!Account.ShippingState}, {!Account.Country__c}
+SHIPMENT ID: {!Case.Shipment_ID__c}
+SHIP POINT: {!Case.Ship_Point__c} 
+
+CARRIER: {!Case.Carrier_Name__c} 
+CARRIER REFERENCE: {!Case.Carrier_Reference__c} 
+
+MATERIAL: {!Case.Material__c} 
+COST: {!Case.Total_Cost__c} 
+CREDIT INVOICE NUMBER: {!Case.Credit_Invoice_ID__c}
+CREDIT ISSUED DATE: {!Case.Credit_Issued_Date__c}
+CREDIT AMOUNT: {!Case.Credit_Amount__c}
+
+INVESTIGATION DATE: {!Case.Investigation_Date__c} 
+INVESTIGATED BY: {!Case.Investigated_By__c} 
+INVESTIGATED SITE: {!Case.Investigated_Site__c} 
+
+REASON: {!Case.Reason} 
+SUB-REASON: {!Case.Subreason1__c} 
+
+BATCH INFORMATION : 
+___QUANTITY: {!Case.Qty__c} 
+___BATCH NUMBER: {!Case.Batch_Number__c} 
+___CONTAINER NUMBER: {!Case.00N4100000SIpap} 
+
+PROBLEM DESCRIPTION:   {!Case.Problem_Description__c} 
+
+RESOLUTION DESCRIPTION: {!Case.Resolution_Description__c}

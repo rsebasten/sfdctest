@@ -1,0 +1,9 @@
+<apex:page standardController="ConstructionPts__CP_Project__c" extensions="ConstructionPts.CPProjectControllerExtension"> 
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.css')}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+<apex:includeScript value="/support/console/30.0/integration.js"/>
+<apex:includeScript value="{!URLFOR($Resource.ConstructionPts__jquerynew, 'js/CPNavigation.js')}"/>
+
+    <c:CPEmailAFriend rendered="{!IF(ShowEmailAFriend,true,false)}" />  
+
+</apex:page>

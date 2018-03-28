@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>SALUTATION</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>CADDRESS2_STREET</field>
+    </columns>
+    <columns>
+        <field>CADDRESS2_CITY</field>
+    </columns>
+    <columns>
+        <field>CADDRESS2_ZIP</field>
+    </columns>
+    <columns>
+        <field>CADDRESS2_COUNTRY</field>
+    </columns>
+    <columns>
+        <field>CPHONE1</field>
+    </columns>
+    <columns>
+        <field>PHONE3</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Contact.Prefered_Language__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <filter>
+        <booleanFilter>6 AND (1 OR 2 OR 3 OR 4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>CREATED_BY</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Natalie Teugels</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_BY</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Séverine Champeaux</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_BY</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Vincent Requier</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_BY</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Elisabeth Naalden</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_BY</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Caroline Janssens</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DESCRIPTION</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Board</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Surf BNL FF Mateiral per contact</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactActivity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

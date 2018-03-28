@@ -1,0 +1,233 @@
+<apex:page showHeader="false" standardController="Entitlement" extensions="ctrlBINA_EnvelopesRegistration_WB" action="{!initScript}">
+    <head>
+<apex:image url="{!$Resource.Tyvekdupontlogo}"  width="1400" height="150"/>
+
+<style type="text/css">
+.span{
+color:red;
+font-size:x-large;
+vertical-align:top;
+margin-left:0px;
+padding-left:0px;
+padding-top:0px !important;
+
+}
+
+.scriptHeader{
+Float:left; !important
+font-size:98% !important;
+font-weight:bold !important;
+}
+
+.labelCol{
+font-size:98% !important;
+font-weight:bold !important;
+color: #000 !important;
+font-family: Arial,Helvetica,sans-serif;
+padding-left:0px !important;
+padding-right:0px !important;
+}
+.requiredInput .requiredBlock {
+background-color: #C00;
+position: absolute;
+left: -4px;
+width: 3px;
+top: 1px;
+bottom: 1px;
+}
+.entitlementTab .tertiaryPalette, .individualPalette .entitlementBlock .tertiaryPalette, .layoutEdit .individualPalette .entitlementBlock .tertiaryPalette {
+background-color: #881F01;
+border-color: #881F01;
+}
+.bPageBlock .detailList tr td, .bPageBlock .detailList tr th, .hoverDetail .bPageBlock .detailList tr td, .hoverDetail .bPageBlock .detailList tr th {
+ border-bottom: 0px !important; 
+}
+.btn {
+padding : 5px 3px;
+border : #3f3f3f solid 1px !important ;
+background-color : #F2F2F2 !important ;
+color : #191919 !important ;
+font-weight : bold;
+font-size : 12px !important ;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;
+
+}
+.dataCol{
+padding-top: 2px !important;
+padding-bottom: 2px !important;
+padding-left: 0px !important;
+}
+.data2Col{
+padding-left: 0px !important;
+}
+</style>
+</head>
+<body>
+  <apex:outputPanel >
+<apex:pageMessages ></apex:pageMessages><!--
+<apex:outputText value="Please provide confirmation for both items and then click Save" rendered="{!renderedcheckbox}" styleClass="span"> 
+   </apex:outputText>-->
+ </apex:outputPanel>
+    
+     <apex:form >
+         
+ <apex:pageBlock id="Information">
+  <apex:pageBlockSection title="General Information" columns="2" >
+                 <span class="span" style="margin-left:350px">*</span> = Required Information
+                 <apex:outputLabel ></apex:outputLabel>
+            <apex:outputText label="Project Name" style="padding-left:75px !important"><span class="span">*</span>&nbsp;
+                 <apex:inputField label="Project Name" value="{!entit.name}" required="false">
+                </apex:inputField></apex:outputText>
+                 
+           <apex:outputText label="Registration Address"><span class="span">*</span>&nbsp; 
+                <apex:inputField value="{!entit.Registration_Address__c}" >
+                </apex:inputField>
+           </apex:outputText>     
+         <apex:outputText label="Warranty Type"  ><span class="span">*</span>&nbsp;  
+                <apex:outputField value="{!entit.Type}">
+                </apex:outputField>
+           </apex:outputText>   
+           <apex:outputText label="Registration City" ><span class="span">*</span>&nbsp;   
+                <apex:inputField value="{!entit.Registration_City__c}" >  
+                </apex:inputField>
+           </apex:outputText>
+           <apex:outputText label="Account"><span class="span">*</span>&nbsp;
+                <apex:outputField label="" value="{!accName.name}"/>
+           </apex:outputText>
+           <apex:outputText label="Registration Postal Code" ><span class="span">*</span>&nbsp;   
+               <apex:inputField value="{!entit.Registration_Postal_Code__c}" >         
+                </apex:inputField>
+           </apex:outputText>
+           <apex:outputText label="Application" ><span class="span">*</span>&nbsp;
+                <apex:inputField value="{!entit.Application__c}"  >
+                <apex:actionSupport event="onchange" action="{!productselection}" >
+                </apex:actionsupport>
+                </apex:inputfield>
+           </apex:outputText>           
+           
+           <apex:outputText label="Registration Country" ><span class="span">*</span>&nbsp;
+                <apex:inputField value="{!entit.Registration_Country1__c}" >
+                </apex:inputField>
+           </apex:outputText>
+           <apex:outputText label="Application Type" ><span class="span">*</span>&nbsp;
+                <apex:inputField value="{!entit.Application_Type__c}" >
+                </apex:inputField>
+           </apex:outputText>
+           
+           <apex:outputText label="Registration State/Province"> <span class="span">*</span>&nbsp;   
+                <apex:inputField value="{!entit.Registration_State_Province__c}" >
+                </apex:inputField> 
+           </apex:outputText>
+           
+            <apex:outputText label="Stage" ><span class="span">*</span>&nbsp;
+                <apex:inputField value="{!entit.Stage__c}" >
+                </apex:inputField>
+           </apex:outputText>
+             
+  </apex:pageBlockSection>
+     
+    
+     <apex:pageBlockSection title="Certified Installer Information" rendered="{!script2Rendered}">
+         <apex:outputPanel style="float:left; padding-left:100px !important;" styleClass="scriptHeader">
+         <c:SiteScript script="{!script2}" showRequiredInfo="false"/>
+       </apex:outputPanel>
+  </apex:pageBlockSection>
+     
+     <apex:pageBlockSection title="Installer Information" rendered="{!script2Rendered_WB}">
+         <apex:outputPanel style="float:left; padding-left:160px !important;" styleClass="scriptHeader">
+         <c:SiteScript script="{!script2}" showRequiredInfo="false"/>
+       </apex:outputPanel>
+  </apex:pageBlockSection>
+     
+  <apex:pageBlockSection title="Related Contact Information" rendered="{!script3Rendered}">
+  <apex:outputPanel styleClass="scriptHeader" style="padding-left:62px; !important">
+  <c:SiteScript script="{!script3}" showRequiredInfo="false" /> 
+  </apex:outputPanel>
+  </apex:pageBlockSection>
+  
+  <apex:pageBlocksection title="Project Information" columns="1" >
+  <apex:outputLabel rendered="{!script1Rendered}">
+  <span style="margin-left:320px;color:brown;" ><h2>Note: Please use CTRL key or SHIFT key to select multiple values in the fields</h2></span>
+  </apex:outputLabel>
+  <apex:outputPanel rendered="{!script1Rendered}" styleClass="scriptHeader" style="padding-left:35px; !important" >
+       <c:SiteScript script="{!script1}" showRequiredInfo="false"/> 
+    </apex:outputPanel>
+      <!--
+      <apex:outputPanel rendered="{!script5Rendered}" styleClass="scriptHeader" style=" float:left ;padding-left:34px !important;">
+        <c:SiteScript script="{!script5}" showRequiredInfo="false" /> 
+   </apex:outputPanel>  -->
+    <apex:outputPanel style=" padding-left:169px !important;font-weight:bold;">
+      <apex:outputLabel value="Building Type"><span class="span"></span>&nbsp;
+                 <apex:inputField value="{!entit.Building_Type__c}"/>
+             </apex:outputLabel>
+              </apex:outputPanel>
+  </apex:pageBlocksection>
+     
+     <apex:pageBlockSection title="Warranty Dates" columns="1" >
+  <apex:outputPanel rendered="{!script6Rendered}" styleClass="scriptHeader" style="padding-left:7px; !important">
+         <c:SiteScript script="{!script6}" showRequiredInfo="false"/>
+     </apex:outputPanel>
+      <apex:outputPanel style=" padding-left:89px !important;font-weight:bold;">
+         <apex:outputLabel value="Date of Product Purchased"><span class="span">*</span>&nbsp;
+       <apex:inputfield value="{!entit.startdate}"></apex:inputfield>
+       <!-- <c:jqDatePicker pickDateField="{!entit.startdate}" value="{!entit.startdate}" />-->
+       </apex:outputLabel>
+       </apex:outputPanel>
+      </apex:pageblockSection>
+  <apex:pageBlockSection title="Estimated Product Exposure Time(in Days)"   columns="1" id="Product_Section" >
+               
+                  
+     <apex:pageBlockSectionItem rendered="{!script4Rendered}">
+    <apex:outputPanel styleClass="scriptHeader" style="padding-left:1px">
+     <c:SiteScript script="{!script4}" showRequiredInfo="false"/>
+     </apex:outputPanel>
+     </apex:pageBlockSectionItem> 
+     
+      <apex:outputPanel style="padding-left:218px !important;">   
+     <apex:outputlabel value="Lot # " style="padding-right:25px !important;font-size:98% !important;font-weight:bold !important; " rendered="{!skuRendered}"><span class="span"></span>&nbsp;
+     <apex:inputField label="SKU Lot" value="{!entit.Lot_Nb__c}" style="margin-left:9px;"/>
+     </apex:outputlabel>
+     </apex:outputPanel>   
+     <apex:outputPanel rendered="{!multiProductRendered}" id="multipicklist">
+               
+               <div style="Float:left; padding-left:25px; ">
+               <c:BI_NA_MultiSelectMaterials leftLabel="Available Materials"
+                leftOption="{!AllMaterials}"
+                rightLabel="Selected Materials"
+                rightOption="{!SelectedMaterials}"
+                size="5"
+                width="280px" helptext="hello"/> 
+                </div>
+              
+    </apex:outputPanel>
+                <apex:outputpanel rendered="{!singleProductRendered}" id="singlepicklist">
+                <apex:outputlabel value="Product" style="important;font-weight:bold !important; padding-left:205px !important; ">&nbsp;&nbsp;&nbsp;
+                <apex:selectList value="{!entit.Product_Answer1__c}" multiselect="false" size="1" label="product"  style="width:250px !important;">
+                <apex:selectOptions id="product" value="{!AllMaterials}" /> 
+                </apex:selectList>
+                </apex:outputlabel>
+                </apex:outputpanel>
+   </apex:pageBlockSection>
+  
+  
+ <apex:outputPanel rendered="{!checkBoxRendered}" >
+ <br/>
+ <br/>
+ <apex:inputcheckbox value="{!checkBox1}" />&nbsp; <h3>I confirm that the required DuPont Weatherization Products for this Warranty Registration were observed being used for this installation</h3><br/><br/>
+ <apex:inputcheckbox value="{!checkBox2}"/>&nbsp; <h3>An Observation Check-List was completed and a copy is retained at Distributor</h3><br/><br/>
+ </apex:outputPanel>
+     
+     <apex:outputPanel rendered="{!checkBox3Rendered}" >
+    <apex:inputCheckbox value="{!checkBox3}"/>&nbsp; <h3>I confirm that the required drainage plane between the DuPont Fluid Applied products and the EIFS foam was observed and maintained during the installation</h3>   
+     </apex:outputPanel>
+ <apex:pageBlockButtons location="bottom">
+   
+           <apex:commandButton value="Save Entitlement" action="{!saveEnt}"  disabled="False" style="margin-left:180px;"/> 
+           <apex:commandButton value="Cancel" action="{!cancel}"/>
+          
+  </apex:pageBlockButtons>
+     
+   </apex:pageBlock>
+ </apex:form>    
+  </body>
+ </apex:page>

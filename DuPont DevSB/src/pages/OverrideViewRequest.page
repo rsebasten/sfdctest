@@ -1,0 +1,6 @@
+<apex:page standardController="Request__c" 
+    extensions="ctrlOverrideView" action="{!init}">
+    <!--KT [11072017]: To remove primaryReason__c reference-->
+    <!--<apex:outputField value="{!Request__c.primaryReason__c}"/>-->
+    <apex:outputField value="{!Request__c.primarySegment__c}"/>
+    </apex:page>

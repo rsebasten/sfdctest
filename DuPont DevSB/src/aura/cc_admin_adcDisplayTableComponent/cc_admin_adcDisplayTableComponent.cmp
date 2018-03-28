@@ -1,0 +1,126 @@
+<aura:component access="global" description="CloudCraze ADC Display Table" implements="force:hasRecordId" controller="ccrz.cc_ctrl_admin_adcDisplayTableComponent">
+
+    <aura:attribute name="primaryAttribute" type="Object" default="null" />
+    <aura:attribute name="secondaryAttribute" type="Object" default="null" />
+    <aura:attribute name="tertiaryAttribute" type="Object" default="null" />
+
+    <aura:attribute name="primaryAttributeOptions" type="List" default="null" />
+    <aura:attribute name="secondaryAttributeOptions" type="List" default="null" />
+    <aura:attribute name="tertiaryAttributeOptions" type="List" default="null" />
+
+    <aura:attribute name="currentAttributes" type="List" default="null" />
+    <aura:attribute name="errors" type="List" />
+
+    <aura:attribute name="product" type="ccrz__E_Product__c" />
+    <aura:attribute name="pricingString" type="string"/>
+
+    <aura:attribute name="jsonDelimiter" type="String" default="null" />
+    <aura:attribute name="jsonApmap" type="String" default="null" />
+    <aura:attribute name="jsonType" type="String" default="null" />
+    <aura:attribute name="jsonPrice" type="String" default="null" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="opacities" type="Integer[]" default="[1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]"/>
+
+
+	<div class="container">
+        <table aura:id="stencilTable" class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <aura:iteration items="{! v.opacities }" var="opacity">
+                <tr style="{! 'opacity: ' + opacity }">
+                    <td><div class="stencil"/></td>
+                    <td><div class="stencil"/></td>
+                    <td><div class="stencil"/></td>
+                </tr>
+            </aura:iteration>
+        </table>
+        <div aura:id="noAttributeMessage" class="slds-hide">
+          This product has no attributes.
+        </div>
+        <table aura:id="attributeTable" class="slds-table slds-table--bordered slds-table--cell-buffer slds-hide">
+            <thead>
+                <tr>
+                    <aura:if isTrue="{!v.primaryAttribute != null}">
+                        <th scope="col">{!v.primaryAttribute.name}</th>
+                    </aura:if>
+                    <aura:if isTrue="{!v.secondaryAttribute != null}">
+                        <th scope="col">{!v.secondaryAttribute.name}</th>
+                    </aura:if>
+                    <aura:if isTrue="{!v.tertiaryAttribute != null}">
+                        <th scope="col">{!v.tertiaryAttribute.name}</th>
+                    </aura:if>
+                    <th scope="col" class="priceCol">Price</th>
+                    <th scope="col" class="buttonCol"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <aura:if isTrue="{!v.primaryAttribute != null}">
+                        <td>
+                            <lightning:select aura:id="primarySelect" label="Choose" name="primarySelect" required="true" class="attributeSelect">
+                                <option value="" text="Select an attribute"></option>
+                                <aura:iteration items="{!v.primaryAttributeOptions}" var="item">
+                                    <option value="{!item.ID}" text="{!item.name}"></option>
+                                </aura:iteration>
+                            </lightning:select>
+                            <span class="customErrors slds-form-element__help"><aura:iteration items="{!v.errors}" var="error">{!error}</aura:iteration></span>
+                        </td>
+                    </aura:if>
+                    <aura:if isTrue="{!v.secondaryAttribute != null}">
+                        <td>
+                            <lightning:select aura:id="secondarySelect" label="Choose" name="secondarySelect" required="true" class="attributeSelect">
+                                <option value="" text="Select an attribute"></option>
+                                <aura:iteration items="{!v.secondaryAttributeOptions}" var="item">
+                                    <option value="{!item.ID}" text="{!item.name}"></option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </td>
+                    </aura:if>
+                    <aura:if isTrue="{!v.tertiaryAttribute != null}">
+                        <td>
+                            <lightning:select aura:id="tertiarySelect" label="Choose" name="tertiarySelect" required="true" class="attributeSelect">
+                                <option value="" text="Select an attribute"></option>
+                                <aura:iteration items="{!v.tertiaryAttributeOptions}" var="item">
+                                    <option value="{!item.ID}" text="{!item.name}"></option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </td>
+                    </aura:if>
+                    <td><ui:inputCurrency focus="{!c.selectText}" aura:id="price" value="0" class="slds-input"/></td>
+                    <td>
+                        <lightning:button variant="brand" label="Add" onclick="{! c.handleSaveNewRow }" />
+                        <lightning:button variant="brand" label="Clear" onclick="{! c.handleClearNewRow }" />
+                    </td>
+                </tr>
+                <aura:iteration items="{!v.currentAttributes}" var="item" indexVar="idx">
+                    <tr>
+                        <aura:if isTrue="{!v.primaryAttribute != null}">
+                            <td>{!item.primary.name}</td>
+                        </aura:if>
+                        <aura:if isTrue="{!v.secondaryAttribute != null}">
+                            <td>{!item.secondary.name}</td>
+                        </aura:if>
+                        <aura:if isTrue="{!v.tertiaryAttribute != null}">
+                            <td>{!item.tertiary.name}</td>
+                        </aura:if>
+                        <td class="price">
+                            <ui:outputCurrency class="priceDisplay" value="{!item.price}"/>
+                            <span class="priceEditWrapper slds-hide" data-index="{!idx}"><ui:inputCurrency focus="{!c.selectText}" value="{!item.price}" class="priceEdit slds-input" /></span>
+                        </td>
+                        <td class="buttonRow">
+                            <a href="#" onclick="{!c.handleEditClick}">Edit</a> | <a href="#" onclick="{!c.handleDeleteClick}">Delete</a>
+                        </td>
+                        <td class="deleteConfirm slds-hide">
+                            Confirm: <a href="#" onclick="{!c.handleConfirmDelete}" data-index="{!idx}">Delete</a> | <a href="#" onclick="{!c.handleCancelDelete}">Cancel</a>
+                        </td>
+                        <td class="editRow slds-hide">
+                            <lightning:button variant="brand" label="Save" onclick="{! c.handleSaveRow }" />
+                        	<lightning:button variant="brand" label="Cancel" onclick="{! c.handleCancelRow }" />
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+
+        </table>
+    </div>
+
+</aura:component>

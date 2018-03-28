@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Account</field>
+    </columns>
+    <columns>
+        <field>Case$Company__c</field>
+    </columns>
+    <columns>
+        <field>Case$Entitlement</field>
+    </columns>
+    <columns>
+        <field>Case$Related_Account__c</field>
+    </columns>
+    <columns>
+        <field>Case$Product_Category__c</field>
+    </columns>
+    <columns>
+        <field>Case$Installation_Date__c</field>
+    </columns>
+    <columns>
+        <field>Case$Closing_Reason__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Case$RecordType</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Case.BI_NA_Surfaces_Case_freeze</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Closing_Reason__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>No Action</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Admin Report - August</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_or_without_Case_Material_and_Product__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Case$LastModifiedDate</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

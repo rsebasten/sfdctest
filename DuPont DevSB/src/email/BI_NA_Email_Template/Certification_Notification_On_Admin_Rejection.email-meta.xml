@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Certification-Notification On Admin Rejection</name>
+    <style>none</style>
+    <subject>Notification To The Trainer/Requestor</subject>
+    <textOnly>{!Qualification__c.CreatedBy},
+
+Please note that the Nomination for Account &quot;{!Qualification__c.Account_Name__c}&quot;  is Rejected by DuPont Admin.Please provide the required  information as mentioned in Nomination Record
+
+Click on this link  to access account. Please contact DuPont Admin if you have questions.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

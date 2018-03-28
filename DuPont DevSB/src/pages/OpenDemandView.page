@@ -1,0 +1,46 @@
+<apex:page standardController="Account" extensions="ctrlOpenDemandView" tabstyle="Demand__c" >
+    <head>
+        <apex:includeScript value="{!URLFOR($Resource.Jquery_1_8_11, 'js/jquery-1.5.1.min.js')}" /><!-- <AB20140926> included JQuery to set the related list anchor tags which are generated Dynamically with target value as _Parent -->
+        <apex:includeScript value="{!URLFOR($Resource.jquery_tools_min_1_2_7)}" /> 
+    </head>
+    
+    <apex:pageBlock tabStyle="demand__c" rendered="{! !isDemandListEmpty}">
+        
+        <table style='width:100%'>
+            <tr >
+                <th style="background:#f2f3f3;border-width: 0 0 1px 0px;border-color:#e0e3e5;font-size:.9em;font-weight:bold;padding:5px 2px 4px 5px">Name</th>
+                <th style="background:#f2f3f3;border-width: 0 0 1px 0px;border-color:#e0e3e5;font-size:.9em;font-weight:bold;padding:5px 2px 4px 5px" >Demand View</th>
+            </tr>
+            
+            <apex:repeat value="{!demandObj}" var="demand">
+                <tr style="background:#ffffff">
+                    <td  class=" dataCell" style="background:#ffffff;border-width: 0 0 1px 0px;border-color:#e0e3e5;padding:5px 2px 4px 5px">{!demand.Name}</td>
+                    <td   class=" dataCell" style="background:#ffffff;border-width: 0 0 1px 0px;border-color:#e0e3e5;padding:5px 2px 4px 5px"><a href="/{!if(partner!=true,'apex','BuildingInnovationPartnerCommunity')}/DemandView?id={!demand.id}&retURL=/{!accountObj[0].id}"  target='_parent'>Open Demand View</a></td>
+                </tr>
+            </apex:repeat>
+        </table>
+    </apex:pageBlock>
+    
+    <div id='divRelatedList'  ><!-- <AB20140918> brought the div out of the filter criteria to show custom message if the list is empty -->
+        <apex:relatedList id="demandRL" list="Demand__r" rendered="{! partner!=true}"  />                
+    </div>
+    <table width="100%" style="background:#FFFFFF;" >
+        <tr style="background:#FFFFFF">
+            <td style="background:#FFFFFF">
+                <apex:outputText style="background:#FFFFFF" rendered="{! isDemandListEmpty}">
+                    <i>
+                        No Demand to display. Either, you don't have permission or Demand List is empty. Please contact Administrator.   
+                    </i>
+                </apex:outputText>
+            </td>
+        </tr>
+    </table>
+    <script>
+    if({! isDemandListEmpty}){
+        document.body.className = "Demo";   
+    }
+    
+    $( '#divRelatedList a' ).attr('target','_parent');//<AB20140926> included JQuery to set the related list anchor tags which are generated Dynamically with target value as _Parent
+    </script>      
+    
+</apex:page>

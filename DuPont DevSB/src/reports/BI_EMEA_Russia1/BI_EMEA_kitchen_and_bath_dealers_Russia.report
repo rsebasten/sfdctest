@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Application_2__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT_RECORDTYPE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.ConstructionEMEA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>RUSSIAN FEDERATION</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Product_2__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>includes</operator>
+            <value>Montelli</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>EMAIL</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,x@x.com</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Contact_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Marketing Automation-On Hold</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Application_2__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Bath,Bath other,Kitchen,Kitchen worktop</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BI-EMEA kitchen and bath dealers: Russia</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,4 @@
+<apex:page standardController="Opportunity" 
+	extensions="ctrlOverrideView" action="{!init}">
+	<apex:outputField value="{!Opportunity.primarySegment__c}"/>
+	</apex:page>

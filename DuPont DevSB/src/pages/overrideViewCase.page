@@ -1,0 +1,4 @@
+<apex:page standardController="Case"  extensions="ctrlOverrideView" action="{!init}">
+    <apex:outputField value="{!Case.primarySegment__c}"/>
+    <apex:outputField value="{!Case.primaryReason__c}"/>
+    </apex:page>

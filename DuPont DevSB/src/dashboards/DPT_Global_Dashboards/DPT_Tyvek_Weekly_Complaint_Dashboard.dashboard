@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>These are weekly complaints where the week is the previous week starting with Sunday and ending with Saturday.
+You can click on any graph to take you to the report that this data is generated from. 
+You can extract to excel.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATEONLY</groupingColumn>
+            <groupingColumn>Case.Owning_Organization__c</groupingColumn>
+            <header>Tyvek Richmond Product Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_TVK_RIC_Prod_Complaints_for_Last_wee</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Week by Segment</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>ACCOUNT.NAME</groupingColumn>
+            <groupingColumn>Case.Owning_Organization__c</groupingColumn>
+            <header>Tyvek Richmond Product Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPt_TVK_RIC_Prod_Cmplnts_LstWek_Seg_Cust</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Week by Segment by Cust</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>ACCOUNT.NAME</groupingColumn>
+            <groupingColumn>Case.fReason_Level_1__c</groupingColumn>
+            <header>Tyvek Richmond Product Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_TVK_RIC_PROD_Cmplnts_LstWk_Cus_Reas</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Week by Cust by Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Case.Owning_Organization__c</groupingColumn>
+            <groupingColumn>Case.fReason_Level_1__c</groupingColumn>
+            <header>Tyvek Richmond Product Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_TVK_RIC_Prod_Cmplnts_LstWk_Seg_Reas</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Week by Segment by Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>wendy.c.youell@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>DPT Tyvek RIC Weekly Product Complaint Dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

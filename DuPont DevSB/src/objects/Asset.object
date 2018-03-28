@@ -1,0 +1,1317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Process</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Electolytic Ni/Au</fullName>
+                    <default>false</default>
+                    <label>Electolytic Ni/Au</label>
+                </value>
+                <value>
+                    <fullName>ENIG</fullName>
+                    <default>false</default>
+                    <label>ENIG</label>
+                </value>
+                <value>
+                    <fullName>Innerlayer -- Acid P&amp;E</fullName>
+                    <default>false</default>
+                    <label>Innerlayer -- Acid P&amp;E</label>
+                </value>
+                <value>
+                    <fullName>Innerlayer -- Alk P&amp;E</fullName>
+                    <default>false</default>
+                    <label>Innerlayer -- Alk P&amp;E</label>
+                </value>
+                <value>
+                    <fullName>NIL</fullName>
+                    <default>false</default>
+                    <label>NIL</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Outerlayer -- Alk Tent &amp; Etch</fullName>
+                    <default>false</default>
+                    <label>Outerlayer -- Alk Tent &amp; Etch</label>
+                </value>
+                <value>
+                    <fullName>Outerlayer -- Pattern Plate</fullName>
+                    <default>false</default>
+                    <label>Outerlayer -- Pattern Plate</label>
+                </value>
+                <value>
+                    <fullName>Outerlayer -- Tent &amp; Etch</fullName>
+                    <default>false</default>
+                    <label>Outerlayer -- Tent &amp; Etch</label>
+                </value>
+                <value>
+                    <fullName>Post CMP</fullName>
+                    <default>false</default>
+                    <label>Post CMP</label>
+                </value>
+                <value>
+                    <fullName>Removal</fullName>
+                    <default>false</default>
+                    <label>Removal</label>
+                </value>
+                <value>
+                    <fullName>Semi-additive process</fullName>
+                    <default>false</default>
+                    <label>Semi-additive process</label>
+                </value>
+                <value>
+                    <fullName>Wafer Level Packaging</fullName>
+                    <default>false</default>
+                    <label>Wafer Level Packaging</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AssetLevel</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>AssetProvidedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AssetServicedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Asset_Utilization__c</fullName>
+        <externalId>false</externalId>
+        <label>Asset Utilization(%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Average_Finished_Product_Value__c</fullName>
+        <description>The average value of a finished product using this asset.</description>
+        <externalId>false</externalId>
+        <label>Average Finished Product Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Average_Yield__c</fullName>
+        <externalId>false</externalId>
+        <label>Average Yield</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMP_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>CMP Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Oxide</fullName>
+                    <default>false</default>
+                    <label>Oxide</label>
+                </value>
+                <value>
+                    <fullName>W</fullName>
+                    <default>false</default>
+                    <label>W</label>
+                </value>
+                <value>
+                    <fullName>Cu</fullName>
+                    <default>false</default>
+                    <label>Cu</label>
+                </value>
+                <value>
+                    <fullName>STI</fullName>
+                    <default>false</default>
+                    <label>STI</label>
+                </value>
+                <value>
+                    <fullName>Barrier</fullName>
+                    <default>false</default>
+                    <label>Barrier</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Coating_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Coating Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ink Jet</fullName>
+                    <default>false</default>
+                    <label>Ink Jet</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Roller Coat</fullName>
+                    <default>false</default>
+                    <label>Roller Coat</label>
+                </value>
+                <value>
+                    <fullName>Spin</fullName>
+                    <default>false</default>
+                    <label>Spin</label>
+                </value>
+                <value>
+                    <fullName>Tower</fullName>
+                    <default>false</default>
+                    <label>Tower</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Curing_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Curing Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Furnace</fullName>
+                    <default>false</default>
+                    <label>Furnace</label>
+                </value>
+                <value>
+                    <fullName>Infra Red</fullName>
+                    <default>false</default>
+                    <label>Infra Red</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Oven</fullName>
+                    <default>false</default>
+                    <label>Oven</label>
+                </value>
+                <value>
+                    <fullName>VFM</fullName>
+                    <default>false</default>
+                    <label>VFM</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Current_Wafer_Starts_per_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Wafer Starts/Month</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Dispense_Rate_Wafer__c</fullName>
+        <externalId>false</externalId>
+        <label>Dispense Rate/Wafer</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Use_Industry__c</fullName>
+        <externalId>false</externalId>
+        <label>End Use Industry</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aerospace</fullName>
+                    <default>false</default>
+                    <label>Aerospace</label>
+                </value>
+                <value>
+                    <fullName>Automotive</fullName>
+                    <default>false</default>
+                    <label>Automotive</label>
+                </value>
+                <value>
+                    <fullName>Computers – Other</fullName>
+                    <default>false</default>
+                    <label>Computers – Other</label>
+                </value>
+                <value>
+                    <fullName>Computers – PC - Desktop</fullName>
+                    <default>false</default>
+                    <label>Computers – PC - Desktop</label>
+                </value>
+                <value>
+                    <fullName>Computers – PC – Notebook</fullName>
+                    <default>false</default>
+                    <label>Computers – PC – Notebook</label>
+                </value>
+                <value>
+                    <fullName>Computers – Server/Workstation</fullName>
+                    <default>false</default>
+                    <label>Computers – Server/Workstation</label>
+                </value>
+                <value>
+                    <fullName>Consumer Electronics – Game Device</fullName>
+                    <default>false</default>
+                    <label>Consumer Electronics – Game Device</label>
+                </value>
+                <value>
+                    <fullName>Consumer Electronics – other</fullName>
+                    <default>false</default>
+                    <label>Consumer Electronics – other</label>
+                </value>
+                <value>
+                    <fullName>Consumer Electronics – Portable</fullName>
+                    <default>false</default>
+                    <label>Consumer Electronics – Portable</label>
+                </value>
+                <value>
+                    <fullName>Electronic Instrumentation</fullName>
+                    <default>false</default>
+                    <label>Electronic Instrumentation</label>
+                </value>
+                <value>
+                    <fullName>Integrated Circuit Packaging</fullName>
+                    <default>false</default>
+                    <label>Integrated Circuit Packaging</label>
+                </value>
+                <value>
+                    <fullName>Military</fullName>
+                    <default>false</default>
+                    <label>Military</label>
+                </value>
+                <value>
+                    <fullName>Other (specify)</fullName>
+                    <default>false</default>
+                    <label>Other (specify)</label>
+                </value>
+                <value>
+                    <fullName>Telecommunications - infrastructure</fullName>
+                    <default>false</default>
+                    <label>Telecommunications - infrastructure</label>
+                </value>
+                <value>
+                    <fullName>Telecommunications  – Mobile phone handset</fullName>
+                    <default>false</default>
+                    <label>Telecommunications  – Mobile phone handset</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Exposure_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Imaging Process</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aligner</fullName>
+                    <default>false</default>
+                    <label>Aligner</label>
+                </value>
+                <value>
+                    <fullName>Collimated</fullName>
+                    <default>false</default>
+                    <label>Collimated</label>
+                </value>
+                <value>
+                    <fullName>LDI -355nm</fullName>
+                    <default>false</default>
+                    <label>LDI -355nm</label>
+                </value>
+                <value>
+                    <fullName>LDI - 405nm</fullName>
+                    <default>false</default>
+                    <label>LDI - 405nm</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Projection Tool</fullName>
+                    <default>false</default>
+                    <label>Projection Tool</label>
+                </value>
+                <value>
+                    <fullName>Scattered</fullName>
+                    <default>false</default>
+                    <label>Scattered</label>
+                </value>
+                <value>
+                    <fullName>Stepper Tool</fullName>
+                    <default>false</default>
+                    <label>Stepper Tool</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Final_Film_Thickness__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Film Thickness</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gate_dielectric__c</fullName>
+        <externalId>false</externalId>
+        <label>Gate dielectric</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High-K</fullName>
+                    <default>false</default>
+                    <label>High-K</label>
+                </value>
+                <value>
+                    <fullName>SiO2</fullName>
+                    <default>false</default>
+                    <label>SiO2</label>
+                </value>
+                <value>
+                    <fullName>SiOn</fullName>
+                    <default>false</default>
+                    <label>SiOn</label>
+                </value>
+                <value>
+                    <fullName>SiN</fullName>
+                    <default>false</default>
+                    <label>SiN</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Gate_electrode__c</fullName>
+        <externalId>false</externalId>
+        <label>Gate Electrode</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Polysilcon</fullName>
+                    <default>false</default>
+                    <label>Polysilcon</label>
+                </value>
+                <value>
+                    <fullName>Metal</fullName>
+                    <default>false</default>
+                    <label>Metal</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>InstallDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Interconnected_Metal__c</fullName>
+        <externalId>false</externalId>
+        <label>Interconnected Metal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AI/Cu</fullName>
+                    <default>false</default>
+                    <label>AI/Cu</label>
+                </value>
+                <value>
+                    <fullName>Cu</fullName>
+                    <default>false</default>
+                    <label>Cu</label>
+                </value>
+                <value>
+                    <fullName>Ti</fullName>
+                    <default>false</default>
+                    <label>Ti</label>
+                </value>
+                <value>
+                    <fullName>Ti/W</fullName>
+                    <default>false</default>
+                    <label>Ti/W</label>
+                </value>
+                <value>
+                    <fullName>W</fullName>
+                    <default>false</default>
+                    <label>W</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Interlayer_Dielectric__c</fullName>
+        <externalId>false</externalId>
+        <label>Interlayer Dielectric</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FSG</fullName>
+                    <default>false</default>
+                    <label>FSG</label>
+                </value>
+                <value>
+                    <fullName>Spin On - Dense</fullName>
+                    <default>false</default>
+                    <label>Spin On - Dense</label>
+                </value>
+                <value>
+                    <fullName>Spin On - Porous</fullName>
+                    <default>false</default>
+                    <label>Spin On - Porous</label>
+                </value>
+                <value>
+                    <fullName>CDO - Dense</fullName>
+                    <default>false</default>
+                    <label>CDO - Dense</label>
+                </value>
+                <value>
+                    <fullName>CDO - Porous</fullName>
+                    <default>false</default>
+                    <label>CDO - Porous</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsCompetitorProduct</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsInternal</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Lamination_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Lamination Process</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dry</fullName>
+                    <default>false</default>
+                    <label>Dry</label>
+                </value>
+                <value>
+                    <fullName>Vacuum</fullName>
+                    <default>false</default>
+                    <label>Vacuum</label>
+                </value>
+                <value>
+                    <fullName>Wet</fullName>
+                    <default>false</default>
+                    <label>Wet</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Layers__c</fullName>
+        <externalId>false</externalId>
+        <label>Layers</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Lines_and_Spaces__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines and Spaces</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lithography__c</fullName>
+        <externalId>false</externalId>
+        <label>Lithography</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>g-line</fullName>
+                    <default>false</default>
+                    <label>g-line</label>
+                </value>
+                <value>
+                    <fullName>i-line</fullName>
+                    <default>false</default>
+                    <label>i-line</label>
+                </value>
+                <value>
+                    <fullName>248nm</fullName>
+                    <default>false</default>
+                    <label>248nm</label>
+                </value>
+                <value>
+                    <fullName>193nm</fullName>
+                    <default>false</default>
+                    <label>193nm</label>
+                </value>
+                <value>
+                    <fullName>157nm</fullName>
+                    <default>false</default>
+                    <label>157nm</label>
+                </value>
+                <value>
+                    <fullName>EUV</fullName>
+                    <default>false</default>
+                    <label>EUV</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Maximum_Wafer_Capacity_per_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximum Wafer Capacity/Month</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metal_Etch_Gases__c</fullName>
+        <externalId>false</externalId>
+        <label>Metal Etch Gases</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metal_Etch_Tool_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Metal Etch Tool Model</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metal_etch_tool_Manufacturer__c</fullName>
+        <externalId>false</externalId>
+        <label>Metal Etch Tool Manufacturer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>LAM</fullName>
+                    <default>false</default>
+                    <label>LAM</label>
+                </value>
+                <value>
+                    <fullName>Applied Materials</fullName>
+                    <default>false</default>
+                    <label>Applied Materials</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Number_of_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Photoresist_Manufacturer__c</fullName>
+        <externalId>false</externalId>
+        <label>Photoresist  Manufacturer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Rohm and Haas</fullName>
+                    <default>false</default>
+                    <label>Rohm and Haas</label>
+                </value>
+                <value>
+                    <fullName>JSR</fullName>
+                    <default>false</default>
+                    <label>JSR</label>
+                </value>
+                <value>
+                    <fullName>TOK</fullName>
+                    <default>false</default>
+                    <label>TOK</label>
+                </value>
+                <value>
+                    <fullName>Sumitomo</fullName>
+                    <default>false</default>
+                    <label>Sumitomo</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Photoresist_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Photoresist Model</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Post_CMP_Clean_Tool__c</fullName>
+        <externalId>false</externalId>
+        <label>Post CMP Clean Tool</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Process_Capacity__c</fullName>
+        <description>This defines the process manufacturing capacity</description>
+        <externalId>false</externalId>
+        <label>Process Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Process_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Process Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ENIG</fullName>
+                    <default>false</default>
+                    <label>ENIG</label>
+                </value>
+                <value>
+                    <fullName>Standard Print Etch and Plate</fullName>
+                    <default>false</default>
+                    <label>Standard Print Etch and Plate</label>
+                </value>
+                <value>
+                    <fullName>Electrolysis Nickel</fullName>
+                    <default>false</default>
+                    <label>Electrolysis Nickel</label>
+                </value>
+                <value>
+                    <fullName>Electrolysis Gold</fullName>
+                    <default>false</default>
+                    <label>Electrolysis Gold</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>ProductDescription</fullName>
+    </fields>
+    <fields>
+        <fullName>ProductFamily</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PurchaseDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RootAssetId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SerialNumber</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StockKeepingUnit</fullName>
+    </fields>
+    <fields>
+        <fullName>Substrate__c</fullName>
+        <externalId>false</externalId>
+        <label>Substrate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Silicon</fullName>
+                    <default>false</default>
+                    <label>Silicon</label>
+                </value>
+                <value>
+                    <fullName>GaAs</fullName>
+                    <default>false</default>
+                    <label>GaAs</label>
+                </value>
+                <value>
+                    <fullName>InP</fullName>
+                    <default>false</default>
+                    <label>InP</label>
+                </value>
+                <value>
+                    <fullName>Other II-V material</fullName>
+                    <default>false</default>
+                    <label>Other II-V material</label>
+                </value>
+                <value>
+                    <fullName>Strained Silicon</fullName>
+                    <default>false</default>
+                    <label>Strained Silicon</label>
+                </value>
+                <value>
+                    <fullName>SOI</fullName>
+                    <default>false</default>
+                    <label>SOI</label>
+                </value>
+                <value>
+                    <fullName>EPI</fullName>
+                    <default>false</default>
+                    <label>EPI</label>
+                </value>
+                <value>
+                    <fullName>Si</fullName>
+                    <default>false</default>
+                    <label>Si</label>
+                </value>
+                <value>
+                    <fullName>Rigid Board</fullName>
+                    <default>false</default>
+                    <label>Rigid Board</label>
+                </value>
+                <value>
+                    <fullName>Flex</fullName>
+                    <default>false</default>
+                    <label>Flex</label>
+                </value>
+                <value>
+                    <fullName>Chem Milling</fullName>
+                    <default>false</default>
+                    <label>Chem Milling</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Supplier__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Rohm &amp; Haas</fullName>
+                    <default>false</default>
+                    <label>Rohm &amp; Haas</label>
+                </value>
+                <value>
+                    <fullName>JSR</fullName>
+                    <default>false</default>
+                    <label>JSR</label>
+                </value>
+                <value>
+                    <fullName>TOK</fullName>
+                    <default>false</default>
+                    <label>TOK</label>
+                </value>
+                <value>
+                    <fullName>Sumitomo</fullName>
+                    <default>false</default>
+                    <label>Sumitomo</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Device relating to the Asset at the Customer.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Logic</fullName>
+                    <default>false</default>
+                    <label>Logic</label>
+                </value>
+                <value>
+                    <fullName>Memory</fullName>
+                    <default>false</default>
+                    <label>Memory</label>
+                </value>
+                <value>
+                    <fullName>MEMS</fullName>
+                    <default>false</default>
+                    <label>MEMS</label>
+                </value>
+                <value>
+                    <fullName>Analog-Power</fullName>
+                    <default>false</default>
+                    <label>Analog-Power</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UsageEndDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Via_Etch_Tool_Gases__c</fullName>
+        <externalId>false</externalId>
+        <label>Via Etch Tool Gases</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Via_Etch_Tool_Manufacturer__c</fullName>
+        <externalId>false</externalId>
+        <label>Via Etch Tool Manufacturer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>LAM</fullName>
+                    <default>false</default>
+                    <label>LAM</label>
+                </value>
+                <value>
+                    <fullName>Applied Materials</fullName>
+                    <default>false</default>
+                    <label>Applied Materials</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Via_etch_tool_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Via Etch Tool Model</label>
+        <length>35</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wafer_size__c</fullName>
+        <externalId>false</externalId>
+        <label>Wafer Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>50</fullName>
+                    <default>true</default>
+                    <label>50</label>
+                </value>
+                <value>
+                    <fullName>75</fullName>
+                    <default>false</default>
+                    <label>75</label>
+                </value>
+                <value>
+                    <fullName>100</fullName>
+                    <default>false</default>
+                    <label>100</label>
+                </value>
+                <value>
+                    <fullName>125</fullName>
+                    <default>false</default>
+                    <label>125</label>
+                </value>
+                <value>
+                    <fullName>150</fullName>
+                    <default>false</default>
+                    <label>150</label>
+                </value>
+                <value>
+                    <fullName>200</fullName>
+                    <default>false</default>
+                    <label>200</label>
+                </value>
+                <value>
+                    <fullName>300</fullName>
+                    <default>false</default>
+                    <label>300</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Wetlam__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Wetlam</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <listViews>
+        <fullName>AllAssets</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Assets</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>ASSET.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASSET.SERIAL_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASSET.INSTALL_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.SERIAL_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.INSTALL_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.SERIAL_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.INSTALL_DATE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.NAME</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.SERIAL_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.INSTALL_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

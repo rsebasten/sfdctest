@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DuPont™ Kevlar® and Nomex® MSDS</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS - DuPont™ Kevlar® and Nomex® MSDS</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Kevlar® and Nomex® MSDS</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.FirstName} {!Lead.LastName},
+
+Thank you for your interest in Kevlar® and Nomex®.
+Below is the MSDS that you requested.
+
+For additional MSDS (Kevlar® XP, spunlace, N636 paper,etc.), please visit our DuPont website.  The MSDS FINDER is located at the very bottom right hand site of the website.
+www.dupont.com
+
+Please let us know if you have any questions.
+
+DuPont Protection Solutions</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

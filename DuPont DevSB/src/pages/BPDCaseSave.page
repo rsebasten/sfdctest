@@ -1,0 +1,2909 @@
+<!-- *****************************************************************************
+ Showing input fields for Case and Case Detail Objects and autocomplete is also implemented for multiple fields
+ Change History: <Ankit20160719 10:19 PM IST> added two new fields Sample Available and Infrigement Confirmed on TradeMarkAbuseCaseDetails object as per Issue IS ID-00071360 
+******************************************************************************/ -->
+<apex:page cache="false" StandardController="Case" extensions="ctrlBPDCaseSave" showHeader="false" sideBar="false" tabStyle="Case">
+<apex:stylesheet value="{!$Resource.BDP_StyleSheet}" />
+<script src= "//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+<script language="javascript">
+var chkboxMap = {};
+j$ = jQuery.noConflict();
+
+j$(document).ready(function(){
+if('{!flagvar}' == 'true'){
+window.top.location = '/{!currentCase.Id}';
+}
+
+if ('{!attachmentIdList.size>0}' == 'true' || '{!currentCaseDetail.Proof_of_use_document_Available__c}' == 'Yes'){
+j$("[id$='ProofOfUse']").attr('checked','checked');
+
+}
+
+if ('{!CD1IdList.size>0}' == 'true' || '{!currentCaseDetail.BPC_C_D_1_document__c}' == 'Yes'){
+j$("[id$='BPCCD1']").attr('checked','checked');
+}
+
+if ('{!CD2IdList.size>0}' == 'true' || '{!currentCaseDetail.BPC_C_D_2_document__c}' == 'Yes'){
+j$("[id$='BPCCD2']").attr('checked','checked');
+}
+
+if ('{!CDHardcopyIdList.size>0}' == 'true' || '{!currentCaseDetail.BPC_C_D_Hardcopy_document__c}' == 'Yes'){
+j$("[id$='BPCCDHardcopy']").attr('checked','checked');
+}
+
+if ('{!legalIdList.size>0}' == 'true' || '{!currentCaseDetail.Legal_C_D_sent_document__c}' == 'Yes'){
+j$("[id$='LegalCDsent']").attr('checked','checked');
+}
+
+if ('{!properuseIdList.size>0}' == 'true' || '{!currentCaseDetail.Proper_use_document__c}' == 'Yes'){
+j$("[id$='ProperUse']").attr('checked','checked');
+}
+
+if ('{!responseIdList.size>0}' == 'true' || '{!currentCaseDetail.Response_from_Infringer_document__c}' == 'Yes'){
+j$("[id$='ResponseFromInfringer']").attr('checked','checked');
+}
+
+if ('{!industryIdList.size>0}' == 'true' || '{!currentCaseDetail.Industry_Communication_Warning_document__c}' == 'Yes'){
+j$("[id$='IndustryCommunication']").attr('checked','checked');
+}
+
+if ('{!investigationReportIdList.size>0}' == 'true' || '{!currentCaseDetail.Investigation_Report_s_document__c}' == 'Yes'){
+j$("[id$='InvestigationReportReceived']").attr('checked','checked');
+}
+
+if ('{!currentCaseDetail.Total_Classification_Points__c}' != '' || '{!currentCaseDetail.Relative_Priority_Score__c}' != ''
+|| '{!currentCaseDetail.Recommended_Action__c}' != ''){
+j$("[id$='DomainPriorityToolScore']").attr('checked','checked');
+}
+
+if('{!currentCaseDetail.Third_Party_Web_Crawlers__c}' != ''){
+j$("[id$='ThirdPartyWebCrawlers']").attr('checked','checked');
+}
+
+if ('{!currentCaseDetail.Web_site_screen_shot__c}' != ''){
+j$("[id$='Websitescreenshot']").attr('checked','checked');
+}
+
+if ('{!currentCaseDetail.Customs_Seizure_Country__c}' != ''){
+j$("[id$='CustomsSeizurebox']").attr('checked','checked');
+}
+
+if ('{!currentCaseDetail.Physical_visit_to_target__c}' == 'Yes'){
+j$("[id$='Physicalvisittotarget']").attr('checked','checked');
+}
+
+if ('{!currentCaseDetail.Criminal_Investigation__c}' == 'Yes'){
+j$("[id$='CriminalInvestigation']").attr('checked','checked');
+}
+
+if ('{!currentCaseDetail.Raid_Action_Date__c}' != ''){
+j$("[id$='RaidConducted']").attr('checked','checked');
+}
+
+if ('{!currentCaseDetail.Sample_Received__c}' == 'YES'){
+j$("[id$='SampleReceived']").attr('checked','checked');
+}
+
+if ('{!sampleAnalyzed}' == 'true'){
+j$("[id$='SampleAnalyzed']").attr('checked','checked');
+}
+if ('{!trapPurchaseAnalyzed}' == 'true'){
+j$("[id$='TrapPurchaseAnalyzed']").attr('checked','checked');
+}
+if ('{!trapPurchaseMade}' == 'true'){
+j$("[id$='TrapPurchase']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Administrative_action_initiated__c}' == 'Yes'){
+j$("[id$='AdministrativeAction']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Civil_proceeding__c}' == 'Yes'){
+j$("[id$='CivilProceeding']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Criminal_proceeding__c}' == 'Yes'){
+j$("[id$='CriminalProceeding']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Discovery_period_started__c}' == 'Yes'){
+j$("[id$='DiscoveryPeriod']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Trial_initiated__c}' == 'Yes'){
+j$("[id$='TrialInitiated']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.TRO_Preliminary_Injunction__c}' == 'Yes'){
+j$("[id$='TRO']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.DuPont_matter_Billing_Ref_No__c}' != ''){
+j$("[id$='BudgetTimelines']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Raid_Action_Volume__c}' != ''){
+j$("[id$='RaidSeizure']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Sources_Revealed__c}' == 'Yes'){
+j$("[id$='SourceRevealed']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Fine_Imposed__c}' == 'Yes'){
+j$("[id$='FineImposed']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Domain_Name_Disposition__c}' == 'Yes'){
+j$("[id$='DomainName']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Settlement_Agreement__c}' == 'Yes'){
+j$("[id$='SettlementAgreement']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Undertaking_Received__c}' == 'Yes'){
+j$("[id$='UndertakingReceived']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Public_Apology__c}' == 'Yes'){
+j$("[id$='PublicApology']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Court_Ruling__c}' == 'Yes'){
+j$("[id$='CourtRuling']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Damages_Monetary_Recovery__c}' == 'Yes'){
+j$("[id$='Damages']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Arrests_Imprisonment__c}' == 'Yes'){
+j$("[id$='Arrests']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Manufacturing_equipment_destroyed__c}' == 'Yes'){
+j$("[id$='ManufacturingEquipment']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Infringing_Products_Destroyed__c}' == 'Yes'){
+j$("[id$='InfringingProducts']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Website_image_s_removed__c}' == 'Yes'){
+j$("[id$='WebsiteImage']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Website_corrected__c}' == 'Yes'){
+j$("[id$='WebsiteCorrected']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Website_taken_down__c}' == 'Yes'){
+j$("[id$='Websitetakendown']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Private_Investigation_Initiated_Date__c}' != ''){
+j$("[id$='PrivateInvestigationinitiated']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Related_Target_1__c}' != '' || '{!currentCaseDetail.Related_Target_2__c}' != '' || 
+'{!currentCaseDetail.Related_Target_3__c}' != '' ){
+j$("[id$='RelatedCases']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Hard_Benefit_Amount_Actual__c}' != ''){
+j$("[id$='hardBenefit']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Soft_Benefit_Amount_Actual__c}' != ''){
+j$("[id$='softBenefit']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Legal_Recovery_Amount__c}' != ''){
+j$("[id$='legalRecovery']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.BP_Closed_Soft_Benefit__c}' != ''){
+j$("[id$='BPSoftBenefit']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.License_Potential__c}' == 'Yes'){
+j$("[id$='licensePotential']").attr('checked','checked');
+}
+if ('{!bpClosureDocIdList.size>0}' == 'true' || '{!currentCaseDetail.BP_Closure_Confirmation_Sent__c}' == 'Yes'){
+j$("[id$='BPConfirmation']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.BP_Closure_No_Action_Required__c}' == 'Yes'){
+j$("[id$='BPClosureAction']").attr('checked','checked');
+}
+if ('{!currentCaseDetail.Resolution_Recovery_Website_Screenshot__c}' != ''){
+j$("[id$='ResolutionScreenshot']").attr('checked','checked');
+}
+validateCheckboxes();
+
+});
+
+function brandEdit(){
+window.top.location = '/apex/BPDBrandEdit?id={!currentCase.Id}';
+}
+
+
+function whoIsButton(){
+var searchText = j$("[id$='searchString']").val();
+window.top.location = '/apex/BPDHitExtSystem?id={!currentCase.Id}&searchtxt='+searchText ;
+}
+function uploadFile(name){
+if(name == "CommunicationSection"){
+j$("[id$='saveCommunication']").css("display", "inline");
+j$("[id$='cancelCommunication']").css("display", "inline");
+}
+else if(name == "BudgetSection" ){
+j$("[id$='saveBudget']").css("display", "inline");
+j$("[id$='cancelBudget']").css("display", "inline");
+}
+else if(name == "InvestigationEvidenceSection" ){
+j$("[id$='saveInvestigationEvidence']").css("display", "inline");
+j$("[id$='cancelInvestigationEvidence']").css("display", "inline");
+}
+else if(name == "RaidActionSection" ){
+j$("[id$='saveRaidAction']").css("display", "inline");
+j$("[id$='cancelRaidAction']").css("display", "inline");
+}
+else if(name == "CustomsSeizureSection" ){
+j$("[id$='saveCustomsSeizure']").css("display", "inline");
+j$("[id$='cancelCustomsSeizure']").css("display", "inline");
+}
+else if(name == "LegalSection" ){
+j$("[id$='saveLegal']").css("display", "inline");
+j$("[id$='cancelLegal']").css("display", "inline");
+}
+else if(name == "GeneralSection" ){
+j$("[id$='saveCaseDetail']").css("display", "inline");
+j$("[id$='cancelCaseDetail']").css("display", "inline");
+}
+else if(name == "ResolutionSection" ){
+j$("[id$='saveResolution']").css("display", "inline");
+j$("[id$='cancelResolution']").css("display", "inline");
+}
+else if(name == "TargetSection" ){
+j$("[id$='saveTarget']").css("display", "inline");
+j$("[id$='cancelTarget']").css("display", "inline");
+}
+}
+
+
+
+function validateCheckboxes(){
+if (j$("[id$='ProofOfUse']").prop('checked') || j$("[id$='BPCCD1']").prop('checked') || j$("[id$='BPCCD2']").prop('checked') ||
+j$("[id$='BPCCDHardcopy']").prop('checked') || j$("[id$='LegalCDsent']").prop('checked') || j$("[id$='ProperUse']").prop('checked') ||
+j$("[id$='ResponseFromInfringer']").prop('checked') || j$("[id$='IndustryCommunication']").prop('checked')){
+j$("[id$='communications']").attr('checked','checked');
+}
+if (j$("[id$='DomainPriorityToolScore']").prop('checked') || j$("[id$='ThirdPartyWebCrawlers']").prop('checked') || j$("[id$='Websitescreenshot']").prop('checked') ){
+j$("[id$='internetEvidence']").attr('checked','checked');
+}
+if (j$("[id$='CustomsSeizurebox']").prop('checked') || j$("[id$='PrivateInvestigationinitiated']").prop('checked') 
+|| j$("[id$='InvestigationReportReceived']").prop('checked') || j$("[id$='Physicalvisittotarget']").prop('checked') 
+|| j$("[id$='CriminalInvestigation']").prop('checked')){
+j$("[id$='InvestigationAndEvidence']").attr('checked','checked');
+}
+if (j$("[id$='RaidConducted']").prop('checked') || j$("[id$='RaidSeizure']").prop('checked')){
+j$("[id$='raidActions']").attr('checked','checked');
+}
+if (j$("[id$='SampleReceived']").prop('checked') || j$("[id$='SampleAnalyzed']").prop('checked') 
+|| j$("[id$='TrapPurchaseAnalyzed']").prop('checked') || j$("[id$='TrapPurchase']").prop('checked') ){
+j$("[id$='SamplesandTrapPurchases']").attr('checked','checked');
+}
+if (j$("[id$='WebsiteImage']").prop('checked') || j$("[id$='WebsiteCorrected']").prop('checked') 
+|| j$("[id$='Websitetakendown']").prop('checked') || j$("[id$='SourceRevealed']").prop('checked') 
+|| j$("[id$='FineImposed']").prop('checked') | j$("[id$='DomainName']").prop('checked')
+|| j$("[id$='SettlementAgreement']").prop('checked') | j$("[id$='UndertakingReceived']").prop('checked')
+|| j$("[id$='PublicApology']").prop('checked') | j$("[id$='CourtRuling']").prop('checked')
+|| j$("[id$='Damages']").prop('checked') | j$("[id$='Arrests']").prop('checked')
+|| j$("[id$='ManufacturingEquipment']").prop('checked') | j$("[id$='InfringingProducts']").prop('checked')){
+j$("[id$='ResolutionRecovery']").attr('checked','checked');
+}
+if (j$("[id$='hardBenefit']").prop('checked') || j$("[id$='softBenefit']").prop('checked') 
+|| j$("[id$='BPSoftBenefit']").prop('checked') || j$("[id$='legalRecovery']").prop('checked') 
+|| j$("[id$='licensePotential']").prop('checked') ){
+j$("[id$='FinancialBenefits']").attr('checked','checked');
+}
+if (j$("[id$='TRO']").prop('checked') ||j$("[id$='AdministrativeAction']").prop('checked') 
+|| j$("[id$='CivilProceeding']").prop('checked') | j$("[id$='CriminalProceeding']").prop('checked')
+|| j$("[id$='DiscoveryPeriod']").prop('checked') | j$("[id$='TrialInitiated']").prop('checked')){
+j$("[id$='LegalAction']").attr('checked','checked');
+}
+}
+
+</script>
+
+<apex:form >
+<apex:pagemessages />
+<apex:pageBlock >
+
+<apex:pageBlockSection columns="2">
+<apex:facet name="header">
+<a href="#linktoDomainInformation" style="text-decoration:none">
+<span style="color : black;font-size: 10pt;">Target (Click to Add Domain Information)</span></a>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveTarget"  action="{!saveTarget}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelTarget"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+
+<apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Company" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+ <apex:outputLink value="javascript:return false;">
+     <img src="/s.gif" alt="" class="helpOrb" />
+     <span>{!$ObjectType.Case_Details__c.fields.company__c.inlineHelpText}</span>            
+ </apex:outputLink>
+    </span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:inputtextarea id="autoCompany" value="{!currentCaseDetail.Company__c}"
+style="width:100px" label="{!$ObjectType.Case_Details__c.fields.Company__c.Label}" onkeydown="uploadFile('TargetSection')" >
+<c:BPDautoComplete_General sObjectType="Case_Details__c"  for="{!$Component.autoCompany}" minLength="3"
+where="" fields="Company__c" />
+</apex:inputtextarea>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+ <apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Individual Name" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+ <apex:outputLink value="javascript:return false;">
+     <img src="/s.gif" alt="" class="helpOrb" />
+     <span>{!$ObjectType.Case_Details__c.fields.Individual_Name__c.inlineHelpText}</span>            
+ </apex:outputLink>
+    </span>
+</td></tr>
+</table>
+</apex:outputPanel>
+ <apex:outputpanel >
+ <apex:outputField value="{!currentCaseDetail.Individual_Name__c}" >
+    <apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>  
+   </apex:outputField>
+   </apex:outputpanel>
+    </apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Email__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Address__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.City__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.State__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Zip_Postal_Code__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Target_Country__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Target_Region__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Fax__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Website__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Phone__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Prior_relationship_with_DuPont__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Other_Target_Information__c}">
+<apex:inlineEditSupport showOnEdit="saveTarget,cancelTarget" event="ondblclick"/>
+</apex:outputField>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveTarget"  action="{!saveTarget}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelTarget"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table> 
+
+<apex:pageBlockSection id="abc" columns="2">
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Brand Selected</span> 
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Edit" onclick="brandEdit()"  />
+</div></apex:outputPanel>
+<br/>
+<apex:outputField value="{!currentCaseDetail.Brand__c}" >
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Owning_SBU__c}" >
+</apex:outputField>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="2">
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt">General Information</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveCaseDetail"  action="{!savingCaseDetail}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelCaseDetail"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel styleClass="labelCol vfLabelColTextWrap" for="detailRecord" value="Case Detail Record"/> 
+<apex:outputPanel >      
+<apex:commandLink id="detailRecord" action="/{!currentCaseDetail.Id}" target="_blank" value="{!currentCaseDetail.Name}" />
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Record Origination" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Record_Origination__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Record_Origination__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Type of Record" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Type_of_Record__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Type_of_Record__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="How Trademark is Used" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.How_Trademark_is_Used__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.How_Trademark_is_Used__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Infringement Type" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Infringement_Type__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Infringement_Type__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Infringing Product Description" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Infringing_Product_Description__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Infringing_Product_Description__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<!-- <Ankit20160719 10:19 PM IST> added two new fields Sample Available and Infrigement Confirmed on TradeMarkAbuseCaseDetails object as per Issue IS ID-00071360 starts -->
+<apex:outputField value="{!currentCaseDetail.Infringement_Confirmed__c}" 
+rendered="{!IF(userInformation.UserOwningSBUOrg__c =='Crop Protection' ,true,false)}">
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Sample_Available__c}" 
+rendered="{!IF(userInformation.UserOwningSBUOrg__c =='Crop Protection' ,true,false)}">
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+<!--<Ankit20160719 10:19 PM IST> added two new fields Sample Available and Infrigement Confirmed on TradeMarkAbuseCaseDetails object as per Issue IS ID-00071360 ends -->
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Procedural Status" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Procedural_Status__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Procedural_Status__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Crop_Phase_Status__c}" 
+rendered="{!IF(userInformation.UserOwningSBUOrg__c =='Crop Protection' ,true,false)}">
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="BP Close Date" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.BP_Close_Date__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.BP_Close_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Case_Investigation_Open_Date__c}">
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Case_Suspension_Date__c}">
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Legacy_Case_Number__c}"/>
+<apex:outputField value="{!currentCaseDetail.Legacy_Case_owner__c}"/>
+<apex:outputField value="{!currentCaseDetail.Date_Opened__c}">
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Facts_of_the_Case__c}">
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Legacy_Data__c}"/>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Response Requested Date" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Response_Requested_by__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Response_Requested_by__c}" >
+<apex:inlineEditSupport showOnEdit="saveCaseDetail,cancelCaseDetail" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Next_Step__c}">
+</apex:outputField>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveCaseDetail"  action="{!savingCaseDetail}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelCaseDetail"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</apex:pageBlock> 
+
+<apex:pageBlock >
+<apex:pageBlockSection columns="3">
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Case Events : Boxes become “checked” only upon completing the corresponding field in the appropriate section</span>
+</apex:facet>
+</apex:pageBlockSection><br/>
+<apex:inputCheckbox id="communications"  disabled="true"  >
+<a href="#linktoCommunicationSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">COMMUNICATIONS</span></a>
+</apex:inputCheckbox>
+<apex:outputLabel for="communications" ><span></span></apex:outputLabel>
+<table style="width:100%" >
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="ProofOfUse" label="Proof of use" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="ProofOfUse" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoProofOfUse" style="text-decoration:none">Proof of Use</a> </td>
+<td width="25%"><apex:inputCheckbox label="BPC C&D 1" id="BPCCD1" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="BPCCD1" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoBPCCD1" style="text-decoration:none">BPC CD 1</a> </td>
+<td width="25%"><apex:inputCheckbox label="BPC C&D 2" id="BPCCD2" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="BPCCD2" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoBPCCD2" style="text-decoration:none">BPC CD 2</a> </td>
+<td><apex:inputCheckbox label="BPC C&D Hardcopy" id="BPCCDHardcopy" disabled="true" >
+</apex:inputCheckbox>
+<apex:outputLabel for="BPCCDHardcopy" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoBPCCDHardcopy" style="text-decoration:none">BPC CD Hardcopy</a> </td></tr>
+<tr width="100%"><td><apex:inputCheckbox label="Legal C&D sent" id="LegalCDsent" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="LegalCDsent" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoLegalCDsent" style="text-decoration:none">Legal CD sent</a> </td>
+<td width="25%"><apex:inputCheckbox label="Proper use" id="ProperUse" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="ProperUse" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoProperUse" style="text-decoration:none">Proper use </a></td>
+<td width="25%"><apex:inputCheckbox label="Response from infringer" id="ResponseFromInfringer" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="ResponseFromInfringer" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoResponseFromInfringer" style="text-decoration:none">Response from infringer </a>  </td>
+<td width="25%"><apex:inputCheckbox label="Industry Communication / Warning / Education" id="IndustryCommunication" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="IndustryCommunication" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoIndustryCommunication" style="text-decoration:none">Industry Communication / Warning / Education </a> </td>
+</tr>
+</table><br/>
+<apex:inputCheckbox id="internetEvidence"  disabled="true" >
+<a href="#linktoInternetEvidenceSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">INTERNET EVIDENCE</span></a>
+</apex:inputCheckbox>
+<apex:outputLabel for="internetEvidence" ><span style="cursor:default"></span></apex:outputLabel>
+<table width="75%">
+<tr width="75%"><td width="25%"><apex:inputCheckbox id="DomainPriorityToolScore" label="Domain Priority Tool Score" disabled="true" >
+</apex:inputCheckbox>
+<apex:outputLabel for="DomainPriorityToolScore" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktotoolScore" style="text-decoration:none">Domain Priority Tool Score </a></td>
+<td width="25%"><apex:inputCheckbox label="Web site screen shot" id="Websitescreenshot" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="Websitescreenshot" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoWebsitescreenshot" style="text-decoration:none">Web site screen shot</a></td>
+<td width="25%"><apex:inputCheckbox label="Third Party Web Crawlers" id="ThirdPartyWebCrawlers" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="ThirdPartyWebCrawlers" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoThirdPartyWebCrawlers" style="text-decoration:none">Third Party Web Crawlers </a></td></tr></table><br/>
+<apex:inputCheckbox id="InvestigationAndEvidence"  disabled="true" >
+<a href="#linktoInvestigationEvidenceSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">INVESTIGATION AND EVIDENCE</span></a>
+</apex:inputCheckbox>
+<apex:outputLabel for="InvestigationAndEvidence" ><span style="cursor:default"></span></apex:outputLabel>
+<table width="100%">
+<tr width="100%"><td width="25%"><apex:inputCheckbox id="CustomsSeizurebox"   disabled="true">
+</apex:inputCheckbox> 
+<apex:outputLabel for="CustomsSeizurebox" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoCustomsSeizureSection" style="text-decoration:none">Customs Seizure </a></td>
+<td width="25%"><apex:inputCheckbox label="Private Investigation initiated" id="PrivateInvestigationinitiated" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="PrivateInvestigationinitiated" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoPrivateInvestigationinitiated" style="text-decoration:none">Private Investigation initiated</a> </td>
+<td width="25%"><apex:inputCheckbox label="Investigation Report Received" id="InvestigationReportReceived" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="InvestigationReportReceived" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoInvestigationReportReceived" style="text-decoration:none">Investigation Report Received</a> </td>
+<td width="25%"><apex:inputCheckbox label="Physical visit to target" id="Physicalvisittotarget" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="Physicalvisittotarget" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoPhysicalvisittotarget" style="text-decoration:none">Physical visit to target</a> </td></tr>
+<tr width="100%"><td width="25%"><apex:inputCheckbox label="Criminal Investigation" id="CriminalInvestigation" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="CriminalInvestigation" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoCriminalInvestigation" style="text-decoration:none">Criminal Investigation</a> </td>
+<td width="25%"><apex:inputCheckbox label="Related Cases/Samples" id="RelatedCases" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="RelatedCases" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoRelatedCases" style="text-decoration:none">Related Cases/Samples</a> </td></tr></table><br/>
+<apex:inputCheckbox id="SamplesandTrapPurchases"  disabled="true">
+<apex:outputLabel for="SamplesandTrapPurchases" value="SAMPLES AND TRAP PURCHASES" style="font-weight: bold;"> </apex:outputLabel>
+</apex:inputCheckbox>
+<apex:outputLabel for="SamplesandTrapPurchases" ><span style="cursor:default"></span></apex:outputLabel>
+<table width="100%">
+<tr width="100%"><td width="25%"><apex:inputCheckbox id="SampleReceived" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="SampleReceived" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoSampleReceived" style="text-decoration:none">Sample Received</a>  </td>
+<td width="25%"><apex:inputCheckbox id="SampleAnalyzed" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="SampleAnalyzed" ><span style="cursor:default"></span></apex:outputLabel>Sample Analyzed</td>
+<td width="25%"><apex:inputCheckbox id="TrapPurchase" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="TrapPurchase" ><span style="cursor:default"></span></apex:outputLabel>Trap Purchase made</td>
+<td width="25%"><apex:inputCheckbox id="TrapPurchaseAnalyzed" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="TrapPurchaseAnalyzed" ><span style="cursor:default"></span></apex:outputLabel>Trap Purchase Analyzed </td></tr>
+</table><br/>
+<apex:inputCheckbox id="BudgetTimelines"  disabled="true" >
+<a href="#linktoBudgetSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">BUDGET/TIMELINES</span></a></apex:inputCheckbox>
+<apex:outputLabel for="BudgetTimelines" ><span style="cursor:default"></span></apex:outputLabel><br/><br/>
+<apex:inputCheckbox id="raidActions"  disabled="true">
+<a href="#linktoRaidActionSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">RAID ACTION</span></a>
+</apex:inputCheckbox>
+<apex:outputLabel for="raidActions" ><span style="cursor:default"></span></apex:outputLabel>
+<table style="width:50%">
+<tr width="50%">    
+<td width="25%"><apex:inputCheckbox id="RaidConducted" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="RaidConducted" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoRaidConducted" style="text-decoration:none">Raid Conducted </a></td>
+<td width="25%"><apex:inputCheckbox id="RaidSeizure" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="RaidSeizure" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoRaidSeizure" style="text-decoration:none">Raid Seizure </a>  </td>
+</tr>
+</table>
+<br/>
+<apex:inputCheckbox id="LegalAction"  rendered="{!permissions}" disabled="true" >
+<a href="#linktoLegalSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">LEGAL/ENFORCEMENT ACTIONS</span></a>
+</apex:inputCheckbox>
+<apex:outputLabel for="LegalAction" ><span style="cursor:default"></span></apex:outputLabel>
+<apex:outputPanel rendered="{!permissions}">
+<table style="width:100%">
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="TRO" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="TRO" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoTRO" style="text-decoration:none">TRO / Preliminary Injunction</a> </td>
+<td width="25%"><apex:inputCheckbox id="AdministrativeAction" disabled="true" >
+</apex:inputCheckbox>
+<apex:outputLabel for="AdministrativeAction" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoAdministrativeAction" style="text-decoration:none">Administrative Action Initiated  </a> </td>
+<td width="25%"><apex:inputCheckbox id="CivilProceeding" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="CivilProceeding" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoCivilProceeding" style="text-decoration:none">Civil Proceeding  </a> </td>
+<td width="25%"><apex:inputCheckbox id="CriminalProceeding" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="CriminalProceeding" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoCriminalProceeding" style="text-decoration:none">Criminal Proceeding  </a> </td>
+</tr>
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="DiscoveryPeriod" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="DiscoveryPeriod" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoDiscoveryPeriod" style="text-decoration:none">Discovery period started  </a>  </td>
+<td width="25%"><apex:inputCheckbox id="TrialInitiated" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="TrialInitiated" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoTrialInitiated" style="text-decoration:none">Trial Initiated  </a> </td>
+</tr></table></apex:outputPanel>
+<apex:inputCheckbox id="FinancialBenefits"  disabled="true" >
+<a href="#linktoFinanceSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">FINANCIAL BENEFITS</span></a>
+</apex:inputCheckbox>
+<apex:outputLabel for="FinancialBenefits" ><span style="cursor:default"></span></apex:outputLabel>
+<table style="width:100%">
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="hardBenefit" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="hardBenefit" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktohardBenefit" style="text-decoration:none">Hard Benefit  </a> </td>
+<td width="25%"><apex:inputCheckbox id="softBenefit" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="softBenefit" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktosoftBenefit" style="text-decoration:none">Soft Benefit  </a>  </td>
+<td width="25%"><apex:inputCheckbox id="BPSoftBenefit" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="BPSoftBenefit" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoBPSoftBenefit" style="text-decoration:none">BP Closed Soft Benefit  </a>  </td>
+<td width="25%"><apex:inputCheckbox id="legalRecovery" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="legalRecovery" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktolegalRecovery" style="text-decoration:none">Legal Recovery </a>  </td></tr>
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="licensePotential" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="licensePotential" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktolicensePotential" style="text-decoration:none">License Potential </a> </td></tr>
+</table><br/>
+<apex:inputCheckbox id="ResolutionRecovery"  disabled="true" >
+<a href="#linktoResolutionSection" style="text-decoration:none"><span style="font-family: 'Times New Roman'; font-weight: bold; ">RESOLUTION / RECOVERY</span></a>
+</apex:inputCheckbox>
+<apex:outputLabel for="ResolutionRecovery" ><span style="cursor:default"></span></apex:outputLabel>
+<table style="width:100%">
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="WebsiteImage" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="WebsiteImage" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoWebsiteImage" style="text-decoration:none">Website image(s) removed</a> </td>
+<td width="25%"><apex:inputCheckbox id="WebsiteCorrected" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="WebsiteCorrected" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoWebsiteCorrected" style="text-decoration:none">Website corrected</a> </td>
+<td width="25%"><apex:inputCheckbox id="Websitetakendown" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="Websitetakendown" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoWebsitetakendown" style="text-decoration:none">Website taken down</a>  </td>
+<td><apex:inputCheckbox id="SourceRevealed" disabled="true" >
+</apex:inputCheckbox>
+<apex:outputLabel for="SourceRevealed" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoSourceRevealed" style="text-decoration:none">Sources Revealed </a> </td></tr>
+<tr width="100%"><td><apex:inputCheckbox id="FineImposed" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="FineImposed" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoFineImposed" style="text-decoration:none">Fine Imposed </a> </td>
+<td width="25%"><apex:inputCheckbox id="DomainName" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="DomainName" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoDomainName" style="text-decoration:none">Domain name disposition </a> </td>
+<td width="25%"><apex:inputCheckbox id="SettlementAgreement" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="SettlementAgreement" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoSettlementAgreement" style="text-decoration:none">Settlement Agreement </a>  </td>
+<td width="25%"><apex:inputCheckbox id="UndertakingReceived" disabled="true"> 
+</apex:inputCheckbox>
+<apex:outputLabel for="UndertakingReceived" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoUndertakingReceived" style="text-decoration:none">Undertaking Received </a> </td></tr>
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="PublicApology" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="PublicApology" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoPublicApology" style="text-decoration:none">Public Apology</a> </td>
+<td width="25%"><apex:inputCheckbox id="CourtRuling" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="CourtRuling" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoCourtRuling" style="text-decoration:none">Court Ruling</a> </td>
+<td width="25%"><apex:inputCheckbox id="Damages" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="Damages" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoDamages" style="text-decoration:none">Damages / Monetary Recovery</a>  </td>
+<td><apex:inputCheckbox id="Arrests" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="Arrests" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoArrests" style="text-decoration:none">Arrests / Imprisonment</a>  </td></tr>
+<tr width="100%">
+<td width="25%"><apex:inputCheckbox id="ManufacturingEquipment" disabled="true" > 
+</apex:inputCheckbox>
+<apex:outputLabel for="ManufacturingEquipment" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoManufacturingEquipment" style="text-decoration:none">Manufacturing equipment destroyed</a> </td>
+<td width="25%"><apex:inputCheckbox id="InfringingProducts" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="InfringingProducts" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoInfringingProducts" style="text-decoration:none">Infringing Products Destroyed</a> </td>
+<td width="25%"><apex:inputCheckbox id="BPClosureAction" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="BPClosureAction" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoBPClosureAction" style="text-decoration:none">BP Closure - No Action Required</a> </td>
+<td width="25%"><apex:inputCheckbox id="BPConfirmation" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="BPConfirmation"><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoBPConfirmation" style="text-decoration:none">BP Closure - Confirmation Sent</a> </td>
+</tr>
+<tr>
+<td width="25%"><apex:inputCheckbox id="ResolutionScreenshot" disabled="true">
+</apex:inputCheckbox>
+<apex:outputLabel for="ResolutionScreenshot" ><span style="cursor:default"></span></apex:outputLabel>
+<a href="#linktoResolutionScreenshot" style="text-decoration:none">Resolution/Recovery Website Screenshot</a> </td></tr></table>
+</apex:pageBlock> 
+
+<apex:pageBlock >
+<div id="DomainInformation">
+<a name="linktoDomainInformation" style="text-decoration:none"></a>
+<apex:pageBlockSection id="hello" columns="2">
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Domain Information</span> 
+</apex:facet>
+<apex:outputText label="WhoIs Search" >
+<apex:inputText value="{!whoisString}" id="searchString"/>
+<apex:commandbutton value="Search for Domain Name" onclick="whoIsButton()" />
+</apex:outputText><br/>
+<apex:outputField value="{!currentCaseDetail.WhoIs_Details__c}"/>
+<apex:outputField value="{!currentCaseDetail.Registry_Registrant_Details__c}"/>
+<apex:outputField value="{!currentCaseDetail.Registry_Admin_Details__c}"/>
+<apex:outputField value="{!currentCaseDetail.Registry_Tech_Details__c}"/>
+</apex:pageBlockSection>
+</div></apex:pageBlock>
+
+<apex:pageBlock > 
+<div id="CommunicationSection">
+<a name="linktoCommunicationSection" style="text-decoration:none">
+<apex:pageBlockSection columns="1" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Communications</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span> 
+</apex:facet>
+<apex:outputPanel >
+<div align="center" width="90%">
+<apex:commandButton value="Save" id="saveCommunication"  action="{!savingCase}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelCommunication"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Proof of Use Document Available"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoProofOfUse" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Proof_of_Use_Document_Available__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Proof of Use  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!attachmentIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!bl}" filename="{!fileName}"  onclick="uploadFile('CommunicationSection')" />
+<br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="BPC C&D 1 Document Available"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoBPCCD1" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.BPC_C_D_1_document__c}" >
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="BPC C&D 1  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="CD1item" value="{!CD1IdList}">
+ <td>
+<div>{!CD1item.name}</div>
+<a href="/{!CD1item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!CD1bl}" filename="{!CD1fileName }"  onclick="uploadFile('CommunicationSection')" />
+<br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="BPC C&D 2 Document Available"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoBPCCD2" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.BPC_C_D_2_document__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="BPC C&D 2  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="CD2item" value="{!CD2IdList}">
+ <td>
+<div>{!CD2item.name}</div>
+<a href="/{!CD2item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!CD2bl}" filename="{!CD2fileName}"  onclick="uploadFile('CommunicationSection')" />
+
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="BPC C&D Hardcopy Available"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoBPCCDHardcopy" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.BPC_C_D_Hardcopy_document__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="BPC C&D Hardcopy  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="CDHardcopyitem" value="{!CDHardcopyIdList}">
+ <td>
+<div>{!CDHardcopyitem.name}</div>
+<a href="/{!CDHardcopyitem.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!CDHardcopybl}" filename="{!CDHardcopyfileName}"  onclick="uploadFile('CommunicationSection')" />
+
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Legal C&D sent Document Available"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoLegalCDsent" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Legal_C_D_sent_document__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Legal C&D sent  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="legalitem" value="{!legalIdList}">
+ <td>
+<div>{!legalitem.name}</div>
+<a href="/{!legalitem.id}" style="text-decoration: none; text-align:center;" target="_blank">
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!legalbl}" filename="{!legalfileName}"  onclick="uploadFile('CommunicationSection')" />
+<br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Proper Use Document Available"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoProperUse" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Proper_use_document__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Proper use  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="properuseitem" value="{!properuseIdList}">
+ <td>
+<div>{!properuseitem.name}</div>
+<a href="/{!properuseitem.id}" style="text-decoration: none; text-align:center;" target="_blank">
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!properusebl}" filename="{!properusefileName}"  onclick="uploadFile('CommunicationSection')" />
+<br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Infringer Response Document Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoResponseFromInfringer" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Response_from_Infringer_document__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Response from Infringer  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="responseitem" value="{!responseIdList}">
+ <td>
+<div>{!responseitem.name}</div>
+<a href="/{!responseitem.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!responsebl}" filename="{!responsefileName}"  onclick="uploadFile('CommunicationSection')" />
+<br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Industry Communication/Warning Document Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoIndustryCommunication" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Industry_Communication_Warning_document__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Industry Communication/Warning/Education  : " style="float:left; white-space:nowrap;" />
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="industryitem" value="{!industryIdList}">
+ <td>
+<div>{!industryitem.name}</div>
+<a href="/{!industryitem.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!industrybl}" filename="{!industryfileName}"  onclick="uploadFile('CommunicationSection')" />
+<br/>
+
+<apex:outputField value="{!currentCaseDetail.Communication_Comments__c}">
+<apex:inlineEditSupport showOnEdit="saveCommunication,cancelCommunication" event="ondblclick"/>
+</apex:outputField>
+</apex:pageBlockSection>
+<table style="border:0px; width:100%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveCommunication"  action="{!savingCase}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelCommunication"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div>
+
+
+<div id="InternetEvidenceSection">
+<a name="linktoInternetEvidenceSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" collapsible="true" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Internet Evidence</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveInternetEvidence"  action="{!saveInternetEvidence}" style="display:none"  />
+<apex:commandButton value="Cancel" id="cancelInternetEvidence"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<a name="linktotoolScore" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Total_Classification_Points__c}" >
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Relative Priority Score" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Relative_Priority_Score__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Relative_Priority_Score__c}" >
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Recommended_Action__c}" >
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="URL" />
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:outputField value="{!currentCaseDetail.Infringing_URL__c}" id="URL">
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>
+</apex:outputField>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Third Party Web Crawlers" />
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<a name="linktoThirdPartyWebCrawlers" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Third_Party_Web_Crawlers__c}" id="webCrawler">
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>
+</apex:outputField>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Web_site_screen_shot_date__c}" >
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Internet_Evidence_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Website Screenshot" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Web_site_screen_shot__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<a name="linktoWebsitescreenshot" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Web_site_screen_shot__c}" >
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>  
+</apex:outputField>
+</div>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<apex:pageBlockSection >
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveInternetEvidence"  action="{!saveInternetEvidence}" style="display:none"  />
+<apex:commandButton value="Cancel" id="cancelInternetEvidence"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div> 
+
+<div id="CustomsSeizureSection">
+<a name="linktoCustomsSeizureSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" collapsible="true" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Customs Seizure</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveCustomsSeizure"  action="{!saveCustomsSeizure}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelCustomsSeizure"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Customs Seizure Country" />
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:outputField value="{!currentCaseDetail.Customs_Seizure_Country__c}">
+<apex:inlineEditSupport showOnEdit="saveCustomsSeizure,cancelCustomsSeizure" event="ondblclick"/>
+</apex:outputField>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Customs Seizure Port" styleClass="labelCol vfLabelColTextWrap first"/>
+<apex:outputPanel >
+<apex:inputtext id="autoPort" value="{!currentCaseDetail.Customs_Seizure_Port__c}"
+style="width:100px" label="{!$ObjectType.Case_Details__c.fields.Customs_Seizure_Port__c.Label}" onkeydown="uploadFile('CustomsSeizureSection')"  >
+<c:BPDautoComplete_General sObjectType="Case_Details__c"  for="{!$Component.autoPort}" minLength="3"
+where="" fields="Customs_Seizure_Port__c" />
+</apex:inputtext>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Customs Seizure Date" />
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:outputField value="{!currentCaseDetail.Customs_Seizure_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveCustomsSeizure,cancelCustomsSeizure" event="ondblclick"/>
+</apex:outputField>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Sample Received" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Sample_Received__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div> 
+<a name="linktoSampleReceived" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Sample_Received__c}" >
+<apex:inlineEditSupport showOnEdit="saveCustomsSeizure,cancelCustomsSeizure" event="ondblclick"/>  
+</apex:outputField>
+</div>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Brand" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+ <apex:outputLink value="javascript:return false;">
+     <img src="/s.gif" alt="" class="helpOrb" />
+     <span>{!$ObjectType.Case.fields.brand__c.inlineHelpText}</span>            
+ </apex:outputLink>
+    </span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:selectList value="{!seizureBrand}" multiselect="false" size="1" > 
+<apex:selectOptions value="{!options}"/>
+</apex:selectList>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Quantity_Unit_of_Measure__c}" >
+<apex:inlineEditSupport showOnEdit="saveCustomsSeizure,cancelCustomsSeizure" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Custom Seizure Volume" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Custom_Seizure_Volume__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div> 
+<apex:outputField value="{!currentCaseDetail.Custom_Seizure_Volume__c}" >  
+</apex:outputField>
+</div>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Custom_Seizure_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveCustomsSeizure,cancelCustomsSeizure" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Customs Authority" />
+<apex:outputPanel >
+<apex:inputText value="{!customAuthority}" disabled="true" style="border:none; background-color:#F7F5F5;" 
+rendered="{!IF(customAuthority !='' ,true,false)}"></apex:inputText>
+<apex:commandLink action="/03j/e?parentId={!currentCase.Id}&retURL={!currentCase.Id}&Role=Customs Authority" value="Select Contact" target="_parent"/>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Outside Counsel Information" />
+<apex:outputPanel >
+<apex:inputText value="{!outsideCounsel}" disabled="true" style="border:none; background-color:#F7F5F5;" 
+rendered="{!IF(outsideCounsel !='' ,true,false)}"></apex:inputText>
+<apex:commandLink action="/03j/e?parentId={!currentCase.Id}&retURL={!currentCase.Id}&Role=Customs Seizure Outside Counsel" value="Select Contact" target="_parent"/>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveCustomsSeizure"  action="{!saveCustomsSeizure}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelCustomsSeizure"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div> 
+
+<div id="BudgetSection">
+<a name="linktoBudgetSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" collapsible="true" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Budget / Timelines</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveBudget"  action="{!saveBudget}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelBudget"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:right;">
+
+<table>
+<tr><td >
+<apex:outputLabel value="DuPont Matter Billing Reference Nb" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.DuPont_matter_Billing_Ref_No__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:outputField value="{!currentCaseDetail.DuPont_matter_Billing_Ref_No__c}" >
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>  
+</apex:outputField>
+</div>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Investigation_Proposal_Submit_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Investigation_Proposal_Approval_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Enforcement_Proposal_Submit_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Enforcement_Proposal_Approval_Date__c}">
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Enforcement_Action_initiated__c}" >
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Other_relevant_dates__c}" >
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Budget_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSection columns="1" collapsible="true">
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Initial Proposed Budget Form Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Initial_Proposed_Budget_Form_document__c}">
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Initial Proposed Budget Form  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!initialBudgetIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank">
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!initialBudgetbl}" filename="{!initialBudgetfileName}"  onclick="uploadFile('BudgetSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Additional Proposed Budget Form(s) Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Additional_Proposed_Budget_document__c}">
+<apex:inlineEditSupport showOnEdit="saveBudget,cancelBudget" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Additional Proposed Budget Form(s)  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!additionalBudgetIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!additionalBudgetbl}" filename="{!additionalBudgetfileName}"  onclick="uploadFile('BudgetSection')" />
+</apex:pageBlockSection>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveBudget"  action="{!saveBudget}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelBudget"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div> 
+
+<div id="InvestigationEvidenceSection">
+<a name="linktoInvestigationEvidenceSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" collapsible="true" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Investigation and Evidence</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveInvestigationEvidence"  action="{!saveInvestigationEvidence}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelInvestigationEvidence"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Physical visit to target" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Administrative_action_initiated__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<a name="linktoPhysicalvisittotarget" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Physical_visit_to_target__c}" >
+<apex:inlineEditSupport showOnEdit="saveInvestigationEvidence,cancelInvestigationEvidence" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Criminal Investigation" />
+<apex:outputPanel >
+<a name="linktoCriminalInvestigation" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Criminal_Investigation__c}" >
+<apex:inlineEditSupport showOnEdit="saveInvestigationEvidence,cancelInvestigationEvidence" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Investigation Resolution" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Investigation_Resolution__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Investigation_Resolution__c}" >
+<apex:inlineEditSupport showOnEdit="saveInvestigationEvidence,cancelInvestigationEvidence" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Private Investigation Initiated Date" />
+<apex:outputPanel >
+<a name="linktoPrivateInvestigationinitiated" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Private_Investigation_Initiated_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveInvestigationEvidence,cancelInvestigationEvidence" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Investigator" />
+<apex:outputPanel >
+<apex:inputText value="{!investigator}" disabled="true" style="border:none; background-color:#F7F5F5;" 
+rendered="{!IF(investigator !='' ,true,false)}"></apex:inputText>
+<apex:commandLink action="/03j/e?parentId={!currentCase.Id}&retURL={!currentCase.Id}&Role=Investigator" value="Select Contact" target="_parent"/>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Third party contact" />
+<apex:outputPanel >
+<apex:inputText value="{!thirdParty}" disabled="true" style="border:none; background-color:#F7F5F5;" 
+rendered="{!IF(thirdParty !='' ,true,false)}"></apex:inputText>
+<apex:commandLink action="/03j/e?parentId={!currentCase.Id}&retURL={!currentCase.Id}&Role=Third Party Contact(s)" value="Select Contact" target="_parent"/>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Related Target 1" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Related_Target_1__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<a name="linktoRelatedCases" style="text-decoration:none"></a>
+<apex:inputtextarea id="autoTarget1" value="{!currentCaseDetail.Related_Target_1__c}"
+style="width:100px" label="{!$ObjectType.Case_Details__c.fields.Related_Target_1__c.Label}" onkeydown="uploadFile('InvestigationEvidenceSection')" >
+<c:BPDautoComplete_General sObjectType="Case_Details__c"  for="{!$Component.autoTarget1}" minLength="3"
+where="" fields="Company__c,Related_Target_1__c,Related_Target_2__c,Related_Target_3__c"  /> 
+</apex:inputtextarea></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Related Target 2" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Related_Target_1__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:inputtextarea id="autoTarget2" value="{!currentCaseDetail.Related_Target_2__c}"
+style="width:100px" label="{!$ObjectType.Case_Details__c.fields.Related_Target_2__c.Label}" onkeydown="uploadFile('InvestigationEvidenceSection')" >
+<c:BPDautoComplete_General sObjectType="Case_Details__c"  for="{!$Component.autoTarget2}" minLength="3"
+where="" fields="Company__c,Related_Target_1__c,Related_Target_2__c,Related_Target_3__c" />  
+</apex:inputtextarea> 
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Related Target 3" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Related_Target_1__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:inputtextarea id="autoTarget3" value="{!currentCaseDetail.Related_Target_3__c}"
+style="width:100px" label="{!$ObjectType.Case_Details__c.fields.Related_Target_3__c.Label}" onkeydown="uploadFile('InvestigationEvidenceSection')" >
+<c:BPDautoComplete_General sObjectType="Case_Details__c"  for="{!$Component.autoTarget3}" minLength="3"
+where="" fields="Company__c,Related_Target_1__c,Related_Target_2__c,Related_Target_3__c" />  
+</apex:inputtextarea>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Investigation_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveInvestigationEvidence,cancelInvestigationEvidence" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSection columns="1" >
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Investigation Report(s) Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Investigation_Report_s_document__c}">
+<apex:inlineEditSupport showOnEdit="saveInvestigationEvidence,cancelInvestigationEvidence" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Investigation Report(s)  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!investigationReportIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!investigationReportbl}" filename="{!investigationReportfileName}"  onclick="uploadFile('InvestigationEvidenceSection')" /><br/>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Other Documents Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Other_documents__c}">
+<apex:inlineEditSupport showOnEdit="saveInvestigationEvidence,cancelInvestigationEvidence" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Other documents  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!otherDocumentsIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!otherDocumentsbl}" filename="{!otherDocumentsfileName}"  onclick="uploadFile('InvestigationEvidenceSection')" /><br/>
+</apex:pageBlockSection>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveInvestigationEvidence"  action="{!saveInvestigationEvidence}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelInvestigationEvidence"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div> 
+
+<div id="RaidActionSection">
+<a name="linktoRaidActionSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" collapsible="true" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Raid Action</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveRaidAction"  action="{!saveRaidAction}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelRaidAction"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Raid Action Date" />
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<a name="linktoRaidConducted" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Raid_Action_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveRaidAction,cancelRaidAction" event="ondblclick"/>
+</apex:outputField>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:inputtext id="autoLocation" value="{!currentCaseDetail.Raid_Action_Location__c}"
+style="width:100px" label="{!$ObjectType.Case_Details__c.fields.Raid_Action_Location__c.Label}" onkeydown="uploadFile('RaidActionSection')" >
+<c:BPDautoComplete_General sObjectType="Case_Details__c"  for="{!$Component.autoLocation}" minLength="3"
+where="" fields="Raid_Action_Location__c" />
+</apex:inputtext>
+<apex:outputField value="{!currentCaseDetail.Raid_Action_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveRaidAction,cancelRaidAction" event="ondblclick"/>
+</apex:outputField>
+<apex:selectList value="{!currentCase.Brand__c}" multiselect="false" size="1" > 
+<apex:selectOptions value="{!options}"/>
+</apex:selectList>
+<apex:outputField value="{!currentCaseDetail.Quantity_Unit_of_Measure__c}" >
+<apex:inlineEditSupport showOnEdit="saveRaidAction,cancelRaidAction" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Raid Action Volume" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Administrative_action_initiated__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<a name="linktoRaidSeizure" style="text-decoration:none"></a>
+<apex:inputTextarea value="{!currentCaseDetail.Raid_Action_Volume__c}" disabled="true" style="border:none;height:100px;width:250px;background-color:#F7F5F5;">
+</apex:inputTextarea>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="2nd Raid Description (If Applicable)" />
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.X2nd_Raid_Description_If_Applicable__c}" >
+<apex:inlineEditSupport showOnEdit="saveRaidAction,cancelRaidAction" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Government authority" />
+<apex:outputPanel >
+<apex:inputText value="{!govAuthority}" disabled="true" style="border:none; background-color:#F7F5F5;" 
+rendered="{!IF(govAuthority !='' ,true,false)}"></apex:inputText>
+<apex:commandLink action="/03j/e?parentId={!currentCase.Id}&retURL={!currentCase.Id}&Role=Government Authority Contact" value="Select Contact" target="_parent"/>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSection columns="1" >
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="RaidReports,Images and Related Documents Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.RaidReports_Images_and_Related_Documents__c}">
+<apex:inlineEditSupport showOnEdit="saveRaidAction,cancelRaidAction" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Raid Reports, Images, and Related Documents  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!raidReportIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!raidReportbl}" filename="{!raidReportfileName}"  onclick="uploadFile('RaidActionSection')" /><br/>
+</apex:pageBlockSection>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveRaidAction"  action="{!saveRaidAction}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelRaidAction"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div> 
+
+<div id="LegalSection">
+<a name="linktoLegalSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" collapsible="true" rendered="{!permissions}" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Legal/Enforcement Actions</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveLegal"  action="{!saveLegal}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelLegal"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Counsel" />
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:outputField value="{!currentCaseDetail.Counsel__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Counsel_s_Ref_No__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Counsel information" />
+<apex:outputPanel >
+<apex:inputText value="{!counselInfo}" disabled="true" style="border:none; background-color:#F7F5F5;" 
+rendered="{!IF(counselInfo !='' ,true,false)}"></apex:inputText>
+<apex:commandLink action="/03j/e?parentId={!currentCase.Id}&retURL={!currentCase.Id}&Role=Enforcement Action Outside Counsel" value="Select Contact" target="_parent"/>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Brief Description of Enforcement Action" />
+<apex:outputPanel >
+<div class="requiredInput">
+<div class="requiredBlock"></div>
+<apex:outputField value="{!currentCaseDetail.Enforcement_Action_Description__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+</div>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Agency/Tribunal" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Agency_Tribunal__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Agency_Tribunal__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Official Case Nb" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Official_Case_No__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Official_Case_No__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Answer Due Date" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Answer_Due_Date__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Answer_Due_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Discovery_Open_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Complaint_Filed_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Discovery_Close_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+<apex:outputField value="{!currentCaseDetail.Summary_Judgment_Due_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Privileged Raid Action Comments" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Priviledged_Raid_Action_Comments__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Priviledged_Raid_Action_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Appeal__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Administrative Action Initiated" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Administrative_action_initiated__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<a name="linktoAdministrativeAction" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Administrative_action_initiated__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Civil proceeding" />
+<apex:outputPanel >
+<a name="linktoCivilProceeding" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Civil_proceeding__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Criminal proceeding" />
+<apex:outputPanel >
+<a name="linktoCriminalProceeding" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Criminal_proceeding__c}" >
+<apex:inlineEditSupport showOnEdit="ssaveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Discovery period started" />
+<apex:outputPanel >
+<a name="linktoDiscoveryPeriod" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Discovery_period_started__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Trial initiated" />
+<apex:outputPanel >
+<a name="linktoTrialInitiated" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Trial_initiated__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSection columns="1" >
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;">
+<apex:outputLabel value="TRO / Preliminary Injunction Available" style="white-space:nowrap" />
+</apex:outputPanel>
+<apex:outputPanel >
+<a name="linktoTRO" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.TRO_Preliminary_Injunction__c}">
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="TRO/Preliminary Injunction Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.TRO_Preliminary_Injunction_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="TRO/Preliminary Injunction  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!TROIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:inputFile value="{!TRObl}" filename="{!TROfileName}"  onclick="uploadFile('LegalSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Case Management Schedule Documents Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Case_Management_Schedule_document__c}">
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Schedule Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Schedule_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Case Management Schedule  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!caseScheduleIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!caseSchedulebl}" filename="{!caseSchedulefileName}"  onclick="uploadFile('LegalSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Pleadings Document Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Pleadings_Document__c}">
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Pleadings Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Pleadings_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Pleadings  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!pleadingsIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!pleadingsbl}" filename="{!pleadingsfileName}"  onclick="uploadFile('LegalSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Discovery Document Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Discovery_document__c}">
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Discovery Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Discovery_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Discovery  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!discoveryIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!discoverybl}" filename="{!discoveryfileName}"  onclick="uploadFile('LegalSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Motions Document Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Motions_Document__c}">
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Motions Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Motions_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Motions  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!motionsIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!motionsbl}" filename="{!motionsfileName}"  onclick="uploadFile('LegalSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Privileged Raid Documents Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Privileged_Raid_documents__c}">
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Privileged Raid documents  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!priviledgedDocIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!priviledgedDocbl}" filename="{!priviledgedDocfileName}"  onclick="uploadFile('LegalSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Other Documents Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Other_documents__c}">
+<apex:inlineEditSupport showOnEdit="saveLegal,cancelLegal" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Other documents  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!legalDocIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!legalDocbl}" filename="{!legalDocfileName}"  onclick="uploadFile('LegalSection')" /><br/>
+</apex:pageBlockSection>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td>
+<apex:commandButton value="Save" id="saveLegal"  action="{!saveLegal}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelLegal"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div> 
+
+<a name="linktoFinanceSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" id="financeSection">
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Financial Information</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveFinance"  action="{!saveFinance}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelFinance"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:outputField value="{!currentCaseDetail.Hard_Benefit_Amount_USD__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Hard Benefit Amount (Actual)" />
+<apex:outputPanel >
+<a name="linktohardBenefit" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Hard_Benefit_Amount_Actual__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<!--vaishnavi11182015 start-->
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Hard Benefit Amount Date" />
+<apex:outputPanel >
+<a name="linktohardBenefit" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Hard_Benefit_Amount_Date__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<!--vaishnavi11182015 end-->
+<apex:outputField value="{!currentCaseDetail.Hard_Benefit_Currency__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Hard Benefit Justification" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Hard_Benefit_Justification__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Hard_Benefit_Justification__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:outputField value="{!currentCaseDetail.Soft_Benefit_Amount_USD__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Soft Benefit Amount (Actual)" />
+<apex:outputPanel >
+<a name="linktosoftBenefit" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Soft_Benefit_Amount_Actual__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<!--vaishnavi11182015 start-->
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Soft Benefit Amount Date" />
+<apex:outputPanel >
+<a name="linktosoftBenefit" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Soft_Benefit_Amount_Date__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<!--vaishnavi11182015 end-->
+<apex:outputField value="{!currentCaseDetail.Soft_Benefit_Currency__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Soft Benefit Justification" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Soft_Benefit_Justification__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Soft_Benefit_Justification__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="BP-Closed Soft Benefit (USD)" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.BP_Closed_Soft_Benefit__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<a name="linktoBPSoftBenefit" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.BP_Closed_Soft_Benefit__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Legal Recovery Amount (Actual)" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Legal_Recovery_Amount__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<a name="linktolegalRecovery" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Legal_Recovery_Amount__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<!--vaishnavi11182015 start-->
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Legal Recovery Amount Date" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Legal_Recovery_Amount_Date__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<a name="linktolegalRecovery" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Legal_Recovery_Amount_Date__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<!--vaishnavi11182015 END-->
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Legal Recovery Amount (USD)" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Legal_Recovery_Amount_USD__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Legal_Recovery_Amount_USD__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Legal Recovery Currency" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Legal_Recovery_Currency__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Legal_Recovery_Currency__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel style="float:right;">
+<table>
+<tr><td >
+<apex:outputLabel value="Legal Recovery Justification" style="color:#333;"/>
+</td><td>
+<span class="vfHelpText" >
+<apex:outputLink value="javascript:return false;">
+<img src="/s.gif" alt="" class="helpOrb" />
+<span>{!$ObjectType.Case_Details__c.fields.Legal_Recovery_Justification__c.inlineHelpText}</span>            
+</apex:outputLink>
+</span>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputpanel >
+<apex:outputField value="{!currentCaseDetail.Legal_Recovery_Justification__c}" >
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>  
+</apex:outputField>
+</apex:outputpanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="License Potential" />
+<apex:outputPanel >
+<a name="linktolicensePotential" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.License_Potential__c}">
+<apex:inlineEditSupport showOnEdit="saveFinance,cancelFinance" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</a>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td >
+<apex:commandButton value="Save" id="saveFinance"  action="{!saveFinance}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelFinance"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table> 
+<div id="ResolutionSection">
+<a name="linktoResolutionSection" style="text-decoration:none">
+<apex:pageBlockSection columns="2" collapsible="true" >
+<apex:facet name="header">
+<span style="color: black;font-size: 10pt;">Resolution / Recovery</span><span style="color: black;font-style: italic;font-size: 8pt;"> - To Save a Section, Enter all Required Fields (indicated in RED) for that Section</span>
+</apex:facet>
+<apex:outputPanel >
+<div align="right" width="100%">
+<apex:commandButton value="Save" id="saveResolution"  action="{!saveResolution}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelResolution"  action="{!Cancel}" style="display:none"/>
+</div></apex:outputPanel>
+<br/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Website image(s) removed" />
+<apex:outputPanel >
+<a name="linktoWebsiteImage" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Website_image_s_removed__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Website corrected" />
+<apex:outputPanel >
+<a name="linktoWebsiteCorrected" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Website_corrected__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Website taken down" />
+<apex:outputPanel >
+<a name="linktoWebsitetakendown" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Website_taken_down__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Sources Revealed" />
+<apex:outputPanel >
+<a name="linktoSourceRevealed" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Sources_Revealed__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Fine Imposed" />
+<apex:outputPanel >
+<a name="linktoFineImposed" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Fine_Imposed__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Domain Name Disposition" />
+<apex:outputPanel >
+<a name="linktoDomainName" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Domain_Name_Disposition__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Settlement Agreement" />
+<apex:outputPanel >
+<a name="linktoSettlementAgreement" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Settlement_Agreement__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Undertaking Received" />
+<apex:outputPanel >
+<a name="linktoUndertakingReceived" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Undertaking_Received__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Public Apology" />
+<apex:outputPanel >
+<a name="linktoPublicApology" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Public_Apology__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Court Ruling" />
+<apex:outputPanel >
+<a name="linktoCourtRuling" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Court_Ruling__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Damages / Monetary Recovery" />
+<apex:outputPanel >
+<a name="linktoDamages" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Damages_Monetary_Recovery__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Arrests / Imprisonment" />
+<apex:outputPanel >
+<a name="linktoArrests" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Arrests_Imprisonment__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Manufacturing equipment destroyed" />
+<apex:outputPanel >
+<a name="linktoManufacturingEquipment" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Manufacturing_equipment_destroyed__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Infringing Products Destroyed" />
+<apex:outputPanel >
+<a name="linktoInfringingProducts" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Infringing_Products_Destroyed__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="BP Closure - No Action Required" />
+<apex:outputPanel >
+<a name="linktoBPClosureAction" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.BP_Closure_No_Action_Required__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputField value="{!currentCaseDetail.BP_Closure_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Resolution/Recovery Website Screenshot" />
+<apex:outputPanel >
+<a name="linktoResolutionScreenshot" style="text-decoration:none"></a>
+<apex:outputField value="{!currentCaseDetail.Resolution_Recovery_Website_Screenshot__c}" id="screenshot">
+<apex:inlineEditSupport showOnEdit="saveInternetEvidence,cancelInternetEvidence" event="ondblclick"/>
+</apex:outputField></apex:outputPanel>
+</apex:pageBlockSectionItem><apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+<apex:pageBlockSection columns="1" >
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;"  >
+<apex:outputLabel value="Copy of Settlement Agreement Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Copy_of_Settlement_Agreement_document__c}">
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Settlement Agreement Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Settlement_Agreement_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Copy of Settlement Agreement / Undertaking  : " style="float:left;white-space:nowrap;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!settlementIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!settlementbl}" filename="{!settlementfileName}"  onclick="uploadFile('ResolutionSection')" /><br/>
+
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Copy of Court Ruling / Judgment Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Copy_of_Court_Ruling_Judgment_document__c}">
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Court Ruling Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Court_Ruling_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Copy of Court Ruling / Judgment  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!judgementDocIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!judgementDocbl}" filename="{!judgementDocfileName}"  onclick="uploadFile('ResolutionSection')" /><br/>
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="BP Closure - Confirmation Sent Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.BP_Closure_Confirmation_Sent__c}">
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="BP Closure - Confirmation Sent  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!bpClosureDocIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!bpClosureDocbl}" filename="{!bpClosureDocfileName}"  onclick="uploadFile('ResolutionSection')" /><br/>
+
+
+
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Additional Documents Available" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Additional_Documents__c}">
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel style="float:left;" >
+<apex:outputLabel value="Additional Comments" style="white-space:nowrap"  />
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:outputField value="{!currentCaseDetail.Additional_Comments__c}" >
+<apex:inlineEditSupport showOnEdit="saveResolution,cancelResolution" event="ondblclick"/>
+</apex:outputField></apex:outputPanel></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputPanel >
+<apex:outputLabel value="Additional Documents  : " style="float:left;"/>
+</apex:outputPanel>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!resolutionDocIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank" >
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel></apex:pageBlockSectionItem>
+<apex:inputFile value="{!resolutionDocbl}" filename="{!resolutionDocfileName}"  onclick="uploadFile('ResolutionSection')" /><br/>
+</apex:pageBlockSection>
+</apex:pageBlockSection>
+<table style="border:0px; width:94%;">
+<tr style="text-align:center;">
+<td>
+<apex:commandButton value="Save" id="saveResolution"  action="{!saveResolution}" style="display:none" />
+<apex:commandButton value="Cancel" id="cancelResolution"  action="{!Cancel}" style="display:none"/>
+</td>
+</tr>   
+</table>
+</a>
+</div> 
+</apex:pageBlock> 
+</apex:form>
+
+</apex:page>

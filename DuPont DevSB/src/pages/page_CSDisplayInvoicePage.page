@@ -1,0 +1,293 @@
+<!--/*******************************************************************************
+Copyright © 2015 DuPont. All rights reserved. 
+Author: Sanchit Dua
+Email: sanchit.dua@accenture.com
+Description:  VF page for displaying the invoices from CSAP making real-time call into SFSC.
+********************************************************************************/-->
+
+<apex:page standardController="Account" extensions="ctrl_CSDisplayCustomerInvoice" sidebar="false" id="thePage">
+    <apex:includeScript value="/soap/ajax/27.0/connection.js"/>
+    <apex:includeScript value="/support/console/22.0/integration.js"/>
+    <apex:includeScript value="/xdomain/xdomain.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.CS_JQueryUI, '/jquery.min.js')}" />
+    
+    <apex:includeScript value="{!URLFOR($Resource.CS_JQueryUI, '/jquery-ui.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.CS_JQueryUI, '/jquery-ui.css')}"/>
+    
+    <apex:pageMessages id="error"/>
+    
+    <style>
+        .popupBackground{
+        cursor:wait;
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+        display:none;
+        }
+        .custPopup{
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        z-index: 9999;
+        left: 50%;
+        padding:10px;
+        position: absolute;
+        height: 600px
+        width: 1000px;
+        margin-left: -250px;
+        top:100px;
+        }
+    </style>
+    
+    <div class="popupBackground">
+        <!-- For maintaining a non-editable background on click of the submit -->
+    </div> 
+    
+    <div id="loading" style="display:none;">
+        <!-- For maintaining a loading image whenever a request is made by clicking the submit button -->
+        <span>
+            <div class="waitingSearchDiv" id="el_loading" style="background-color: #FBFBFB;height: 100%;opacity:0.65;width:100%;"> 
+                <div class="waitingHolder" style="top: 40%; width: 500px;left:30%;position:fixed;height: 500px;">
+                    <img class="waitingImage" src="/resource/CS_Loading" title="Please Wait..."/>
+                    <span class="waitingDescription">Please Wait...</span>
+                </div>
+            </div>
+        </span>
+    </div>
+    
+    <script>
+    $j = jQuery.noConflict();        
+    
+    $j(document).ready(function(){
+        // $j( 'div[id$=block]').hide();
+        // getRemoteInvoices();
+        $j( 'div[id$=block]').hide();
+        $j( 'input[id$=strDate]').val("{!pastDate}");
+        var $strdiv = $j('#strdt'); // .closest('div[class^="dataCol"]');
+        var $enddiv = $j('#endt');
+        // alert('the closest element found is: '+$div);
+        var $thToAppend = $strdiv.parent().parent().append("<th id='strTh' class='labelCol vfLabelColTextWrap  last' scope='row'>From Date:</th>");
+        $strdiv.parent().parent().find( "td:eq(1)" ).insertAfter($j("#strTh"));
+        
+        $enddiv.parent().parent().append("<th id='endTh' class='labelCol vfLabelColTextWrap  last' scope='row'>To Date:</th>");
+        $enddiv.parent().parent().find( "td:eq(1)" ).insertAfter($j("#endTh"));
+        
+        $j('#txt').parent().parent().prepend("<th class='labelCol vfLabelColTextWrap  last' scope='row'>Invoice Number:</th>");
+        $j('#cpo').parent().parent().prepend("<th class='labelCol vfLabelColTextWrap  last' scope='row'> <!-- Customer PO#--> </th>");
+        
+        // $j('#dt').parent().prepend("<th class="labelCol vfLabelColTextWrap  last " scope="row">From Date:</th>");
+        // $j('div[id$=dt]').parent().append("<th class="labelCol vfLabelColTextWrap  last " scope="row">From Date:</th>");
+        $j("txt").tooltip();
+        $j("end_date").tooltip();
+        $j("start_date").tooltip();
+        $j("btns").tooltip();
+        $j("#btns").button();
+        $j( "#start_date" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            changeYear: true,
+            numberOfMonths: 1,
+            dateFormat:"m/d/yy",
+            altField: "#start_date_alternate",
+            altFormat: "m/d/yy",
+            showAnim: "slide"
+        })
+        $j( "#end_date" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            changeYear: true,
+            numberOfMonths: 1,
+            dateFormat:"m/d/yy",
+            altField: "#end_date_alternate",
+            altFormat: "m/d/yy",
+            showAnim: "slide"
+        })
+    });
+    
+    function setTabTitle() {
+        sforce.console.setTabTitle("Invoice Details");
+    }
+    var previousOnload = window.onload;
+    window.onload = function() {
+        if (previousOnload) {
+            // previousOnload();
+        }
+        setTimeout('setTabTitle()', '300');
+    }
+    
+    function slideComponents(Text){
+        var that = $j(Text);
+        that.hide();
+        that.siblings().each(function(e){
+            // $j(this).slideToggle();
+            $j(this).show();
+        });
+        that.parent().parent().next().find('table.line_item').slideToggle();
+    } // END function slideComponents()
+    
+    $j("#invoice").click(function(e){
+        e.preventDefault();//this will prevent the link trying to navigate to another page
+        var href = $(this).attr("href");//get the href so we can navigate later
+        
+        //do the update
+        
+        //when update has finished, navigate to the other page
+        window.location = href;
+        // window.open(href, 'My Window');
+    });
+    
+    function serverCall(){
+        //<AB20160511> Updated to stop form from submitting if Sales Org Code is missing in Account record
+        if({!Account.ERP_SalesOrgCode__c = ''}){
+            alert('This feature is only available for accounts with a sales org code.');
+            
+        }
+        
+        
+        // callServer(
+        //        $j( 'input[id$=strDate]').val(), 
+        //        $j( 'input[id$=endDate]').val(), 
+        //        $j( 'input[id$=txt]').val()
+        //    );
+        if(!$j( 'input[id$=start_date]').val()){
+            $j('span[id$=appendError1]').children('.errorMsg').remove();
+            $j( 'span[id$=appendError1]').append('<div class="errorMsg"><strong>Error:</strong> You must enter a value</div>');
+        }
+        if(!$j( 'input[id$=end_date]').val()){
+            $j('span[id$=appendError2]').children('.errorMsg').remove();
+            $j( 'span[id$=appendError2]').append('<div class="errorMsg"><strong>Error:</strong> You must enter a value</div>');
+        }
+        if($j( 'input[id$=start_date]').val())
+            $j('span[id$=appendError1]').children('.errorMsg').remove();
+        if($j( 'input[id$=end_date]').val())
+            $j('span[id$=appendError2]').children('.errorMsg').remove();
+        if(!$j( 'input[id$=start_date]').val() || !$j( 'input[id$=end_date]').val())
+            return;
+        
+        $j('span[id$=appendError1]').children('.errorMsg').remove();
+        $j('span[id$=appendError2]').children('.errorMsg').remove();
+        $j(".popupBackground").show();         
+        $j( 'p[id$=newArea]').empty();      
+        $j("#loading").show();    
+        getRemoteInvoices();        
+    } // END function serverCall(start, end)
+    
+    Visualforce.remoting.timeout = 120000; // Set timeout at page level    
+    function getRemoteInvoices() {
+        var invoiceNo = $j( 'input[id$=txt]').val().replace(/\s\s+/g, '');
+        var invoiceObj = {
+            "invoiceNo":invoiceNo,
+            "fromDate":$j( 'input[id$=start_date]').val(), 
+            "toDate":$j( 'input[id$=end_date]').val(),
+            "distributionChannel": "{!Account.ERP_DistChannelCode__c}",
+            "division": "{!Account.ERP_DivisionCode__c}",
+            "salesOrg": "{!Account.ERP_SalesOrgCode__c}",
+            "customerNumber": "{!Account.ERP_Account_Code__c}",
+            "cluster": "{!Account.ERP_SourceCluster__c}"
+        };
+        
+        // This remoting call will use the page timeout value
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ctrl_CSDisplayCustomerInvoice.parseInvoiceXml}',
+            JSON.stringify(invoiceObj),
+            handleResult,
+            {escape: false}           
+        );  
+    } // END function getRemoteOrders() 
+    
+    function handleResult(result, event) { 
+        // alert('inside handleResult with the event: '+event+' & result: '+result); //console.log '(◣_◢)'
+        $j("#newArea").append(result);  
+        $j(".popupBackground").hide();
+        $j("#loading").hide(); 
+    } // END function handleResult(result, event)
+    
+    function replaceDate(thisText){
+        $j(thisText).parent().siblings("#start_date").val($j(thisText).text());
+        $j(thisText).parent().siblings("#end_date").val($j(thisText).text());
+    } // END function replaceDate(thisText)
+    
+    function testOpenPrimaryTab() {
+        //Open a new primary tab with the salesforce.com home page in it
+        sforce.console.openPrimaryTab(null, 'https://www.salesforce.com', false, 
+                                      'salesforce', openSuccess, 'salesforceTab');
+    }
+    
+    var openSuccess = function openSuccess(result) {
+        //Report whether opening the new tab was successful
+        if (result.success == true) {
+            alert('Primary tab successfully opened');
+        } else {
+            alert('Primary tab cannot be opened');
+        }
+    };
+    
+    </script>
+    <apex:form >
+        <apex:actionFunction name="callServer" status="fetchStatus" reRender="error,block">
+            <apex:param name="strDate" value=""/>
+            <apex:param name="endDate" value=""/>
+            <apex:param name="txt" value=""/>
+        </apex:actionFunction>
+        <apex:pageBlock id="pb" title="Search for Invoice(s)">
+            <!-- @Date 1stJune, 2015 Following got added-->
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:outputField value="{!Account.ERP_Company_Code__c}"/>
+            </apex:pageBlockSection>
+            <!-- END @Date 1stJune, 2015 -->
+            <apex:pageBlockSection columns="2" >
+                <apex:pageBLockSectionItem ><!-- Order Number: --> <input type="text" id="txt" title="Enter the Invoice number to filter your results."/></apex:pageBLockSectionItem>
+                <!-- <input id="start_test" title="Enter the Start Date." value="{!pastDate}" type="text"/> -->
+                
+                <apex:pageBLockSectionItem id="sectionItem"> <!-- <apex:inputField value="{!cont.Birthdate}" id="strDate" required="true"/> --> <!-- <apex:inputField value="{!cont.Birthdate}" id="strDate" required="true"/> --> <!-- <apex:inputField value="{!cont.Birthdate}" id="strDate" required="true"/>-->
+                    <!-- <input type="text" name="start_date" id="start_date" /> --> 
+                    <div id="strdt" class="requiredInput">
+                        
+                        <div class="requiredBlock"></div>
+                        <span id="appendError1" class="dateInput dateOnlyInput">
+                            <input data-uidsfdc="24" class="date" size="12" id="start_date" name="start_date" title="Enter the Start Date." value="{!pastDate}" type="text"/>
+                            <span class="dateFormat">
+                                [&nbsp;<a onclick="replaceDate(this);" href="javascript:;">{!currDate}</a>&nbsp;]
+                            </span>
+                        </span>
+                    </div> 
+                    <!-- <input type="hidden" name="start_date_alternate" id="event_start_date_alternate" /> -->
+                </apex:pageBLockSectionItem>
+                <apex:pageBLockSectionItem ><!-- <apex:inputHidden /> --><!-- Customer PO# --> <input type="hidden" id="cpo" title="Enter the Customer Purchase Order Number to filter your results."/> <!-- value="55314223" --></apex:pageBLockSectionItem>
+                <apex:pageBLockSectionItem ><!-- To Date: --> <!-- <apex:inputField value="{!cont.Birthdate}" id="endDate" required="true"/> --> 
+                    <div id="endt" class="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <span id="appendError2" class="dateInput dateOnlyInput">
+                            <input data-uidsfdc="24" class="date" size="12" id="end_date" title="Enter the End Date." name="end_date" value="{!currDate}" type="text"/>
+                            <span class="dateFormat">
+                                [&nbsp;<a onclick="replaceDate(this);" href="javascript:;">{!currDate}</a>&nbsp;]
+                            </span>
+                        </span>
+                    </div> 
+                </apex:pageBLockSectionItem>                
+            </apex:pageBlockSection>            
+        </apex:pageBlock>
+        <center><input type="button" value="Submit" id="btns" class="btn" title="Click here to submit your request." onclick="serverCall();" /></center>
+        <apex:actionstatus id="fetchStatus">
+            <apex:facet name="start">
+                <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb;height: 100%;opacity:0.65;width:100%;"> 
+                    <div class="waitingHolder" style="top: 60%; width: 500px;left:40%;position:fixed;height: 500px;">
+                        <img class="waitingImage" src="{!URLFOR($Resource.CS_Loading)}" title="Please Wait..." />
+                        <span class="waitingDescription">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus>
+    </apex:form> 
+    
+    <p id="newArea">
+        <!-- The result is going to be appended here -->
+    </p>
+</apex:page>

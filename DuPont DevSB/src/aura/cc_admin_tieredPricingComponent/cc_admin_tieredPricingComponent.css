@@ -1,0 +1,81 @@
+.THIS {
+
+}
+
+.THIS h2 {
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.9em;
+}
+
+.THIS .valueSelect label, .THIS .no-label label, .THIS .valueSelect .slds-form-element__help, .THIS .valueSelect abbr {
+    display:none;
+}
+
+.THIS.container {
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+.THIS .actionColumn {
+    width: 190px;
+}
+
+.THIS.notificationContainer {
+    transition: 0.4s transform ease-in-out, 0.4s opacity ease-in-out;
+}
+
+.THIS .basePriceRow {
+    background-color: t(colorBackgroundRowHover);
+}
+
+.THIS .headerPanel {
+    z-index: 100;
+    background-color: t(colorBackgroundRowHover);
+}
+
+.THIS .headerRow, .THIS table thead .headerRow>th {
+    /* background-color: t(colorBackgroundButtonInverseActive); */
+    background-color: #dddbda;
+}
+
+.THIS.notificationHide {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+}
+
+.THIS .deleteConfirm {
+    width: 180px;
+}
+
+.THIS .scrollWrapper {
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    padding-top: 60px;
+    z-index: 50;
+}
+
+.THIS .scrollableArea {
+    position: relative;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.THIS .stencil {
+    background: #f4f6f9;
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+    animation: pulsate 2s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+
+@keyframes pulsate {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.5;}
+}

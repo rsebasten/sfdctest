@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_56916606</developerName>
+        <masterLabel>Business Segment</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity.Owning_Organisation__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>BI-Env</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Air and Filtration</sourceValue>
+            </sourceValues>
+            <value>BE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DPT-A&amp;HF</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-ASPS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Automotive</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Car Protection</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Envelopes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Graphics &amp; Protective Packaging</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Graphics</sourceValue>
+            </sourceValues>
+            <value>GPP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DPT-Medical Packaging</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Medical Fabrics</sourceValue>
+            </sourceValues>
+            <value>MPP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DPT-Ind Pkg &amp; Protection</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT Cleanroom/Pharma</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Chemical Industrial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-DPP</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Critical Clean</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-IPP</sourceValue>
+            </sourceValues>
+            <value>PA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DPT-New Business Development</sourceValue>
+            </sourceValues>
+            <value>New Business Devlopment</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_4289169</developerName>
+        <masterLabel>Opportunity Stage</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>STAGE_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>End - Won</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ship &amp; Support</sourceValue>
+            </sourceValues>
+            <value>Closed Won</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>End - Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>End-Lost</sourceValue>
+            </sourceValues>
+            <value>Closed Lost</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Target-Plan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Target-Create</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Target</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Qualify</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sample</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Design Solution</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Press Trial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Propose</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Close</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Prepare Delivery</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Deliver</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Control</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Active</sourceValue>
+            </sourceValues>
+            <value>In Progress</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>User.User_Region__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>EXP_AMOUNT</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 or 5 or 6) AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Owning_Organisation__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BI,BI-Env,BI-Landscape Systems,DPT-A&amp;HF,DPT-Air and Filtration,DPT-ASPS,DPT-Automotive,DPT-Car Protection,DPT-Chemical Industrial,DPT Cleanroom/Pharma,DPT-Critical Clean,DPT-DPP,DPT-Envelopes,DPT-Graphics,DPT-Graphics &amp; Protective Packaging,DPT-Ind Pkg &amp; Protection,DPT-IPP,DPT-Medical Packaging,DPT-NOW,DPT-Optical,DPT-Tyvek</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Opportunity.DPT_AramidsOpportunity,Opportunity.DPT_Life_Protection,Opportunity.BI_EMEA_Surfaces,Opportunity.BI_NA_Surfaces_Dodge,Opportunity.BI_NA_Surfaces_Manual</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Product__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Corian® Solid Surface,Corian® Solid Surface;Montelli®,Corian® Quartz,Corian,Nomex®,Kevlar®,Protera®</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.fSegment_L1__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Surfaces</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.fSegment_L2__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Surfaces</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.fSegment_L3__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Surfaces</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>End - Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Involved_Org__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>BI-Surf</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Year</dateGranularity>
+        <field>CLOSE_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_56916606</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Main_Ending_Reason__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Win/loss reason Analysis</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_PREVCUR2FY</interval>
+    </timeFrameFilter>
+</Report>
