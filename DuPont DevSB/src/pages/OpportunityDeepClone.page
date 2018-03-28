@@ -1,0 +1,24 @@
+<apex:page standardcontroller="opportunity" extensions="ctrlOpportunityDeepClone" action="{!deepclone}">
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageblock title="Partial Clone">
+            <apex:pageblocksection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >The following products were inactive and have not been inlcuded in the clone operation.</apex:outputLabel>
+                    <apex:pageblockTable value="{!inactiveProducts}" var="ip">
+                        <apex:column value="{!ip.product2.name}"/>
+                        <apex:column headerValue="Link">
+                            <a href="/{!ip.product2Id}" target="_new">Link</a>
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlockSectionItem>
+            </apex:pageblocksection>
+            <apex:pageBlockButtons location="bottom"><apex:commandButton action="{!ContinueToOpp}" value="Continue"/></apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>
+    <apex:outputPanel rendered="false">
+        <apex:outputtext value="{!fieldlist}"/><br/>
+        
+        <apex:outputField value="{!Opportunity.Name}"/>
+    </apex:outputPanel>
+</apex:page>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>Lead.Close_Comments__c</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>LEAD_STATUS</field>
+    </columns>
+    <currency>ARS</currency>
+    <filter>
+        <booleanFilter>(((((((((1 or 2 or 3))) AND 4))) AND 5) AND 6) AND 7) AND 8</booleanFilter>
+        <criteriaItems>
+            <column>LEAD_ALIAS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>M&amp;S- Mex</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_ALIAS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>M&amp;S - Mex</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>DIMC Level 1 LA MEX</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Response_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>includes</operator>
+            <value>Referred to Business,Referred to Marketing,Referred to Sales Rep</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Email: DuPont Encuesta de servicio,Email: DuPont. Retroalimentación a nuestra encuesta de servicio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DESCRIPTION</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Encuesta,cliente sin respuesta</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity.Owning_SBU__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Crop Protection</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Owning_Organization__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>AGCP,AGCP-CPC,AGCP-Griffin</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Reporte semanal Encuesta de servicio</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadActivity</reportType>
+    <roleHierarchyFilter>CCustomerCare</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <endDate>2017-01-29</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-23</startDate>
+    </timeFrameFilter>
+</Report>

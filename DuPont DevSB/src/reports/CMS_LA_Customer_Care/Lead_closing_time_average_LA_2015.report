@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Lead.Lead_Open_Time__c:AVG</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average Lead Open Time</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_44025071</developerName>
+        <masterLabel>Open and Close</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>STATUS</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Capture</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Qualify</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Respond</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Route</sourceValue>
+            </sourceValues>
+            <value>Open Leads</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Track</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Track-Interest Confirmed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Track-Initial Discussions</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Track-Proposing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Track-Testing Product</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Track-Test Completed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Track-Planning Transition</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Track-Waiting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>End</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>End-Won</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>End-Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>End-Abandoned</sourceValue>
+            </sourceValues>
+            <value>Closed Leads</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_81004510</developerName>
+        <masterLabel>Tiempo de Respuesta</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Lead.Lead_Open_Time__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>0</to>
+            </sourceValues>
+            <value>Mismo día</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+                <to>2</to>
+            </sourceValues>
+            <value>1 a 2 días</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>2</from>
+                <to>5</to>
+            </sourceValues>
+            <value>3 a 5 días</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>5</from>
+            </sourceValues>
+            <value>Más de 5 días</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y2</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>VerticalColumnLine</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_81004510</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Reporte generado en DuPont TeleSolutions</description>
+    <filter>
+        <booleanFilter>((1 Or 2 or 3) and 4 AND 5 AND 6 ) AND 7</booleanFilter>
+        <criteriaItems>
+            <column>CREATED_ALIAS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>M&amp;S-Mex</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Lead_Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>DIMC Level 1 LA MEX</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>M&amp;S-Mex</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Axalta</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FIRST_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Owning_SBU__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Chemicals &amp; Fluoroproducts,Titanium Technologies,Fluoroproducts</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Quarter</dateGranularity>
+        <field>CREATED_MONTH</field>
+        <sortByName>FORMULA1</sortByName>
+        <sortOrder>Asc</sortOrder>
+        <sortType>CustomSummaryFormula</sortType>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_81004510</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Lead closing time average Mex 2015</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2015-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-01-01</startDate>
+    </timeFrameFilter>
+</Report>

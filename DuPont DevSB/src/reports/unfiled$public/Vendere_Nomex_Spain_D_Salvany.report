@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>Lead.Priority__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_STATUS</field>
+    </columns>
+    <columns>
+        <field>LEAD_OWNER</field>
+    </columns>
+    <columns>
+        <field>Lead.BU_Answer1__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Lead.Lead_Country__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead.Opportunity_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Extended_Data__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Competitive_Info__c</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_STATUS</field>
+    </columns>
+    <columns>
+        <field>Lead.Close_Comments__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>Leads from Spain and Portugal</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND (3 OR (4 OR 5))</booleanFilter>
+        <criteriaItems>
+            <column>LEAD_OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>DPT-EMEA eMarketing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Vendere - Nomex</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LEAD_OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Mariana Ferreira Sahbaz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LEAD_OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Rüdiger Kramm</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LEAD_OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Daniel Salvany</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Vendere - Nomex - Spain (D.Salvany)</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>COMPANY</sortColumn>
+    <sortOrder>Asc</sortOrder>
+</Report>

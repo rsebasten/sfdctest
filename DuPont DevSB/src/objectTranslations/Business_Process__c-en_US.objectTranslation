@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Business Process</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Business Processes</value>
+    </caseValues>
+    <fields>
+        <help><!-- How complex is this Business Process?  Make your best judgement --></help>
+        <label><!-- Complexity --></label>
+        <name>Complexity__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the Custom Design elements that are used in this Business Process --></help>
+        <label><!-- Custom Design Elements --></label>
+        <name>Custom_Design_Elements__c</name>
+        <picklistValues>
+            <masterLabel>Apex Code</masterLabel>
+            <translation><!-- Apex Code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apex Trigger</masterLabel>
+            <translation><!-- Apex Trigger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Process</masterLabel>
+            <translation><!-- Approval Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Buttons/Links</masterLabel>
+            <translation><!-- Custom Buttons/Links --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lookup Filter</masterLabel>
+            <translation><!-- Lookup Filter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queues</masterLabel>
+            <translation><!-- Queues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sharing Rules</masterLabel>
+            <translation><!-- Sharing Rules --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Territory Management</masterLabel>
+            <translation><!-- Territory Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validation Rules</masterLabel>
+            <translation><!-- Validation Rules --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visual Force</masterLabel>
+            <translation><!-- Visual Force --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WF - Email Alerts</masterLabel>
+            <translation><!-- WF - Email Alerts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WF - Field Updates</masterLabel>
+            <translation><!-- WF - Field Updates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WF - Tasks</masterLabel>
+            <translation><!-- WF - Tasks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workflow Rules</masterLabel>
+            <translation><!-- Workflow Rules --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The external programs that are tied to or are needed for testing for this Business Process --></help>
+        <label><!-- Integration Points --></label>
+        <name>Integration_Points__c</name>
+        <picklistValues>
+            <masterLabel>BW</masterLabel>
+            <translation><!-- BW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPMT</masterLabel>
+            <translation><!-- CPMT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSAT</masterLabel>
+            <translation><!-- CSAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cognos</masterLabel>
+            <translation><!-- Cognos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ETL</masterLabel>
+            <translation><!-- ETL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IOD</masterLabel>
+            <translation><!-- IOD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMS</masterLabel>
+            <translation><!-- OMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP</masterLabel>
+            <translation><!-- SAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tableau</masterLabel>
+            <translation><!-- Tableau --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The owning Organization that uses this Business Process --></help>
+        <label><!-- Owning Organization --></label>
+        <name>Owning_Organization__c</name>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provide the description of the overall Business Process --></help>
+        <label><!-- Process Description --></label>
+        <name>Process_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rich Text field to capture Links, Diagrams, pictures that can help describe the Business Process --></help>
+        <label><!-- Process Details --></label>
+        <name>Process_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>ALL</masterLabel>
+            <translation><!-- ALL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia Pacific</masterLabel>
+            <translation><!-- Asia Pacific --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America</masterLabel>
+            <translation><!-- Latin America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America</masterLabel>
+            <translation><!-- North America --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The SFDC Objects or items that this Business Process covers --></help>
+        <label><!-- Related Objects --></label>
+        <name>Related_Objects__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Objective</masterLabel>
+            <translation><!-- Account Objective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account-Material</masterLabel>
+            <translation><!-- Account-Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account-Product</masterLabel>
+            <translation><!-- Account-Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account-Segment</masterLabel>
+            <translation><!-- Account-Segment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activity - Event</masterLabel>
+            <translation><!-- Activity - Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activity - Task</masterLabel>
+            <translation><!-- Activity - Task --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agreement</masterLabel>
+            <translation><!-- Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Answer</masterLabel>
+            <translation><!-- Answer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Article</masterLabel>
+            <translation><!-- Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assets</masterLabel>
+            <translation><!-- Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brand</masterLabel>
+            <translation><!-- Brand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Partner</masterLabel>
+            <translation><!-- Business Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Person</masterLabel>
+            <translation><!-- Business Person --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRM IT Project</masterLabel>
+            <translation><!-- CRM IT Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Report</masterLabel>
+            <translation><!-- Call Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Report Item</masterLabel>
+            <translation><!-- Call Report Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case</masterLabel>
+            <translation><!-- Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Actions</masterLabel>
+            <translation><!-- Case Actions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Materials</masterLabel>
+            <translation><!-- Case Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case-Company</masterLabel>
+            <translation><!-- Case-Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catalog</masterLabel>
+            <translation><!-- Catalog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catalog Item Subscriptions</masterLabel>
+            <translation><!-- Catalog Item Subscriptions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catalog Items</masterLabel>
+            <translation><!-- Catalog Items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatter</masterLabel>
+            <translation><!-- Chatter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competition</masterLabel>
+            <translation><!-- Competition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation><!-- Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost Tracking</masterLabel>
+            <translation><!-- Cost Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Document</masterLabel>
+            <translation><!-- Credit Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Item</masterLabel>
+            <translation><!-- Credit Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Template</masterLabel>
+            <translation><!-- Credit Template --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit-Account</masterLabel>
+            <translation><!-- Credit-Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit-Analysis</masterLabel>
+            <translation><!-- Credit-Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Setting</masterLabel>
+            <translation><!-- Custom Setting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Loyalty Survey</masterLabel>
+            <translation><!-- Customer Loyalty Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DMX</masterLabel>
+            <translation><!-- DMX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dashboards</masterLabel>
+            <translation><!-- Dashboards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Categories</masterLabel>
+            <translation><!-- Data Categories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Overview</masterLabel>
+            <translation><!-- Data Overview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document Folders</masterLabel>
+            <translation><!-- Document Folders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ERP Account-Material</masterLabel>
+            <translation><!-- ERP Account-Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ERP AccountReceivable</masterLabel>
+            <translation><!-- ERP AccountReceivable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entitlement Contacts</masterLabel>
+            <translation><!-- Entitlement Contacts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entitlements</masterLabel>
+            <translation><!-- Entitlements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment</masterLabel>
+            <translation><!-- Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FollowOnQuestion</masterLabel>
+            <translation><!-- FollowOnQuestion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Geography</masterLabel>
+            <translation><!-- Geography --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Report</masterLabel>
+            <translation><!-- Group Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Report Result</masterLabel>
+            <translation><!-- Group Report Result --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiative-Contact</masterLabel>
+            <translation><!-- Initiative-Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiative-Metric</masterLabel>
+            <translation><!-- Initiative-Metric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiatives</masterLabel>
+            <translation><!-- Initiatives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installed Product</masterLabel>
+            <translation><!-- Installed Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issues</masterLabel>
+            <translation><!-- Issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge</masterLabel>
+            <translation><!-- Knowledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead</masterLabel>
+            <translation><!-- Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Routing</masterLabel>
+            <translation><!-- Lead Routing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation><!-- List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Location</masterLabel>
+            <translation><!-- Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material</masterLabel>
+            <translation><!-- Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Uses</masterLabel>
+            <translation><!-- Material Uses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material-Material</masterLabel>
+            <translation><!-- Material-Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material-Team</masterLabel>
+            <translation><!-- Material-Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metadata</masterLabel>
+            <translation><!-- Metadata --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metadata Item</masterLabel>
+            <translation><!-- Metadata Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metric</masterLabel>
+            <translation><!-- Metric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Document</masterLabel>
+            <translation><!-- Opportunity Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Investment</masterLabel>
+            <translation><!-- Opportunity Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity-Product</masterLabel>
+            <translation><!-- Opportunity-Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity-company</masterLabel>
+            <translation><!-- Opportunity-company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part Order</masterLabel>
+            <translation><!-- Part Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plan</masterLabel>
+            <translation><!-- Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plan-Contact</masterLabel>
+            <translation><!-- Plan-Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portal</masterLabel>
+            <translation><!-- Portal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press</masterLabel>
+            <translation><!-- Press --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricebook</masterLabel>
+            <translation><!-- Pricebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production Process</masterLabel>
+            <translation><!-- Production Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project</masterLabel>
+            <translation><!-- Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Group</masterLabel>
+            <translation><!-- Public Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualification</masterLabel>
+            <translation><!-- Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualification Item</masterLabel>
+            <translation><!-- Qualification Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Question</masterLabel>
+            <translation><!-- Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quotes</masterLabel>
+            <translation><!-- Quotes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reason</masterLabel>
+            <translation><!-- Reason --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related Solution</masterLabel>
+            <translation><!-- Related Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports</masterLabel>
+            <translation><!-- Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request</masterLabel>
+            <translation><!-- Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Items</masterLabel>
+            <translation><!-- Request Items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Return Authorization</masterLabel>
+            <translation><!-- Return Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEO (Sales Excellence Online)</masterLabel>
+            <translation><!-- SEO (Sales Excellence Online) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC Access Request</masterLabel>
+            <translation><!-- SFDC Access Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce to Salesforce</masterLabel>
+            <translation><!-- Salesforce to Salesforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sandbox</masterLabel>
+            <translation><!-- Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Script</masterLabel>
+            <translation><!-- Script --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Segment</masterLabel>
+            <translation><!-- Segment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Segmentation</masterLabel>
+            <translation><!-- Segmentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Content</masterLabel>
+            <translation><!-- Site Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Fields</masterLabel>
+            <translation><!-- Site Fields --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Object Items</masterLabel>
+            <translation><!-- Site Object Items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Objects</masterLabel>
+            <translation><!-- Site Objects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Account</masterLabel>
+            <translation><!-- Solution Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Campaign</masterLabel>
+            <translation><!-- Solution Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Contact</masterLabel>
+            <translation><!-- Solution Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Lead</masterLabel>
+            <translation><!-- Solution Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solutions</masterLabel>
+            <translation><!-- Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stakeholder</masterLabel>
+            <translation><!-- Stakeholder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SubIndustry</masterLabel>
+            <translation><!-- SubIndustry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Territory</masterLabel>
+            <translation><!-- Territory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Use</masterLabel>
+            <translation><!-- Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UserHistory</masterLabel>
+            <translation><!-- UserHistory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WebToLead</masterLabel>
+            <translation><!-- WebToLead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eProject</masterLabel>
+            <translation><!-- eProject --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Overall Status of the testing of this Business Process.  This is your best judgement based on the status of the related Test Scenarios &amp; related Test Results. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing Complete</masterLabel>
+            <translation><!-- Testing Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing In Progress</masterLabel>
+            <translation><!-- Testing In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

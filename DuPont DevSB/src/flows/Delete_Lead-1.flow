@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Delete Lead that has been replicated to OneDupont.</description>
+    <interviewLabel>Delete Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delete Lead</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Lead</name>
+        <label>Delete Lead</label>
+        <locationX>143</locationX>
+        <locationY>89</locationY>
+        <inputReference>Lead</inputReference>
+    </recordDeletes>
+    <startElementReference>Delete_Lead</startElementReference>
+    <variables>
+        <name>Lead</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

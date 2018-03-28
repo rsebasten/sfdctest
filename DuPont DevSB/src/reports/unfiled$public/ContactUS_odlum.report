@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Email</field>
+    </columns>
+    <columns>
+        <field>Lead$Owner</field>
+    </columns>
+    <columns>
+        <field>Lead$Product__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Product_Details__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Daily report to view customer inquiries</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Owning_Organization__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Corporate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$RecordType</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Lead.Level2Consumer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Owner</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>global</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>ContactUS - odlum</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_Lookup_Fields__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$CreatedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

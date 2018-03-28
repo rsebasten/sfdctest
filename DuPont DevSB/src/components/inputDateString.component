@@ -1,0 +1,6 @@
+<apex:component controller="ctrlInputDate">
+<apex:attribute name="value" type="string" description="binding string" required="true" />
+<apex:attribute name="default" type="string" description="default" required="true" AssignTo="{!defaultString}" />   
+<apex:inputHidden id="hidate" value="{!value}"/>
+<apex:inputField value="{!e.ActivityDate}" onchange="document.getElementById('{!$Component.hidate}').value=this.value;" />
+</apex:component>

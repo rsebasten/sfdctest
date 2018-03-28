@@ -1,0 +1,25 @@
+<!--/*******************************************************************************
+Copyright © 2015 DuPont. All rights reserved. 
+Author: Sanchit Dua
+Email: sanchit.dua@accenture.com
+Description:  VF page for displaying the javscript message on Home Page.
+********************************************************************************/-->
+<apex:page sidebar="false" showHeader="false">
+    <script>
+    slideComponents();
+    </script>
+    <apex:composition template="page_CSBannerScriptsStyles">
+    </apex:composition>
+    
+    <apex:form >
+        <apex:pageBlock >    
+            <div id="sys" class="thick"></div>
+            <div id="message" style="font-size:150%;"></div>
+            
+            <apex:pageblockButtons >
+                <input type="button" class="btn" style="padding-left:5px;padding-right:5px;" onclick="javascript:closeWindow();" value="OK"/>    
+            </apex:pageblockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

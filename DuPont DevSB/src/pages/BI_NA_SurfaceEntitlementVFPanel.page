@@ -1,0 +1,18 @@
+<apex:page standardController="Entitlement"  extensions="ctrlBINA_SurfaceVFPanel">
+<apex:form >
+<apex:pageblock >
+<apex:pageblocksection columns="2">
+<apex:outputfield value="{!con.firstname}"/>
+<apex:outputfield value="{!con.lastname}"/>
+<apex:outputfield value="{!con.email}"/>
+<apex:outputfield value="{!con.MobilePhone}"/>
+<apex:outputfield value="{!con.MailingStreet}"/>
+<apex:outputfield value="{!con.Phone}"/>
+<apex:outputfield value="{!con.MailingState}"/>
+<apex:outputfield value="{!con.MailingCity}"/>
+<apex:outputfield value="{!con.MailingPostalCode}"/>
+<apex:outputfield value="{!con.MailingCountry}"/>
+</apex:pageblocksection>
+</apex:pageblock>
+</apex:form>
+</apex:page>

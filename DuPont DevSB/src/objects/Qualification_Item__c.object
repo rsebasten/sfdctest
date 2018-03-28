@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Shows all related Items to a qualification</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Item_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Qualification_Item__r.Account_Name__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Account</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Cert_Result__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Qualification_Item__r.Certification_Result__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Cert. Result</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Colour__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Qualification_Item__r.Colour__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Colour</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Qualification_Item__r.End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Item_Qualification_Program__c</fullName>
+        <externalId>false</externalId>
+        <formula>Qualification_Item__r.Qualification_Program__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Qualification Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Qualification_Item__r.Stage__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Qualification_Item__r.Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_Qualification__r.Account_Name__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Account</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Cert_Result__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Parent_Qualification__r.Certification_Result__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Cert. Result</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Colour__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Parent_Qualification__r.Colour__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Colour</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_Qualification__r.End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Qualification_Program__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_Qualification__r.Qualification_Program__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Qualification Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Qualification__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Qualification</label>
+        <referenceTo>Qualification__c</referenceTo>
+        <relationshipLabel>Qualification Items</relationshipLabel>
+        <relationshipName>Qualification_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Parent_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Parent_Qualification__r.Stage__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_Qualification__r.Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Qualification_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Qualification Item</label>
+        <referenceTo>Qualification__c</referenceTo>
+        <relationshipLabel>Item of</relationshipLabel>
+        <relationshipName>Qualification_Relations1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Additional Colour</fullName>
+                    <default>false</default>
+                    <label>Additional Colour</label>
+                </value>
+                <value>
+                    <fullName>Cmp-Outer Layer 1</fullName>
+                    <default>false</default>
+                    <label>Cmp-Outer Layer 1</label>
+                </value>
+                <value>
+                    <fullName>Additional Type</fullName>
+                    <default>false</default>
+                    <label>Additional Type</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>Related Garment</fullName>
+                    <default>false</default>
+                    <label>Related Garment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>fParent_Reference_Id__c</fullName>
+        <description>Reference ID is the main identification number used in this business to refer to this qualification; (formula field pulls the value from the Parent_Qualification__r.Reference_Id__c)</description>
+        <externalId>false</externalId>
+        <formula>Parent_Qualification__r.Reference_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Reference Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Qualification Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Item_Account__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Type__c</columns>
+        <columns>Qualification_Item__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>QLI-{YY}{MM}-{0000}</displayFormat>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Qualification Items</pluralLabel>
+    <recordTypes>
+        <fullName>Branded_Label</fullName>
+        <active>true</active>
+        <label>Branded Label</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPT_EMEA</fullName>
+        <active>true</active>
+        <description>For DPT -EMEA Garment and Fabric certification</description>
+        <label>DPT-EMEA</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Additional Colour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Additional Type</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cmp-Outer Layer 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Related Garment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product_Certification</fullName>
+        <active>true</active>
+        <label>Product Certification</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

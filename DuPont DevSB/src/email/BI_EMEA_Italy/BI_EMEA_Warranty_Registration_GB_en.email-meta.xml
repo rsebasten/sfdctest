@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI EMEA warranty Registration end customer template in English</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Warranty_Registration_LOGO</letterhead>
+    <name>BI-EMEA Warranty Registration GB_en</name>
+    <style>freeForm</style>
+    <subject>DuPont™ Corian® - Warranty Successfully Registered</subject>
+    <textOnly>Dated,  {!Entitlement.LastModifiedDate}
+
+
+
+Warranty Code {!Entitlement.Entitlement_Code__c}
+
+
+
+
+Dear {!Entitlement.Primary_Contact__c},
+
+
+Thank you for choosing DuPont™ Corian® for your kitchen countertop. We are confident that DuPont™ Corian®, with its high aesthetic and functional quality, will contribute to give elegance and value to your kitchen.
+
+
+We confirm that your kitchen countertop registration has been registered successfully – through the website www.corian.co.uk
+
+
+Please note that DuPont™ Corian® Ten Year Limited Installed Warranty runs from the date of purchase, indicated on the invoice. To receive coverage under the Ten Year Limited Installed Warranty, proof of purchase in the form of an invoice or receipt needs to be submitted with the claim. We also invite you to read the Terms and Conditions of DuPont™ Corian® Ten Year Limited Installed Warranty in the booklet ‘DuPont™ Corian®, Use &amp; care Guidelines’ or on the website www.corian.co.uk.
+
+
+
+Some colors need more maintenance, therefore we advise you to carefully read the U&amp;C Guidelines available on the website www.corian.co.uk
+
+
+
+To receive support for the registration of your kitchen countertop or for general information about DuPont™ Corian®,
+
+please telephone: UK: 0808 234 0576
+
+Ireland: 1800 511 718
+
+
+To receive assistance with the guarantee on your DuPont™ Corian® kitchen countertop:
+
+Toll free number for UK: 0808 234 0576
+
+Toll free number for UK Ireland: 1800 511 718
+
+
+
+Kind Regards
+
+DuPont Building Innovations
+
+
+The DuPont Oval Logo, DuPont™, The miracles of science™ and all products denoted with ® or ™ are registered trademarks or trademarks of E. I. du Pont de Nemours and Company or its affiliates.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

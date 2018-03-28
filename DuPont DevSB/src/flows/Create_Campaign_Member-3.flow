@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Found_Campaign</name>
+        <label>Found Campaign</label>
+        <locationX>194</locationX>
+        <locationY>232</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Campaign_Was_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Campaign</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Campaign_Member</targetReference>
+            </connector>
+            <label>Campaign Was Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_Campaign_ID</name>
+        <label>Has Campaign ID?</label>
+        <locationX>30</locationX>
+        <locationY>36</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Lead.One_Dupont_Campaign_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Campaign</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Not_Foundxxxx</name>
+        <label>Not Found</label>
+        <locationX>389</locationX>
+        <locationY>437</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Not_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Campaign_Member</targetReference>
+            </connector>
+            <label>Not Found</label>
+        </rules>
+    </decisions>
+    <description>Create a Campaign Member if it doesn&apos;t yet exist.</description>
+    <interviewLabel>Create Campaign Member {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Campaign Member</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Campaign_Member</name>
+        <label>Create Campaign Member</label>
+        <locationX>488</locationX>
+        <locationY>543</locationY>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadId</field>
+            <value>
+                <elementReference>Lead.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Campaign</name>
+        <label>Get Campaign</label>
+        <locationX>111</locationX>
+        <locationY>141</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Campaign</targetReference>
+        </connector>
+        <filters>
+            <field>Legacy_One_DuPont_SFID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Lead.One_Dupont_Campaign_ID__c</elementReference>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_Member</name>
+        <label>Camp Mem Already Associated?</label>
+        <locationX>308</locationX>
+        <locationY>333</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Not_Foundxxxx</targetReference>
+        </connector>
+        <filters>
+            <field>CampaignId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Lead.One_Dupont_Campaign_ID__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>LeadId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Lead.Id</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <outputReference>CampaignMember</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <startElementReference>Has_Campaign_ID</startElementReference>
+    <variables>
+        <name>Campaign</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Campaign</objectType>
+    </variables>
+    <variables>
+        <name>CampaignMember</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <name>Lead</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

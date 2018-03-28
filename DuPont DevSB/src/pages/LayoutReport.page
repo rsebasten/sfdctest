@@ -1,0 +1,124 @@
+<apex:page sidebar="false" showHeader="false" controller="ctrlLayoutReport" tabstyle="Metadata__c" cache="false" contenttype="{!IF(ISNULL($CurrentPage.parameters.ctype),null,$CurrentPage.parameters.ctype+'#layoutReport.xls')}">													
+    
+<apex:outputPanel id="useforCRLFinExcelCell" rendered="{!!ISNULL($CurrentPage.parameters.ctype)}" layout="none">  
+<HEAD>
+<style>
+br { mso-data-placement:same-cell; }
+</style>
+</HEAD>
+</apex:outputPanel>
+
+    
+<apex:outputPanel id="frm" rendered="{!ISNULL($CurrentPage.parameters.ctype)}">  
+<apex:form >  
+    <apex:actionFunction action="{!refresh}" name="onChange" rerender="frm,rpt" 
+            oncomplete="document.body.style.cursor='auto';">
+        <apex:param name="Param1" assignTo="{!sobjectType}" value="" />
+        <apex:param name="Param2" assignTo="{!rTypeId}" value="" />
+    </apex:actionFunction>
+    
+    <apex:pageBlock id="pb" >
+        <apex:pageBlockButtons location="bottom" >
+            <!--  <apex:commandLink styleClass="btn" style="text-decoration:none;" value="Run Report" action="{!refresh}" /> -->
+            <a Class="btn" style="text-decoration:none;" href="/apex/layoutReport?so={!sObjectType}&rt={!rtypeId}&ctype=application/vnd.ms-excel" target="x">Export To Excel</a>
+            <iframe id="x" name="x" style="width:0px;height:0px;border:0px;"></iframe>    
+        </apex:pageBlockButtons>
+
+        <apex:pageBlockSection title="Select sObject and Recordtype" columns="1">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="sObject"/>
+            <apex:selectList id="sl" value="{!sobjectType}" multiselect="false" size="1" onchange="javascript:document.body.style.cursor='wait';onChange(this.value);" >
+                <apex:selectOptions value="{!sobjectTypes}"/>
+            </apex:selectList>
+        </apex:pageBlockSectionItem>
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="recordType"/>
+            <apex:selectList id="rt" value="{!rTypeId}" multiselect="false" size="1" onchange="javascript:document.body.style.cursor='wait';onChange('{!sobjectType}',this.value);">
+                <apex:selectOptions value="{!recordTypes}"/>
+            </apex:selectList> 
+        </apex:pageBlockSectionItem>
+          </apex:pageBlockSection> 
+    </apex:pageBlock>
+    </apex:form>
+</apex:outputPanel>
+
+<!-- 
+<apex:outputPanel id="title" rendered="{!!ISNULL($CurrentPage.parameters.ctype)}" layout="none">  
+    <h2><b>Sobject: </b>{!sobjectType}  <b>RecordType: </b>{!rtypeMapping.name}</h2><br/>
+</apex:outputPanel>
+ -->
+
+    <apex:outputPanel id="rpt" rendered="{!ISNULL($CurrentPage.parameters.ctype)}">
+
+   
+    <apex:pageBlock >
+    
+
+    	    <b>Sobject:</b> {!sobjectType}<br/>
+        	<b>RecordType:</b> {!rtypeMapping.name}<br/>
+        	<b>Layout:</b><apex:outputText value="{!SUBSTITUTE(layoutName,'%26','&')}" />   
+
+    
+        <apex:pageBlockTable value="{!items}" var="i">
+                <apex:column headerValue="Section" value="{!i.layout.section.index}"/>
+                <apex:column headerValue="Section Header" value="{!i.layout.section.header}"/>
+                <apex:column headerValue="Row" value="{!i.layout.row}"/>
+                <apex:column headerValue="Column" value="{!i.layout.col}"/>
+                <apex:column headerValue="Label" value="{!i.layout.label}"/>
+                <apex:column headerValue="API Name" value="{!i.layout.name}"/>
+                <apex:column headerValue="Item Type" value="{!i.layout.itemType}"/>
+                <apex:column headerValue="Editable" value="{!i.layout.editable}"/>
+                <apex:column headerValue="Required" value="{!i.layout.required}"/>
+                <apex:column headerValue="Field Type" value="{!i.type}"/>
+                <apex:column headerValue="Field Label" value="{!i.dfr.label}"/>
+                <apex:column headerValue="picklists" style="{!IF(ISNULL($CurrentPage.parameters.ctype),'white-space: nowrap;','')}"><apex:outputText escape="false" value="{!i.picklistEntries}"/></apex:column> 
+                  
+        </apex:pageBlockTable> 
+    </apex:pageBlock> 
+ </apex:outputPanel>
+ 
+
+ <apex:outputPanel id="title" rendered="{!!ISNULL($CurrentPage.parameters.ctype)}" layout="none">     
+    <table>
+    	<thead>
+        <tr>
+         <th>Section</th>    
+         <th>Section Header</th>
+         <th>Row</th>
+         <th>Column</th>
+         <th>Label</th>
+         <th>API Name</th>
+         <th>item Type</th>
+         <th>Editable</th>
+         <th>Required</th>
+         <th>Field Type</th>
+         <th>Field Label</th>
+         <th>picklists</th>
+        </tr>
+        </thead>
+        <tbody>
+        <apex:repeat value="{!items}" var="i" >
+            <tr>
+                <td><apex:outputText value="{!i.layout.section.index}"/></td>
+                <td><apex:outputText value="{!i.layout.section.header}"/></td>
+                <td><apex:outputText value="{!i.layout.row}"/></td>
+                <td><apex:outputText value="{!i.layout.col}"/></td>
+                <td><apex:outputText value="{!i.layout.label}"/></td>
+                <td><apex:outputText value="{!i.layout.name}"/></td>
+                <td><apex:outputText value="{!i.layout.itemType}"/></td>
+                <td><apex:outputText value="{!i.layout.editable}"/></td>
+                <td><apex:outputText value="{!i.layout.required}"/></td>
+                <td><apex:outputText value="{!i.type}"/></td>
+                <td><apex:outputText value="{!i.dfr.label}"/></td>
+                <td><apex:outputText style="{!IF(ISNULL($CurrentPage.parameters.ctype),'white-space: nowrap;','')}" escape="false" value="{!i.picklistEntries}"/></td>
+            </tr>
+        </apex:repeat>
+        </tbody>
+    </table>
+    
+</apex:outputPanel>
+
+
+</apex:page>

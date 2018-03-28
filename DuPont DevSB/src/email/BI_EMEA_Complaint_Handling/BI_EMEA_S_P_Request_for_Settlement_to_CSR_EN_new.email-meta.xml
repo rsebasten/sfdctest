@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA S&amp;P Request to CSR for Settlement</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA S&amp;P Request for Settlement to CSR EN</name>
+    <style>formalLetter</style>
+    <subject>Complaints: Request for Settlement (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear CSR,
+Please find the request for settlement below for customer &quot;{!Case.Account}&quot; ({!Account.ERP_Company_Code__c}). For further detail please follow the link to SalesForce.com and consult the &quot;Special Instructions&quot; field and attachment section. A task will be created against this case for you to be completed.
+
+Case ID: {!Case.CaseNumber}
+Link: {!Case.Link}
+Instructions:
+{!Case.Special_Instructions__c}
+
+Please take the same conditions as original order: {!Case.Order_Number__c}
+
+
+
+Please make sure you provide us the applicable SAP references. If you have any questions please let us know,
+
+
+
+
+Thanks and regards,
+
+
+{!Case.OwnerFullName}
+QN and  Warranty Assistant
+{!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

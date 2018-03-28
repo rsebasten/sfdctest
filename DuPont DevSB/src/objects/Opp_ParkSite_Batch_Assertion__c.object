@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Used in BatchOppSFDCToSFDCBatchable to send opportunities to parksite</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Additional_SOQL__c</fullName>
+        <description>Please use SOQL syntax only Ex: Name = &apos;Test&apos;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please use SOQL syntax only Ex: Name = &apos;Test&apos;</inlineHelpText>
+        <label>Additional SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parksite_Batch_Assertion__c</fullName>
+        <description>Please use either &quot;Auto&quot; or &quot;Manual&quot; only</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please use either &quot;Auto&quot; or &quot;Manual&quot; only</inlineHelpText>
+        <label>Parksite Batch Assertion</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Opp ParkSite Batch Assertion</label>
+    <visibility>Public</visibility>
+</CustomObject>

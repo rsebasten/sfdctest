@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP ACKNOW REG COMPL WITH NBR TO CUST - EN</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Acknow Reg Compl With Nbr To Cust - EN</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: Acknowledgement registration of Case {!Case.CaseNumber}.</subject>
+    <textOnly>Dear customer,
+
+&lt;?xml:namespace prefix = o /&gt;
+
+
+Thank you for registering your complaint which we have registered with reference number {!Case.CaseNumber}. We’ll do our utmost to have your complaint solved in the shortest time possible.
+
+
+
+In order to complete your file, we would still need a copy of the installation invoice, the attached form C completed and pictures of the top and the impacted area(s).
+
+
+
+Upon completion of your file, we will contact our service centre or Industrial Partner to settle a date for an inspection / repair.
+
+
+
+By means of this email, we are informing you of our contact details.
+
+
+May we kindly ask you to refer to the complaint number when responding?
+
+
+
+Should you have any questions or remarks, do not hesitate to contact us.
+
+
+
+Friendly Regards,
+
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+
+
+We want to inform you that we collect your information to identify your business interests, provide you with products or services and offer a positive customer experience during business interactions. Your personal
+
+information (name, e-Mail, phone number, and other contact data) will be stored in chosen customer system
+
+s primarily hosted in the United States. This information may be shared within DuPont, its affiliates,
+
+partners, and selected third parties in other countries for the same purpose. In order to access, amend,
+
+delete or oppose to the processing of your information, use this link.
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. &lt;?xml:namespace prefix = st1 /&gt;I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

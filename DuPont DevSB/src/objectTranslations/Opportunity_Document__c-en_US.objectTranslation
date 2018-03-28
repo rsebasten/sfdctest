@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity-Document</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity-Documents</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description/Comments --></label>
+        <name>Description_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Have you mailed the documentation rather than attach them?  Please use the Description/Comment field to identify those documents that have been mailed. --></help>
+        <label><!-- Mailed? --></label>
+        <name>Mailed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity-Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Your documentation should be marked Complete prior to routing the Opportunity for approval. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Documentation Attached</masterLabel>
+            <translation><!-- Documentation Attached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed by Manager</masterLabel>
+            <translation><!-- Reviewed by Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>IA</masterLabel>
+            <translation><!-- IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ Tool</masterLabel>
+            <translation><!-- IQ Tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Documentation</masterLabel>
+            <translation><!-- Investment Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOI</masterLabel>
+            <translation><!-- LOI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid Invoice</masterLabel>
+            <translation><!-- Paid Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Winner Proposal</masterLabel>
+            <translation><!-- Winner Proposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Opportunity Document --></label>
+        <name>Opportunity_Document</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

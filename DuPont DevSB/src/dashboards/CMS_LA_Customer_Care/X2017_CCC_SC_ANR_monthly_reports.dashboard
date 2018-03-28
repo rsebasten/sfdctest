@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Crop Protection</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>contains</operator>
+            <values>Electronics &amp; Communications,Imaging</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Industrial Biosciences</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Nutrition &amp; Health</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Packaging &amp; Industrial Polymers</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Performance Polymers</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Pioneer Hi-Bred</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Protection Technologies</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Sustainable Solutions</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Building Innovations,Chemicals &amp; Fluoroproducts,Crop Protection,Electronics &amp; Communications,Industrial Biosciences,Nutrition &amp; Health,Packaging &amp; Industrial Polymers,Performance Polymers,Pioneer Hi-Bred,Protection Technologies,Sustainable Solutions,Titanium Technologies</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>notContain</operator>
+            <values>Building Innovations,Chemicals &amp; Fluoroproducts,Crop Protection,Electronics &amp; Communications,Industrial Biosciences,Nutrition &amp; Health,Packaging &amp; Industrial Polymers,Performance Polymers,Pioneer Hi-Bred,Protection Technologies,Sustainable Solutions,Titanium Technologies,fluoroproducts,imaging,performance</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>notContain</operator>
+            <values>Performance Coatings</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>contains</operator>
+            <values>Packaging &amp; Industrial Polymers,Performance Polymers</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>contains</operator>
+            <values>Building Innovations,Protection Technologies</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Building Innovations</values>
+        </dashboardFilterOptions>
+        <name>Owning SBU</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>2017 Southern Cone and Andean Region Monthly reports</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Thousands</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Refers to all Leads converted into Businesses opportunities, which are classified according to following stages: Target/Qualify/Propose means that BU team is working to close it and END-WON means that the opportunity was successfully closed.</footer>
+            <header>Opportunities / Projects reported from Leads requests</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/SC_ANR_Converted_Leads_20171</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017 YTD</title>
+            <useReportChart>true</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads requests converted into a Sales, the status Track means the opportunity is pending to close | End/End-Won means sales was completed.</footer>
+            <header>Sales reported from Leads requests</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/SC_ANR_2017_Leads_by_Market_Segment1</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017 YTD</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>All inquiries captured through DuPont TeleSolutions Channels by year</footer>
+            <header>*Leads requests received (Annual)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/DIMC_SC_ANR_2015_2017</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017 YTD</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Line</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>This chart show us the avarage of response time to the customer. Our target is respond in 2 business day. (YTD)</footer>
+            <header>*Service Level by Quarter</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/SC_ANR_Leads_status_by_BU_2016_aveg</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017 YTD</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>This chart is important to marketing team, in order to follow the Lead behaviour, specially if we have some marketing campaign, to verify for what channel the customer are prefering contact us.</footer>
+            <header>*Leads requests received by Channel</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/SC_ANR_Origin_channel_type_2017</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>This chart presents what kind of requets are looking for our customers. For this information is possible to priorize or classify hot lead. &quot;Price Request&quot;</footer>
+            <header>Leads received by Request Type</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X2017_Leads_by_Type_SCANR2</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>2017 Monthly</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>BarStacked</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads requests classified by status: Capture/Route/Respond: requests are pending to close. End/End-Won/End-Lost: requests were closed.</footer>
+            <header>Leads requests assigned to Sales team</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X2017_Lead_Owner_by_status_SC_ANR</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>2017- Monthly</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>This chart is important to marketing team, in order to follow the Lead behaviour by quarter, specially if we have some marketing campaign.</footer>
+            <header>*Leads requests received (Quarterly)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/SC_ANR_Leads_by_year_quarter_2015_2017</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017 YTD</title>
+            <useReportChart>true</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Leads requests classified by status: Capture/Route/Respond: requests are pending to close. End/End-Won/End-Lost: requests were closed.</footer>
+            <header>*Pending &amp; Completed Lead requests</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X2017_Pending_Complete_SC_ANR</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>This chart shows us the avarage of response time to the customer, by month. Our target is respond in 2 business day.</footer>
+            <header>Open time</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/SC_ANR_Leads_by_month_2017</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017 YTD</title>
+            <useReportChart>true</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>BarGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>This chart show us all Leads sent to the BU by moth.</footer>
+            <header>Leads sent to BUs</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/SC_ANR_Leads_by_month_2017</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>2017</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>sfdc-admin.dps@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>2017 CCC SC&amp;ANR monthly reports</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>9</titleSize>
+</Dashboard>

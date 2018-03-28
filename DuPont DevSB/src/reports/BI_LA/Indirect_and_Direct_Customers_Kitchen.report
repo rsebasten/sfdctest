@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.BI_Account_SubType__c</field>
+    </columns>
+    <columns>
+        <field>Account.Country__c</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Focus on accounts</description>
+    <filter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer,Indirect Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.BI_Account_SubType__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Kitchen Dealer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Country__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BRAZIL</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Indirect and Direct Customers - Kitchen</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

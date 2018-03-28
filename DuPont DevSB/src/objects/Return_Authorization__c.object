@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom object to collect customer information to authorize the return of complaint products.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Return Authorizations</relationshipLabel>
+        <relationshipName>R00N30000001Wsf6EAC</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Batch_Number_s__c</fullName>
+        <description>This is the batch number(s) of the product being returned</description>
+        <externalId>false</externalId>
+        <label>Batch Number(s)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Carrier Name</label>
+        <referenceTo>Business_Partner__c</referenceTo>
+        <relationshipLabel>Return Authorizations</relationshipLabel>
+        <relationshipName>Return_Authorization</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Carrier_Phone__c</fullName>
+        <description>Phone number of freight carrier.</description>
+        <externalId>false</externalId>
+        <label>Carrier-Phone-#</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Case_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the system generated Case number assigned to the complaint.</description>
+        <externalId>false</externalId>
+        <label>Case Number</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Return Authorizations</relationshipLabel>
+        <relationshipName>Return_Authorization</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Complaint_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the name of the product on which a complaint is being reported.</description>
+        <externalId>false</externalId>
+        <label>Complaint Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Return Authorizations</relationshipLabel>
+        <relationshipName>R00N30000001Y62yEAC</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Purchase_Order__c</fullName>
+        <description>Customer Purchase order number for product being returned.</description>
+        <externalId>false</externalId>
+        <label>Customer Purchase Order #</label>
+        <length>12</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Freight_Payment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Freight Payment Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Collect</fullName>
+                    <default>false</default>
+                    <label>Collect</label>
+                </value>
+                <value>
+                    <fullName>Prepaid</fullName>
+                    <default>false</default>
+                    <label>Prepaid</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Return_Units__c</fullName>
+        <description>This is the number of units (bag/drum) of product being returned by the customer due to a product complaint.</description>
+        <externalId>false</externalId>
+        <label>Number of Return (Units)</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Pkg_Size__c</fullName>
+        <description>Packaging size of product being returned</description>
+        <externalId>false</externalId>
+        <label>Product Pkg Size</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Tradename__c</fullName>
+        <description>Product trade names</description>
+        <externalId>false</externalId>
+        <label>Product Tradename</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FEP</fullName>
+                    <default>false</default>
+                    <label>FEP</label>
+                </value>
+                <value>
+                    <fullName>Fine Powder</fullName>
+                    <default>false</default>
+                    <label>Fine Powder</label>
+                </value>
+                <value>
+                    <fullName>Fuel Cells</fullName>
+                    <default>false</default>
+                    <label>Fuel Cells</label>
+                </value>
+                <value>
+                    <fullName>Granular</fullName>
+                    <default>false</default>
+                    <label>Granular</label>
+                </value>
+                <value>
+                    <fullName>Nafion</fullName>
+                    <default>false</default>
+                    <label>Nafion</label>
+                </value>
+                <value>
+                    <fullName>PFA</fullName>
+                    <default>false</default>
+                    <label>PFA</label>
+                </value>
+                <value>
+                    <fullName>PTFE Dispersion</fullName>
+                    <default>false</default>
+                    <label>PTFE Dispersion</label>
+                </value>
+                <value>
+                    <fullName>Tedlar</fullName>
+                    <default>false</default>
+                    <label>Tedlar</label>
+                </value>
+                <value>
+                    <fullName>Teflon Films</fullName>
+                    <default>false</default>
+                    <label>Teflon Films</label>
+                </value>
+                <value>
+                    <fullName>Teflon Finishes</fullName>
+                    <default>false</default>
+                    <label>Teflon Finishes</label>
+                </value>
+                <value>
+                    <fullName>Tefzel</fullName>
+                    <default>false</default>
+                    <label>Tefzel</label>
+                </value>
+                <value>
+                    <fullName>Zonyl</fullName>
+                    <default>false</default>
+                    <label>Zonyl</label>
+                </value>
+                <value>
+                    <fullName>Isceon</fullName>
+                    <default>false</default>
+                    <label>Isceon</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Return_Ship_To_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Return Ship-To Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>11505 Highway 225 La Porte, TX 77571 Attn: Return Coordinator</fullName>
+                    <default>false</default>
+                    <label>11505 Highway 225 La Porte, TX 77571 Attn: Return Coordinator</label>
+                </value>
+                <value>
+                    <fullName>22828 NC Highway 87 West Fayetteville, NC 28306 USA</fullName>
+                    <default>false</default>
+                    <label>22828 NC Highway 87 West Fayetteville, NC 28306 USA</label>
+                </value>
+                <value>
+                    <fullName>250 Cheesequake Road Parlin, NJ 08859 USA</fullName>
+                    <default>false</default>
+                    <label>250 Cheesequake Road Parlin, NJ 08859 USA</label>
+                </value>
+                <value>
+                    <fullName>401 Pencader Drive, Newark DE 19702 Attn: Return Coordinator</fullName>
+                    <default>false</default>
+                    <label>401 Pencader Drive, Newark DE 19702 Attn: Return Coordinator</label>
+                </value>
+                <value>
+                    <fullName>5468 Union Pacific Avenue City of Commerce, CA 90022 Attn: Return Coordinator</fullName>
+                    <default>false</default>
+                    <label>5468 Union Pacific Avenue City of Commerce, CA 90022 Attn: Return Coordinator</label>
+                </value>
+                <value>
+                    <fullName>8480 DuPont Road Washington, WV 26181 Attn: Return Coordinator Bldg 123, Station #53</fullName>
+                    <default>false</default>
+                    <label>8480 DuPont Road Washington, WV 26181 Attn: Return Coordinator Bldg 123, Station #53</label>
+                </value>
+                <value>
+                    <fullName>Centre &amp; Faulkland Roads Wilmington DE 19805 USA</fullName>
+                    <default>false</default>
+                    <label>Centre &amp; Faulkland Roads Wilmington DE 19805 USA</label>
+                </value>
+                <value>
+                    <fullName>Contracted Operations Township Rd 295 &amp; US Rte 50 Little Hocking, Oh 45742</fullName>
+                    <default>false</default>
+                    <label>Contracted Operations Township Rd 295 &amp; US Rte 50 Little Hocking, Oh 45742</label>
+                </value>
+                <value>
+                    <fullName>E. I DuPont De Nemours &amp; Co. Route 892 (DuPont Road) Washington, WV 26101 Attn: Return Coordinator Bldg. 184/Station 26</fullName>
+                    <default>false</default>
+                    <label>E. I DuPont De Nemours &amp; Co. Route 892 (DuPont Road) Washington, WV 26101 Attn: Return Coordinator Bldg. 184/Station 26</label>
+                </value>
+                <value>
+                    <fullName>Patterson Blvd Towanda PA 18848</fullName>
+                    <default>false</default>
+                    <label>Patterson Blvd Towanda PA 18848</label>
+                </value>
+                <value>
+                    <fullName>Route 892 (DuPont Road) Parkersburg WV 26181 Attn: Return Coordinator.</fullName>
+                    <default>false</default>
+                    <label>Route 892 (DuPont Road) Parkersburg WV 26181 Attn: Return Coordinator.</label>
+                </value>
+                <value>
+                    <fullName>Route 892 (DuPont Road) Washington, WV 26101 Attn: Return Coordinator Bldg. 184/Station 26</fullName>
+                    <default>false</default>
+                    <label>Route 892 (DuPont Road) Washington, WV 26101 Attn: Return Coordinator Bldg. 184/Station 26</label>
+                </value>
+                <value>
+                    <fullName>Sheridan Drive &amp; River Road Buffalo NY 14207 USA</fullName>
+                    <default>false</default>
+                    <label>Sheridan Drive &amp; River Road Buffalo NY 14207 USA</label>
+                </value>
+                <value>
+                    <fullName>St. Rt. 23S DuPont Road P.O.Box 89 Circleville OH 43113 USA</fullName>
+                    <default>false</default>
+                    <label>St. Rt. 23S DuPont Road P.O.Box 89 Circleville OH 43113 USA</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Return_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Return Qty</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Return Authorization</label>
+    <nameField>
+        <label>Return Authorization Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Return Authorizations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

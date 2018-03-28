@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stored detailed question-answer results for a given call script occurrence</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AnswerHistory__c</fullName>
+        <description>Used for field tracking the answer changes,  because the std answer field in 3000 chars the value history is not captured just the event.</description>
+        <externalId>false</externalId>
+        <label>Answer History</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AnswerId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Sitescript: adds the Lookup to Answer record on sitescript save.</description>
+        <externalId>false</externalId>
+        <label>Answer Record</label>
+        <referenceTo>SFDC_Answer__c</referenceTo>
+        <relationshipLabel>Script Results</relationshipLabel>
+        <relationshipName>Script_Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Answer__c</fullName>
+        <description>The answer to the question.</description>
+        <externalId>false</externalId>
+        <label>Answer</label>
+        <length>3000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>QuestionId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>SiteScript Enhancement:  This allow the result to tie back to the question.</description>
+        <externalId>false</externalId>
+        <label>Question Record</label>
+        <referenceTo>SFDC_Questions__c</referenceTo>
+        <relationshipLabel>Script Results</relationshipLabel>
+        <relationshipName>Script_Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Question__c</fullName>
+        <description>The question asked.</description>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SFDC_Legacy_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SFDC Legacy Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <description>The score for the given answer.</description>
+        <externalId>false</externalId>
+        <label>Score</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Script_Result__c</fullName>
+        <description>The script result (high level) object the detail results pertain to.</description>
+        <externalId>false</externalId>
+        <label>Script Result</label>
+        <referenceTo>SFDC_Script_Header__c</referenceTo>
+        <relationshipLabel>Script Results</relationshipLabel>
+        <relationshipName>R00N30000001GaNEEA0</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>TextScore__c</fullName>
+        <description>Contextual Score</description>
+        <externalId>false</externalId>
+        <label>Text Score</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fanswerLabel__c</fullName>
+        <description>Gets the label of related answer if available</description>
+        <externalId>false</externalId>
+        <formula>BLANKVALUE( AnswerId__r.Answer_Coach__c ,   AnswerId__r.Answer__c  )</formula>
+        <label>answerLabel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Script Result</label>
+    <nameField>
+        <displayFormat>SR-{000000}</displayFormat>
+        <label>ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Script Results</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

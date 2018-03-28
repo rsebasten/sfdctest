@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_81236387</developerName>
+        <masterLabel>Type Bucket Field</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>TYPE</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Grow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Extension</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Gap Closer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Mix Enrichment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Application</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Customer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Market</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Merger &amp; Acquisition</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: New Technology</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Recapture</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Share Gain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Grow: Share Gain with Pricing Action</sourceValue>
+            </sourceValues>
+            <value>Grow</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Maintain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maintain: Contract Renewal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maintain: Replacement</sourceValue>
+            </sourceValues>
+            <value>Maintain</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Outlook</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Other: Restricted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Other: Non Productive Inv</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Opportunistic</sourceValue>
+            </sourceValues>
+            <value>other</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Region__c</field>
+    </columns>
+    <columns>
+        <field>Account.Country__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_ID</field>
+    </columns>
+    <columns>
+        <field>Opportunity.fId18__c</field>
+    </columns>
+    <columns>
+        <field>RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Owning_Organisation__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_81236387</field>
+    </columns>
+    <columns>
+        <field>Opportunity.S_P_Market_Segment__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Plan__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>EXP_AMOUNT</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>FISCAL_QUARTER</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ROLLUP_DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Extended_Data__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>incl. plans</description>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.DPTIPP,Opportunity.DPT_EMEA_Simple</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Owning_Organisation__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT-Chemical Industrial,DPT Cleanroom/Pharma,DPT-Critical Clean,DPT-IPP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Pfizer,Zoetis,Intel</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Joe&apos;s Opportunities</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity.fId18__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_PREVCURFY</interval>
+    </timeFrameFilter>
+</Report>

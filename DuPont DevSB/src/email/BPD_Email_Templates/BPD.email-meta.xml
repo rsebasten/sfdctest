@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>BPD</name>
+    <style>freeForm</style>
+    <subject>Brand Protection - New Form Submission</subject>
+    <textOnly>Brand Identity System
+https://brandcenter.dupont.com/BrandIdentitySystem
+
+
+
+New Form Submission
+
+Report Brand Abuse
+Submitted on {!Case.CreatedDate}, by {!Case.Submitted_By_First_Name_Last_Name__c}
+
+Name                          :      {!Case.Submitted_By_First_Name_Last_Name__c}
+
+Email Address             :      {!Case.SuppliedEmail}
+
+Brand                          :      {!Case.Model__c}
+
+Website or Location
+where Brand Abuse      :      {!Case.SuppliedCompany}
+was Found
+
+Additional Information   :      {!Case.Problem_Description__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

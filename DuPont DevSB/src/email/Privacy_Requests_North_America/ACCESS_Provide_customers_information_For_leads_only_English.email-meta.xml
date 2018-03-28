@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LEAD - Send to notify customers what personal information we have on file.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Access Lead - Update Customer</name>
+    <style>formalLetter</style>
+    <subject>DuPont Customer Privacy Access Request</subject>
+    <textOnly>Dear {!Lead.Name}
+
+We have received your request for the access to the personal information that DuPont has concerning you. Please be ensured that DuPont has strict policies regarding storage of personal information.
+
+
+
+You will find below the information we currently have, in our database(s), concerning you:
+
+
+• Name : {!Lead.Name}
+• Company Name : {!Lead.Company}
+• Address: {!Lead.Address}
+• Phone Number: {!Lead.Phone}
+• Mobile number: {!Lead.MobilePhone}
+• Fax  number: {!Lead.Fax}
+• E-mail Address: {!Lead.Email}
+• Website:{!Lead.Website}
+
+
+For further questions and assistance, please contact us using the details provided below.
+
+
+Sincerely,
+
+
+
+
+DuPont Corporate Contact
+974 Centre Road
+Chestnut Run Plaza 735 2175-1
+Wilmington, DE  19805
+Toll-free: 1-855-569-0964</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

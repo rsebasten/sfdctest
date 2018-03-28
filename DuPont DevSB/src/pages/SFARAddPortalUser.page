@@ -1,0 +1,124 @@
+<apex:page controller="ctrlSFARAddPortalUser" tabstyle="Contact"
+    title="Create Portal Access Request" id="thePage" lightningStylesheets="true">
+    <apex:form id="theform">
+        <apex:sectionHeader title="{!accountName} - {!contactName}"
+            subtitle="Create Portal Access Request" /> 
+&nbsp;«&nbsp;<apex:outputLink id="theLink"
+            value="{!baseURL}/{!contactId}" target="_parent">Back to Contact: {!contactName}</apex:outputLink>
+        <br />
+        <br />
+
+        <apex:actionFunction action="{!portalItemOnSelect}"
+            name="apexPortalItem_OnChange"
+            oncomplete="document.body.style.cursor='auto';" rerender="portalinfo">
+            <apex:param name="firstParam" assignTo="{!portal_SiteObjItemId}"
+                value="" />
+        </apex:actionFunction>
+        <apex:actionFunction action="{!portalOnSelect}"
+            name="apexPortalSelection_OnChange"
+            oncomplete="document.body.style.cursor='auto';" rerender="PortalItemBlockFirst,portalinfo">
+            <apex:param name="SectParam" assignTo="{!portal_SiteObjId}"
+                value="" />
+        </apex:actionFunction>
+        <apex:pageMessages />
+        <apex:outputPanel id="pSfarLog">
+            <apex:pageBlock title="SFDC Access Request Log" id="SFDCARlog">
+                <apex:pageBlockTable value="{!requestLog}" var="sfar" id="table">
+                    <apex:column headerValue="Name" value="{!sfar.name}" />
+                    <apex:column headerValue="Key User" value="{!sfar.KeyUser}" />
+                    <apex:column headerValue="Profile" value="{!sfar.Profile}" />
+                    <apex:column headerValue="Stage" value="{!sfar.Stage}" />
+                    <apex:column headerValue="Status" value="{!sfar.Status}" />
+                    <!--  <apex:column >
+                        <apex:commandLink rendered="{!IF(UPPER(sfar.Status)=='NEW','true','false')}"
+                            value="Cancel Request" action="{!deleteSFAR}" style="height:30px"
+                            styleClass="btn">
+                            <apex:param name="delId" value="{!sfar.Id}" />
+                        </apex:commandLink>
+                    </apex:column> -->
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        <apex:pageBlock id="portalBlock" rendered="{!portalfound}">
+            <apex:outputLabel value="Portal: " />
+            <!--<apex:outputText value="{!portalName}"></apex:outputText>-->
+            <apex:selectList id="PortalId" value="{!portal_SiteObjId}"
+                        multiselect="false" size="1" onchange="javascript:document.body.style.cursor='wait';apexPortalSelection_OnChange(this.value);">
+                        <apex:selectOptions value="{!portals}" />
+                    </apex:selectList>
+        </apex:pageBlock>
+        <apex:outputPanel id="PortalItemBlockFirst">
+        <apex:outputPanel id="portalItemBlockinfo" rendered="{!portalsettingsfound}" >
+            <apex:outputPanel id="portalItemBlock">
+                <apex:pageBlock id="portalItemBlock1">
+                    <apex:outputLabel value="Select Access Setting: " />
+                    <apex:selectList id="portItemid" value="{!portal_SiteObjItemId}"
+                        multiselect="false" size="1"
+                        onchange="javascript:document.body.style.cursor='wait';apexPortalItem_OnChange(this.value);">
+                        <apex:selectOptions value="{!portalItems}" />
+                    </apex:selectList>
+                </apex:pageBlock>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        </apex:outputPanel>
+        <apex:outputPanel id="portalinfo">
+            <apex:outputPanel id="pbPortal" rendered="{!!ISBLANK(portal)}">
+                <apex:pageBlock id="pbBlock">
+                    <apex:pageBlockButtons id="pbPButton" location="both">
+                        <apex:commandButton id="pbCButton"
+                            rendered="{!IsNull(PortalUser)}" value="Create Request"
+                            action="{!createSFAR}" onClick="apexPortal_OnChange(this.value);" />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Portal Information">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Name" />
+                            <apex:outputText value="{!portal.name}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Owning Business" />
+                            <apex:outputText value="{!portal.owningBusiness}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Portal Account Approver" />
+                            <apex:outputText value="{!portal.accountApprover}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Key User" />
+                            <apex:outputText value="{!portal.keyuser}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Profile" />
+                            <apex:outputText value="{!portal.profile}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Role" />
+                            <apex:outputText value="{!portal.role}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Permission Set" />
+                            <apex:outputText value="{!portal.permissionSet}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Group" />
+                            <apex:outputText value="{!portal.viewingGroup}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Portal Type" />
+                            <apex:outputText value="{!portal.PortalType}" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Description" />
+                            <apex:outputText value="{!portal.Description}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Url" />
+                            <apex:outputText value="{!portal.Url}" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

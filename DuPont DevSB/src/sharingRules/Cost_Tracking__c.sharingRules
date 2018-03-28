@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CostTracking_MigrationUser_RS_RW_PSCRM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>(06-JUL-17) - Issue fix for IS ID-00082857.  This is a &quot;generic&quot; share to extend &apos;Data Migration User&apos; owned records with PS CRM role and subordinates ---due to original owners being inactive in OneDuPont.</description>
+        <label>Cost Tracking Migration User RW to RS PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BILAI790112</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>BI-LAI</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BILA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BILA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CostTracking_BI_AP_PG_BI_AP_CSR_Team_PG_BI_AP_CSR_Team_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>CostTracking_BI_AP_PG-BI-AP CSR Team_PG-BI-AP CSR Team_R</label>
+        <sharedTo>
+            <group>BI_AP_CSR_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BI_AP_CSR_Team</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CostTracking_BI_AP_PG_BI_AP_CSR_Team_RIS_Building_Innovations</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>CostTracking_BI_AP_PG-BI-AP CSR Team_RIS-Building Innovations_</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <group>BI_AP_CSR_Team</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CostTracking_BI_RIS_BI_RIS_BI_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>CostTracking_BI_RIS-BI_RIS-BI_R</label>
+        <sharedTo>
+            <roleAndSubordinates>BuildingInnovations</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Cost_Tracking_BI_NA_RIS_BI_NA_Env_R_BI_NA_Env_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Cost Tracking_BI_NA_RIS_BI_NA_Env-R_BI_NA_Env_RW</label>
+        <sharedTo>
+            <role>BI_NA_Env</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BI_NA_Env</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Cost_Tracking_BI_NA_RIS_BI_NA_R_BI_NA_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Cost Tracking_BI_NA_RIS_BI_NA-R_BI_NA_RW</label>
+        <sharedTo>
+            <role>BINA</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BINA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Cost_Tracking_BI_NA_RIS_BI_NA_Surf_R_BI_NA_surf_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Cost Tracking_BI_NA_RIS_BI_NA_Surf-R_BI_NA_surf_RW</label>
+        <sharedTo>
+            <role>BI_NA_Surf</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BI_NA_Surf</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

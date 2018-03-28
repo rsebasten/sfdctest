@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Send to US and Canada sample requests for DuPont Roofliner.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>RoofLiner Sample Request</name>
+    <style>freeForm</style>
+    <subject>DuPont™ RoofLiner Sample Request</subject>
+    <textOnly>Dear {!Lead.Name},
+
+Thank you for your interest in DuPont™ RoofLiner.  Your sample is on it&apos;s way and you should receive in about 10 business days.
+
+This lightweight, easy-to-use synthetic, premium roofing underlayment provides excellent protection against leaks under all types of roof coverings identified by ICC-ES AC48, Section 3.0.  It is trusted protection that can give greater peace of mind.  Additionally, DuPont™ RoofLiner offers Class A fire rating, superior tear and UV resistance along with better water hold-out and more resistance to mold growth than traditional roofing felt.
+
+DuPont Weatherization Systems are an integrated family of products that work together to provide superior protection of the building envelope.  In addition to DuPont™ RoofLiner, DuPont also offers:
+
+Specialized Wraps
+
+Tyvek® HomeWrap®
+Tyvek® DranWrap®
+Tyvek® StuccoWrap™
+Tyvek® ThermaWrap™
+
+Flashing Products
+
+Tyvek® Tape and Fasteners - 100% butyl backed, self-adhered and easy to use.
+
+For more than 200 years, DuPont has been committed to developing solutions essential to a better, safer, healthier life for people everywhere.  We continue to create products designed to help reduce the use of energy, water and materials.
+
+
+
+I will contact you again soon to confirm receipt of your sample and offer additional assistance with your roofing project.
+
+
+
+Sincerely,
+
+
+
+Lead.OwnerFullName
+
+DuPont Building Innovations</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

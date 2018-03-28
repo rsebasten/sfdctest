@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Products__r$Revenue_CM__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Account$RecordType</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.DPT_Car_Protect,Account.DPT_IPP,Account.DPT_NOW,Account.DPT_Aramids</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Region__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Asia Pacific</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Products__r$Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Actual</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Id</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>0013000000HY0C3</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Products__r$Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Year</dateGranularity>
+        <field>Account.Products__r$Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPT-AP-KAM-DB Historical Sales_SDGI</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Account_with_or_without_Account_Products__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account.Products__r$Date__c</dateColumn>
+        <endDate>2014-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2012-01-31</startDate>
+    </timeFrameFilter>
+</Report>

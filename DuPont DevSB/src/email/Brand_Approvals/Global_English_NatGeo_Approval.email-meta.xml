@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Global English - NatGeo Approval</name>
+    <style>formalLetter</style>
+    <subject>Your National Geographic Request is Approved</subject>
+    <textOnly>Dear {!Lead.FirstName} :
+
+Your request for using the National Geographic image / video has been approved.  Please be aware that this approval is limited only to the one-time use specifically described in your request.  You will receive a link to download the image/ video you requested.
+
+{!Lead.Description}
+
+Amy J. Hurff
+DuPont Corporate Communications
+Brand Specialist
+302-996-8361
+amy.j.hurff@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

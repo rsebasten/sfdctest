@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Encuesta de servicio DuPont en Inglés</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>Encuesta de servicio DuPont MCC en Inglés</name>
+    <style>freeForm</style>
+    <subject>DuPont Service Survey</subject>
+    <textOnly>Dear {!Lead.FirstName} {!Lead.LastName},
+
+Thank you for your interest in DuPont products and services. The report number for your request is: {! Lead.Id}
+
+We want to know how was your experience when it was taken care of by us. Please click on the following link to complete a short survey
+
+It is very important your feedback to improve our service.
+
+Request:
+{!Lead.Product_Comments__c} {!Lead.Description}
+
+Regards.
+
+DuPont Mexico, Central America &amp; Caribbean
+Phone: 52 1 (55) 5722 1150
+E-mail: info.mexico@dupont.com | Webpage: www.dupont.com.mx
+Twitter @DuPontMexico | YouTube: DuPontdeMexico
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DuPont cares about your privacy.  Your personal information (name, eMail, phone number and other contact data) will be stored in chosen customer systems primarily hosted in the United States.  This information will be used by DuPont, its affiliates, partners, and selected third parties in other countries to provide you with the product or service information requested.  To learn more, please visit www.privacy.dupont.com. By providing your personal information, you agree to the terms and conditions of this Privacy Statement. To access, modify or delete your personal information, please submit a request in the following link: http://www.dupont.com/forms/privacy-request.html?lang=ENG</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

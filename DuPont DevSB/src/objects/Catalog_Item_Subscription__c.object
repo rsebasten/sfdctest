@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Allow Contacts to a subscribe to news letters, product updates, etc..</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ApprovalStage__c</fullName>
+        <description>Read-only Approval Stage</description>
+        <externalId>false</externalId>
+        <label>Approval Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approval Not Needed</fullName>
+                    <default>false</default>
+                    <label>Approval Not Needed</label>
+                </value>
+                <value>
+                    <fullName>Approval Required</fullName>
+                    <default>false</default>
+                    <label>Approval Required</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ApprovalStatus__c</fullName>
+        <description>Current status of approval process</description>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Submit</fullName>
+                    <default>false</default>
+                    <label>Submit</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ApprovedQuantity__c</fullName>
+        <description>The latest Approved Quantity</description>
+        <externalId>false</externalId>
+        <label>Approved Quantity</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CatalogItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Item that you are subscribing to.</description>
+        <externalId>false</externalId>
+        <label>Catalog Item</label>
+        <referenceTo>Catalog_Item__c</referenceTo>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <description>Lookup to Contact</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Subscriptions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Subscription_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy Subscription ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>10</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Routing_Method__c</fullName>
+        <description>The method the item is delivered to subscriber.   (A list of possible subscription delivery methods are defined on the catalog item, and a trigger validates this picklist value is among the supported methods for the item selected)</description>
+        <externalId>false</externalId>
+        <label>Routing Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Postal Service</fullName>
+                    <default>true</default>
+                    <label>Postal Service</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>fCatalogItemName__c</fullName>
+        <description>formula field to show the catalog name of the related catalog item.</description>
+        <externalId>false</externalId>
+        <formula>CatalogItem__r.Catalog_Item_Name__c</formula>
+        <label>Catalog Item Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Catalog Item Subscriptions</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SUBSC-{0000000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Catalog Item Subscriptions</pluralLabel>
+    <recordTypes>
+        <fullName>Postal_Service</fullName>
+        <active>false</active>
+        <description>Postal Service Subscription</description>
+        <label>Postal Service</label>
+        <picklistValues>
+            <picklist>ApprovalStage__c</picklist>
+            <values>
+                <fullName>Approval Not Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ApprovalStatus__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submit</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Routing_Method__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postal Service</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

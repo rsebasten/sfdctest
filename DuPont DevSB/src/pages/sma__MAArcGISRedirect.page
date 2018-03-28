@@ -1,0 +1,31 @@
+<apex:page >
+    <script type='text/javascript' src="{!URLFOR($Resource.MapAnything, 'js/jquery-1.8.3.min.js')}"></script>
+    <script>
+        $('document').ready(function()
+        {
+            if (window.opener && !window.opener.closed)
+            {
+                var hash = window.location.hash.substr(1);
+                var accessToken = hash.substr(hash.indexOf('access_token=')).split('&')[0].split('=')[1];
+                var params = '{!$CurrentPage.parameters.params}'.toString().split('_');
+                var layerId = params[0];
+                var plotLayer = params[1];
+                var webMapHostURL = params[2];
+                
+                window.opener.ArcGISOnline.setAccessToken(webMapHostURL, accessToken);
+                if(accessToken && plotLayer)
+                {
+                    if(plotLayer == 'true')
+                    {
+                        $(window.opener.document).find('#' + layerId).find('.ftu-unit-left').click();
+                    }
+                    else
+                    {
+                        $(window.opener.document).find('#connectWebMap').click();
+                    }
+                }
+            }
+           window.close();
+        });
+    </script>
+</apex:page>

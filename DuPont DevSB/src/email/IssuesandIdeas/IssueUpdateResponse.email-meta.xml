@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template for Administrator response or issue follow-up</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Issue Update Response</name>
+    <style>none</style>
+    <subject>Issue {!Issue__c.Name} : {!Issue__c.Status__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>eMail sent upon registration of Germany Leads</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>EU-Info Notification</name>
+    <style>none</style>
+    <subject>Lead: {!Lead.BU_Answer2__c} {!Lead.FirstName} {!Lead.LastName} has been assigned to you</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

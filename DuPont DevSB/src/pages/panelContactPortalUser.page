@@ -1,0 +1,9 @@
+<apex:page standardcontroller="Contact" extensions="ctrlSFARAddPortalUser" lightningStylesheets="true">
+<apex:outputPanel rendered="{!!IsNull(PortalUser)}">
+<b>Portal Profile: </b><apex:outputText value="{!PortalUser.Profile.Name}"/>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!IsNull(PortalUser)}">
+<b>Not a Portal User. </b>
+</apex:outputPanel>
+&nbsp;&nbsp;<apex:outputLink style="height:30px" styleClass="btn" value="/apex/SFARAddPortalUser?cid={!Contact.Id}" id="theLink" target="_parent">Portal Access Request</apex:outputLink>
+</apex:page>

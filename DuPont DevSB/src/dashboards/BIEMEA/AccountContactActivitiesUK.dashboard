@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>notEqual</operator>
+            <values>Data Migration</values>
+        </dashboardFilterOptions>
+        <name>Edited By</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Which field has been edited by whom?</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Dashboards/AccountsHistoryUK</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Accounts Activities in UK</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>LineGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Edited by whom and when?</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Dashboards/AccountActivityUKediteddatebywhom</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Accounts Activities in UK</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Which field has been edited by whom?</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Dashboards/ContactHistoryUKbywhomandwhat</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Contact History UK</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>LineGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Edited by whom and when?</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Dashboards/ContactHistoryUKwheneditedbywhom</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Contact History UK</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Which field has been edited by whom?</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Dashboards/LeadsActivitiesUKcreatedwhenwho</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Leads Activities UK</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>LineGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>CREATED</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Edited by whom and when?</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Dashboards/LeadsActivitiesUKcreatedwhen</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Leads Activities UK</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>franziska.banoczki@lux.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Account + Contact Activities UK</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

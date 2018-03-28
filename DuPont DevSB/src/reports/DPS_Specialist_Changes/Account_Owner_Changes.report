@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.fId18__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>SITE</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Account.BI_Account_SubType__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STATE</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <description>For use with Personnel Change Form Process</description>
+    <filter>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>david stone</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Stage__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Active,Under Review</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Account Owner Changes</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

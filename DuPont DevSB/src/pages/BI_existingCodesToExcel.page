@@ -1,0 +1,18 @@
+<apex:page sidebar="true" showHeader="true"  controller="ctrlBIeWarrantyCodeCreation" contentType="application/vnd.ms-excel#WarrantyCodes.xls" cache="true"> 
+    <apex:outputPanel id="ExistingCodes">
+            <apex:pageBlock >
+                    <apex:pageBlockTable value="{!ListsRecords}" var="gc"
+                        rendered="{!ListsRecords<>null}" border="1" >
+                        <apex:column value="{!gc.Owning_Org__c}">
+                            <apex:facet name="header">Owing Organisation</apex:facet>
+                        </apex:column> 
+                        <apex:column value="{!gc.Code_1__c}">
+                            <apex:facet name="header">Start Code</apex:facet>
+                        </apex:column>   
+                        <apex:column value="{!gc.Code_2__c}">
+                            <apex:facet name="header">End Code</apex:facet>
+                        </apex:column>                                   
+                    </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:outputPanel>
+</apex:page>

@@ -1,0 +1,424 @@
+<!-- Timestamp: Anup201114
+added a table with 2 rows to display today's date with footer,a single row to
+add the required information just below Light Fastness value, added extra rows to give spce between Nomex (R)logo and disclaimer and
+Commented the old lines which were using Today's date just below Expire date-->
+
+<apex:page standardStylesheets="false" cache="false"
+    controller="ctrlDPT_NomexCert" action="{!initpdf}"
+    showHeader="false" id="DPPCertificationPDF" language="en"
+    renderAs="{!if(stage!='error','pdf','')}">
+    <apex:stylesheet value="{!$Resource.CSS_dupont_master}" />
+    <head>
+    <style>
+@page {
+    size: {! printOrientation
+}
+;
+@bottom-center {
+                    content: element(footer);
+             }
+}
+
+div.footer {                
+                display: block;             
+                padding: 5px;               
+                position: running(footer);          
+            }                       
+ 
+            .pagenumber:before {                
+                content: counter(page);             
+            }                       
+            .pagecount:before {             
+                content: counter(pages);            
+            } 
+                        
+}
+                            
+body {
+    text-align: left;
+    color: black;
+}
+
+.Quals {
+    border: 1px solid #ededed;
+}
+
+TR.odd {
+    background-color: #fafafa;
+}
+
+TR.even {
+    
+}
+
+TD {
+    text-align: left;
+}
+
+.thinborder {
+    border: 1px solid #ededed;
+    font-family: Arial Unicode MS;
+}
+
+.DPPsectionheader {
+    background-color: rgb(241, 92, 34);
+    color: white;
+    font: normal normal bold 16px MetaNormalLF-Roman, Helvetica;
+    line-height: 20px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    text-align: left;
+}
+
+.ss_sectionheader {
+    background-color: #E2E2E2;
+    font-size: 7px;
+    line-height: 6px;
+    margin-bottom: 1em
+    margin-top: 1em;
+    padding-left: 0.5em;
+    text-align: left;
+}
+</style>
+    </head>
+    <div align="right" class="footer">
+<!--Anup201114-->
+    <table><tr>     
+    <td>            
+        <apex:outputText style="color:black;" value="{0,date, MMMM dd , yyyy}">              
+            <apex:param value="{!TODAY()}" />                                                
+        </apex:outputText>                                                                   
+    </td>
+    <td><span style="padding-right:510px;"/>Page <span class="pagenumber"/> of <span class="pagecount"/></td>     
+    </tr></table>                 
+    </div>
+    <!-- ===============================================================
+    Body
+==================================================================-->
+        <apex:define name="body">
+
+
+
+            <!-- ===============================================================
+    Active Certs
+==================================================================-->
+            <div class="content">
+            <apex:outputPanel rendered="{!(stage=='list')}">
+                <table width="1000px" style="color:black;">
+                    <!--  <tr><td style="text-align: left;"><h3 class="pageHeader">Active Certifications</h3></td></tr> -->
+                    
+                    <tr>
+                        <td colspan="2" align="center" style="color:rgb(102,0,0);font:normal normal bold 20pt MetaNormal-Roman,Helvetica,Arial;"> DuPont<sup>&trade;</sup> Nomex<sup>&reg;</sup> Fabrics/Garments Certificate Overview </td>
+                    </tr>
+                    
+                  
+                   <div style="text-align:center;">
+                    <tr><td>    
+                    <apex:define name="header">
+                        <apex:outputPanel rendered="{!$CurrentPage.parameters.b!='none'}">
+                        <c:DPTHeaderNomex_OverviewCertificate />
+                        </apex:outputPanel>
+                    </apex:define>
+                    </td></tr>
+                   
+                    </div>
+                    
+                    <br/>
+                    
+                    <div style="text-align:center;">
+                    <tr>
+                        <td colspan="2" style="font-size: x-large;"><b><apex:outputText style="color:black;font-weight:bolder; font-family: Arial Unicode MS;" value="{!AccName}"/></b><br/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="color: black; font-size: 150%;">is certified to have submitted the following fabrics/garments to DuPont International Operations Sàrl and that it meets the technical requirements for the Nomex<sup>&reg;</sup> Label Programme.<br/><br/><br/><br/></td>
+                    </tr>
+                    </div>
+                    <tr>
+                        <td><apex:datatable id="pgQuals" cellpadding="2px"
+                            rules="cols" value="{!activeCerts}" var="c" width="960px"
+                            rowClasses="odd,even" style="border: 1px solid #ededed;">
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Reference</apex:facet>
+                                <apex:outputText value="{!c.referenceId}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Type</apex:facet>
+                                <apex:outputText value="{!c.certtype}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Colour Reference</apex:facet>
+                                <apex:outputText value="{!c.colorReference}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Colour</apex:facet>
+                                <apex:outputText value="{!c.color}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Brand</apex:facet>
+                                <apex:outputText value="{!c.brand}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Weight g/m²</apex:facet>
+                                <apex:outputText value="{!c.weight}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Description</apex:facet>
+                                <apex:outputText value="{!c.construction}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Stage</apex:facet>
+                                <apex:outputText value="{!c.stage}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Result</apex:facet>
+                                <apex:outputText value="{!c.result}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Start Date</apex:facet>
+                                <apex:outputText value="{!c.startDate}" />
+                            </apex:column>
+                            <apex:column style="text-align: left;">
+                                <apex:facet name="header">Expiry Date</apex:facet>
+                                <apex:outputText value="{!c.endDate}" />
+                            </apex:column>
+                        </apex:datatable></td>
+                    </tr>
+                <br/>
+                
+                <tr>
+                    <td colspan="2" align="left" style="color: black; font-size: 150%;"><br/><br/>
+                        <apex:outputText style="color:black;" value="{0,date, MMMM dd , yyyy}">
+                            <apex:param value="{!TODAY()}" />
+                        </apex:outputText>    
+                    </td>   
+                </tr>
+                
+                <tr>
+                    <td align="left" width="150%">&nbsp;</td>
+                    <td align="right"><apex:image url="{!$Resource.Nomex_sm}" /></td>
+                </tr>
+
+           <tr><td colspan="2" align="left" style="color: black; font-size: 125%;">DuPont certifies that the samples and test data submitted by the above weaver/garment manufacturer meet the specifications of the Trademark License Programme as of the stated approval date. It is the responsibility of the Licensee to maintain the same consistent high quality as the sample(s) provided. It is the responsibility of the weavers and garment manufacturers to design suitable products and obtain the relevant certifications before releasing fabrics and garments to end-users. The fabric approval is valid for a period of 24 months as of the date indicated above and as long as the Trademark License Agreement is valid. A full technical datasheet can be obtained from the weaver and garment manufacturer on request.<br/>  
+            <br/>
+            The DuPont Oval, DuPont<sup>&trade;</sup> and Nomex<sup>&reg;</sup> are registered trademarks or trademarks of DuPont or its affiliates.
+            </td></tr>
+                </table>
+          </apex:outputPanel>
+            </div>
+
+
+            <!-- ===============================================================
+    ERROR
+==================================================================-->
+            <apex:outputPanel rendered="{!(stage=='error')}">
+                <br />
+                <br />
+                <b>{!errorMsg}</b>
+                <br />
+                <br />
+            </apex:outputPanel>
+
+            <!-- ===============================================================
+    RESULT OF SCRIPT
+==================================================================-->
+            <div class="content">
+            <apex:outputPanel rendered="{!(stage=='cert')}">
+                 
+                <table width="1000px" style="color:black;">
+                
+                    <tr>
+                        <td align ="left">
+                        <h5 class="pageHeader">{!qualsubtype} Certification Result:
+                        {!SelectedCert.stage}</h5>
+                        </td>
+                    </tr>
+
+                         <apex:define name="header">
+                          <apex:outputPanel rendered="{!$CurrentPage.parameters.b!='none'}">
+                          <c:DPTNomexLabelHeader />
+                          </apex:outputPanel>
+                         </apex:define>   
+                </table>
+
+                <table width="100%" class="thinborder">
+                    <apex:repeat var="qa" value="{!script.questions}">
+                    
+                        <apex:outputpanel rendered="{!((qa.AnswerType=='SECTION') && (qa.visible))}"
+                            layout="none">
+                            <tr>
+                                <td colspan="2" class="ss_sectionheader"><b><apex:outputText value="{!qa.question}" escape="false" title="{!qa.helpText}" /></b></td>
+                            </tr>
+                        </apex:outputpanel>
+                    
+                    
+                        <apex:outputpanel rendered="{!((qa.AnswerType!='SECTION') && (qa.visible))}"
+                            layout="none">
+                            <tr style="If (qa.isOdd,'background-color: #ededed;">
+                                <td align="right"
+                                    style="text-align: right; white-space: nowrap; font-weight: bold;">
+                                <apex:outputLabel style="font-weight:bolder;font-size:9px;line-height:9px;" escape="false"
+                                    value="{!qa.question}" for="answer" title="{!qa.helpText}">
+                                    <span
+                                        style="color: red; font-size:12px; vertical-align: middle;">{!IF(qa.required,'*','')}</span>
+                                </apex:outputLabel></td>
+                                <td
+                                    style="text-align: left; vertical-align: bottom; font-weight: normal;">
+                                <apex:outputText style="font-size:8px;line-height:8px;"  id="rotext" escape="false" value="{!qa.answerLabel}" /></td>
+                            </tr>
+                        </apex:outputpanel>
+                    
+                    </apex:repeat>
+                    
+                    <tr>
+                    <td colspan="2" align="left" style="color: black; font-size: 90%;"><br/><br/>
+                      <!--  <apex:outputText style="color:black;" value="{!SelectedCert.owner}" /> - Nomex® Label Programme<br/>  -->      
+                        <apex:outputText style="color:black;" value="{0,date, MMMM dd , yyyy}">
+                            <apex:param value="{!TODAY()}" />
+                        </apex:outputText>    
+                    </td>   
+                   </tr>
+                
+                    <tr>
+                    <td align="left" width="120%">&nbsp;</td>
+                    <td align="right"><apex:image url="{!$Resource.Nomex_sm}" /></td>
+                    </tr>
+            <tr><td colspan="2" align="left" style="color: black; font-size: 50%;">DuPont certifies that the samples and test data submitted by the above weaver meet the specifications of the Trademark License Programme as of the stated approval date. It is the responsibility of the Licensee to maintain the same consistent high quality as the sample(s) provided. It is the responsibility of the weavers and garment manufacturers to design suitable products and obtain the relevant certifications before releasing fabrics and garments to end-users. The fabric approval is valid for a period of 24 months as of the date indicated above and as long as the Trademark License Agreement is valid. A full technical datasheet can be obtained from the weaver on request.<br/>  
+            <br/>
+            The DuPont Oval, DuPont<sup>&trade;</sup> and Nomex<sup>&reg;</sup> are registered trademarks or trademarks of DuPont or its affiliates.
+            </td></tr>            
+                </table>
+            </apex:outputPanel>
+            </div>            
+            
+<!-- ===============================================================
+    Active Certificate
+==================================================================-->
+        <apex:outputPanel rendered="{!(stage=='activecert' && SelectedCert.stage=='Active')}">
+                <table width="700px" align = "center" style="color:black;">
+                  
+                    <tr>
+                        <td colspan="2" align ="center" style="color:rgb(102,0,0); font:normal normal bold 20pt MetaNormal-Roman,Helvetica,Arial;">DuPont<sup>&trade;</sup> Nomex<sup>&reg;</sup> Fabric Qualification Certificate </td>
+                    </tr>
+                  
+                  
+                    <apex:define name="header">
+                        <apex:outputPanel rendered="{!$CurrentPage.parameters.b!='none'}">
+                        <c:DPTNomexLabelHeader />
+                        </apex:outputPanel>
+                    </apex:define>
+                
+                    <tr>
+                        <td colspan="2" align ="center" style="text-align: center;font-size: x-large"><b><apex:outputText style="color:black;font-family:Arial Unicode MS;font-weight:900;" value="{!SelectedCert.Account}"/></b><br/></td>
+                    </tr>
+                
+                    
+                    <tr>
+                        <td colspan="2" align ="center" style="color: black; font-size: 120%;"><br/>is certified to have submitted the below fabric to DuPont International Operations Sàrl and that it meets the technical requirements for the Nomex<sup>&reg;</sup> Label Programme: </td>
+                    </tr>
+                   
+                   
+                </table>
+                <br/><br/>
+                <table width="100%" style="color:black;">
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold;color:black;">
+                                 Weavers Fabric Reference:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.referenceId}" />
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Type:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.certtype}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Brand:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.brand}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Weight g/m²:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.weight}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Description:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.construction}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Finish:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.finish}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="right" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Colour Reference:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.colorReference}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Colour:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.color}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+     <!-- Anup201114 -->           Light Fastness:<span>&nbsp;*</span></td>             
+                        <td align="left" style="color:black;"><apex:outputText value="{!lightFastness}" /></td>
+                    </tr>
+     <!-- Anup201114 -->     
+                    <tr>         
+                        <td align="left" style="font-size:70%;"><apex:outputText ><p>*For information, a satisfactory light fastness results is ≥3</p></apex:outputText></td>
+                    </tr>        
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Certification Result:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.result}" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>   
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Start Date:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.startdate}"/></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td align="left" style="text-align: left; white-space: nowrap; font-weight: bold; color:black;">
+                                 Expiry Date:</td>
+                        <td align="left" style="color:black;"><apex:outputText value="{!SelectedCert.enddate}"/></td>
+                    </tr>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>                 
+                    <tr>
+       <!-- Anup201114  <td colspan="2" align="left" style="color: black; font-size:80%;"> 
+                        <apex:outputText style="color:black;" value="{0,date, MMMM dd , yyyy}">
+                            <apex:param value="{!TODAY()}" />
+                        </apex:outputText>    
+                        </td>  --> 
+                    <td align="left">&nbsp;</td>
+                    <td align="right"><apex:image url="{!$Resource.Nomex_sm}"/></td>
+                </tr>
+                </table>
+                <br/>
+                <table width="100%" align ="justify">   
+    <!-- Anup201114 --> 
+            <tr></tr><tr></tr><tr></tr><tr><td colspan="2" align="left" style="color: black; font-size: 75%;"><p><p><p><p><p><p>DuPont certifies that the samples and test data submitted by the above weaver/garment manufacturer meet the specifications of the Trademark License Programme as of the stated approval date.
+            It is the responsibility of the Licensee to maintain the same consistent high quality as the sample(s) provided. It is the responsibility of the weavers and garment manufacturers to design suitable products and obtain the relevant certifications before releasing fabrics and garments to end-users. 
+            The fabric approval is valid for a period of 24 months as of the date indicated above and as long as the Trademark License Agreement is valid. 
+            A full technical datasheet can be obtained from the weaver and garment manufacturer on request.</p><br/>  
+            The DuPont Oval, DuPont<sup>&trade;</sup> and Nomex<sup>&reg;</sup> are registered trademarks or trademarks of DuPont or its affiliates.
+            </td></tr>
+                </table>
+          </apex:outputPanel>
+         </apex:define>
+        </apex:page>

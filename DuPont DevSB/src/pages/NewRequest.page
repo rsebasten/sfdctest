@@ -1,0 +1,244 @@
+<apex:page cache="false" sidebar="true" controller="ctrlNewRequest"
+    action="{!init}">
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:messages />
+
+    <script type='text/javascript'>
+        // This script assists the search bar functionality
+        // It will execute a search only after the user has stopped typing for more than 1 second
+        // To raise the time between when the user stops typing and the search, edit the following variable:
+        
+        var waitTime = 2;       
+        var countDown = waitTime+1;
+        var started = false;  
+        function resetTimer(){
+        
+            countDown=waitTime+1;
+            
+            if(started==false){
+                started=true;
+                runCountDown();
+            }
+        }
+        
+        function runCountDown(){
+            countDown--;      
+            if(countDown<=0){
+                fetchResults();
+                started=false;
+            }         
+        }
+        
+       function addQuantity(val,maxquan,idd){
+       if(val<Number(maxquan)) (document.getElementById(idd).value)++;
+       }
+       
+       function subQuantity(val,maxquan,idd){
+           if(val>0) (document.getElementById(idd).value)--;
+        }
+        function deleteSelectedItem(){
+        var r=confirm('Are you sure you want to remove the selected item');
+        if(r==false){
+           exit();
+         }
+        }
+        function confirmLimit(){
+         alert('Warning:The Limit for the Item has been exceeded');
+       
+        }
+      
+    </script>
+    <style>
+.quant:hover {
+    font-size: 80%;
+    color: #EDEDED;
+    cursor: pointer;
+}
+
+.quant {
+    cursor: pointer;
+    font-size: 80%;
+}
+}
+</style>
+    <apex:form >
+        <apex:pageBlock id="pgblck" rendered="{!IF(cart.size!=0,true,false)}">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!onSave}" value="Create"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="true" id="Record" columns="1">
+                <script>var j =0;</script>
+                <apex:facet name="header">
+                    <span style="color: black">Selected Items</span>
+                </apex:facet>
+                <apex:pageBlockTable value="{!Cart}" var="cartitem" width="732px">
+                    <apex:column >
+                        <apex:facet name="header">Action</apex:facet>
+                        <apex:commandLink action="{!deleteItem}"
+                            onclick="deleteSelectedItem();" style="text:2px">Remove<apex:param name="cartid" value="{!cartitem.catalogItem.Id}" />
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <table
+                            style='border: 0px border-collapse:   collapse; border-spacing: 0px; padding: 0x; margin: 0px; border: 0px'
+                            cellspacing='0' cellpadding='0'>
+                            <tr>
+                                <td style='padding: 0px; margin: 0px; border: 0px;'><apex:inputText id="j" value="{!cartitem.requestItem.Quantity__c}"
+                                        style="width:35px;text-align:right" />
+                                </td>
+                                <td style='padding: 0px; margin: 0px; border: 0px'><span
+                                    class='quant'
+                                    onclick="addQuantity( document.getElementById('{!$Component.j}').value,'{!cartitem.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.j}').id);">&#9650;
+                                </span> <br /> <span class='quant'
+                                    onclick="subQuantity(document.getElementById('{!$Component.j}').value,'{!cartitem.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.j}').id);">&#9660;</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Unit of Measure</apex:facet>
+                        <apex:outputText value="{!cartitem.requestItem.Catalog_Item__r.Unit_of_Measure__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Catalog Name</apex:facet>
+                        <!-- <apex:outputText value="{!cartitem.requestItem.catalog_Item__r.catalog__r.name}" /> -->
+                        <a href="/{!cartitem.requestItem.catalog_Item__r.catalog__r}"
+                            width="1000px" target="blank"
+                            id="{!cartitem.requestItem.catalog_Item__r.catalog__r.name}"
+                            onblur="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.catalog__r.name}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.catalog__r.name}', '/{!cartitem.requestItem.catalog_Item__r.catalog__r}/m?retURL=%2F{!cartitem.requestItem.catalog_Item__r.catalog__r}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.catalog__r.name}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.catalog__r.name}', '/{!cartitem.requestItem.catalog_Item__r.catalog__r.name}/m?retURL=%2F{!cartitem.requestItem.catalog_Item__r.catalog__r.name}&isAjaxRequest=1').show();">{!cartitem.requestItem.catalog_Item__r.catalog__r.name}</a>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Catalog Item name</apex:facet>
+                        <a href="/{!cartitem.requestItem.catalog_Item__r}" width="1000px"
+                            target="blank" id="{!cartitem.requestItem.catalog_Item__r.name}"
+                            onblur="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.name}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.name}', '/{!cartitem.requestItem.catalog_Item__r.name}/m?retURL=%2F{!cartitem.requestItem.catalog_Item__r.name}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.name}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!cartitem.requestItem.catalog_Item__r.name}', '/{!cartitem.requestItem.catalog_Item__r.name}/m?retURL=%2F{!cartitem.requestItem.catalog_Item__r.name}&isAjaxRequest=1').show();">{!cartitem.requestItem.catalog_Item__r.name}</a>
+                        <!--   <apex:facet name="header">Material</apex:facet>  -->
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Special Handling</apex:facet>
+                        <apex:inputTextArea style="width:70%;"
+                            value="{!cartitem.requestItem.catalog_Item__r.Special_Handling__c}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+
+    <apex:pageBlock >
+        <apex:pageBlockSection collapsible="true" id="mainRecord" columns="1">
+            <apex:facet name="header">
+                <span style="color: black">Search for Catalog Items</span>
+            </apex:facet>
+            <apex:form >
+                <table>
+                    <tr>
+                        <td>Search</td>
+                        <td><apex:actionRegion renderRegionOnly="false"
+                                immediate="true">
+                                <apex:actionFunction name="fetchResults"
+                                    action="{!Search_OnClick}" reRender="searchResults"
+                                    status="searchStatus" />
+                                <!-- here we invoke the scripting to get out fancy 'no button' search bar to work -->
+                                <apex:inputText value="{!SearchString}"
+                                    onkeydown="if(event.keyCode==13){this.blur();}else{resetTimer();}"
+                                    style="width:300px" />
+                        &nbsp;&nbsp;
+                    <i> <apex:actionStatus id="searchStatus"
+                                        startText="searching..." stopText=" " /> </i>
+
+                            </apex:actionRegion>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Catalogs:</td>
+                        <td><apex:selectList value="{!Catalog}" size="1"
+                                style="width:400;">
+                                <apex:selectOptions value="{!CatalogSelectOptions}" />
+                            </apex:selectList>&nbsp; <apex:commandButton action="{!Search_OnClick}"
+                                value="Search" />
+                        </td>
+                    </tr>
+                </table>
+            </apex:form>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <apex:form id="form1"
+        rendered="{!IF(searchResults.size!=0,true,false)}">
+        <apex:pageBlock id="blk">
+            <apex:pageBlockButtons id="blkbutton">
+                <apex:commandButton action="{!Add_onClick}" value="Add to Selection"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="true" id="Record1" columns="1">
+                <script>var i =0;</script>
+                <apex:facet name="header">
+                    <span style="color: black">Items Available for Selection</span>
+                </apex:facet>
+                <apex:pageBlockTable id="searchResults" value="{!SearchResults}"
+                    var="sr" width="732px">
+                    <apex:column headerValue="Ordered Quantity" id="quantityentered">
+                        <table
+                            style='border: 0px border-collapse:   collapse; border-spacing: 0px; padding: 0x; margin: 0px; border: 0px'
+                            cellspacing='0' cellpadding='0'>
+                            <tr>
+                                <td style='padding: 0px; margin: 0px; border: 0px;'><apex:inputText id="i" value="{!sr.quantity}"
+                                        onchange="javascript: if((this.value>{!sr.catalogitem.Quantity_Limit_Max__c})) confirmLimit();"
+                                        style="width:35px;text-align:right" />
+                                </td>
+                                <td style='padding: 0px; margin: 0px; border: 0px'><span
+                                    class='quant'
+                                    onclick="addQuantity( document.getElementById('{!$Component.i}').value,'{!sr.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.i}').id);">&#9650;
+                                </span> <br /> <span class='quant'
+                                    onclick="subQuantity(document.getElementById('{!$Component.i}').value,'{!sr.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.i}').id);">&#9660;</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:column>
+                    <apex:column headerValue="Unit of Measure"
+                        value="{!sr.catalogItem.Unit_of_Measure__c}" />
+                    <apex:column >
+                        <apex:facet name="header">Code</apex:facet>
+                        <a href="/{!sr.catalogItem.id}" target="blank"
+                            style="left: 100px; top: 277px;" id="{!sr.catalogItem.Name}"
+                            onblur="LookupHoverDetail.getHover('{!sr.catalogItem.Name}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!sr.catalogItem.Name}', '/{!sr.catalogItem.Name}/m?retURL=%2F{!sr.catalogItem.Name}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!sr.catalogItem.Name}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!sr.catalogItem.Name}', '/{!sr.catalogItem.Name}/m?retURL=%2F{!sr.catalogItem.Name}&isAjaxRequest=1').show();">{!sr.catalogItem.Name}</a>
+                    </apex:column>
+                    <apex:column headerValue="Name"
+                        value="{!sr.catalogItem.Catalog_Item_Name__c}" />
+                    <apex:column >
+                        <apex:facet name="header">Supplier</apex:facet>
+                        <a href="/{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}"
+                            target="blank" style="left: 100px; top: 277px;"
+                            id="{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}"
+                            onblur="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}', '/{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}/m?retURL=%2F{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}', '/{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}/m?retURL=%2F{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}&isAjaxRequest=1').show();">{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__r.Name}</a>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Catalog</apex:facet>
+                        <a href="/{!sr.catalogItem.Catalog__r}" target="blank"
+                            style="left: 100px; top: 277px;"
+                            id="{!sr.catalogItem.Catalog__r.Name}"
+                            onblur="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Name}').hide();"
+                            onfocus="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Name}', '/{!sr.catalogItem.Catalog__r.Name}/m?retURL=%2F{!sr.catalogItem.Catalog__r.Name}&isAjaxRequest=1').show();"
+                            onmouseout="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Name}').hide();"
+                            onmouseover="LookupHoverDetail.getHover('{!sr.catalogItem.Catalog__r.Name}', '/{!sr.catalogItem.Catalog__r.Name}/m?retURL=%2F{!sr.catalogItem.Catalog__r.Name}&isAjaxRequest=1').show();">{!sr.catalogItem.Catalog__r.Name}</a>
+                    </apex:column>
+                    <apex:column headerValue="Quantity Limit"
+                        value="{!sr.catalogItem.Quantity_Limit_Max__c}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used for &quot;Routing&quot; throughout Europe</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Routing Template EMEA</name>
+    <style>formalLetter</style>
+    <subject>New Lead to follow up</subject>
+    <textOnly>Hi! This lead has just arrived in Salesforce.com.
+ 
+Created By: {!Lead.CreatedBy} 
+Created Date: {!Lead.CreatedDate} 
+Reference Link: {!Lead.Link} 
+
+Salutation: {!Lead.Salutation} 
+Lead Name: {!Lead.Lead_Name} 
+Lead Title: {!Lead.Title} 
+Academic Title: {!Lead.Academic_Title__c} 
+Lead Company: {!Lead.Company} 
+Lead Address: {!Lead.Address} 
+Lead Country: {!Lead.Lead_Country__c} 
+Lead Email: {!Lead.Email} 
+Website: {!Lead.Website} 
+Contact Preference: {!Lead.Contact_Preference__c} 
+Date Taken: {!Lead.Date_Taken} 
+Lead Created By: {!Lead.CreatedBy} 
+Type: {!Lead.Type__c} 
+
+Account Type: {!Lead.Account_Type__c} 
+Account Subtype: {!Lead.Account_Subtype__c} 
+Application: {!Lead.Application__c} 
+Campaign: {!Lead.Mailing_Campaign__c} 
+Competitive Info: {!Lead.Competitive_Info__c} 
+Description: {!Lead.Description} 
+Do Not Call: {!Lead.DoNotCall} 
+DuPont Opt In: {!Lead.Opt_In_DuPont__c}
+First Referrer Date: {!Lead.First_Referrer_Date__c} 
+First Referrer Name: {!Lead.First_Referrer_Name__c} 
+Industry: {!Lead.Industry} 
+Lead Fax: {!Lead.Fax}
+Lead ID: {!Lead.Lead_ID} 
+Lead Mobile: {!Lead.Lead_Mobile} 
+Lead Owner: {!Lead.Lead_Owner} 
+Lead Phone: {!Lead.Lead_Phone} 
+Lead Source: {!Lead.Lead_Source} 
+Main Role: {!Lead.Main_Role__c} 
+Market Segment: {!Lead.Market_Segment__c} 
+Opt In: {!Lead.Opt_In__c} 
+Origin Channel Type: {!Lead.Origin_Channel_Type__c} 
+Origin Name: {!Lead.Origin_Name__c} 
+Owning Org: {!Lead.Owning_Organization__c} 
+Priority: {!Lead.Priority__c} 
+Product Comments: {!Lead.Product_Comments__c} 
+Purchasing Timing: {!Lead.Purchasing_Timing__c} 
+Rating: {!Lead.Rating} 
+Reason: {!Lead.Reason__c} 
+Role: {!Lead.Role__c} 
+Solutions: {!Lead.Solutions__c} 
+Lead Status: {!Lead.Stage__c} 
+Response Type: {!Lead.Response_Type__c} 
+
+Close Comments: {!Lead.Close_Comments__c} 
+
+Score: {!Lead.Score__c} 
+Scipt Header ID: {!Lead.Script_Header_ID__c} 
+Script Name: {!Lead.Script_Name__c} 
+Script Results: {!Lead.Script_Results__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

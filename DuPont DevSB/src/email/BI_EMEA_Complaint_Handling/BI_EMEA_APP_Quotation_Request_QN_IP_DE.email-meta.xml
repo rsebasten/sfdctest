@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP Quotation Request QN Fabricator DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Quotation Request QN IP - DE</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: Anfrage für einen Kostenvoranschlag zu Reparatur (case: {!Case.CaseNumber})</subject>
+    <textOnly>Sehr geehrter QN Verarbeiter,
+In Bezug auf unsere Reklamation {!Case.CaseNumber} vom {!Case.Date_Entered__c}, bitten wir sie, uns einen detaillierten Kostenvoranschlag für die Reparatur zu machen.
+
+{!Case.Contact}
+{!Account.BillingAddress}
+{!Account.BillingCity}
+{!Contact.Phone}
+{!Case.Description}
+
+Ir möchten sie bitten, uns die Lohnkosten (Preis / Stunde) und Kilometerleistung detailliert aufzulisten.  Bitte geben Sie ebenfalls an, ob kostenloses Material aus unserem Lager an sie verschickt werden soll.
+
+Anbei finden Sie ein Bild der Arbeitsplatte, das den Defekt illustriert, zusammen mit den kompletten Kundendaten.
+
+Nach Erhalt Ihres Angebotes, senden wir Ihnen unsere Bestätigung zusammen mit dem Kunden-Zufriedenheitsformular, sowie unseren Bezahlverfahren zu.
+
+Sollten Sie noch weitere Fragen haben, zögern Sie bitte nicht uns zu kontaktieren.
+
+Mit freundlichen Grüssen,
+
+
+{!Case.OwnerFullName}&lt;?XML:NAMESPACE PREFIX = O /&gt;
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+
+Wir möchten Sie darüber informieren, dass wir Ihre Informationen verwenden, um Ihre Geschäftsinteressen zu identifizieren, um Ihnen Produkte oder Dienste anbieten zu können und um im Verlauf unserer geschäftlichen Zusammenarbeit eine erstklassige Kundenzufriedenheit zu gewährleisten. Ihre personenbezogenen Informationen (Name, E-Mail-Adresse, Telefonnummer sowie weitere Kontaktdaten) werden in ausgewählten Kundensystemen gespeichert, die sich hauptsächlich in den Vereinigten Staaten befinden. Diese Informationen können gemeinsam von DuPont, dessen Tochtergesellschaften, Partnerunternehmen und ausgewählten Dritten in anderen Ländern und für die gleichen Zwecke verwendet werden. Falls Sie auf diese Informationen zugreifen, sie korrigieren, löschen oder die Verarbeitung Ihrer persönlichen Informationen ablehnen, klicken Sie bitte auf diesen Link.
+
+
+Das DuPont Oval, DuPont ™, The miracles of science ™ und die mit ® gekennzeichneten Produkte sind markenrechtlich geschützt für E.I. du Pont de Nemours and Company oder eine ihrer Konzerngesellschaften.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

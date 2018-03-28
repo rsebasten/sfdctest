@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP Quotation Request QN Fabricator ES</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Quotation Request QN IP - ES</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: Solicitud de presupuesto para reparación (case: {!Case.CaseNumber})</subject>
+    <textOnly>Estimado fabricante QN:
+En referencia a la reclamación {!Case.CaseNumber} de fecha {!Case.Date_Entered__c}, quisiéramos pedirle un presupuesto detallado para la reparación de problem description del cliente:
+
+{!Case.Contact}
+{!Account.BillingAddress}
+{!Account.BillingCity}
+{!Contact.Phone}
+{!Case.Description}
+
+Por favor indique detalladamente los kilómetros y el coste del trabajo (precio/hora) y si necesita que le enviemos material de nuestro almacén.
+
+Encontrará adjunta una foto de la encimera/ problema donde se ilustra el problema junto a los datos del cliente.
+
+Cuando recibamos su presupuesto; le enviaremos nuestra confirmación junto a la declaración de reparación del cliente y la información para facturar.
+
+Si tiene cualquier pregunta, no dude en ponerse en contacto conmigo.
+
+Saludos cordiales,
+
+
+{!Case.OwnerFullName}&lt;?xml:namespace prefix = o /&gt;
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+Nos gustaría informarle que recopilamos su información con el fin de identificar sus intereses comerciales, proporcionarle productos o servicios y ofrecerle una experiencia positiva como cliente durante las interacciones comerciales. Su información personal (nombre, dirección de correo electrónico, número de teléfono y otros datos de contacto) se almacenará en el sistema de clientes hospedado principalmente en Estados Unidos. Es posible que esta información se comparta con el mismo propósito en DuPont, con compañías filiales, asociados o terceras partes determinadas en otros países. Si desea acceder a su información, modificarla, eliminarla, o cancelar su procesamiento, utilice este vínculo.
+
+
+
+DuPont™ y Corian® son marcas registradas o marcas comerciales de E.I. du Pont de Nemours and Company y de sus entidades afiliadas. El uso de logos, marcas registradas y marcas comerciales de E.I. du Pont de Nemours and Company  debe autorizarlo E. I. du Pont de Nemours and Company o una de sus entidades afiliadas.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

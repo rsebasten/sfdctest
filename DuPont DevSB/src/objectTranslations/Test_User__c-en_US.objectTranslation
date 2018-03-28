@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test User</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Users</value>
+    </caseValues>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The role of the user in this Process, Scenario or Test --></help>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Business Sign-off</masterLabel>
+            <translation><!-- Business Sign-off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration</masterLabel>
+            <translation><!-- Data Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer</masterLabel>
+            <translation><!-- Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration User</masterLabel>
+            <translation><!-- Integration User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other User Role</masterLabel>
+            <translation><!-- Other User Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue User</masterLabel>
+            <translation><!-- Queue User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record Approver</masterLabel>
+            <translation><!-- Record Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record Creator</masterLabel>
+            <translation><!-- Record Creator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subject Matter Expert</masterLabel>
+            <translation><!-- Subject Matter Expert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tester</masterLabel>
+            <translation><!-- Tester --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing Leader</masterLabel>
+            <translation><!-- Testing Leader --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If the Role = Other User Role, you must fill in the Other User Role text field. --></errorMessage>
+        <name>TestUser_Other_User_Role_is_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

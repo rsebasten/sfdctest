@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Route - Técnico - Janeiro / 2015</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DTS_Templates_Brasil_Timbre</letterhead>
+    <name>Route Completo - 2017</name>
+    <style>freeForm</style>
+    <subject>DuPont Customer Care - {!Lead_Routing__c.Name} - Contato: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c}</subject>
+    <textOnly>Bom dia, XXXXXXXXXXXXXXXX !
+ 
+
+Recebemos a solicitação abaixo através do nosso site/telefone corporativo, por gentileza atender assim que possível. 
+
+Ao fazer uma solicitação, automaticamente o cliente é informado que será atendido em até 2 dias úteis.
+
+Agradecemos a parceria.
+
+
+
+
+
+
+
+
+
+
+______________________________________________________
+ 
+Informações do Chamado
+
+Campo especial: {!Lead_Routing__c.Name}
+Criado por: {!Lead_Routing__c.CreatedBy} 
+Data criação: {!Lead_Routing__c.Lead_Created_Time__c} 
+Link de referência: https://one-dupont.my.salesforce.com/{!Lead_Routing__c.Lead_ID__c}
+Origem Contato: {!Lead_Routing__c.Origin_Name__c}
+Response Type: {!Lead_Routing__c.Response_Type__c}
+
+Informações do Cliente
+
+Empresa: {!Lead_Routing__c.Lead_Company__c}
+Contato: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c}
+Endereço: {!Lead_Routing__c.Lead_Address__c} 
+País: {!Lead_Routing__c.Lead_Country__c} 
+Email: {!Lead_Routing__c.Lead_Email__c} 
+Celular: {!Lead_Routing__c.Lead_Mobilephone__c} 
+Telefone: {!Lead_Routing__c.Lead_Phone__c}
+
+ Informações Adicionais
+
+Soube da DuPont através de: {!Lead_Routing__c.Leadsource__c}
+Motivo contato: {!Lead_Routing__c.Type__c} 
+Segmento de Interesse: {!Lead_Routing__c.Market_Segment__c}
+ 
+Solicitação:
+
+{!Lead_Routing__c.Description__c} 
+ 
+Produto: 
+
+{!Lead_Routing__c.Solution_1__c} {!Lead_Routing__c.Solution_2__c} {!Lead_Routing__c.Solution_3__c} {!Lead_Routing__c.Solution_4__c} {!Lead_Routing__c.Solution_5__c}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Copyright © 2016 DuPont. Todos os direitos reservados. Todos os produtos marcados com® ou™ são marcas comerciais ou marcas registradas da E. I. du Pont de Nemours and Company ou suas afiliadas.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+A DuPont se importa com sua privacidade. As suas informações pessoais (nome, e-mail, número de telefone e outros dados de contato) serão armazenadas em sistemas de clientes selecionados e hospedados essencialmente nos Estados Unidos. Estas informações serão utilizadas pela DuPont, respectivas empresas afiliadas, parceiros e terceiros selecionados em outros países para lhe fornecer as informações de produto ou serviço solicitadas. Para obter mais informações, visite www.privacy.dupont.com. Ao fornecer as suas informações pessoais, você concorda com os termos e condições da presente Declaração de Privacidade.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

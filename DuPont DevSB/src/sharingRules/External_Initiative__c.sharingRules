@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>CIC_EI_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>CIC_EI_Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>BI_CIC</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>EI_NA_BINAMcH_DIMC_BI_NA_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>as per issue IS ID-00079372</description>
+        <label>EI_NA_BINAMcH_DIMC-BI-NA_R</label>
+        <sharedTo>
+            <group>DIMC_BI_NA</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>BI_NA_McGraw_Hill</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>ExternalInitiative_BI_NA_R_BI_NA_McGraw_Hill_RIPS_BI_NA_RO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ExternalInitiative_BI-NA_R- BI-NA McGraw Hill_RIPS-BI_NA_RO</label>
+        <sharedTo>
+            <roleAndSubordinates>BINA</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <role>BI_NA_McGraw_Hill</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>External_Initiatives_BI_RIPS_BI_NA_PG_DIMC_BI_NA_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>External_Initiatives_BI_RIPS_BI_NA-PG_DIMC_BI_NA_R</label>
+        <sharedTo>
+            <group>DIMC_BI_NA</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BINA</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

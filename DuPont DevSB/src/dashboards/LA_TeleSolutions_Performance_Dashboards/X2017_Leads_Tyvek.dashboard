@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>By Lidia Sant´Anna</footer>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_TeleSolutions_BU_Reports/X2017_Leads_Tyvek</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>true</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Leads Tyvek</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>By Lidia Sant´Anna</footer>
+            <groupingColumn>CREATED_DATE</groupingColumn>
+            <groupingColumn>Lead.Origin_Channel_Type__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_TeleSolutions_BU_Reports/X2017_Leads_Tyvek_Orgin</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Leads Tyvek</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+    </rightSection>
+    <runningUser>lidia.c.santanna-1@bra.dupont.com.pscrm</runningUser>
+    <textColor>#000000</textColor>
+    <title>2017 Leads Tyvek</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

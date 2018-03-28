@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <currency>USD</currency>
+    <description>All Accounts via Cras with no revenue (or les than €100) for longer than 2 years</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Distributor__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>CRAS NV</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DESCRIPTION</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>CRAS NO SALES in</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>SURF BNL DIST CRAS NO SALES</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

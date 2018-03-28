@@ -1,0 +1,225 @@
+<apex:page standardController="ConstructionPts__CP_Contact__c" extensions="ConstructionPts.CPContactMatchToStandardContacts">  
+
+  <c:CPHeader title="" subtitle="" ShowDodgeLogo="false" ShowCPLinks="true"  ShowTitle="false" ShowSubTitle="false"/> 
+    <apex:form id="cpMainForm">
+   <br/>  
+
+    <apex:pageBlock id="matchinginfo" rendered="{!IF(showContactMatchingSection && NOT(ISNULL(ConstructionPts__CP_Contact__c.Contact__r)) && NOT(ISBLANK(ConstructionPts__CP_Contact__c.Contact__r.Name)),true,false)}">
+        This contact is linked to: <div style="display: {!IF(ISNULL(ConstructionPts__CP_Contact__c.Contact__r),'none','block')}"><a href="javascript:goToItem('{!ConstructionPts__CP_Contact__c.Contact__r.Id}','{!ConstructionPts__CP_Contact__c.Contact__r.Name}');"><b>{!ConstructionPts__CP_Contact__c.Contact__r.Name} (Contact)</b></a></div>
+        <br/>
+        <apex:commandLink value="Change Linking" action="{!ShowMatchingPane}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink> 
+        <apex:commandLink value="Remove Linking" action="{!UnmatchContact}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>   
+    </apex:pageBlock> 
+    <apex:pageBlock id="matchingform" rendered="{!IF(showContactMatchingSection && HideshowMatchingPane == false,true,false)}">
+      Find matching Contacts for <b>{!ConstructionPts__CP_Contact__c.Name}</b>
+      <apex:actionFunction name="searchServer" action="{!runSearch}" rerender="results,errors" oncomplete="updatePageNumber(); updateTotalPages(); ">
+          <apex:param name="contactName" value="" />
+          <apex:param name="offset" assignTo="{!runSearch}" value="" />
+      </apex:actionFunction>
+       <apex:actionFunction name="searchServerContact" action="{!runSearch}" rerender="myContactPanel,errors" oncomplete="updatePageNumber(); updateTotalPages(); ">
+          <apex:param name="contactName" value="" />
+          <apex:param name="offset" assignTo="{!runSearch}" value="" />
+      </apex:actionFunction>        
+      <apex:pageMessages id="errors" />
+      <p>
+      <input type="text" width="400px" size="50" id="contactName" onkeyup="doSearch();"/><apex:commandButton value="Find Matches" onclick="doSearch();return false;"/>
+      <input type="hidden" id="initVal" value="0"/>
+      </p>      
+      <p>
+      <apex:pageBlock mode="edit" id="results" title="Results:"> 
+      
+         <b>Top 20 contacts matching criteria:(total contact size:<span id = "totalContactsSize">{!totalContactsSize}</span>)</b>
+         <div id = "ContactButtons" style = 'float:right;'>
+               <div style = 'display:inline-block; margin-right: 20px;'>  Page <span id= 'currentPage'></span> of <span id = 'totalPage'></span></div> 
+               <button type = "button" id = "beginButton" onClick = "doBegin(); return false;"> Begin </Button>
+               <button type = "button" id = "previousButton" onClick = "doPrevious(); return false;"> &#60; </Button>
+               <button  id = "nextButton" onClick = "doNext(); return false;"> &#62; </Button>
+               <button type = "button" id = "endButton" onClick = "doEnd(); return false;"> END </Button>  
+        </div>
+          <apex:outputPanel id="myContactPanel">        
+              <apex:pageBlockTable rendered="{!IF(contacts != null && contacts.size>0,true,false)}" value="{!contacts}" var="standardcontact">
+                <apex:column rendered="{!IF(ContactLinkToContact, true, false)}"> 
+                    <apex:commandLink value="Link" action="{!MatchToContact}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+                        <apex:param name="ContactIdParam" assignTo="{!ContactId}" value="{!standardcontact.id}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column >
+                  <apex:facet name="header">
+                      Name
+                  </apex:facet>            
+                  <apex:outputLink value="/{!standardcontact.Id}" style="{!IF(contactToMatch.Name == standardcontact.Name,'color:green','')}">{!standardcontact.Name}</apex:outputLink>
+                </apex:column>   
+                
+               <apex:column >
+                  <apex:facet name="header">
+                      Phone
+                  </apex:facet>            
+                 <apex:outputText value="{!standardcontact.Phone}" style="{!IF(CONTAINS(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(standardcontact.Phone, ' ', ''),'-',''),'(',''),')',''),SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(contactToMatch.ConstructionPts__Contact_extension__c + contactToMatch.ConstructionPts__Contact_phone__c, ' ', ''),'-',''),'(',''),')','') ),'color:green','')}"/>
+                </apex:column>    
+                
+               <apex:column >
+                  <apex:facet name="header">
+                      Assistant Phone
+                  </apex:facet>            
+                  <apex:outputText value="{!standardcontact.AssistantPhone}" style="{!IF(CONTAINS(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(standardcontact.AssistantPhone, ' ', ''),'-',''),'(',''),')',''),SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(contactToMatch.ConstructionPts__Contact_extension__c + contactToMatch.ConstructionPts__Contact_phone__c, ' ', ''),'-',''),'(',''),')','')),'color:green','')}"/>
+                </apex:column>                
+    
+               <apex:column >
+                  <apex:facet name="header"> 
+                      Home Phone
+                  </apex:facet>            
+                  <apex:outputText value="{!standardcontact.HomePhone}" style="{!IF(CONTAINS(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(standardcontact.HomePhone, ' ', ''),'-',''),'(',''),')',''),SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(contactToMatch.ConstructionPts__Contact_extension__c + contactToMatch.ConstructionPts__Contact_phone__c, ' ', ''),'-',''),'(',''),')','')),'color:green','')}"/>
+                </apex:column>               
+    
+               <apex:column >
+                  <apex:facet name="header">
+                      Cell Phone
+                  </apex:facet>            
+                  <apex:outputText value="{!standardcontact.MobilePhone}" style="{!IF(CONTAINS(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(standardcontact.MobilePhone, ' ', ''),'-',''),'(',''),')',''),SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(contactToMatch.ConstructionPts__Contact_extension__c + contactToMatch.ConstructionPts__Contact_phone__c, ' ', ''),'-',''),'(',''),')','')),'color:green','')}"/>
+                </apex:column>               
+    
+               <apex:column >
+                  <apex:facet name="header">
+                      Other Phone
+                  </apex:facet>            
+                  <apex:outputText value="{!standardcontact.OtherPhone}" style="{!IF(CONTAINS(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(standardcontact.OtherPhone, ' ', ''),'-',''),'(',''),')',''),SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(contactToMatch.ConstructionPts__Contact_extension__c + contactToMatch.ConstructionPts__Contact_phone__c, ' ', ''),'-',''),'(',''),')','')),'color:green','')}"/>
+                </apex:column>               
+    
+               <apex:column >
+                  <apex:facet name="header">
+                      Email
+                  </apex:facet>            
+                  <apex:outputText value="{!standardcontact.Email}" style="{!IF(standardcontact.Email == contactToMatch.ConstructionPts__Contact_email__c,'color:green','')}"/>
+                </apex:column>   
+                            
+              </apex:pageBlockTable>
+          </apex:outputPanel>      
+     </apex:pageBlock>
+      
+      </p>
+        <apex:commandLink rendered="{!IF(ShowContactButton,true,false)}" value="Create new Contact" action="{!CreateNewContact}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>
+        
+      
+        <apex:commandLink rendered="{!IF(ISNULL(ConstructionPts__CP_Contact__c.Contact__r) ,false,true)}" value="Cancel" action="{!ShowMatchingInfo}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>   
+   </apex:pageBlock>
+             
+  </apex:form>
+     <apex:detail relatedList="true" title="true" showChatter="true" inlineEdit="true"/>
+    <div id="divPrepop" >
+        <c:GenericFieldPrepop rendered="{!IF(ShowContactPrepopButton,true,false)}"/>
+    </div>
+   <c:SelectRole rendered="{!IF(ShowRolesContact,true,false)}"/>
+   <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+
+    <style>
+    button:disabled {
+            background:white;
+            color:#C0C0C0;
+            cursor:default;
+            
+    }
+
+</style>
+  
+    <script type="text/javascript">
+
+    function doSearch() {
+      offset = 0 ; 
+      searchServer(document.getElementById("contactName").value,offset);
+    }
+     
+    function updatePageNumber(){ 
+        if (list_size > 0) {
+           j$('#currentPage').text(offset/list_size + 1);
+        }
+    }
+
+    function updateTotalPages(){
+        var totalContactsSize = parseInt(j$('#totalContactsSize').text());
+
+        if (list_size > 0) {
+            if(totalContactsSize / list_size > 0 ){
+                j$('#totalPage').text(parseInt(totalContactsSize / list_size + 1)) ; 
+            }else{
+                j$('#totalPage').text(parseInt(totalContactsSize / list_size));
+            }
+        }
+    }
+    
+     function doNext(){
+         var totalContactsSize = parseInt(j$('#totalContactsSize').text());
+        console.log("offset" + offset);
+        if(offset +list_size <= totalContactsSize){
+            offset += list_size;
+            j$('#previousButton').attr('disabled',false);
+            j$('#beginButton').attr('disabled',false);
+            console.log("offset After" + offset);
+            searchServerContact(document.getElementById("contactName").value,offset);       }        
+    }
+    
+    function doBegin(){
+        offset = 0;     
+        j$('#previousButton').attr('disabled',true);
+        j$('#nextButton').attr('disabled',false);
+        j$('#endButton').attr('disabled',false);
+        j$('#beginButton').attr('disabled',true);       
+        searchServerContact(document.getElementById("contactName").value,offset);
+        console.log("offset" + offset);
+            }
+    
+    function doPrevious(){
+            
+        var checkVal = offset - list_size;
+        console.log("offset" + offset);
+        if(checkVal >= 0){
+            console.log("offset after" + offset);
+            j$('#nextButton').attr('disabled',false);
+            j$('#endButton').attr('disabled',false);
+            offset -= list_size;            
+            searchServerContact(document.getElementById("contactName").value,offset);       }
+    }
+    
+    function doEnd(){
+        var totalContactsSize = parseInt(j$('#totalContactsSize').text());
+        console.log("offset" + offset);
+        if (list_size > 0) {
+            var checkVal = totalContactsSize - (totalContactsSize % list_size);
+            
+            if(checkVal != offset) {
+                console.log("offset after" + offset);
+                offset = totalContactsSize - (totalContactsSize % list_size);               
+                j$('#nextButton').attr('disabled',true);
+                j$('#beginButton').attr('disabled',false);
+                j$('#previousButton').attr('disabled',false);
+                j$('#endButton').attr('disabled',true);
+                searchServerContact(document.getElementById("contactName").value,offset);       
+            }
+        }
+    }
+     
+    // Using jQuery, hide all of the actionLinks
+    var j$ = jQuery.noConflict();
+    var list_size = 20; // In controller it's set as 20 for default ( hard coded)
+
+    j$(document).ready(function() {
+        'use strict';
+         addCPLinks(j$);
+         j$("#divPrepop").remove().appendTo(j$("form[name*=cpMainForm]"));
+         var offset = 0;
+
+         var InitVal = document.getElementById("initVal");
+         if(InitVal){
+            if(InitVal.value == "0")
+            {
+              var name = '{!JSENCODE(contactNameEscaped) }';
+              document.getElementById("initVal").value = '1';
+              document.getElementById("contactName").value = name;
+            }
+         }
+    });
+    </script>  
+</apex:page>

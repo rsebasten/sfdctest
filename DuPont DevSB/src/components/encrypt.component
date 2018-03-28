@@ -1,0 +1,4 @@
+<apex:component controller="ctrlEncrypt" access="global">
+<apex:attribute name="value" type="string" description="value to encrypt" assignTo="{!val}"/>	
+<apex:outputText escape="false" value="{!val}"/>
+</apex:component>

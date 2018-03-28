@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Send to contractors that are interested in our First Time Buyer Program</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>#1 Follow the Vinyl - First Time Buyer and Specialist</name>
+    <style>freeForm</style>
+    <subject>DuPont™ Tyvek® ThermaWrap™ R5.0 First Time Buyers Program</subject>
+    <textOnly>Dear {!Lead.Name},
+
+Thank you for your interest in DuPont™ Tyvek® ThermaWrap™ R5.0, a continuous breathable air, water and thermal protection wrap. Tyvek® ThermaWrap™ R5.0 offers all the benefits of the breathability and water management of DuPont™ Tyvek® plus an additional 1 ½” insulated batting that delivers an R-value of 5.0.
+
+For more information, please visit our web page at www.thermawrapr5.tyvek.com
+
+We are currently offering a First Time Purchase Program in support of Tyvek® ThermaWrap™ R5.0. Please Click Here for more information and the submission form.
+
+We have an extensive network of Tyvek® Specialists trained to help with specifications, installation questions, and on-site consultation/training.  DuPont certified Tyvek® specialists can assist with questions relating to water intrusion problems, proper flashing techniques and other installation questions you might have.
+
+Your local Tyvek® Specialist is Steve Wyatt (267) 738-9615.
+
+
+Sincerely,
+
+{!Lead.LastModifiedBy}
+DuPont Building Innovations</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

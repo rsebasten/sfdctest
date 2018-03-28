@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For sending to customers when a sample request is backordered.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Sample on Backorder</name>
+    <style>formalLetter</style>
+    <subject>Your sample shipment is on backorder</subject>
+    <textOnly>{!Lead.FirstName} {!Lead.LastName},
+
+Your sample request with DuPont Protection Technologies has been received. Unfortunately, some of the items you requested are on back order. These items will be shipped as soon as they are available and you will receive a confirmation email when they ship.
+
+Request ID:
+
+Items on back order:
+
+
+The sample will be sent to the address below.
+
+{!Lead.Address}
+
+
+If you have any questions regarding this order, please respond to this email or call Customer Service at 1-800-931-3456. Please have the request ID available so that customer service can quickly respond to your inquiry.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

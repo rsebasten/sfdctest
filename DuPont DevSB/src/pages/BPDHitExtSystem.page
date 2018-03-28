@@ -1,0 +1,39 @@
+<!-- *****************************************************************************
+ This page contains section to enter WhoIs string in which on click of search button 
+ will redirect to a new page where results can be shown from domaintools server
+******************************************************************************/ -->
+<apex:page standardController="Case" extensions="ctrlBPDHitExtSystem">
+ <apex:pageMessages ></apex:pageMessages>
+ <script type="text/javascript">
+$(document).ready(function(){
+    $('#open-notes-dialog').click(function(){
+        alert('hello world');
+    });        
+
+});
+</script>
+ <apex:form >
+ <apex:outputpanel id="abc" >
+ <apex:pageblock >
+ <apex:pageblockSection >
+ </apex:pageblockSection>
+
+ <apex:pageBlockSection columns="1" id="abc">
+    <apex:pageBlockTable value="{!Case}" var="hi" rendered="{!check}">
+            <apex:column value="{!detail.WhoIs_Details__c}"/>
+            <apex:column value="{!detail.Registry_Registrant_Details__c}"/>
+            <apex:column value="{!detail.Registry_Admin_Details__c}"/> 
+            <apex:column value="{!detail.Registry_Tech_Details__c}"/> 
+        </apex:pageBlockTable>
+ </apex:pageBlockSection>
+ 
+ <apex:pageBlockButtons >
+ <apex:commandButton value="Save" action="{!doSave}" rendered="{!check}"/>
+  <apex:commandButton value="Cancel" action="{!Cancel}"/>
+ 
+ </apex:pageBlockButtons>
+ </apex:pageblock>
+ </apex:outputpanel>
+ 
+</apex:form>
+</apex:page>

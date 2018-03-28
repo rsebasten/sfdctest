@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object representing a list of follow on questions to ask for a given answer.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Answer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The answer ID field in the junction object.</description>
+        <externalId>false</externalId>
+        <label>Answer</label>
+        <referenceTo>SFDC_Answer__c</referenceTo>
+        <relationshipLabel>Follow On Questions</relationshipLabel>
+        <relationshipName>R00N30000001GaNBEA0</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>QuestionOrder__c</fullName>
+        <externalId>false</externalId>
+        <label>QuestionOrder</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The question field on the junction object.</description>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <referenceTo>SFDC_Questions__c</referenceTo>
+        <relationshipLabel>Follow On Questions</relationshipLabel>
+        <relationshipName>FollowOnQuestion</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SFDC_Legacy_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SFDC Legacy Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Script__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Script</label>
+        <referenceTo>SFDC_Script__c</referenceTo>
+        <relationshipLabel>Questions</relationshipLabel>
+        <relationshipName>FollowOnQuestions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>fDefaultAnswer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Question__r.DefaultAnswer__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Default Answer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fIsRequired__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Question__r.IsRequired__c, &apos;true&apos;, &apos;false&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Required</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fSaveToField__c</fullName>
+        <externalId>false</externalId>
+        <formula>Question__r.Save_To_Field__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Save To Field</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fShortName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Question__r.ShortName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ShortName</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fWriteToField__c</fullName>
+        <description>used for showing in Follow-Up Related list on script</description>
+        <externalId>false</externalId>
+        <formula>Question__r.WriteToField__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WriteTo Field</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>FollowOnQuestion</label>
+    <nameField>
+        <label>Follow On Question ID</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>FollowOnQuestions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

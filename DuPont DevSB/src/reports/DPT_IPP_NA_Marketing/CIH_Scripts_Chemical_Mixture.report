@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead.R00N30000001GaNNEA0__r$Name</field>
+    </columns>
+    <columns>
+        <field>Lead.R00N30000001GaNNEA0__r.R00N30000001GaNEEA0__r$Name</field>
+    </columns>
+    <columns>
+        <field>Lead.R00N30000001GaNNEA0__r.R00N30000001GaNEEA0__r$Question__c</field>
+    </columns>
+    <columns>
+        <field>Lead.R00N30000001GaNNEA0__r$Owner</field>
+    </columns>
+    <columns>
+        <field>Lead.R00N30000001GaNNEA0__r$Date_Taken__c</field>
+    </columns>
+    <columns>
+        <field>Lead.R00N30000001GaNNEA0__r$CreatedDate</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead.R00N30000001GaNNEA0__r$Owner</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Damien Hammond,Mark Tartaglia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.R00N30000001GaNNEA0__r.R00N30000001GaNEEA0__r$Question__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Is the hazard a chemical mixture?</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.R00N30000001GaNNEA0__r.R00N30000001GaNEEA0__r$Answer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CIH Scripts - Chemical Mixture?</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadswithScriptResults__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$Actual_Closed_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

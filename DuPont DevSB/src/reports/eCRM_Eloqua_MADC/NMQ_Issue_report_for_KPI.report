@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Issue__c.Region__c</field>
+    </columns>
+    <columns>
+        <field>Issue__c.Program__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
+    <columns>
+        <field>Issue__c.Severity__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Issue__c.Target_Date__c</field>
+    </columns>
+    <columns>
+        <field>Issue__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Issue__c.Date_Accepted__c</field>
+    </columns>
+    <columns>
+        <field>Issue__c.Date_Closed__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Monthly KPI report - included issue ID to the report</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_OWNER_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>DuPont Eloqua Service Center</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>NMQ - Issue report for KPI</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Issue__c</reportType>
+    <scope>queue</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Issue__c.Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

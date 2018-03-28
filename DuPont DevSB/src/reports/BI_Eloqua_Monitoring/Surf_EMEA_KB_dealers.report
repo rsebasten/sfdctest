@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_ZIP</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.ConstructionEMEA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.BI_Account_SubType__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>dealer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Mb_of_Marketing_Program__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>Dealer Locator</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Mb_of_Marketing_Program__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>HDP</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.BI_Account_SubType__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Surf EMEA KB dealers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

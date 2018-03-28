@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>6/1/2014 12:00 AM</values>
+            <values>4/21/2015 12:00 AM</values>
+        </dashboardFilterOptions>
+        <name>Issue: Created Date</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <header>Eloqua - Total #issues</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_EMEA_MS_B/Eloqua_issues_by_month_2015</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header># projects this week</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_MS_B/Eloqua_issues_targeted_for_this_month</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Targeted issues for the month</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>#Issues by project lead</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_MS_B/Eloqua_issues_by_created_by_2015</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Tickets opened by owner</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>#Issues by month</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_MS_B/Eloqua_issues_by_month_2015</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Issues created by month</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>#Issues by region</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_MS_B/Eloqua_Issues_by_region_2015</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Issues opened by Geo region</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Funnel</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>#Issues by Status</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_MS_B/Eloqua_Issues_by_status_2015</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Work items in the pipeline</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>#issues by type</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_MS_B/Eloqua_issues_by_type_2015</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Type of MA activities</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>CUST_CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header># issues by Initiative</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_MS_B/Eloqua_issues_by_initiative_2015</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>issues created by project</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>nathalie.florin@lux.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>MADC Operations dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

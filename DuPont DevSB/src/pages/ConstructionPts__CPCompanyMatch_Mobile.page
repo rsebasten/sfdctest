@@ -1,0 +1,11 @@
+<apex:page docType="html-5.0" standardStylesheets="true" sidebar="false" standardController="ConstructionPts__CP_Company__c" extensions="ConstructionPts.CPCompanyMatchToAccountsAndLeads">  
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.css')}"/> 
+   <apex:form >   
+     <apex:actionFunction name="actionCreateAccount" action="{!CreateNewAccount}"/>
+     <apex:actionFunction name="actionCreateLead" action="{!CreateNewLead}"/> 
+        <section class="border-bottom">
+          <input type="button"  rendered="{!IF(ShowAccountButton,true,false)  || IF(ShowCompanyPrepopButton,true,false)}"  id="btnCreateNewAccount"  class="btn" onclick="actionCreateAccount();" value="Create Account" /> 
+          <input type="button" rendered="{!IF(ShowLeadButton,true,false)  || IF(ShowCompanyPrepopButton,true,false)}" id="btnCreateNewLead"  class="btn" onclick="actionCreateLead();" value="Create Lead" /> 
+        </section>
+   </apex:form>
+</apex:page>

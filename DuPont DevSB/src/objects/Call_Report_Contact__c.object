@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object to show related contacts or users for the call report</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>Call_Report__c</fullName>
+        <description>Related call report for this related contact/user</description>
+        <externalId>false</externalId>
+        <label>Call Report</label>
+        <referenceTo>Call_Report__c</referenceTo>
+        <relationshipLabel>Call Report Contacts</relationshipLabel>
+        <relationshipName>Call_Report_Contacts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Call Report Contacts</relationshipLabel>
+        <relationshipName>Call_Report_Contacts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <description>Display the user name or contact name, depending on whichever is filled out and makes it a link to that record.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Contact__c) ,
+     HYPERLINK(&apos;/&apos;+User__c, User__r.FirstName + &quot; &quot; + User__r.LastName,&apos;_top&apos;),
+     HYPERLINK(&apos;/&apos;+Contact__c, Contact__r.FirstName + &quot; &quot; + Contact__r.LastName,&apos;_top&apos;)
+     )</formula>
+        <label>Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>startsWith</operation>
+                <value>NH</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Call_Report_Contacts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Call Report Contact</label>
+    <nameField>
+        <displayFormat>CRC-{0000000}</displayFormat>
+        <label>Call Report Contact Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Report Contacts</pluralLabel>
+    <recordTypes>
+        <fullName>NH_Call_Report_Contact</fullName>
+        <active>false</active>
+        <label>NH Call Report Contact</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>UserOrContact</fullName>
+        <active>true</active>
+        <description>Rule that prevents a  user from entering a user and a contact into the call report contact object.</description>
+        <errorConditionFormula>AND(
+   NOT(ISBLANK(User__c)),
+   NOT(ISBLANK(Contact__c))
+)</errorConditionFormula>
+        <errorMessage>You can select either a contact or a user, not both.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

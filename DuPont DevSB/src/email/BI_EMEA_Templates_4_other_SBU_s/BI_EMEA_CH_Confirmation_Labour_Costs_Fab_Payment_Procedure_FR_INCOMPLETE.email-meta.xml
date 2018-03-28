@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>BI-EMEA CH Confirmation Labour Costs Fab &amp; Payment Procedure FR</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Confirmation Labour Costs Fab &amp; Payment Procedure FR - INCOMPLETE</name>
+    <style>formalLetter</style>
+    <subject>Confirmation Frais Main d&apos;œuvre &amp; Procédure de paiement (case: {!Case.CaseNumber})</subject>
+    <textOnly>Cher XXXXX,
+
+Je vous remercie de votre devis pour la réparation de la réclamation {!Case.CaseNumber}.
+ 
+Avec cette lettre je vous confirme par écrit mon accord pour la main d’œuvre (la réparation DuPont™ Corian®  pour un montant de XXXX Euros, TVA inclus. 
+ 
+Vous trouverez ci-joint l’avis d’exécution à présenter au client pour signature. Ce document servira de base de paiement de votre facture.
+Nous vous remercions de bien vouloir effectuer l’intervention dans un délai de 45 jours à partir de cette confirmation.
+L’avis d’exécution signé et complété ainsi que votre facture peuvent être envoyés au centre de garantie DuPont™ Corian® (BI-Warranty@dupont.com) ou directement à votre coordinateur de garantie ({!Case.OwnerFullName}).
+Le paiement du montant indiqué ci-dessus ne pourra être effectué qu’après réception de ces 2 documents.
+
+Merci d’avance de votre coopération pour avoir résolu ce dossier.
+ 
+Procédure de paiement pour des frais de main d’œuvre :
+
+Veillez mettre l’adresse de facturation suivante sur votre facture 
+Du Pont  de Nemours International SARL
+2, Chemin du Pavillon
+Le Grand Saconnex (Genève)
+Suisse
+(N.B. : la facture ne doit pas être envoyée à cette adresse).
+  
+Veuillez spécifier le montant de la main d’œuvre sur votre facture (Référence de la Réclamation, prix/heure/personne, …)
+  
+Le règlement sera effectué sur le montant H.T.
+  
+La facture originale devra être envoyée à l’adresse suivante (pas à Genève):
+Du Pont de Nemours (Belgium) BVBA
+Building Innovations – Dept de Garantie - KGB 4 
+À l’att de {!Case.OwnerFullName} - « Confidentiel »
+Antoon Spinoystraat 6
+2800 Malines
+Belgique
+  
+Pour que le paiement s’effectue sans difficultés, les références suivantes sur la facture sont impératives:
+
+votre numéro de TVA intracommunautaire, 
+le nom de votre banque et son adresse (incluant la boîte postale le cas échéant)
+détails bancaires complets (incluant IBAN et code BIC)
+devise de votre compte bancaire
+
+A réception de ces documents, la facture sera transmise à notre comptabilité en Espagne pour paiement, selon vos conditions de paiement.
+
+Je vous remercie de votre coopération.
+ 
+Salutations distinguées, 
+ 
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,20 @@
+<apex:page controller="ShapeLayerBatchPage" sidebar="false">
+    <apex:form >
+        <apex:pageBlock title="Generate Shape Layer Batches">
+            <apex:pageMessages />
+            <table>
+                <tr>
+                    <td>
+                        <apex:commandButton action="{!RunUserBatch}" value="Run Batch (by User)"/>
+                    </td>
+                    <td>
+                        <apex:commandButton action="{!RunAccountBatch}" value="Run Batch (by Account)"/>
+                    </td>
+                    <td>
+                        <apex:commandButton action="{!RunContactBatch}" value="Run Batch (by Contact)"/>
+                    </td>                
+                </tr>
+            </table>                
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

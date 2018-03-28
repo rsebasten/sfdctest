@@ -1,0 +1,32 @@
+<apex:page controller="sma.MiniMapConfigController" setup="true" extensions="sma.RemoteActions" showHeader="true" sidebar="false">
+
+    <!-- <apex:stylesheet value="{!URLFOR($Resource.MAMinimaps,'css/salesforce-lightning-design-system-vf.min.css')}"/> -->
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.MapAnythingJS, 'styles/css/salesforce-lightning-design-system-2.4.6_scoped.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!resourcePath}/css/ui-minimaps.css" />
+
+    <!-- icon-font -->
+    <apex:stylesheet value="{!URLFOR($Resource.sma__MapAnythingJS, 'styles/styles.css')}"/>
+    <!-- MapAnything Configuration Page Styling -->
+    <apex:stylesheet value="{!URLFOR($Resource.sma__MapAnythingJS, 'styles/css/ma-configuration-ui.css')}"/>
+
+    <div id="main"></div>
+
+    <!-- TODO: Rewrite vf component into vue component -->
+     <div id="navigation-markup" style="display: none;">
+        <c:MAAdminHeader />
+    </div>
+
+    <script src="{!resourcePath}/ConfigV2/dist/bundle.js"></script>
+
+    <script>
+        MA.Bootstrap({
+            "baseUrl": "{!resourcePath}",
+            "UITheme": '{!$User.UIThemeDisplayed}'
+        });
+    </script>
+
+    <div id="navigation-markup" style="display: none;">
+        <c:MAAdminHeader />
+    </div>
+
+</apex:page>

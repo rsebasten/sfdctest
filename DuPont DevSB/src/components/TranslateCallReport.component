@@ -1,0 +1,12 @@
+<apex:component >
+<div id="google_translate_element"></div><script>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'ep');
+}
+</script>
+<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<input type="button" href="#" onclick="googleTranslateElementInit();" />
+</apex:component>

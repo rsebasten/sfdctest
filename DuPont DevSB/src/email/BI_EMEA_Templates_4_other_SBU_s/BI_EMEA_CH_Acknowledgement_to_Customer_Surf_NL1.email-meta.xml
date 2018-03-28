@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Acknowledgement of registration of complaint to the customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Acknowledgement to Customer Surf NL</name>
+    <style>formalLetter</style>
+    <subject>Bevestiging klachtregistratie  (case: {!Case.CaseNumber})</subject>
+    <textOnly>Geachte Klant,
+
+Wij danken U voor het registreren van uw klacht (#{!Case.CaseNumber}). Wij doen ons uiterste best doen om uw klacht binnen de kortst mogelijke tijd te behandelen.
+
+Na voltooiing van uw dossier, zullen we contact opnemen met ons service center of een QN-verwerker zodat zij een datum met U kunnen afspreken voor een inspectie / interventie.
+
+Ons service center / De QN-verwerker zal een inspectie doorvoeren en, indien mogelijk, onmiddellijk een reparatie uitvoeren.
+
+Mogen wij u eraan herinneren om ruimte vrij te maken en het DuPont™ Corian® restmateriaal ter beschikking te houden, dit om eventuele kleurverschillen te voorkomen. Wij willen U er op wijzen dat deze interventie enige overlast kan veroorzaken.
+
+Als uw aanvraag onder de DuPont™ Corian® 10 jarige beperkte garantie valt, zullen de kosten van deze interventie door DuPont worden aanvaard. In het geval dat de schade buiten de garantie valt, bestaat de mogelijkheid dat het  service center / de QN verwerker u een offerte voor reparatie of opfrissing laat toekomen.
+
+Na voltooiing, zal het service center / de QN verwerker u vragen een ‘Tevredenheids-
+formulier’ te ondertekenen, dat  als basis dient voor zijn betaling.
+
+Mocht u nog vragen of opmerkingen hebben, aarzel dan niet om contact met ons op te nemen.
+
+Met vriendelijke groeten,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

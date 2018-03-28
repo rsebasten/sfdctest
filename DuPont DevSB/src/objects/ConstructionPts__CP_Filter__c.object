@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ConstructionPts__API_Field_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>API Field Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Active__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Active?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Attach_Operator__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Attach Operator?</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__CP_Filter_Child__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CP Filter Child</label>
+        <referenceTo>ConstructionPts__CP_Filter__c</referenceTo>
+        <relationshipLabel>Parent Filter</relationshipLabel>
+        <relationshipName>CP_Filter_Parent</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__CP_Filter_Parent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CP Filter Parent</label>
+        <referenceTo>ConstructionPts__CP_Filter__c</referenceTo>
+        <relationshipLabel>Child Filter</relationshipLabel>
+        <relationshipName>CP_Filter_Children</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Field_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Display Field Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Text</fullName>
+                    <default>true</default>
+                    <label>Text</label>
+                </value>
+                <value>
+                    <fullName>Single-select list</fullName>
+                    <default>false</default>
+                    <label>Single-select list</label>
+                </value>
+                <value>
+                    <fullName>Multi-select list</fullName>
+                    <default>false</default>
+                    <label>Multi-select list</label>
+                </value>
+                <value>
+                    <fullName>Date</fullName>
+                    <default>false</default>
+                    <label>Date</label>
+                </value>
+                <value>
+                    <fullName>Date (range)</fullName>
+                    <default>false</default>
+                    <label>Date (range)</label>
+                </value>
+                <value>
+                    <fullName>Number</fullName>
+                    <default>false</default>
+                    <label>Number</label>
+                </value>
+                <value>
+                    <fullName>Number (slider)</fullName>
+                    <default>false</default>
+                    <label>Number (slider)</label>
+                </value>
+                <value>
+                    <fullName>Currency</fullName>
+                    <default>false</default>
+                    <label>Currency</label>
+                </value>
+                <value>
+                    <fullName>Currency (slider)</fullName>
+                    <default>false</default>
+                    <label>Currency (slider)</label>
+                </value>
+                <value>
+                    <fullName>Keyword Search</fullName>
+                    <default>false</default>
+                    <label>Keyword Search</label>
+                </value>
+                <value>
+                    <fullName>Checkbox</fullName>
+                    <default>false</default>
+                    <label>Checkbox</label>
+                </value>
+                <value>
+                    <fullName>Radio buttons</fullName>
+                    <default>false</default>
+                    <label>Radio buttons</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Filter_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Filter Id</label>
+        <length>20</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Filter_Values_Populate_Query__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Filter Values Populate Query</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Is_Autocomplete_On__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is autocomplete on?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Is_multiple_value__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If the data in the filtering field contains multiple values delimited and/or word &quot;like&quot; should be used in the queries, the value should be Checked.  If the filtering field contains a single and exact value, then the field should be Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does filtering field contain more than one value (through comma, semicolon, etc)?  If yes, then the value here should be checked.  If no, please un-check the box (default).</inlineHelpText>
+        <label>Is comma delimited values API field?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Object_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Object API Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Object_Field_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Object Field API Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__OperateOn__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is used to indicate what values are going to be displayed and what values are going to be used as keys.  This field is mostly used for HTML elements which operate on values and id&apos;s like multi-select or single-select boxes, checkboxes, etc.  If the OperateOn set to &quot;Value&quot; then whatever is specified in the PossibleValues field will be used for Value and ID of the rendered HTML element.  If the OperateOn = &quot;Value short&quot;, then the most right round parenthesis will be stripped out when displaying the filter option, however, it will behave exactly the same as Value option on the server.  If the OperateOn = Id, then the number in brackets will be extracted as the Id for that selection.  If the OperateOn=Code, then the code in brackets will be extracted as the Id for that option.</description>
+        <externalId>false</externalId>
+        <label>OperateOn</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Id</fullName>
+                    <default>false</default>
+                    <label>Id</label>
+                </value>
+                <value>
+                    <fullName>Code</fullName>
+                    <default>false</default>
+                    <label>Code</label>
+                </value>
+                <value>
+                    <fullName>Value</fullName>
+                    <default>true</default>
+                    <label>Value</label>
+                </value>
+                <value>
+                    <fullName>Value short</fullName>
+                    <default>false</default>
+                    <label>Value short</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Operator_Values__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Operator Values</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>ConstructionPts__Field_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>equals</fullName>
+                    <default>false</default>
+                    <label>equals</label>
+                </value>
+                <value>
+                    <fullName>not equal to</fullName>
+                    <default>false</default>
+                    <label>not equal to</label>
+                </value>
+                <value>
+                    <fullName>less than</fullName>
+                    <default>false</default>
+                    <label>less than</label>
+                </value>
+                <value>
+                    <fullName>greater than</fullName>
+                    <default>false</default>
+                    <label>greater than</label>
+                </value>
+                <value>
+                    <fullName>less or equal</fullName>
+                    <default>false</default>
+                    <label>less or equal</label>
+                </value>
+                <value>
+                    <fullName>greater or equal</fullName>
+                    <default>false</default>
+                    <label>greater or equal</label>
+                </value>
+                <value>
+                    <fullName>in</fullName>
+                    <default>false</default>
+                    <label>in</label>
+                </value>
+                <value>
+                    <fullName>not in</fullName>
+                    <default>false</default>
+                    <label>not in</label>
+                </value>
+                <value>
+                    <fullName>starts with</fullName>
+                    <default>false</default>
+                    <label>starts with</label>
+                </value>
+                <value>
+                    <fullName>ends with</fullName>
+                    <default>false</default>
+                    <label>ends with</label>
+                </value>
+                <value>
+                    <fullName>contains</fullName>
+                    <default>false</default>
+                    <label>contains</label>
+                </value>
+                <value>
+                    <fullName>does not contain</fullName>
+                    <default>false</default>
+                    <label>does not contain</label>
+                </value>
+                <value>
+                    <fullName>includes</fullName>
+                    <default>false</default>
+                    <label>includes</label>
+                </value>
+                <value>
+                    <fullName>excludes</fullName>
+                    <default>false</default>
+                    <label>excludes</label>
+                </value>
+                <value>
+                    <fullName>All Time</fullName>
+                    <default>false</default>
+                    <label>All Time</label>
+                </value>
+                <value>
+                    <fullName>Custom</fullName>
+                    <default>false</default>
+                    <label>Custom</label>
+                </value>
+                <value>
+                    <fullName>Yesterday</fullName>
+                    <default>false</default>
+                    <label>Yesterday</label>
+                </value>
+                <value>
+                    <fullName>Today</fullName>
+                    <default>false</default>
+                    <label>Today</label>
+                </value>
+                <value>
+                    <fullName>Tomorrow</fullName>
+                    <default>false</default>
+                    <label>Tomorrow</label>
+                </value>
+                <value>
+                    <fullName>Next 7 Days</fullName>
+                    <default>false</default>
+                    <label>Next 7 Days</label>
+                </value>
+                <value>
+                    <fullName>Next 15 Days</fullName>
+                    <default>false</default>
+                    <label>Next 15 Days</label>
+                </value>
+                <value>
+                    <fullName>Next 30 Days</fullName>
+                    <default>false</default>
+                    <label>Next 30 Days</label>
+                </value>
+                <value>
+                    <fullName>Next 60 Days</fullName>
+                    <default>false</default>
+                    <label>Next 60 Days</label>
+                </value>
+                <value>
+                    <fullName>Next 90 Days</fullName>
+                    <default>false</default>
+                    <label>Next 90 Days</label>
+                </value>
+                <value>
+                    <fullName>Next 6 Months</fullName>
+                    <default>false</default>
+                    <label>Next 6 Months</label>
+                </value>
+                <value>
+                    <fullName>Next Year</fullName>
+                    <default>false</default>
+                    <label>Next Year</label>
+                </value>
+                <value>
+                    <fullName>Next 2 Years</fullName>
+                    <default>false</default>
+                    <label>Next 2 Years</label>
+                </value>
+                <value>
+                    <fullName>Next 3 Years</fullName>
+                    <default>false</default>
+                    <label>Next 3 Years</label>
+                </value>
+                <value>
+                    <fullName>Next 4 Years</fullName>
+                    <default>false</default>
+                    <label>Next 4 Years</label>
+                </value>
+                <value>
+                    <fullName>Last 7 Days</fullName>
+                    <default>false</default>
+                    <label>Last 7 Days</label>
+                </value>
+                <value>
+                    <fullName>Last 15 Days</fullName>
+                    <default>false</default>
+                    <label>Last 15 Days</label>
+                </value>
+                <value>
+                    <fullName>Last 30 Days</fullName>
+                    <default>false</default>
+                    <label>Last 30 Days</label>
+                </value>
+                <value>
+                    <fullName>Last 60 Days</fullName>
+                    <default>false</default>
+                    <label>Last 60 Days</label>
+                </value>
+                <value>
+                    <fullName>Last 90 Days</fullName>
+                    <default>false</default>
+                    <label>Last 90 Days</label>
+                </value>
+                <value>
+                    <fullName>Last 6 Months</fullName>
+                    <default>false</default>
+                    <label>Last 6 Months</label>
+                </value>
+                <value>
+                    <fullName>Last Year</fullName>
+                    <default>false</default>
+                    <label>Last Year</label>
+                </value>
+                <value>
+                    <fullName>Last 2 Years</fullName>
+                    <default>false</default>
+                    <label>Last 2 Years</label>
+                </value>
+                <value>
+                    <fullName>Last 3 Years</fullName>
+                    <default>false</default>
+                    <label>Last 3 Years</label>
+                </value>
+                <value>
+                    <fullName>Last 4 Years</fullName>
+                    <default>false</default>
+                    <label>Last 4 Years</label>
+                </value>
+                <value>
+                    <fullName>Next Fiscal Year</fullName>
+                    <default>false</default>
+                    <label>Next Fiscal Year</label>
+                </value>
+                <value>
+                    <fullName>Last Week</fullName>
+                    <default>false</default>
+                    <label>Last Week</label>
+                </value>
+                <value>
+                    <fullName>Next Week</fullName>
+                    <default>false</default>
+                    <label>Next Week</label>
+                </value>
+                <value>
+                    <fullName>Last Fiscal Year</fullName>
+                    <default>false</default>
+                    <label>Last Fiscal Year</label>
+                </value>
+                <value>
+                    <fullName>Next 2 Weeks</fullName>
+                    <default>false</default>
+                    <label>Next 2 Weeks</label>
+                </value>
+                <value>
+                    <fullName>Next 3 Weeks</fullName>
+                    <default>false</default>
+                    <label>Next 3 Weeks</label>
+                </value>
+                <value>
+                    <fullName>Next 6 Weeks</fullName>
+                    <default>false</default>
+                    <label>Next 6 Weeks</label>
+                </value>
+                <value>
+                    <fullName>Last 2 Weeks</fullName>
+                    <default>false</default>
+                    <label>Last 2 Weeks</label>
+                </value>
+                <value>
+                    <fullName>Last 3 Weeks</fullName>
+                    <default>false</default>
+                    <label>Last 3 Weeks</label>
+                </value>
+                <value>
+                    <fullName>Last 6 Weeks</fullName>
+                    <default>false</default>
+                    <label>Last 6 Weeks</label>
+                </value>
+                <value>
+                    <fullName>Next 180 Days</fullName>
+                    <default>false</default>
+                    <label>Next 180 Days</label>
+                </value>
+                <value>
+                    <fullName>Next 365 Days</fullName>
+                    <default>false</default>
+                    <label>Next 365 Days</label>
+                </value>
+                <value>
+                    <fullName>Last 180 Days</fullName>
+                    <default>false</default>
+                    <label>Last 180 Days</label>
+                </value>
+                <value>
+                    <fullName>Last 365 Days</fullName>
+                    <default>false</default>
+                    <label>Last 365 Days</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <controllingFieldValue>Date</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <controllingFieldValue>Currency</controllingFieldValue>
+                <valueName>equals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <controllingFieldValue>Date</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <controllingFieldValue>Currency</controllingFieldValue>
+                <valueName>not equal to</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <valueName>in</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <valueName>not in</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <valueName>starts with</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <valueName>ends with</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <valueName>contains</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Text</controllingFieldValue>
+                <valueName>does not contain</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi-select list</controllingFieldValue>
+                <valueName>includes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi-select list</controllingFieldValue>
+                <valueName>excludes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <controllingFieldValue>Currency</controllingFieldValue>
+                <valueName>less than</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <controllingFieldValue>Currency</controllingFieldValue>
+                <valueName>greater than</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <controllingFieldValue>Currency</controllingFieldValue>
+                <valueName>less or equal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date</controllingFieldValue>
+                <controllingFieldValue>Number</controllingFieldValue>
+                <controllingFieldValue>Currency</controllingFieldValue>
+                <valueName>greater or equal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Custom</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Yesterday</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Today</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Tomorrow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 7 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 15 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 30 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 60 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 90 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 6 Months</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next Year</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 2 Years</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 3 Years</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 4 Years</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 7 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 15 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 30 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 60 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 90 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 6 Months</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last Year</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 2 Years</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 3 Years</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 4 Years</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last Week</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next Week</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 2 Weeks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 3 Weeks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 6 Weeks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 2 Weeks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 3 Weeks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 6 Weeks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 180 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Next 365 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 180 Days</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Date (range)</controllingFieldValue>
+                <valueName>Last 365 Days</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Override__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Override?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Possible_Values_Sort_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is to determine the sort order for the available values for the filter.  If the values are already provided in a desired order, please set this field to &quot;None&quot;, otherwise choose one of the two default settings: Ascending or Descending.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter &quot;None&quot; for custom sort order or choose one of the two defaults.</inlineHelpText>
+        <label>Possible Values Sort Order</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ASC</fullName>
+                    <default>false</default>
+                    <label>ASC</label>
+                </value>
+                <value>
+                    <fullName>DESC</fullName>
+                    <default>false</default>
+                    <label>DESC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Possible_Values__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This fields holds all possible values (either comma-delimited or one value per line)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter possible values (comma-delimited or one value per line).</inlineHelpText>
+        <label>Possible Values</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Related_Field_Autocomplete_Query__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related Field Autocomplete Query</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Related_Object_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is to hold the related object information which has to be searched first before the rest of the filters have been applied.  If the field is actually a Reference type and is referencing the Standard object, ie. User, then the relationship name should be populated in this field instead of the Related Object API Name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the name of Related Object to be searched or relationship name for REFERENCE type fields.</inlineHelpText>
+        <label>Related Object API Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Related_Object_Field_API_Field_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related Object Field API Field Type</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Related_Object_Field_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the field by which the related object is filtered.</description>
+        <externalId>false</externalId>
+        <label>Related Object Field API Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Related_Object_Select_Field_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the field to be projected in the related object query.</description>
+        <externalId>false</externalId>
+        <label>Related Object Select Field API Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Sort_Order__c</fullName>
+        <defaultValue>-1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sort Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Value_Default2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field only relates to Number (slider) and Currency (slider) display types and indicates the the second default value.</description>
+        <externalId>false</externalId>
+        <label>Value Default2</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Value_Default__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Value Default</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Value_Max__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Applies to sliders only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the max range value.</inlineHelpText>
+        <label>Value Max</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Value_Min__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Applies to sliders only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the min range value.</inlineHelpText>
+        <label>Value Min</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__Value_Step__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Applies to sliders only - indicates the slider value intervals.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the slider value increments: single value or comma-delimited string of preferred available values. For example,  Value Step = 5 would result in 0, 5, 10, 15, etc. Or Value Step = 0, 10, 25, 50, 100 would result in 0, 10, 25, 50, 100.</inlineHelpText>
+        <label>Value Step</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConstructionPts__isPopulate_values__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If searching a related object, Possible Values field will automatically populated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please check this field if you like the possible values to be populated automatically based on the related object being searched.</inlineHelpText>
+        <label>Populate values?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CP Filter</label>
+    <listViews>
+        <fullName>ConstructionPts__All</fullName>
+        <columns>ConstructionPts__Is_Autocomplete_On__c</columns>
+        <columns>ConstructionPts__Object_API_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>ConstructionPts__Is_multiple_value__c</columns>
+        <columns>ConstructionPts__API_Field_Type__c</columns>
+        <columns>ConstructionPts__Field_Type__c</columns>
+        <columns>ConstructionPts__Active__c</columns>
+        <columns>ConstructionPts__isPopulate_values__c</columns>
+        <columns>ConstructionPts__Object_Field_API_Name__c</columns>
+        <columns>ConstructionPts__Related_Object_API_Name__c</columns>
+        <columns>ConstructionPts__Related_Object_Field_API_Field_Type__c</columns>
+        <columns>ConstructionPts__Related_Object_Field_API_Name__c</columns>
+        <columns>ConstructionPts__Related_Object_Select_Field_API_Name__c</columns>
+        <columns>ConstructionPts__Override__c</columns>
+        <columns>ConstructionPts__OperateOn__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>CP Filter Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CP Filters</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>ConstructionPts__Object_API_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ConstructionPts__Object_Field_API_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ConstructionPts__Possible_Values__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ConstructionPts__Field_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ConstructionPts__Value_Step__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ConstructionPts__Object_API_Name__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__OperateOn__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Possible_Values__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Value_Default__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Value_Default2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Value_Max__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Value_Min__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Value_Step__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Object_Field_API_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConstructionPts__Field_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>ConstructionPts__Populate_values</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Populate values</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;)}
+
+var callback2 = {onSuccess: function(result){console.log(&quot;it&apos;s a success!&quot; + result);document.location.reload(true);}, onFailure: function(error){console.log(&quot;failure! error = &quot; + error);}};
+var callback = {onSuccess: handleSuccess, onFailure: handleFailure};
+function handleSuccess(result) {
+	var records = result.getArray(&quot;records&quot;);
+	if (records != null &amp;&amp; records != undefined &amp;&amp; records.length &gt; 0) {
+		var arrayDetails = [];
+		for (var detIndex = 0; detIndex &lt; records.length; detIndex++) {
+			var value = records[detIndex].get(&apos;Name&apos;) + ( operateOn.indexOf(&apos;Value&apos;) &lt; 0 ? &apos;(&apos; + records[detIndex].get(&apos;Id&apos;) + &apos;)&apos; : &apos;&apos;);
+			if (records[detIndex].get(&apos;Name&apos;) != null &amp;&amp; value != &apos;&apos; &amp;&amp; value != &apos;null&apos;) {
+				arrayDetails.push(value);
+				
+			}
+		}
+	 
+		//update part 				  
+		var cpf = new sforce.SObject(&quot;CP_Filter__c&quot;);
+		cpf.Id = recordId;
+		cpf.Possible_Values__c = (String)(arrayDetails);
+		
+		if (cpf != null) {
+			result = sforce.connection.update([cpf],callback2);
+		}
+
+	}
+             
+}
+function handleFailure (error) { 
+   console.log(&quot;45 there was an error! &quot; + (String)(error));
+}
+
+var userId = &apos;{!$User.Id}&apos;; 
+sforce.connection.defaultNamespace = &apos;ConstructionPts&apos;;
+var recordId = &apos;{!ConstructionPts__CP_Filter__c.Id}&apos;; 
+var operateOn = &apos;{!ConstructionPts__CP_Filter__c.ConstructionPts__OperateOn__c}&apos;;
+console.log (&apos;filter recordId = &apos; + recordId);
+
+var query = &quot;{!JSEncode(ConstructionPts__CP_Filter__c.ConstructionPts__Filter_Values_Populate_Query__c)}&quot;;
+if (query != &quot;&quot; &amp;&amp; query != null &amp;&amp; query != undefined) {
+	var result = sforce.connection.query(query, callback);
+	
+}</url>
+    </webLinks>
+</CustomObject>

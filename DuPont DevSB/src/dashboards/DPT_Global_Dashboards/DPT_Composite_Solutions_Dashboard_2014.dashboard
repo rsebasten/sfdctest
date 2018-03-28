@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>01241000001E71X</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>notEqual</operator>
+            <values>01241000001E71X</values>
+        </dashboardFilterOptions>
+        <name>Case Record Type</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>Filter out Quick Complaints using the Case Record Type Filter at the top of the dashboard.
+Invalid Complaints not included.
+Hover over for details, click to go to data in report format for exporting.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Composite Solution Complaints Current Year</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_2014_ComSol_Complnts_by_Mfg_Plant</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Mfg. Plant By Month</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Composite Solution Complaints Current Year</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_2014_Comsol_Complnts_by_OrigReg</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Region of Origin By Month</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Composite Solution Complaints Current + 2 Prev Yr</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_2013_14_ComSol_Complaints_by_Quarter</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Quarter</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Composite Solution Complaints Current Year</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_2014_ComSol_Complnts_by_Acct</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Customer By Month</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Composite Solution Complaints Current Year</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_2014_ComSol_Complaints_by_REason</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Reason by Month</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnStacked</componentType>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>2Composite Solution Complaints Current + 2 Prev Yr</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_2013_14_ES_Complaints_by_Q_by_SubTyp1</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>By Quarter by SubType</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+    </rightSection>
+    <runningUser>wendy.c.youell@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>DPT Composite Solutions Dashboard 2014-16</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

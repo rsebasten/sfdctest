@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Utilizar para responder a clientes que envían una solicitud de Privacy en inglés</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>Respuesta a solicitud de Privacy en Inglés</name>
+    <style>freeForm</style>
+    <subject>DuPont - Response to your privacy request</subject>
+    <textOnly>Thank you for contacting us!
+
+
+Dear {!Lead.FirstName} {!Lead.LastName},
+
+We have received your privacy inquiry. In order to handle it, we would appreciate you can share with us your full name and/or more details so we can better identify your personal data into our system and proceed accordingly.
+
+You can respond to us here: info.mexico@dupont.com
+
+Your request:
+{!Lead.Product_Comments__c}
+{!Lead.Description}
+
+Best regards and thanks,
+
+DuPont Mexico, Central America &amp; Caribbean
+Phone: 52 1 (55) 5722 1150
+E-mail: info.mexico@dupont.com | Webpage: www.dupont.com.mx
+Twitter @DuPontMexico | YouTube: DuPontdeMexico
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DuPont cares about your privacy.  Your personal information (name, eMail, phone number and other contact data) will be stored in chosen customer systems primarily hosted in the United States.  This information will be used by DuPont, its affiliates, partners, and selected third parties in other countries to provide you with the product or service information requested.  To learn more, please visit www.privacy.dupont.com. By providing your personal information, you agree to the terms and conditions of this Privacy Statement. To access, modify or delete your personal information, please submit a request in the following link: http://www.dupont.com/forms/privacy-request.html?lang=ENG</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

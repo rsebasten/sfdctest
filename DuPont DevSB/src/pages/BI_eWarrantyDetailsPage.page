@@ -1,0 +1,301 @@
+<!--SHIVALI20150416 - Changed labels on the Page -->
+<apex:page standardStylesheets="false" cache="true" id="eWarrantyDetailsPage" sidebar="false" showHeader="false" controller="ctrlBIeWarrantyInput" language="{!$CurrentPage.parameters.lang}" >
+    <apex:form id="form1"  onkeypress="return noenter(event);">
+        <style> body { color: grey; font: normal normal bold 11px Trebuchet MS, Helvetica;} </style>
+        <style type="text/css">
+               .customPopup{
+                    background-color: white;
+                    border-style: solid;
+                    color: grey;
+                    font: normal normal bold 11px Trebuchet MS, Helvetica;
+                    border-width: 3px;
+                    border-color:grey;
+                    left: 50%;
+                    padding:10px;
+                    position: fixed;
+                    z-index: 9999;
+                    overflow:scroll;           
+                    /* These are the 3 css properties you will need to tweak so the pop  
+                    up displays in the center of the screen. First set the width. Then set 
+                    margin-left to negative half of what the width is. You can also add 
+                    the height property for a fixed size pop up.*/
+                  /*  width: 95%;
+                    left: 0%;
+                    top:150%;
+                    height:40%;*/
+                    width:85%; 
+                    height:55%;
+                    left:0%;
+                    top:25%;
+                }
+        
+                .closeButton {
+                    float: right;
+                    height: 3%;
+                    width: 5%;
+                    
+                }
+            </style>
+        <script type="text/javascript">
+        /*window.history.forward(1);*/
+        /* submit click on enter*/
+          function noenter(e){        
+            if(window.event){
+            key = window.event.keyCode; //IE        
+            } else if(e.which){    
+                    key = e.which; //firefox
+            }else if (e.keyCode){
+                   key = e.keyCode;
+            }
+        
+            if(key == 13) {
+            actionSearchScript();
+            return false;
+           }
+        }              
+        
+        function methodOneInJavascript1(recId){
+        //alert(recId);
+            //var txtVal1 = document.getElementById("{!$Component.form1.img}").value;
+            methodOneInJavascript(recId);
+            alert('methodcalled');
+        }   
+        </script>
+    
+        <span style="color: red; font: normal normal bold 11px Trebuchet MS, Helvetica;">
+        <apex:pageMessages /></span>
+        <apex:actionFunction name="actionSearchScript" action="{!addDetails}" />
+        <br/> 
+        <apex:outputPanel >
+        <p align ="left">
+        <b>{!$Label.Success_msg}</b><br/>
+        {!$Label.outLabel_warrantyCode} :  <b> <apex:outputText value="{0}" >
+        <apex:param value="{!strEntitlementCode}"/> 
+        </apex:outputText></b> <br/>
+         {!$Label.outLabel_dateOfPurchase} : <b>  <apex:outputText value="{0}" >
+        <apex:param value="{!strDoP}"/> 
+        </apex:outputText></b> <br/> 
+        </p>
+        </apex:outputPanel>        
+         <br/> <br/>            
+
+        <!-- collect all the user details -->
+        <apex:outputPanel >         
+                <apex:pageBlock >
+                    <apex:pageBlockSection >              
+                        <apex:outputLabel value="{!$Label.outLabel_firstName}" for="fname"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>                 
+                        <apex:inputText id="fname" style="width: 180px" value="{!custDetails.firstName}"/>
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_lastName}" for="lname"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel> 
+                        <apex:inputText id="lname" style="width: 180px" value="{!custDetails.lastName}"/>
+                         
+                        <apex:outputLabel value="{!$Label.outLabel_postalAddr}" for="pAddr"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:inputText id="pAddr" style="width: 180px" value="{!custDetails.postalAddr}"/>
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_city}" for="ci"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:inputText id="ci" style="width: 180px" value="{!custDetails.city}"/>
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_province}" for="prov"></apex:outputLabel>    
+                        <apex:inputText id="prov" style="width: 180px" value="{!custDetails.province}"/>  
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_postalCode}" for="zCode"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:inputText id="zCode" style="width: 180px" value="{!custDetails.zipCode}"/> 
+                                          
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_country}" for="con"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:selectList style="width: 180px" id="con" value="{!custDetails.country}"  multiselect="false" size="1">
+                            <apex:selectOptions value="{!ListCountry}"/>
+                        </apex:selectList>
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_email}" for="em"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:inputText id="em" style="width: 180px" value="{!custDetails.email}"/>
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_telephone}" for="tel"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:inputText id="tel" style="width: 180px" value="{!custDetails.telephone}"/>
+                        
+                         <apex:outputLabel value="{!$Label.outLabel_kitchenBrand}" for="kb"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:selectList id="kb" style="width: 180px" value="{!custDetails.kitchenBrand}"  multiselect="false" size="1">
+                       
+                        <apex:selectOptions value="{!ListBrand}" />
+                                                                                                                                                                                          
+                        <apex:actionSupport event="onchange" action="{!brandOther}" />
+                        </apex:selectList>
+                        
+                        <apex:outputLabel value="{!$Label.outLabel_brandOther}" for="oth" rendered="{!booOther}" ><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                        <apex:inputText id="oth" style="width: 180px" value="{!custDetails.kitchenBrandOther}" rendered="{!booOther}" />
+                                                                   
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+        
+            <br/>
+            <!-- this block helps user to add the dealer -->
+            <apex:pageblock id="dealer">
+                <apex:outputLabel value="{!$Label.outLabel_selectother}"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>    
+                <br/> <b/><apex:commandButton value="{!$Label.button_searchDealer}" style="width: 25%;font: normal normal bold 11px Trebuchet MS, Helvetica;" action="{!showPopup}" rerender="popup"  />
+                <apex:pageBlockSection >    
+                    <apex:outputPanel id="popup">        
+                        <apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopUp}">
+                            <apex:pageBlock >    
+                                <br/><apex:commandButton reRender="dealer" action="{!closePopup}" value="X" styleClass="closeButton" />       
+                                <b/><apex:commandLink id="add" value="{!$Label.link_addDealer}" action="{!renderAddDealer}" />
+                            </apex:pageBlock>
+                            <br/><br/>
+                            <apex:pageBlock >
+                                <apex:outputPanel > 
+                                   <apex:outputLabel value="{!$Label.outLabel_dealerName}" for="dName"/>
+                                    <apex:inputText id="dname" value="{!dealerName}" alt="Enter Dealer Name" /> 
+                                    
+                                    <b><apex:commandButton id="search" value="{!$Label.button_findDealer}" action="{!searchDealer}" reRender="dealer" style="width: 100px;font: normal normal bold 11px Trebuchet MS, Helvetica;"/></b>                                    
+                                       <apex:outputPanel id="addDealer" rendered="{!AND(IF(RadioStatus != null , true , false),IF(RadioStatus == 'no', true , false))}" >
+                                        <apex:selectRadio id="items" value="{!dealerAccount}" layout="pageDirection" rendered="{!dealerAccList<>null}">
+                                            <apex:selectOptions value="{!dealerAccList}" />
+                                            <apex:actionSupport event="onclick" action="{!dealerRecs}"  rerender="out" status="status_search" >
+                                                <apex:actionSupport event="oncomplete" action="{!closePopup}" />
+                                            </apex:actionSupport>
+                                        </apex:selectRadio><p/>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>        
+                            </apex:pageBlock> 
+                             <!-- this panel comes if dealer is not found -->
+                          <apex:outputPanel id="addDealer" rendered="{!AND(IF(RadioStatus != null , true , false),IF(RadioStatus == 'yes', true , false))}" > 
+                           <br/>{!$Label.Dealer_Find_msg}
+                                <apex:pageblock title="{!$Label.title_addDealer}"> 
+                                <span>{!$Label.Null_Entry}</span>                                 
+                                    <apex:pageBlockSection >                                    
+                                        <apex:outputLabel value="{!$Label.outLabel_dealerName}" for="dName"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>
+                                        <apex:inputText id="dname" value="{!completeDealerName}"/>  
+                                        
+                                        <apex:outputLabel value="{!$Label.outLabel_postalAddr}" for="pdAddr"/>
+                                        <apex:inputText id="pdAddr" value="{!dealerPostalAddr}"/>
+                                        
+                                        <apex:outputLabel value="{!$Label.outLabel_postalCode}" for="zdCode"/>
+                                        <apex:inputText id="zdCode" value="{!dealerZipCode}"/>
+                                        
+                                        <apex:outputLabel value="{!$Label.outLabel_province}" for="dprov"/>
+                                        <apex:inputText id="dprov" value="{!dealerProvince}"/>
+                                        
+                                        <apex:outputLabel value="{!$Label.outLabel_city}" for="dci"><span style="color:red;font-size:large;vertical-align:top;">*</span></apex:outputLabel>
+                                        <apex:inputText id="dci" value="{!dealerCity}"/>
+                                        
+                                        <apex:outputLabel value="{!$Label.outLabel_country}" for="dcon"/>
+                                        <apex:selectList id="dcon" value="{!dealerCountry}"  multiselect="false" size="1">
+                                        <apex:selectOptions value="{!ListCountry}"/>
+                                        </apex:selectList> 
+                                                                              
+                                        <apex:commandButton id="addDealer" value="{!$Label.button_addDealer}" action="{!addDealer}" rerender="out"  status="status_add" style="width: 100px;font: normal normal bold 9px Trebuchet MS, Helvetica;" >
+                                          <apex:actionSupport event="oncomplete" action="{!closePopup}" reRender="dealer" /> 
+                                        </apex:commandButton>
+                                        <apex:outputText value="{!tempMsg}"/>                                     
+                                    </apex:pageBlockSection>
+                                </apex:pageblock>   
+                            </apex:outputPanel>                   
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <!--  this block displays the details of the dealer selected -->
+                   <apex:outputPanel id="out" >                
+                        <apex:outputPanel rendered="{!IF(outPanel == 'yes',true,false)}">
+                            <!--  this panel comes only if dealer is found -->
+                            <apex:actionstatus id="status_search" startText="fetching..."> 
+                                <apex:facet name="stop"> 
+                                    <apex:outputPanel rendered="{!dealerAccount != null}">                  
+                                        <br/> {!$Label.dealer_msg}: <br/> <apex:outputText value="{!selectedDealerName}" />
+                                        <br/> <apex:outputText value="{!selectedDealerAddr}" /><br/>
+                                    </apex:outputPanel> 
+                                </apex:facet> 
+                            </apex:actionstatus>
+                             <!-- this panel comes only if dealer is not found -->
+                            <apex:actionstatus id="status_add" startText="fetching..."> 
+                                <apex:facet name="stop"> 
+                                    <apex:outputPanel rendered="{!dealerInfo<>null}">
+                                        <br/> {!$Label.dealer_msg}:  <br/><apex:outputText value="{!completeDealerName}" /><br/>
+                                       <apex:outputText value="{!dealerPostalAddr}" />,
+                                        <apex:outputText value="{!dealerProvince}" />,
+                                        <apex:outputText value="{!dealerCity}" />, 
+                                        <apex:outputText value="{!dealerZipCode}" />,
+                                        <apex:outputText value="{!dealerCountry}" />.
+                                        <br/>
+                                    </apex:outputPanel> 
+                                </apex:facet> 
+                            </apex:actionstatus>                      
+                        </apex:outputPanel>        
+                    </apex:outputPanel>             
+                </apex:pageBlockSection>
+            </apex:pageblock>
+            <apex:outputPanel id="btns" >
+                <apex:pageblock id="color">
+                <br/> <apex:outputLabel value="{!$Label.Select_Color}"></apex:outputLabel>    
+                <br/><b/><apex:commandButton value="{!$Label.button_searchColor}" style="width: 25%;font: normal normal bold 11px Trebuchet MS, Helvetica;" action="{!showPopupColor}" rerender="popupColor"> 
+                <apex:actionSupport event="onclick" action="{!showPopupcolor}" rerender="popupColor"/> </apex:commandButton>
+                <apex:pageBlockSection >    
+                    <apex:outputPanel id="popupColor">        
+                        <apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopUpColor}">
+                            <apex:pageBlock >    
+                                <br/><apex:commandButton reRender="color" action="{!closePopup}" value="X" styleClass="closeButton" />       
+                            </apex:pageBlock>
+                            <span style="color:grey;font-weight:bold;font-size:20px;">{!$Label.Colors_of_Corian}</span>
+                            <br/><br/>
+                            <apex:pageBlock >
+                                      <apex:pageBlockSection columns="3">
+                                        <apex:repeat value="{!fetColorList}" var="c">
+                                            <apex:outputPanel >
+                                                <table>
+                                                <tr><td style="align:center">
+                                                <apex:commandLink action="{!colorRecs}" reRender="popupColor,one"><apex:param name="firstParam" value="{!c.id}" assignTo="{!colorItem}"/>
+                                                    <apex:image id="img" value="{!c.url}" width="140" height="70"/>
+                                                </apex:commandLink>
+                                                <!-- <a href="#">
+                                                <apex:actionSupport action="{!colorRecs}" event="onclick">
+                                                    <apex:param name="firstParam" assignTo="{!colorItem}" value="{!c.id}"/>
+                                                </apex:actionSupport>
+                                                   <apex:image id="img" value="{!c.Product_Url__c}" width="200" height="100">
+                                                </apex:image>
+                                                </a> -->
+                                                <!-- <apex:param value="{!c.id}" assignTo="{!colorItem}"/><apex:image value="{!c.Product_Url__c}" width="200" height="100"/> -->
+                                                <!-- <apex:actionSupport event="onClick" action="{!colorRecs}" rerender="out"></apex:actionSupport> -->
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <br></br>
+                                                <span style="Align:center">&nbsp;&nbsp;&nbsp;<apex:outputText value="{!c.Name}"></apex:outputText></span></td></tr>
+                                                </table>
+                                            </apex:outputPanel>
+                                            </apex:repeat>
+                                      </apex:pageBlockSection>
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+                <apex:outputPanel id="one">
+                    <apex:outputText value="{!selectedColorName}"/>
+                </apex:outputPanel>
+                </apex:pageBlock>
+                <apex:pageblock >           
+                    <br/><br/>        
+                    <apex:PanelGrid >
+                        <apex:panelGroup > 
+                            <b/><span style="color:darkgrey;"></span><apex:outputLabel style="font-weight:bold;" value="{!$Label.Reason_Question1}"/><br/>                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                 <apex:inputField value="{!siteFields.Purchase_Reason__c}" />                                                  
+                           <br/> <br/> 
+                          <b/><span style="color:darkgrey;"></span><apex:outputLabel value="{!$Label.Product_Question1}"/><br/>                           
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:inputField value="{!siteFields.Product_Satisfaction__c}" />                               
+                           <br/>  <br/>                        
+                           <b/><span style="color:darkgrey;"></span><apex:outputLabel value="{!$Label.Service_Question1}"/><br/>                           
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:inputField value="{!siteFields.Service_Satisfaction__c}"/>
+                           <br/>  <br/> 
+                           <!--SHIVALI20150416 - START-->
+                           <apex:outputLabel value="{!$Label.InfoText}"></apex:outputLabel><br/>
+                            <b/><apex:inputCheckbox value="{!custDetails.privateCheck}"/> {!$Label.Opt_In} <br/> 
+                            <b/><br/> <apex:outputLabel value="{!$Label.Privacy_Label_1}"/> &nbsp;<apex:commandLink action="{!TermNConditionsLink}" value="{!$Label.Privacy_Link}" target="_blank" /> <apex:outputLabel value="{!$Label.Privacy_Label_2}"/>
+                                            
+                        </apex:panelGroup> 
+                           <!--SHIVALI20150416 - END -->
+                        <br/>
+                        <b/><apex:commandbutton id="submit" style="width: 100px;font: normal normal bold 11px Trebuchet MS, Helvetica;" value="{!$Label.button_submit}" action="{!addDetails}" >                            
+                              <!--  <apex:param name="formOrigin" value="Italy" assignTo="{!formOrigin}"/> -->
+                            </apex:commandbutton>
+                          <br/>                     
+                    </apex:PanelGrid>    
+                </apex:pageblock>    
+            </apex:outputPanel>    
+        </apex:outputPanel> 
+    </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifies the &quot;owner&quot; that a new SFAR has been created</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>New SFAR has been Created</name>
+    <style>none</style>
+    <subject>{!SFDC_Access_Request__c.Subtype__c} - A new SFAR is waiting</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

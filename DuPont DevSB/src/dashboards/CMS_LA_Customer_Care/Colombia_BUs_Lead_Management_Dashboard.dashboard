@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Crop Protection</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>contains</operator>
+            <values>Chemicals &amp; Fluoroproducts,fluoroproducts</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Building Innovations</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>contains</operator>
+            <values>Electronics &amp; Communications,Imaging</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Industrial Biosciences</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Nutrition &amp; Health</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Packaging &amp; Industrial Polymers</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Performance Polymers</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Pioneer Hi-Bred</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Protection Technologies</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Sustainable Solutions</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Titanium Technologies</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Building Innovations,Chemicals &amp; Fluoroproducts,Crop Protection,Electronics &amp; Communications,Industrial Biosciences,Nutrition &amp; Health,Packaging &amp; Industrial Polymers,Performance Polymers,Pioneer Hi-Bred,Protection Technologies,Sustainable Solutions,Titanium Technologies</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>notContain</operator>
+            <values>Building Innovations,Chemicals &amp; Fluoroproducts,Crop Protection,Electronics &amp; Communications,Industrial Biosciences,Nutrition &amp; Health,Packaging &amp; Industrial Polymers,Performance Polymers,Pioneer Hi-Bred,Protection Technologies,Sustainable Solutions,Titanium Technologies,fluoroproducts,imaging,performance</values>
+        </dashboardFilterOptions>
+        <name>Owning SBU</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>1/1/2014 12:00 AM</values>
+            <values>4/1/2014 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>4/1/2014 12:00 AM</values>
+            <values>7/1/2014 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>1/1/2014 12:00 AM</values>
+            <values>7/1/2014 12:00 AM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>between</operator>
+            <values>1/1/2014 12:00 AM</values>
+            <values>8/1/2014 12:00 AM</values>
+        </dashboardFilterOptions>
+        <name>Created Date</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Brazil</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Argentina,Colombia,Uruguay,Venezuela,Chile,Paraguay,Ecuador,Bolivia,Peru,French Guiana,Guyana,Suriname</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>notContain</operator>
+            <values>Brazil,Argentina,Colombia,Uruguay,Venezuela,Chile,Paraguay,Ecuador,Bolivia,Peru,French Guiana,Guyana,Suriname</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Peru</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Colombia</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Chile</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Argentina</values>
+        </dashboardFilterOptions>
+        <name>Region</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>DuPont TeleSolutions Lead Performance Dashboard  2014</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>All BU leads captured through DuPont TeleSolutions Channels</footer>
+            <header>DuPont TeleSolutions 2014 - Total Colombia</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X1_Current_and_Previous_2Y_DIMC_LA_20141</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Bar</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Lead.Origin_Channel_Type__c</groupingColumn>
+            <header>DuPont TeleSolutions 2014 - by Origin Channel Type</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X3_BU_Leads_by_Origin_Channel_Type</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>true</expandOthers>
+            <header>DuPont TeleSolutions 2014 - Status</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X4_Leads_Open_vs_Closed</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <useReportChart>true</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Funnel</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>true</expandOthers>
+            <header>DuPont TeleSolutions 2014 - Lead Conversion</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X8_Converted_Accounts_DIMC_LA</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DuPont TeleSolutions 2014 - by Organization</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/Leads_by_SBU_Region</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DuPont TeleSolutions 2014 - by Origin Name</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/Leads_by_URLs</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DuPont TeleSolutions 2014 - Pending to Close</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/Lead_Closing_Time_Average_New</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DuPont TeleSolutions 2014 - by Country</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/Colombia_BU_Leads_by_SubRegion</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DuPont TeleSolutions 2014 - by Information Type</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/X2_BU_Leads_by_Type</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Line</componentType>
+            <dashboardFilterColumns>
+                <column>Lead.Owning_SBU__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>CREATED_DATE</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>Lead.Lead_Country__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DuPont TeleSolutions 2014 - Service Level by Quarter</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CMS_LA_Customer_Care/Leads_Status_by_BU</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>sfdc-admin.dps@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Colombia BUs Lead Management Dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>9</titleSize>
+</Dashboard>

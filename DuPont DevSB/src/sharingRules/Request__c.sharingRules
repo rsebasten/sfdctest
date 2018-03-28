@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Req_DPT_EMEA_PortalRole_LetterShopSA_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>as per issue IS ID-00083532</description>
+        <label>Req_DPT_EMEA_PortalRole-LetterShopSA_RW</label>
+        <sharedTo>
+            <portalRole>LettershopSAPartnerUser</portalRole>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sample_Request_Supplier__c</field>
+            <operation>equals</operation>
+            <value>Lettershop S.A.</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Request_DPT_EMEA_SRS_NPS_S_S_PR_NPS_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Request_DPT_EMEA_SRS-NPS_S-S_PR-NPS_RW</label>
+        <sharedTo>
+            <portalRole>NoyonProtectionSASPartnerUser</portalRole>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sample_Request_Supplier__c</field>
+            <operation>equals</operation>
+            <value>Noyon Protection SAS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Request_DataMigrationUser_Share_RO_RS_PSCRM</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>(IS ID-00082845) - Requested on 6/23 to extend visibility of &quot;Request&quot; records owned by Data Migration User (Id = &apos;00541000003FCKu&apos;) to Role and Internal Subordinates of role &quot;PS CRM&quot;</description>
+        <label>Request Data Migration User Share RO_RS_PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sales_Aide_Request_Supplier_K_Creation</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sales Aide Request Supplier K-Creation</label>
+        <sharedTo>
+            <portalRole>KCreationProductionPartnerUser</portalRole>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sample_Request_Supplier__c</field>
+            <operation>equals</operation>
+            <value>K Creation &amp; Production</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sales_Aide_Request_Supplier_MCI</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sales Aide Request Supplier MCI</label>
+        <sharedTo>
+            <portalRole>MATERIALCONCEPTSPartnerUser</portalRole>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sample_Request_Supplier__c</field>
+            <operation>equals</operation>
+            <value>MATERIAL CONCEPTS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BI_LA_Sample_Request</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>BI LA -Sample Request</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BILA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CCustomerCare</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BI_LA_Samples_TeleSolutions</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>BI-LA Samples TeleSolutions</label>
+        <sharedTo>
+            <group>BI_LA_Samples_TeleSolutions</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>BILA</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTEMEASalesAidSpecialist</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT EMEA Sales Aid Specialist</label>
+        <sharedTo>
+            <group>DPTEMEASalesAidSpecialist</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTEMEA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTEMEASalesAidSpecialist790111</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT EMEA Sales Aid Specialist</label>
+        <sharedTo>
+            <group>DPTEMEASalesAidSpecialist</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DPTEMEA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTIPPNA</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DPT IPP NA</label>
+        <sharedTo>
+            <group>DPTIPPNA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTIPPNA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTNASalesAidSpecialist790111</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT NA Sales Aid Specialist</label>
+        <sharedTo>
+            <group>DPTNASalesAidSpecialist</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DPTIPPNA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DPTNOWNARequestManagers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT-NOW NA Request Managers</label>
+        <sharedTo>
+            <group>DPTNOWNARequestManagers</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DPTNOWNA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Request_DPS_R_DPS_R_DPS_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Request_DPS_R-DPS_R-DPS_R</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Request_DPT_R_DPS_R_DPTIPPNA_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Request_DPT_R-DPS_R-DPTIPPNA_RW</label>
+        <sharedTo>
+            <role>DPTIPPNA</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>DuPont_Protection_Solutions</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To capture the Total Goals for the Targeted Demand Revenue and Quantity. Updated manually by the BU.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Base_Date__c</fullName>
+        <description>Base Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Base Date</inlineHelpText>
+        <label>Base Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Business__c</fullName>
+        <description>Name of Business associated with goal</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Business associated with goal</inlineHelpText>
+        <label>Business</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Goal_Period__c</fullName>
+        <description>Month and Year of Goal, date is ignored.</description>
+        <externalId>false</externalId>
+        <label>Goal Period</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>MDDemand__c</fullName>
+        <description>To link Demand Goals to Demand</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To link Demand Goals to Demand</inlineHelpText>
+        <label>Master Detail for Demand</label>
+        <referenceTo>Demand__c</referenceTo>
+        <relationshipLabel>DemandGoals</relationshipLabel>
+        <relationshipName>DemandGoals</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <description>The DuPont organization that owns this record, should be a combination of the accepted abbreviations of SBU(Strategic Business Unit)-BU(Business Unit)-SubBU(Business or Product Line)</description>
+        <externalId>false</externalId>
+        <label>Owning Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BI-Surf</fullName>
+                    <default>false</default>
+                    <label>BI-Surf</label>
+                </value>
+                <value>
+                    <fullName>BI-Env</fullName>
+                    <default>false</default>
+                    <label>BI-Env</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quantity_Goal__c</fullName>
+        <description>Total Quantity Goal for Demand</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Quantity Goal</inlineHelpText>
+        <label>Quantity Goal</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_Goal__c</fullName>
+        <description>Total Revenue Goal for the Demand</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Revenue Goal</inlineHelpText>
+        <label>Revenue Goal</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Target Group for this Demand Goal. Currently only defined for Distributors.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Distributor</fullName>
+                    <default>false</default>
+                    <label>Distributor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>DemandGoal</label>
+    <nameField>
+        <label>DemandGoal Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DemandGoals</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

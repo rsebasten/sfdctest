@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>DPTEMEAMarketingCommunicationsAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DPT EMEA Marketing Communications-Admin</label>
+        <sharedTo>
+            <group>DPTEMEAMarketingCommunicationsAdmin</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Issue_Type__c</field>
+            <operation>equals</operation>
+            <value>Digital Marketing</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Issue_PA_C_InstanceEqualsDupontUtil_PG_SFDC_Utility_Support_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Issue_PA_C_InstanceEqualsDupontUtil-PG_SFDC_Utility_Support_RW</label>
+        <sharedTo>
+            <group>SFDC_Utility_Support</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>SFDC_Instance__c</field>
+            <operation>equals</operation>
+            <value>DuPont Utility</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Issue_Type_IT_Issue_Managers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Issue_Type_IT_Issue_Managers</label>
+        <sharedTo>
+            <group>SFDCIssueManagers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Issue_Type__c</field>
+            <operation>equals</operation>
+            <value>IT-Price Authorization,IT</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>DIMCNAIssues</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DIMC NA Issues</label>
+        <sharedTo>
+            <group>DIMCNAIssues</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DIMCNAIssues</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Hypercare</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Hypercare</label>
+        <sharedTo>
+            <group>SFDCIssueManagers</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>SFDC_Hypercare_Support</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Hypercare_Members</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Hypercare Members</label>
+        <sharedTo>
+            <group>SFDCIssueManagers</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Hypercare</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Issue_PA_PG_SFDC_Utility_Support_PG_SFDC_Utility_IssueMgr_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Issue_PA_PG_SFDC_Utility_Support-PG_SFDC_Utility_IssueMgr_RW</label>
+        <sharedTo>
+            <group>SFDC_Utility_issue_manager</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SFDC_Utility_Support</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>M_S_IT_leads_Feedback</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>M&amp;S IT- Leader feedback for issues related with Escalated team</description>
+        <label>M&amp;S IT leads Feedback</label>
+        <sharedTo>
+            <group>Escalated_Issue_Reader</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>SFDCEscalatedSupport</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>M_S_IT_leads_Feedback_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>M&amp;S IT Leader feedback for issues under CRM IT Design review</description>
+        <label>M&amp;S IT leads Feedback 2</label>
+        <sharedTo>
+            <group>Escalated_Issue_Reader</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>CRMITDesignReview</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFDCIssueManagers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SFDC Issue Managers</label>
+        <sharedTo>
+            <group>SFDCIssueManagers</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SFDCDuPontSystemAdministrators</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFDCIssueManagers790111</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SFDC Issue Managers</label>
+        <sharedTo>
+            <group>SFDCIssueManagers</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SFDCAdminSupport787141</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFDC_Admin_Support_Hypercare</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SFDC Admin Support/Hypercare</label>
+        <sharedTo>
+            <group>SFDCIssueManagers</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>SFDCAdminSupport</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>eCommerce</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>eCommerce</label>
+        <sharedTo>
+            <group>eCommerce</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SFDCAdminSupport787141</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_20001144</developerName>
+        <masterLabel>Team Members</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Plan__c$Owner</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Jack Yant</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bill Goodwin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nathan Love</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Randy Pettus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bruce Pearce</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gianliugi Molteni</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kerry King</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Beth Taylor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Diane Andrews</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kelly LeClear</sourceValue>
+            </sourceValues>
+            <value>Auto/MRG/IND Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Marta Hilton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Reardon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pamela Langston-Vaughn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Karen Polkinghorne</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jose Arevalo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Leslie Love</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dale Boyle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Anthony J Palermo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Debra Ackerman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Josee Ricard-Matthews</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susan Davis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Demond Chapman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mark Fahey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Deanna A Salvati</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Barbara Catana</sourceValue>
+            </sourceValues>
+            <value>NOW Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Pie</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>Plan__c$Owner</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Plan__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Plan__c$Owning_Org__c</field>
+    </columns>
+    <columns>
+        <field>Plan__c$Name</field>
+    </columns>
+    <columns>
+        <field>Plan__c.Accounts__r$Name</field>
+    </columns>
+    <columns>
+        <field>Plan__c$Sponsor__c</field>
+    </columns>
+    <columns>
+        <field>Plan__c$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Plan__c.Accounts__r$Owner</field>
+    </columns>
+    <columns>
+        <field>Plan__c.Accounts__r$Owning_Organization__c</field>
+    </columns>
+    <columns>
+        <field>Plan__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Plan__c.Accounts__r$Region__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>North America</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Plan__c$Owner</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Stephen Mata,Rose Santia,Darren DeBoer,Jordan Carlen,Brian Foy,Lucie Martucci,Dan Hirsh,David Grislis,Jeff Fackler,Norfleet Smith,Richard Murphy,Adrian Meyer,Sarah Ritchie</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Plan__c$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPS NA Nomex Sales- Account Plans</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>PlansWithOrWithoutAccounts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Plan__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

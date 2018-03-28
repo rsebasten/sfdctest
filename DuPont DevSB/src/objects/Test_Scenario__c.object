@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Test scenarios related to a business process</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Assumptions__c</fullName>
+        <description>Any assumptions or dependencies required for this scenario to work</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Any assumptions or dependencies required for this scenario to work</inlineHelpText>
+        <label>Assumptions</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business_Critical__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>By checking this box, you are indicating that this Test Scenario will be tested during each Wave, even if it passes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By checking this box, you are indicating that this Test Scenario will be tested during each Wave, even if it passes.</inlineHelpText>
+        <label>Business Critical</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Business_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Process</label>
+        <referenceTo>Business_Process__c</referenceTo>
+        <relationshipLabel>Test Scenarios</relationshipLabel>
+        <relationshipName>Test_Scenarios</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Business_Sign_off__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the business has accepted the ALL of the Test Results for this Scenario, this box should be checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the business has accepted the ALL of the Test Results for this Scenario, this box should be checked.</inlineHelpText>
+        <label>Business Sign-off</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Result__c</fullName>
+        <description>Expected result of scenario</description>
+        <externalId>false</externalId>
+        <label>Expected Result</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Move_to_Next_Wave__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked means - Test Scenario that has failed, and cannot be resolved during the Current Wave.  By Checking, Workflow will automatically move to next Wave of Testing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked means - Test Scenario that has failed, and cannot be resolved during the Current Wave.  By Checking, Workflow will automatically move to next Wave of Testing.</inlineHelpText>
+        <label>Move to Next Wave</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Overall_Status__c</fullName>
+        <description>The Overall Status of the Testing Scenario and Testing Results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Overall Status of the Testing Scenario and Testing Results</inlineHelpText>
+        <label>Overall Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <color>#FF9966</color>
+                    <default>true</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <color>#F3D904</color>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Ready for Sign-off</fullName>
+                    <color>#A845DC</color>
+                    <default>false</default>
+                    <label>Ready for Sign-off</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <color>#000099</color>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>Ready for Final Test</fullName>
+                    <color>#009900</color>
+                    <default>false</default>
+                    <label>Ready for Final Test</label>
+                </value>
+                <value>
+                    <fullName>Fix Post Production</fullName>
+                    <default>false</default>
+                    <label>Fix Post Production</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PGL_Actual_Results__c</fullName>
+        <description>What happened when you performed the test Scenario?  Did it meet your Expected Results?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What happened when you performed the test Scenario?  Did it meet your Expected Results?</inlineHelpText>
+        <label>Post Go Live Actual Results</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PGL_Root_Cause__c</fullName>
+        <description>The base reason that the Test Failed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The base reason that the Test Failed</inlineHelpText>
+        <label>Post Go Live Root Cause</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Issue</fullName>
+                    <default>false</default>
+                    <label>User Issue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PGL_Test_Result__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If any portion of this scenario Fails, Mark this Fail</inlineHelpText>
+        <label>Post Go Live Test Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pass</fullName>
+                    <color>#33CC00</color>
+                    <default>false</default>
+                    <label>Pass</label>
+                </value>
+                <value>
+                    <fullName>Fail</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                    <label>Fail</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Parent_Scenario__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Parent - or overriding Master of a series or grouping of Test Scenarios</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Parent - or overriding Master of a series or grouping of Test Scenarios</inlineHelpText>
+        <label>Parent Scenario</label>
+        <referenceTo>Test_Scenario__c</referenceTo>
+        <relationshipName>DPC_Test_Scenarios</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SFDC_Analysis__c</fullName>
+        <description>The analysis by the SFDC Team of the Test Scenario Failure Reason</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The analysis by the SFDC Team of the Test Scenario Failure Reason</inlineHelpText>
+        <label>SFDC Analysis</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Extraction Query</fullName>
+                    <default>false</default>
+                    <label>1 - Extraction Query</label>
+                </value>
+                <value>
+                    <fullName>2 - Metadata Issue</fullName>
+                    <default>false</default>
+                    <label>2 - Metadata Issue</label>
+                </value>
+                <value>
+                    <fullName>3 - Special Characters</fullName>
+                    <default>false</default>
+                    <label>3 - Special Characters</label>
+                </value>
+                <value>
+                    <fullName>4 - Other Errors</fullName>
+                    <default>false</default>
+                    <label>4 - Other Errors</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDC_Instance__c</fullName>
+        <externalId>false</externalId>
+        <label>SFDC Instance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>QA Sandbox</fullName>
+                    <default>false</default>
+                    <label>QA Sandbox</label>
+                </value>
+                <value>
+                    <fullName>New Org</fullName>
+                    <default>false</default>
+                    <label>New Org</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scenario_Description__c</fullName>
+        <description>The detailed Description of this Test Scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The detailed Description of this Test Scenario</inlineHelpText>
+        <label>Scenario Description</label>
+        <length>20000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sign_Off_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sign Off Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Test_Types__c</fullName>
+        <description>The Type of tests that are needed to be performed in order to completely test this scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Type of tests that are needed to be performed in order to completely test this scenario.  Ultimately, there should be at least one Test Result for each Test Type.</inlineHelpText>
+        <label>Test Types</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Data Migration</fullName>
+                    <default>false</default>
+                    <label>Data Migration</label>
+                </value>
+                <value>
+                    <fullName>Page Layout</fullName>
+                    <default>false</default>
+                    <label>Page Layout</label>
+                </value>
+                <value>
+                    <fullName>New Record Creation</fullName>
+                    <default>false</default>
+                    <label>New Record Creation</label>
+                </value>
+                <value>
+                    <fullName>Custom Design Element</fullName>
+                    <default>false</default>
+                    <label>Custom Design Element</label>
+                </value>
+                <value>
+                    <fullName>Data/Design Cleanup</fullName>
+                    <default>false</default>
+                    <label>Data/Design Cleanup</label>
+                </value>
+                <value>
+                    <fullName>Analytics (Reports, Dashboards &amp; Views)</fullName>
+                    <default>false</default>
+                    <label>Analytics (Reports, Dashboards &amp; Views)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Testing_Completion_Target_Date__c</fullName>
+        <description>To indicate the date to complete the scenario test.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To indicate the date to complete the scenario test.</inlineHelpText>
+        <label>Testing Completion Target Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Testing_Data__c</fullName>
+        <description>Provide the data needed to accomplish this Testing Scenario.  If extensive, provide link or attach files.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide the data needed to accomplish this Testing Scenario.  If extensive, provide link or attach files.</inlineHelpText>
+        <label>Testing Data</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Testing_Results_Discussion__c</fullName>
+        <description>A long Text field to capture the Original Testing Results, as well as any comments &amp; discussion regarding the Results.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A long Text field to capture the Original Testing Results, as well as any comments &amp; discussion regarding the Results.</inlineHelpText>
+        <label>Testing Results Discussion</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Testing_Wave__c</fullName>
+        <description>The grouping for the Testing Scenarios - and Testing Results</description>
+        <externalId>false</externalId>
+        <label>Testing Wave</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Wave 1</fullName>
+                    <default>true</default>
+                    <label>Wave 1</label>
+                </value>
+                <value>
+                    <fullName>Wave 2</fullName>
+                    <default>false</default>
+                    <label>Wave 2</label>
+                </value>
+                <value>
+                    <fullName>Post Go Live Validation</fullName>
+                    <default>false</default>
+                    <label>Post Go Live Validation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Wave1Actual_Results__c</fullName>
+        <description>What happened when you performed the test Scenario?  Did it meet your Expected Results?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What happened when you performed the test Scenario?  Did it meet your Expected Results?</inlineHelpText>
+        <label>Wave 1 Actual Results</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Wave2Actual_Results__c</fullName>
+        <description>What happened when you performed the test Scenario?  Did it meet your Expected Results?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What happened when you performed the test Scenario?  Did it meet your Expected Results?</inlineHelpText>
+        <label>Wave 2 Actual Results</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Wave_1_Root_Cause__c</fullName>
+        <description>The base reason that the Test Failed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The base reason that the Test Failed</inlineHelpText>
+        <label>Wave 1 Root Cause</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Data Issue</fullName>
+                    <default>false</default>
+                    <label>Data Issue</label>
+                </value>
+                <value>
+                    <fullName>Design Issue</fullName>
+                    <default>false</default>
+                    <label>Design Issue</label>
+                </value>
+                <value>
+                    <fullName>User Issue</fullName>
+                    <default>false</default>
+                    <label>User Issue</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Wave_1_Test_Result__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If any portion of the Test Scenario Fails, select Fail</inlineHelpText>
+        <label>Wave 1 Test Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pass</fullName>
+                    <color>#33CC00</color>
+                    <default>false</default>
+                    <label>Pass</label>
+                </value>
+                <value>
+                    <fullName>Fail</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                    <label>Fail</label>
+                </value>
+                <value>
+                    <fullName>Retest</fullName>
+                    <color>#FFFF66</color>
+                    <default>false</default>
+                    <label>Retest</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Wave_2_Root_Cause__c</fullName>
+        <description>The base reason that the Test Failed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The base reason that the Test Failed</inlineHelpText>
+        <label>Wave  2 Root Cause</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Data Issue</fullName>
+                    <default>false</default>
+                    <label>Data Issue</label>
+                </value>
+                <value>
+                    <fullName>Design Issue</fullName>
+                    <default>false</default>
+                    <label>Design Issue</label>
+                </value>
+                <value>
+                    <fullName>Workflow Issue</fullName>
+                    <default>false</default>
+                    <label>Workflow Issue</label>
+                </value>
+                <value>
+                    <fullName>User Issue</fullName>
+                    <default>false</default>
+                    <label>User Issue</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Wave_2_Test_Result__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If any portion of this scenario Fails, Mark this Fail</inlineHelpText>
+        <label>Wave 2 Test Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pass</fullName>
+                    <color>#33CC00</color>
+                    <default>false</default>
+                    <label>Pass</label>
+                </value>
+                <value>
+                    <fullName>Fail</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                    <label>Fail</label>
+                </value>
+                <value>
+                    <fullName>Retest</fullName>
+                    <color>#FFFF66</color>
+                    <default>false</default>
+                    <label>Retest</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Test Scenario</label>
+    <nameField>
+        <label>Test Scenario Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Test Scenarios</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Test_Scenario_PostGoLiveValidation</fullName>
+        <active>true</active>
+        <description>Manually Updated for Key or Critical Test Scenarios for Final Post Go Live Validation</description>
+        <label>Test Scenario-Post Go Live Validation</label>
+        <picklistValues>
+            <picklist>Overall_Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fix Post Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Final Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Sign-off</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Root_Cause__c</picklist>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Analysis__c</picklist>
+            <values>
+                <fullName>1 - Extraction Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Metadata Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Special Characters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Other Errors</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>New Org</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Test_Types__c</picklist>
+            <values>
+                <fullName>Analytics %28Reports%2C Dashboards %26 Views%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Design Element</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data%2FDesign Cleanup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Record Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Page Layout</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing_Wave__c</picklist>
+            <values>
+                <fullName>Post Go Live Validation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Test_Scenario_Sign_off</fullName>
+        <active>true</active>
+        <description>Updated Automatically when Tester Passes a Wave 3 Test Scenario</description>
+        <label>Test Scenario-Sign-off</label>
+        <picklistValues>
+            <picklist>Overall_Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Sign-off</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Root_Cause__c</picklist>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Analysis__c</picklist>
+            <values>
+                <fullName>1 - Extraction Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Metadata Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Special Characters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Other Errors</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>New Org</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Test_Types__c</picklist>
+            <values>
+                <fullName>Analytics %28Reports%2C Dashboards %26 Views%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Design Element</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data%2FDesign Cleanup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Record Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Page Layout</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing_Wave__c</picklist>
+            <values>
+                <fullName>Wave 2</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Test_Scenario_Wave_1</fullName>
+        <active>true</active>
+        <description>Used during the Initial Wave of Testing</description>
+        <label>Test Scenario-Wave 1</label>
+        <picklistValues>
+            <picklist>Overall_Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ready for Sign-off</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Root_Cause__c</picklist>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Analysis__c</picklist>
+            <values>
+                <fullName>1 - Extraction Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Metadata Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Special Characters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Other Errors</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>New Org</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QA Sandbox</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Test_Types__c</picklist>
+            <values>
+                <fullName>Analytics %28Reports%2C Dashboards %26 Views%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Design Element</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data%2FDesign Cleanup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Record Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Page Layout</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing_Wave__c</picklist>
+            <values>
+                <fullName>Wave 1</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Wave 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retest</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Test_Scenario_Wave_2</fullName>
+        <active>true</active>
+        <description>Updated via Workflow when the Testing Wave is changed to 2</description>
+        <label>Test Scenario-Wave 2</label>
+        <picklistValues>
+            <picklist>Overall_Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Root_Cause__c</picklist>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PGL_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Analysis__c</picklist>
+            <values>
+                <fullName>1 - Extraction Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Metadata Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Special Characters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Other Errors</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>New Org</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QA Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Test_Types__c</picklist>
+            <values>
+                <fullName>Analytics %28Reports%2C Dashboards %26 Views%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Design Element</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data%2FDesign Cleanup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Record Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Page Layout</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing_Wave__c</picklist>
+            <values>
+                <fullName>Wave 2</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_1_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Root_Cause__c</picklist>
+            <values>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wave_2_Test_Result__c</picklist>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retest</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Test_Scenario_Tester_is_Required</fullName>
+        <active>true</active>
+        <description>If the Scenario is marked Pass or Fail, the Tester field must be populated</description>
+        <errorConditionFormula>ISPICKVAL( Wave_1_Test_Result__c , &quot;Fail&quot;) || 
+ISPICKVAL( Wave_1_Test_Result__c , &quot;Pass&quot;)</errorConditionFormula>
+        <errorMessage>Please fill in the name of the Person who performed the Test and documented the Test Results</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Test_Scenario_Wave1_Results_are_Req</fullName>
+        <active>true</active>
+        <description>Requires the Tester to document the Actual Results if they mark the test Pass or Fail for Wave 1</description>
+        <errorConditionFormula>(ISPICKVAL(  Wave_1_Test_Result__c  , &quot;Fail&quot;) ||
+ISPICKVAL(  Wave_1_Test_Result__c  , &quot;Pass&quot;)) &amp;&amp; 
+ISBLANK(  Wave1Actual_Results__c )</errorConditionFormula>
+        <errorDisplayField>Wave1Actual_Results__c</errorDisplayField>
+        <errorMessage>Please document the Actual Results - If Pass - note &quot;As Expected&quot;, if Fail - Include information that can help the followup team to determine the issue - including Error messages, when failure occurred, etc.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Test_Scenario_Wave2_Results_are_Req</fullName>
+        <active>true</active>
+        <description>Requires the Tester to document the Actual Results if they mark the test Pass or Fail for Wave 2</description>
+        <errorConditionFormula>(ISPICKVAL( Wave_2_Test_Result__c , &quot;Fail&quot;) || 
+ISPICKVAL( Wave_2_Test_Result__c , &quot;Pass&quot;) )&amp;&amp; 
+ISBLANK( Wave2Actual_Results__c )</errorConditionFormula>
+        <errorDisplayField>Wave2Actual_Results__c</errorDisplayField>
+        <errorMessage>Please document the Actual Results - If Pass - note &quot;As Expected&quot;, if Fail - Include information that can help the followup team to determine the issue - including Error messages, when failure occurred, etc.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Test_Scenario_Wave3_Results_are_Req</fullName>
+        <active>true</active>
+        <description>Requires the Tester to document the Actual Results if they mark the test Pass or Fail for Wave 3</description>
+        <errorConditionFormula>(ISPICKVAL( PGL_Test_Result__c , &quot;Fail&quot;) || 
+ISPICKVAL( PGL_Test_Result__c , &quot;Pass&quot;) )&amp;&amp; 
+ISBLANK( PGL_Actual_Results__c )</errorConditionFormula>
+        <errorDisplayField>PGL_Actual_Results__c</errorDisplayField>
+        <errorMessage>Please document the Actual Results - If Pass - note &quot;As Expected&quot;, if Fail - Include information that can help the followup team to determine the issue - including Error messages, when failure occurred, etc.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Test_Result_Discussion</fullName>
+        <availability>online</availability>
+        <description>Executes a script to bring up a dialog box</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Test Result Discussion</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/connection.js&quot;)}
+
+var result = sforce.connection.query(&quot;Select id,Testing_Results_Discussion__c from Test_Scenario__c where Id = &apos;{!Test_Scenario__c.Id}&apos; &quot;);
+var records = result.getArray(&quot;records&quot;);
+var result1 = sforce.connection.update([records[0]]);
+if (result1[0].getBoolean(&quot;success&quot;)){
+function insertScript(script){
+var targetNode = document.createElement(&apos;div&apos;);
+document.body.appendChild(targetNode);
+try { var el = document.createElement(&apos;script&apos;);
+el.type=&quot;text/javascript&quot;;
+el.innerHTML = script;
+targetNode.appendChild(el);
+} catch (e){ var el = document.createElement(&apos;span&apos;);
+targetNode.appendChild(el);
+el.innerHTML = &quot;&lt;br /&gt;&lt;scr&quot;+&quot;ipt type=&apos;text/javascript&apos; defer=&apos;defer&apos;&gt;&quot;+script+&quot;&lt;/script&quot; + &quot;&gt;&quot;;
+}
+
+
+var box = new SimpleDialog(&quot;hersh&quot;+Math.random(), true);
+parent.box = box;
+box.setTitle(&quot;Discussion and Updates&quot;);
+box.createDialog();
+box.setWidth(330);
+
+box.setContentInnerHTML(&quot;&lt;p&gt;&lt;div id=&apos;errorMsg&apos; style=&apos;color:red;display:none;font-weight:bold;font-size:95%;&apos;&gt;Blank Comments Can&apos;t be saved!&lt;/div&gt;&lt;textarea id=&apos;commentBox&apos; rows=6 cols=50&gt;&lt;/textarea&gt;&lt;br /&gt;&lt;button class=&apos;btn&apos; id=&apos;save&apos; onclick=&apos;this.disabled=true; updateComment();&apos;&gt;Update Comment&lt;/button&gt;&lt;button class=&apos;btn&apos; onclick=&apos;window.parent.box.hide();window.location.reload();return false;&apos;&gt;Cancel&lt;/button&gt;&lt;/p&gt;&quot;);
+/*
+box.setContentInnerHTML(&quot;&lt;p&gt;&lt;div id=&apos;errorMsg&apos; style=&apos;color:red;display:none;font-weight:bold;font-size:95%;&apos;&gt;Blank Comments Can&apos;t be saved!&lt;/div&gt;&lt;textarea id=&apos;commentBox&apos; rows=6 cols=40&gt;&lt;/textarea&gt;&lt;br /&gt;&lt;button class=&apos;btn&apos; id=&apos;save&apos; onclick=&apos;this.disabled=true; updateComment();&apos;&gt;Update Comment&lt;/button&gt;&lt;button class=&apos;btn&apos; onclick=&apos;window.parent.box.hide(); return false;&apos;&gt;Cancel&lt;/button&gt;&lt;/p&gt;&quot;);
+*/
+box.setupDefaultButtons();
+box.show();
+document.getElementById(&apos;commentBox&apos;).focus();
+}
+
+script=&quot;var cDate; function updateComment() { formatDate(); comment = document.getElementById(&apos;commentBox&apos;).value; if(comment==null || comment==&apos;&apos;) {document.getElementById(&apos;errorMsg&apos;).style.display=&apos;block&apos;; document.getElementById(&apos;save&apos;).disabled=false; return false; } var thisObj = new sforce.SObject(&apos;Test_Scenario__c&apos;); thisObj.id = &apos;{!Test_Scenario__c.Id}&apos;; queryString = \&quot;Select id,Testing_Results_Discussion__c from Test_Scenario__c where Id = &apos;{!Test_Scenario__c.Id}&apos; \&quot;; queryObj = sforce.connection.query(queryString); record = queryObj.getArray(&apos;records&apos;)[0]; if(record.Testing_Results_Discussion__c==null){record.Testing_Results_Discussion__c=&apos;&apos;};thisObj.Testing_Results_Discussion__c = cDate + &apos; (&apos;+ &apos;{!$User.FirstName}&apos;+&apos; &apos;+&apos;{!$User.LastName}&apos; +&apos;):&apos;+ \&quot;\\n\&quot; +comment + \&quot;\\n-------------------------------------\\n\&quot; +record.Testing_Results_Discussion__c; var res=sforce.connection.update([thisObj]); if (res[0].getBoolean(&apos;success&apos;)){} else{alert(&apos;Insufficient Privileges or Read Only&apos;);} ; window.location.reload(); return false;} function formatDate(){ var months = new Array(12); months[0] = &apos;Jan&apos;; months[1] = &apos;Feb&apos;; months[2] = &apos;Mar&apos;; months[3] = &apos;Apr&apos;; months[4] = &apos;May&apos;; months[5] = &apos;Jun&apos;; months[6] = &apos;Jul&apos;; months[7] = &apos;Aug&apos;; months[8] = &apos;Sep&apos;; months[9] = &apos;Oct&apos;; months[10] = &apos;Nov&apos;; months[11] = &apos;Dec&apos;; cTime = new Date(); cDate = months[cTime.getMonth()] +&apos; &apos;+ cTime.getDate()+ &apos;, &apos;+ cTime.getFullYear() ;}&quot;;
+
+/*
+script=&quot;var cDate; function updateComment() { formatDate(); comment = document.getElementById(&apos;commentBox&apos;).value; if(comment==null || comment==&apos;&apos;) {document.getElementById(&apos;errorMsg&apos;).style.display=&apos;block&apos;; document.getElementById(&apos;save&apos;).disabled=false; return false; } var thisObj = new sforce.SObject(&apos;Test_Scenario__c&apos;); thisObj.id = &apos;{!Test_Scenario__c.Id}&apos;; queryString = \&quot;Select id,Testing_Results_Discussion__c from Test_Scenario__c where Id = &apos;{!Test_Scenario__c.Id}&apos; \&quot;; queryObj = sforce.connection.query(queryString); record = queryObj.getArray(&apos;records&apos;)[0]; if(record.Testing_Results_Discussion__c==null){record.Testing_Results_Discussion__c=&apos;&apos;};thisObj.Testing_Results_Discussion__c = &apos;{!$User.FirstName}&apos;+&apos; &apos;+&apos;{!$User.LastName}&apos; + cDate + \&quot;\\n\&quot; +comment + \&quot;\\n-------------------------------------\\n\&quot; +record.Testing_Results_Discussion__c; var res=sforce.connection.update([thisObj]); if (res[0].getBoolean(&apos;success&apos;)){} else{alert(&apos;Insufficient Privileges or Read Only&apos;);} ; window.location.reload(); return false;} function formatDate(){ var months = new Array(12); months[0] = &apos;Jan&apos;; months[1] = &apos;Feb&apos;; months[2] = &apos;Mar&apos;; months[3] = &apos;Apr&apos;; months[4] = &apos;May&apos;; months[5] = &apos;Jun&apos;; months[6] = &apos;Jul&apos;; months[7] = &apos;Aug&apos;; months[8] = &apos;Sep&apos;; months[9] = &apos;Oct&apos;; months[10] = &apos;Nov&apos;; months[11] = &apos;Dec&apos;; cTime = new Date(); cDate = &apos; (&apos; + months[cTime.getMonth()] +&apos; &apos;+ cTime.getDate()+ &apos;, &apos;+ cTime.getFullYear() +&apos;):&apos;;}&quot;;
+*/
+/*
+
+script=&quot;var cDate; function updateComment() { formatDate(); comment = document.getElementById(&apos;commentBox&apos;).value; if(comment==null || comment==&apos;&apos;) {document.getElementById(&apos;errorMsg&apos;).style.display=&apos;block&apos;; document.getElementById(&apos;save&apos;).disabled=false; return false; } var thisObj = new sforce.SObject(&apos;Test_Scenario__c&apos;); thisObj.id = &apos;{!Test_Scenario__c.Id}&apos;; queryString = \&quot;Select id,Testing_Results_Discussion__c from Test_Scenario__c where Id = &apos;{!Test_Scenario__c.Id}&apos; \&quot;; queryObj = sforce.connection.query(queryString); record = queryObj.getArray(&apos;records&apos;)[0]; if(record.Testing_Results_Discussion__c==null){record.Testing_Results_Discussion__c=&apos;&apos;};thisObj.Testing_Results_Discussion__c = &apos;{!$User.FirstName}&apos;+&apos; &apos;+&apos;{!$User.LastName}&apos; + cDate + \&quot;\\n\&quot; +comment + \&quot;\\n-------------------------------------\\n\&quot; +record.Testing_Results_Discussion__c; sforce.connection.update([thisObj]); window.location.reload(); return false; } function formatDate(){ var months = new Array(12); months[0] = &apos;Jan&apos;; months[1] = &apos;Feb&apos;; months[2] = &apos;Mar&apos;; months[3] = &apos;Apr&apos;; months[4] = &apos;May&apos;; months[5] = &apos;Jun&apos;; months[6] = &apos;Jul&apos;; months[7] = &apos;Aug&apos;; months[8] = &apos;Sep&apos;; months[9] = &apos;Oct&apos;; months[10] = &apos;Nov&apos;; months[11] = &apos;Dec&apos;; cTime = new Date(); cDate = &apos; (&apos; + months[cTime.getMonth()] +&apos; &apos;+ cTime.getDate()+ &apos;, &apos;+ cTime.getFullYear() +&apos;):&apos;;}&quot;;
+
+*/
+insertScript(script);
+} 
+else{
+alert(&quot;Insufficient Privileges or Read Only&quot;);
+}</url>
+    </webLinks>
+</CustomObject>

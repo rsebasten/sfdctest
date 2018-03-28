@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Call_Report__c.Monthly_Highlight__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Call_Report__c.Activity_Type__c</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>for DPT China Call Report Dashboard (DO NOT Delete/Chang it)</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <column>User.User_Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CHINA,TAIWAN,HONG KONG</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Maurice Xiao,Jim Liang,Jimmy Li,Min Zong,Rebecca Y Lee,Xin Liu,Raymond Zhang,Jason Zhu,Efflin Zheng,Sean Yeh,Tim Liao,Jacqueline Tan,Shuang Zheng,Woody Wu,Grace Tang</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.DPT_Aramids,Account.DPT_IPP,Account.DPT_NOW,Account.DPT_Car_Protect</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Owning_Organization__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT-Thermal Apparel,DPT-IPP,DPT-Car Protection,DPT-Composite Solutions</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_CREATED_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>Call_Report__c.Call_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IPP&amp;TA Call Report Summary</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Call_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Call_Report__c.Call_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-01-01</startDate>
+    </timeFrameFilter>
+</Report>

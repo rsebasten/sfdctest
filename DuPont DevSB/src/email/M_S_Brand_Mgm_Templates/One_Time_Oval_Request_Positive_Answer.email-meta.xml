@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>e-mail template to be used for One Time Oval Requests APPROVED by EMEA Marketing &amp; Brand Leader</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>One Time Oval Request - Positive Answer</name>
+    <style>formalLetter</style>
+    <subject>Request for using the DuPont Oval Logo</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.LastName},
+
+Further to a request received from your company, we provide you with our approval to use the DuPont Oval for the duration of the [insert event name].  This limited approval does not grant {!Lead.Company} under no circumstances whatsoever the rights to use the DuPont Oval logo for in any other form besides the above mentioned event.
+ 
+Please find attached the logo in tif-format and the DuPont Oval Trademark Use Rules.
+ 
+Please also note that any lay-out or communication using the DuPont Oval logo for the event is subject to prior agreement of the Marketing &amp; Brand Leader, DuPont EMEA, Ruth Farrell (e-mail: emea.marketing@che.dupont.com, fax: +41 22 580 2639)
+ 
+Kind regards,
+ 
+{!Lead.OwnerFullName}
+Marketing &amp; Brand Project Lead
+DuPont EMEA
+
+
+Copyright (c) 2008 DuPont. All rights reserved. The DuPont Oval Logo, DuPont(TM), The miracles of science(TM) and all products denoted with (R) or (TM) are registered trademarks or trademarks of E. I. du Pont de Nemours and Company or its affiliates.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

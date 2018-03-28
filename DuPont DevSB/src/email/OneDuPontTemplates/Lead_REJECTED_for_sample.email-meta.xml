@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Lead REJECTED for sample</name>
+    <style>freeForm</style>
+    <subject>Lead REJECTED For Sample</subject>
+    <textOnly>Dear {!Lead.OwnerFullName},
+
+This is an automatic email sent to request your approval to allow this Lead with the following information to sample Products from DuPont. Please review the information below and follow the link to approve/reject this Lead for Sampling.
+
+Thank You!
+
+
+Lead Owner: {!Lead.OwnerFullName}
+Company: {!Lead.Company}
+Name: {!Lead.Name}
+Market Segment: {!Lead.00N4100000SIq8d}
+Product: {!Lead.Product__c}
+Approve or Reject (Here): {!Lead.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

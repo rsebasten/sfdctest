@@ -1,0 +1,165 @@
+<apex:page controller="ctrlBI_Locator" sidebar="false" showHeader="false" cache="false">
+
+<script>
+var origin;
+var location_list="";
+var dlocations = new Array();
+var dCollection;
+
+function dlocation(name,company,phone,fax,email,specialist)
+{
+    this.name=name;
+    this.company=company;
+    this.phone=phone;
+    this.fax=fax;
+    this.email=email;
+    this.specialist=specialist;
+}
+
+function buildList()
+{	
+	document.getElementById("mqresults").style.display="block";
+	for (var i=0;i<dlocations.length;i++)
+	{
+        showLocationText(dlocations[i],i);
+	}
+	//showMap();
+}
+
+function showLocationText(loc,elementindex)
+{
+    var div = document.createElement('div');
+    div.id = elementindex;
+    div.className = "loctext";
+    div.innerHTML = "<h1>" + fixSpecialist(loc.specialist) + "</h1><br/><b>" + loc.name + "</b><br>" + locationHTML(loc);
+    div.style.marginBottom = '5px';
+    var res=document.getElementById("TextResults");
+    res.appendChild(div);
+}
+
+function locationHTML(loc)
+{
+    var html="";
+	if (loc.company!='null')
+    {
+    	html+=loc.company + "<br>";
+   	}
+    if (loc.phone!='null')
+    {
+        html+='phone: ' + fixPhone(loc.phone) + '<br>';
+    }
+    if (loc.fax!='null')
+    {
+        html+='fax: ' + fixPhone(loc.fax) + '<br>';
+    }
+    if (loc.email!='null')
+    {
+        html+='<a href="mailto:' + loc.email + '">' + loc.email + '</a><br>';
+    }
+        
+    return html;
+    
+}
+
+
+function submitZipForm(e)
+{
+var kc;
+if (window.event) kc = window.event.keyCode;
+else if (e) kc = e.which;
+else return true;
+
+if (kc == 13)
+   {
+   var doc = document.getElementsByTagName('input');
+   for (var i = 0; i < doc.length; i++){
+      if (doc[i].id.indexOf("SearchZip")>-1) {doc[i].click();}
+   }
+   return false;
+   }
+else
+   return true;
+}
+
+function hideResults()
+{
+    document.getElementById("mqresults").style.display="none";
+}
+
+function fixPhone(pn)
+{
+	pn=pn.replace("(","");
+	pn=pn.replace(")","");
+	pn=pn.replace("-","");
+	pn=pn.replace(" ","");
+	phone="(" + pn.substr(0,3) + ") " + pn.substr(3,3) + "-" + pn.substr(6,4);
+	return phone;
+}
+
+function fixSpecialist(s)
+{
+	var Specialist='';
+	if (s.indexOf('Commercial')>-1) {Specialist='Tyvek&reg; Commercial Specialist';}
+	if (s.indexOf('Residential')>-1) {Specialist='Tyvek&reg; Residential Specialist';}
+	return Specialist;
+}
+
+function recordAnalytics(btn)
+{
+	var s=s_gi('duponttyvekweatherizationenus');
+	s.linkTrackVars="eVar3,events";
+	s.linkTrackEvents="event6";
+	s.events="event6";
+	s.eVar3="Specialist_Locator_Completion_Tyvek_Weatherization_enUS";
+	s.tl(btn,'o','Find Locator');
+}
+
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" media="all" href="http://maps.dupont.com/Maps/en_US/css/bi_specialist.css" />
+
+<script type="text/javascript">var s_account="dupontsDuPontGlobal,duponttyvekweatherizationenus"</script>
+<script type="text/javascript" src="http://www2.dupont.com/globalassets/v3/js/global_analytics.js"></script>
+<script type="text/javascript">
+s.pageName="specialist_locator";
+var s_code=s.t();if(s_code)document.write(s_code);
+</script>
+
+<div style="margin:20px">
+<apex:form >
+
+<div class="mform">
+<table cellpadding="3" cellspacing="0" border="0" width="500">
+<tr style="height:1px"><td width="50"></td><td width="125"></td><td width="125"></td><td width="75"><apex:outputText escape="false" value="{!zip_error}" /></td><td width="125"></td></tr>
+<tr>
+<td width="50">Country:</td>
+<td width="125">
+<apex:selectList value="{!origin_country}" id="origin_country" size="1">
+<apex:selectOption itemValue="US" itemLabel="United States"></apex:selectOption>
+</apex:selectList>
+</td>
+<td width="125">Zip/Postal Code:</td><td width="75"><apex:inputText value="{!origin_zipcode}" id="origin_zipcode" size="5" onKeyPress="return submitZipForm(event)"/></td>
+<td width="125">
+<apex:commandButton value="Search" action="{!searchByZip}" id="SearchZip" onclick="recordAnalytics(this);"/>&nbsp;
+<apex:commandButton value="Clear" action="{!clearZip}" />
+</td></tr>
+</table>
+</div>
+</apex:form>
+
+<br/>
+
+<table border="0" cellpadding="0" cellspacing="0" width="500" id="mqresults">
+<tr>
+<td width="500"><div id="TextResults"></div></td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+</table>
+
+<div id="location_error"><apex:outputText escape="false" value="{!search_message}" /></div><br/>
+
+</div>
+<apex:outputText escape="false" value="{!map_js}" />
+</apex:page>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Complaint Approval Request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Approval Request EN Old</name>
+    <style>formalLetter</style>
+    <subject>Complaint approval request (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear Approver,
+In reference to complaint {!Case.CaseNumber} dated {!Case.Date_Entered__c}, please approve:
+
+Link: {!Case.Link}
+{!Case.Special_Instructions__c}
+
+
+Thank you for your prompt response.
+
+Friendly Regards,
+
+
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

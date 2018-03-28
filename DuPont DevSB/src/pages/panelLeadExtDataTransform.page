@@ -1,0 +1,41 @@
+<apex:page standardController="Lead" extensions="ctrlLeadExtDataTransform" sidebar="false" showHeader="false"> 
+	<apex:form >
+		<apex:variable var="counter" value="{!10}" />
+		<apex:variable var="counter1" value="{!0}" />
+		<apex:variable var="size" value="{!leadListSize+10}" />
+		<table border="1" cellpadding="1" cellspacing="1" >
+			<apex:repeat value="{!listOfAttribute}" var="listOfAttr">
+				<apex:outputText rendered="{!if(counter<size,'true','false')}">
+					<thead>
+						<tr>
+							<apex:variable var="counter2" value="{!0}" />
+							<apex:repeat value="{!listOfAttribute}" var="listOfAttr">
+								<apex:outputText rendered="{!if(counter2<counter && counter2>=counter1,'true','false')}">
+									<th bgcolor="#D8D8D8">
+										{!listOfAttr}
+									</th>
+								</apex:outputText>
+								<apex:variable var="counter2" value="{!counter2+1}"/>    
+							</apex:repeat>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<apex:variable var="counter3" value="{!0}" /> 
+							<apex:repeat value="{!listOfAttributeValues}" var="listOfAttrVal">
+								<apex:outputText rendered="{!if(counter3<counter && counter3>=counter1,'true','false')}">
+									<td align="center" height="20px"  >
+										{!listOfAttrVal}
+									</td>
+								</apex:outputText>   
+							<apex:variable var="counter3" value="{!counter3+1}"/>
+							</apex:repeat> 
+						</tr> 
+					</tbody>
+				</apex:outputText>
+				<apex:variable var="counter1" value="{!counter}"/>
+				<apex:variable var="counter" value="{!counter+10}"/>
+			</apex:repeat>
+		</table>
+	</apex:form> 
+</apex:page>

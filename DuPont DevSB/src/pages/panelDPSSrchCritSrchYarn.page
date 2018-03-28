@@ -1,0 +1,312 @@
+<apex:page controller="ctrlDPSYarnSpecBase" showHeader="true" sidebar="false" id="mainPage">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/soap/ajax/37.0/connection.js"></script>
+ 
+<apex:outputPanel id="scrollId">
+<script>
+    function scrollToResult(){    
+        var shwError = document.getElementById('{!$Component.mainPage.mainForm.mainBlock.ShowMsg}').textContent;        
+        var ss={!showResult};
+        if(ss == false || shwError.length > 0){
+            //Error exists
+            console.log('Inside error');
+            document.getElementById('searchDiv').style.display = 'none';
+            document.querySelector('#errorId').scrollIntoView();
+        }
+        else{
+            console.log('Inside results');           
+            document.getElementById('searchDiv').style.display = 'inline';
+            document.querySelector('#resultDiv').scrollIntoView();            
+        }        
+    }
+</script>
+</apex:outputPanel>
+
+<script>
+    function openWindow(strIdSC,strPS){
+        if(strPS == 'true'){           
+            sforce.connection.sessionId = '{!$Api.Session_ID}';        
+            var results = sforce.connection.query("SELECT Id FROM Attachment WHERE ParentId = \'" + strIdSC + "\' ORDER BY CreatedDate desc LIMIT 1");            
+            if(results.getInt("size") == 1){            
+                var attachment = results.getArray("records"); 
+                window.open("/DPTPartnerCommunity/servlet/servlet.FileDownload?file=" + attachment[0].Id);
+            } 
+            else{                                      
+                alert("System is currently generating the PDF. Please retry after few seconds.");
+            }    
+
+        }       
+        else
+            window.open("/apex/Design_Alternatives?Id="+strIdSC);        
+    }
+               
+    function askaQuestion(strIdSC){
+        window.open("/DPTPartnerCommunity/apex/panelDPSAskAQuestion?strId="+ strIdSC); 
+    }
+</script>
+
+<style>    
+    .formStyle{
+        background-image: url("{!$Resource.DPS_Srch_Crit_Background_Image}");
+        background-repeat: no-repeat;    
+        background-position: 30%; 
+    }         
+                  
+</style>
+    
+<apex:stylesheet value="{!URLFOR($Resource.DPSKevlarCSS, 'DPSKevlar.css')}"/>
+    <apex:form styleClass="formStyle" id="mainForm">                      
+        <apex:pageBlock mode="MainDetail" html-background="{!$Resource.DPS_Srch_Crit_Background_Image}" id="mainBlock">         
+            <apex:outputPanel id="MainPanel">                                                                                           
+                <br/> 
+                <apex:actionregion > 
+                <div id="errorId">
+                    <apex:pageMessages id="ShowMsg"/>
+                </div>
+                
+                <apex:outputText value="{!$Label.DPS_HOSE_SELECTOR_DISCLAIMER}" StyleClass="discStyle" rendered="{!IF($Label.DPS_HOSE_SELECTOR_DISCLAIMER == '5#',false,true)}"/>
+                
+                <div class="MainHeading">Customer Information</div> 
+                <br/>
+                <span class="spanStyle">
+                    <table class="menu">
+                        <tr>
+                        <td>
+                            <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Customer__c.label}"></apex:outputLabel>
+                            <span Class="helpButton">
+                                <apex:image value="/s.gif" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Customer__c.InlineHelpText != '')}" styleClass="helpOrb" title="{!$ObjectType.Search_Criteria__c.fields.KV_Customer__c.InlineHelpText}"/>
+                            </span>
+                        </td>
+                        <td>
+                            <apex:inputField value="{!sch.KV_Customer__c}" styleClass="inputfld" rendered="{!NOT(hasPermissionSet)}" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                            <apex:outputField value="{!sch.KV_Customer__c}" styleClass="inputfld" rendered="{!hasPermissionSet}"/>
+                        </td>
+                        <td>
+                            <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_OEM_Platform__c.label}"></apex:outputLabel>
+                            <span Class="helpButton">
+                                <apex:image value="/s.gif" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_OEM_Platform__c.InlineHelpText != '')}" styleClass="helpOrb" title="{!$ObjectType.Search_Criteria__c.fields.KV_OEM_Platform__c.InlineHelpText}"/>                      
+                            </span>
+                        </td>
+                        <td>
+                            <apex:inputField value="{!sch.KV_OEM_Platform__c}" styleClass="inputfld" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_OEM_Country__c.label}"></apex:outputLabel>
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_OEM_Country__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_OEM_Country__c.InlineHelpText}"/>                         
+                                </span>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!sch.KV_OEM_Country__c}" styleClass="picklist" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                            </td>
+                            <td rowspan="2">
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Comments__c.label}"></apex:outputLabel> 
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Comments__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_Comments__c.InlineHelpText}"/>                        
+                                </span>
+                            </td>
+                            <td rowspan="2">
+                                <apex:inputField value="{!sch.KV_Comments__c}" styleClass="textarea" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_OEM__c.label}"></apex:outputLabel> 
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_OEM__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_OEM__c.InlineHelpText}"/>                        
+                                </span>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!sch.KV_OEM__c}" styleClass="inputfld" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                            </td>                      
+                        </tr>                                              
+                    </table> 
+                </span>
+                <br/>
+                <div style="width:92%; height:1.3px; background:#cc0000;"></div>
+                <br/>
+                                    
+                <div class="MainHeading">Search Criteria</div>
+                <br/>
+                <span class="spanStyle">
+                    <table class="menu">
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Operating_Temperature__c.label}"></apex:outputLabel>
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Operating_Temperature__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_Operating_Temperature__c.InlineHelpText}"/>                        
+                                </span>
+                            </td>
+                            <td>
+                                <div class="requiredInput">
+                                <div class="requiredBlock"></div>
+                                    <apex:inputfield value="{!sch.KV_Operating_Temperature__c}" styleClass="picklist" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                                </div>
+                            </td>
+                            <td rowspan="6" colspan="2" class="td imageCol">
+                                <apex:image id="theImage" value="{!$Resource.DPSHose}" styleClass="image" />                                                  
+                            </td>
+                        </tr>
+                        <tr>       
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Operating_Pressure_Value__c.label}"></apex:outputLabel>
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Operating_Pressure_Unit__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_Operating_Pressure_Unit__c.InlineHelpText}"/>
+                                </span>
+                            </td>
+                            <td>    
+                                <div class="styleDiv">                                                        
+                                    <apex:inputfield value="{!sch.KV_Operating_Pressure_Unit__c}" styleClass="picklist1" required="true" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>                                
+                                    &nbsp;
+                                    <div class="requiredInput">
+                                        <div class="requiredBlock"></div>                             
+                                        <apex:inputfield value="{!sch.KV_Operating_Pressure_Value__c}" styleClass="inputfld1" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                                    </div>
+                                </div>                                
+                            </td>
+                        </tr>                            
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Internal_Diameter_mm__c.label}"></apex:outputLabel>
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Internal_Diameter_mm__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_Internal_Diameter_mm__c.InlineHelpText}"/>                        
+                                </span>
+                            </td>
+                            <td>
+                                <div class="requiredInput">
+                                <div class="requiredBlock"></div>                             
+                                    <apex:inputfield value="{!sch.KV_Internal_Diameter_mm__c}" styleClass="inputfld" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Inner_Wall_Thickness_mm__c.label}"></apex:outputLabel>
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Inner_Wall_Thickness_mm__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_Inner_Wall_Thickness_mm__c.InlineHelpText}"/>                        
+                                </span>
+                            </td>                
+                            <td>
+                                <div class="requiredInput">
+                                    <div class="requiredBlock"></div>                             
+                                    <apex:inputfield value="{!sch.KV_Inner_Wall_Thickness_mm__c}" styleClass="inputfld" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                                </div>
+                            </td>
+                        </tr> 
+
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Stitch_Length_Value__c.label}"></apex:outputLabel>
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Stitch_Length_Unit__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_Stitch_Length_Unit__c.InlineHelpText}"/>                        
+                                </span>
+                            </td>                
+                            <td>                               
+                                <div class="styleDiv">                                                        
+                                    <apex:inputfield value="{!sch.KV_Stitch_Length_Unit__c}" styleClass="picklist1" required="true" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>                               
+                                    &nbsp;
+                                    <div class="requiredInput">
+                                        <div class="requiredBlock"></div>                             
+                                        <apex:inputfield value="{!sch.KV_Stitch_Length_Value__c}" styleClass="inputfld1" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                                    </div>
+                                </div>                                   
+                            </td>
+                        </tr> 
+
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!$ObjectType.Search_Criteria__c.fields.KV_Knitting_Angle__c.label}"></apex:outputLabel>
+                                <span Class="helpButton">
+                                    <apex:image value="/s.gif" styleClass="helpOrb" rendered="{!($ObjectType.Search_Criteria__c.fields.KV_Knitting_Angle__c.InlineHelpText != '')}" title="{!$ObjectType.Search_Criteria__c.fields.KV_Knitting_Angle__c.InlineHelpText}"/>                        
+                                </span>
+                            </td>
+                            <td>
+                                <div class="requiredInput">
+                                    <div class="requiredBlock"></div>                             
+                                    <apex:inputfield value="{!sch.KV_Knitting_Angle__c}" styleClass="inputfld" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+                                </div>                                
+                            </td>
+                        </tr>                                        
+
+                    </table> 
+
+                    <table width="100%">
+                        <tr>
+                            <td colspan="4" class="styleBtn">
+                                <br/>                                                      
+                                <apex:commandButton value="Search" styleClass="srchBtn" oncomplete="scrollToResult()" status="actStatusId" reRender="resultSection,ShowMsg,scrollId" action="{!displayResult}"/>                                                                                                                                                                                                                                                                                                                                                                       
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="styleBtn">
+                                <apex:actionStatus id="actStatusId">                                    
+                                    <apex:facet name="start">                                                                                    
+                                        <apex:image value="{!$Resource.DPS_Spinner}" styleclass="spinner"/>                 
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </td>
+                        </tr> 
+                    </table>                        
+                </span> 
+                </apex:actionregion> 
+                            
+                <br/><br/><br/>
+
+                <div id="searchDiv">   
+                <apex:actionregion >
+                <apex:outputPanel id="resultSection" styleclass="searchResults">  
+                    <apex:outputPanel rendered="{!showResult}">
+                        <apex:outputPanel rendered="{!(lswrap.size != 0)}">
+                            <div id="resultDiv" class="MainHeading">Search Result</div> 
+                            <br/>                                          
+                            <apex:pageBlockTable value="{!lswrap}" var="wrap" styleClass="resultTable" rendered="{!IF(hasPermissionSet == true,false,true)}"> 
+                                <apex:column value="{!wrap.yrsp.KV_Product_Name__c}" />
+                                <apex:column value="{!wrap.burstPrPSI}" headerValue="Burst Pressure (PSI)" style="text-align: right; padding-right:5px;"/>
+                                <apex:column value="{!wrap.burstPrBAR}" headerValue="Burst Pressure (BAR)" style="text-align: right; padding-right:5px;"/>
+                                <apex:repeat value="{!fields}" var="f">
+                                    <apex:column rendered="{! if(f.type!='string',true,false)}" style="text-align: right; padding-right:5px; color: white; background-color: {! IF(wrap.yrsp!=null && wrap.yrsp[f.fieldPath ]!=null && wrap.yrsp[f.fieldPath ] >= appLoopStrength && wrap.yrsp[f.fieldPath ] > 0, 'green', 'red')};" value="{!wrap.yrsp[f.fieldPath ]}"/>                                  
+                                </apex:repeat>                           
+                            </apex:pageBlockTable>
+
+                            <apex:pageBlockTable value="{!lswrap}" var="wrap" styleClass="resultTable" rendered="{!IF(hasPermissionSet == true,true,false)}"> 
+                                <apex:column value="{!wrap.yrsp.KV_Product_Name__c}" />
+                                <apex:column value="{!wrap.burstPrPSI}" headerValue="Burst Pressure (PSI)" style="text-align: right; padding-right:5px;"/>
+                                <apex:column value="{!wrap.burstPrBAR}" headerValue="Burst Pressure (BAR)" style="text-align: right; padding-right:5px;"/>
+                                <apex:repeat value="{!fields}" var="f">
+                                    <apex:column rendered="{! if(f.type!='string',true,false)}" style="text-align: right; padding-right:5px; color: white; background-color: {! IF(wrap.yrsp!=null && wrap.yrsp[f.fieldPath ]!=null && wrap.yrsp[f.fieldPath ] >= appLoopStrength && wrap.yrsp[f.fieldPath ] > 0, 'green', 'red')};">                                
+                                        <apex:facet name="header">{!f.label}</apex:facet>
+                                    </apex:column>
+                                </apex:repeat>                           
+                            </apex:pageBlockTable>                                                   
+
+                            <br/>
+
+                            <div class="styleBtn">
+                                <apex:commandButton value="Download Result as PDF" styleClass="dwnldBtn" onClick="openWindow('{!saveId}','{!hasPermissionSet}');return false;"/>
+                                <!-- <apex:commandButton value="Download Result as PDF" styleClass="dwnldBtn" oncomplete="setTimeout(function(){openWindow('{!saveId}','{!hasPermissionSet}'), 10000});"/> -->
+                                &nbsp;
+                                <apex:commandButton value="Ask a question" styleClass="queryBtn" rendered="{!hasPermissionSet}" onclick="askaQuestion('{!saveId}');return false;"/>                          
+                            </div>
+                        </apex:outputPanel> 
+                        
+                        <div class="noRec">
+                        <apex:outputText value="{!$Label.DPS_NO_RECORD_FOUND}" rendered="{!OR(ISNULL(lswrap),lswrap.size=0)}"/>
+                        </div>                        
+                    </apex:outputPanel> 
+                </apex:outputPanel>    
+                </apex:actionregion>
+                </div>                                     
+                 
+            </apex:outputPanel>            
+        </apex:pageblock>
+        
+        <br/><br/><apex:image id="KevlarLogo" value="{!$Resource.DPS_SrchCritYarnPDFHeaderImg}" styleClass="imgLogo"/>
+        
+    </apex:form>      
+</apex:page>

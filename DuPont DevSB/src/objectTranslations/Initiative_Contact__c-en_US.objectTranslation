@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Initiative-Contact</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Initiative-Contact</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Name --></label>
+        <name>Contact_Name__c</name>
+        <relationshipLabel><!-- Related Initiatives --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Geographic Scope of the M&amp;S-MSE Initiative-Contact --></help>
+        <label><!-- Geography --></label>
+        <name>Geography__c</name>
+        <picklistValues>
+            <masterLabel>ASIA PACIFIC</masterLabel>
+            <translation><!-- ASIA PACIFIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATIN AMERICA</masterLabel>
+            <translation><!-- LATIN AMERICA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTH AMERICA</masterLabel>
+            <translation><!-- NORTH AMERICA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initiative --></label>
+        <name>Initiative__c</name>
+        <relationshipLabel><!-- Initiative-Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact --></label>
+        <name>Primary_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Business User</masterLabel>
+            <translation><!-- Business User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decision Maker</masterLabel>
+            <translation><!-- Decision Maker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Influencer</masterLabel>
+            <translation><!-- Influencer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering team member</masterLabel>
+            <translation><!-- Steering team member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subject Matter Expert</masterLabel>
+            <translation><!-- Subject Matter Expert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team Member</masterLabel>
+            <translation><!-- Team Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- M&amp;S-MSE Initiative-Contact --></label>
+        <name>M_S_MSE_Initiative_Contact</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OneDuPont --></label>
+        <name>OneDuPont</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

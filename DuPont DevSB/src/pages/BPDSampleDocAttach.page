@@ -1,0 +1,87 @@
+<!-- *****************************************************************************
+This page is for attaching the documents to the sample record
+******************************************************************************/ -->
+<apex:page StandardController="Trademark_Abuse_Sample__c" extensions="ctrlBPDSampleDocAttach"> 
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+<script>
+    j$ = jQuery.noConflict();
+ 
+    j$(document).ready(function(){
+   
+ 
+if('{!flagvar}' == 'true'){
+window.top.location = '/{!sample.Id}';
+}
+ });   
+</script>
+<apex:form >
+<apex:pageBlock >
+<div id="SampleDetails">
+<apex:pageBlockSection columns="1" >
+<apex:outputLabel value="Sample : " styleClass="labelCol vfLabelColTextWrap" >&nbsp;&nbsp;&nbsp;&nbsp;
+<br/><br/>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="item" value="{!attachmentIdList}">
+ <td>
+<div>{!item.name}</div>
+<a href="/{!item.id}" style="text-decoration: none; text-align:center;" target="_blank">
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel>&nbsp;&nbsp;&nbsp;&nbsp;
+</apex:outputLabel>
+<apex:inputFile value="{!bl}" filename="{!fileName}"/><br/>
+<apex:commandButton action="{!savingCase}" value="Upload File" />
+
+<apex:outputLabel value="Sample Packaging Analysis : " styleClass="labelCol vfLabelColTextWrap" >&nbsp;&nbsp;&nbsp;&nbsp;
+<br/><br/>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="PAitem" value="{!PAIdList}">
+ <td>
+<div>{!PAitem.name}</div>
+<a href="/{!PAitem.id}" style="text-decoration: none; text-align:center;" target="_blank">
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel>&nbsp;&nbsp;&nbsp;&nbsp;
+</apex:outputLabel>
+<apex:inputFile value="{!PAbl}" filename="{!PAFileName}"/><br/>
+<apex:commandButton action="{!savingCase}" value="Upload File" />
+
+<apex:outputLabel value="Sample Technical Analysis : " styleClass="labelCol vfLabelColTextWrap" >&nbsp;&nbsp;&nbsp;&nbsp;
+<br/><br/>
+<apex:outputPanel >
+<table style="cellspacing=80; cellpadding=50; padding-right:10px; width:50%;">
+ <tr>
+ <apex:repeat var="TAitem" value="{!TAIdList}">
+ <td>
+<div>{!TAitem.name}</div>
+<a href="/{!TAitem.id}" style="text-decoration: none; text-align:center;" target="_blank">
+<apex:image url="{!imageURL}"/>
+</a>
+</td>
+</apex:repeat>
+</tr>
+</table>
+</apex:outputPanel>&nbsp;&nbsp;&nbsp;&nbsp;
+</apex:outputLabel>
+<apex:inputFile value="{!TAbl}" filename="{!TAFileName}"/><br/>
+<apex:commandButton action="{!savingCase}" value="Upload File" />
+</apex:pageBlockSection>
+</div>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

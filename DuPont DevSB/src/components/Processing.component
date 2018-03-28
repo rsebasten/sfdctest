@@ -1,0 +1,28 @@
+<apex:component selfclosing="true">
+
+	<SCRIPT src="{!URLFOR($Resource.Jquery_1_7_2,'/js/jquery-1.3.2.min.js')}" type="text/javascript" />
+	<SCRIPT src="{!URLFOR($Resource.jQuery_Overlay_ToolTip)}" type="text/javascript" />
+	<apex:attribute name="imagePath" description="path to Image" type="String" required="false" default="{!URLFOR($Resource.Processing)}"/>
+	<image id="imgSearch" src="{!URLFOR($Resource.Processing)}" class="overlay_Class"
+       style="display:none;width:100px;border:0px;"/>
+	
+	
+	<script type="text/javascript">	
+		jQuery.noConflict();	
+		jQuery(document).ready(function($){	
+			$(".overlay_Class").overlay({
+				// custom top position
+				top: '20%',
+				color: '#F00',
+				//loadSpeed: 1000,
+				//opacity: 0.5,
+		    	// disable this for modal dialog-type of overlays 
+		    	closeOnClick: false,
+		    	// we want to use the programming API 
+		    	api: true 
+			}).load();
+			
+		});
+	</script>
+ 
+</apex:component>

@@ -1,0 +1,44 @@
+<apex:page standardController="Metadata__c">
+   <apex:Form >
+   
+   <apex:sectionHeader title="{!Metadata__c.Type__c}" subtitle="{!Metadata__c.Name} ({!Metadata__c.Label__c})"/>  
+   <br/>
+   <apex:detail subject="{!Metadata__c}" relatedList="false" title="false" inlineEdit="true"/> 
+
+	<apex:outputPanel rendered="{!Metadata__c.Type__c=='SOBJECT'}">
+
+		<c:relatedList parentid="{!Metadata__c.id}" relationship="Children__r" tabname="fields" title="Fields" where="Type__c='FIELD'" colsFieldset="RL_Fields" />
+		<c:relatedList parentid="{!Metadata__c.id}" relationship="Children__r" tabname="layouts" title="Page Layouts" where="Type__c='Layout'" colsFieldset="RL_Default" />
+		<c:relatedList parentid="{!Metadata__c.id}" relationship="Children__r" tabname="rtypes" title="RecordTypes" where="Type__c='RECORDTYPE'" colsFieldset="RL_Default" />
+		<c:relatedList parentid="{!Metadata__c.id}" relationship="ReferenceFrom__r" tabname="childrel" title="Child Relationships" colsFieldset="RL_ChildRelationship" />
+																								
+		<!-- TES20130110 replaced with new relatedList component (was getting hitting Viewstate limits with the metadataRelatedListFilter on objects with many children.
+		<c:metadataRelatedListFilter data="{!Metadata__c.Children__r}" tabname="fields" title="Fields" fitlerField="Type__c" fitlerValue="FIELD" fieldset="{!$ObjectType.Metadata__c.FieldSets.RL_Fields}" /> 
+		<c:metadataRelatedListFilter data="{!Metadata__c.Children__r}" tabname="layouts" title="Page Layouts" fitlerField="Type__c" fitlerValue="Layout"   fieldset="{!$ObjectType.Metadata__c.FieldSets.RL_Default}" />
+		<c:metadataRelatedListFilter data="{!Metadata__c.Children__r}" tabname="rtypes" title="RecordTypes" fitlerField="Type__c" fitlerValue="RECORDTYPE" fieldset="{!$ObjectType.Metadata__c.FieldSets.RL_Default}"/>
+		<c:metadataRelatedListFilter data="{!Metadata__c.ReferenceFrom__r}" tabname="childrel" title="Child Relationships" fieldset="{!$ObjectType.Metadata__c.FieldSets.RL_SObject_ReferenceFrom}"/>
+		-->
+	</apex:outputPanel>
+	
+	
+	
+	<apex:outputPanel rendered="{!Metadata__c.Type__c=='FIELD'}">
+		<c:relatedList rendered="{!Metadata__c.subtype__c=='PICKLIST' || Metadata__c.subtype__c=='MULTIPICKLIST'}" parentid="{!Metadata__c.id}" relationship="Children__r" tabname="picklist"  title="Picklist Entries" colsFieldset="RL_Default" />
+		<c:relatedList parentid="{!Metadata__c.id}" relationship="MetadataItems__r" tabname="recordTypes" title="RecordTypes" colsFieldset="RL_Default" />
+	</apex:outputPanel>	
+
+	<apex:outputPanel rendered="{!Metadata__c.Type__c=='PICKLISTENTRY'}">
+		<c:relatedList parentid="{!Metadata__c.id}" relationship="MetadataItems__r" tabname="recordTypes" title="RecordTypes" colsFieldset="RL_Default" />
+	</apex:outputPanel>
+
+	<apex:outputPanel rendered="{!Metadata__c.Type__c=='LAYOUT'}">
+		<c:metadataRelatedListFilter data="{!Metadata__c.MetadataMaster__r}" tabname="fields" title="Fields" fieldset="{!$ObjectType.MetadataItem__c.FieldSets.RL_RelatedMetadata}"/>
+		<c:metadataRelatedListFilter data="{!Metadata__c.ReferenceFrom__r}" tabname="layouts" title="Layouts" fieldset="{!$ObjectType.Metadata__c.FieldSets.RL_Default}"/> 
+	</apex:outputPanel>
+
+	<apex:outputPanel rendered="{!Metadata__c.Type__c=='RECORDTYPE'}">
+		<c:metadataRelatedListFilter data="{!Metadata__c.MetadataMaster__r}" tabname="Picklists" title="Picklists" fieldset="{!$ObjectType.MetadataItem__c.FieldSets.RL_RelatedMetadata}"/>
+	</apex:outputPanel>
+	
+	</apex:Form>
+</apex:page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification when a new attachment has been added via the Nomex Portal</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Nomex Portal New Attachment</name>
+    <style>freeForm</style>
+    <subject>A new attachment has been added to Qualification {!Qualification__c.Name} for {!Qualification__c.Account_Name__c}</subject>
+    <textOnly>A new attachment has been added to Qualification {!Qualification__c.Name}
+for Account: {!Qualification__c.Account_Name__c}
+
+Qualification Program: {!Qualification__c.Qualification_Program__c}
+Subtype: {!Qualification__c.SubType__c}
+Brand: {!Qualification__c.Brand__c}
+Colour: {!Qualification__c.Colour__c}
+Weight: {!Qualification__c.Weight__c}
+ 
+
+Click here to go to the qualification:
+{!Qualification__c.Link}
+
+Once you have reviewed the attachment make sure you reset the value in &quot;Qualification Documents&quot; to allow further notifications!</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

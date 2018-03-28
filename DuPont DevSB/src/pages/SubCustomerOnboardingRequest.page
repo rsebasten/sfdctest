@@ -1,0 +1,76 @@
+<apex:page controller="ctrlCOBCustomerDataRequest" tabstyle="Customer_Data_Request__c" id="pageId" sidebar="false">
+<style>
+.buttons a.btn{width:70px;height:200px;}
+.spinnerCt {
+    left: 50%;
+    top: 35%;
+    position: fixed;
+    z-index: 1050;
+    padding: 20px 40px;
+    box-shadow: 0pt 2px 5px rgb(172, 172, 172);
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid rgb(206, 236, 255);
+    background-color: rgb(206, 236, 255);
+    background-style: solid;
+}
+
+.spinner {
+    padding: 10px 15px 10px 0pt;
+    vertical-align: middle;
+    float: left
+}
+
+.spinnerCt .loadingIndicator {
+    display: inline;
+    font-size: 135%;
+    font-weight: bold;
+    float: left
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.45;
+    filter: alpha(opacity =     45);
+    position: absolute;
+    z-index: 1000;
+    top: 0pt;
+    left: 0pt;
+}
+
+</style>
+<script type="text/javascript">
+
+function OpenAlertForCancel(){
+    window.confirm("Please confirm to Close the request");
+   
+}
+</script>
+
+  <apex:form >
+  <apex:actionStatus id="counterStatus">
+        <apex:facet name="start">
+            <div class="spinnerMask" id="spinnerMask">
+                <div class="spinnerCt">
+                    <img src="/img/analytics/reportbuilder/icons/spinner32.gif" alt="Loading..." width="32" height="32" class="spinner" title="Loading..." />
+                    <div class="loadingIndicator">Loading...</div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+  <apex:pageBlock id="pb">
+  <apex:pageBlockSection >
+        <apex:outputLabel ><b>  Please Provide Your Comments </b></apex:outputLabel>
+        <div>
+            <apex:inputField id="CSRCommentsId" value="{!OnboardingReq.CSR_Comments__c}" required="true" style="height: 100px;width: 500Px;"   />
+        </div>
+    <apex:outputPanel style="padding-left: 400px;">
+               <apex:commandLink value="    Close    " action="{!CancelAndClose}" onclick="OpenAlertForCancel()"  styleClass="btn" style="text-decoration:none;" status="counterStatus1"></apex:commandLink>
+               <apex:commandLink value="    Cancel    "  action="{!Cancel}" styleClass="btn" style="text-decoration:none;" immediate="true" status="counterStatus"></apex:commandLink>
+    </apex:outputPanel>
+      </apex:pageBlockSection>
+   </apex:pageBlock>
+  </apex:form>
+</apex:page>

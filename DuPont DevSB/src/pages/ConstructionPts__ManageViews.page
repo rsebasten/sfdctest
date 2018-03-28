@@ -1,0 +1,790 @@
+<apex:page standardController="ConstructionPts__Custom_Search__c"
+    extensions="ConstructionPts.CustomSearchCloning,ConstructionPts.CustomSearches,ConstructionPts.MyViewsController"
+    sideBar="false">
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+    <apex:includeScript value="/soap/ajax/32.0/connection.js" />
+    <apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__jquerynew, 'css/redmond/jquery-ui-1.8.21.custom.css')}" />
+    <style>
+.x-grid3-td-ACTION_COLUMN {
+    display: none;
+    visibility: hidden;
+}
+</style>
+
+    <div id="edivList">
+
+        <apex:outputPanel >
+            <apex:enhancedList type="Custom_Search__c" height="600"
+                id="customSearchList" />
+        </apex:outputPanel>
+    </div>
+
+    <apex:form id="form">
+        <div id="deepClone" title="Clone">
+            <div id="deepCloneError"></div>
+            <table align="center">
+                <thead>
+                    <tr>
+                        <th><b>Old View Name</b></th>
+                        <th>&nbsp;</th>
+                        <th><b>New View Name</b></th>
+                    </tr>
+                </thead>
+                <tbody class="searchNameTable">
+                    <tr class="searchNameRow" style="display: none;">
+                        <td><span class="oldSearchName"></span></td>
+                        <td>&nbsp;</td>
+                        <td><input type="text" class="newSearchName" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <span>by Profile:</span> <select id="Profiles"></select>
+            </div>
+            <table align="center">
+                <thead>
+                    <tr>
+                        <th nowrap="nowrap"><b>Available Users</b></th>
+                        <th>&nbsp;</th>
+                        <th><b>Selected Users</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><select id="idSelFieldsLeft" class="selBox"
+                            multiple="multiple" size="15" title="Available Columns"
+                            readonly="readonly"></select></td>
+                        <td valign="middle" align="center"><small><button
+                                    id="Left2Right" class="btn">Add</button></small><br /> <small><button
+                                    id="Right2Left" class="btn">Remove</button></small></td>
+                        <td><select id="idSelFieldsRight" class="selBox"
+                            multiple="multiple" size="15" title="Selected Columns"></select></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="editSearchNames" title="Edit View Name">
+            <div id="editSearchNamesError"></div>
+            <table border="1"
+                Style="text-align: center; vertical-align: middle; border-collapse: collapse; border-spacing: 0;">
+                <thead>
+                    <tr>
+                        <th><b>Owner Alias</b></th>
+                        <th Style="text-align: center;"><b>View Name</b></th>
+                        <th Style="text-align: center;"><b>New View Name</b></th>
+                    </tr>
+                </thead>
+                <tbody class="editSearchNamesTable">
+                    <tr class="editSearchNamesRow" style="display: none;">
+                        <td><span class="ownerAlias">Owner Alias</span></td>
+                        <td><span class="oldSearchName">View Name</span></td>
+                        <td><apex:inputText styleClass="newSearchName" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="activateEmailAlerts" title="Activate Email Alerts">
+            <div id="activateEmailAlertsError"></div>
+            <table border="1"
+                Style="text-align: center; vertical-align: middle; border-collapse: collapse; border-spacing: 0;">
+                <thead>
+                    <tr>
+                        <th Style="text-align: center;"><b>Owner Alias</b></th>
+                        <th Style="text-align: center;"><b>View Name</b></th>
+                        <th><b>Email Alert Activated</b></th>
+                        <th><b>Email Alert Usage</b></th>
+                        <th></th>
+                        <td><b>Email Alert Message</b></td>
+                    </tr>
+                </thead>
+                <tbody class="activateEmailAlertsTable">
+                    <tr class="activateEmailAlertsRow" style="display: none;">
+                        <td><span class="ownerAlias">Owner Alias</span></td>
+                        <td><span class="oldSearchName">View Name</span></td>
+                        <td><input class="Email_Alert_Activated_Formula"
+                            type="checkbox" value="Bike"></input></td>
+                        <td><span class="autoleadUsage"></span></td>
+                        <td><button class="autoleadSave">Save</button></td>
+                        <td><span class="autoLeadMessage"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </apex:form>
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        var overLimit = false;
+        var saveClicked = 0; 
+        // need authentication for Salesforce javascript library
+            sforce.connection.sessionId = "{!$Api.Session_ID}";
+            var ns = '{!JSENCODE(CPNamespace)}';
+            sforce.connection.defaultNamespace = ns;    
+        
+        //ListViewport.instances[j$("div[id$='customSearchList']").attr('id')].grid.selModel.selections.keys
+        
+        // constants for selecting elements
+        var CHECKED_SELECTOR = "input:checked[type='checkbox'][name='ids']";
+        var NAME_SELECTOR = "_Name span";
+        var OWNER_ALIAS_SELECTOR = "_OWNER_ALIAS a span";
+        
+        // Setup javascript handlers for Salesforce buttons
+        function BulkDelete()           { deleteSearchManager.deleteSearches(); }       // 'Delete' button
+        function ActivateEmailAlerts()  { ActivateEmailAlertsManager.setupModal(); }    // 'Activate Email Alerts' button
+        function EditSearchNames()      { EditSearchNamesManager.setupModal(); }        // 'Edit View Names' button
+        function DeepClone()            { DeepCloneManager.setupModal(); }              // 'Deep Clone' button
+        
+        // deletes searches
+        var deleteSearchManager = (function() {
+            function deleteSearches() {
+                var checkedData = domInspector.getCheckedData("id");
+                if (checkedData) {
+                  if (confirm("Are you sure ?")) {
+                    try {
+                        var checkedIds = checkedData.map(function(obj) {
+                            return obj.id;
+                        });
+                        sforce.connection.deleteIds(checkedIds);
+                        ListViewport.instances['j_id0:customSearchList'].refreshList();
+                        
+                    } catch (e) {
+                        alert('An Error has Occured. Error: ' + e);
+                    }
+                   }
+                }
+            }
+            
+            return { deleteSearches: deleteSearches };
+        })();
+        
+        // Handles retrieval of data from the DOM
+        var domInspector = (function() {
+        
+            // lazy loading constants
+        
+            // enhanced list view selector constants
+            var CHECKED_SELECTOR = "input:checked[type='checkbox'][name='ids']";
+            var NAME_SELECTOR = "_Name span";
+            var OWNER_ALIAS_SELECTOR = "_OWNER_ALIAS a span";
+            var AUTOLEAD_ID;
+            var SEARCH_OBJECT_ID;
+            
+            // deep clone modal selector constants
+            
+            // list loads asynchronously, so fill these ids in after the list has been loaded
+            function getDataIds() {
+                try{
+                    AUTOLEAD_ID = j$("div[title='Email Alert']").attr('class').replace(/x-grid3-hd-/g, "").split(" ")[1];
+                    SEARCH_OBJECT_ID = j$("div[title='Search Type']").attr('class').replace(/x-grid3-hd-/g, "").split(" ")[1];
+                }catch(e){
+                    alert('An Error has Occured. Make sure Fields:Owner Alias,Email Alert, Search Type are in the view in order for action buttons to work.');
+                }
+                
+            }
+            
+            // retrieves data from the enhancedlist view
+            // pass in the name of the fields that it should return
+            function getCheckedData() {
+                getDataIds();
+                var arguments = [].slice.apply(arguments);
+                console.log('arguemnts ' + arguments);
+                var idFind = (arguments.indexOf("id") > -1);
+                var nameFind = (arguments.indexOf("name") > -1);
+                var ownerAliasFind = (arguments.indexOf("ownerAlias") > -1);
+                var autoleadFind = (arguments.indexOf("Email_Alert_Activated_Formula") > -1);
+                var searchObjectFind = (arguments.indexOf("searchObject") > -1);
+
+                var checkedData = j$(CHECKED_SELECTOR).map(
+                    function() {
+                        var data = {};
+                        if (idFind) { data.id = this.id };
+                        if (nameFind) { data.name = j$("#" + this.id + NAME_SELECTOR).text() };
+                        if (ownerAliasFind) { data.ownerAlias = j$("#" + this.id + OWNER_ALIAS_SELECTOR).text() };
+                        if (autoleadFind) { data.Email_Alert_Activated_Formula = (j$("#" + this.id + "_" + AUTOLEAD_ID + " > img").attr('title') === "Checked") };
+                        if (searchObjectFind) { data.SearchObject = j$("#" + this.id + "_" + SEARCH_OBJECT_ID).text()};
+                        return data;
+                    }
+                ).get();
+                
+                if (checkedData.length > 0) {
+                    return checkedData;
+                } else {
+                    alert('Please select searches.');
+                }
+            }
+            
+            function getDeepCloneModalData() {
+                return j$(".editSearchNamesRowClone").map(function() {
+                    var search = new sforce.SObject("Custom_Search__c");
+                    search.Id = j$(this).find('.newSearchName').attr('id');
+                    search.Name = j$(this).find('.newSearchName').val();
+                    return search;
+                });
+            }
+            
+            return {
+                getCheckedData: getCheckedData
+            };
+        })();
+        
+        var EditSearchNamesManager = {
+            createModal: function() {
+                j$("#editSearchNames").dialog({
+                    autoOpen: false,
+                    height: 450,
+                    width: 570,
+                    modal: true,
+                    buttons: {
+                        "Save": function() {
+                            EditSearchNamesManager.editSearchNames();
+                            ListViewport.instances['j_id0:customSearchList'].refreshList();
+                            j$(this).dialog("close");
+                        },
+                        Cancel: function() {
+                            j$(this).dialog("close");
+                        }
+                    }
+                });
+            },
+
+            setupModal: function() {
+                var searchNameData = domInspector.getCheckedData("id", "name", "ownerAlias");
+                
+                if (searchNameData) {
+                    j$(".editSearchNamesRowClone").remove(); 
+                    
+                    searchNameData.map(function(obj) {
+                        var search_name_row = j$(".editSearchNamesRow").clone().attr('class', 'editSearchNamesRowClone').show().appendTo(".editSearchNamesTable");
+                        j$(search_name_row).find(".oldSearchName").text(obj.name);
+                        j$(search_name_row).find(".newSearchName").attr({ value: obj.name, id: obj.id });
+                        j$(search_name_row).find(".ownerAlias").text(obj.ownerAlias);
+                    });
+                    
+                    j$("#editSearchNames").dialog("open");
+                }
+            },
+            
+            getModalData: function() {
+                return j$(".editSearchNamesRowClone").map(function() {
+                        
+                    var search = new sforce.SObject("Custom_Search__c");
+                    search.Id = j$(this).find('.newSearchName').attr('id');
+                    search.Name = j$(this).find('.newSearchName').val();
+                    return search;
+                });
+            },
+            
+            editSearchNames: function() { 
+                var searches = this.getModalData();
+                try {
+                    sforce.connection.update(searches);
+                } catch(e) {
+                    alert('An Error has Occured. Error:' + e);
+                }
+            }
+        };
+        
+        /*var DeepCloneManagerNew = {
+            createModal: function() { modalManager.createModal(DEEP_CLONE_MODAL_ID, buttons); },
+            setupModal: function() 
+                 
+            }
+        };*/
+        
+        var DeepCloneManager = {
+            createModal: function() {
+                j$("#deepClone").dialog({
+                    autoOpen: false,
+                    height: 450,
+                    width: 570,
+                    modal: true,
+                    buttons: {
+                        "Clone": function() {
+                            DeepCloneManager.deepClone();
+                            //j$(this).dialog("close");
+                        },
+                        Cancel: function() {
+                            j$(this).dialog("close");
+                        }
+                    },
+                    close: function(){
+                        ListViewport.instances['j_id0:customSearchList'].refreshList();
+            
+                    } 
+                    
+                }).find("button[id*=2]").each(function(){
+                    var currButton = j$(this);
+                    if (j$(this).prop("id") == 'Left2Right') {
+                        currButton.button({icons: {secondary: "ui-icon-seek-next"   }   });
+                    } else {
+                        currButton.button({icons: {primary: "ui-icon-seek-prev" }   });
+                    }
+                }).click(function(){
+                    if (j$(this).attr("id").indexOf("2") > -1) {
+                        var arr = j$(this).attr("id").split("2");
+                        var from = (String)(arr[0]); 
+                        var to = (String)(arr[1]);
+                        var fromSelId = 'idSelFields' + from;
+                        var toSelId = 'idSelFields' + to;
+                                
+                        if ( j$('#errMessageCell').css( 'display') === 'block') {
+                            j$('#errMessageCell').hide();
+                        }
+                              
+                        j$("[id*=" +fromSelId + "]  option:selected").each(function(index){   
+                            var selVal = (String)(j$(this).val());
+                            if ( selVal.toLowerCase() === 'name' ) {
+                                j$('#errMessageCell').show().html( (String)(j$(this).text()) + ' is a default view field and cannot be removed!').error();
+                            } else {
+                                j$("[id*=" + toSelId + "]").append(j$(this).clone()); 
+                                j$(this).remove();
+                            }
+                        });
+                                
+                        var NAsort = function (a, b) {    
+                            if (a.innerHTML == 'NA') {
+                                return 1;   
+                            } else if (b.innerHTML == 'NA') {
+                                return -1;   
+                            }       
+                            return (a.innerHTML > b.innerHTML) ? 1 : -1;
+                        }; 
+                                   
+                        var selFrom = j$("[id*=" +fromSelId + "]");
+                        if (selFrom.prop("id").indexOf('idSelFieldsLeft') > -1) {
+                            selFrom.find(" option").sort(NAsort).appendTo(selFrom);
+                        } 
+                                   
+                        var selTo = j$("[id*=" +toSelId + "]");
+                        if (selTo.prop("id").indexOf('idSelFieldsLeft') > -1) {
+                            selTo.find(" option").sort(NAsort).appendTo(selTo);
+                        }
+                    }    
+                });
+            },
+            
+            setupModal: function() {
+                var deepCloneData = domInspector.getCheckedData("id", "name", "Email_Alert_Activated_Formula", "searchObject", "ownerAlias");
+                
+                if (deepCloneData) {
+                    // set up profile list
+                    try {
+                        var profiles = sforce.connection.query("SELECT Id, Name FROM Profile Order by Name").getArray("records");
+                        j$('#Profiles').append('<option value="">None Selected</option>');
+                        profiles.map(function(profile) { 
+                            j$('#Profiles').append('<option value="' + profile.Id + '">' + profile.Name + '</option>');
+                        });
+                    } catch(e) {
+                        alert('An Error has Occured. Error:' + e);
+                    }
+                    
+                    // empty user lists
+                    j$('#idSelFieldsLeft').empty();
+                    j$('#idSelFieldsRight').empty();
+                    
+                    // set up user lists
+                    DeepCloneManager.getUsers("");
+                    
+                    // when the profile dropdown changes
+                    j$('#Profiles').change(function() {
+                        // get users based on profile
+                        var profileId = j$(this).val();
+                        DeepCloneManager.getUsers(profileId);
+                    });
+                    
+                    j$(".searchNameRowClone").remove();
+                        
+                    deepCloneData.map(function(obj) {
+                        var search_name_row = j$(".searchNameRow").clone().attr('class', 'searchNameRowClone').show().appendTo(".searchNameTable");
+                        j$(search_name_row).find(".oldSearchName").text(obj.name);
+                        j$(search_name_row).find(".newSearchName").attr("value", obj.name);
+                    });
+                    
+                    j$( "#deepClone" ).data('data', deepCloneData).dialog( "open" ); 
+                }
+            },
+            
+            getUsers: function(profileId) {
+                var users;
+                var profileQuery = "SELECT Id, Alias FROM User";
+                
+                if (profileId) {
+                    profileQuery += (" WHERE profileId = '" + profileId + "'");
+                }
+                
+                try {
+                    users = sforce.connection.query(profileQuery).getArray("records");
+                    console.log(users);
+                    this.populateAvailableUsers(users);
+                } catch(e) {
+                    alert('An Error has Occured. Error:' + e);
+                }
+            },
+            
+            populateAvailableUsers: function(results) {
+                // clear out error info
+                j$('#errorInfo').remove();
+                        
+                // populate the select list
+                var selectedUsers = j$("#idSelFieldsRight").children();
+                var found = false;
+                j$('#idSelFieldsLeft').empty();
+                            
+                // check if no users
+                if (results.length == 0) {
+                    j$('#Profiles').after('<p id="errorInfo" style=\"color: red;\">No users with selected profile.</p>');
+                    return;
+                }
+                            
+                // iterate through results
+                for (var i = 0; i < results.length; i++) {
+                    // remove already selected users
+                    found = false;
+                    
+                    for (var j = 0; j < selectedUsers.length; j++) {
+                        if (j$(selectedUsers[j]).val() == results[i].Id) {
+                            found = true;
+                        }
+                    }
+                                
+                    if (found == false) {
+                        j$('#idSelFieldsLeft').append('<option value="' + results[i].Id + '">' + results[i].Alias + '</option>');
+                    }
+                }
+                                
+                // check if any users were added to the available users list
+                if (j$('#idSelFieldsLeft').children().length == 0) {
+                    j$('#Profiles').after('<p id="errorInfo" style=\"color: red;\">All users with profile already selected.</p>');
+                }
+            },
+            
+            getModalSetupData: function() {
+                var searchData = domInspector.getCheckedData("id", "name", "Email_Alert_Activated_Formula", "searchObject", "ownerAlias"); 
+                
+                function compare(a, b) { return a.ownerAlias.localeCompare(b.ownerAlias); }
+                searchData.sort(compare);
+                
+                console.log(searchData);
+                if (searchData.length > 0) {
+                    return searchData;
+                } else {
+                    alert('Please select searches.');
+                }
+            },
+            
+            deepClone: function() {
+                 var searchData = this.getModalSetupData();
+                 var countAlert = 0; 
+                  searchData.map(function(search) {
+                
+                if(search.Email_Alert_Activated_Formula){
+                    countAlert ++;
+                }
+                   
+                });
+                var owner_aliases = [];
+                j$('#idSelFieldsRight option').each(function(){
+                     owner_aliases.push(j$(this).text());
+                });
+                
+                console.log(owner_aliases)
+                
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.CustomSearchCloning.GetUserAutoleadCounts}',
+                    owner_aliases,
+                    callback);
+                        
+                function callback(sReturn, event) {
+                    console.log(sReturn);
+                    console.log(j$('.searchNameRowClone .newSearchName').map(function() { return this.value; }).get());
+                     console.log("search_names Array" + j$('.searchNameRowClone .newSearchName').map(function() { return this.value; }));
+                     console.log("search")
+                     console.log("from getUserAutoLEadCounts " + sReturn[0].currAlerts);
+                      countAlert += sReturn[0].currAlerts;
+                       
+                   
+                    //console.log(ListActivateBoolean);
+                    console.log('countAlert ' + countAlert);
+                    if(countAlert > sReturn[0].maxAlerts){
+                        alert("Activation Email OverLimit : Operation Failed");
+                    }else{
+                        var user_array = j$('select[title="Selected Columns"] > option').map(function() { return this.value; }).get();
+                        var search_names = j$('.searchNameRowClone .newSearchName').map(function() { return this.value; }).get();
+                        var mapIdandName = {};
+                                    
+                        var data = j$("#deepClone").data('data');
+            
+                        for (var i = 0; i < data.length; i++) {
+                            mapIdandName[data[i].id] = search_names[i];
+                        }
+        
+                        console.log("mapIdandName: ");
+                        console.log(mapIdandName);
+                        console.log(user_array);
+                        
+                          function cb(sReturn, event){
+                            if (event.message) {
+                                alert("Operation Failed:" + event.message);   
+                            }else{
+                                alert("Operation Successful");
+                            }
+                        }
+       
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.CustomSearchCloning.DeepCloneCustomSearches}', mapIdandName, user_array, cb); 
+                        
+                      
+                    }
+                    
+                    
+                }
+
+         
+            }
+        };
+        
+        var ActivateEmailAlertsManager = {
+            createModal: function() {
+                j$("#activateEmailAlerts").dialog({
+                    autoOpen: false,
+                    height: 450,
+                    width: 570,
+                    modal: true,
+                    close: function(){
+                        ListViewport.instances['j_id0:customSearchList'].refreshList();
+            
+                    }
+                });
+            },
+            
+            getModalSetupData: function() {
+                var searchData = domInspector.getCheckedData("id", "name", "Email_Alert_Activated_Formula", "searchObject", "ownerAlias"); 
+                
+                function compare(a, b) { return a.ownerAlias.localeCompare(b.ownerAlias); }
+                searchData.sort(compare);
+                
+                console.log(searchData);
+                if (searchData.length > 0) {
+                    return searchData;
+                } else {
+                    alert('Please select searches.');
+                }
+            },
+        
+            setupModal: function() {
+                j$(".activateEmailAlertsRowClone").remove();
+                
+                var searchData = this.getModalSetupData();
+                
+                var owner_aliases = searchData.map(function(search) {
+                    return search.ownerAlias; 
+                });
+                
+                console.log(owner_aliases);
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.CustomSearchCloning.GetUserAutoleadCounts}',
+                    owner_aliases,
+                    callback);
+                        
+                function callback(sReturn, event) {
+                    console.log(sReturn);
+               
+                    
+                    
+                    if(sReturn[0].currAlerts >= sReturn[0].maxAlerts){
+                        overLimit = true; 
+                    }
+                    
+                    
+                    searchData = searchData.map(function(val, ind) {
+                          console.log("value size " + ind);
+                          
+                                           
+                        val.autoLeadInfo = sReturn[ind].currAlerts + "/" + sReturn[ind].maxAlerts;
+                        console.log("val.autoLeadInfo " + sReturn[ind].currAlerts);
+                        val.ownerId = sReturn[ind].ownerId;
+                        return val;
+                    });
+                     
+                    searchData.map(function(search) {
+                        var search_name_row = j$(".activateEmailAlertsRow").clone().attr('class', 'activateEmailAlertsRowClone').show().appendTo(".activateEmailAlertsTable");
+                        j$(search_name_row).find(".oldSearchName").text(search.name);
+                        j$(search_name_row).find(".ownerAlias").text(search.ownerAlias);
+                        j$(search_name_row).find(".autoleadUsage").text(search.autoLeadInfo);
+                        //console.log('search.autoLeadInfo' + search.autoLeadInfo);
+                        if (search.Email_Alert_Activated_Formula) {
+                            j$(search_name_row).find(".Email_Alert_Activated_Formula").prop('checked', true);
+                            j$(search_name_row).find(".Email_Alert_Activated_Formula").attr('data-state', 'true');
+                        } else {
+                            j$(search_name_row).find(".Email_Alert_Activated_Formula").attr('data-state', 'false');
+                        }
+                        if (search.SearchObject !== "CP Project") {
+                            j$(search_name_row).find(".Email_Alert_Activated_Formula").attr('disabled', true);
+                            j$(search_name_row).find(".autoleadSave").hide();
+                        }
+                        j$(search_name_row).find(".autoleadSave").attr("data-searchid", search.id);
+                        j$(search_name_row).find(".autoleadSave").attr("data-ownerid", search.ownerId);
+                        j$(search_name_row).find(".autoleadSave").prop("disabled", true).addClass("btnDisabled"); 
+                    });
+                    
+                    // setup buttons
+                    j$('.autoleadSave').click(function() {
+                        var searchId = j$(this).attr("data-searchid");
+                        var ownerId = j$(this).attr("data-ownerid");
+                        var checked = j$(this).parent().parent().find(".Email_Alert_Activated_Formula").is(":checked");
+                        ActivateEmailAlertsManager.saveAutoLeadStatus(searchId, ownerId, checked);
+                    });
+                    
+                    j$('.Email_Alert_Activated_Formula').change(function() { // event handler that prevents user from saving nothing
+                        if (this.checked.toString() != j$(this).attr("data-state")) {   
+                            j$(this).parent().parent().find(".autoleadSave").prop("disabled", false).removeClass("btnDisabled");
+                        } else {
+                            j$(this).parent().parent().find(".autoleadSave").prop("disabled", true).addClass("btnDisabled");
+                        }
+                    });
+                    
+                    j$("#activateEmailAlerts").dialog("open");
+                }
+            },
+            
+            saveAutoLeadStatus: function(searchId, ownerId, checked) {
+                var params = searchId + ":" + checked + ":" + ownerId + ":" + "CP Project"; 
+                console.log(params);
+                console.log("overLimit " +overLimit);
+               
+               
+                if(saveClicked <= 0){
+                if(!overLimit || (overLimit && !checked)){
+                  saveClicked +=1;
+                   console.log("saveClicked" + saveClicked);     
+                 Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.CustomSearches.updateSearchEAlertField}', params, updateModal); 
+                }else{
+                    j$('button[data-searchid="'+searchId+'"]').parent().parent().find('.autoLeadMessage').text('OverLimit').css('color','Red');
+                }
+                }    
+                function updateModal(sReturn, event) {
+                    saveClicked -=1;
+                    console.log("save deducted" + saveClicked);
+                    console.log("updateModal " + sReturn);
+                    console.log(event);
+                    console.log(event.result);
+                    var autoleadRow = j$('button[data-searchid="'+searchId+'"]').parent().parent();
+                    if (event.result == "true" || event.result == "false") {
+                        autoleadRow.find('.autoLeadMessage').text('Saved').css('color','Green');
+                        autoleadRow.find('.Email_Alert_Activated_Formula').attr("data-state", event.result);
+                        autoleadRow.find(".autoleadSave").prop("disabled", true).addClass("btnDisabled");  
+                    } else {
+                        autoleadRow.find('.autoLeadMessage').text('Failed').css('color','Red');
+                    }
+                    
+                    var owner_aliases = [];
+                    owner_aliases.push(j$('button[data-searchid="'+searchId+'"]').parent().parent().find('.ownerAlias').text());
+                    
+                    console.log('update owner_aliases ' + owner_aliases);
+                    
+                    //responsible for counting Email Alert Usage value
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.CustomSearchCloning.GetUserAutoleadCounts}',
+                        owner_aliases,
+                        callback); 
+
+                    function callback(sReturn, event) {
+                        console.log(sReturn);
+                        //console.log(sReturn[0].currAlerts);
+                        
+                        
+                        if(sReturn [0].currAlerts >= sReturn[0].maxAlerts){
+                            overLimit = true;
+                        }else{
+                            overLimit = false;
+                        }
+                       
+                            j$('button[data-ownerid="'+sReturn[0].ownerId+'"]').parent().parent().find(".autoleadUsage").text(sReturn[0].currAlerts + "/" + sReturn[0].maxAlerts);
+                       
+                        
+                    }
+                }
+               
+            }
+        };
+ /*        function replaceBackSlashes(){
+             j$("div[id$='_Name']").each(function(){
+                        var searchName;
+                        searchName = j$(this).find("span").text();
+                        console.log(searchName);
+                        searchName =j$(this).find("span").text().replace(/\\\\\\\'/g, "'").replace(/\\\\\\/g, "\\").replace(/\\\\/g, "\\");
+                        console.log("new SearchName " + searchName );
+                        j$(this).find("span").text(searchName);
+                        
+                    });
+        } */
+   /*      
+        j$(window).load(function(){
+             if(j$('.inlineEditWriteHidden div').children().is('img')){
+                j$('.inlineEditWriteHidden div ').click(function (){
+                var currURL = window.location.href;
+                                var baseURL = currURL.substring(0,currURL.indexOf("ManageViews"));
+                                var gotoURL = baseURL + "ManageViews";
+                                window.location.replace(gotoURL);    
+            });
+            }
+            
+             if(j$('.inlineEditWriteVisible div').children().is('img')){
+                j$('.inlineEditWriteVisible div ').click(function (){
+                var currURL = window.location.href;
+                                var baseURL = currURL.substring(0,currURL.indexOf("ManageViews"));
+                                var gotoURL = baseURL + "ManageViews";
+                                window.location.replace(gotoURL);    
+            });
+            }
+            
+            
+    
+        }); */
+        
+        j$(document).ready(function(){
+            j$('#massEdit').dialog('instance').bind("open", function(){
+                j$('#massEdit #massEditFieldDiv input').attr('disabled', true);
+            });   
+            
+         
+                
+                j$('.inlineEditWriteVisible div').dblclick(function(e){e.preventDefault(); });
+                j$('.inlineEditWriteHidden div').dblclick(function(e){e.preventDefault();});
+          
+        });
+        
+  
+         
+    
+        j$(function () {
+            'use strict';
+    
+   /*      j$(document).ready(function(){
+             if(j$('.inlineEditWriteHidden div').children().is('img')){
+                j$('.inlineEditWriteHidden div ').dblclick(function (){
+                var currURL = window.location.href;
+                                var baseURL = currURL.substring(0,currURL.indexOf("ManageViews"));
+                                var gotoURL = baseURL + "ManageViews";
+                                window.location.replace(gotoURL);    
+            });
+            }
+            
+            
+               if(j$('.inlineEditWriteVisible div').children().is('img')){
+                j$('.inlineEditWriteVisible div ').dblclick(function (){
+                var currURL = window.location.href;
+                                var baseURL = currURL.substring(0,currURL.indexOf("ManageViews"));
+                                var gotoURL = baseURL + "ManageViews";
+                                window.location.replace(gotoURL);    
+            });
+        }}); */
+            ActivateEmailAlertsManager.createModal();
+            EditSearchNamesManager.createModal();
+            DeepCloneManager.createModal();
+        });
+    </script>
+</apex:page>

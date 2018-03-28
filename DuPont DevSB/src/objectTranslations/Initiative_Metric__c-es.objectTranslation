@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Iniciativa-Métrica</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Iniciativas-Métricas</value>
+    </caseValues>
+    <fields>
+        <help><!-- Overall Amount for this Initiative Metric --></help>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefit Type --></label>
+        <name>Benefit_Type__c</name>
+        <picklistValues>
+            <masterLabel>Volume Increase in VC</masterLabel>
+            <translation><!-- Volume Increase in VC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- The state of completeness, accuracy and reliability that makes data appropriate for a specific use (e.g. Validated by the owning business) --></help>
+        <label><!-- Data Quality --></label>
+        <name>Data_Quality__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guess</masterLabel>
+            <translation><!-- Guess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reliable</masterLabel>
+            <translation><!-- Reliable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validated</masterLabel>
+            <translation><!-- Validated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Start Date of the Metric (also defines Year 1) --></help>
+        <label><!-- Date Y1 --></label>
+        <name>Date_Y1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last day of the time period these metrics are covering. --></help>
+        <label>Fecha</label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label>Descripción</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geography --></label>
+        <name>Geography__c</name>
+        <picklistValues>
+            <masterLabel>AP</masterLabel>
+            <translation><!-- AP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Initiative this Metric refers to --></help>
+        <label>Iniciativa</label>
+        <name>Initiative__c</name>
+        <relationshipLabel><!-- Initiative-Metrics --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Involved Org --></label>
+        <name>Involved_Org__c</name>
+        <picklistValues>
+            <masterLabel>DPT</masterLabel>
+            <translation><!-- DPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Metric Quarter --></label>
+        <name>Metric_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Net Sales Amount --></label>
+        <name>Net_Sales_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Sales Comments --></label>
+        <name>Net_Sales_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Initiative-Metrics --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Organization where the impact of this Initiative-Metric will be measured --></help>
+        <label>Org Propietaria</label>
+        <name>Owning_Org__c</name>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Env</masterLabel>
+            <translation><!-- BI-Env --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Landscape Systems</masterLabel>
+            <translation><!-- BI-Landscape Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf</masterLabel>
+            <translation><!-- BI-Surf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT</masterLabel>
+            <translation><!-- DPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-A&amp;HF</masterLabel>
+            <translation><!-- DPT-A&amp;HF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ASPS</masterLabel>
+            <translation><!-- DPT-ASPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Agriculture</masterLabel>
+            <translation><!-- DPT-Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Air and Filtration</masterLabel>
+            <translation><!-- DPT-Air and Filtration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Aramids</masterLabel>
+            <translation><!-- DPT-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Automotive</masterLabel>
+            <translation><!-- DPT-Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Chemical Industrial</masterLabel>
+            <translation><!-- DPT-Chemical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Cleanroom/Pharma</masterLabel>
+            <translation><!-- DPT-Cleanroom/Pharma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Covers</masterLabel>
+            <translation><!-- DPT-Covers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Critical Clean</masterLabel>
+            <translation><!-- DPT-Critical Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ES</masterLabel>
+            <translation><!-- DPT-ES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Envelopes</masterLabel>
+            <translation><!-- DPT-Envelopes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Graphics</masterLabel>
+            <translation><!-- DPT-Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-IPP</masterLabel>
+            <translation><!-- DPT-IPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Ind Pkg &amp; Protection</masterLabel>
+            <translation><!-- DPT-Ind Pkg &amp; Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Mechanical Industrial</masterLabel>
+            <translation><!-- DPT-Mechanical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Fabrics</masterLabel>
+            <translation><!-- DPT-Medical Fabrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Packaging</masterLabel>
+            <translation><!-- DPT-Medical Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Specialties</masterLabel>
+            <translation><!-- DPT-Medical Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NOW</masterLabel>
+            <translation><!-- DPT-NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Optical</masterLabel>
+            <translation><!-- DPT-Optical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-PM</masterLabel>
+            <translation><!-- DPT-PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-ER</masterLabel>
+            <translation><!-- DPT-Public Sector-ER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-LE</masterLabel>
+            <translation><!-- DPT-Public Sector-LE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-MIL</masterLabel>
+            <translation><!-- DPT-Public Sector-MIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Sontara</masterLabel>
+            <translation><!-- DPT-Sontara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Thermal Industrial</masterLabel>
+            <translation><!-- DPT-Thermal Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Tyvek</masterLabel>
+            <translation><!-- DPT-Tyvek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S</masterLabel>
+            <translation><!-- M&amp;S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multiple</masterLabel>
+            <translation><!-- Multiple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOW</masterLabel>
+            <translation><!-- NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP</masterLabel>
+            <translation><!-- P&amp;IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Period between October/November/December of the current year or year specified in Year field --></help>
+        <label><!-- PTOI Actual Dec --></label>
+        <name>PTOI_Actual_Dec__c</name>
+    </fields>
+    <fields>
+        <help><!-- Period between April/May/June of the current year or year specified in Year field --></help>
+        <label><!-- PTOI Actual Jun --></label>
+        <name>PTOI_Actual_Jun__c</name>
+    </fields>
+    <fields>
+        <help><!-- Period between January/February/March of the current year or year specified in Year field --></help>
+        <label><!-- PTOI Actual Mar --></label>
+        <name>PTOI_Actual_Mar__c</name>
+    </fields>
+    <fields>
+        <help><!-- Period between July/August/September of the current year or year specified in Year field --></help>
+        <label><!-- PTOI Actual Sep --></label>
+        <name>PTOI_Actual_Sep__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTOI Actual --></label>
+        <name>PTOI_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTOI Target Dec --></label>
+        <name>PTOI_Target_Dec__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTOI Target Jun --></label>
+        <name>PTOI_Target_Jun__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTOI Target Mar --></label>
+        <name>PTOI_Target_Mar__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTOI Target Sep --></label>
+        <name>PTOI_Target_Sep__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTOI Target --></label>
+        <name>PTOI_Target__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines how the Quantity entered should be understood --></help>
+        <label><!-- Qty Type --></label>
+        <name>Qty_Type__c</name>
+        <picklistValues>
+            <masterLabel>Annual-Estimate</masterLabel>
+            <translation><!-- Annual-Estimate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual-Quarterly</masterLabel>
+            <translation><!-- Annual-Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Time-Validated</masterLabel>
+            <translation><!-- One Time-Validated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Qualification --></label>
+        <name>Qualification__c</name>
+        <relationshipLabel><!-- Qualification&apos;s Initiative-Metrics --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity of this Metric for this Initiative (use Amount for the estimated business value of it) --></help>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-01 --></label>
+        <name>Rev_Y1_01__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-02 --></label>
+        <name>Rev_Y1_02__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-03 --></label>
+        <name>Rev_Y1_03__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-04 --></label>
+        <name>Rev_Y1_04__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-05 --></label>
+        <name>Rev_Y1_05__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-06 --></label>
+        <name>Rev_Y1_06__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-07 --></label>
+        <name>Rev_Y1_07__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-08 --></label>
+        <name>Rev_Y1_08__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-09 --></label>
+        <name>Rev_Y1_09__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-10 --></label>
+        <name>Rev_Y1_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-11 --></label>
+        <name>Rev_Y1_11__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1-12 --></label>
+        <name>Rev_Y1_12__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatic Sum of All monthly revenues entered for Y1 --></help>
+        <label><!-- Rev Y1-YTD --></label>
+        <name>Rev_Y1_YTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y1 --></label>
+        <name>Rev_Y1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y2 --></label>
+        <name>Rev_Y2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Y3 --></label>
+        <name>Rev_Y3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Short Comment further describing the number provided in the Amount field of this Initiative_Metric --></help>
+        <label><!-- Amount Comment --></label>
+        <name>Revenue_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubType --></label>
+        <name>SubType__c</name>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royalty</masterLabel>
+            <translation><!-- Royalty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royalty-Per Unit</masterLabel>
+            <translation><!-- Royalty-Per Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royalty-Percentage</masterLabel>
+            <translation><!-- Royalty-Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TP-Existing Contact</masterLabel>
+            <translation><!-- TP-Existing Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TP-Label</masterLabel>
+            <translation><!-- TP-Label --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of Metric --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Communication</masterLabel>
+            <translation><!-- Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expense</masterLabel>
+            <translation><!-- Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revenue-Other</masterLabel>
+            <translation><!-- Revenue-Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revenue-Sales</masterLabel>
+            <translation><!-- Revenue-Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rating Value --></label>
+        <name>fRating_Value__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nombre de la Métrica</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Article --></label>
+        <name>Article</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- M&amp;S-MSE Initiative-Metric --></label>
+        <name>M_S_MSE_Initiative_Metric</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Marketing &amp; Brand Metric --></label>
+        <name>Marketing_Brand_Metric</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Revenue (3 Years with Y1 months) --></label>
+        <name>Revenue3YearswithY1months</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Royalties --></label>
+        <name>Royalties</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- &apos;PTOI Actual Dec&apos; will only be filled during the month of January and February of the next year. --></errorMessage>
+        <name>PTOI_Actual_Dec_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;PTOI Actual Jun&apos; will only be filled during the month of July and August --></errorMessage>
+        <name>PTOI_Actual_Jun_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;PTOI Actual Mar&apos; will only be filled during the month of April and May of the next year. --></errorMessage>
+        <name>PTOI_Actual_Mar_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;PTOI Actual Sep&apos; will only be filled during the month of October and November. --></errorMessage>
+        <name>PTOI_Actual_Sep_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

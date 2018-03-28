@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-lA - Propuesta final de caso al cliente SP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-LA Propuesta final de caso al cliente SP</name>
+    <style>formalLetter</style>
+    <subject>Propuesta de Acuerdo (case: {!Case.CaseNumber})</subject>
+    <textOnly>Estimado Vendedor
+En referencia a la reclamación {!Case.CaseNumber} de fecha {!Case.Date_Entered__c}, se derterminó {!Case.Resolution_Description__c}. Con el objetivo de pasar una orientación de la respectiva queja, segue abajo un  asesoramiento tecnico y sugerencias corretivas.
+
+{!Case.Special_Instructions__c}
+{!Case.Primary_Corrective_Action__c}
+{!Case.Secondary_Corrective_Action__c}
+
+
+Saludos cordiales,
+
+Equipo Tecnico
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

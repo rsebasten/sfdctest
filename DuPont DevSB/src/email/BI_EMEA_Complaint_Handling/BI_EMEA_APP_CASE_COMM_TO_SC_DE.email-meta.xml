@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>BI-EMEA APP CASE COMM TO SC - DE</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP CASE COMM TO SC - DE</name>
+    <style>freeForm</style>
+    <subject>Reklamationsbeschreibung/Auftragserteilung für Service Center - {!Case.CaseNumber}</subject>
+    <textOnly>Hallo Thomas!
+
+
+bitte finde anbei einen neuen Auftrag für eine Reparatur bzw. eine Inspektion.
+
+Es handelt sich hierbei um:
+
+{!Case.Problem_Description__c}
+
+
+Der Auftrag soll bei folgendem Endkunden ausgeführt werden:
+
+{!Case.Alt_Contact__c}
+
+{!Case.City__c}
+
+{!Case.State__c}
+
+{!Case.Country__c}
+
+{!Case.Alt_Phone__c}
+
+{!Case.Alt_Contact_Email__c}
+
+
+Zusätzliche Angaben:
+
+- Verarbeiter: {!Case.Account}
+
+- Installation datiert von {!Case.Installation_Date__c}
+
+- Corian® Farbe: {!Case_Material__c.Product__c}
+
+- Benützung: Küche / Badezimmer - Privat / Kommerziell
+
+
+Beiliegend erhalten Sie einige Bilder der Installation.
+
+
+Bitte teilen Sie uns mit, wann Sie die Ausführung dieser Reparatur/Inspektion eingeplant haben.
+
+
+Mit freundlichen Grüßen
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel: {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+
+Keine Reparatur auf DuPont wenn Verarbeitungs- oder Montagefehler.
+
+Keine Reparatur auf DuPont wenn evidente Benützungsfehler.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

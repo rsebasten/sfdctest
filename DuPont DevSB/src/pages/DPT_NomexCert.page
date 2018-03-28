@@ -1,0 +1,128 @@
+<apex:page tabStyle="Qualification__c" 
+    controller="ctrlDPT_NomexCert" sidebar="true" language="en" action="{!init}">
+    <apex:form > 
+
+    <!-- ===============================================================
+    START: NEW SCRIPT
+==================================================================-->
+<apex:outputPanel rendered="{!(stage=='new')}">
+            <table width="100%">
+            <tr>
+                    <td style="text-align: left;">
+                    <h2><b>New Certification Request</b></h2>
+                    </td>
+            </tr>
+
+                <tr>
+                    <td align="left"><c:script script="{!script}" showButtons="false" onSave="void();" onCancel="void();"/><apex:outputpanel id="submitbutton">
+                        <br />
+                        <br />
+                        <apex:commandbutton action="{!save}" value="{!$Label.site.submit}"
+                           rendered="{!(stage=='new')}"  />
+                        
+                        &nbsp;<apex:commandbutton action="{!goBack}" value="Cancel" onclick="window.close()"
+                           rendered="{!(stage=='new')}"  />
+               
+                    </apex:outputpanel> <br />
+                    <br />
+                    </td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!(stage=='addcolor')}">
+            <table width="100%">
+            <tr>
+                    <td style="text-align: left;">
+                    <h2><b>Clone Certification Request</b></h2>
+                    </td>
+            </tr>
+            
+            &nbsp;&nbsp;
+            <apex:commandbutton action="{!goHome}" value="Cancel"
+                            rendered="{!(stage=='addcolor')}" /> <br/><br/>
+
+                <tr>
+                    <td align="left"><c:script script="{!script}" showButtons="false" onSave="void();" onCancel="void();"/> <apex:outputpanel id="submitbuttonforClone">
+                        <br />
+                        <br />
+                        
+                        <apex:commandbutton action="{!saveColor}"
+                            value="{!$Label.site.submit}" />
+                  &nbsp;<apex:commandbutton action="{!goHome}" value="Cancel"
+                            rendered="{!(stage=='addcolor')}" />
+
+               
+                    </apex:outputpanel> <br />
+                    <br />
+                    </td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!(stage=='addtype')}">
+            <table width="100%">
+            <tr>
+                    <td style="text-align: left;">
+                    <h2><b>Clone Certification Request by Garment Type</b></h2>
+                    </td>
+            </tr>
+            
+            &nbsp;&nbsp;
+            <apex:commandbutton action="{!goHome}" value="Cancel"
+                            rendered="{!(stage=='addtype')}" /> <br/><br/>
+
+                <tr>
+                    <td align="left"><c:script script="{!script}" showButtons="false" onSave="void();" onCancel="void();"/> <apex:outputpanel id="submitbuttonforClone_GarmentType">
+                        <br />
+                        <br />
+                        
+                        <apex:commandbutton action="{!SaveGarmentType}"
+                            value="{!$Label.site.submit}" />
+                  &nbsp;<apex:commandbutton action="{!goHome}" value="Cancel"
+                            rendered="{!(stage=='addtype')}" />
+
+               
+                    </apex:outputpanel> <br />
+                    <br />
+                    </td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+
+
+        <!-- ===============================================================
+    END: NEW SCRIPT
+==================================================================-->
+<!-- ===============================================================
+    START: RESULT OF SCRIPT
+==================================================================-->
+        <apex:outputPanel rendered="{!(stage=='results')}">
+            <table width="100%">
+                <tr>
+                    <td>
+                    <h3 class="pageHeader">Certification Results</h3>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="text-align: middle;"><c:script script="{!script}" showButtons="false" onSave="void();" onCancel="void();"/></td>
+                </tr>
+                
+                <apex:commandbutton action="{!goHome}" value="Cancel"
+                          rendered="{!(stage=='results')}"   /> <br/><br/>
+
+                
+            </table>
+            
+        </apex:outputPanel>
+        
+        
+<!-- ===============================================================
+    END : RESULT SCRIPT
+==================================================================-->
+
+    </apex:form>
+  <br/><br/><br/>
+  
+</apex:page>

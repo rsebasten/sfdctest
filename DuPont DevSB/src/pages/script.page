@@ -1,0 +1,6 @@
+<apex:page tabStyle="SFDC_Script__c" cache="false" controller="ctrlScript" action="{!init}" showHeader="true" id="Script" language="{!$CurrentPage.parameters.l}" lightningStylesheets="true">
+    <apex:form >
+    <apex:sectionHeader title="{!$CurrentPage.parameters.title}" subtitle="{!script.Name}"/> 
+        <c:script script="{!script}" onSave="{!save}" onCancel="{!cancel}" />       
+    </apex:form>
+</apex:page>

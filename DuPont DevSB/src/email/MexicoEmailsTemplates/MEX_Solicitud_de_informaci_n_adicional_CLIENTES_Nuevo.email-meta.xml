@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Usar cuando los clientes dan información incompleta de su solicitud</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>Solicitud de información adicional - general.</name>
+    <style>freeForm</style>
+    <subject>DuPont - Respuesta a su solicitud</subject>
+    <textOnly>¡Gracias por contactarnos!
+
+
+
+Estimad(o) {!Lead.FirstName} {!Lead.LastName},
+
+Para poder canalizar adecuadamente su solicitud, le pedimos por favor que nos ayude a completar los siguientes datos:
+
+Datos del solicitante:
+Nombre: {!Lead.FirstName}, {!Lead.LastName}
+Empresa: {!Lead.Company}
+Estado de la República: {!Lead.Address}
+Teléfono y/o celular: {!Lead.Phone}
+Nombre del producto o servicio que requiere:
+Cantidad de producto que requiere:
+Uso o aplicación:
+
+Solicitud inicial:
+{!Lead.Product_Comments__c}
+{!Lead.Description}
+
+Usted puede contactarnos nuevamente para conocer el estatus y dar seguimiento a su solicitud. Los datos del Centro de Información de Producto se encuentran en la firma.
+
+Saludos cordiales,
+
+Centro de Información de Productos en México, Centroamérica y Caribe
+Lada nacional sin costo: 01800-849-7514
+Tel. del D.F. y Zona Metropolitana: +52 (55) 5722-1150
+E-mail: info.mexico@dupont.com | Página web: www.dupont.com.mx
+Twitter @DuPontMexico | YouTube: DuPontdeMexico
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Copyright © 2018 DuPont. Reservados todos los derechos. Todos los productos señalados con ® o ™ son marcas registradas o marcas de E. I. du Pont de Nemours and Company o sus afiliadas.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+&quot;Su información personal (Nombre, correo electrónico, etc.) será ingresada en el Sistema de Clientes actualmente localizado en Estados Unidos de América. Dicha información será utilizada por DuPont, otras filiales y terceros seleccionados en otros países, para brindarle información de productos y servicios por la cual contacto a DuPont. Para revisar nuestra política completa de privacidad, acceder, enmendar, borrar u oponerse al procesamiento de su información personal, favor de utilizar el siguiente link, en la sección de &quot;Opciones y Acceso&quot;-www.privacy.dupont.com
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Si usted no desea recibir más comunicados de DuPont por favor envíenos un mensaje a info.mexico@dupont.com con el Subject &quot;Dar de baja&quot;.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

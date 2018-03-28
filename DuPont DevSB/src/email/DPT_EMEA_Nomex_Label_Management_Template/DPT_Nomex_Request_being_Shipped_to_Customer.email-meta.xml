@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify Business Key User upon Label shipped to Customer</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPT Nomex Request being Shipped to Customer</name>
+    <style>freeForm</style>
+    <subject>Request {!Request__c.Name} is being shipped for Account {!Request__c.Account__c}</subject>
+    <textOnly>Hello Christel/Nanouschka
+
+
+Request Record approved for the Account {!Request__c.Account__c} is shipped to the below mentioned address along with the Tracking Numbers:
+
+
+Contact :{!Request__c.Contact__c}
+Shipping Street : {!Request__c.Request_Shipping_Street__c}
+
+Shipping State : {!Request__c.Request_Shipping_State__c}
+Shipping City : {!Request__c.Request_Shipping_City__c}
+Shipping Postal Code : {!Request__c.Request_Shipping_Postal_Code__c}
+
+Shipping Country : {!Request__c.Request_Shipping_Country__c}
+
+Tracking Numbers: {!Request__c. Tracking_Numbers__c}
+
+Phone :{!Request__c.Phone__c}
+
+
+
+Click here to go to the request:
+
+{!Request__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

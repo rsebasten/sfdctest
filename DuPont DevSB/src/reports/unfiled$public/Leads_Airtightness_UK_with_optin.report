@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>LEAD_ID</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.fEmail__c</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>DPS-Tyvek BE UK - Airtightness installers</value>
+        </criteriaItems>
+        <operation>with</operation>
+        <primaryTableColumn>LEAD_ID</primaryTableColumn>
+        <relatedTable>CampaignMember-Campaign</relatedTable>
+        <relatedTableJoinColumn>Lead</relatedTableJoinColumn>
+    </crossFilters>
+    <currency>USD</currency>
+    <description>Leads from Leading edge telemarketing with opt-in status</description>
+    <format>Tabular</format>
+    <name>Leads Airtightness UK with optin</name>
+    <params>
+        <name>scopeid</name>
+        <value>000000000000000</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

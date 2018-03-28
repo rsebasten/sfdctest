@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Country__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>Call_Report__c.Call_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>as of 01.06.2016 for Silvia</description>
+    <filter>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Eric Schmohl</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Account E.S. with call reports</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Call_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Call_Report__c.Call_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-06-01</startDate>
+    </timeFrameFilter>
+</Report>

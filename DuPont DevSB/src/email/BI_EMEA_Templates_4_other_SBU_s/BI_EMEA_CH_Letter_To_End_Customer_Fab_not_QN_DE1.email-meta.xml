@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Letter to an end customer.  Fabricator is no QN-member.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Letter To End Customer - Fab not QN DE</name>
+    <style>formalLetter</style>
+    <subject>Garantiefrage (case: {!Case.CaseNumber})</subject>
+    <textOnly>Sehr geehrte {!Case.Contact},
+
+wir haben Ihre Frage auf Garantie in bester Ordnung erhalten und möchten wie folgt Stellung nehmen:
+ 
+Der DuPont™ Corian® 10-Jahres Garantie gilt ausschließlich für DuPont™ Corian® Installationen im Innenbereich (Arbeitsflächen und/oder dekorative Oberflächen), die von einem Verarbeiter- /  Installationsbetrieb des DuPont™ Corian® Quality Network gemäß den aktuellen veröffentlichten DuPont™ Corian® Installationsvorschriften durchgeführt wurden. 
+ 
+Der Verarbeiter &quot;XXXXX&quot; ist leider kein Mitglied unser QN-Network.
+ 
+Basiert auf den oben gemachten Erkenntnissen, kann DuPont in diesen Fall keine Garantie genehmigen.
+Ich hoffe auf Ihr Verständnis.
+ 
+Für die Reparatur Ihrer DuPont™ Corian®-Installation empfehlen wir Ihnen gerne unsere Service-Center:  
+
+CSC Wächter 
+Tel.:  +49 (0) 6485 – 880964
+Fax: +49 (0) 6485 – 880965
+Email: thomas-waechter@t-online.de
+
+Ich hoffe Ihnen hiermit ausreichend informiert zu haben und verbleibe,
+ 
+mit freundlichen Grüßen,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

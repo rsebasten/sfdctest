@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User$Id</field>
+    </columns>
+    <columns>
+        <field>User$Account.Owning_Organization__c</field>
+    </columns>
+    <columns>
+        <field>User$Account</field>
+    </columns>
+    <columns>
+        <field>User$IsActive</field>
+    </columns>
+    <currency>USD</currency>
+    <description>DPS - BE Tyvek (Personnel Change Form Process)</description>
+    <filter>
+        <criteriaItems>
+            <column>User$Profile</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BI-NA Distributor Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Account.Owning_Organization__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BI-Env</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Partner Users</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_All_Fields__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>User$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

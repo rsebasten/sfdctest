@@ -1,0 +1,2935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to capture and track new product, marketing or business ideas.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Commercial_Date__c</fullName>
+        <description>Actual date this project or development opportunity is commericalized</description>
+        <externalId>false</externalId>
+        <label>Actual Commercial Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Approach__c</fullName>
+        <externalId>false</externalId>
+        <label>Approach</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pursue with existing products</fullName>
+                    <default>false</default>
+                    <label>Pursue with existing products</label>
+                </value>
+                <value>
+                    <fullName>Applications development project</fullName>
+                    <default>false</default>
+                    <label>Applications development project</label>
+                </value>
+                <value>
+                    <fullName>Product development - minor</fullName>
+                    <default>false</default>
+                    <label>Product development - minor</label>
+                </value>
+                <value>
+                    <fullName>Product development - major</fullName>
+                    <default>false</default>
+                    <label>Product development - major</label>
+                </value>
+                <value>
+                    <fullName>Immediately Actionable</fullName>
+                    <default>false</default>
+                    <label>Immediately Actionable</label>
+                </value>
+                <value>
+                    <fullName>Cross BU Opportunity</fullName>
+                    <default>false</default>
+                    <label>Cross BU Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Product Development Required</fullName>
+                    <default>false</default>
+                    <label>Product Development Required</label>
+                </value>
+                <value>
+                    <fullName>No Action</fullName>
+                    <default>false</default>
+                    <label>No Action</label>
+                </value>
+                <value>
+                    <fullName>Existing Product - New Market</fullName>
+                    <default>false</default>
+                    <label>Existing Product - New Market</label>
+                </value>
+                <value>
+                    <fullName>Existing Product - New Application</fullName>
+                    <default>false</default>
+                    <label>Existing Product - New Application</label>
+                </value>
+                <value>
+                    <fullName>New Product - Current Market</fullName>
+                    <default>false</default>
+                    <label>New Product - Current Market</label>
+                </value>
+                <value>
+                    <fullName>New Product - New Market</fullName>
+                    <default>false</default>
+                    <label>New Product - New Market</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Capability_and_Fit_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Capability and Fit Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Capability_and_Fit_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Capability and Fit Score</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Competency_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Competency Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Existing</fullName>
+                    <default>false</default>
+                    <label>Existing</label>
+                </value>
+                <value>
+                    <fullName>Upgrade Existing</fullName>
+                    <default>false</default>
+                    <label>Upgrade Existing</label>
+                </value>
+                <value>
+                    <fullName>New Competency</fullName>
+                    <default>false</default>
+                    <label>New Competency</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Competitive_Environment__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitive Environment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Dominant Player(s)</fullName>
+                    <default>false</default>
+                    <label>No Dominant Player(s)</label>
+                </value>
+                <value>
+                    <fullName>Some Differentiated Players</fullName>
+                    <default>false</default>
+                    <label>Some Differentiated Players</label>
+                </value>
+                <value>
+                    <fullName>Highly Competitive</fullName>
+                    <default>false</default>
+                    <label>Highly Competitive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Competitive_Information_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitive Information Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Critical_Success_Factors__c</fullName>
+        <externalId>false</externalId>
+        <label>Critical Success Factors</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Days_in_Current_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() - Stage_Change_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days in Current Stage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Est_Rev_Y1__c</fullName>
+        <description>Estimated Revenue - Year 1</description>
+        <externalId>false</externalId>
+        <label>Est Rev Y1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Est_Rev_Y4__c</fullName>
+        <description>Estimated Revenue - Year 4</description>
+        <externalId>false</externalId>
+        <label>Est Rev Y4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Gross_Margin__c</fullName>
+        <description>Estimated Gross Margin based on profitability in this part of Value Chain</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated Gross Margin based on profitability in this part of Value Chain</inlineHelpText>
+        <label>Estimated Gross Margin</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>&gt;45%</fullName>
+                    <default>false</default>
+                    <label>&gt;45%</label>
+                </value>
+                <value>
+                    <fullName>30 – 45%</fullName>
+                    <default>false</default>
+                    <label>30 – 45%</label>
+                </value>
+                <value>
+                    <fullName>&lt;30%</fullName>
+                    <default>false</default>
+                    <label>&lt;30%</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expected_Commercialization_Date__c</fullName>
+        <description>Date on which commercialization is expected to occur.</description>
+        <externalId>false</externalId>
+        <label>Expected Commercialization Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Value_Proposition__c</fullName>
+        <description>Differentiation this idea provides for DuPont and customer&apos;s willingness to pay for it</description>
+        <externalId>false</externalId>
+        <label>Expected Value Proposition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strong for broad market</fullName>
+                    <default>false</default>
+                    <label>Strong for broad market</label>
+                </value>
+                <value>
+                    <fullName>Strong for niche market</fullName>
+                    <default>false</default>
+                    <label>Strong for niche market</label>
+                </value>
+                <value>
+                    <fullName>Not much differentiation</fullName>
+                    <default>false</default>
+                    <label>Not much differentiation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FutureBusinessDevelopmentName__c</fullName>
+        <externalId>false</externalId>
+        <label>Future Business Development Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Intellectual_Property__c</fullName>
+        <externalId>false</externalId>
+        <label>Intellectual Property</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Patent Protected</fullName>
+                    <default>false</default>
+                    <label>Patent Protected</label>
+                </value>
+                <value>
+                    <fullName>Limited Protection</fullName>
+                    <default>false</default>
+                    <label>Limited Protection</label>
+                </value>
+                <value>
+                    <fullName>No Protection</fullName>
+                    <default>false</default>
+                    <label>No Protection</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Leverage_Potential__c</fullName>
+        <externalId>false</externalId>
+        <label>Leverage Potential</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Excellent</fullName>
+                    <default>false</default>
+                    <label>Excellent</label>
+                </value>
+                <value>
+                    <fullName>Moderate</fullName>
+                    <default>false</default>
+                    <label>Moderate</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Market_Attractiveness_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Attractiveness Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Market_Attractiveness_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Attractiveness Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market_Barriers__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Potential of customer / market adoption.</inlineHelpText>
+        <label>Market Barriers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Requires Development</fullName>
+                    <default>false</default>
+                    <label>Requires Development</label>
+                </value>
+                <value>
+                    <fullName>Significant Barriers</fullName>
+                    <default>false</default>
+                    <label>Significant Barriers</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Market_Channel_Advantage__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Channel Advantage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Market_Growth_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Growth Rate Annual</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>&gt;15%</fullName>
+                    <default>false</default>
+                    <label>&gt;15%</label>
+                </value>
+                <value>
+                    <fullName>5% ~ 15%</fullName>
+                    <default>false</default>
+                    <label>5% ~ 15%</label>
+                </value>
+                <value>
+                    <fullName>&gt; 20%</fullName>
+                    <default>false</default>
+                    <label>&gt; 20%</label>
+                </value>
+                <value>
+                    <fullName>5-20%</fullName>
+                    <default>false</default>
+                    <label>5-20%</label>
+                </value>
+                <value>
+                    <fullName>&lt; 5%</fullName>
+                    <default>false</default>
+                    <label>&lt; 5%</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Market_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Segment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Owning_Organization__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Automotive</fullName>
+                    <default>false</default>
+                    <label>Automotive</label>
+                </value>
+                <value>
+                    <fullName>Bio Metal</fullName>
+                    <default>false</default>
+                    <label>Bio Metal</label>
+                </value>
+                <value>
+                    <fullName>Bio Other</fullName>
+                    <default>false</default>
+                    <label>Bio Other</label>
+                </value>
+                <value>
+                    <fullName>CC Actuator</fullName>
+                    <default>false</default>
+                    <label>CC Actuator</label>
+                </value>
+                <value>
+                    <fullName>CC Tag</fullName>
+                    <default>false</default>
+                    <label>CC Tag</label>
+                </value>
+                <value>
+                    <fullName>Consumer Electronics</fullName>
+                    <default>false</default>
+                    <label>Consumer Electronics</label>
+                </value>
+                <value>
+                    <fullName>Defogger</fullName>
+                    <default>false</default>
+                    <label>Defogger</label>
+                </value>
+                <value>
+                    <fullName>Displays</fullName>
+                    <default>false</default>
+                    <label>Displays</label>
+                </value>
+                <value>
+                    <fullName>Emerging Others</fullName>
+                    <default>false</default>
+                    <label>Emerging Others</label>
+                </value>
+                <value>
+                    <fullName>Energy Storage</fullName>
+                    <default>false</default>
+                    <label>Energy Storage</label>
+                </value>
+                <value>
+                    <fullName>High Reliability</fullName>
+                    <default>false</default>
+                    <label>High Reliability</label>
+                </value>
+                <value>
+                    <fullName>Lighting</fullName>
+                    <default>false</default>
+                    <label>Lighting</label>
+                </value>
+                <value>
+                    <fullName>Medical / Healthcare</fullName>
+                    <default>false</default>
+                    <label>Medical / Healthcare</label>
+                </value>
+                <value>
+                    <fullName>Military</fullName>
+                    <default>false</default>
+                    <label>Military</label>
+                </value>
+                <value>
+                    <fullName>MTS</fullName>
+                    <default>false</default>
+                    <label>MTS</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Photovoltaic</fullName>
+                    <default>false</default>
+                    <label>Photovoltaic</label>
+                </value>
+                <value>
+                    <fullName>Printing</fullName>
+                    <default>false</default>
+                    <label>Printing</label>
+                </value>
+                <value>
+                    <fullName>PV</fullName>
+                    <default>false</default>
+                    <label>PV</label>
+                </value>
+                <value>
+                    <fullName>PV Ag</fullName>
+                    <default>false</default>
+                    <label>PV Ag</label>
+                </value>
+                <value>
+                    <fullName>PV Al</fullName>
+                    <default>false</default>
+                    <label>PV Al</label>
+                </value>
+                <value>
+                    <fullName>PV Emerging</fullName>
+                    <default>false</default>
+                    <label>PV Emerging</label>
+                </value>
+                <value>
+                    <fullName>RC</fullName>
+                    <default>false</default>
+                    <label>RC</label>
+                </value>
+                <value>
+                    <fullName>Semiconductor Material</fullName>
+                    <default>false</default>
+                    <label>Semiconductor Material</label>
+                </value>
+                <value>
+                    <fullName>Telecommunications</fullName>
+                    <default>false</default>
+                    <label>Telecommunications</label>
+                </value>
+                <value>
+                    <fullName>THH</fullName>
+                    <default>false</default>
+                    <label>THH</label>
+                </value>
+                <value>
+                    <fullName>Transportation</fullName>
+                    <default>false</default>
+                    <label>Transportation</label>
+                </value>
+                <value>
+                    <fullName>Wire Insulation</fullName>
+                    <default>false</default>
+                    <label>Wire Insulation</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Automotive</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Consumer Electronics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Displays</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Energy Storage</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Lighting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Medical / Healthcare</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Military</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Printing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>PV</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Semiconductor Material</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Telecommunications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Printing</controllingFieldValue>
+                <controllingFieldValue>DPVS</controllingFieldValue>
+                <controllingFieldValue>E&amp;C-Other</controllingFieldValue>
+                <controllingFieldValue>EKC</controllingFieldValue>
+                <controllingFieldValue>CPM</controllingFieldValue>
+                <controllingFieldValue>Enhancement</controllingFieldValue>
+                <controllingFieldValue>MCM</controllingFieldValue>
+                <controllingFieldValue>OLED Displays</controllingFieldValue>
+                <controllingFieldValue>Packaging Graphics</controllingFieldValue>
+                <controllingFieldValue>PVFM</controllingFieldValue>
+                <valueName>Transportation</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Market_Size_Annual__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amounts are USD.</inlineHelpText>
+        <label>Market Size Annual</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>&gt;$20MM</fullName>
+                    <default>false</default>
+                    <label>&gt;$20MM</label>
+                </value>
+                <value>
+                    <fullName>&gt;$5MM</fullName>
+                    <default>false</default>
+                    <label>&gt;$5MM</label>
+                </value>
+                <value>
+                    <fullName>&lt;$5MM</fullName>
+                    <default>false</default>
+                    <label>&lt;$5MM</label>
+                </value>
+                <value>
+                    <fullName>&gt; $ 250 MM</fullName>
+                    <default>false</default>
+                    <label>&gt; $ 250 MM</label>
+                </value>
+                <value>
+                    <fullName>$ 50-250 MM</fullName>
+                    <default>false</default>
+                    <label>$ 50-250 MM</label>
+                </value>
+                <value>
+                    <fullName>&lt; $ 50 MM</fullName>
+                    <default>false</default>
+                    <label>&lt; $ 50 MM</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Market_SubSegment__c</fullName>
+        <externalId>false</externalId>
+        <label>Market SubSegment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Market_Segment__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aero Wire</fullName>
+                    <default>false</default>
+                    <label>Aero Wire</label>
+                </value>
+                <value>
+                    <fullName>Auto HF Detection / Radar System</fullName>
+                    <default>false</default>
+                    <label>Auto HF Detection / Radar System</label>
+                </value>
+                <value>
+                    <fullName>Auto High Temp Sensor</fullName>
+                    <default>false</default>
+                    <label>Auto High Temp Sensor</label>
+                </value>
+                <value>
+                    <fullName>Auto Hybrid Control</fullName>
+                    <default>false</default>
+                    <label>Auto Hybrid Control</label>
+                </value>
+                <value>
+                    <fullName>CC Actuator</fullName>
+                    <default>false</default>
+                    <label>CC Actuator</label>
+                </value>
+                <value>
+                    <fullName>CC Multilayer</fullName>
+                    <default>false</default>
+                    <label>CC Multilayer</label>
+                </value>
+                <value>
+                    <fullName>Control</fullName>
+                    <default>false</default>
+                    <label>Control</label>
+                </value>
+                <value>
+                    <fullName>Defogger</fullName>
+                    <default>false</default>
+                    <label>Defogger</label>
+                </value>
+                <value>
+                    <fullName>Digital Camera</fullName>
+                    <default>false</default>
+                    <label>Digital Camera</label>
+                </value>
+                <value>
+                    <fullName>Electro Lum</fullName>
+                    <default>false</default>
+                    <label>Electro Lum</label>
+                </value>
+                <value>
+                    <fullName>Flex Printed Circuits (Kapton®)</fullName>
+                    <default>false</default>
+                    <label>Flex Printed Circuits (Kapton®)</label>
+                </value>
+                <value>
+                    <fullName>Fuel Cells</fullName>
+                    <default>false</default>
+                    <label>Fuel Cells</label>
+                </value>
+                <value>
+                    <fullName>Grid Connected Back Face</fullName>
+                    <default>false</default>
+                    <label>Grid Connected Back Face</label>
+                </value>
+                <value>
+                    <fullName>Grid Connected Front Face</fullName>
+                    <default>false</default>
+                    <label>Grid Connected Front Face</label>
+                </value>
+                <value>
+                    <fullName>Hard Disk Drives</fullName>
+                    <default>false</default>
+                    <label>Hard Disk Drives</label>
+                </value>
+                <value>
+                    <fullName>High End Computer</fullName>
+                    <default>false</default>
+                    <label>High End Computer</label>
+                </value>
+                <value>
+                    <fullName>High Performance Wire</fullName>
+                    <default>false</default>
+                    <label>High Performance Wire</label>
+                </value>
+                <value>
+                    <fullName>High Reliability HF - Others</fullName>
+                    <default>false</default>
+                    <label>High Reliability HF - Others</label>
+                </value>
+                <value>
+                    <fullName>High Reliability LF - Others</fullName>
+                    <default>false</default>
+                    <label>High Reliability LF - Others</label>
+                </value>
+                <value>
+                    <fullName>High Speed Digital</fullName>
+                    <default>false</default>
+                    <label>High Speed Digital</label>
+                </value>
+                <value>
+                    <fullName>Industrial/Commercial</fullName>
+                    <default>false</default>
+                    <label>Industrial/Commercial</label>
+                </value>
+                <value>
+                    <fullName>Liquid Crystal Modules</fullName>
+                    <default>false</default>
+                    <label>Liquid Crystal Modules</label>
+                </value>
+                <value>
+                    <fullName>Loud Speaker Components</fullName>
+                    <default>false</default>
+                    <label>Loud Speaker Components</label>
+                </value>
+                <value>
+                    <fullName>Magnet Wire</fullName>
+                    <default>false</default>
+                    <label>Magnet Wire</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Medical Sensors</fullName>
+                    <default>false</default>
+                    <label>Medical Sensors</label>
+                </value>
+                <value>
+                    <fullName>Membrane Touch Switches</fullName>
+                    <default>false</default>
+                    <label>Membrane Touch Switches</label>
+                </value>
+                <value>
+                    <fullName>Mobile Phones</fullName>
+                    <default>false</default>
+                    <label>Mobile Phones</label>
+                </value>
+                <value>
+                    <fullName>Motor Insulation</fullName>
+                    <default>false</default>
+                    <label>Motor Insulation</label>
+                </value>
+                <value>
+                    <fullName>MP3/Personal Computer</fullName>
+                    <default>false</default>
+                    <label>MP3/Personal Computer</label>
+                </value>
+                <value>
+                    <fullName>Optical Cable</fullName>
+                    <default>false</default>
+                    <label>Optical Cable</label>
+                </value>
+                <value>
+                    <fullName>Other Specialty Film Segments</fullName>
+                    <default>false</default>
+                    <label>Other Specialty Film Segments</label>
+                </value>
+                <value>
+                    <fullName>Passenger Comfort</fullName>
+                    <default>false</default>
+                    <label>Passenger Comfort</label>
+                </value>
+                <value>
+                    <fullName>Photovoltaic</fullName>
+                    <default>false</default>
+                    <label>Photovoltaic</label>
+                </value>
+                <value>
+                    <fullName>Printing</fullName>
+                    <default>false</default>
+                    <label>Printing</label>
+                </value>
+                <value>
+                    <fullName>RF</fullName>
+                    <default>false</default>
+                    <label>RF</label>
+                </value>
+                <value>
+                    <fullName>Thermo-Electric</fullName>
+                    <default>false</default>
+                    <label>Thermo-Electric</label>
+                </value>
+                <value>
+                    <fullName>Transformers</fullName>
+                    <default>false</default>
+                    <label>Transformers</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Wire Insulation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Aero Wire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Auto HF Detection / Radar System</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Auto High Temp Sensor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Auto Hybrid Control</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>CC Actuator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>CC Multilayer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Control</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Defogger</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Consumer Electronics</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Digital Camera</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Electro Lum</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Consumer Electronics</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Flex Printed Circuits (Kapton®)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Fuel Cells</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Grid Connected Back Face</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Grid Connected Front Face</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Consumer Electronics</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Hard Disk Drives</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>High Reliability</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>High End Computer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Wire Insulation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>High Performance Wire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>High Reliability HF - Others</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>High Reliability LF - Others</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>Telecommunications</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>High Speed Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>High Reliability</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Industrial/Commercial</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Consumer Electronics</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Liquid Crystal Modules</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Consumer Electronics</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Loud Speaker Components</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Wire Insulation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Magnet Wire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>High Reliability</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Medical</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Medical Sensors</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Membrane Touch Switches</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Consumer Electronics</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Mobile Phones</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Wire Insulation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Motor Insulation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Consumer Electronics</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>MP3/Personal Computer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Wire Insulation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Optical Cable</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>High Reliability</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Other Specialty Film Segments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Transportation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Passenger Comfort</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Photovoltaic</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Photovoltaic</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>Telecommunications</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>RF</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Thermo-Electric</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PV Emerging</controllingFieldValue>
+                <controllingFieldValue>RC</controllingFieldValue>
+                <controllingFieldValue>THH</controllingFieldValue>
+                <controllingFieldValue>Wire Insulation</controllingFieldValue>
+                <controllingFieldValue>MTS</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Automotive</controllingFieldValue>
+                <controllingFieldValue>Bio Metal</controllingFieldValue>
+                <controllingFieldValue>Bio Other</controllingFieldValue>
+                <controllingFieldValue>CC Actuator</controllingFieldValue>
+                <controllingFieldValue>CC Tag</controllingFieldValue>
+                <controllingFieldValue>Defogger</controllingFieldValue>
+                <controllingFieldValue>Displays</controllingFieldValue>
+                <controllingFieldValue>Emerging Others</controllingFieldValue>
+                <controllingFieldValue>PV Ag</controllingFieldValue>
+                <controllingFieldValue>PV Al</controllingFieldValue>
+                <valueName>Transformers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Printing</controllingFieldValue>
+                <valueName>Printing</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Competitors__c</fullName>
+        <description>Estimated number of competitors for this new market or product development</description>
+        <externalId>false</externalId>
+        <label>Number of Competitors</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>&lt;2</fullName>
+                    <default>false</default>
+                    <label>&lt;2</label>
+                </value>
+                <value>
+                    <fullName>2-4</fullName>
+                    <default>false</default>
+                    <label>2-4</label>
+                </value>
+                <value>
+                    <fullName>&gt;5</fullName>
+                    <default>false</default>
+                    <label>&gt;5</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Operational_Fit__c</fullName>
+        <externalId>false</externalId>
+        <label>Operational Fit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capabilities exist</fullName>
+                    <default>false</default>
+                    <label>Capabilities exist</label>
+                </value>
+                <value>
+                    <fullName>Some new capabilities needed</fullName>
+                    <default>false</default>
+                    <label>Some new capabilities needed</label>
+                </value>
+                <value>
+                    <fullName>Significant capability gap</fullName>
+                    <default>false</default>
+                    <label>Significant capability gap</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Owning_Business__c</fullName>
+        <externalId>false</externalId>
+        <label>Owning Business</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Industrial Biosciences</fullName>
+                    <default>false</default>
+                    <label>Industrial Biosciences</label>
+                </value>
+                <value>
+                    <fullName>Building Innovations</fullName>
+                    <default>false</default>
+                    <label>Building Innovations</label>
+                </value>
+                <value>
+                    <fullName>Corporate</fullName>
+                    <default>false</default>
+                    <label>Corporate</label>
+                </value>
+                <value>
+                    <fullName>Crop Protection</fullName>
+                    <default>false</default>
+                    <label>Crop Protection</label>
+                </value>
+                <value>
+                    <fullName>DuPont Chemicals &amp; Fluoroproducts</fullName>
+                    <default>false</default>
+                    <label>DuPont Chemicals &amp; Fluoroproducts</label>
+                </value>
+                <value>
+                    <fullName>DuPont Protection Technologies</fullName>
+                    <default>false</default>
+                    <label>DuPont Protection Technologies</label>
+                </value>
+                <value>
+                    <fullName>Electronics &amp; Communications</fullName>
+                    <default>false</default>
+                    <label>Electronics &amp; Communications</label>
+                </value>
+                <value>
+                    <fullName>Nutrition &amp; Health</fullName>
+                    <default>false</default>
+                    <label>Nutrition &amp; Health</label>
+                </value>
+                <value>
+                    <fullName>Packaging &amp; Industrial Polymers</fullName>
+                    <default>false</default>
+                    <label>Packaging &amp; Industrial Polymers</label>
+                </value>
+                <value>
+                    <fullName>Performance Polymers</fullName>
+                    <default>false</default>
+                    <label>Performance Polymers</label>
+                </value>
+                <value>
+                    <fullName>Titanium Technologies</fullName>
+                    <default>false</default>
+                    <label>Titanium Technologies</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Owning Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CORP-Innovation Center</fullName>
+                    <default>false</default>
+                    <label>CORP-Innovation Center</label>
+                </value>
+                <value>
+                    <fullName>CPM</fullName>
+                    <default>false</default>
+                    <label>CPM</label>
+                </value>
+                <value>
+                    <fullName>Digital Printing</fullName>
+                    <default>false</default>
+                    <label>Digital Printing</label>
+                </value>
+                <value>
+                    <fullName>DPP-Poly</fullName>
+                    <default>false</default>
+                    <label>DPP-Poly</label>
+                </value>
+                <value>
+                    <fullName>DPVS</fullName>
+                    <default>false</default>
+                    <label>DPVS</label>
+                </value>
+                <value>
+                    <fullName>E&amp;C-Other</fullName>
+                    <default>false</default>
+                    <label>E&amp;C-Other</label>
+                </value>
+                <value>
+                    <fullName>EKC</fullName>
+                    <default>false</default>
+                    <label>EKC</label>
+                </value>
+                <value>
+                    <fullName>Enhancement</fullName>
+                    <default>false</default>
+                    <label>Enhancement</label>
+                </value>
+                <value>
+                    <fullName>MCM</fullName>
+                    <default>false</default>
+                    <label>MCM</label>
+                </value>
+                <value>
+                    <fullName>OLED Displays</fullName>
+                    <default>false</default>
+                    <label>OLED Displays</label>
+                </value>
+                <value>
+                    <fullName>Packaging Graphics</fullName>
+                    <default>false</default>
+                    <label>Packaging Graphics</label>
+                </value>
+                <value>
+                    <fullName>PVFM</fullName>
+                    <default>false</default>
+                    <label>PVFM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CORP-IC</fullName>
+                    <default>false</default>
+                    <label>CORP-IC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quadrant__c</fullName>
+        <externalId>false</externalId>
+        <label>Quadrant</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Q1 - Existing Application/Existing Technology</fullName>
+                    <default>false</default>
+                    <label>Q1 - Existing Application/Existing Technology</label>
+                </value>
+                <value>
+                    <fullName>Q2 - New Application/Existing Technology</fullName>
+                    <default>false</default>
+                    <label>Q2 - New Application/Existing Technology</label>
+                </value>
+                <value>
+                    <fullName>Q3 – New Application/New Technology</fullName>
+                    <default>false</default>
+                    <label>Q3 – New Application/New Technology</label>
+                </value>
+                <value>
+                    <fullName>Q4 – Existing Application/New Technology</fullName>
+                    <default>false</default>
+                    <label>Q4 – Existing Application/New Technology</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Related_Competency__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Competency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Polyimide Chemistry</fullName>
+                    <default>false</default>
+                    <label>Polyimide Chemistry</label>
+                </value>
+                <value>
+                    <fullName>Filler for polyimide, epoxy &amp; acrylic</fullName>
+                    <default>false</default>
+                    <label>Filler for polyimide, epoxy &amp; acrylic</label>
+                </value>
+                <value>
+                    <fullName>Coating technology</fullName>
+                    <default>false</default>
+                    <label>Coating technology</label>
+                </value>
+                <value>
+                    <fullName>Epoxy formulation</fullName>
+                    <default>false</default>
+                    <label>Epoxy formulation</label>
+                </value>
+                <value>
+                    <fullName>Multi-layer polyimide film capability</fullName>
+                    <default>false</default>
+                    <label>Multi-layer polyimide film capability</label>
+                </value>
+                <value>
+                    <fullName>Acrylic chemistry</fullName>
+                    <default>false</default>
+                    <label>Acrylic chemistry</label>
+                </value>
+                <value>
+                    <fullName>Resist formulation</fullName>
+                    <default>false</default>
+                    <label>Resist formulation</label>
+                </value>
+                <value>
+                    <fullName>Photochemistry</fullName>
+                    <default>false</default>
+                    <label>Photochemistry</label>
+                </value>
+                <value>
+                    <fullName>Teflon lamination capability</fullName>
+                    <default>false</default>
+                    <label>Teflon lamination capability</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lead from which this Business Development or Innovation Idea is Generated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lead from which this Business Development or Innovation Idea is Generated</inlineHelpText>
+        <label>Related Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Business Development Ideas</relationshipLabel>
+        <relationshipName>BusinessDevelopmentIdeas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_User_Type__c</fullName>
+        <description>Role or Type of user related to this Future Business Development</description>
+        <externalId>false</externalId>
+        <label>Related User Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BU Project Owner</fullName>
+                    <default>false</default>
+                    <label>BU Project Owner</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Relevant_Offering_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Relevant Offering Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Relevant_Offerings_Technology__c</fullName>
+        <externalId>false</externalId>
+        <label>Relevant Offerings / Technology</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sheet &amp; Specialty Laminates (Pyralux®)</fullName>
+                    <default>false</default>
+                    <label>Sheet &amp; Specialty Laminates (Pyralux®)</label>
+                </value>
+                <value>
+                    <fullName>Roll Laminates (Pyralux® AC, AK, AT, AX)</fullName>
+                    <default>false</default>
+                    <label>Roll Laminates (Pyralux® AC, AK, AT, AX)</label>
+                </value>
+                <value>
+                    <fullName>Coverlays (Pyralux®, Nikaflex®)</fullName>
+                    <default>false</default>
+                    <label>Coverlays (Pyralux®, Nikaflex®)</label>
+                </value>
+                <value>
+                    <fullName>Dry Film Resists (Riston®, Vacrel®)</fullName>
+                    <default>false</default>
+                    <label>Dry Film Resists (Riston®, Vacrel®)</label>
+                </value>
+                <value>
+                    <fullName>Phototools (Cronavue®, Idealine®)</fullName>
+                    <default>false</default>
+                    <label>Phototools (Cronavue®, Idealine®)</label>
+                </value>
+                <value>
+                    <fullName>Fluoro Laminates (Kapton® F Series)</fullName>
+                    <default>false</default>
+                    <label>Fluoro Laminates (Kapton® F Series)</label>
+                </value>
+                <value>
+                    <fullName>Polyimide Films (All other Kapton®)</fullName>
+                    <default>false</default>
+                    <label>Polyimide Films (All other Kapton®)</label>
+                </value>
+                <value>
+                    <fullName>WLP</fullName>
+                    <default>false</default>
+                    <label>WLP</label>
+                </value>
+                <value>
+                    <fullName>Coolam LX, LC</fullName>
+                    <default>false</default>
+                    <label>Coolam LX, LC</label>
+                </value>
+                <value>
+                    <fullName>Other (Provide detail in Comment Field)</fullName>
+                    <default>false</default>
+                    <label>Other (Provide detail in Comment Field)</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Revenue_Year_1__c</fullName>
+        <description>The amount of revenue for the first year of the project (or related opportunity).</description>
+        <externalId>false</externalId>
+        <label>Revenue Year 1</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Year_2__c</fullName>
+        <description>The amount of revenue for the second year of the project (or related opportunity).</description>
+        <externalId>false</externalId>
+        <label>Revenue Year 2</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Year_3__c</fullName>
+        <description>The amount of revenue for the third year of the project (or related opportunity).</description>
+        <externalId>false</externalId>
+        <label>Revenue Year 3</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Year_4__c</fullName>
+        <description>The amount of revenue for the fourth year of the project (or related opportunity).</description>
+        <externalId>false</externalId>
+        <label>Revenue Year 4</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Research_Needed__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Research Needed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer lead passive</fullName>
+                    <default>false</default>
+                    <label>Customer lead passive</label>
+                </value>
+                <value>
+                    <fullName>Customer lead active</fullName>
+                    <default>false</default>
+                    <label>Customer lead active</label>
+                </value>
+                <value>
+                    <fullName>Brainstorming</fullName>
+                    <default>false</default>
+                    <label>Brainstorming</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stage_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage Change Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Received Unscreened idea</fullName>
+                    <default>false</default>
+                    <label>Received Unscreened idea</label>
+                </value>
+                <value>
+                    <fullName>Assigned to Sales</fullName>
+                    <default>false</default>
+                    <label>Assigned to Sales</label>
+                </value>
+                <value>
+                    <fullName>Assigned to Marketing</fullName>
+                    <default>false</default>
+                    <label>Assigned to Marketing</label>
+                </value>
+                <value>
+                    <fullName>Under New Business Development review</fullName>
+                    <default>false</default>
+                    <label>Under New Business Development review</label>
+                </value>
+                <value>
+                    <fullName>Under Rapid Market Assessment</fullName>
+                    <default>false</default>
+                    <label>Under Rapid Market Assessment</label>
+                </value>
+                <value>
+                    <fullName>Completed RMA Transferred to MDLs</fullName>
+                    <default>false</default>
+                    <label>Completed RMA Transferred to MDLs</label>
+                </value>
+                <value>
+                    <fullName>Forwarded to other BUs</fullName>
+                    <default>false</default>
+                    <label>Forwarded to other BUs</label>
+                </value>
+                <value>
+                    <fullName>Screened prioritized unvalidated idea</fullName>
+                    <default>false</default>
+                    <label>Screened prioritized unvalidated idea</label>
+                </value>
+                <value>
+                    <fullName>Validated prioritized unfunded idea</fullName>
+                    <default>false</default>
+                    <label>Validated prioritized unfunded idea</label>
+                </value>
+                <value>
+                    <fullName>Project initiated</fullName>
+                    <default>false</default>
+                    <label>Project initiated</label>
+                </value>
+                <value>
+                    <fullName>Drop</fullName>
+                    <default>false</default>
+                    <label>Drop</label>
+                </value>
+                <value>
+                    <fullName>Archived</fullName>
+                    <default>false</default>
+                    <label>Archived</label>
+                </value>
+                <value>
+                    <fullName>Project Commercialized</fullName>
+                    <default>false</default>
+                    <label>Project Commercialized</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <default>false</default>
+                    <label>Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Behind Schedule</fullName>
+                    <default>false</default>
+                    <label>Behind Schedule</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Lost</fullName>
+                    <default>false</default>
+                    <label>Lost</label>
+                </value>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Won</fullName>
+                    <default>false</default>
+                    <label>Won</label>
+                </value>
+                <value>
+                    <fullName>Waiting</fullName>
+                    <default>false</default>
+                    <label>Waiting</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Strategy_Fit__c</fullName>
+        <externalId>false</externalId>
+        <label>Strategy Fit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strong</fullName>
+                    <default>false</default>
+                    <label>Strong</label>
+                </value>
+                <value>
+                    <fullName>Modest</fullName>
+                    <default>false</default>
+                    <label>Modest</label>
+                </value>
+                <value>
+                    <fullName>Weak</fullName>
+                    <default>false</default>
+                    <label>Weak</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submitted_by__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted by</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitter_Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter your external email address (ex: user@usa.dupont.com)</inlineHelpText>
+        <label>Submitter Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitter_Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitter Function</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application Technical</fullName>
+                    <default>false</default>
+                    <label>Application Technical</label>
+                </value>
+                <value>
+                    <fullName>Business Development</fullName>
+                    <default>false</default>
+                    <label>Business Development</label>
+                </value>
+                <value>
+                    <fullName>CR&amp;D</fullName>
+                    <default>false</default>
+                    <label>CR&amp;D</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>Product Management</fullName>
+                    <default>false</default>
+                    <label>Product Management</label>
+                </value>
+                <value>
+                    <fullName>R&amp;D</fullName>
+                    <default>false</default>
+                    <label>R&amp;D</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Supply Chain</fullName>
+                    <default>false</default>
+                    <label>Supply Chain</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submitting_Organization__c</fullName>
+        <description>Organization of the submitting person.</description>
+        <externalId>false</externalId>
+        <label>Submitting Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CPM</fullName>
+                    <default>false</default>
+                    <label>CPM</label>
+                </value>
+                <value>
+                    <fullName>CR&amp;D</fullName>
+                    <default>false</default>
+                    <label>CR&amp;D</label>
+                </value>
+                <value>
+                    <fullName>DEP</fullName>
+                    <default>false</default>
+                    <label>DEP</label>
+                </value>
+                <value>
+                    <fullName>Digital Printing</fullName>
+                    <default>false</default>
+                    <label>Digital Printing</label>
+                </value>
+                <value>
+                    <fullName>DPVS</fullName>
+                    <default>false</default>
+                    <label>DPVS</label>
+                </value>
+                <value>
+                    <fullName>E&amp;C China</fullName>
+                    <default>false</default>
+                    <label>E&amp;C China</label>
+                </value>
+                <value>
+                    <fullName>E&amp;C - other</fullName>
+                    <default>false</default>
+                    <label>E&amp;C - other</label>
+                </value>
+                <value>
+                    <fullName>E&amp;C Taiwan</fullName>
+                    <default>false</default>
+                    <label>E&amp;C Taiwan</label>
+                </value>
+                <value>
+                    <fullName>EKC</fullName>
+                    <default>false</default>
+                    <label>EKC</label>
+                </value>
+                <value>
+                    <fullName>MCM</fullName>
+                    <default>false</default>
+                    <label>MCM</label>
+                </value>
+                <value>
+                    <fullName>Packaging Graphics</fullName>
+                    <default>false</default>
+                    <label>Packaging Graphics</label>
+                </value>
+                <value>
+                    <fullName>PVFM</fullName>
+                    <default>false</default>
+                    <label>PVFM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Technology_Capability__c</fullName>
+        <externalId>false</externalId>
+        <label>Technology Capability</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capabilities exist</fullName>
+                    <default>false</default>
+                    <label>Capabilities exist</label>
+                </value>
+                <value>
+                    <fullName>Some new capabilities needed</fullName>
+                    <default>false</default>
+                    <label>Some new capabilities needed</label>
+                </value>
+                <value>
+                    <fullName>Significant capability gap</fullName>
+                    <default>false</default>
+                    <label>Significant capability gap</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Timing_to_Market__c</fullName>
+        <externalId>false</externalId>
+        <label>Timing to Market</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0-1 Year</fullName>
+                    <default>false</default>
+                    <label>0-1 Year</label>
+                </value>
+                <value>
+                    <fullName>1-3 Years</fullName>
+                    <default>false</default>
+                    <label>1-3 Years</label>
+                </value>
+                <value>
+                    <fullName>3-5 Years</fullName>
+                    <default>false</default>
+                    <label>3-5 Years</label>
+                </value>
+                <value>
+                    <fullName>5+ Years</fullName>
+                    <default>false</default>
+                    <label>5+ Years</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unmet_Needs_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Unmet Needs Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Unmet_Needs__c</fullName>
+        <externalId>false</externalId>
+        <label>Unmet Needs</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Significant and known by market</fullName>
+                    <default>false</default>
+                    <label>Significant and known by market</label>
+                </value>
+                <value>
+                    <fullName>Require work to create awareness</fullName>
+                    <default>false</default>
+                    <label>Require work to create awareness</label>
+                </value>
+                <value>
+                    <fullName>Not obvious and little motivation exists</fullName>
+                    <default>false</default>
+                    <label>Not obvious and little motivation exists</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Value_Proposition__c</fullName>
+        <externalId>false</externalId>
+        <label>Value Proposition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>fCompany__c</fullName>
+        <description>Reference to Lead.Company (this is the Company working with DuPont on this Innovation or Future Business Development)</description>
+        <externalId>false</externalId>
+        <formula>Related_Lead__r.Company</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Company involved in this Future Business Development.</inlineHelpText>
+        <label>Company Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fIndustry__c</fullName>
+        <description>Industry segment for this project or idea (formula displays value captured in related Lead)</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Related_Lead__r.Industry)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Industry captured in related Lead</inlineHelpText>
+        <label>Industry</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fRating__c</fullName>
+        <description>Rating from the Lead related to this development idea or project.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Related_Lead__r.Rating)</formula>
+        <inlineHelpText>Rating from the Lead related to this development idea or project.</inlineHelpText>
+        <label>Rating</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Future Business Development</label>
+    <nameField>
+        <displayFormat>FBD-{000000}</displayFormat>
+        <label>Future Business Development ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Future Business Developments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

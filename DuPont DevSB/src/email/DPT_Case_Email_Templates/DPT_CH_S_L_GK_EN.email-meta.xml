@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Request for S&amp;L creation of NC Complaint Entry for Genk (GK)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>DPT CH S&amp;L GK EN</name>
+    <style>formalLetter</style>
+    <subject>NC Entry Request: DPT EMEA GK (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear colleague,
+
+Please log a NC entry for the complaint below and provide us your NC complaint reference in return. Upon completion of your investigation please provide your resolution outcome by replying to this message.
+
+Kind regards,
+{!Case.CreatedBy} 
+
+Title: {!Case.Subject}
+BI Complaint ID: {!Case.CaseNumber} / {!Case.Link}
+Originator: {!Case.OwnerFullName}
+Classification: {!Case.Severity__c}
+Customer: {!Case.Account} / {!Case.AccountId}
+Contact: {!Case.Contact}
+
+Customer Ship To: [please provide]
+Ship Point: {!Case.Ship_Point__c}
+Carrier name: {!Case.Carrier_Name__c}
+Carrier ID: {!Case.Carrier_NameId__c}
+Carrier Ref ID: {!Case.Carrier_Reference__c}Order Ref:{!Case.Order_Number__c}Delivery: {!Case.Delivery__c}
+
+Additional info:
+{!Case.Description}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

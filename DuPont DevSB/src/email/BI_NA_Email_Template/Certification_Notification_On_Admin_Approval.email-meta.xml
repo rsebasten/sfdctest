@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Certification-Notification On Admin Approval</name>
+    <style>none</style>
+    <subject>Notification To The Candidate</subject>
+    <textOnly>{!Qualification__c.Account_Name__c},
+
+Congratulations! You have successfully completed all requirements to achieve certification as a &apos;{!Qualification__c.Certified_In_Area__c}&apos;. You will receive another email with the agreement. Please review and sign the agreement to finalize the certification. Thank you.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

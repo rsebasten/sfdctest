@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email used to send a notice to the SFAR business approvers that there is a pending request to be approved.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>SFAR Business Approval Requested</name>
+    <style>none</style>
+    <subject>SFDC PS Access Request Business Approval needed - {!SFDC_Access_Request__c.Program__c} - {!SFDC_Access_Request__c.User_Region__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

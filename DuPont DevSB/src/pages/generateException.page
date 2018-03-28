@@ -1,0 +1,23 @@
+<apex:page controller="ctrlGenerateExceptions">
+ <apex:form >
+        <apex:pageBlock title="Throw Exception">
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Throw Exception" action="{!throwException}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                 <table>
+                      <tr>
+                          <td>   
+                              <apex:selectList required="true" multiselect="false" size="1" label="Exception Type:"  value="{!selectedValue}">
+                                  <apex:selectOptions value="{!Items}"/>
+                              </apex:selectList>
+                          </td>
+                      </tr>
+                  </table>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+ 
+</apex:page>

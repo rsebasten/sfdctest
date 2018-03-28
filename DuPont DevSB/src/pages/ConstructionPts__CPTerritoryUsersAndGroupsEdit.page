@@ -1,0 +1,179 @@
+<apex:page standardController="ConstructionPts__CPTerritory__c" extensions="ConstructionPts.CPTerritoryUsers,ConstructionPts.CPTerritoryGeography">
+
+
+<script language="javascript">
+function AddItems(divAvail, divSel){
+    var divAvailItems = document.getElementById(divAvail);
+    var divSelItems = document.getElementById(divSel);
+    if(divAvailItems && divSelItems){
+        var selAvailable = divAvailItems.childNodes[0];
+        var selSelected = divSelItems.childNodes[0];
+        
+        if(selAvailable && selSelected){
+            for(var i=0; i<selAvailable.options.length; i++){
+                if(selAvailable.options[i].selected){
+                    selSelected.options[selSelected.options.length] = new Option(selAvailable.options[i].text, selAvailable.options[i].value);
+                }
+            }
+            var ListLen = selAvailable.options.length;
+            for(var z=0; z<ListLen; z++){
+                if(selAvailable.options[z]){
+                    if(selAvailable.options[z].selected){                       
+                        selAvailable.remove(z);
+                        z = z - 1;
+                    }       
+                }               
+            }
+        }
+    }
+}
+
+function RemoveItems(divAvail, divSel){
+    var divAvailItems = document.getElementById(divAvail);
+    var divSelItems = document.getElementById(divSel);
+    if(divAvailItems && divSelItems){
+        var selAvailable = divAvailItems.childNodes[0];
+        var selSelected = divSelItems.childNodes[0];
+        
+        if(selAvailable && selSelected){
+            for(var i=0; i<selSelected.options.length; i++){
+                if(selSelected.options[i].selected){
+                    selAvailable.options[selAvailable.options.length] = new Option(selSelected.options[i].text, selSelected.options[i].value);
+                }
+            }
+            var ListLen = selSelected.options.length;
+            for(var z=0; z<ListLen; z++){
+                if(selSelected.options[z]){
+                    if(selSelected.options[z].selected){                        
+                        selSelected.remove(z);
+                        z = z - 1;
+                    }       
+                }               
+            }
+        }
+    }
+}
+
+function doSave(){
+    var divSelUsers = document.getElementById("divSelUsers");
+    var divSelGroups = document.getElementById("divSelGroups");
+    var GroupIds = "";
+    var UserIds = "";
+    if(divSelUsers && divSelGroups){
+        var selSelectedUsers = divSelUsers.childNodes[0];
+        var selSelectedGroups = divSelGroups.childNodes[0];
+        if(selSelectedUsers.options.length > 0){            
+            for(var i=0; i<selSelectedUsers.length; i++){
+                UserIds = UserIds + "'" + selSelectedUsers.options[i].value + "',";
+            }
+        }
+        if(selSelectedGroups.options.length > 0){ 
+            for(var z=0; z<selSelectedGroups.length; z++){
+                GroupIds = GroupIds + "'" + selSelectedGroups.options[z].value + "',";
+            }
+        }
+    }
+       
+       if(UserIds.length > 0){
+            UserIds = UserIds.substring(0, UserIds.length-1);
+       } else {
+            UserIds = '""';
+       } 
+       if(GroupIds.length > 0){
+             GroupIds = GroupIds.substring(0, GroupIds.length-1);
+       }else {
+            GroupIds = "''";
+        }        
+     Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryGeography.SaveUsersAndGroups}', '{!CASESAFEID(id)}', UserIds, GroupIds, saveCallBack);                        
+}   
+     function doGoBack(){
+        var terrId = '{!CASESAFEID(id)}';        
+        var currUrl = window.location.href; 
+        currUrl = currUrl.toLowerCase();  
+        var backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + '/apex/CPTerritoryDetail?id=' + terrId;    
+        if (sforce.console.isInConsole()){                
+              backUrl = backUrl + '&isdtp=vw';
+         }        
+        window.location = backUrl;
+    }
+
+function saveCallBack(sReturn,event){
+    var currUrl = window.location.href; 
+    currUrl = currUrl.toLowerCase();    
+    var backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + '/apex/CPTerritoryDetail?id=' + sReturn;  
+    if (sforce.console.isInConsole()){                
+              backUrl = backUrl + '&isdtp=vw';
+    }    
+    window.location = backUrl;
+}
+
+</script>
+
+<c:CPHeader title="CP Territory" subtitle="{!ConstructionPts__CPTerritory__c.Name} - Users and Groups" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" ShowSubTitle="true" /> 
+
+<br/>
+
+<apex:form >
+&lt;&lt;<apex:commandLink onclick="doGoBack(); return false;" value="Back to Detail: {!ConstructionPts__CPTerritory__c.Name}" id="lnkGoBack"/>
+<br/><br/>
+<apex:pageBlock >
+<table cellpadding="2" cellspacing="2">
+    <tr>
+        <td colspan="4" align="center">
+            <apex:commandButton id="btnSave" onclick="doSave(); return false;" value="Save" style="width:50px" />
+            <apex:commandButton id="btnCancel" onclick="doGoBack(); return false;" value="Cancel" style="width:50px"/> 
+        </td>
+    </tr>
+
+    <tr>
+        <td nowrap="true"><b>CP Territory Users</b></td>        
+        <td>
+            <div id="divAvailUsers">        
+                <apex:selectList size="10" title="CP Territory User" multiselect="true" id="selAvailableUsers" style="width: 180px">
+                    <apex:selectOptions value="{!AvailableUsers}" />
+                </apex:selectList>
+            </div>
+        </td>
+        <td valign="middle">
+            <apex:commandButton value=" Add >>" onclick="AddItems('divAvailUsers','divSelUsers'); return false;" style="width:70px"/>
+            <br/>
+            <apex:commandButton value="<< Remove" onclick="RemoveItems('divAvailUsers','divSelUsers'); return false;" style="width:70px"/>
+        </td>
+        <td>
+            <div id="divSelUsers">
+                <apex:selectList size="10" title="" multiselect="true" id="selSelectedUsers" style="width: 180px">
+                    <apex:selectOptions value="{!SelectedUsers}" />
+                </apex:selectList>
+            </div>
+        </td>   
+    </tr>
+    <tr>
+        <td nowrap="true"><b>CP Territory Groups</b></td>
+        <td>
+            <div id="divAvailGroups">       
+                <apex:selectList size="10" title="CP Territory Group" multiselect="true" id="selAvailableGroups" style="width: 180px">
+                    <apex:selectOptions value="{!AvailableGroups}" />
+                </apex:selectList>
+            </div>
+        </td>
+        <td valign="middle">
+            <apex:commandButton value=" Add >>" onclick="AddItems('divAvailGroups','divSelGroups'); return false;" style="width:70px"/>
+            <br/>
+            <apex:commandButton value="<< Remove" onclick="RemoveItems('divAvailGroups','divSelGroups'); return false;" style="width:70px"/>
+        </td>
+        <td>
+            <div id="divSelGroups">
+                <apex:selectList size="10" title="" multiselect="true" id="selSelectedGroups" style="width: 180px">
+                    <apex:selectOptions value="{!SelectedGroups}" />
+                </apex:selectList>
+            </div>
+        </td>   
+    </tr>
+</table>            
+ </apex:pageBlock>               
+  <br/>
+  <c:CPFooter ShowMHCInfo="false" ShowMHCLogo="false"/>
+                    
+</apex:form>
+</apex:page>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DemandGoal</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DemandGoals</value>
+    </caseValues>
+    <fields>
+        <help><!-- Base Date --></help>
+        <label><!-- Base Date --></label>
+        <name>Base_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of Business associated with goal --></help>
+        <label><!-- Business --></label>
+        <name>Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goal Period --></label>
+        <name>Goal_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- To link Demand Goals to Demand --></help>
+        <label><!-- Master Detail for Demand --></label>
+        <name>MDDemand__c</name>
+        <relationshipLabel><!-- DemandGoals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owning Organization --></label>
+        <name>Owning_Organization__c</name>
+        <picklistValues>
+            <masterLabel>BI-Env</masterLabel>
+            <translation><!-- BI-Env --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf</masterLabel>
+            <translation><!-- BI-Surf --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total Quantity Goal --></help>
+        <label><!-- Quantity Goal --></label>
+        <name>Quantity_Goal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Revenue Goal --></help>
+        <label><!-- Revenue Goal --></label>
+        <name>Revenue_Goal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

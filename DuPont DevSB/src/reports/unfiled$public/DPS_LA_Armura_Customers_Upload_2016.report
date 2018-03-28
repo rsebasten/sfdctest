@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Id</field>
+    </columns>
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$fPrivacy_Notification_Status__c</field>
+    </columns>
+    <columns>
+        <field>Lead.CampaignMembers$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Lead_Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Brazil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.CampaignMembers$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Armura Customers Upload 2016</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>DPS LA Armura Customers Upload 2016</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_ot_without_Campaign_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

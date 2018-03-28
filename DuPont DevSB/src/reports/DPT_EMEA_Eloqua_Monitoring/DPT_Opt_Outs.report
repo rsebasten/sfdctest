@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CampaignMember.fEmail__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_ID</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Opt Out,Opt-Out</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CampaignMember.fEmail__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CampaignMember.fEmail__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>x@x</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>DPT Opt-Outs</name>
+    <params>
+        <name>scopeid</name>
+        <value>000000000000000</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

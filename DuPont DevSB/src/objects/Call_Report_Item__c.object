@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Call Report Items are detailed information belonging to a Call Report, for example Technical Service details.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Call_Report__c</fullName>
+        <description>Call Report related to this Call Report Item</description>
+        <externalId>false</externalId>
+        <label>Call Report</label>
+        <referenceTo>Call_Report__c</referenceTo>
+        <relationshipLabel>Call Report Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Completion date of the item</inlineHelpText>
+        <label>Completion Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Equipment_Model__c</fullName>
+        <description>(11/6/2017) - Removed Equipment__c reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Equipment Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Equipment_Serial_Number__c</fullName>
+        <description>(11/6/2017) - Removed Equipment__c reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Equipment Serial Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HasAttachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Attachments are Included in this report item when checked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A check indicates attachments are included</inlineHelpText>
+        <label>Has Attachment(s)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Level_5__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.Product_L5__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Level 5</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_6__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.Product_L6__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Level 6</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_7__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.Product_L7__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Level 7</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_8__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.Product_L8__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Level 8</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Call Report Items</relationshipLabel>
+        <relationshipName>R00N30000002SXppEAG</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit of Measure</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Acre</fullName>
+                    <default>false</default>
+                    <label>Acre</label>
+                </value>
+                <value>
+                    <fullName>Cubic meter</fullName>
+                    <default>false</default>
+                    <label>Cubic meter</label>
+                </value>
+                <value>
+                    <fullName>Day</fullName>
+                    <default>false</default>
+                    <label>Day</label>
+                </value>
+                <value>
+                    <fullName>each</fullName>
+                    <default>false</default>
+                    <label>each</label>
+                </value>
+                <value>
+                    <fullName>Gallon UK</fullName>
+                    <default>false</default>
+                    <label>Gallon UK</label>
+                </value>
+                <value>
+                    <fullName>Gallon US</fullName>
+                    <default>false</default>
+                    <label>Gallon US</label>
+                </value>
+                <value>
+                    <fullName>Gram</fullName>
+                    <default>false</default>
+                    <label>Gram</label>
+                </value>
+                <value>
+                    <fullName>Hectare</fullName>
+                    <default>false</default>
+                    <label>Hectare</label>
+                </value>
+                <value>
+                    <fullName>Hour</fullName>
+                    <default>false</default>
+                    <label>Hour</label>
+                </value>
+                <value>
+                    <fullName>Kilogram</fullName>
+                    <default>false</default>
+                    <label>Kilogram</label>
+                </value>
+                <value>
+                    <fullName>Liter</fullName>
+                    <default>false</default>
+                    <label>Liter</label>
+                </value>
+                <value>
+                    <fullName>Pair</fullName>
+                    <default>false</default>
+                    <label>Pair</label>
+                </value>
+                <value>
+                    <fullName>Piece</fullName>
+                    <default>false</default>
+                    <label>Piece</label>
+                </value>
+                <value>
+                    <fullName>Pound</fullName>
+                    <default>false</default>
+                    <label>Pound</label>
+                </value>
+                <value>
+                    <fullName>Square foot</fullName>
+                    <default>false</default>
+                    <label>Square foot</label>
+                </value>
+                <value>
+                    <fullName>Square inch</fullName>
+                    <default>false</default>
+                    <label>Square inch</label>
+                </value>
+                <value>
+                    <fullName>Square meter</fullName>
+                    <default>false</default>
+                    <label>Square meter</label>
+                </value>
+                <value>
+                    <fullName>Ton, metric</fullName>
+                    <default>false</default>
+                    <label>Ton, metric</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>fattachmentImage__c</fullName>
+        <description>Shows a paperclip to indicate an attachment is added</description>
+        <externalId>false</externalId>
+        <formula>IF(HasAttachment__c , IMAGE(&quot;/servlet/servlet.ImageServer?id=01530000001Kqaj&amp;oid=00Dc0000003kMTE&quot;,&quot;&quot;,16,16),null)</formula>
+        <inlineHelpText>Shows a paperclip to indicate an attachment is added</inlineHelpText>
+        <label>attch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Call Report Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>Call_Report__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>CRI-{000000}</displayFormat>
+        <label>Call Report Item</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Report Items</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>BI_NA_Call_Report_Item</fullName>
+        <active>true</active>
+        <label>BI-NA Call Report Item</label>
+        <picklistValues>
+            <picklist>Unit__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

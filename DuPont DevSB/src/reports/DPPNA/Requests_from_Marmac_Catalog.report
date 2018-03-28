@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Request_Item__c.Quantity__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Catalog_Item__c.Catalog_Item_Name__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Lead__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Contact__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Shipping_City__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Shipping_State__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Report of all request from Marmac catalog</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Catalog_Item__c.Catalog__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT-NA Garments Marmac</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Requests from Marmac Catalog</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Request__c$Request_Item__c@Request_Item__c.Catalog_Item__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>FK_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

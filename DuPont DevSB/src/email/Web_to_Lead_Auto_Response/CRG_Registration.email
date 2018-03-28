@@ -1,0 +1,16 @@
+<messaging:emailTemplate subject="DuPont CRG/KAG Link per your request" RelatedToType="Lead" recipientType="Lead">
+<messaging:plainTextEmailBody >
+Thank you for registering for the DuPont Chemical Resistance Guide (CRG) &amp; Kalrez(R) Application Guide (KAG). 
+Here is the link to access and bookmark the site:
+https://dupont.secure.force.com/CRGKAG_Home?t=<c:MemberPortalToken email="{! RelatedTo.email}" portal="CRG_Portal"/>
+
+Please contact DuPont if you have any questions. Thank you for using the DuPont Chemical Resistance Guides.
+</messaging:plainTextEmailBody>
+<messaging:htmlEmailBody >
+Thank you for registering for the DuPont Chemical Resistance Guide (CRG) &amp; Kalrez&reg; Application Guide (KAG).<br/>
+Here is the link to access and bookmark the site:<br/>
+https://dupont.secure.force.com/CRGKAG_Home?t=<c:MemberPortalToken email="{! RelatedTo.email}" portal="CRG_Portal"/><br/><br/>
+
+Please <a href="http://www.dupont.com/products-and-services/plastics-polymers-resins/parts-shapes/brands/kalrez-perfluoroelastomer/kalrez-contact-en-us.html?src=CRG_KalrezContact">contact</a> DuPont if you have any questions. Thank you for using the DuPont Chemical Resistance Guides.
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

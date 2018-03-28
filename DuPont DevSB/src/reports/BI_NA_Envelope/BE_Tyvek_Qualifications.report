@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.R00N30000001rblYEAQ__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.R00N30000001rblYEAQ__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Account.R00N30000001rblYEAQ__r$Owning_Org__c</field>
+    </columns>
+    <columns>
+        <field>Account.R00N30000001rblYEAQ__r$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Account.R00N30000001rblYEAQ__r$Stage__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Qualifications Created by Dist. Key User</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.R00N30000001rblYEAQ__r$Owning_Org__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>BI-Env</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$CreatedBy</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>pinon</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BE Tyvek Qualifications</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Qualifications_with_Qualification_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <endDate>2017-09-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.fId18__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Application_Type__c</field>
+    </columns>
+    <columns>
+        <field>FK_$External_Initiative__c.State__c</field>
+    </columns>
+    <columns>
+        <field>FK_$External_Initiative__c.County__c</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <description>BI Change Form: find MHC Tyvek opportunities to change ownership</description>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>End - Won,End - Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>don ogle,donald blevins,harry armenia,jose gastelum,leslie gentry,phyllis joseph</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Dodge Opportunities - odlum</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity@Opportunity.External_Initiative__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>FK_$External_Initiative__c.County__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

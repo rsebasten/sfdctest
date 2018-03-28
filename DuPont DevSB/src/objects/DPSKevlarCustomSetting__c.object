@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>KV_Campaing_Name__c</fullName>
+        <description>This field is used to assign the campaign name in the Kevlar Hose Selector Tool.</description>
+        <externalId>false</externalId>
+        <label>Campaing Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KV_Inner_Wall_Thickness_Lower_Limit__c</fullName>
+        <description>Used in validation rule to stop search criteria record to be created if inner wall thickness is less than this value. Used for DPS Kevlar Hose Selector App.</description>
+        <externalId>false</externalId>
+        <label>Inner Wall Thickness Lower Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KV_Inner_Wall_Thickness_Upper_Limit__c</fullName>
+        <description>This field contains the maximum value of Inner wall thickness</description>
+        <externalId>false</externalId>
+        <label>Inner Wall Thickness Upper Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KV_Knitting_angle_lower_limit__c</fullName>
+        <description>This field contains the minimum value of knitting angle</description>
+        <externalId>false</externalId>
+        <label>Knitting angle lower limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KV_Knitting_angle_upper_limit__c</fullName>
+        <description>This field contains the maximun allowed value for knitting angle</description>
+        <externalId>false</externalId>
+        <label>Knitting angle upper limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KV_PSI_to_Bar__c</fullName>
+        <description>This is the field used for converting PSI into Bar unit.</description>
+        <externalId>false</externalId>
+        <label>PSI to Bar</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KV_inch_to_mm__c</fullName>
+        <description>This field is used for conversion of inch to mm</description>
+        <externalId>false</externalId>
+        <label>inch to mm</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DPSKevlarCustomSetting</label>
+    <visibility>Public</visibility>
+</CustomObject>

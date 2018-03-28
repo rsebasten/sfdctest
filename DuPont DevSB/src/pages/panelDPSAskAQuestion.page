@@ -1,0 +1,220 @@
+<apex:page standardController="Lead" extensions="ctrlDPSAskaQuestion" showHeader="true" sidebar="false" id="mainPage" tabStyle="Ask_a_Question__tab">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/soap/ajax/37.0/connection.js"></script>
+
+    <head>
+        <style>    
+            .formStyle{
+                background-repeat: no-repeat;    
+                background-position: 30%; 
+                font-family: calibri;
+            }
+                
+            .inputfld {
+                font-size: 15px;
+                width: 200px !important;
+                height: 18px !important;
+                font-family: calibri;
+            }
+        
+            .picklist {
+                font-size: 15px;
+                width: 204px !important; 
+                height: 25px !important;
+                font-family: calibri;
+            }   
+    
+            .textarea {
+                font-size: 15px;
+                width: 200px !important;
+                height: 80px;
+                font-family: calibri;
+                resize: none;
+                text-align:left;
+                vertical-align:top;
+            }
+        
+            .label{
+                font-size: 15px;
+                padding-left:50px;
+                font-size:14px;
+                width:125px;
+                font-family: calibri;
+            }    
+        
+            .MainHeading{
+                font-size: 18px; 
+                font-weight: bold;    
+                align: left;
+                padding-left: 20px;
+                font-family: calibri;
+            }
+            
+            .privacystyle {
+                font-size: 15px; 
+                padding-left:20px;
+                text-align:justify;
+                font-family: calibri;
+            }
+            
+            .btnstyle{
+                width:150px;
+                height:25px;
+                font-size:15px;
+                font-family: calibri;
+            }
+            
+            .imgLogo{
+                height: 60px !important;
+                width: 100%
+            }
+        </style>
+    </head>
+    
+    <script>
+        function allnumericphone()
+        {  
+           var numbers = /^[0-9]+$/;
+           var phonevalue = document.getElementById("mainPage:mainForm:mainPB:phone").value;
+           if(!phonevalue.match(numbers)){
+               alert('Please Enter a Valid Phone Number');
+               document.getElementById("mainPage:mainForm:mainPB:phone").value = "";
+           }
+        }
+        
+        function allnumericmobile()
+        {  
+           var numbers = /^[0-9]+$/;
+           var phonevalue = document.getElementById("mainPage:mainForm:mainPB:mobile").value;
+           if(!phonevalue.match(numbers)){
+               alert('Please Enter a Valid Mobile Number');
+               document.getElementById("mainPage:mainForm:mainPB:mobile").value = "";
+           }
+        }
+        
+        function emailvalidation()
+        {  
+           var numbers = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+           var emailvalue = document.getElementById("mainPage:mainForm:mainPB:email").value;
+           if(!emailvalue.match(numbers)){
+               alert('Please Enter a Valid Email');
+               document.getElementById("mainPage:mainForm:mainPB:email").value = "";
+           }
+        }
+    </script>
+    
+   
+    <apex:form id="mainForm">
+        <div id="errorId">
+            <apex:pageMessages id="ShowMsg"/>
+        </div><br/>
+        <apex:pageBlock id="mainPB">
+            <div class="MainHeading">&nbsp;&nbsp;&nbsp;Ask a Question</div><br/>
+            <table>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="First Name"/> </td>
+                    <td> <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                                <apex:inputText value="{!txtfName}" styleClass="inputfld" id="fname"/> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Last Name"/> </td>
+                    <td> <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                                <apex:inputText value="{!txtlName}" styleClass="inputfld" id="lname"/> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Company"/> </td>
+                    <td> <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputText value="{!txtCompany}" styleClass="inputfld" id="company"/> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Email"/> </td>
+                    <td> <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                                <apex:inputText value="{!txtEmail}" styleClass="inputfld" id="email" onchange="emailvalidation()"/> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Phone"/> </td>
+                    <td> <apex:inputText value="{!txtPhone}" styleClass="inputfld" id="phone" onchange="allnumericphone()"/> </td>
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Mobile"/> </td>
+                    <td> <apex:inputText value="{!txtMobile}" styleClass="inputfld" id="mobile" onchange="allnumericmobile()"/> </td>
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Country"/> </td>
+                    <td>
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:selectList value="{!txtLeadCountry}" size="1" styleClass="picklist">
+                                <apex:selectOptions value="{!countryOptions}"/>
+                            </apex:selectList>  
+                            <!--apex:inputField value="{!objlead.Lead_Country__c }"/-->
+                         </div>
+                     </td>                     
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Type"/> </td>
+                    <td> <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:selectList value="{!txttype}" styleClass="picklist" id="type" size="1">
+                                <apex:selectOption itemValue="" itemLabel="--None--"/>
+                                <apex:selectOption itemValue="Certifications and Specifications" itemLabel="Certifications and Specifications"/>
+                                <apex:selectOption itemValue="Technical Assistance" itemLabel="Technical Assistance"/>
+                                <apex:selectOption itemValue="Literature" itemLabel="Literature"/>
+                                <apex:selectOption itemValue="Design & Product Selection" itemLabel="Design & Product Selection"/>
+                                <apex:selectOption itemValue="Price Request" itemLabel="Price Request"/>
+                                <apex:selectOption itemValue="Product Information" itemLabel="Product Information"/>
+                                <apex:selectOption itemValue="Product Sample" itemLabel="Product Sample"/>
+                                <apex:selectOption itemValue="Purchasing Information" itemLabel="Purchasing Information"/>
+                                <apex:selectOption itemValue="Other" itemLabel="Other"/>
+                            </apex:selectList>
+                         </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"> <apex:outputLabel value="Description"/> </td>
+                    <td> <apex:inputTextarea value="{!txtDescription}" styleClass="textarea" id="description"/> </td>
+                </tr>
+            </table>
+            
+            <br/><br/><br/>
+            <apex:pageBlock mode="MainDetail">         
+                <apex:outputPanel id="MainPanel">                                                      
+                    
+                    <div class="MainHeading">Privacy Notification</div><br/>
+                    <div class="privacystyle">
+                        <apex:outputText value="{!$Label.DPS_Privacy}" escape="false"/>
+                    </div>
+                    
+                    <br/><div class="MainHeading">Consent Statement</div><br/>
+                    <div class="privacystyle">
+                        If you would like to receive marketing communication from DuPont Protection Solutions, please check the box below.
+                    </div>
+                    <br/>
+                    <div class="privacystyle">
+                        <apex:inputCheckbox value="{!bolCheckbox}" style="height:18px;width:18px;vertical-align:middle;"/>
+                        I would like to receive product information, service updates, news, events and exclusive customer offers from DuPont Protection Solutions.
+                    </div>
+                    
+                    <br/><br/>
+                    <div style="padding-left:175px;">
+                        <apex:commandButton value="Submit" styleClass="btnstyle" action="{!submitLead}"/>
+                    </div>
+                </apex:outputPanel>            
+            </apex:pageblock>
+            
+            <br/><br/><apex:image id="KevlarLogo" value="{!$Resource.DPS_SrchCritYarnPDFHeaderImg}" styleClass="imgLogo"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

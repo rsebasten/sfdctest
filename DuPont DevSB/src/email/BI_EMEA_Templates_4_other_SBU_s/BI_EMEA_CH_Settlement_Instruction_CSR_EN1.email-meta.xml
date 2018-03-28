@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA Internal Request to CSR for Settlement</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Settlement  Instruction CSR EN</name>
+    <style>formalLetter</style>
+    <subject>Complaints: Request for Settlement (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear CSR,
+
+Please find the request for settlement below for customer &quot;{!Case.Account}&quot;. For further detail please follow the link to SalesForce.com and consult the &quot;Special Instructions&quot; field and attachment section. A task will be created against this case for you to be completed. 
+
+Case ID: {!Case.CaseNumber}
+Link: {!Case.Link}
+Instructions:
+{!Case.Special_Instructions__c}
+
+Please make sure you provide us the applicable SAP references. If you have any questions please let us know,
+
+{!Case.OwnerFullName}
+BI Warranty Team EMEA
+{!Case.OwnerPhone}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

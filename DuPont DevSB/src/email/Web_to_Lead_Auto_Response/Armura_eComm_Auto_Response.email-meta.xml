@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>eCommerce form fill auto-response</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>Armura® eComm Auto-Response</name>
+    <style>freeForm</style>
+    <subject>DuPont™ Armura® - Informações para pagamento</subject>
+    <textOnly>Prezado Sr(a). {!Lead.Name} ,
+
+Para concluir a última etapa do seu processo de compra, de forma segura, por favor siga os passos abaixo:
+
+1. Copie e cole o link abaixo em seu navegador da internet:
+
+{!Lead.Website}{!Lead.Id}&amp;
+
+2. Será exibido o formulário de compra da Cielo, operadora de cartões de crédito autorizada. Neste formulário você irá informar os dados de seu cartão de crédito e selecionar a condição de pagamento desejada.
+
+Qualquer dúvida, por favor, entre em contato pelo telefone 0800 17 17 15 ou através do website armura.com.br
+
+Atenciosamente,
+
+Equipe DuPont™ Armura®</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

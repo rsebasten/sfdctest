@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DELETION - Ask contact owner deletion - For leads (German)</name>
+    <style>formalLetter</style>
+    <subject>Customer Privacy request - Deletion</subject>
+    <textOnly>Guten Tag {!Lead.OwnerFullName},
+wir haben über SFDC die Aufforderung bekommen den Kundenkontakt {!Lead.Name} {!Lead.LastName} dessen/deren persönliche Daten DuPont gespeichert hat und dessen Inhaber Sie sind, zu löschen.
+
+Gemäß unserer Datenschutzrichtlinie hat der Kunde/Kontakt das Recht seine bei DuPont gespeicherten persönlichen Daten zu überprüfen, zu korrigieren, zu ergänzen, zu unterdrücken, zu löschen oder deren Nutzung anderweitig einzuschränken.
+
+Sollten wir nicht innerhalb der nächsten 10 Arbeitstage einen Einwand von Ihnen bekommen, werden wir die Löschung gemäß den Angaben des Kunden/Kontakts veranlassen.
+
+
+Bei Fragen bezüglich der Datenschutzrichtlinie von DuPont wenden Sie sich bitte an Johanna Van Gorp, unseren EMEA CMS Privacy Kontakt.
+
+
+Mit freundlichen Grüßen,
+
+{!User.Username}
+DuPont Information Center
+Phone: 1-800-441-7515 or 1-302-774-1000
+Address: Chestnut Run Plaza 705/GS38
+PO Box 80705
+Wilmington, DE 19880-0705</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

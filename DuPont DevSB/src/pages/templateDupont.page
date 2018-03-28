@@ -1,0 +1,36 @@
+<apex:page controller="ctrlTemplateDupont" extensions="ctrlPageBase" action="{!Init}" showHeader="false" standardStylesheets="false" id="templateDupont" language="{!page.isoLang}">
+
+<apex:form >   
+	<apex:outputpanel id="entirePage">
+	<apex:outputpanel id="pHeader" rendered="{!page.showHeader}">
+		<apex:insert name="header"/>
+	</apex:outputpanel>
+	
+	<table width="{!page.pageWidth}" cellspacing="0px" border="0">
+		<tr>
+			<apex:outputpanel id="plnav" rendered="{!page.showLnav}">
+				<td>
+				<hr width="{!page.lnavWidth}" style="color: white; border-width: 0px;"/>
+				<apex:insert name="lnav" />
+				</td>
+			</apex:outputpanel>
+			<td width="100%" ALIGN="CENTER">
+				<table width="100%">
+					<tr>
+						<td align="center">
+							<apex:insert name="body"/>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+  
+  <apex:outputpanel id="pFooter" rendered="{!page.showFooter}">
+	  <apex:insert name="footer"/>
+  </apex:outputpanel>
+  
+  </apex:outputpanel>
+  </apex:form>
+
+</apex:page>

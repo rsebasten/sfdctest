@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LEAD_OWNER</field>
+    </columns>
+    <columns>
+        <field>Lead.Account__c</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Lead.Stage__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_STATUS</field>
+    </columns>
+    <currency>EUR</currency>
+    <filter>
+        <criteriaItems>
+            <column>LEAD_OWNER</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>DPT-EMEA eMarketing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Y.5. Accepted to attend event</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Expo - book visit</name>
+    <params>
+        <name>scopeid</name>
+        <value>000000000000000</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

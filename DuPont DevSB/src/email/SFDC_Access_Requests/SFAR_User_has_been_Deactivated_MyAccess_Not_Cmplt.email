@@ -1,0 +1,25 @@
+{!SFDC_Access_Request__c.CreatedBy}, 
+
+The User, {!SFDC_Access_Request__c.User__c} has been Deactivated.  
+
+Discussion & Updates:
+{!SFDC_Access_Request__c.DiscussionAndUpdates__c}
+
+As of today, we have not received a request thru MyAccess to deactivate this user.  
+
+It is important that MyAccess match SFDC, so please ensure that the end user's Supervisor (or End user themselves) go into MyAccess and request Remove Access to an Asset.
+
+If possible, please include this ID:  {!SFDC_Access_Request__c.Name}  in the MyAccess request - so that we can match these two requests.
+
+Here are the steps to process the MyAccess Request:
+
+(0) Go to https://login.myaccess.dupont.com:
+(1) Select "Remove access to an asset"
+(2) Select the Administrative Role - Responsible Manager or Self.
+(3) If requesting for someone else, search & select the user's name.
+(4) Select Salesforce-SFDC from the Asset list
+(5) Select a Reason Code
+(6) Fill in Comments
+(7) Click Continue
+
+Link to SFDC record:  {!SFDC_Access_Request__c.Link}

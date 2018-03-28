@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>07_DELETE_Notify Contact/Lead Record Owner-Information deletion request-ENGLISH</name>
+    <style>formalLetter</style>
+    <subject>Customer Privacy request - {!Lead_Routing__c.Lead_Name__c}&apos;s deletion</subject>
+    <textOnly>Dear,
+
+
+
+We have received a SFDC request from a customer contact {!Lead_Routing__c.Lead_Name__c}, owned by you,
+
+
+
+{!Lead_Routing__c.Product_Comments__c}
+
+
+
+to have their information deleted from our databases.
+
+
+
+{!Lead_Routing__c.Description__c}
+
+
+
+According to our privacy policy, a customer/contact reserves the right to review, correct, update, suppress, delete or otherwise limit DuPont&apos;s use of their information.
+
+
+Please proceed to delete the requested contact record and inform us once completed. There is a corporate standard of 10 days to process the deletion, starting today.
+
+
+For any inquiries regarding our policy, please contact Geryl M. Craft(Geryl.M.Craft@dupont.com) , our Global Privacy Leader – Marketing &amp; Sales
+
+
+
+Regards,</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

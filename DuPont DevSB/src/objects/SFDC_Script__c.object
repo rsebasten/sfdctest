@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contains the questions, question order, and passing score information</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AllowContinuation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Allows you to continue/edit a script.   To Allow for Continuation, you must have an Avail With Object specified otherwise no script header/results are created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To Allow for Continuation, you must have an Avail With Object specified.</inlineHelpText>
+        <label>AllowContinuation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Available_With__c</fullName>
+        <externalId>false</externalId>
+        <label>Available With</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Leads</fullName>
+                    <default>false</default>
+                    <label>Leads</label>
+                </value>
+                <value>
+                    <fullName>Contacts</fullName>
+                    <default>false</default>
+                    <label>Contacts</label>
+                </value>
+                <value>
+                    <fullName>Cases</fullName>
+                    <default>false</default>
+                    <label>Cases</label>
+                </value>
+                <value>
+                    <fullName>Opportunities</fullName>
+                    <default>false</default>
+                    <label>Opportunities</label>
+                </value>
+                <value>
+                    <fullName>Accounts</fullName>
+                    <default>false</default>
+                    <label>Accounts</label>
+                </value>
+                <value>
+                    <fullName>Qualification__cs</fullName>
+                    <default>false</default>
+                    <label>Qualification__cs</label>
+                </value>
+                <value>
+                    <fullName>Request__cs</fullName>
+                    <default>false</default>
+                    <label>Request__cs</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>Entitlements</fullName>
+                    <default>false</default>
+                    <label>Entitlements</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Help_for_Scripts__c</fullName>
+        <externalId>false</externalId>
+        <formula>(HYPERLINK(&quot;/servlet/servlet.FileDownload?file=0154100000268e5&quot;, &quot;Help for Scripts&quot;)) &amp; &quot; &quot; &amp; (IMAGE(&quot;/img/btn_help.gif&quot;, &quot;Help&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Help for Scripts</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Passing_Score__c</fullName>
+        <description>The number of points the question taking the script has to earn to pass the script.</description>
+        <externalId>false</externalId>
+        <label>Passing Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReturnToType__c</fullName>
+        <externalId>false</externalId>
+        <label>ReturnToType</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ReturnURL</fullName>
+                    <default>false</default>
+                    <label>ReturnURL</label>
+                </value>
+                <value>
+                    <fullName>Available_With Object</fullName>
+                    <default>false</default>
+                    <label>Available_With Object</label>
+                </value>
+                <value>
+                    <fullName>WriteTo Object</fullName>
+                    <default>false</default>
+                    <label>WriteTo Object</label>
+                </value>
+                <value>
+                    <fullName>Script Header</fullName>
+                    <default>false</default>
+                    <label>Script Header</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ReturnToValue__c</fullName>
+        <description>Determine where to redirect on save,  Value is dependant on ReturnToType
+ReturnUrl: Expects a valid url
+AvalibleWith Object: Object Name
+Header, WriteTo Object:  no value required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determine where to redirect on save,  Value is dependant on ReturnToType
+ReturnUrl: Expects a valid url
+AvalibleWith Object: Object Name
+Header, WriteTo Object:  no value required</inlineHelpText>
+        <label>ReturnToValue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFDC_Legacy_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SFDC Legacy Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Script_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Use_Scoring__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Use Scoring</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WriteToObject__c</fullName>
+        <description>SiteScript: API name of Object to write to.  use with Save_To_Field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SiteScript: API name of Object to write to.  use with Save_To_Field.</inlineHelpText>
+        <label>Write To Object</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fSiteScriptURL__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/apex/Script?id=&apos;+Id , &apos;Site Scipt&apos;, &apos;_blank&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site Script Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Script</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>AllowContinuation__c</columns>
+        <columns>Available_With__c</columns>
+        <columns>Script_Description__c</columns>
+        <columns>Help_for_Scripts__c</columns>
+        <columns>Legacy_One_DuPont_SFID__c</columns>
+        <columns>Passing_Score__c</columns>
+        <columns>ReturnToType__c</columns>
+        <columns>ReturnToValue__c</columns>
+        <columns>SFDC_Legacy_Id__c</columns>
+        <columns>fSiteScriptURL__c</columns>
+        <columns>Use_Scoring__c</columns>
+        <columns>WriteToObject__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Site_Scripts1</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>SFDC_Script__c.SiteScript</value>
+        </filters>
+        <label>Site Scripts</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Script Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Script</pluralLabel>
+    <recordTypes>
+        <fullName>CallScript</fullName>
+        <active>true</active>
+        <description>Call Script</description>
+        <label>Call Script</label>
+        <picklistValues>
+            <picklist>Available_With__c</picklist>
+            <values>
+                <fullName>Accounts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entitlements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReturnToType__c</picklist>
+            <values>
+                <fullName>Available_With Object</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ReturnURL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Script Header</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WriteTo Object</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SiteScript</fullName>
+        <active>true</active>
+        <description>SiteScript</description>
+        <label>SiteScript</label>
+        <picklistValues>
+            <picklist>Available_With__c</picklist>
+            <values>
+                <fullName>Accounts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entitlements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualification%5F%5Fcs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request%5F%5Fcs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReturnToType__c</picklist>
+            <values>
+                <fullName>Available_With Object</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ReturnURL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Script Header</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WriteTo Object</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>NewScriptWizard</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>New Script Wizard</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/appex/cscript/call.htm?page=wizard&amp;call_sid={!API.Session_ID}&amp;call_url={!API.Partner_Server_URL_70}&amp;eid={!SFDC_Script__c.Id}&amp;version=1</url>
+        <width>800</width>
+    </webLinks>
+    <webLinks>
+        <fullName>ScriptWizard</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Script Wizard</masterLabel>
+        <openType>newWindow</openType>
+        <position>fullScreen</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>/appex/cscript/call.htm?page=wizard&amp;call_sid={!API.Session_ID}&amp;call_url={!API.Partner_Server_URL_70}&amp;eid={!SFDC_Script__c.Id}</url>
+    </webLinks>
+</CustomObject>

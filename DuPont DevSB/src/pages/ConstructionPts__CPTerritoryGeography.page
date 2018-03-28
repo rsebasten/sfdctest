@@ -1,0 +1,7 @@
+<apex:page standardController="ConstructionPts__CPTerritory__c" extensions="ConstructionPts.CPTerritoryGeographyView">
+<apex:pageBlock >
+        <apex:pageBlockTable frame="none" value="{!CPTerritoryGeography}" var="item">
+            <apex:column value="{!item}" headerValue="Selected States"/>            
+        </apex:pageBlockTable>                 
+    </apex:pageBlock> 
+</apex:page>

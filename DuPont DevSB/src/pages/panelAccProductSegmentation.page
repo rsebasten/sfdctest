@@ -1,0 +1,15 @@
+<apex:page standardController="Account_Product__c">
+    <style type="text/css">
+        body {background: #F3F3EC; padding-top: 15px}
+    </style>
+<apex:pageblock title="Segmentation">
+<apex:pageblockSection columns="1">
+<apex:pageblockSectionItem labelStyle="white-space:nowrap"><apex:outputLabel value="{!$ObjectType.Segmentation__c.fields.SegmentL1__c.label}"/>
+<apex:outputField value="{!Account_Product__c.PrimarySegment__r.SegmentL1__c}"/></apex:pageblockSectionItem>
+<apex:pageblockSectionItem labelStyle="white-space:nowrap"><apex:outputLabel value="{!$ObjectType.Segmentation__c.fields.SegmentL2__c.label}" />
+<apex:outputField value="{!Account_Product__c.PrimarySegment__r.SegmentL2__c}"/></apex:pageblockSectionItem>
+<apex:pageblockSectionItem labelStyle="white-space:nowrap"><apex:outputLabel value="{!$ObjectType.Segmentation__c.fields.SegmentL3__c.label}" />
+<apex:outputField value="{!Account_Product__c.PrimarySegment__r.SegmentL3__c}"/></apex:pageblockSectionItem>
+</apex:pageblockSection>
+</apex:pageblock>
+</apex:page>

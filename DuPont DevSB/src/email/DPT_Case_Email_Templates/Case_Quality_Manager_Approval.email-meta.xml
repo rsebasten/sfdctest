@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Investigation completed; email for Quality Manager approval.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Case: Quality Manager Approval</name>
+    <style>formalLetter</style>
+    <subject>DPT Complaint {!Case.CaseNumber} is waiting your Approval/Rejection</subject>
+    <textOnly>The investigation for Case: {!Case.CaseNumber} has been completed. Please review and approve.
+
+Please click on the following link for more complete Case Information: {!Case.Id}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

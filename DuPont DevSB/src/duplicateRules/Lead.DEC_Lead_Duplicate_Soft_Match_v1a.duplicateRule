@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Allow</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText>You&apos;re creating a duplicate record. We recommend you use an existing record instead.</alertText>
+    <description>Warn users that they may be creating a duplicate lead. Excludes API users.</description>
+    <duplicateRuleFilter>
+        <booleanFilter xsi:nil="true"/>
+        <duplicateRuleFilterItems>
+            <field>Owning_SBU__c</field>
+            <operation>equals</operation>
+            <value>Electronics &amp; Communications</value>
+            <sortOrder>1</sortOrder>
+            <table>Lead</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Profile</field>
+            <operation>notEqual</operation>
+            <value>CEDW SFDC ERP Integration Profile, Marketing Integrator - Eloqua, System Administrator</value>
+            <sortOrder>2</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Lead</matchRuleSObjectType>
+        <matchingRule>Lead_Matching_Rule_Soft_Match_for_SBU_v1</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>false</isActive>
+    <masterLabel>DEC Lead Duplicate - Soft Match v1a</masterLabel>
+    <operationsOnInsert>Alert</operationsOnInsert>
+    <operationsOnInsert>Report</operationsOnInsert>
+    <operationsOnUpdate>Alert</operationsOnUpdate>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>EnforceSharingRules</securityOption>
+    <sortOrder>3</sortOrder>
+</DuplicateRule>

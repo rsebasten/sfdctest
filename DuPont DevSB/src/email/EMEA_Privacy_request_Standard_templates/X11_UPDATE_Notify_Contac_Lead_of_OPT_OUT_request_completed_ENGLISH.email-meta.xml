@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>11 UPDATE  Notify Contac- Lead of OPT- OUT request completed ENGLISH</name>
+    <style>formalLetter</style>
+    <subject>DuPont</subject>
+    <textOnly>Dear {!Lead.Name},&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+You recently confirmed to us that you would like to retain your Corian® registration in our database.
+
+
+In line with that request, we have updated your information in our database(s) to keep your Corian® registration but you will no longer receive any mailings from us.  We keep your contact details private.
+
+
+Kind Regards,
+
+
+
+{!User.Username}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

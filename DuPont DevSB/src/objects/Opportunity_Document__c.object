@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A DuPont User only private object so that documentation can be attached that is private (from Distributors) related to the Opportunity.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Description_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Description/Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mailed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Have you mailed the documentation rather than attach them?  Please use the Description/Comment field to identify those documents that have been mailed.</inlineHelpText>
+        <label>Mailed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunity-Documents</relationshipLabel>
+        <relationshipName>Opportunity_Documents</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Your documentation should be marked Complete prior to routing the Opportunity for approval.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Documentation Attached</fullName>
+                    <default>false</default>
+                    <label>Documentation Attached</label>
+                </value>
+                <value>
+                    <fullName>Reviewed by Manager</fullName>
+                    <default>false</default>
+                    <label>Reviewed by Manager</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IQ Tool</fullName>
+                    <default>false</default>
+                    <label>IQ Tool</label>
+                </value>
+                <value>
+                    <fullName>Winner Proposal</fullName>
+                    <default>false</default>
+                    <label>Winner Proposal</label>
+                </value>
+                <value>
+                    <fullName>Investment Documentation</fullName>
+                    <default>false</default>
+                    <label>Investment Documentation</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Paid Invoice</fullName>
+                    <default>false</default>
+                    <label>Paid Invoice</label>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                    <label>IA</label>
+                </value>
+                <value>
+                    <fullName>LOI</fullName>
+                    <default>false</default>
+                    <label>LOI</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Opportunity-Document</label>
+    <nameField>
+        <displayFormat>OD-{0000000}</displayFormat>
+        <label>Opportunity-Document ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity-Documents</pluralLabel>
+    <recordTypes>
+        <fullName>Opportunity_Document</fullName>
+        <active>false</active>
+        <label>Opportunity Document</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Documentation Attached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Reviewed by Manager</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>IQ Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investment Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winner Proposal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

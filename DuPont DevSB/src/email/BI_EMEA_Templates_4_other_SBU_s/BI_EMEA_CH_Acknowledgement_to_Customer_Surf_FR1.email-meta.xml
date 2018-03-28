@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Acknowledgement of registration of complaint to the customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Acknowledgement to Customer Surf FR</name>
+    <style>formalLetter</style>
+    <subject>Confirmation au client de régistration (case: {!Case.CaseNumber})</subject>
+    <textOnly>Cher client,
+
+Nous vous remercions d’avoir enregistré votre réclamation (#{!Case.CaseNumber}). Nous tenons à compléter votre réclamation au plus tôt possible. 
+
+A la réception de la documentation nécessaire pour le dossier, le centre de service / le transformateur agréé sera contacté afin d’établir une date d’expertise ou d’intervention.
+
+Le centre de service/le transformateur agréé viendra constater le dommage et s’engage à faire la réparation à ce moment si possible.
+Veuillez bien libérer l’espace de travail et de présenter des chutes éventuelles de DuPont™ Corian® pour éviter une non-conformité de coloris. Veuillez comprendre que l’intervention pourrait causer des désagréments.
+
+Si votre demande rentrera sous la DuPont™ Corian® garantie limitée de 10 ans d’installation, les frais d’une intervention seront acceptés par DuPont. En cas que la garantie ne joue pas, le centre de service / transformateur agréé pourrait vous soumettre un devis d’intervention ou de  rafraîchissement de votre plan.
+
+A la fin, le centre de service / le transformateur agréé  vous présentera l’avis d’exécution à soussigner ce qui sert comme base de paiement.
+
+N’hésitez pas de nous contacter si vous avez des autres questions ou remarques.
+
+Sincères salutations,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

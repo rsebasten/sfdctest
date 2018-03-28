@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>SALUTATION</field>
+    </columns>
+    <columns>
+        <field>CONTACT_FIRST_NAME_LOCAL</field>
+    </columns>
+    <columns>
+        <field>CONTACT_LAST_NAME_LOCAL</field>
+    </columns>
+    <columns>
+        <field>CONTACT_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>CONTACT_LAST_ACTIVITY</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>CONTACT_OWNER</field>
+    </columns>
+    <columns>
+        <field>CONTACT_LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>CONTACT_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Contact.Region__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IAP - Salon de l&apos;Emballage 2012 - Invitation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>NOW-EMEA Christmas communication</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT Business Transformation Communication</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>A+A 2017 - emailing invitation EN</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPS Campaigns_Pavel</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>orgAll</scope>
+    <showDetails>true</showDetails>
+</Report>

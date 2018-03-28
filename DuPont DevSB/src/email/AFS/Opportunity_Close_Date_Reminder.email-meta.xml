@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Opportunity Close Date Reminder</name>
+    <style>none</style>
+    <subject>Opportunity Close Date Reminder</subject>
+    <textOnly>This email is being generated to remind you that the opportunity &quot;{!Opportunity.Name}&quot; has a close date of {!Opportunity.CloseDate}. Please update the opportunity accordingly.  
+
+Link to Opportunity: {!Opportunity.Link}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

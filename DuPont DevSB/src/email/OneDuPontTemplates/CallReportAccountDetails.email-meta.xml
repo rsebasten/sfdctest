@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Call Report + Account Details (internal use)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Call Report + Account Details</name>
+    <style>freeForm</style>
+    <subject>Call Report - {!Call_Report__c.Account__c}</subject>
+    <textOnly>Call Report Name: {!Call_Report__c.Name}
+Channel: {!Call_Report__c.Channel__c}
+Call Date: {!Call_Report__c.Call_Date__c}
+Status: {!Call_Report__c.Status__c}
+ 
+Report Summary
+Purpose &amp; Agenda: {!Call_Report__c.Purpose__c}
+ 
+Account Attendees: {!Call_Report__c.Account_Attendees__c}
+ 
+DuPont Attendees: {!Call_Report__c.DuPont_Attendees__c}
+ 
+Summary: {!Call_Report__c.Summary__c}
+ 
+Unmet Customer Needs: {!Call_Report__c.Unmet_Customer_Needs__c}
+ 
+Market Information: {!Call_Report__c.Market_Information__c}
+ 
+Competetive Information: {!Call_Report__c.Competitive_Information__c}
+ 
+Next Steps: {!Call_Report__c.Next_Steps__c}
+ 
+Account Details
+Account Name: {!Account.Name}
+Account Site: {!Account.Site}
+Site Type: {!Account.Site_Type__c}
+Account Owner: {!Account.OwnerFullName}
+Sales Representative: {!Account.Sales_Representative__c}
+Ownership: {!Account.Ownership}
+Type: {!Account.Type}
+Description: {!Account.Description}
+Parent Account: {!Account.Parent}
+Website: {!Account.Website}
+Country: {!Account.Country__c}
+Geo SubRegion: {!Account.SubRegion__c}
+Geo Region: {!Account.00N30000001wnYC}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

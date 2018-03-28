@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Lead.Lead_Country__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Region__c</field>
+    </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Member-Opt-In,Opt-Out</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BI All Opt-in/out Leads</name>
+    <params>
+        <name>scopeid</name>
+        <value>000000000000000</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

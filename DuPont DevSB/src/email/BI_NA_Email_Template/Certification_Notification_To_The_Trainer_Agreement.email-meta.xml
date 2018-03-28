@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Certification-Notification To The Trainer- Agreement</name>
+    <style>none</style>
+    <subject>Completed DuPont Certification Document available</subject>
+    <textOnly>{!Qualification__c.CreatedBy}
+
+This is a notification to inform you that &apos;{!Qualification__c.Account_Name__c}&apos; has successfully completed certification to become a &apos;{!Qualification__c.Certified_In_Area__c}&apos; .
+
+Please click on this link to access the {!Qualification__c.Certified_In_Area__c} number, certificate, and agreement signed by &apos;{!Qualification__c.Account_Name__c}&apos;.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,8 @@
+<apex:page standardController="Qualification__c" extensions="ProductsChanged">
+
+<apex:form >
+
+<apex:commandButton value="Send Schedule A-1" action="{!urlForTriggeringDDP}" disabled="{!isProductButtonDisabled}"/>
+</apex:form>
+
+</apex:page>

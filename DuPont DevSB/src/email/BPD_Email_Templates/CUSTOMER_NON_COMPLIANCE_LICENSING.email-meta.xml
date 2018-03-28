@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>CUSTOMER NON-COMPLIANCE (LICENSING)</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - Misuse of DuPont™ {!Case.Product_Selected__c} Trademark</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+Many thanks for your information.
+
+We obviously have a lot of respect for your company. On the other hand, you also need to appreciate that when your company infringes on our rights to our own assets, we cannot just stay still and accept this infringement. We have contacted you over one year ago. There was enough time to adapt your promotions to a legally acceptable way. DuPont is actually showing more flexibility than many other companies by allowing ingredient branding and even the use of the trademark in technical literature. What {!Case.Company__c} is doing is however promotional. This either needs to be dropped or {!Case.Company__c} needs to have a trademark license.
+
+
+Our conditions for a license are simple: we ask licensees to have products tested in accordance with EN13595 so that both the licensee as brand house and DuPont as owner of the trademark have the assurance that the products are fit for purpose in-line with the brand promise of the DuPont™ {!Case.Product_Selected__c} trademark. We charge 7% royalty on the licensee revenue on its licensed products. A license opens the opportunity to use hang tags (as per our specific design so that they are recognized by the market and Customs) and potentially sewn-in labels (both of which {!Case.Company__c} has been doing without permission). I am enclosing a brochure that shows very clearly what is promotional (and needs a license) and what is acceptable as such. This confirms clearly what has been stated in previous correspondence.
+
+
+We have used 2013 to clean up this category. You will see many companies that have adapted their materials to what is legally possible and you will see next season products by licensees in the market. DuPont will move to an enforcement tactic next year by working with Customs to seize any goods and materials that infringe on our brands.
+
+Given where we are, please let us know if you seek to acquire a license or if you agree to eliminate the promotional materials.
+
+Sincerely,
+
+
+
+DuPont Brand Protection Center
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,13 @@
+<apex:page controller="ctrlPunchout" title="OMS Integration" action="{!init}" showHeader="true" sidebar="true" tabstyle="Request__c">
+<apex:form >
+<apex:sectionHeader title="Request" subtitle="Punchout to: OMS"/> 
+<apex:outputPanel id="panel_Main">
+    <apex:outputPanel layout="block" id="panel_OMS">
+    <apex:pageMessages />
+   	<hr width="900px"/>
+     <!-- leftnav="230px"  width="790" scrolling="yes"   -->
+    <apex:iframe src="{!iframeEndPoint}" id="Iframe_Punchout" height="7000" width="100%" scrolling="auto"/>
+    </apex:outputPanel>     
+</apex:outputPanel>
+</apex:form>
+</apex:page>

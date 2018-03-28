@@ -1,0 +1,27 @@
+Dear {!Contact.FirstName} {!Contact.LastName}
+
+I am a representative of the Dupont Inquiry Management Centre Solution Maintenance Team.  We are responsible for maintaining the information used by our Inquiry Agents to resolve phone and email inquiries.
+
+We are currently updating our records and we are contacting you as your name is identified as a content owner for one of our records, entitled "{!Solution.SolutionName}."
+
+Please review the information contained in the fields below and confirm by return mail that it is all current and accurate.  Should you have any updates, please mark these in Red.
+
+Should you have any questions about this request, please feel free to contact us on DUCOM 774 4062.
+
+Sincerely,
+
+{!User.FirstName} {!User.LastName}
+{!Organization.Name}
+{!User.Email}
+
+Title: 
+{!Solution.RecordType}
+{!Solution.SolutionName}
+{!Solution.Owning_SBU__c}
+{!Solution_Regional_Relevance}
+{!Solution.Confidential_Information__c}
+{!Solution_Generic_Name}
+{!Solution.Routing_Instructions__c}
+
+Detail:  
+{!Solution.SolutionNote}

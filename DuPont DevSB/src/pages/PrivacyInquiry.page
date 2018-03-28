@@ -1,0 +1,105 @@
+<apex:page standardStylesheets="false"  cache="false" controller="ctrlPrivacyInquiry" action="{!init}" showHeader="false" id="PrivacyInquiry" language="{!$CurrentPage.parameters.l}">
+ 
+<apex:stylesheet value="{!$Resource.CSS_dupont_master}"/>
+<apex:includeScript value="{!$Resource.Omniture}" />
+ 
+<!--===============================================================
+    Header
+================================================================-->
+<apex:outputpanel id="pHeader" rendered="{!(headerFooter!='0')}">
+    <apex:insert name="header">
+    <br/><table width="732px">
+    <tr><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:image url="{!$Resource.dupontLogoOnWhite}"/></td></tr>
+    <tr><td width="100%"><apex:image url="{!$Resource.top_navbar}"/></td></tr>
+    </table>
+    </apex:insert>
+</apex:outputpanel>
+
+
+<!-- ===============================================================
+    Body
+==================================================================-->
+<apex:insert name="body">
+<apex:form >
+<table width="{!IF(headerFooter!='0','732px','582px')}">
+<tr><td>
+    <apex:outputpanel id="plnav" rendered="{!(headerFooter!='0')}">
+    <td><hr width="150px" style="color: white; border-width: 0px;"/></td>
+    </apex:outputpanel>
+    <td width="582px" ALIGN="CENTER">
+    <table width="100%"><tr><td align="center">
+    
+        <apex:outputpanel id="errorMsg" rendered="{!err}">
+            <br/>{!errMsg}<br/>
+        </apex:outputpanel>
+        
+        
+        <!-- ===============================================================
+            THANK YOU
+        ==================================================================-->
+        <apex:outputpanel id="thankyou" rendered="{!NOT(err)&&showThankYou}">
+            <br/><apex:outputText escape="false" value="{!$Label.Site_Thankyou_WillRespond}"/><br/>
+        </apex:outputpanel>
+        
+        
+        
+        <!-- ===============================================================
+            SUBFORM
+        ==================================================================-->
+        <apex:outputpanel id="newLeadForm" rendered="{!(showForm && NOT(ISNULL(frm)) ) }">
+            <c:SubForm frm="{!frm}"/>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0"><tr>
+                <td align="left" style="width:130px">{!$Label.Site_YourRequest}</td>
+                <td align="left"><apex:inputField id="yourrequest" value="{!frm.newlead.description}" required="false"/></td>
+            </tr></table>
+            <br/><br/>
+        </apex:outputpanel>
+        
+        
+        <!-- ===============================================================
+            Button
+        ==================================================================-->
+        <apex:outputpanel id="submitbutton" rendered="{!showForm}" >
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr><td align="left">
+                <apex:commandbutton action="{!save}" value="{!$Label.site.submit}"/>
+            </td></tr>
+            </table>    
+
+        </apex:outputpanel>
+        
+    </td></tr></table>
+
+</apex:form>
+
+</apex:insert>
+
+
+<script language="JavaScript" type="text/javascript">
+    s.pageName="PrivacyInquiry";
+    s.server="";
+    s.channel="";
+    s.pageType="";
+    s.prop1="";s.prop2="";s.prop3="";s.prop4="";s.prop5="";
+    /* Conversion Variables */
+    s.campaign="{!$CurrentPage.parameters.src}";s.state="";s.zip="";s.events="";s.products="";s.purchaseID="";
+    s.eVar1="";s.eVar2="";s.eVar3="";s.eVar4="";s.eVar5="";
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+    if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+</script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="{!$Label.Omniture_SubscriptionCenter}"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.20.3. -->
+
+<!-- ===============================================================
+    Footer
+==================================================================-->
+<apex:outputpanel id="pFooter" rendered="{!(headerFooter!='0')}">
+<apex:insert name="footer"> <c:SubscriptionFooter /></apex:insert>
+</apex:outputpanel>
+
+
+</apex:page>

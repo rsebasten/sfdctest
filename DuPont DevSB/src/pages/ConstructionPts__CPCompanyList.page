@@ -1,0 +1,23 @@
+<apex:page standardController="ConstructionPts__CP_Company__c" recordsetVar="companies" tabStyle="Dodge_Projects__tab" sideBar="false" extensions="ConstructionPts.CPExportAnalytics"> 
+  <c:CPHeader title="All Companies" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true" ShowTitle="true" MessageColor="green" message="<b>{!if(GetNumberOfCompanies != '', GetNumberOfCompanies, '')}</b>" />
+       <div id="divCompManualMatching" style="display: {!IF(showCompManualMatchingDiv == '1','block','none')}"> 
+    <apex:form > 
+     <apex:commandButton value="Match Companies to Accounts/Leads" action="{!ExecuteMatchesWCPMatching}"/> 
+     <apex:outputLabel id="lblMatchesFound2" value="{!strLstSize}"></apex:outputLabel>  
+     
+     </apex:form>     
+    </div>
+   <br />
+    <div id="divList">
+    <apex:ListViews type="ConstructionPts__CP_Company__c"/> 
+    </div>    
+ <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+ <script type="text/javascript">
+	j$(document).ready(function(){
+	       j$("td.actionColumn").each( function (){
+	            j$(this).html( ( j$(this).children("[type=checkbox]").length > 0 ? j$(this).children("[type=checkbox]").clone().wrap("<p>").parent().html(): " " ) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"); //+ j$(this).children("a.chatterFollowUnfollowAction ").clone().wrap("<p>").parent().html());             
+	       });
+	       setSelectedTab (j$, "All Companies");
+	});     
+</script>  
+</apex:page>

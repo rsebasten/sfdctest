@@ -1,0 +1,20 @@
+<apex:page standardStylesheets="false" cache="false" controller="ctrlPageBase" showHeader="false" id="SitePage" language="{!$CurrentPage.parameters.l}">
+<apex:stylesheet value="{!$Resource.CSS_dupont_master}"/>
+<apex:composition template="templateDupont">
+
+	<apex:define name="header">
+		<apex:outputPanel rendered="{!$CurrentPage.parameters.b!='none'}">
+			<c:headerDupont_1 page="{!page}"/>
+		</apex:outputPanel>
+	</apex:define>	
+	<apex:define name="footer">
+			<apex:outputPanel rendered="{!$CurrentPage.parameters.b!='none'}">
+					<c:footerDupont_1 page="{!page}"/>
+			</apex:outputPanel>
+	</apex:define>
+
+	<apex:define name="body">
+		<c:sitePageBody page="{!page}" />
+	</apex:define>
+</apex:composition>
+</apex:page>

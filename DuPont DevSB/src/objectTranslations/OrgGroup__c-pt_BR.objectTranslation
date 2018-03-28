@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Organizational Group --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Organizational Group --></value>
+    </caseValues>
+    <fields>
+        <help><!-- These values drive the business logic to determine which ERP Customer to create new accounts. The Account group on ERP Customer is where these values are compared. --></help>
+        <label><!-- Account Rule --></label>
+        <name>Account_Rule__c</name>
+        <picklistValues>
+            <masterLabel>Price Reference Customer</masterLabel>
+            <translation><!-- Price Reference Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z001 ( Sold-to party )</masterLabel>
+            <translation><!-- Z001 ( Sold-to party ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z002 (Ship-to party)</masterLabel>
+            <translation><!-- Z002 (Ship-to party) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z003 (Payer)</masterLabel>
+            <translation><!-- Z003 (Payer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z004 (Bill-to party)</masterLabel>
+            <translation><!-- Z004 (Bill-to party) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z012 (Hierarchy node)</masterLabel>
+            <translation><!-- Z012 (Hierarchy node) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z100 (Plant/Distribution Ctr)</masterLabel>
+            <translation><!-- Z100 (Plant/Distribution Ctr) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZCOA (COA Recipient)</masterLabel>
+            <translation><!-- ZCOA (COA Recipient) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZCPD (One-time cust.(int.no.)</masterLabel>
+            <translation><!-- ZCPD (One-time cust.(int.no.) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZCSR (Customer Service Rep)</masterLabel>
+            <translation><!-- ZCSR (Customer Service Rep) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZEND (End User)</masterLabel>
+            <translation><!-- ZEND (End User) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZEXC ( Sold-to party )</masterLabel>
+            <translation><!-- ZEXC ( Sold-to party ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZISS Intrasub sale @ mkt price</masterLabel>
+            <translation><!-- ZISS Intrasub sale @ mkt price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZLOG (Port)</masterLabel>
+            <translation><!-- ZLOG (Port) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZMAR (Marine partner)</masterLabel>
+            <translation><!-- ZMAR (Marine partner) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZSRP (Sales Representative)</masterLabel>
+            <translation><!-- ZSRP (Sales Representative) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZSUB (Dupont Subsidiary)</masterLabel>
+            <translation><!-- ZSUB (Dupont Subsidiary) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ-Field not Used</masterLabel>
+            <translation><!-- ZZ-Field not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dist. Channel Code --></label>
+        <name>ERP_Distribution_Channel_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dist. Channel --></label>
+        <name>ERP_Distribution_Channel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division Code --></label>
+        <name>ERP_Division_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>ERP_Division__c</name>
+    </fields>
+    <fields>
+        <label>Código de Nível de Vendas</label>
+        <name>ERP_Sales_Org_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Org. --></label>
+        <name>ERP_Sales_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ERP ID --></label>
+        <name>External_ERP_ID__c</name>
+    </fields>
+    <fields>
+        <label>Identidade Externa</label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- International Dial Code --></label>
+        <name>International_Dial_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- International Dial Prefix --></label>
+        <name>International_Dial_Prefix__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label>Descrição de Nível</label>
+        <name>Level_Description__c</name>
+        <picklistValues>
+            <masterLabel>Business Unit</masterLabel>
+            <translation>Unidade de Negócios</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Unit</masterLabel>
+            <translation>Unidade Comercial</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District</masterLabel>
+            <translation>Distrito</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region</masterLabel>
+            <translation><!-- Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Area</masterLabel>
+            <translation>Área de Vendas</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Nível</label>
+        <name>Level__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Dono do Negócio</label>
+        <name>Owning_Business__c</name>
+        <picklistValues>
+            <masterLabel>Building Innovations</masterLabel>
+            <translation><!-- Building Innovations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuPont Protection Technologies</masterLabel>
+            <translation><!-- DuPont Protection Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics &amp; Communications</masterLabel>
+            <translation><!-- Electronics &amp; Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Biosciences</masterLabel>
+            <translation><!-- Industrial Biosciences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nutrition &amp; Health</masterLabel>
+            <translation><!-- Nutrition &amp; Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaging &amp; Industrial Polymers</masterLabel>
+            <translation><!-- Packaging &amp; Industrial Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Polymers</masterLabel>
+            <translation><!-- Performance Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pioneer</masterLabel>
+            <translation><!-- Pioneer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Titanium Technologies</masterLabel>
+            <translation><!-- Titanium Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ -Field Not Used</masterLabel>
+            <translation><!-- ZZ -Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Organização Proprietária</label>
+        <name>Owning_Organization__c</name>
+        <picklistValues>
+            <masterLabel>AGNH-Qualicon</masterLabel>
+            <translation><!-- AGNH-Qualicon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Env</masterLabel>
+            <translation><!-- BI-Env --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Landscape Systems</masterLabel>
+            <translation><!-- BI-Landscape Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI-Surf</masterLabel>
+            <translation><!-- BI-Surf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORS-Government Affairs</masterLabel>
+            <translation><!-- CORS-Government Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-Microcircuit Materials</masterLabel>
+            <translation><!-- DEC-Microcircuit Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEC-Packaging Graphics</masterLabel>
+            <translation><!-- DEC-Packaging Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Parts</masterLabel>
+            <translation><!-- DPP-Parts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Polymers</masterLabel>
+            <translation><!-- DPP-Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT</masterLabel>
+            <translation><!-- DPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-A&amp;HF</masterLabel>
+            <translation><!-- DPT-A&amp;HF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ASPS</masterLabel>
+            <translation><!-- DPT-ASPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Agriculture</masterLabel>
+            <translation><!-- DPT-Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Air and Filtration</masterLabel>
+            <translation><!-- DPT-Air and Filtration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Aramids</masterLabel>
+            <translation><!-- DPT-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Automotive</masterLabel>
+            <translation><!-- DPT-Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Chemical Industrial</masterLabel>
+            <translation><!-- DPT-Chemical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Covers</masterLabel>
+            <translation><!-- DPT-Covers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Critical Clean</masterLabel>
+            <translation><!-- DPT-Critical Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ES</masterLabel>
+            <translation><!-- DPT-ES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Envelopes</masterLabel>
+            <translation><!-- DPT-Envelopes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Graphics</masterLabel>
+            <translation><!-- DPT-Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-IPP</masterLabel>
+            <translation><!-- DPT-IPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Ind Pkg &amp; Protection</masterLabel>
+            <translation><!-- DPT-Ind Pkg &amp; Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Mechanical Industrial</masterLabel>
+            <translation><!-- DPT-Mechanical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Fabrics</masterLabel>
+            <translation><!-- DPT-Medical Fabrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Packaging</masterLabel>
+            <translation><!-- DPT-Medical Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Specialties</masterLabel>
+            <translation><!-- DPT-Medical Specialties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NOW</masterLabel>
+            <translation><!-- DPT-NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Optical</masterLabel>
+            <translation><!-- DPT-Optical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-PM</masterLabel>
+            <translation><!-- DPT-PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-ER</masterLabel>
+            <translation><!-- DPT-Public Sector-ER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-LE</masterLabel>
+            <translation><!-- DPT-Public Sector-LE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-MIL</masterLabel>
+            <translation><!-- DPT-Public Sector-MIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Sontara</masterLabel>
+            <translation><!-- DPT-Sontara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Thermal Industrial</masterLabel>
+            <translation><!-- DPT-Thermal Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Tyvek</masterLabel>
+            <translation><!-- DPT-Tyvek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTT</masterLabel>
+            <translation><!-- DTT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR - Talent Acq - Campus</masterLabel>
+            <translation><!-- HR - Talent Acq - Campus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IB</masterLabel>
+            <translation><!-- IB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEGL</masterLabel>
+            <translation><!-- LEGL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S</masterLabel>
+            <translation><!-- M&amp;S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;S-Corp Marketing</masterLabel>
+            <translation><!-- M&amp;S-Corp Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N&amp;H</masterLabel>
+            <translation><!-- N&amp;H --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Glass Laminating Sol</masterLabel>
+            <translation><!-- P&amp;IP-Glass Laminating Sol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHB</masterLabel>
+            <translation><!-- PHB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pioneer</masterLabel>
+            <translation><!-- Pioneer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHE</masterLabel>
+            <translation><!-- SHE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Pai</label>
+        <name>Parent__c</name>
+        <relationshipLabel><!-- Organizational Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Portal Access Grouping --></label>
+        <name>PortalAccessGrouping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portal Role --></label>
+        <name>Portal_Role__c</name>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager</masterLabel>
+            <translation><!-- Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ-Field not Used</masterLabel>
+            <translation><!-- ZZ-Field not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Programa</label>
+        <name>Program__c</name>
+        <picklistValues>
+            <masterLabel>PHI-AFRICA</masterLabel>
+            <translation><!-- PHI-AFRICA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHI-LA</masterLabel>
+            <translation><!-- PHI-LA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Código Vendas Nível 1</label>
+        <name>Sales_Level_1_Code__c</name>
+    </fields>
+    <fields>
+        <label>Código Vendas Nível 2</label>
+        <name>Sales_Level_2_Code__c</name>
+    </fields>
+    <fields>
+        <label>Código Vendas Nível 3</label>
+        <name>Sales_Level_3_Code__c</name>
+    </fields>
+    <fields>
+        <label>Código Vendas Nível 4</label>
+        <name>Sales_Level_4_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Level Code --></label>
+        <name>Sales_Level_Code__c</name>
+    </fields>
+    <fields>
+        <label>Nome do Nível de Vendas</label>
+        <name>Sales_Level_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Object --></label>
+        <name>SiteObject__c</name>
+        <relationshipLabel><!-- Organizational Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Tipo</label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Access</masterLabel>
+            <translation><!-- Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ERP</masterLabel>
+            <translation><!-- ERP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Hierarchy</masterLabel>
+            <translation>Hierarquia de Vendas</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Reporting</masterLabel>
+            <translation><!-- Sales Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ-Field not Used</masterLabel>
+            <translation><!-- ZZ-Field not Used --></translation>
+        </picklistValues>
+    </fields>
+    <gender><!-- Feminine --></gender>
+    <nameFieldLabel><!-- Org Group Name --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Business --></label>
+        <name>Business</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- ERP Sales Area --></label>
+        <name>ERP_Sales_Area</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- N&amp;H Sales Org --></label>
+        <name>N_H_Sales_Org</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Pioneer Sales Org --></label>
+        <name>Pioneer_Sales_Org</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Portal Access Grouping --></label>
+        <name>Portal_Access_Grouping</name>
+    </recordTypes>
+</CustomObjectTranslation>

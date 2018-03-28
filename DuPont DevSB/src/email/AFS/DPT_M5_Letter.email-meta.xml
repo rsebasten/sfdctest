@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>General letter for M5 response</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS M5 Letter</name>
+    <style>formalLetter</style>
+    <subject>Your Inquiry with DuPont™ Protection Solutions M5</subject>
+    <textOnly>Dear {!Lead.FirstName} {!Lead.LastName},
+
+Thank you for your interest in  M5® fiber.
+
+M5 ® is  one of the chemistries that DuPont has evaluated.  It has been the most visible alternative to the world but is not the only candidate under consideration.  At this time, we are not ready to be more specific about which candidate that is moving forward at this time.
+
+We hope you’ll continue your periodic contacts with us to inquire on progress and products available.
+
+DuPont Protection Solutions</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

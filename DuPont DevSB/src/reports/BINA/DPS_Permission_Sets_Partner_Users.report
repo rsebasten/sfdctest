@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User_Access_Review_Details__c.User_Id__c</field>
+    </columns>
+    <columns>
+        <field>User_Access_Review_Details__c.User_Name__c</field>
+    </columns>
+    <columns>
+        <field>User_Access_Review_Details__c.User_Roles__c</field>
+    </columns>
+    <columns>
+        <field>User_Access_Review_Details__c.CompanyName__c</field>
+    </columns>
+    <columns>
+        <field>User_Access_Review_Details__c.User_Owning_SBU_Org__c</field>
+    </columns>
+    <columns>
+        <field>User_Access_Review_Details__c.User_Owning_Org__c</field>
+    </columns>
+    <columns>
+        <field>User_Access_Review_Details__c.User_Permission_Sets__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>User_Access_Review_Details__c.User_Profile__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BI-NA Distributor Partner</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>DPS - Permission Sets - Partner Users</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$User_Access_Review__c$User_Access_Review_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User_Access_Review__c.End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

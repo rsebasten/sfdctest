@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stakeholder</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stakeholders</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accountability --></label>
+        <name>Accountability__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the CONTACT does not exist, first define a new CONTACT by clicking the CONTACT tab.  Reminder: A CONTACT must always be related to an Account.  Note this sequence: find/create Account,m then find/create, relate CONTACT. --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- StakeholderRoles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Core Team Member --></label>
+        <name>Core_Team_Member__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Architect</masterLabel>
+            <translation><!-- Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BPO</masterLabel>
+            <translation><!-- BPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPO</masterLabel>
+            <translation><!-- CPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSR</masterLabel>
+            <translation><!-- CSR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery Manager</masterLabel>
+            <translation><!-- Delivery Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDI Analyst</masterLabel>
+            <translation><!-- EDI Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engagement Leader</masterLabel>
+            <translation><!-- Engagement Leader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Key User</masterLabel>
+            <translation><!-- Key User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Leader</masterLabel>
+            <translation><!-- Project Leader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Sponsor</masterLabel>
+            <translation><!-- Project Sponsor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solutions Designer</masterLabel>
+            <translation><!-- Solutions Designer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- eProject --></label>
+        <name>eProject__c</name>
+        <relationshipLabel><!-- Stakeholders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>fCompany__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>fContact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instant Message ID --></label>
+        <name>fInstantMessageID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mailing Address --></help>
+        <label><!-- Location --></label>
+        <name>fLocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>fPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- eMail --></label>
+        <name>feMail__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Stakeholder --></label>
+        <name>Stakeholder</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,88 @@
+<apex:page standardController="ConstructionPts__CPTerritory__c" tabStyle="ConstructionPts__CPTerritory__c" extensions="ConstructionPts.CPTerritoryName">
+<apex:form >
+<apex:outputPanel id="Header">
+
+<c:CPHeader title="CP Territory" ShowDodgeLogo="true" ShowCPLinks="true" ShowTitle="true" /> 
+  <br/><br/>
+&lt;&lt;<apex:commandLink onclick="doGoBack(); return false;" value="Back"/>
+</apex:outputPanel>
+
+<br/><br/>
+<apex:pageBlock >
+<apex:pageMessages rendered="true" id="PageMsg" /> 
+  <apex:pageBlockButtons location="top">      
+            <apex:commandButton onclick="SaveName();" style="width: 60px" value="Save" rerender="PageMsg,Header" />  
+            <apex:commandButton onclick="doGoBack(); return false;" style="width: 60px" value="Cancel" /> 
+            </apex:pageBlockButtons>
+           
+            
+<b>CP Territory Name:&nbsp;</b>
+<input type="text"  width="400px" size="50" id="territoryName"/>
+
+</apex:pageBlock>
+<apex:outputPanel >
+<script language="javascript">
+
+
+  function getCPTerritoryName()  {
+            var terrId = '{!CASESAFEID(id)}';
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryName.getCPTerritoryName}', terrId, callbackGetName);
+   }
+
+  function callbackGetName(sReturn, event)
+  {
+         document.getElementById("territoryName").value = sReturn;
+   }
+
+ function callbackSaved(sReturn, event){
+        var currUrl = window.location.href; 
+        currUrl = currUrl.toLowerCase();  
+        var backUrl;  
+        if (sReturn!=null || sReturn==''){
+            backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + "/apex/CPTerritoryDetail?id=" + sReturn;
+        }else{
+            backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + "/apex/CPTerritoriesList";
+        }  
+        if (sforce.console.isInConsole()){                
+              backUrl = backUrl + '&isdtp=vw';
+        } 
+        window.location = backUrl;
+}
+
+    function doGoBack(){
+        var terrId = '{!CASESAFEID(id)}';        
+        var currUrl = window.location.href; 
+        currUrl = currUrl.toLowerCase();  
+        var backUrl;  
+        if(terrId!=null){
+            backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + "/apex/CPTerritoryDetail?id=" + terrId;
+        }else{
+            backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + "/apex/CPTerritoriesList";
+        }  
+        if (sforce.console.isInConsole()){                
+              backUrl = backUrl + '&isdtp=vw';
+        }    
+        window.location = backUrl;
+    }
+
+   function SaveName()
+  {
+          var name = document.getElementById("territoryName").value;
+          var terrId =  '{!CASESAFEID(id)}';          
+          if(terrId == ''){
+              terrId = '0';
+          }
+          Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPTerritoryName.SaveName}', terrId, name, callbackSaved);
+   }
+
+
+  getCPTerritoryName();
+</script>
+</apex:outputPanel>
+<br/>
+<br/>
+<c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+</apex:form>
+</apex:page>

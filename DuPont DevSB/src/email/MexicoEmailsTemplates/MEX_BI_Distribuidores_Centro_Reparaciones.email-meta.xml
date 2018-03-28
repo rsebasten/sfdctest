@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Datos de distribuidores e información de cuidados y reparación de Corian® Solid Surfcae y Corian® Quartz Centro // CC: Samuel.Barcenas-1@dupont.com, danny.palacios@dupont.com</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Letterhead_collaboratory</letterhead>
+    <name>BI_ Distribuidores Centro-reparaciones Corian® Solid Surface y Corian® Quartz</name>
+    <style>freeForm</style>
+    <subject>DuPont respuesta a su solicitud</subject>
+    <textOnly>¡Gracias por contactarnos!
+
+
+Estimad(o) {!Lead.FirstName} {!Lead.LastName},
+
+Referente a su solicitud, en el siguiente vínculo, podrá encontrar los Fundamentos para Reparar Cubiertas Corian® Solid Surface e información de Cómo Limpiar cubiertas de Corian® Quartz. Si lo requiere, puede contactar a nuestros distribuidores autorizados. Ellos también pueden apoyarle con precios de producto en el estado de XX.
+
+O bien, puede responder por este medio que autoriza compartir sus datos personales con nuestros 2 distribuidores, de manera que puedan ponerse en contacto con usted.
+
+FDS, S.A. de C.V.
+Alejandro Crespo
+fdssacv@prodigy.net.mx
+Ignacio Zaragoza #18, San Lucas Tepetlacalco, Tlalnepantla Estado de México
+Tel. (55) 5361-1150 y 0451
+
+MULTIDECOR S. de R.L de C.V.
+Juan Mena
+juan.menabrito@multidecor.com.mx
+Cuadrante de San Francisco 14, Col. Cuadrante de San Francisco,
+Coyoacán México. D.F.
+Tel. (55) 5484-8122,5484-8123 , 5554-5275
+http://www.multidecor.com.mx/
+
+--------------------------------------------------------------------
+Datos del solicitante:
+Fecha recepción solicitud: {!Lead.CreatedDate}
+Nombre: {!Lead.FirstName} {!Lead.LastName}
+Empresa: {!Lead.Company}
+Dirección: {!Lead.Address}
+Teléfono(s): {!Lead.Phone}
+Cel: {!Lead.MobilePhone}
+Email: {!Lead.Email}
+
+Solicitud:
+{!Lead.Product_Comments__c}
+{!Lead.Description}
+--------------------------------------------------------------------
+Quedamos atentos a cualquier sugerencia o requerimiento adicional.
+
+Reciba un cordial saludo de parte del equipo de DuPont México.
+
+Centro de Información de Productos en México, Centroamérica y Caribe
+Lada nacional sin costo: 01800-849-7514
+Tel. del D.F. y Zona Metropolitana: +52 (55) 5722-1150
+E-mail: info.mexico@dupont.com | Página web: www.dupont.com.mx
+Twitter @DuPontMexico | YouTube: DuPontdeMexico
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Copyright © 2018 DuPont. Reservados todos los derechos. Todos los productos señalados con ® o ™ son marcas registradas o marcas de E. I. du Pont de Nemours and Company o sus afiliadas.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+&quot;Su información personal (Nombre, correo electrónico, etc.) será ingresada en el Sistema de Clientes actualmente localizado en Estados Unidos de América. Dicha información será utilizada por DuPont, otras filiales y terceros seleccionados en otros países, para brindarle información de productos y servicios por la cual contacto a DuPont. Para revisar nuestra política completa de privacidad, acceder, enmendar, borrar u oponerse al procesamiento de su información personal, favor de utilizar el siguiente link, en la sección de &quot;Opciones y Acceso&quot;-www.privacy.dupont.com
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Si usted no desea recibir más comunicados de DuPont por favor envíenos un mensaje a info.mexico@dupont.com con el Subject &quot;Dar de baja&quot;.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,164 @@
+<apex:page cache="false" sidebar="true" title="Search Fabrics"
+    controller="ctrlDPT_NomexPartnerSearch" lightningStylesheets="true">
+
+    <html>
+    <head>
+    <style type="text/css">
+.customPopup {
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    left: 50%;
+    padding: 10px;
+    position: absolute;
+    z-index: 9999;
+    width: 500px;
+    margin-left: -250px;
+    top: 100px;
+}
+</style>
+
+    </head>
+
+    <apex:form >
+        <apex:sectionHeader title="Search Fabrics">
+            <apex:outputPanel >
+                <apex:pageBlock >
+                    <apex:pageMessages />
+                    <apex:pageBlockSection columns="2" collapsible="true"
+                        Title="DuPont™ Nomex® Fabric Search">
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Filter by Main End Use *required field"
+                                for="MainEndUse" />
+                            <apex:selectList id="MainEndUse"
+                                value="{!qualificationMainEndUse}" multiselect="false" size="1">
+                                <apex:selectOptions value="{!ItemsQualificationMainEndUse}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Filter by Fabric Colour"
+                                for="FabricColour" />
+                            <apex:selectList id="FabricColour" value="{!fabricColour}"
+                                multiselect="false" size="1">
+                                <apex:selectOptions value="{!ItemsColour}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Filter by Fabric Minimum Weight"
+                                for="MinWeight" />
+                            <apex:inputText id="MinWeight" value="{!minWeight}" />
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Filter by Construction"
+                                for="fabricConstruction" />
+                            <apex:selectList id="Construction" value="{!qualConstruction}"
+                                multiselect="false" size="1">
+                                <apex:selectOptions value="{!ItemsConstructions}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Filter by Fabric Maximum Weight"
+                                for="MaxWeight" />
+                            <apex:inputText id="MaxWeight" value="{!maxWeight}" />
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Filter by Sub Type" for="SubType" />
+                            <apex:selectList id="SubType" value="{!qualSubType}"
+                                multiselect="false" size="1">
+                                <apex:selectOptions value="{!ItemsSubType}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem HelpText="{!$ObjectType.Qualification__c.Fields.Other_Criteria_Met__c.inlineHelpText}">
+                            <apex:outputLabel value="Filter by Risk Area:multiPicklist"
+                                for="RiskArea"  />
+                            <apex:selectList id="RiskArea"
+                                value="{!SelectQualificationRiskArea}" multiselect="true"
+                                size="5">
+                                <apex:selectOptions value="{!ItemsQualificationRiskArea}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:outputPanel>
+            <center><b><apex:commandButton id="filterGo"
+                value="                SEARCH               "
+                action="{!loadScripts}" /></b></center>
+            <br />
+
+            <apex:outputPanel id="QualificationList">
+                <apex:pageBlock >
+                    <apex:actionStatus startText="Requesting..." id="SelectStatus" />
+                    <apex:pageBlockSection title="Qualification Records" columns="1"
+                        collapsible="true">
+
+                        <apex:pageBlockTable value="{!QualificationListNext}" var="cl"
+                            rendered="{!QualificationListNext<>null}">
+                            <apex:pagemessages />
+                            <apex:column value="{!cl.accountName}">
+                                <apex:facet name="header">Account/Weaver</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.productReference}">
+                                <apex:facet name="header">Product reference</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.color}">
+                                <apex:facet name="header">Colour</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.weight}">
+                                <apex:facet name="header">Weight</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.useAs}">
+                                <apex:facet name="header">Use as/ Sub Type</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.construction}">
+                                <apex:facet name="header">Construction</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.extraComfort}">
+                                <apex:facet name="header">Extra Comfort</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.extraWaterAndOilRepellency}">
+                                <apex:facet name="header">Extra Water and<br /> Oil repellency</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.extraLongLastingPerformance}">
+                                <apex:facet name="header">Extra Durability</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.extraAestheticPerformance}">
+                                <apex:facet name="header">Extra Aesthetic<br /> Performance</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cl.extraMechanicalPerformance}">
+                                <apex:facet name="header">Extra Mechanical<br /> Performance</apex:facet>
+                            </apex:column>
+
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:outputPanel>
+
+            <center><apex:commandButton value="Show Nomex® Partner Details" action="{!showPopup}"
+                rerender="popup" /> <apex:commandButton value="Export Qualifications into Excel"
+                action="/apex/DPT_NomexExportToExcel" /></center>
+
+            <apex:outputPanel id="popup">
+                <apex:outputPanel styleClass="customPopup" layout="block"
+                    rendered="{!displayPopUp}">
+                    <c:DPT_PartnerWeaverDetails />
+                    <center><apex:commandButton value="Hide Details"
+                        action="{!closePopup}" rerender="popup" /></center>
+                </apex:outputPanel>
+            </apex:outputPanel>
+
+        </apex:sectionHeader>
+    </apex:form>
+    </html>
+        <br/><br/><br/><br/><br/><br/>
+        <div style="position:relative;color:grey">
+            {!$Label.Nomex_Disclaimer}
+        </div>
+</apex:page>

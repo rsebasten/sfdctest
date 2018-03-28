@@ -1,0 +1,23 @@
+<!-- 
+/*******************************************************************************
+Copyright © 2014 DuPont. All rights reserved. 
+Author: Abhinav Bhatnagar
+Email: abhinav.bhatnagar@dupont.com
+
+AB20140523  Initial Release to take manual snapshot
+********************************************************************************
+-->
+
+<apex:page standardController="Demand__c" extensions="DemandSnapshotManual" action="{!takeSnapshot}">
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:outputText >
+                Snapshot Taken
+                <apex:form >
+                    <apex:commandButton action="{!cancel}" value="Back" />
+                </apex:form>
+            </apex:outputText>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

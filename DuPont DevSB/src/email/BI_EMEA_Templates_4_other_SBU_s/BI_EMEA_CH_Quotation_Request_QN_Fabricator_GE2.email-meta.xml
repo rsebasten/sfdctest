@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA Quotation request template for QN Fabricators</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Quotation Request QN Fabricator GE</name>
+    <style>formalLetter</style>
+    <subject>Anfrage für einen Kostenvoranschlag zu Reparatur (case: {!Case.CaseNumber})</subject>
+    <textOnly>Sehr geehrter QN Verarbeiter,
+
+In Bezug auf unsere Reklamation {!Case.CaseNumber} vom 
+{!Case.Date_Entered__c}, bitten wir sie, uns einen detaillierten 
+Kostenvoranschlag für die Reparatur zu machen. 
+
+{!Case.Contact}
+{!Account.BillingAddress}
+{!Account.BillingCity}
+{!Contact.Phone}
+{!Case.Description}
+
+Ir möchten sie bitten, uns die Lohnkosten (Preis / Stunde) und Kilometerleistung detailliert aufzulisten.  Bitte geben Sie ebenfalls an, ob kostenloses Material aus unserem Lager an sie verschickt werden soll.
+
+Anbei finden Sie ein Bild der Arbeitsplatte, das den Defekt illustriert, zusammen mit den kompletten Kundendaten.
+
+Nach Erhalt Ihres Angebotes, senden wir Ihnen unsere Bestätigung zusammen mit dem Kunden-Zufriedenheitsformular, sowie unseren Bezahlverfahren zu.
+
+Sollten Sie noch weitere Fragen haben, zögern Sie bitte nicht uns zu kontaktieren.
+
+Mit freundlichen Grüssen,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

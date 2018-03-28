@@ -1,0 +1,1622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contains record type specific rules which will return a score, approver or other values based on a criteria</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Geo_Region__c</fullName>
+        <description>This custom field is used to select the region of the Rule object .</description>
+        <externalId>false</externalId>
+        <label>Geo Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asia Pacific</fullName>
+                    <default>false</default>
+                    <label>Asia Pacific</label>
+                </value>
+                <value>
+                    <fullName>EMEA</fullName>
+                    <default>false</default>
+                    <label>EMEA</label>
+                </value>
+                <value>
+                    <fullName>Latin America</fullName>
+                    <default>false</default>
+                    <label>Latin America</label>
+                </value>
+                <value>
+                    <fullName>North America</fullName>
+                    <default>false</default>
+                    <label>North America</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>The checkbox will allow users to control active/inactive rule and manage the rules better.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Uncheck to make the rule inactive</inlineHelpText>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <description>The DuPont organization that owns this record, should be a combination of the accepted abbreviations of SBU(Strategic Business Unit)-BU(Business Unit)-SubBU(Business or Product Line)</description>
+        <externalId>false</externalId>
+        <label>Owning Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AGCP</fullName>
+                    <default>false</default>
+                    <label>AGCP</label>
+                </value>
+                <value>
+                    <fullName>AGCP-CPC</fullName>
+                    <default>false</default>
+                    <label>AGCP-CPC</label>
+                </value>
+                <value>
+                    <fullName>AGNH</fullName>
+                    <default>false</default>
+                    <label>AGNH</label>
+                </value>
+                <value>
+                    <fullName>AGNH-COZR</fullName>
+                    <default>false</default>
+                    <label>AGNH-COZR</label>
+                </value>
+                <value>
+                    <fullName>AGNH-Qualicon</fullName>
+                    <default>false</default>
+                    <label>AGNH-Qualicon</label>
+                </value>
+                <value>
+                    <fullName>BI</fullName>
+                    <default>false</default>
+                    <label>BI</label>
+                </value>
+                <value>
+                    <fullName>BI-Carpet Backing</fullName>
+                    <default>false</default>
+                    <label>BI-Carpet Backing</label>
+                </value>
+                <value>
+                    <fullName>BI-Env</fullName>
+                    <default>false</default>
+                    <label>BI-Env</label>
+                </value>
+                <value>
+                    <fullName>BI-Fire Safety</fullName>
+                    <default>false</default>
+                    <label>BI-Fire Safety</label>
+                </value>
+                <value>
+                    <fullName>BI-Landscape Systems</fullName>
+                    <default>false</default>
+                    <label>BI-Landscape Systems</label>
+                </value>
+                <value>
+                    <fullName>BI-Surf</fullName>
+                    <default>false</default>
+                    <label>BI-Surf</label>
+                </value>
+                <value>
+                    <fullName>CORP</fullName>
+                    <default>false</default>
+                    <label>CORP</label>
+                </value>
+                <value>
+                    <fullName>CORP-Admin General</fullName>
+                    <default>false</default>
+                    <label>CORP-Admin General</label>
+                </value>
+                <value>
+                    <fullName>CORP-Core</fullName>
+                    <default>false</default>
+                    <label>CORP-Core</label>
+                </value>
+                <value>
+                    <fullName>CORP-Corporate Plans</fullName>
+                    <default>false</default>
+                    <label>CORP-Corporate Plans</label>
+                </value>
+                <value>
+                    <fullName>CORP-Non-Aligned</fullName>
+                    <default>false</default>
+                    <label>CORP-Non-Aligned</label>
+                </value>
+                <value>
+                    <fullName>CORS</fullName>
+                    <default>false</default>
+                    <label>CORS</label>
+                </value>
+                <value>
+                    <fullName>CORS-Aviation</fullName>
+                    <default>false</default>
+                    <label>CORS-Aviation</label>
+                </value>
+                <value>
+                    <fullName>CORS-Corp Remediation</fullName>
+                    <default>false</default>
+                    <label>CORS-Corp Remediation</label>
+                </value>
+                <value>
+                    <fullName>CORS-Government Affairs</fullName>
+                    <default>false</default>
+                    <label>CORS-Government Affairs</label>
+                </value>
+                <value>
+                    <fullName>CORS-Public Affairs</fullName>
+                    <default>false</default>
+                    <label>CORS-Public Affairs</label>
+                </value>
+                <value>
+                    <fullName>CR&amp;D</fullName>
+                    <default>false</default>
+                    <label>CR&amp;D</label>
+                </value>
+                <value>
+                    <fullName>DA-Nano LLC</fullName>
+                    <default>false</default>
+                    <label>DA-Nano LLC</label>
+                </value>
+                <value>
+                    <fullName>DCF</fullName>
+                    <default>false</default>
+                    <label>DCF</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-Aniline</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-Aniline</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-C&amp;D</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-C&amp;D</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-C&amp;D-DAHS</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-C&amp;D-DAHS</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-C&amp;D-DWT</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-C&amp;D-DWT</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-C&amp;D-Industrial</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-C&amp;D-Industrial</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-Cyanides</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-Cyanides</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-MAP/DMS</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-MAP/DMS</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-RMS</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-RMS</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-SET</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-SET</label>
+                </value>
+                <value>
+                    <fullName>DCF ChemSol-Vazo</fullName>
+                    <default>false</default>
+                    <label>DCF ChemSol-Vazo</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Clean Agent Fire Extinguishants</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Clean Agent Fire Extinguishants</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Electronic Gases</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Electronic Gases</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Fluoromonomer Intermediates</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Fluoromonomer Intermediates</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Foam</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Foam</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Pharmaceutical Propellants</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Pharmaceutical Propellants</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Propellants</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Propellants</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Refrigerants</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Refrigerants</label>
+                </value>
+                <value>
+                    <fullName>DCF FLCH-Vertrel</fullName>
+                    <default>false</default>
+                    <label>DCF FLCH-Vertrel</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS</fullName>
+                    <default>false</default>
+                    <label>DCF FPS</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-AFFF</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-AFFF</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Catalyst</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Catalyst</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Chemoswed</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Chemoswed</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Coatings &amp; Releases</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Coatings &amp; Releases</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Consumer Finishes</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Consumer Finishes</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Fluoropolymers</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Fluoropolymers</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Fluoropolymers PTFE</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Fluoropolymers PTFE</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-FPS Other</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-FPS Other</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Industrial Finishes</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Industrial Finishes</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Lubes</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Lubes</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Monomers</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Monomers</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Nafion®</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Nafion®</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Oil Wells-StreaMax®</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Oil Wells-StreaMax®</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Polymer Specialties</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Polymer Specialties</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-SPS</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-SPS</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-SPS Carpets</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-SPS Carpets</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-SPS Paper</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-SPS Paper</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-SPS Textiles</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-SPS Textiles</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Stone Care</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Stone Care</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-StoneTech</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-StoneTech</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Surfactants and Coating Additives</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Surfactants and Coating Additives</label>
+                </value>
+                <value>
+                    <fullName>DCF FPS-Teflon® Licensing</fullName>
+                    <default>false</default>
+                    <label>DCF FPS-Teflon® Licensing</label>
+                </value>
+                <value>
+                    <fullName>DCF-Melts</fullName>
+                    <default>false</default>
+                    <label>DCF-Melts</label>
+                </value>
+                <value>
+                    <fullName>DCF-Melts Films</fullName>
+                    <default>false</default>
+                    <label>DCF-Melts Films</label>
+                </value>
+                <value>
+                    <fullName>DCF-Melts Polymers</fullName>
+                    <default>false</default>
+                    <label>DCF-Melts Polymers</label>
+                </value>
+                <value>
+                    <fullName>DCF-Sulfur Products</fullName>
+                    <default>false</default>
+                    <label>DCF-Sulfur Products</label>
+                </value>
+                <value>
+                    <fullName>DCM</fullName>
+                    <default>false</default>
+                    <label>DCM</label>
+                </value>
+                <value>
+                    <fullName>DCSE</fullName>
+                    <default>false</default>
+                    <label>DCSE</label>
+                </value>
+                <value>
+                    <fullName>DCSE-Clean &amp; Disinfect</fullName>
+                    <default>false</default>
+                    <label>DCSE-Clean &amp; Disinfect</label>
+                </value>
+                <value>
+                    <fullName>DCSE-Coating &amp; Release</fullName>
+                    <default>false</default>
+                    <label>DCSE-Coating &amp; Release</label>
+                </value>
+                <value>
+                    <fullName>DCSE-Poly Specialties</fullName>
+                    <default>false</default>
+                    <label>DCSE-Poly Specialties</label>
+                </value>
+                <value>
+                    <fullName>DCSE-Spec Intermediates</fullName>
+                    <default>false</default>
+                    <label>DCSE-Spec Intermediates</label>
+                </value>
+                <value>
+                    <fullName>DCSE-Sulfur</fullName>
+                    <default>false</default>
+                    <label>DCSE-Sulfur</label>
+                </value>
+                <value>
+                    <fullName>DCSE-Surface Prot Sol</fullName>
+                    <default>false</default>
+                    <label>DCSE-Surface Prot Sol</label>
+                </value>
+                <value>
+                    <fullName>DCSE-Wastewater</fullName>
+                    <default>false</default>
+                    <label>DCSE-Wastewater</label>
+                </value>
+                <value>
+                    <fullName>DDIS</fullName>
+                    <default>false</default>
+                    <label>DDIS</label>
+                </value>
+                <value>
+                    <fullName>DDIS-Display Solutions</fullName>
+                    <default>false</default>
+                    <label>DDIS-Display Solutions</label>
+                </value>
+                <value>
+                    <fullName>DDIS-Films</fullName>
+                    <default>false</default>
+                    <label>DDIS-Films</label>
+                </value>
+                <value>
+                    <fullName>DDIS-OLED</fullName>
+                    <default>false</default>
+                    <label>DDIS-OLED</label>
+                </value>
+                <value>
+                    <fullName>DEC</fullName>
+                    <default>false</default>
+                    <label>DEC</label>
+                </value>
+                <value>
+                    <fullName>DEC-Authentication</fullName>
+                    <default>false</default>
+                    <label>DEC-Authentication</label>
+                </value>
+                <value>
+                    <fullName>DEC-Circuit Packaging Materials</fullName>
+                    <default>false</default>
+                    <label>DEC-Circuit Packaging Materials</label>
+                </value>
+                <value>
+                    <fullName>DEC-Digital Printing</fullName>
+                    <default>false</default>
+                    <label>DEC-Digital Printing</label>
+                </value>
+                <value>
+                    <fullName>DEC-EKC Technology</fullName>
+                    <default>false</default>
+                    <label>DEC-EKC Technology</label>
+                </value>
+                <value>
+                    <fullName>DEC-Electronic Polymers</fullName>
+                    <default>false</default>
+                    <label>DEC-Electronic Polymers</label>
+                </value>
+                <value>
+                    <fullName>DEC-Enhancement</fullName>
+                    <default>false</default>
+                    <label>DEC-Enhancement</label>
+                </value>
+                <value>
+                    <fullName>DEC-HDMicrosystems</fullName>
+                    <default>false</default>
+                    <label>DEC-HDMicrosystems</label>
+                </value>
+                <value>
+                    <fullName>DEC-Microcircuit Materials</fullName>
+                    <default>false</default>
+                    <label>DEC-Microcircuit Materials</label>
+                </value>
+                <value>
+                    <fullName>DEC-Packaging Graphics</fullName>
+                    <default>false</default>
+                    <label>DEC-Packaging Graphics</label>
+                </value>
+                <value>
+                    <fullName>DEC-PVFM</fullName>
+                    <default>false</default>
+                    <label>DEC-PVFM</label>
+                </value>
+                <value>
+                    <fullName>DEC-Semiconductor Fabrication Mat</fullName>
+                    <default>false</default>
+                    <label>DEC-Semiconductor Fabrication Mat</label>
+                </value>
+                <value>
+                    <fullName>DPE</fullName>
+                    <default>false</default>
+                    <label>DPE</label>
+                </value>
+                <value>
+                    <fullName>DPP-Filaments</fullName>
+                    <default>false</default>
+                    <label>DPP-Filaments</label>
+                </value>
+                <value>
+                    <fullName>DPP-Parts</fullName>
+                    <default>false</default>
+                    <label>DPP-Parts</label>
+                </value>
+                <value>
+                    <fullName>DPP-Polymers</fullName>
+                    <default>false</default>
+                    <label>DPP-Polymers</label>
+                </value>
+                <value>
+                    <fullName>DPT</fullName>
+                    <default>false</default>
+                    <label>DPT</label>
+                </value>
+                <value>
+                    <fullName>DPT-A&amp;HF</fullName>
+                    <default>false</default>
+                    <label>DPT-A&amp;HF</label>
+                </value>
+                <value>
+                    <fullName>DPT-Agriculture</fullName>
+                    <default>false</default>
+                    <label>DPT-Agriculture</label>
+                </value>
+                <value>
+                    <fullName>DPT-Air and Filtration</fullName>
+                    <default>false</default>
+                    <label>DPT-Air and Filtration</label>
+                </value>
+                <value>
+                    <fullName>DPT-Aramids</fullName>
+                    <default>false</default>
+                    <label>DPT-Aramids</label>
+                </value>
+                <value>
+                    <fullName>DPT-ASPS</fullName>
+                    <default>false</default>
+                    <label>DPT-ASPS</label>
+                </value>
+                <value>
+                    <fullName>DPT-Automotive</fullName>
+                    <default>false</default>
+                    <label>DPT-Automotive</label>
+                </value>
+                <value>
+                    <fullName>DPT-Car Protection</fullName>
+                    <default>false</default>
+                    <label>DPT-Car Protection</label>
+                </value>
+                <value>
+                    <fullName>DPT-Chemical Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Chemical Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Cleanroom/Pharma</fullName>
+                    <default>false</default>
+                    <label>DPT-Cleanroom/Pharma</label>
+                </value>
+                <value>
+                    <fullName>DPT-Covers</fullName>
+                    <default>false</default>
+                    <label>DPT-Covers</label>
+                </value>
+                <value>
+                    <fullName>DPT-Critical Clean</fullName>
+                    <default>false</default>
+                    <label>DPT-Critical Clean</label>
+                </value>
+                <value>
+                    <fullName>DPT-Envelopes</fullName>
+                    <default>false</default>
+                    <label>DPT-Envelopes</label>
+                </value>
+                <value>
+                    <fullName>DPT-ES</fullName>
+                    <default>false</default>
+                    <label>DPT-ES</label>
+                </value>
+                <value>
+                    <fullName>DPT-Graphics</fullName>
+                    <default>false</default>
+                    <label>DPT-Graphics</label>
+                </value>
+                <value>
+                    <fullName>DPT-Ind Pkg &amp; Protection</fullName>
+                    <default>false</default>
+                    <label>DPT-Ind Pkg &amp; Protection</label>
+                </value>
+                <value>
+                    <fullName>DPT-IPP</fullName>
+                    <default>false</default>
+                    <label>DPT-IPP</label>
+                </value>
+                <value>
+                    <fullName>DPT-Mechanical Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Mechanical Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Fabrics</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Fabrics</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Packaging</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Packaging</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Specialties</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Specialties</label>
+                </value>
+                <value>
+                    <fullName>DPT-NOW</fullName>
+                    <default>false</default>
+                    <label>DPT-NOW</label>
+                </value>
+                <value>
+                    <fullName>DPT-Optical</fullName>
+                    <default>false</default>
+                    <label>DPT-Optical</label>
+                </value>
+                <value>
+                    <fullName>DPT-PM</fullName>
+                    <default>false</default>
+                    <label>DPT-PM</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-ER</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-ER</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-LE</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-LE</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-MIL</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-MIL</label>
+                </value>
+                <value>
+                    <fullName>DPT-Sontara</fullName>
+                    <default>false</default>
+                    <label>DPT-Sontara</label>
+                </value>
+                <value>
+                    <fullName>DPT-Thermal Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Thermal Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Tyvek</fullName>
+                    <default>false</default>
+                    <label>DPT-Tyvek</label>
+                </value>
+                <value>
+                    <fullName>DPVS</fullName>
+                    <default>false</default>
+                    <label>DPVS</label>
+                </value>
+                <value>
+                    <fullName>DSS-CKM</fullName>
+                    <default>false</default>
+                    <label>DSS-CKM</label>
+                </value>
+                <value>
+                    <fullName>DSS-CleanTech</fullName>
+                    <default>false</default>
+                    <label>DSS-CleanTech</label>
+                </value>
+                <value>
+                    <fullName>DSS-Clean Technologies</fullName>
+                    <default>false</default>
+                    <label>DSS-Clean Technologies</label>
+                </value>
+                <value>
+                    <fullName>DSS-Consulting</fullName>
+                    <default>false</default>
+                    <label>DSS-Consulting</label>
+                </value>
+                <value>
+                    <fullName>DSS-L&amp;D</fullName>
+                    <default>false</default>
+                    <label>DSS-L&amp;D</label>
+                </value>
+                <value>
+                    <fullName>DTF</fullName>
+                    <default>false</default>
+                    <label>DTF</label>
+                </value>
+                <value>
+                    <fullName>DTT</fullName>
+                    <default>false</default>
+                    <label>DTT</label>
+                </value>
+                <value>
+                    <fullName>DTT-Coatings</fullName>
+                    <default>false</default>
+                    <label>DTT-Coatings</label>
+                </value>
+                <value>
+                    <fullName>DTT-Minerals</fullName>
+                    <default>false</default>
+                    <label>DTT-Minerals</label>
+                </value>
+                <value>
+                    <fullName>DTT-Paper</fullName>
+                    <default>false</default>
+                    <label>DTT-Paper</label>
+                </value>
+                <value>
+                    <fullName>DTT-Plastics</fullName>
+                    <default>false</default>
+                    <label>DTT-Plastics</label>
+                </value>
+                <value>
+                    <fullName>DTT-Specialties</fullName>
+                    <default>false</default>
+                    <label>DTT-Specialties</label>
+                </value>
+                <value>
+                    <fullName>ENGR</fullName>
+                    <default>false</default>
+                    <label>ENGR</label>
+                </value>
+                <value>
+                    <fullName>EP-Vespel</fullName>
+                    <default>false</default>
+                    <label>EP-Vespel</label>
+                </value>
+                <value>
+                    <fullName>FIN</fullName>
+                    <default>false</default>
+                    <label>FIN</label>
+                </value>
+                <value>
+                    <fullName>FLPR</fullName>
+                    <default>false</default>
+                    <label>FLPR</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-AC/Auto</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-AC/Auto</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-AC/Stationary</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-AC/Stationary</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-DSOS</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-DSOS</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Dymel</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Dymel</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Dymel-Industrial</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Dymel-Industrial</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Dymel-Pharma</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Dymel-Pharma</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Electronic Gases</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Electronic Gases</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Fire Extinguishants</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Fire Extinguishants</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Foam Expansion Agents</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Foam Expansion Agents</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Formacel</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Formacel</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Government</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Government</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-HF Sales</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-HF Sales</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Inter-SBU Transfer</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Inter-SBU Transfer</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Ontario</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Ontario</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Other FC</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Other FC</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Pharmaceutical</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Pharmaceutical</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Propellants</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Propellants</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Refineries &amp; Glass</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Refineries &amp; Glass</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Refrigeration</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Refrigeration</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Refrig-Mobile Aftermarket</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Refrig-Mobile Aftermarket</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Refrig-Mobile OEM</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Refrig-Mobile OEM</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Refrig-Stationary Aftermarket</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Refrig-Stationary Aftermarket</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Refrig-Stationary OEM</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Refrig-Stationary OEM</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Specialty Fluids</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Specialty Fluids</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-STOM</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-STOM</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Vertrel</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Vertrel</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FC-Zyron</fullName>
+                    <default>false</default>
+                    <label>FLPR-FC-Zyron</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Abandoned Cable Services</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Abandoned Cable Services</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-C&amp;A Additives</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-C&amp;A Additives</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-C&amp;A Compounds</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-C&amp;A Compounds</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Cabling Solutions</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Cabling Solutions</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-CFP Food</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-CFP Food</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-CFP Food FMF</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-CFP Food FMF</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-CFP Harsh Chemical</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-CFP Harsh Chemical</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-CFP Harsh Chemical FMF</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-CFP Harsh Chemical FMF</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-CFP Industrial Bakeware</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-CFP Industrial Bakeware</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-CFP Pharm / Medical</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-CFP Pharm / Medical</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-CFP Pharm Processing</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-CFP Pharm Processing</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Const-Architectural</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Const-Architectural</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Const-Fabric Structures</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Const-Fabric Structures</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Const-Fabric Structures FMF</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Const-Fabric Structures FMF</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Const-Graphics (signs &amp; labels)</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Const-Graphics (signs &amp; labels)</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Consumer</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Consumer</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Electronics-Displays</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Electronics-Displays</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Electronics-Electrical</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Electronics-Electrical</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Electronics-General</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Electronics-General</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Electronics-Office Automation</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Electronics-Office Automation</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Electronics-PCB</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Electronics-PCB</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Electronics-PhotoVoltaics</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Electronics-PhotoVoltaics</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Films</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Films</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Fine Chemicals</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Fine Chemicals</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Finishes</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Finishes</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-HW-Consumer BW</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-HW-Consumer BW</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-HW-SEA &amp; Rice Cookers</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-HW-SEA &amp; Rice Cookers</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-HW-TOR</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-HW-TOR</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-LAN</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-LAN</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Mobile Telephony</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Mobile Telephony</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Monomers</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Monomers</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Oil Lined Pipe</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Oil Lined Pipe</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Polymers</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Polymers</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Semiconductor</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Semiconductor</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Spec-Apparel</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Spec-Apparel</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Spec-Food</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Spec-Food</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Spec-General Industry</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Spec-General Industry</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Spec-General Industry FMF</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Spec-General Industry FMF</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Spec-Packaging</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Spec-Packaging</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Spec-Transfer Print</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Spec-Transfer Print</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Spec-Wire &amp; Cable Misc</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Spec-Wire &amp; Cable Misc</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Tedlar</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Tedlar</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Teflon AF</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Teflon AF</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Trans-Automotive</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Trans-Automotive</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Trans-Automotive FMF</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Trans-Automotive FMF</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Trans-Composite Release</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Trans-Composite Release</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Trans-Military, Aero FMF</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Trans-Military, Aero FMF</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Trans-Military, Aerospace</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Trans-Military, Aerospace</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Trans - Surface Trans</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Trans - Surface Trans</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-W&amp;C Oil Well</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-W&amp;C Oil Well</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-WL Gore</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-WL Gore</label>
+                </value>
+                <value>
+                    <fullName>FLPR-FPS-Zonyl</fullName>
+                    <default>false</default>
+                    <label>FLPR-FPS-Zonyl</label>
+                </value>
+                <value>
+                    <fullName>FLPR-Fuel Cells</fullName>
+                    <default>false</default>
+                    <label>FLPR-Fuel Cells</label>
+                </value>
+                <value>
+                    <fullName>GM Global</fullName>
+                    <default>false</default>
+                    <label>GM Global</label>
+                </value>
+                <value>
+                    <fullName>HR</fullName>
+                    <default>false</default>
+                    <label>HR</label>
+                </value>
+                <value>
+                    <fullName>HR - Talent Acq - Campus</fullName>
+                    <default>false</default>
+                    <label>HR - Talent Acq - Campus</label>
+                </value>
+                <value>
+                    <fullName>IAL</fullName>
+                    <default>false</default>
+                    <label>IAL</label>
+                </value>
+                <value>
+                    <fullName>IB</fullName>
+                    <default>false</default>
+                    <label>IB</label>
+                </value>
+                <value>
+                    <fullName>IB-Bioactives</fullName>
+                    <default>false</default>
+                    <label>IB-Bioactives</label>
+                </value>
+                <value>
+                    <fullName>IB-Bioactives-Food-Distilling and Brewing</fullName>
+                    <default>false</default>
+                    <label>IB-Bioactives-Food-Distilling and Brewing</label>
+                </value>
+                <value>
+                    <fullName>IB-Bioactives-HPC</fullName>
+                    <default>false</default>
+                    <label>IB-Bioactives-HPC</label>
+                </value>
+                <value>
+                    <fullName>IB-Biomaterials</fullName>
+                    <default>false</default>
+                    <label>IB-Biomaterials</label>
+                </value>
+                <value>
+                    <fullName>IB-Biomaterials-Cerenol</fullName>
+                    <default>false</default>
+                    <label>IB-Biomaterials-Cerenol</label>
+                </value>
+                <value>
+                    <fullName>IB-Biomaterials-Sorona</fullName>
+                    <default>false</default>
+                    <label>IB-Biomaterials-Sorona</label>
+                </value>
+                <value>
+                    <fullName>IB-Biomaterials-Tate &amp; Lyle</fullName>
+                    <default>false</default>
+                    <label>IB-Biomaterials-Tate &amp; Lyle</label>
+                </value>
+                <value>
+                    <fullName>IB-Biorefineries</fullName>
+                    <default>false</default>
+                    <label>IB-Biorefineries</label>
+                </value>
+                <value>
+                    <fullName>IB-Biorefineries-Biofuels</fullName>
+                    <default>false</default>
+                    <label>IB-Biorefineries-Biofuels</label>
+                </value>
+                <value>
+                    <fullName>IB-Biorefineries-Cellulosic Ethanol</fullName>
+                    <default>false</default>
+                    <label>IB-Biorefineries-Cellulosic Ethanol</label>
+                </value>
+                <value>
+                    <fullName>Integrated Ops &amp; Eng</fullName>
+                    <default>false</default>
+                    <label>Integrated Ops &amp; Eng</label>
+                </value>
+                <value>
+                    <fullName>IT</fullName>
+                    <default>false</default>
+                    <label>IT</label>
+                </value>
+                <value>
+                    <fullName>IT-VRM</fullName>
+                    <default>false</default>
+                    <label>IT-VRM</label>
+                </value>
+                <value>
+                    <fullName>LEGL</fullName>
+                    <default>false</default>
+                    <label>LEGL</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S</fullName>
+                    <default>false</default>
+                    <label>M&amp;S</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-B&amp;C</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-B&amp;C</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-Bus Improve Resource</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-Bus Improve Resource</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-Business Development</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-Business Development</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-CIC</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-CIC</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-Corp Marketing</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-Corp Marketing</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-Customer Care</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-Customer Care</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-eBusiness</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-eBusiness</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-Food</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-Food</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-IT</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-IT</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-Oil &amp; Gas</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-Oil &amp; Gas</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-T-Marine</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-T-Marine</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-T-Rail</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-T-Rail</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-T-Road</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-T-Road</label>
+                </value>
+                <value>
+                    <fullName>N&amp;H-Food Ingredients</fullName>
+                    <default>false</default>
+                    <label>N&amp;H-Food Ingredients</label>
+                </value>
+                <value>
+                    <fullName>N&amp;H-Pioneer</fullName>
+                    <default>false</default>
+                    <label>N&amp;H-Pioneer</label>
+                </value>
+                <value>
+                    <fullName>P&amp;IP</fullName>
+                    <default>false</default>
+                    <label>P&amp;IP</label>
+                </value>
+                <value>
+                    <fullName>P&amp;IP-DLPS</fullName>
+                    <default>false</default>
+                    <label>P&amp;IP-DLPS</label>
+                </value>
+                <value>
+                    <fullName>P&amp;IP-Ethylene Copolymers</fullName>
+                    <default>false</default>
+                    <label>P&amp;IP-Ethylene Copolymers</label>
+                </value>
+                <value>
+                    <fullName>P&amp;IP-Glass Laminating Sol</fullName>
+                    <default>false</default>
+                    <label>P&amp;IP-Glass Laminating Sol</label>
+                </value>
+                <value>
+                    <fullName>P&amp;IP PV</fullName>
+                    <default>false</default>
+                    <label>P&amp;IP PV</label>
+                </value>
+                <value>
+                    <fullName>PHB</fullName>
+                    <default>false</default>
+                    <label>PHB</label>
+                </value>
+                <value>
+                    <fullName>S&amp;L-Logistics</fullName>
+                    <default>false</default>
+                    <label>S&amp;L-Logistics</label>
+                </value>
+                <value>
+                    <fullName>SHE</fullName>
+                    <default>false</default>
+                    <label>SHE</label>
+                </value>
+                <value>
+                    <fullName>SHE-Sustainable Growth</fullName>
+                    <default>false</default>
+                    <label>SHE-Sustainable Growth</label>
+                </value>
+                <value>
+                    <fullName>SOLAE</fullName>
+                    <default>false</default>
+                    <label>SOLAE</label>
+                </value>
+                <value>
+                    <fullName>SOLAE-Agribusiness</fullName>
+                    <default>false</default>
+                    <label>SOLAE-Agribusiness</label>
+                </value>
+                <value>
+                    <fullName>SOLAE-Lecithin</fullName>
+                    <default>false</default>
+                    <label>SOLAE-Lecithin</label>
+                </value>
+                <value>
+                    <fullName>Solae-Meat Solutions</fullName>
+                    <default>false</default>
+                    <label>Solae-Meat Solutions</label>
+                </value>
+                <value>
+                    <fullName>SOLAE-Polymer</fullName>
+                    <default>false</default>
+                    <label>SOLAE-Polymer</label>
+                </value>
+                <value>
+                    <fullName>Solae-Specialty</fullName>
+                    <default>false</default>
+                    <label>Solae-Specialty</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Range__c</fullName>
+        <description>Stores the range of  scores and corresponding grades to that scores.</description>
+        <externalId>false</externalId>
+        <label>Range</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Type__c</fullName>
+        <description>This custom field contains the record Type Name.</description>
+        <externalId>false</externalId>
+        <label>Rule Record Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rule_Type__c</fullName>
+        <description>For capturing the application where the rule will be used</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dynamic Approval</fullName>
+                    <default>false</default>
+                    <label>Dynamic Approval</label>
+                </value>
+                <value>
+                    <fullName>Scoring</fullName>
+                    <default>false</default>
+                    <label>Scoring</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sobject_Type__c</fullName>
+        <description>This custom field is used to recognize the type of SObject.</description>
+        <externalId>false</externalId>
+        <label>Sobject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Write_To__c</fullName>
+        <description>The field in the Sobject to which the calculated score has to be written.</description>
+        <externalId>false</externalId>
+        <label>Write To</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Rule</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Scoring_Rules</fullName>
+        <columns>NAME</columns>
+        <columns>Geo_Region__c</columns>
+        <columns>Sobject_Type__c</columns>
+        <columns>Rule_Type__c</columns>
+        <columns>Write_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Rule_Type__c</field>
+            <operation>equals</operation>
+            <value>Scoring</value>
+        </filters>
+        <label>Scoring Rules</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Rule Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Rules</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

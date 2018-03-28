@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Entering the Corian® Quality Network - GE Version</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA QN Entering GE</name>
+    <style>formalLetter</style>
+    <subject>Aufnahme in das Corian® Quality Network</subject>
+    <textOnly>Sehr geehrter {!Qualification__c.Contact__c},
+
+wir haben eine Anfrage erhalten um Ihr Unternehmen zum Mitglied unseres &quot;DuPont™ Corian® Quality Network&quot; zu machen.  Wir senden Ihnen hiermit ein Link mit Ihrem &quot;DuPont™ Corian® Quality Network&quot;-Vertrag.
+ 
+Dürfen wir Sie bitten, zwei Kopien der &quot;DuPont™ Corian® Quality Network&quot; Vereinbarung zu drucken; jede Seite des Kontraktes zu paragraphieren und die letzten Seite zu unterschreiben und abzustempeln, bevor Sie die beide Kopien an die u.e. Adresse zurückschicken:
+
+DuPont de Nemours (Belgium) BVBA
+Attn {!Qualification__c.Owner__c}
+Building Innovations - KGB4
+Antoon Spinoystraat 6
+2800 Mechelen
+Belgium
+
+Nachher werden Sie 1 Exemplar zurück erhalten mit &quot;DuPont™ Corian® Quality Network&quot; unterstützendes Material.
+ 
+Bei Fragen, zögern Sie bitte nicht mich zu kontaktieren.
+
+Mit freundlichen Grüßen,{!Qualification__c.Owner__c}
+DuPont Building Innovations – Surfaces
+Quality Network Assistant
+Warranty Centre Corian®
+Email: BI-Warranty@dupont.com 
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

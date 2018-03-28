@@ -1,0 +1,37 @@
+<apex:page controller="ctrlOppInvestmentMassAdd" tabStyle="Opportunity_Investment__c">
+  
+  <apex:form >
+  
+    <apex:pageBlock title="{!$ObjectType.Opportunity_Investment__c.label}">
+      <apex:pageMessages />
+      <apex:pageBlockButtons >
+        <apex:commandButton value="Save" action="{!save}"/>
+        <apex:commandButton value="Cancel" action="{!done}"/>
+      </apex:pageBlockButtons>
+    <apex:outputpanel style="color:red"><h2>{!ErrMsg}</h2></apex:outputpanel>
+    <apex:pageBlockSection title="Mass Add Resources" columns="1">
+    <apex:outputPanel layout="block"> 
+    <table class="madd list" cellpadding="0" cellspacing="0" border="0" style="width:100%">
+         <thead><tr class="headerRow" style="width:100%">
+            <apex:repeat value="{!$ObjectType.Opportunity_Investment__c.FieldSets.MassAdd}" var="f">
+                <th>
+                <apex:OutputLabel value="{!$ObjectType.Opportunity_Investment__c.fields[f].label}"/>
+                </th>           
+            </apex:repeat>      
+         </tr></thead>
+        <tbody>
+        <apex:repeat value="{!newRecords}" var="i" id="theRepeat">
+            <tr class="dataRow">
+                <apex:repeat value="{!$ObjectType.Opportunity_Investment__c.FieldSets.MassAdd}" var="f" >
+                    <td><apex:inputField value="{!i[f]}" /></td>              
+                </apex:repeat>  
+            </tr>
+        </apex:repeat>
+        </tbody>
+  </table>
+  </apex:outputPanel>
+  </apex:pageBlockSection>
+</apex:pageBlock>
+   
+  </apex:form>
+</apex:page>

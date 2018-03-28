@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>Sales DPT IPP Opportunities South Cluster 2016</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <footer>Opportunities by type</footer>
+            <header>Amount of opps</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_EMEA_sales/Opportunities_by_type_CE_WE_2016</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Opportunities by type</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Amount of opps</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/IPP_CE_opportunities_by_stage_2016</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Opportunities by stage</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Amount of opps</header>
+            <legendPosition>Right</legendPosition>
+            <report>DPT_EMEA_sales/IPP_CE_opportunities_by_sales_2016_num</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Opportunities by sales (Number)</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Sum of Amount (converted) in EUR</footer>
+            <header>Amount of opps</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/IPP_Oppos_by_salesrep_WE_C_2016_Amount</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Opportunities by sales (Amount)</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Success Rate %</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/Opp_CE_2016_Success_Rate_per_Q</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Won/Lost Opps</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header># of active projects</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/of_active_projects_CE_2016</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Current year</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header># of active projects</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/IPP_opp_active_projects_CE_won_2016</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>per quarter (incl. won &amp; excl. lost)</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Expected Sales Revenue</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/IPP_opp_expected_sales_revenue_CE_2016</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>per quarter</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Opportunities report</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/IPP_Exp_Rev_by_type_in_APO_CE_2016</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Exp. sales rev. by type (EUR) in APO</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Opportunities report</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/IPP_Exp_Rev_ty_type_not_in_APO_CE20163</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Exp sales rev. by type not in APO</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Pie</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Opportunities per product</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/Opp_IPP_EMEA_CE_20161</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Current year</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>luigi.tizzoni@lux.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Sales DPT Clean Environment Opportunities Western &amp; Central Europe 2016</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

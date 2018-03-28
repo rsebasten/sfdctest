@@ -1,0 +1,12 @@
+<apex:page sidebar="true" showHeader="true"  controller="ctrlBIeWarrantyCodeCreation" contentType="application/vnd.ms-excel#WarrantyCodes.xls" cache="true"> 
+    <apex:outputPanel id="WarrnatyCodes">
+            <apex:pageBlock >
+                    <apex:pageBlockTable value="{!CodesList}" var="gc"
+                        rendered="{!CodesList<>null}" border="1" >
+                        <apex:column value="{!gc.warrantyCode}">
+                            <apex:facet name="header">Warranty Code</apex:facet>
+                        </apex:column>                                     
+                    </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:outputPanel>
+</apex:page>

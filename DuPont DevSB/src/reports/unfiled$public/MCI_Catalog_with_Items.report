@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>Catalog_Item__c.Catalog_Item_Name__c</field>
+    </columns>
+    <columns>
+        <field>Catalog_Item__c.Catalog_Item_Type__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DPS-NA - RR Donnelley,NOW-NA Separation Solutions - Digital Direct,DPS-NA GPP Digital Direct</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Catalog_Item__c.Item_Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>MCI Catalog with Items</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Catalog__c$Catalog_Item__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

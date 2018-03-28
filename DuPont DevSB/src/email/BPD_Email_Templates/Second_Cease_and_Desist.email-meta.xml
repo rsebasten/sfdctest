@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>CEASE &amp; DESIST 2 - DOMAIN NAME CEASE AND DESIST REMINDER</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Cease &amp; Desist - Second Notice of Trademark Infringement: {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Note: when replying to this email, please select “Reply All” and ensure that “Subject” line begins with the case number {!Case.CaseNumber}.
+
+Dear Addressee or To Whom It May Concern {!Case.Customer_Lab_Result__c}:
+
+On checking your [“your client’s” in the case of a Registrar and private hosting] file we note that you [your client] have not responded to our letter of DATE OF ORIGINAL LETTER.
+
+We are attaching a copy of our letter and now urge you [your client] to immediately attend to this matter within 5 business days from the date of this notification; otherwise we will forward this matter to our Legal Department for further action.
+
+If you have any questions concerning the proper identification of our trademarks, please feel free to contact us at brand.protection@dupont.com or by fax at 302-380-3509.
+
+Thank you for your cooperation.
+
+Sincerely,
+
+DuPont Brand Protection Center
+
+(Attach original letter)</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

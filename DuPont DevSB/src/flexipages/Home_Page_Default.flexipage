@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <componentInstances>
+            <componentName>home:heroChart</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>home:newsPanel</componentName>
+        </componentInstances>
+        <mode>Replace</mode>
+        <name>top</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentName>home:eventContainer</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>home:recentRecordContainer</componentName>
+        </componentInstances>
+        <mode>Replace</mode>
+        <name>bottomLeft</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentName>runtime_sales_activities:todayTaskContainer</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>home:topDealsContainer</componentName>
+        </componentInstances>
+        <mode>Replace</mode>
+        <name>bottomRight</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;b&gt;BI-NA Useful Links&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;a href=&quot;/apex/Script?id=a4K410000008fk4EAA&quot; target=&quot;_blank&quot;&gt;Personnel Change Form&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/one/one.app#/sObject/00O41000007SbiOEAS&quot; target=&quot;_blank&quot;&gt;Tyvek Commercial Proj Pipeline Updated&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/one/one.app#/sObject/00O41000007SbfV&quot; target=&quot;_blank&quot;&gt;My Tyvek Commercial Proj Pipeline Opptys&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>height</name>
+                <value>75</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>pageName</name>
+                <value>DPT_NomexLeftNav</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:visualforcePage</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>home:assistant</componentName>
+        </componentInstances>
+        <mode>Replace</mode>
+        <name>sidebar</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home Page Default</masterLabel>
+    <parentFlexiPage>home__desktopDefault</parentFlexiPage>
+    <template>
+        <name>home:desktopTemplate</name>
+    </template>
+    <type>HomePage</type>
+</FlexiPage>

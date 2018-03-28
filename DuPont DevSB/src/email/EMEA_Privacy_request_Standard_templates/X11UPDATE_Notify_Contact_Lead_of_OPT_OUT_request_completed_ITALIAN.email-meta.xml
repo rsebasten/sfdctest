@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>11UPDATE Notify Contact-Lead of OPT-OUT request completed- ITALIAN</name>
+    <style>formalLetter</style>
+    <subject>DuPont</subject>
+    <textOnly>Gentile {!Lead.Name},&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+Lei ha confermato la sua registrazione al database Corian®.&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+I suoi dati sono stati conseguentemente aggiornati nel nostro database e saranno trattati secondo la normativa vigente per la tutela dei dati personali. Lei non riceverà alcuna corrispondenza non richiesta da parte nostra.
+
+Cordiali saluti,
+
+{!User.Username}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

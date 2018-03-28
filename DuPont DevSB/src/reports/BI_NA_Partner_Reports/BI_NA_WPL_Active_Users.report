@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User$UserRole</field>
+    </columns>
+    <columns>
+        <field>User$LastLoginDate</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>User$Account</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>weatherization</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BI-NA - WPL Active Users</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_All_Fields__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

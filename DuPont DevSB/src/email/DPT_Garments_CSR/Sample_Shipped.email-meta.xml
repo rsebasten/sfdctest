@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For sending to customers when a sample has shipped.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Sample Shipped</name>
+    <style>formalLetter</style>
+    <subject>Your sample has shipped!</subject>
+    <textOnly>{!Lead.FirstName} {!Lead.LastName},
+
+Your sample request with DuPont Protection Technologies has shipped! Please find the shipping information for your sample below
+
+Request ID: {!Request__c.Name}
+
+Shipping Method:
+Tracking Information:
+
+The sample will be sent to the address below.
+
+{!Lead.Address}
+
+
+If you have any questions regarding this order, please respond to this email or call Customer Service at 1-800-931-3456. Please have the request ID on hand so that customer service can quickly respond to your inquiry.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

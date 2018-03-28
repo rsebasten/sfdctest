@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Use of Company Name</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - Company Name/Domain Name Ambiguity ({!Case.Customer_Lab_Result__c})</subject>
+    <textOnly>Note: when replying to this email, please select “Reply All” and ensure that “Subject” line begins with the case number {!Case.CaseNumber}.
+
+
+Dear {!Case.Alt_Contact__c}:
+
+E. I. du Pont de Nemours and Company (“DuPont”) is committed to providing high quality products and services to our customers.  Our efforts to insist on proper labeling, identification and usage of our trademarks are critical to that commitment.
+
+Our company has been in operation since 1802.  DuPont is both our trade name and trademark for which we hold registrations around the world.   We are sure you can appreciate the concern and need for proper identification, and it is for this reason we are writing to you today.  It has come to our attention that your web site, &quot;{!Case.Customer_Lab_Result__c}&quot;, solicits &quot;{!Case.Product_Selected__c}&quot;.  Your use of “DuPont” has caused and will continue to lead the consumers to assume there is a relationship between our companies.
+
+
+We have no doubt that this situation was unintentional on your part; nonetheless, such use can serve to weaken the identity and value of our trademark.  Therefore, we would like to ensure that this confusion does not continue.
+
+In an effort to reach an amicable remedy, we would be grateful if you would please explain how you arrived at the use of DUPONT for the use of your company and offer ideas on how to distinguish our two entities.  Your help is greatly appreciated.
+
+Please contact us via return email or facsimile at 302-380-3509 if you have any questions or require additional information.  Thank you in advance for your cooperation in this matter.
+
+Sincerely,
+
+DuPont Brand Protection Center</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

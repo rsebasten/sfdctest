@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Settlement proposal to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Settlement  Proposal Customer GE</name>
+    <style>formalLetter</style>
+    <subject>Angebot zur Erledigung der Reklamation (case: {!Case.CaseNumber})</subject>
+    <textOnly>Sehr geehrter Kunde,
+
+In Bezug auf Ihre Reklamation {!Case.CaseNumber} vom {!Case.Date_Entered__c}, finden Sie unten erwähnt unseren Vorschlag für die Erledigung der Beanstandung.
+
+{!Case.Special_Instructions__c}
+
+Wenn Sie mit oben genanntem Angebot über eine Gutschrift/Ersatz/Kostenloses Material nicht einverstanden sind, wird Ihr Fall zur weiteren Bearbeitung an unseren technischen Service übergeben.
+
+Wir entschuldigen uns für alle entstandenen Unannehmlichkeiten, und hoffen diese Beanstandung auf eine für sie befriedigende Weise gelöst zu haben.  Bitte beziehen Sie sich bei jedem Schriftwechsel auf oben angeführte Referenz-Nummer.
+
+Vielen Dank im Voraus für eine schnelle Rückantwort.
+
+Mit freundlichen Grüssen,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

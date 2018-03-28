@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Acknowledgement of registration of complaint to the customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Acknowledgement to Customer Surf SP</name>
+    <style>formalLetter</style>
+    <subject>Confirmación de registro del cliente (case: {!Case.CaseNumber})</subject>
+    <textOnly>Estimado cliente,
+
+Gracias por enviarnos su reclamación (#{!Case.CaseNumber}). Haremos todo lo posible para resolverla cuanto antes.
+
+Cuando hayamos completado el expediente nos pondremos en contacto con nuestro servicio técnico o taller QN para fijar una fecha de inspección/intervención.
+
+Nuestro servicio técnico / taller QN revisará la incidencia y si es posible la reparará en el acto.
+
+Queremos recordarle que deje espacio libre y que nos facilite el material DuPont™ Corian®  de sobra que recibió para evitar las diferencias de color. Le advertimos de que la  intervención puede causarle molestias. 
+
+Si su petición entra dentro de la Garantía Limitada de Instalación de 10 años DuPont™ Corian® aceptaremos el coste de la intervención. En caso de que la incidencia no entre en garantía; el servicio técnico/Taller QN le hará un presupuesto para la reparación o el pulido.
+
+Cuando haya finalizado, el servicio técnico/Taller QN le pedirá que firme la declaración de reparación, que es imprescindible para que paguemos la factura. 
+
+Si tiene cualquier pregunta, no dude en ponerse en contacto con nosotros.
+
+Saludos cordiales,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

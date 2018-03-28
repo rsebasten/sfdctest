@@ -1,0 +1,9 @@
+<apex:page docType="html-5.0" standardStylesheets="true" sidebar="false" standardController="ConstructionPts__CP_Contact__c" extensions="ConstructionPts.CPContactMatchToStandardContacts" >  
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.css')}"/> 
+      <apex:form >   
+     <apex:actionFunction name="actionCreateContact" action="{!CreateNewContact}"/>  
+        <section class="border-bottom">
+          <input type="button"  rendered="{!IF(ShowContactButton,true,false)  || IF(ShowContactPrepopButton,true,false)}"  id="btnCreateNewContact"  class="btn" onclick="actionCreateContact();" value="Create Contact" /> 
+        </section>
+      </apex:form>   
+</apex:page>

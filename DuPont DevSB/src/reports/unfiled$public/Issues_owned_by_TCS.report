@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CUST_OWNER_ALIAS</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>TCS COO</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_OWNER_ALIAS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Issue__c.Application__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Issue__c.Classification__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Issues owned by TCS</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Issue__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2017-09-14</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-06-01</startDate>
+    </timeFrameFilter>
+</Report>

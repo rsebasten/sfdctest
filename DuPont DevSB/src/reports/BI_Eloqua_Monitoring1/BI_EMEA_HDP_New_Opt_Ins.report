@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Id</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>70113000002UcNL</value>
+        </criteriaItems>
+        <operation>with</operation>
+        <primaryTableColumn>CONTACT_ID</primaryTableColumn>
+        <relatedTable>CampaignMember-Campaign</relatedTable>
+        <relatedTableJoinColumn>Contact</relatedTableJoinColumn>
+    </crossFilters>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>MEMBER_CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>12/9/2014 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>MEMBER_STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BI-EMEA HDP New Opt-Ins</name>
+    <params>
+        <name>scopeid</name>
+        <value>000000000000000</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

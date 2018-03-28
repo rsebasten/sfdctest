@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA S&amp;P Re-imbursement request to third parties (eg Reck, Whs, Plant)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA S&amp;P Reimbursement request RECK - EN</name>
+    <style>freeForm</style>
+    <subject>Request for reimbursement (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear Sir, Madam,
+
+
+Please find enclosed all documents necessary to start reimbursement procedure for claim reference {!Case.CaseNumber}.
+
+May I kindly ask you to send me your feedback accompanied by your reference number by return?
+
+Looking forward to receiving your positive feedback, I thank you for your cooperation.
+
+Friendly Regards,
+
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

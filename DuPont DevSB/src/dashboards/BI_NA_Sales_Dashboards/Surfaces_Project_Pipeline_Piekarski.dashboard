@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Projects when &quot;Deb Piekarski&quot; is in the opportunity update</footer>
+            <groupingColumn>External_Initiative__c.Opportunities__r$StageName</groupingColumn>
+            <groupingColumn>External_Initiative__c.Opportunities__r$Main_Ending_Reason__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>BINA/Surfaces_Project_Pipeline_Pierkarski</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Deb&apos;s Projects</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Projects in late stages that have not been moidifed since 01/17 and have DuPont in spec</footer>
+            <groupingColumn>External_Initiative__c.Opportunities__r$StageName</groupingColumn>
+            <groupingColumn>External_Initiative__c$Stage__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>BINA/Inside_Sales_Late_Stage_Spec_Report</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>DuPont Specification (Soft and Hard)</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Projects in late stages that have not been moidifed since 01/17 and do not have DuPont in spec</footer>
+            <groupingColumn>External_Initiative__c.Opportunities__r$StageName</groupingColumn>
+            <groupingColumn>External_Initiative__c$Stage__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>BINA/Inside_Sales_Late_Stage_NO_Spec_Report</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>No DuPont Specificaion</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>benjamin.greenberg@dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Surfaces Project Pipeline - Piekarski</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

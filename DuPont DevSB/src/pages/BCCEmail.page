@@ -1,0 +1,150 @@
+<apex:page controller="ctrlBCCEmail" title="Broadcast Email Wizard" action="{!init}" showHeader="true" sidebar="true" tabstyle="task">
+
+<script>
+
+//Submit the email data to Iframe
+function createEmail(BCC, templ) {
+var ifrm = document.getElementById('iframe_emailresult');
+    ifrm.style.display="";
+    ifrm.scrolling="no";
+    document.forms['editPage'].p5.value=document.getElementById(BCC).value;
+    document.forms['editPage'].template_id.value=document.getElementById(templ).value;
+    document.forms['editPage'].submit();
+    //ifrm.style.height = (document.body.scrollHeight+20)+"px";
+    
+    //var t=setTimeout("alert(document.frames['iframe_emailresult'].forms['editPage'].p7.value);",5000)
+
+}
+
+//Called via /apex/BCCEmail_callback via returnUrl
+function email_callback() {
+var ifrm = document.getElementById('iframe_emailresult');
+    ifrm.style.display="none";
+    ifrm.scrolling="no";
+    //alert('email_callback1');
+    JSemail_AfterSend();
+    //alert('email_callback2');
+}
+////////////////////////////////////////////////////////////////
+</script>
+
+<!-- ===================================================================================================== 
+This is the Form that get submitted into the target IFRAME when creating an Email.
+TODO:  set action to reference the correct pod
+=========================================================================================================-->
+    <!--<form name="editPage" method="post" id="editPage" action="https://one-dupont--qa.cs15.my.salesforce.com/_ui/core/email/author/EmailAuthor" target="iframe_emailresult">-->
+    <form name="editPage" method="post" id="editPage" action="https://one-dupont.my.salesforce.com/_ui/core/email/author/EmailAuthor">
+    <input type="hidden" id="BCC" name="p5" value=""></input>   
+    <input type="hidden" id="AdditionalTo" name="p24" value="{!$User.Email}"/>
+   <!-- <input type="hidden" id="retURL" name="retURL" value="/apex/BCCEmail_callback"></input> -->
+    <input type="hidden" id="noshowHeaderSidebar" name="isdtp" value="mn"></input>
+    <input type="hidden" id="template" name="template_id" value=""></input>
+    <!--  
+    <input type="hidden" id="retURL" name="retURL" value="/003"></input>
+    <input type="hidden" id="retURL" name="retURL" value="/apex/dummy"></input>
+    <input type="hidden" id="body" name="p7"  value="{ref:ABC123}"/>
+    <input type="hidden" id="template" name="template_id" value="000000000000000">
+    <input type="hidden" id="autosave" name="save" value="1">
+    <input type="hidden" name="_CONFIRMATIONTOKEN" value="">
+    <input type="hidden" id="subject" name="p6" value="Subject TEST">
+    <input type="hidden" id="AdditionalTo" name="p24" value="thomas.snyder@usa.dupont.com">
+    <input type="hidden" name="nosave" value="0">
+    <input type="hidden" id="BCC" name="p5" value="">           
+    <input type="hidden" id="CC" name="p4" value="">                
+    <input type="submit" name="test send email" > 
+    -->
+</form>
+
+
+<Apex:form >
+<apex:messages />
+    <apex:actionFunction action="{!email_AfterSend}" rerender="panelRecipientStatus,lastTask" name="JSemail_AfterSend" />
+
+<!-- ===================================================================================================== 
+    NO ACCESS - Show this panel if the users has not been granted access
+=========================================================================================================-->
+<apex:outputPanel id="panelNoAccess">
+<apex:sectionHeader title="Task" subtitle="BCC Email {!IF(isBCCFax,'(FAX)','')}" rendered="{!showNoAccess}"/> 
+ <apex:pageBlock title="Unauthorized Access" rendered="{!showNoAccess}">
+     <apex:pageBlockButtons >
+        <apex:commandButton action="{!Close}" value="Back to Contact List" />
+    </apex:pageBlockButtons>
+   <br/><b>You do not have the access level need to perform this function.</b><br/>
+</apex:pageBlock>
+</apex:outputPanel>
+
+
+<!-- ===================================================================================================== 
+    SETTINGS -  Allow user to see the recipients and toggle Log Activity prior to create email request
+=========================================================================================================-->
+<apex:outputpanel id="panelSettings" >
+
+ <apex:inputHidden id="BCC" value="{!BCC}"/> 
+ <apex:inputHidden id="Template" value="{!Template}"/> 
+ 
+<apex:sectionHeader title="Task" subtitle="Create BCC Email {!IF(isBCCFax,'(FAX)','')}" rendered="{!showSettings}"/> 
+
+ <apex:pageBlock rendered="{!showSettings}">
+    <apex:pageBlockSection columns="1" title="" rendered="{!ShowSkipsEmail}">
+        <apex:facet name="header"><h3 style="background-color:red" >The following Contact(s) have been skipped due to missing {!IF(isBCCFax,'FAX number','Email')}:</h3></apex:facet>
+        <apex:outputText escape="false" value="{!skipEmaillinks}" />
+    </apex:pageBlockSection>
+    <apex:pageBlockSection columns="1" title="" rendered="{!ShowSkipsUnowned}">
+        <apex:facet name="header"><h3 style="background-color:red" >The following Contact(s) cannot be emailed because you do not own them:</h3></apex:facet>
+        <apex:outputText escape="false" value="{!skipUnownedlinks}" />
+    </apex:pageBlockSection>
+     <apex:pageBlockSection columns="1" title="Broadcast Email">
+        <apex:pageBlockSectionItem ><apex:outputLabel value="BCC Recipients"/><apex:outputText value="{!BCC}" /></apex:pageBlockSectionItem> 
+        <!-- <apex:pageBlockSectionItem ><apex:outputLabel value="size"/><apex:outputText value="{!BCCSize}" /> </apex:pageBlockSectionItem>   -->
+        <apex:pageBlockSectionItem ><apex:outputLabel id="LogActivity" value="Log Activity on each BCC Recipient?"/><apex:inputCheckbox value="{!LogActivity}" /></apex:pageBlockSectionItem> 
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Template"/>
+            <apex:outputpanel id="panelTemplate">
+                <Apex:panelgrid columns="2"><apex:SelectList value="{!selectedFolder}" size="1">
+                    <apex:actionSupport event="onchange" rerender="panelTemplate" action="{!TemplateFolder_OnChange}"/>
+                    <apex:selectOptions value="{!EmailFolders}" />
+                </apex:SelectList>
+                <apex:SelectList id="slTemplate" value="{!selectedTemplate}" size="1">
+                    <apex:selectOptions value="{!EmailTemplates}"/>
+                </apex:SelectList></Apex:panelgrid>
+            </apex:outputpanel>
+        </apex:pageBlockSectionItem>
+        <!-- <apex:pageBlockSectionItem ><apex:outputLabel value="CC Yourself"/><apex:inputCheckbox value="" /></apex:pageBlockSectionItem>-->
+    </apex:pageBlockSection>
+    <apex:pageBlockButtons >
+        <!--<apex:commandButton action="{!CreateEmail}" oncomplete="createEmail('{!$Component.BCC}','{!$Component.Template}');" value="Create Email" rerender="panelSettings"/>-->
+        <apex:commandButton action="{!CreateEmail}" value="Create Email" rerender="panelSettings" oncomplete="createEmail('{!$Component.BCC}','{!$Component.Template}');"/>
+    </apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:outputpanel>
+
+
+<!-- ===================================================================================================== 
+    RESULTS -  This Panel is shown after the email is sent and displays the tasks created for each BCC recipient (Contact) 
+=========================================================================================================-->
+<apex:outputPanel id="panelRecipientStatus">
+    <apex:sectionHeader title="Task" subtitle="BCC Email Results" rendered="{!showResults}"/> 
+    <apex:pageBlock title="Recipients Activity Log" rendered="{!showResults}">
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!Close}" value="Back to Contact List" />
+        </apex:pageBlockButtons>
+        <apex:outputText value="no activity Logged" rendered="{!(!showLogStatus)}" />
+        <apex:PageBlockTable value="{!LogStatus}" var="r" rendered="{!showLogStatus}">
+            <apex:column headerValue="Contact"><apex:outputLink value="/{!r.contact.Id}" target="_blank">{!r.contact.Name}</apex:outputLink></apex:column>
+            <apex:column headerValue="Subject"><apex:outputLink value="/{!r.task.Id}" target="_blank">{!r.task.Subject}</apex:outputLink></apex:column>
+        </apex:PageBlockTable>
+    </apex:pageBlock>
+</apex:outputPanel>
+ 
+</Apex:form>
+ 
+ 
+<!-- ===================================================================================================== 
+IFRAME used to send email
+=========================================================================================================-->
+<iframe id="iframe_emailresult" name="iframe_emailresult" width="100%" height="850" noresize="true" style="display:none; border:1px solid #E9E8DF;" />
+
+ 
+
+ 
+</apex:page>

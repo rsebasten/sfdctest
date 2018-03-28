@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CRMITProject_MigrationUser_RS_RW_PSCRM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>(06-JUL-17) - Issue fix for IS ID-00082857.  This is a &quot;generic&quot; share to extend &apos;Data Migration User&apos; owned records with PS CRM role and subordinates ---due to original owners being inactive in OneDuPont.</description>
+        <label>CRM IT Project Migration User RW to RS PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>APEngagementLeader</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>AP Engagement Leader</label>
+        <sharedTo>
+            <group>APEngagementLeader</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>APEngagementLeader</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_IT_Project_RIS_DuPont_Corporate_PG_M_S_IT_Project_Review_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM-IT-Project_RIS-DuPont_Corporate_PG-M&amp;S-IT-Project-Review_RW</label>
+        <sharedTo>
+            <group>MSITProjectReview</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPontCorporate</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>EMEAEngagementLeader790116</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>EMEA Engagement Leader</label>
+        <sharedTo>
+            <group>EMEAEngagementLeader</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>EMEAEngagementLeader</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFDCCRMEngagementTeams790111</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>SFDC CRM Engagement Teams</label>
+        <sharedTo>
+            <group>SFDCCRMEngagementTeams</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SFDCCRMEngagementTeams</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

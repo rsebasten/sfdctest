@@ -1,0 +1,117 @@
+<!--/*******************************************************************************
+Copyright © 2015 DuPont. All rights reserved. 
+Author: Sanchit Dua
+Email: sanchit.dua@accenture.com
+Description:  VF page adding styles to the banner/other important messages.
+********************************************************************************/-->
+<apex:page >
+    <apex:includeScript value="{!URLFOR($Resource.CS_JQueryUI, '/jquery.min.js')}" />
+    
+    <style>
+        #sys:link {
+            text-decoration: none;                     
+        }
+        
+        #sys:visited {
+            text-decoration: none;
+        }
+        
+        /* unvisited link */
+        #sys:link {}
+        
+        #sys.thick {
+            color: #FF0000;
+            font-weight: bold;
+            font-size: 200%;            
+        }
+        
+        /* visited link */
+        #sys:visited {
+            color: #FF0000;
+        }
+        
+        /* mouse over link */
+        
+        
+        /* selected link */
+        #sys:active {
+            color: #0000FF;
+        }
+        
+        
+    </style>
+    
+    <script>
+        $j = jQuery.noConflict(); 
+        
+        $j("#sys").click(function(e){
+            e.preventDefault();//this will prevent the link trying to navigate to another page
+            var href = $j(this).attr("href");//get the href so we can navigate later
+            //when update has finished, navigate to the other page
+            window.location = href;
+            return;
+        });
+        
+        function slideComponents(){
+            $j('div[id$=message]').slideToggle(200);            
+        } // END function slideComponents()        
+        
+        // While the IMPORTANT MESSAGES window is open, if the ok is clicked the following is invoked to make the IMPORTANT MESSAGES window hidden
+        function closeWindow() {
+            setTimeout(function(){window.top.close(); }, 500);
+        } // END function closeWindow()        
+    </script>
+    <script language="JavaScript1.2" src="/js/functions.js"></script>
+    <script src="/soap/ajax/9.0/connection.js" type="text/javascript"></script>
+    <script id="clientEventHandlersJS" language="javascript">
+        
+        $j(document).ready(function(){
+            CallSOQL();
+        });
+        function CallSOQL(){
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+            try{
+                // alert('Select Name, Id From Account ORDER BY Name');
+                var AccountName="TEST ACCOUNT";
+                var status = "Active";
+                var application = "Customer Service";
+                var recordType = "CS Notification Banner";
+                var qr = sforce.connection.query("SELECT Application__c, Name, Type__c, Short_Desc__c, Status__c FROM Site_Content__c where Status__c='"+ status +"' and Application__c='"+application+"' and RecordType.Name='"+recordType+"' ORDER BY CreatedDate DESC");
+                var records = qr.getArray("records");
+                // alert('qr '+qr);
+            }
+            catch (error){
+                alert(error.faultstring);
+            }
+        
+            if (qr.size == 0){
+                // alert("No Record found.");
+            }else if (qr.size == 1){
+                // alert('inside else before setting the system value ...');
+                // alert('the first record is: '+qr);
+                $j("#sys").text(qr.records.Name);
+                $j("#sys2").text(qr.records.Name);
+                $j("#message").text(qr.records.Short_Desc__c);
+                // alert('after successfully setting the value');
+            }else{
+                // alert('Error: There exist more than 1 record for the Record Type Named CS Notification Banner.');   
+                $j("#sys").text(qr.records[0].Name);
+                $j("#sys2").text(qr.records[0].Name);
+                $j("#message").text(qr.records[0].Short_Desc__c);
+                // for (var i=0;i<qr.records.length;i++){
+                    // alert(qr.records[i].Name);
+                // }
+            }
+        }
+    </script>
+    <script>
+        var myWindow;
+        // This function is responsible for invoking a new window for "IMPORTANT MESSAGES"
+        function setBannerMsg(){
+            myWindow = window.open("/apex/page_CSHomePageMsg", "DuPont_Important_Messages", "directories=0,titlebar=0,toolbar=0,location=0,status=0, menubar=0,scrollbars=no,resizable=no, top=500, left=500, width=400, height=400"); // location=no, toolbar=no, scrollbars=no, resizable=no
+            // myWindow = window.open("/apex/page_CSHomePageMsg?mainMsg=Hey", "winname", "directories=0,titlebar=0,toolbar=0,location=0,status=0, menubar=0,scrollbars=no,resizable=no,width=400,height=350");
+            return false;
+        } // END function setBannerMsg()
+    </script>
+    
+</apex:page>

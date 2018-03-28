@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[Dear colleague,]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<font style="font-size: 12pt; " size="3">Please log a NC entry for the complaint below and provide us your NC complaint reference in return. Upon completion of your investigation please provide your resolution outcome by replying to this message.<br><br>Kind regards,<br>{!Case.CreatedBy} <br><br><br></font><font style="font-size: 12pt; " size="3">Title: {!Case.Subject}<br></font><font style="font-size: 12pt; " size="3">DPT Complaint ID: {!Case.CaseNumber} / {!Case.Link}<br>Originator: {!Case.OwnerFullName}<br>Classification: {!Case.Severity__c}<br>Customer: {!Case.Account} / {!Case.AccountId}<br>Contact: {!Case.Contact}<br><br>Customer Ship To: [please provide]<br>Ship Point: {!Case.Ship_Point__c}<br>Carrier name: {!Case.Carrier_Name__c}<br></font><font style="font-size: 12pt; " size="3">Carrier ID: {!Case.Carrier_NameId__c}<br>Carrier Ref ID:&nbsp;{!Case.Carrier_Reference__c}</font><div><font style="font-size: 12pt; " size="3">Order Ref:</font>{!Case.Order_Number__c}<div><div style="font-size: 12pt; "><font size="3">Delivery: {!Case.Delivery__c}<br><br>Additional info:<br>{!Case.Description}<br><br><br></font></div></div></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

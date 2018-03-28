@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Utilizar para enviar leads via correo a no-usuarios de Salesforce</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Lead Routing Template - Español (con logo)</name>
+    <style>freeForm</style>
+    <subject>Solicitud cliente_ {!Lead_Routing__c.Type__c}</subject>
+    <textOnly>Estimado/a
+
+Lo estamos contactando ya que nos interesaría coordinar una reunión para presentarles nuestro producto marca Corian®, en el dia de ayer nos hemos reunido con la empresa Aixa quien nos comento los trabajos realizados y la posibilidad de poder aplicar nuestro producto en el proyecto que están trabajando. 
+
+En otras oportunidades ya han utilizado nuestros productos para mostradores y mesas y creemos que es una gran oportunidad para que lo puedan volver a probar o les ofrecemos la posibilidad de realizar un prototipo a nuestro costo para que puedan ver las propiedades y la estética del mismo.
+
+DuPont comercializa el producto de manera directa ya que no contamos con distribuidores. Adjuntamos los Colores disponibles en Argentina y ficha técnica de Corian®. 
+
+Aguardamos su pronta respuesta. Cordiales saludos
+
+
+
+Evelyn Sroczynski
+Sales Representative |  Argentina.
+DuPont Surfaces | Corian® 
+Phone. +54 11 4021-4711 | Mobile. 54 9 114096-8447
+evelyn.sroczynski@dupont.com
+www.corian.com.ar</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

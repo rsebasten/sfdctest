@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Call Report</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Call Report</name>
+    <style>freeForm</style>
+    <subject>Call Report: {!Call_Report__c.Name} on {!Call_Report__c.Call_Date__c}</subject>
+    <textOnly>Call Report
+ 
+Created by: {!Call_Report__c.CreatedBy}
+Created date: {!Call_Report__c.CreatedDate}
+ 
+Call Report Name: {!Call_Report__c.Name}
+Account: {!Call_Report__c.Account__c}
+Channel: {!Call_Report__c.Channel__c}
+Opportunity: {!Call_Report__c.Opportunity__c}
+Call Date: {!Call_Report__c.Call_Date__c}
+Contact: {!Call_Report__c.Contact__c}
+Status: {!Call_Report__c.Status__c}
+ 
+Purpose: {!Call_Report__c.Purpose__c}
+Attendees: {!Call_Report__c.Attendees__c}
+Comments: {!Call_Report_Comments}
+Customer Needs: {!Call_Report_Customer_Needs}
+Competitive Information: {!Call_Report__c.Competitive_Information__c}
+Next Steps: {!Call_Report__c.Next_Steps__c}
+Topics: {!Call_Report__c.Topic__c}
+ 
+Detail Link: {!Call_Report__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

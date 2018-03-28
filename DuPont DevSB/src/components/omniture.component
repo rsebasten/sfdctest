@@ -1,0 +1,22 @@
+<apex:component >
+    <apex:attribute name="suite" type="string" description="omniture account suite id" required="true"/>
+    <apex:attribute name="pname" type="string" description="optional page name, otherwise pod.pageName"/>
+    <apex:attribute name="params" type="string" description="optional values appened to pagename"/>
+    <script type="text/javascript">
+        var s_account="{!suite}";
+    </script>
+    <script type="text/javascript" src="{!URLFOR($Resource.OmnitureAnalytics)}"></script>
+    <script type="text/javascript">
+        function getPageName(){
+            //EX: https://c.cs0.visual.force.com/apex/DMX_Stage?core.apexpages.devmode.url=1&rec_application=DMX+online&rec_status=Active&SeqNum=4
+            fullUrl='{!$currentpage.url}';
+            arr=fullUrl.split('/');
+            var pod=arr[2].split('.')[1].toUpperCase();
+            var pname=arr[4].substring(0,arr[4].indexOf("?"));
+            return pod+"."+pname;
+        }
+        s.pageName=('{!pname}'=='') ? getPageName():'{!pname}';
+        if ('{!params}'!='') s.pageName=s.pageName+'.'+'{!params}';
+        var s_code=s.t();if(s_code)document.write(s_code);
+    </script>
+</apex:component>

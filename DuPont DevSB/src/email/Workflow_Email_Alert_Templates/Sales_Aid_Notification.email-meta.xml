@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sales Aid - Notification</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Sales Aid - Completed Notification</name>
+    <style>freeForm</style>
+    <subject>Sample Request NOTIFICATION: {!Request__c.Name}</subject>
+    <textOnly>This is a reminder to followup with the customer on a Sample Request you made two weeks ago. 
+ 
+Request Link: {!Request__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

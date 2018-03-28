@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Use &amp; Care instructions for customers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI-EMEA CH Use and Care Instruction to Customer NL</name>
+    <style>formalLetter</style>
+    <subject>Onderhoudsinstructies (case: {!Case.CaseNumber})</subject>
+    <textOnly>Geachte Heer, Mevrouw,
+
+Met betrekking tot uw klacht  {!Case.CaseNumber} gedateerd {!Case.Date_Entered__c},  sturen wij u hierbij ons DuPont™ Corian® onderhoudsboekje.
+
+Waarschijnlijk volgt u reeds instinctief de meeste van onze richtlijnen voor gebruik en onderhoud, maar als u toch nog vragen heeft, die onbeantwoord blijven, aarzel dan niet contact met ons op te nemen. 
+
+Indien u beslist uw DuPont™ Corian® werkblad te laten opfrissen, dan geven wij u graag de gegevens door van een service center of een lijst met erkende verwerkers in uw buurt die u een offerte kunnen maken voor het opschuren.
+
+Met vriendelijke groeten,
+
+{!Case.OwnerFullName}
+DuPont Building Innovations
+{!Case.OwnerTitle}
+Tel: {!Case.OwnerPhone}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

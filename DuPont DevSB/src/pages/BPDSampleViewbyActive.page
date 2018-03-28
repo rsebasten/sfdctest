@@ -1,0 +1,61 @@
+<!-- *****************************************************************************
+<SRM20150602>showing a custom report by filtering sample records and then countries for which records
+ for that sample exist
+ <SRM201506019> Made changes to make Sample record link work.
+ ******************************************************************************/ -->
+<apex:page sidebar="true" standardController="Trademark_Abuse_Sample__c" extensions="ctrlBPDSampleViewByActive" showHeader="true">
+  <apex:sectionHeader title="Cases by Active Ingredient"/>
+  <apex:form id="form">
+  <apex:pageBlock >
+  <apex:pageBlockSection columns="1" >
+      <apex:pageBlockSectionItem >
+          <apex:outputText >Select an Active Ingredient</apex:outputText>
+          <apex:selectList id="time_zones" title="Time Zones"  value="{!selectedItemValue}" size="1">                                        
+                    <apex:selectOptions value="{!ActiveIngredients}"/>
+                    <apex:actionsupport event="onchange" action="{!methodone}"/>
+          </apex:selectList>
+      
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+          <apex:outputText >Select a Country</apex:outputText>
+          <apex:selectList id="time_zones" title="Time Zones"  value="{!Country}" size="1">                                        
+                    <apex:selectOptions value="{!countrylist}"/>
+                    <apex:actionsupport event="onchange" action="{!nimsinow}" reRender="id1"/>
+          </apex:selectList>
+      
+      </apex:pageBlockSectionItem>
+      <apex:outputPanel style="float: left; text-align: center; padding: 10px 0px 10px 0px; width: 100%;" >
+          <apex:commandButton action="{!First}" value="First Page" disabled="{!!hasPrev}"/>
+          <apex:commandButton action="{!prev}" value="Previous Page" disabled="{!!hasPrev}"/>
+          <apex:commandButton action="{!next}" value="Next Page" disabled="{!!hasNext}"/>
+          <apex:commandButton action="{!Last}" value="Last Page" disabled="{!!hasNext}"/>
+      </apex:outputPanel>
+      <apex:pageblocktable value="{!records}" var="rec" id="id1">
+      <apex:column headerValue="Sample Name" value="{!rec.Sample_Name__c}" width="15%"/>
+      <apex:column headerValue="Case Record Link" value="{!rec.Case__c}" width="15%"/>
+      <apex:column headerValue="Company" value="{!rec.Case__r.Company__c}" width="15%"/>
+      <apex:column headerValue="Legacy Sample Name" value="{!rec.Legacy_Sample_Name__c}" width="15%"/>
+      /* <!--<SRM201506019> Sample record link-->*/
+      <apex:column headerValue="Sample Record Link (Open in new tab)" width="15%">
+      <apex:outputLink value="/{!rec.Id}">{!rec.Name}</apex:outputLink>
+      </apex:column>
+      <apex:column headerValue="Case Originator" value="{!rec.Case__r.CreatedById}" width="15%"/>
+      <apex:column headerValue="Created Date" value="{!rec.CreatedDate}" width="15%" />
+   
+      
+    
+      </apex:pageblocktable>
+      <apex:outputPanel style="float: left; text-align: center; padding: 10px 0px 10px 0px; width: 100%;" >
+          <apex:commandButton action="{!First}" value="First Page" disabled="{!!hasPrev}"/>
+          <apex:commandButton action="{!prev}" value="Previous Page" disabled="{!!hasPrev}"/>
+          <apex:commandButton action="{!next}" value="Next Page" disabled="{!!hasNext}"/>
+          <apex:commandButton action="{!Last}" value="Last Page" disabled="{!!hasNext}" />
+      </apex:outputPanel>
+      
+  <apex:outputText >{!(pageNumber * size)+1-size}-{!IF(AND(NOT(ISBLANK(pageNumber * size)),(pageNumber * size)>noOfRecords),noOfRecords,(pageNumber * size))} of {!noOfRecords} </apex:outputText>
+
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>     
+</apex:page>

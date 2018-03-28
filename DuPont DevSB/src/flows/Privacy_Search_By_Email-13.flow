@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Set_Default</name>
+        <label>Set Default</label>
+        <locationX>36</locationX>
+        <locationY>29</locationY>
+        <assignmentItems>
+            <assignToReference>PrivacySearchRequest.Leads__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Found</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PrivacySearchRequest.Contacts__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Found</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Search_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetFields1</name>
+        <label>SetFields1</label>
+        <locationX>208</locationX>
+        <locationY>252</locationY>
+        <assignmentItems>
+            <assignToReference>PrivacySearchRequest.Leads__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Email Match Found</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Search_Contact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetFields2</name>
+        <label>SetFields2</label>
+        <locationX>327</locationX>
+        <locationY>599</locationY>
+        <assignmentItems>
+            <assignToReference>PrivacySearchRequest.Contacts__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Email Match Found</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Privacy_Request</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Found_Contact</name>
+        <label>Found Contact?</label>
+        <locationX>416</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>FCE_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Contact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetFields2</targetReference>
+            </connector>
+            <label>FCE Yes</label>
+        </rules>
+        <rules>
+            <name>FCE_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Contact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Privacy_Request</targetReference>
+            </connector>
+            <label>FCE No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Lead</name>
+        <label>Found Lead?</label>
+        <locationX>213</locationX>
+        <locationY>124</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>FLM_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Lead</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetFields1</targetReference>
+            </connector>
+            <label>FLM Yes</label>
+        </rules>
+        <rules>
+            <name>FLM_NO</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Lead</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Search_Contact</targetReference>
+            </connector>
+            <label>FLM NO</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>F_Space</name>
+        <dataType>String</dataType>
+        <expression>&apos; &apos;</expression>
+    </formulas>
+    <interviewLabel>Privacy Search By Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Privacy Search By Email</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Search_Contact</name>
+        <label>Search Contact By Email</label>
+        <locationX>412</locationX>
+        <locationY>348</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Contact</targetReference>
+        </connector>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>PrivacySearchRequest.Email__c</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputReference>Contact</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Search_Lead</name>
+        <label>Search Lead</label>
+        <locationX>216</locationX>
+        <locationY>26</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Lead</targetReference>
+        </connector>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>PrivacySearchRequest.Email__c</elementReference>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <outputReference>Lead</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Privacy_Request</name>
+        <label>Update Privacy Request</label>
+        <locationX>564</locationX>
+        <locationY>615</locationY>
+        <connector>
+            <targetReference>Search_By_Name</targetReference>
+        </connector>
+        <inputReference>PrivacySearchRequest</inputReference>
+    </recordUpdates>
+    <startElementReference>Set_Default</startElementReference>
+    <subflows>
+        <name>Search_By_Name</name>
+        <label>Search By Name</label>
+        <locationX>777</locationX>
+        <locationY>626</locationY>
+        <flowName>Privacy_Search_By_Name</flowName>
+        <inputAssignments>
+            <name>PrivacySearchRequest</name>
+            <value>
+                <elementReference>PrivacySearchRequest</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>Contact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>Lead</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+    <variables>
+        <name>PrivacySearchRequest</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Privacy_Search_Request__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,357 @@
+<!-- *****************************************************************************
+//Naga 20140623 - Adding input fields for Priority and Comments for IB Request
+******************************************************************************/ -->
+<apex:page cache="false" sidebar="true" controller="ctrlRequestWizard" action="{!init}" tabStyle="Request__c">
+
+
+    <style>
+        .quant:hover { font-size: 80%; color: #EDEDED; cursor: pointer;}
+        .quant { cursor: pointer; font-size: 80%; }
+    </style>
+
+    <script type='text/javascript'>
+
+    /*
+    window.addEventListener("beforeunload", function() {
+         var ans = confirm("Use back button otherwise you will clear your cart.  Are you sure?");
+         if (ans) {
+              //TODO: add your code here
+         }
+    }, false);
+    */
+
+    function addQuantity(val,maxquan,idd){
+        if (val==null || val=='') val=0;
+        if (maxquan==null || maxquan=='') maxquan=99999;
+        if(val<Number(maxquan)) (document.getElementById(idd).value)++;
+    }
+       
+    function subQuantity(val,maxquan,idd){
+        if (val==null || val=='') val=0;
+        if (maxquan==null || maxquan=='') maxquan=99999;
+        if(val>0) (document.getElementById(idd).value)--;
+    }
+    function deleteSelectedItem(){
+        var r=confirm('Are you sure you want to remove the selected item');
+        if(r==false){
+            exit();
+        }
+    }
+    function confirmLimit(){
+        alert('Warning:The Limit for the Item has been exceeded.  Approval will be required and could extend the time to Fulfill');
+    }
+      
+    </script>
+
+    <apex:sectionHeader title="Wizard" subtitle="Sales Aid Request"/>  
+
+    <apex:pageMessages id="msgs"/>
+    
+    <apex:form >
+    
+    <apex:outputPanel id="pSelect" rendered="{!IF(stage=='select',true,false)}">
+    
+    <!--------------------------------------------------------------------------
+        selected items (cart)
+    --------------------------------------------------------------------------->    
+        <apex:outputPanel id="pbSel" >
+        <apex:pageBlock rendered="{!IF(cart.size>0,true,false)}" >
+            <apex:pageMessage rendered="{!cart.requiresApproval}" summary="Approval Required." severity="WARNING" strength="3" />
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!refresh}" value="Refresh Quantity"></apex:commandButton>
+                <apex:commandButton action="{!onCheckout}" value="Checkout"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="true" id="Record" columns="1">
+                <script>var j =0;</script>
+                <apex:facet name="header">
+                    <span style="color: black">Selected Items</span>
+                </apex:facet>
+                <apex:pageBlockTable value="{!cart.items}" var="cartitem" width="732px">
+                    <apex:column >
+                        <apex:facet name="header">Action</apex:facet>
+                        <apex:commandLink action="{!deleteItem}" onclick="deleteSelectedItem();" style="text:2px" rerender="pbSel">Del
+                                <apex:param name="evid" value="{!cartitem.indx}" assignTo="{!eventid}"/>
+                                <apex:param name="evAction" value="delete" assignTo="{!eventaction}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Attn</apex:facet>
+                        <apex:outputpanel layout="none">
+                            <apex:image rendered="{!cartitem.requiresApproval}" url="{!URLFOR($Resource.icons16,'attention1.png')}" title="requires Approval" width="16" height="16" />
+                        </apex:outputpanel>
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <table
+                            style='border: 0px border-collapse:   collapse; border-spacing: 0px; padding: 0x; margin: 0px; border: 0px'
+                            cellspacing='0' cellpadding='0'>
+                            <tr>
+                                <td style='padding: 0px; margin: 0px; border: 0px;'><apex:inputText id="j" value="{!cartitem.requestItem.Quantity__c}"
+                                        style="width:35px;text-align:right" />
+                                </td>
+                                <td style='padding: 0px; margin: 0px; border: 0px'><span
+                                    class='quant'
+                                    onclick="addQuantity( document.getElementById('{!$Component.j}').value,'{!cartitem.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.j}').id);">&#9650;
+                                </span> <br /> <span class='quant'
+                                    onclick="subQuantity(document.getElementById('{!$Component.j}').value,'{!cartitem.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.j}').id);">&#9660;</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:column>
+                    <!-- PKH
+                    <apex:column >
+                        <apex:facet name="header">Unit of Measure / Size</apex:facet>
+                        <apex:outputpanel rendered="{!cartitem.sizeOptions.size==0}" layout="none">
+                            <apex:outputField value="{!cartitem.requestItem.Catalog_Item__r.Unit_of_Measure__c}" />
+                        </apex:outputpanel>
+                        <apex:outputpanel rendered="{!cartitem.sizeOptions.size!=0}" layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:selectList id="sl" value="{!cartitem.requestItem.Size__c}" multiselect="false" size="1" required="true" label="Size">
+                                <apex:selectOptions value="{!cartitem.sizeOptions}"/>
+                            </apex:selectList>
+                        </apex:outputpanel>
+                    </apex:column>
+                    -->
+                    <apex:column >
+                        <apex:facet name="header">Code</apex:facet>
+                        <apex:outputField value="{!cartitem.requestItem.catalog_Item__r.name}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Catalog Item name</apex:facet>
+                        <apex:outputField value="{!cartitem.requestItem.catalog_Item__r.Catalog_Item_Name__c}" />
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Catalog Name</apex:facet>
+                        <apex:outputField value="{!cartitem.requestItem.catalog_Item__r.catalog__r.name}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Special Handling</apex:facet>
+                        <apex:inputTextArea style="width:70%;"
+                            value="{!cartitem.requestItem.Special_Handling__c}" />
+                    </apex:column>
+
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+       </apex:outputPanel>
+    
+
+    <!--------------------------------------------------------------------------
+        enter search criteria; select catalog;
+    --------------------------------------------------------------------------->       
+    <apex:outputPanel id="pbCriteria">
+    
+    <apex:pageBlock >
+        <apex:pageBlockSection collapsible="true" id="mainRecord" columns="1">
+            <apex:facet name="header">
+                <span style="color: black">Search for Catalog Items</span>
+            </apex:facet>
+                <table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+                    <tr>
+                        <td>Search</td>
+                        <td><apex:inputText value="{!SearchString}" style="width:300px" /></td>
+                    </tr>
+                    <tr>
+                        <td>Catalogs:</td>
+                        <td><apex:selectList value="{!catalogId}" size="1"
+                                style="width:400;">
+                                <apex:selectOptions value="{!CatalogSelectOptions}" />
+                            </apex:selectList>
+                            <apex:actionStatus id="searchStatus" onstart="document.body.style.cursor='wait';" onstop="document.body.style.cursor='auto';">
+                                <apex:facet name="stop">
+                                    <apex:commandButton value="Search" id="search" action="{!Search_OnClick}" rerender="pbCriteria,pbResults,msgs" status="searchStatus" />
+                                </apex:facet>
+                                <apex:facet name="start">
+                                    <apex:outputPanel >
+                                           <apex:commandButton value="Searching..." status="searchStatus" disabled="true"/>
+                                           <apex:image value="/img/loading32.gif" style="height: 15px;"/>
+                                       </apex:outputPanel>
+                                   </apex:facet>
+                                </apex:actionStatus>
+                            
+                            <!-- 
+                            <apex:commandButton id="search" action="{!Search_OnClick}" value="Search" rerender="pbCriteria,pbResults"  status="searchStatus" />
+                            <apex:actionstatus id="searchStatus" onmousedown="wait(true);"  onstart="wait(true);" onstop="wait(false);">
+                                <apex:facet name="start"><image id="imgSearch" src="/img/loading.gif" height="20px" />
+                                &nbsp;&nbsp;<i><b>Searching...</b></i></apex:facet>
+                            </apex:actionstatus>
+                            <script>
+                            function wait(on) {
+                                document.body.style.cursor = (on) ? 'wait' : 'auto';
+                                document.getElementById("{!$Component.search}").className   = (on) ? 'btnDisabled' : 'btn';
+                                return true;
+                                }   
+                            </script>                           
+                            -->
+                        </td>
+                    </tr>
+                </table>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:outputPanel>
+     
+     
+    <!--------------------------------------------------------------------------
+        show search results
+    --------------------------------------------------------------------------->     
+    <apex:outputPanel id="pbResults" >
+        <apex:pageBlock id="pbNoRes" rendered="{!IF(ISNULL(searchResults) || searchResults.size==0,true,false)}">
+            No records to display.
+        </apex:pageBlock>
+        <apex:pageBlock id="pbRes" rendered="{!IF(!ISNULL(searchResults) && searchResults.size!=0,true,false)}">
+        <!--Coding Started by DB20150608 -->
+        <apex:pagemessages ></apex:pagemessages>
+         <!--Coding ended by DB20150608 -->
+            <apex:pageBlockButtons id="blkbutton" location="both">
+                    <apex:actionStatus id="addStatus" onstart="document.body.style.cursor='wait';" onstop="document.body.style.cursor='auto';">
+                        <apex:facet name="stop">
+                            <apex:commandButton action="{!Add_onClick}" value="Add to Selection" rerender="pbCriteria,pbSel,pbResults" status="addStatus" />
+                        </apex:facet>
+                        <apex:facet name="start">
+                            <apex:outputPanel >
+                                   <apex:commandButton value="Adding..." status="addStatus" disabled="true"/>
+                                   <apex:image value="/img/loading32.gif" style="height: 15px;"/>
+                               </apex:outputPanel>
+                       </apex:facet>
+                    </apex:actionStatus>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="true" id="Record1" columns="1">
+                <script>var i =0;</script>
+                <apex:facet name="header">
+                    <span style="color: black">Items Available for Selection</span>
+                </apex:facet>
+                <apex:pageMessage rendered="{!IF(searchResults.size>=200,true,false)}" summary="Maximum rows returned. (200)  You may need to refine your search criteria." severity="WARNING" strength="1" />
+                <apex:pageBlockTable id="searchResults" value="{!SearchResults}"
+                    var="sr" width="732px">
+                    <apex:column headerValue="Ordered Quantity" id="quantityentered">
+                        <table
+                            style='border: 0px border-collapse:   collapse; border-spacing: 0px; padding: 0x; margin: 0px; border: 0px'
+                            cellspacing='0' cellpadding='0'>
+                            <tr>
+                                <td style='padding: 0px; margin: 0px; border: 0px;'><apex:inputText id="i" value="{!sr.quantity}"
+                                        onchange="javascript: if((this.value>{!sr.catalogitem.Quantity_Limit_Max__c})) confirmLimit();"
+                                        style="width:35px;text-align:right" />
+                                </td>
+                                <td style='padding: 0px; margin: 0px; border: 0px'><span
+                                    class='quant'
+                                    onclick="addQuantity( document.getElementById('{!$Component.i}').value,'{!sr.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.i}').id);">&#9650;
+                                </span> <br /> <span class='quant'
+                                    onclick="subQuantity(document.getElementById('{!$Component.i}').value,'{!sr.catalogitem.Quantity_Limit_Max__c}',document.getElementById('{!$Component.i}').id);">&#9660;</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:column>
+                    <apex:column >
+                            <apex:facet name="header">Unit of Measure</apex:facet>
+                            <apex:outputField value="{!sr.catalogItem.Unit_of_Measure__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Code</apex:facet>
+                        <apex:outputField value="{!sr.catalogItem.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Name"
+                        value="{!sr.catalogItem.Catalog_Item_Name__c}" />
+                    <apex:column >
+                        <apex:facet name="header">Supplier</apex:facet>
+                        <apex:outputField value="{!sr.catalogItem.Catalog__r.Fulfillment_Supplier__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Catalog</apex:facet>
+                        <apex:outputField value="{!sr.catalogItem.Catalog__r.Name}" />
+                    </apex:column>
+                    <apex:column headerValue="Quantity Limit"
+                        value="{!sr.catalogItem.Quantity_Limit_Max__c}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        </apex:outputPanel>
+    
+    </apex:outputPanel>      
+        
+        
+    <!--------------------------------------------------------------------------
+        Confirmation View
+    --------------------------------------------------------------------------->         
+    <apex:outputPanel id="pConfirm" rendered="{!IF(stage=='confirm',true,false)}">  
+   <!--  <apex:pageMessage summary="Fieldset:{!confirmFieldset.Name} : {!req_fldset}" severity="INFO" strength="1" /> --> 
+        <apex:pageMessage rendered="{!cart.requiresApproval}" summary="Approval Required." severity="WARNING" strength="2" />
+        <apex:pageBlock id="pbEditRequest" mode="edit">
+            <apex:pageBlockButtons id="blkbutton">
+                <apex:commandButton action="{!onConfirm}" value="Confirm" />
+                <apex:commandButton action="{!onBackToSelect}" value="Back/Edit" immediate="true"/>
+            </apex:pageBlockButtons>
+            <!------------------------------------------------------------------------------------------------------
+            <Naga 20140623> Added Page Block section Request Details and eliminated the None value in the priority picklist field
+            ------------------------------------------------------------------------------------------------------->
+            <apex:pageBlockSection collapsible="true" id="Record2" columns="1" title="Request Details">
+            <!-- To eliminate the None value in the Priority picklist field -->              
+              <script type='text/javascript' src= '//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'>
+              </script>
+              <script language="javascript">
+                $(function() {        
+                $('select.RemoveNone option[value=]').remove();       
+                });
+              </script>    
+           <apex:inputField style="width:30;" styleClass="RemoveNone" value="{!req.Priority__c}"/>
+           <apex:inputTextArea style="width:30%;" value="{!req.Comments__c}"  />            
+            </apex:pageBlockSection>            
+            <apex:pageBlockSection collapsible="true" id="Record1" columns="2">
+                <apex:repeat value="{!confirmFieldset.fields}" var="f">  
+                    <apex:inputfield value="{!Cart.req[f.fieldpath]}" required="{!f.required}"/>  
+                </apex:repeat>      
+            </apex:pageBlockSection>
+            <apex:pageBlockSection collapsible="true" columns="1">
+                <script>var j =0;</script>
+                <apex:facet name="header">
+                    <span style="color: black">Selected Items</span>
+                </apex:facet>
+                <apex:pageBlockTable value="{!cart.items}" var="cartitem" width="732px">
+                    <apex:column >
+                        <apex:facet name="header">Attn</apex:facet>
+                        <apex:outputpanel layout="none">
+                            <apex:image rendered="{!cartitem.requiresApproval}" url="{!URLFOR($Resource.icons16,'attention1.png')}" title="requires Approval" width="16" height="16" />
+                        </apex:outputpanel>
+                    </apex:column>                
+                    <apex:column >
+                        <apex:facet name="header">Action</apex:facet>
+                        <apex:commandLink action="{!deleteItem}"
+                            onclick="deleteSelectedItem();" style="text:2px">Del<apex:param name="cartid" value="{!cartitem.catalogItem.Id}" />
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <apex:outputField value="{!cartitem.requestItem.Quantity__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Unit of Measure / Size</apex:facet>
+                            <apex:outputField rendered="{!ISNULL(cartitem.requestItem.Size__c)}" value="{!cartitem.requestItem.Catalog_Item__r.Unit_of_Measure__c}" />
+                            <apex:outputField rendered="{!!ISNULL(cartitem.requestItem.Size__c)}" value="{!cartitem.requestItem.Size__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Code</apex:facet>
+                        <apex:outputField value="{!cartitem.requestItem.catalog_Item__r.name}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Catalog Item name</apex:facet>
+                        <apex:outputField value="{!cartitem.requestItem.catalog_Item__r.Catalog_Item_Name__c}" />
+                    </apex:column>   
+                    <apex:column >
+                        <apex:facet name="header">Catalog Name</apex:facet>
+                        <apex:outputField value="{!cartitem.requestItem.catalog_Item__r.catalog__r.name}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Special Handling</apex:facet>
+                        <apex:inputTextArea style="width:70%;"
+                            value="{!cartitem.requestItem.Special_Handling__c}" />
+                    </apex:column>
+                        <apex:outputPanel rendered="{!cartitem.requiresApproval}" layout="none">
+                                <tr><td><apex:pageMessage summary="This Items requires Approval." severity="WARNING" strength="1" /></td></tr>
+                        </apex:outputPanel>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+     
+        </apex:outputPanel>        
+        
+    </apex:form>
+</apex:page>

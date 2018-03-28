@@ -1,0 +1,117 @@
+<apex:page standardController="Request__c" extensions="ctrlSalesAideItems"  >
+    <apex:sectionHeader Title="Manage Request Items" subtitle="{!request.Name}"/>
+    <apex:messages style="color:red"/>
+    <style>
+        .search{
+            font-size:14pt;
+            margin-right: 20px;    
+        }
+        .fyi{
+            color:red;
+            font-style:italic;
+        }
+        .label{
+            margin-right:10px;
+            font-weight:bold;
+        }
+   </style>
+    <script type='text/javascript'>
+    var waitTime = 1;
+    var countDown = waitTime+1;
+    var started = false;
+    
+    function resetTimer(){
+        countDown=waitTime+1;
+        if(started==false){
+            started=true;
+            runCountDown();
+        }
+    }
+    
+    function runCountDown(){
+        countDown--;
+        if(countDown<=0){
+            execSearch();
+            started=false;
+        }
+        else{
+            window.setTimeout(runCountDown,500);
+        }
+    }
+    function validateQty(value, max, qtyId) {
+        if (max !== null && value > max) {
+            alert('The ordered quantity (' + value + ') is higher than the maximum quantity (' + max + ') allowed for this item');
+            document.getElementById(qtyId).value = '';
+        }
+    }
+    </script>
+
+    <apex:form id="form">
+        <apex:outputPanel id="mainBody">    
+            <apex:pageBlock title="Selected Request Items" id="selected">
+                <apex:pageblockTable value="{!shoppingCart}" var="s" id="pblocktable">
+                    <apex:column style="width:60px">
+                        <apex:commandLink value="Remove"  rendered="{!canEdit}" action="{!removeFromShoppingCart}" reRender="selected,searchResults" immediate="true">
+                            <apex:param value="{!s.Catalog_Item__c}" assignTo="{!idToRemove}" name="idToRemove"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Quantity" style="width:70px" id="colq">
+                        <apex:inputField value="{!s.Quantity__c}"  rendered="{!canEdit}" required="true" id="qty" style="width:60px" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}" onblur="validateQty(this.value, {!s.Catalog_Item__r.Quantity_Limit_Max__c}, this.id);"/>
+                        <apex:outputField value="{!s.Quantity__c}"  rendered="{!NOT(canEdit)}" style="width:60px"/>
+                    </apex:column>
+                    <apex:column headerValue="Max Quantity" value="{!s.Catalog_Item__r.Quantity_Limit_Max__c}" style="width:70px"/>
+                    <apex:column headerValue="Size" value="{!s.Catalog_Item__r.Unit_of_Measure__c}"/>
+                    <apex:column headerValue="Special Handling">
+                        <apex:inputField value="{!s.Special_Handling__c}" rendered="{!canEdit}" />
+                        <apex:outputField value="{!s.Special_Handling__c}" rendered="{!NOT(canEdit)}"/>
+                    </apex:column>
+                    <apex:column headerValue="Item Code" value="{!s.Catalog_Item__r.Name}"/>
+                    <apex:column headerValue="Item Name" value="{!s.Catalog_Item__r.Catalog_Item_Name__c}"/>
+                </apex:pageblockTable>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!onSubmit}" value="Submit Request" rendered="{!canEdit}"/>
+                    <apex:commandButton action="{!onSave}" value="Save Request as Draft" rendered="{!canEdit}"/>
+                    <apex:commandButton action="{!onCancel}" value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+            
+            <apex:pageBlock rendered="{!canEdit}">
+                <apex:outputPanel styleClass="search">
+                    Search for Items:
+                </apex:outputPanel>
+                <apex:actionRegion renderRegionOnly="false" immediate="true">
+                    <apex:actionFunction name="execSearch" action="{!execSearch}" reRender="searchResults" status="searchStatus"/>
+                    <apex:inputText value="{!searchString}" onkeydown="if(event.keyCode==13){this.blur();}else{resetTimer();}" style="width:300px"/>
+                    &nbsp;&nbsp;
+                    <i>
+                        <apex:actionStatus id="searchStatus" startText="searching..." stopText=" "/>
+                    </i>
+                </apex:actionRegion>
+                <br/>
+                <br/>
+                <apex:outputPanel id="searchResults">
+                    <apex:pageBlockTable value="{!searchResults}" var="a">
+                        <apex:column headerValue="Item Code" value="{!a.Name}" />
+                        <apex:column headerValue="Item Name" value="{!a.Catalog_Item_Name__c}"/>
+                        <apex:column headerValue="Item Name" value="{!a.Unit_of_Measure__c}"/>
+                        <apex:column >
+                            <apex:commandButton value="Select" action="{!addToShoppingCart}" reRender="selected,searchResults" immediate="true">
+                                <apex:param value="{!a.Id}" assignTo="{!idToAdd}" name="idToAdd"/>
+                            </apex:commandButton>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <apex:outputPanel styleClass="fyi" rendered="{!overLimit}">
+                        <br/>
+                        Your search returned over 50 results, use a more specific search string if you do not see the desired Item.
+                        <br/>
+                    </apex:outputPanel>
+                    <apex:outputPanel styleClass="fyi" rendered="{!noRecords}">
+                        <br/>
+                        No records found for your criteria
+                        <br/>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:pageBlock>            
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

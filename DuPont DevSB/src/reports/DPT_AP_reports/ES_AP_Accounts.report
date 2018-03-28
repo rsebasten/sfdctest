@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STREET</field>
+    </columns>
+    <columns>
+        <field>Account.Owning_Organization__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_CITY</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_COUNTRY</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Revenue_CYTD_USD__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Revenue_PYTD_USD__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Revenue_PYR_USD__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.Region__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Asia Pacific</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Owning_Organization__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT-Energy Solutions</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>USERS.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ES AP Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

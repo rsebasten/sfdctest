@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>02_ACCESS_Notify Contact/Lead Record Owner of Information access request-ENGLISH</name>
+    <style>formalLetter</style>
+    <subject>{!Lead_Routing__c.Lead_Name__c}&apos;s Privacy Access Request</subject>
+    <textOnly>Dear ,
+
+
+We have received a SFDC request from a customer contact named {!Lead_Routing__c.Lead_Name__c} owned by you,
+
+
+
+{!Lead_Routing__c.Product_Comments__c}
+
+
+
+who has requested access to the personal information that DuPont has about him/ her.
+
+
+
+In line with our privacy policy, we have informed the contact of the information about them that is currently stored in our databases.
+
+
+There is no action required on your part as this communication serves to inform you about this request in the event that you would like to make a follow-up with the contact.
+
+
+Sincerely,
+
+
+DuPont Inquiry Management  Center
+
+Toll-free number : 00800 3876 68 38
+
+Phone : 0034 985 12 3773
+
+
+Fax : 0034 912 72 52 37
+
+E-mail: eu-info@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

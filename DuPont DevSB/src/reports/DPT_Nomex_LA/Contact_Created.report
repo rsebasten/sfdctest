@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CONTACT_CREATED</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Caio Faury,Daniel Feingold,Pedro Prudente de Oliveira,Raphael Alves,Walid Jabba,Alejandro Perea Primero,Adriana Corral,Romulo Fuenmayor,Alejandro Guerra,Federico Canepa,Thiago Ubukata</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CONTACT_CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Contact Created</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

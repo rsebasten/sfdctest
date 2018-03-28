@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>PROPER USE OF TRADEMARK</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - Notice of Trademark Infringement {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+Thank you for your prompt response to our letter dated ____________.  We are in receipt of the product certification documents enclosed in your response dated ___________, in the form of _______________.  These documents comply with our request for demonstrating authenticity of materials as genuine DuPont™ {!Case.Product_Selected__c}.
+
+
+We appreciate your willingness to take the necessary steps to correct all instances of use of DuPont™ {!Case.Product_Selected__c} on your website and printed materials. We have no doubt that the treatment you gave our trademark was inadvertent; however, such oversights can serve to weaken the identity and value of a trademark.  As soon as possible, we request that you make the necessary changes and confirm compliance with the “Proper Trademark Use Checklist” below.  We would expect the changes to be made to your web site within the next 30 days.  Changes to printed materials such as catalogs, brochures, may be made at the next printing.
+
+
+Please note that the use of the DuPont oval logo, and the use of the {!Case.Product_Selected__c} brand in any promotional manner or in advertising is not permitted without a license from DuPont.  What this means to you:
+
+
+Proper Trademark Use Checklist
+
+· You can refer to {!Case.Product_Selected__c} as an ingredient in your product(s) which effectively contain DuPont™ {!Case.Product_Selected__c} brand fibers, or other form, in your sales documents, invoices, web pages, catalogs, and product labels. For example,
+
+o “This product contains {!Case.Product_Selected__c}”, or
+
+o “This product is made with {!Case.Product_Selected__c}”, or
+
+o “This product is reinforced with &lt;{!Case.Product_Selected__c}” (NEVER “{!Case.Product_Selected__c} reinforced”)
+
+· Product performance claims may not be made in direct connection to the {!Case.Product_Selected__c} content unless written permission is provided by DuPont.  An appropriate performance reference might be:  “XYZ Company uses a multiple carbon composite sheet in the construction of the hull that contains DuPont™ {!Case.Product_Selected__c}. XYZ’s propriety composite material provides stiffness and strength to the hull.”
+
+· The first time {!Case.Product_Selected__c} appears in text, it must say &quot; DuPont™ {!Case.Product_Selected__c}&quot; or {!Case.Product_Selected__c}.  After this first complete brand reference, all other references may be simply &quot;{!Case.Product_Selected__c}.”
+
+· You are required to indicate – either in the text or in a footnote – that “{!Case.Product_Selected__c} is a registered trademark of E. I. du Pont de Nemours and Company.”
+
+· You do not have the right to apply any kind of sew-in/sew-on or other seam labels featuring {!Case.Product_Selected__c} on your products.
+
+· {!Case.Product_Selected__c} in a third-party party product does not provide for use of the trademark in a promotional manner.  Also, the trademark may not be used in a product name, a marketing title, or as a standalone featured ‘call out’ in marketing and sales materials.  If you are interested in Licensed Promotional Use of the brand, please contact DuPont Brand Licensing to discuss a Trademark License Agreement.
+
+· Our trademark must always be written in the same style and typeface as the rest of the text without giving it any prominence, but…
+{!Case.Product_Selected__c} must always be written with an initial capital letter, and each and every time you reference the trademark, it must be accompanied by its registration status (®).
+
+· Use of the DuPont oval is not permitted under any circumstances without a license from DuPont.
+
+Upon request, we will gladly send you our “Trademark Usage Guidelines”, which will assist you in the correct use of our brand names in a way that safeguards their value in the marketplace and respects their proprietary nature.
+
+For your convenience, we have supplied below a screen shot of your website with the modifications we are requesting.  Finally, we ask that you indicate your willingness to comply with our requests above by initialing and countersigning this letter and emailing or mailing it back to our attention within 21 days of receipt.  You may also print and fax this letter back to us at  (302) 380-3509.  If you have any questions, please contact us at the following e-mail address: Brand.Protection@dupont.com.
+
+Thank you for your attention to this matter and for your continued support of DuPont products.
+
+Sincerely,
+
+DuPont Brand Protection Center
+
+
+INITIAL WHERE APPLICABLE:
+
+______ I confirm that we will make the necessary changes and confirm compliance with the aforementioned “Proper Trademark Use Checklist”.  These changes will be made to our web site within the next 30 days.  Changes to printed materials such as catalogs, brochures, will be made at the next printing.
+
+
+______ Mark here if you would like us to send you a copy of the “Trademark Usage Guidelines.”
+
+Indicate address if other than that to which this letter was sent:
+
+________________________________________________________________________________
+
+_________________________________________________________________________________
+
+
+COUNTERSIGN:
+
+
+_________________________________________________________________________________
+Name
+
+
+_________________________________________________________________________________
+Printed Name
+
+
+_________________________________________________________________________________
+Date
+
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E.I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

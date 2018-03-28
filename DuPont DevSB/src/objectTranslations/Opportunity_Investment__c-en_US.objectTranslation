@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity-Investment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity-Investments</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- MassAdd --></label>
+        <name>MassAdd</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Name of the resource. --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Opportunity-Investments --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The description of the specific item(s) that the Investment will cover.  If the type is Rebate - document the Rebate % specifics. --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount of the payment that will be provided by the Distributor for this particular investment type --></help>
+        <label><!-- Distributor Payment --></label>
+        <name>Distributor_Payment__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Percentage of the Investment that is attributed to the Distributor --></help>
+        <label><!-- Distributor % --></label>
+        <name>Distributor_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributor Total Investment-copy --></label>
+        <name>Distributor_Total_Investment_copy__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount that DuPont will provide pertaining to this particular Investment Type --></help>
+        <label><!-- DuPont Payment --></label>
+        <name>DuPont_Payment__c</name>
+    </fields>
+    <fields>
+        <help><!-- The percentage of the Investment that is attributed to DuPont --></help>
+        <label><!-- DuPont % --></label>
+        <name>DuPont_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- DuPont Total Investment-copy --></label>
+        <name>DuPont_Total_Investment_copy__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the estimated % of a full time employee&apos;s time that is spent on this opportunity. --></help>
+        <label><!-- FTE (%) --></label>
+        <name>FTE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used only with Recurring Allowances --></help>
+        <label><!-- Include Damages? --></label>
+        <name>Include_Damages__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Amount --></label>
+        <name>Opportunity_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity-Investments --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The method (eg Check or Credit) that will be used to pay the One-Time Allowance --></help>
+        <label><!-- Payment Method --></label>
+        <name>Payment_Method__c</name>
+        <picklistValues>
+            <masterLabel>Check</masterLabel>
+            <translation><!-- Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Purchase Requirement --></label>
+        <name>Purchase_Requirement__c</name>
+    </fields>
+    <fields>
+        <help><!-- The role this person is playing in this opportunity. --></help>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The overall term of the Rebate - Should be no more than 60 (months) --></help>
+        <label><!-- Term --></label>
+        <name>Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>One-Time Allowance</masterLabel>
+            <translation><!-- One-Time Allowance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paint &amp; Equipment</masterLabel>
+            <translation><!-- Paint &amp; Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prebate</masterLabel>
+            <translation><!-- Prebate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products</masterLabel>
+            <translation><!-- Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rebate</masterLabel>
+            <translation><!-- Rebate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recurring Allowance</masterLabel>
+            <translation><!-- Recurring Allowance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Distributor Total Investment --></label>
+        <name>fDistributor_Total_Investment__c</name>
+    </fields>
+    <fields>
+        <label><!-- DuPont Total Investment --></label>
+        <name>fDuPont_Total_Investment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency Term --></label>
+        <name>fFrequencyTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount (from Opp) --></label>
+        <name>fOpportunityAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Investment --></label>
+        <name>fTotalInvestment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Payment --></label>
+        <name>fTotalPayment__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Legacy Investment --></label>
+        <name>Legacy_Investment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- One-Time Allowance --></label>
+        <name>One_Time_Allowance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Opportunity Resources --></label>
+        <name>Opportunity_Resources</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Percentage of Sales Rebate --></label>
+        <name>Percentage_of_Sales_Rebate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Prebate Investment --></label>
+        <name>Prebate_Investment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Products &amp; Kits --></label>
+        <name>Products_Kits</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Recurring Rebate Allowance --></label>
+        <name>Recurring_Allowance</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Investments cannot be changed after they have been approved. If you need to change an investment please submit and recall the approval request. --></errorMessage>
+        <name>Investment_Cannot_be_Changed</name>
+    </validationRules>
+</CustomObjectTranslation>

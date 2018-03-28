@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ClonedId__c</fullName>
+        <description>holds the id of the record this was cloned from as text.</description>
+        <externalId>false</externalId>
+        <label>ClonedId</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Main Competition we are facing for this Product in this Opportunity</description>
+        <externalId>false</externalId>
+        <label>Competition</label>
+        <referenceTo>Competition__c</referenceTo>
+        <relationshipLabel>Competition for Opportunity</relationshipLabel>
+        <relationshipName>OpportunityCompetition</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Method__c</fullName>
+        <description>Method used for this product</description>
+        <externalId>false</externalId>
+        <label>Method</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>true</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mfg_Asset__c</fullName>
+        <externalId>false</externalId>
+        <label>Mfg Asset</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ISO Press-Rods</fullName>
+                    <default>false</default>
+                    <label>ISO Press-Rods</label>
+                </value>
+                <value>
+                    <fullName>ISO Press-Tubes</fullName>
+                    <default>false</default>
+                    <label>ISO Press-Tubes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mfg_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Mfg Process</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>direct formed, isostatic</fullName>
+                    <default>false</default>
+                    <label>direct formed, isostatic</label>
+                </value>
+                <value>
+                    <fullName>direct formed, isostatic, secondary machined</fullName>
+                    <default>false</default>
+                    <label>direct formed, isostatic, secondary machined</label>
+                </value>
+                <value>
+                    <fullName>isostatic shape</fullName>
+                    <default>false</default>
+                    <label>isostatic shape</label>
+                </value>
+                <value>
+                    <fullName>machined part/isostatic</fullName>
+                    <default>false</default>
+                    <label>machined part/isostatic</label>
+                </value>
+                <value>
+                    <fullName>ISO Bar</fullName>
+                    <default>false</default>
+                    <label>ISO Bar</label>
+                </value>
+                <value>
+                    <fullName>ISO Rod</fullName>
+                    <default>false</default>
+                    <label>ISO Rod</label>
+                </value>
+                <value>
+                    <fullName>ISO Tube</fullName>
+                    <default>false</default>
+                    <label>ISO Tube</label>
+                </value>
+                <value>
+                    <fullName>DF2-ISO</fullName>
+                    <default>false</default>
+                    <label>DF2-ISO</label>
+                </value>
+                <value>
+                    <fullName>DF-ISO</fullName>
+                    <default>false</default>
+                    <label>DF-ISO</label>
+                </value>
+                <value>
+                    <fullName>ISO</fullName>
+                    <default>false</default>
+                    <label>ISO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Unit_Type__c</fullName>
+        <description>List of standard types of products, parts or shapes (i.e. o-ring, seal, valve, plate etc.)</description>
+        <externalId>false</externalId>
+        <label>Unit Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Nozzle</fullName>
+                    <default>false</default>
+                    <label>Nozzle</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>fPackaging_Type__c</fullName>
+        <description>This is the Packaging Type for Product related to the opportunity</description>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.Packaging_type__c)</formula>
+        <label>Packaging Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fProduct_L5__c</fullName>
+        <description>Product L5 from the Product Record</description>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Product_L5__c</formula>
+        <inlineHelpText>Product L5 from the Product Record</inlineHelpText>
+        <label>Product L5</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fUOM_Code__c</fullName>
+        <description>This is the Unit of Measure code from the Product</description>
+        <externalId>false</externalId>
+        <formula>TEXT( PricebookEntry.Product2.Unit_Of_Measure_Code__c)</formula>
+        <inlineHelpText>This is the Unit of Measure code from the Product</inlineHelpText>
+        <label>UOM Code</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fUnit_of_Measure__c</fullName>
+        <description>This is the Unit of Measure from the Product</description>
+        <externalId>false</externalId>
+        <formula>TEXT( PricebookEntry.Product2.Unit_Of_Measure__c )</formula>
+        <inlineHelpText>This is the Unit of Measure from the Product</inlineHelpText>
+        <label>Unit of Measure</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <webLinks>
+        <fullName>Add_Products</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add Products</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/oppProductScheduler?id={!Opportunity.Id}</url>
+    </webLinks>
+</CustomObject>

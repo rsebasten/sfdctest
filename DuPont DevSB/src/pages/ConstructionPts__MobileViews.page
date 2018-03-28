@@ -1,0 +1,187 @@
+<apex:page docType="html-5.0" showheader="true" title="My Views" sidebar="false" controller="ConstructionPts.MobileViews" >
+  <!--Include stylesheets for the mobile look and feel -->
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/CPMobile.css')}"/>  
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.min.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master,'Mobile-Design-Templates-master/common/js/jQuery2.0.2.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master,'Mobile-Design-Templates-master/common/js/jquery.touchwipe.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master,'Mobile-Design-Templates-master/common/js/main.min.js')}"/>
+ <apex:includeScript value="/soap/ajax/32.0/connection.js" />
+<div class="oneStyle">
+<apex:form > 
+ <apex:actionFunction name="retrieveProjects" action="{!retrieveProjects}" rerender="ProjectViews" oncomplete="addLoadButton();enableURL();return false;">
+	 	<apex:param name="offsets" assignTo="{!retrieveProjects}" value=""/> 
+ </apex:actionFunction>
+   <apex:actionFunction name="retrieveCompanies" action="{!retrieveCompanies}" rerender="CompanyViews" oncomplete="addLoadButtonCompany();enableURL();return false;">
+	 	<apex:param name="offsets" assignTo="{!retrieveCompanies}" value=""/> 
+ </apex:actionFunction>
+  <apex:actionFunction name="retrieveContacts" action="{!retrieveContacts}" rerender="ContactViews" oncomplete="addLoadButtonContact();enableURL();return false;">
+	 	<apex:param name="offsets" assignTo="{!retrieveCompanies}" value=""/> 
+ </apex:actionFunction>
+  <apex:outputPanel id="ProjectViews">
+		<div id = "ProjectView">
+			 <ul>
+			    <li class="sf1ListHeader">Project Views</li>
+			       <apex:repeat value="{!projectCustomSearches}" var="searchp" rendered = "{!projectCustomSearches != null && projectCustomSearches.size > 0}">
+			        	<li class="sf1List"> <a href="/apex/MobileCustomSearchList?customSearchId={!searchp.Id}"><span class = 'searchp'>{!searchp.Name}</span></a></li>
+			      </apex:repeat>
+		     </ul> 
+	     </div>  
+    </apex:outputPanel>       
+    <li class="sf1ListHeader">Recent Projects</li>
+      <apex:repeat value="{!recentProjects}" var="p">
+         <li class="sf1List" data-id="{!p.Id}">{!p.Name}</li>
+      </apex:repeat>
+    
+     <apex:outputPanel id="CompanyViews">
+	    <div id = "CompanyView">
+		   	 <ul>
+		   	 	<li class="sf1ListHeader">Company Views</li>
+			    <apex:repeat value="{!companyCustomSearches}" var="searchc">
+			        <li class="sf1List"> <a href="/apex/MobileCustomSearchList?customSearchId={!searchc.Id}"><span class ='searchc'>{!searchc.Name}</span></a></li>
+			    </apex:repeat>
+		    </ul>
+	    </div>
+	 </apex:outputPanel>
+    <li class="sf1ListHeader">Recent Companies</li>
+      <apex:repeat value="{!recentCompanies}" var="c">
+         <li class="sf1List" data-id="{!c.Id}">{!c.Name}</li>
+      </apex:repeat>
+      
+     <apex:outputPanel id="ContactViews">
+	    <div id = "ContactView">
+		   	 <ul>
+		   	 	<li class="sf1ListHeader">Contact Views</li>
+			    <apex:repeat value="{!contactCustomSearches}" var="searchcontact">
+			        <li class="sf1List"> <a href="/apex/MobileCustomSearchList?customSearchId={!searchcontact.Id}"><span class ='searchcontact'>{!searchcontact.Name}</span></a></li>
+			    </apex:repeat>
+		    </ul>
+	    </div>
+	 </apex:outputPanel>
+	 <li class="sf1ListHeader">Recent Contacts</li>
+      <apex:repeat value="{!recentContacts}" var="c">
+         <li class="sf1List" data-id="{!c.Id}">{!c.Name}</li>
+      </apex:repeat>  
+</apex:form>
+
+<script>
+
+ 	var fieldList = null;
+    var osp = 10;
+    var endOfList = false;
+    var osc = 10;
+    var osCon = 10; 
+    retrieveProjects(osp);
+    retrieveCompanies(osc);
+	retrieveContacts(osCon);
+
+function addLoadButton(){
+	$('.searchp').each(function(){			
+		var projectName = $(this).text();
+		projectName = projectName.replace(/\\\\\\\'/g, "'").replace(/\\\\\\/g, "\\").replace(/\\\\/g, "\\");				
+		$(this).text(projectName);	
+	});
+	 $( "#loadProject" ).remove();
+	 $("#noProjectView").remove();
+	 if (osp <= 2000 && endOfList == false) {
+	 		if($("#ProjectView ul").children().eq(1).is('.sf1List')){
+        		$("#ProjectView ul").append("<li id='loadProject' class='sf1List'>Load more...</li>");
+	            }else{
+	            $("#ProjectView ul").append("<li id='noProjectView' class='sf1List'>No Project Views </li>");
+	            }     
+	            $("#loadProject").click(function() {
+		             	osp += 10;
+		             	console.log('offset' + osp);
+		             	//var offsetReady = parseInt(offset);
+		                retrieveProjects(osp);
+		                
+	          
+				});
+	}
+}
+
+function addLoadButtonCompany(){ 
+	$('.searchc').each(function(){			
+		var companyName = $(this).text();
+		companyName = companyName.replace(/\\\\\\\'/g, "'").replace(/\\\\\\/g, "\\").replace(/\\\\/g, "\\");				
+		$(this).text(companyName);	
+		});
+ 	$( "#loadCompany" ).remove();
+ 	$("#noCompanyView").remove();
+	 if (osc <= 2000 && endOfList == false) {
+	 		if($("#CompanyView ul").children().eq(1).is('.sf1List')){
+            	$("#CompanyView ul").append("<li id='loadCompany' class='sf1List'>Load more...</li>");  
+            }else{
+            	$("#CompanyView ul").append("<li id='noCompanyView' class='sf1List'>No Company Views </li>");	
+            }   
+            $("#loadCompany").click(function() {
+	             	osc += 10;
+	             	console.log('offset' + osc);
+	             	//var offsetReady = parseInt(offset);
+	                retrieveCompanies(osc);
+	                
+          
+			});
+	}
+
+}
+
+function addLoadButtonContact(){
+	$('.searchcontact').each(function(){			
+			var contactName = $(this).text();
+			contactName = contactName.replace(/\\\\\\\'/g, "'").replace(/\\\\\\/g, "\\").replace(/\\\\/g, "\\");				
+			$(this).text(contactName);	
+			});
+	 	$( "#loadContact" ).remove();
+	 	$("#noContactView").remove();
+		 if (osCon <= 2000 && endOfList == false) {
+		 		if($("#ContactView ul").children().eq(1).is('.sf1List')){
+	            	$("#ContactView ul").append("<li id='loadContact' class='sf1List'>Load more...</li>");  
+	            }else{
+	            	$("#ContactView ul").append("<li id='noContactView' class='sf1List'>No Contact Views </li>");	
+	            }   
+	            $("#loadContact").click(function() {
+		             	osCon += 10;
+		             	console.log('offset' + osCon);
+		             	//var offsetReady = parseInt(offset);
+		                retrieveContacts(osCon);
+		                
+	          
+				});
+		}
+
+
+}
+ 
+function enableURL(){
+     $("li.sf1List").not('#loadProject, #loadCompany, #loadContact, #noCompanyView, #noContactView, #noProjectView').click(function() { // for all non headers
+        //console.log($(this).find("a"));
+        if ($(this).find("a").length == 0) { // for all actual items
+            sforce.one.navigateToSObject($(this).attr("data-id"));
+        } else { // for all custom searches
+        	//sforce.connection.sessionId = "{!$Api.Session_ID}";
+      		var ns = '{!JSENCODE(CPNamespace)}';
+			//sforce.connection.defaultNamespace = ns;
+			if(ns == null){
+             var pageURL = $(this).find("a").attr("href");
+            sforce.one.navigateToURL(pageURL);
+            }else{             		
+             var pageURL = $(this).find("a").attr("href");
+             console.log("pageURL " + pageURL);
+             console.log("pageURL.length" + pageURL.length);
+             console.log("pageURL index /apex/" + pageURL.indexOf('/apex/'));
+        	 var baseURL = pageURL.substring(0,pageURL.indexOf('/apex/'));
+        	 console.log("baseURL " +  baseURL);
+        	 console.log("ns " + ns);
+        	 var restURL = pageURL.substring(pageURL.indexOf('/apex/') + 6,pageURL.length);
+        	 console.log("restURL " + restURL);       	 
+        	 var newURL = '/apex/' + ns + restURL;
+        	 console.log("newURL " + newURL);
+             sforce.one.navigateToURL(newURL);
+            }
+        }
+     });
+     }
+
+</script>
+</div>
+</apex:page>

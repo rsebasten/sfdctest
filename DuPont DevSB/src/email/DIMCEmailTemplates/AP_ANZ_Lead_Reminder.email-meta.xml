@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>followup on lead that has not been managed by DIMC agent</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>AP Lead in Queue Reminder</name>
+    <style>formalLetter</style>
+    <subject>URGENT: Inquiry in Queue for greater than 7 days</subject>
+    <textOnly>Dear DIMC escalation agent,
+
+The following lead : {!Lead.FirstName} {!Lead.LastName} from {!Lead.Company} has been in the queue {!Lead.Lead_Queue__c} for greater than 7 days.  Here is a link to the lead :  {!Lead.Link}
+ 
+Please ensure that a queue member takes ownership of the lead by clicking the &quot;Accept&quot; button and processing the inquiry.
+ 
+Should you need assistance to do so, please contact your Regional DIMC key user (Kate ) . 
+
+Best regards, 
+DIMC Team
+
+ </textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

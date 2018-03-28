@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Informing the relevant DuPont responsible that a TMLA is almost expired</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>TMLA - Expiry Notification</name>
+    <style>freeForm</style>
+    <subject>TMLA Expiry Notification for {!Qualification__c.Account_Name__c}</subject>
+    <textOnly>Dear {!Qualification__c.Owner__c}
+
+This notification is being sent to the DuPont Qualification Owner and Contact Owner regarding the trademark licensing agreement for {!Qualification__c.Account_Name__c} which will expire on {!Qualification__c.End_Date__c}.
+
+Please take necessary action.
+
+Contact your local business licensing coordinator or the coordinator for your region if you have any questions.
+
+All information is available on SFDC: {!Qualification__c.Link}
+
+Best regards,
+
+Global Licensing Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

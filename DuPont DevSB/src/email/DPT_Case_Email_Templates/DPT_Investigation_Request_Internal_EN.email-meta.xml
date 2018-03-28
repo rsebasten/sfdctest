@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DPTInternal product investigation request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>DPT Investigation Request Internal EN</name>
+    <style>formalLetter</style>
+    <subject>Internal product investigation requested (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear colleague(s),
+
+You have received a notification regarding a product warranty that needs further investigation.
+
+Case:    {!Case.CaseNumber} 
+subject: {!Case.Subject}
+Link:      {!Case.Link}
+Description: 
+{!Case.Problem_Description__c}
+
+May I kindly request to send me your feedback within 3 working days and to notify me if this defect needs further investigation at the plant. In the latter case a path forward would be appreciated.
+
+Meanwhile a solution has been found for the customer but the complaint will not be closed internally until your feedback has been received by replying to this notification.
+
+Please refer in all communication to the above Case ID number and ensure your replies are sent to Lizy Van_Roy/EUR/DuPont.
+
+Thank you for your cooperation.
+
+Friendly Regards,
+
+Lizy Van Roy
+QN &amp; Warranty Supervisor
+Tel: +32.15.47.32.82
+Lizy.van-roy@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

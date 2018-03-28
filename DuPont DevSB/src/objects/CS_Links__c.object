@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>The links belong to Orders or Invoices to connect SAP development Box.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Link__c</fullName>
+        <description>Order Number and Invoice Number should be replaced with the Actual Order and Invoice Number in the record without the ‘&lt;&gt;’</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Order Number and Invoice Number should be replaced with the Actual Order and Invoice Number in the record without the ‘&lt;&gt;’</inlineHelpText>
+        <label>Link</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CS Links</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>CEASE &amp; DESIST 1 - DOMAIN NAME CEASE AND DESIST WITH PROOF OF USE</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Cease and Desist - Notice of Trademark Infringement: {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Note: when replying to this email, please select “Reply All” and ensure that “Subject” line begins with the case number {!Case.CaseNumber}.
+
+
+
+Dear Addressee or To Whom It May Concern {!Case.Customer_Lab_Result__c}:
+
+
+
+We have noticed your [“your client’s” in the case of a Registrar and private hosting] use of the {DuPont™ !Case.Product_Selected__c} trademark in association with the above site(s). {!Case.Product_Selected__c} is a registered trademark of E. I. du Pont de Nemours and Company (“DuPont”) and may only be used with the authorization of the owner.  DuPont has invested a substantial amount of effort and financial resources in advertising and promoting its trademarks in order to establish them as symbols of our company’s high quality products.  We are sure you will agree with us that trademarks are valuable properties deserving protection.
+
+
+
+A review of our records does not indicate any sales of DuPont™ {!Case.Product_Selected__c} to your [your client’s] company. Perhaps your [‘your client’s] company purchases from one of our channel partners.  Therefore, we have no proof that the sites you [your client] are indicating as having a connection with  DuPont™ {!Case.Product_Selected__c} actually sell products containing DuPont™ {!Case.Product_Selected__c}.  We ask that you [your client] provide a certification from your supplier(s) (copy of invoice or a letter, for example) that you [your client] are purchasing and using DuPont™ {!Case.Product_Selected__c}.  After we receive such certification, we will provide you [your client] with instructions on the proper use of the trademark, so that you [your client] can value your [your client’s] own products even better in the market place.  Without certification confirming the purchase of authentic DuPont branded material, we will need to ask you [your client] to cease using the {!Case.Product_Selected__c} trademark.
+
+
+
+Irrespective of whether you [your client] can establish that you [your client] are purchasing DuPont™ {!Case.Product_Selected__c} branded materials, DuPont has not authorized your  [your client’s] use of the {!Case.Product_Selected__c} trademark in the domain name for your [your client’s] organization and we require that you [your client] take steps to immediately cease the reference to the {!Case.Product_Selected__c} trademark in your [your client’s] domain name, {!Case.Customer_Lab_Result__c}.
+
+
+
+Actions Required:
+
+
+
+DuPont views the infringement of our intellectual property assets as a serious matter.  We thereby look forward to a speedy and amicable resolution of this issue with this infringement notice.  We therefore require you [your client] to take the following actions:
+
+
+
+i) Request immediate cancellation/amendment of the domain name(s) listed above to the respective domain name Registrar/Internet Provider to remove the {!Case.Product_Selected__c} trademark, with confirmation of such action to DuPont.
+
+
+
+ii) Provide us with documents confirming that the materials you [your client] are indicating as consisting of DuPont™ {!Case.Product_Selected__c} are genuine DuPont sourced.  If this is not provided then we require you [your client] to:
+
+
+
+- Remove all references to the DuPont™ {!Case.Product_Selected__c} trademark from your [your client’s] website or any other website operated by you.
+
+
+
+- Deliver to us samples of all written materials, including labels, brochures, packaging, leaflets etc which contain the word “{!Case.Product_Selected__c}” from any of your [your client’s] advertisers to validate original source of supply and avoid advertising infringements and/or counterfeit relevant goods.
+
+
+
+We would expect the above steps to be taken within the next fourteen (14) days.  Changes to printed materials such as catalogs, brochures, may be made at the next printing.
+
+
+
+Confirmation of Compliance:
+
+
+
+We ask that you [your client] indicate your [your client’s] willingness to comply with our requests above by initialing and countersigning this letter and e-mailing it back to our attention (brand.protection@dupont.com) within 7 days of receipt.  You [Your client] may also print and fax this letter back to us at 302-380-3509.
+
+
+
+Thank you for your attention to this matter.
+
+
+
+Sincerely,
+
+
+
+DuPont Brand Protection Center
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+INITIAL WHERE APPLICABLE:
+
+1. ______ I confirm that I will request immediate cancellation/amendment of the domain name(s) listed above to the respective domain name Registrar/Internet Provider to remove the {!Case.Product_Selected__c} trademark, with confirmation of such action to DuPont.
+
+2. ______ I confirm that we are purchasing and using DuPont™ {!Case.Product_Selected__c} and I am enclosing or attaching proof thereof in the form of a certification from my supplier(s) (copy of invoice or a letter, for example).
+
+3. ______ I confirm that we will make the necessary digital and materials changes.  These changes will be made to our web site within the next 14 days.  Changes to printed materials such as catalogs, brochures, will be made at the next printing.
+
+COUNTERSIGN:
+_________________________________________________________________________________
+Name
+
+_________________________________________________________________________________
+Printed Name
+
+_________________________________________________________________________________
+Date
+
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Stores Settings such as the fallback user, account and recordtype used in CLT process application.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>DuPont_Region__c</fullName>
+        <description>Stores the Region name which has been referred in DuPont</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FallbackAccountId__c</fullName>
+        <description>Fallback Account Id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fallback Account Id</inlineHelpText>
+        <label>FallbackAccountId</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FallbackOwnerId__c</fullName>
+        <description>Fallback Owner Id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fallback Owner Id</inlineHelpText>
+        <label>FallbackOwnerId</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GeoMapRecordType__c</fullName>
+        <description>Developer Name of the GeoMap recordType</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Developer Name of the GeoMap recordType</inlineHelpText>
+        <label>GeoMapRecordType</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OppAgentType__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Value to indicate the search agent type on Opportunity picklist field - used for reporting purposes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value to indicate the search agent type on Opportunity picklist field - used for reporting purposes</inlineHelpText>
+        <label>OppAgentType</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>OppRecordTypeDevName__c</fullName>
+        <description>Developer Name of Opportunity Record Type used for look ups on Project (reporting purposes)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Developer Name of Opportunity Record Type used for look ups on Project (reporting purposes)</inlineHelpText>
+        <label>OppRecordTypeDevName</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owning_Org__c</fullName>
+        <description>Owning Organization of the Opportunity based on external Search agent.</description>
+        <externalId>false</externalId>
+        <label>Owning Org</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SearchAgentPrefix__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Search Agent Prefix</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Search Agent Prefix</inlineHelpText>
+        <label>SearchAgentPrefix</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>BI-NA MHC Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

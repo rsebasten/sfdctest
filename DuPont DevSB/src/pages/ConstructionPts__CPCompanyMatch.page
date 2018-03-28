@@ -1,0 +1,360 @@
+<apex:page standardController="ConstructionPts__CP_Company__c" extensions="ConstructionPts.CPCompanyMatchToAccountsAndLeads">   
+
+  <style>
+        button:disabled {
+        background:white;
+        color:#C0C0C0;
+        cursor:default;
+
+        }
+
+  </style>
+  <c:CPHeader title="" subtitle="" ShowDodgeLogo="false" ShowCPLinks="true"   ShowTitle="false" ShowSubTitle="false"/> 
+  <apex:form id="cpMainForm"> <br/>
+    <apex:pageBlock id="matchinginfo" rendered="{!IF(ISNULL(ConstructionPts__CP_Company__c.ConstructionPts__Account__c) && ISNULL(ConstructionPts__CP_Company__c.ConstructionPts__Lead__c),false,true)}">
+    
+        This company is linked to:  
+        <div style="display: {!IF(ISNULL(ConstructionPts__CP_Company__c.ConstructionPts__Account__c),'none','block')}"><b><apex:outputField value="{!ConstructionPts__CP_Company__c.ConstructionPts__Account__c}"  /> (Account)</b></div> 
+        <div style="display: {!IF(ISNULL(ConstructionPts__CP_Company__c.ConstructionPts__Lead__c),'none','block')}"><b><apex:outputField value="{!ConstructionPts__CP_Company__c.ConstructionPts__Lead__c}"  /> (Lead)</b></div> 
+        Linked By:&nbsp;<apex:outputField value="{!ConstructionPts__CP_Company__c.ConstructionPts__Linked_By_User__c}" />, <apex:outputField value="{!ConstructionPts__CP_Company__c.ConstructionPts__Matched_By_Date__c}" />              
+        <br/>      
+        <br/>
+        <apex:commandLink rendered="{!IF(ShowCompanyMatching > 0,true,false)}" value="Change Linking" action="{!ShowMatchingPane}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>        
+        <apex:commandLink rendered="{!IF(ShowCompanyMatching > 0,true,false)}" value="Remove Linking" action="{!UnMatchCompany}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>     
+    </apex:pageBlock>
+    <apex:pageBlock id="matchingform" rendered="{!IF(HideshowMatchingPane,false,true) && IF((ShowCompanyMatching > 0),true,false)}">
+       
+      Find matching Accounts and/or Leads for <b>{!ConstructionPts__CP_Company__c.Name}</b>
+       <apex:actionFunction name="searchServer" action="{!runSearch}" rerender="results,errors" oncomplete="updatePageNumberLead(); updateTotalPagesLead(); updatePageNumber(); updateTotalPages();">
+          <apex:param name="companyName" value="" />
+      </apex:actionFunction> 
+      
+    <apex:actionFunction name="searchLead2" action="{!runLeadSearch}" rerender="myLeadPanel,errors" oncomplete="updatePageNumberLead(); updateTotalPagesLead();" >
+        <apex:param name="companyName" value=""/>
+        <apex:param name="offset" assignTo="{!runLeadSearch}" value=""/> 
+    </apex:actionFunction>
+          
+     <apex:actionFunction name="searchAccount2" action="{!runAccountSearch}" rerender="myAccountPanel,errors" oncomplete=" updatePageNumber(); updateTotalPages();" >
+        <apex:param name="companyName" value=""/>
+        <apex:param name="offset" assignTo="{!runAccountSearch}" value=""/> 
+     </apex:actionFunction> 
+  
+      <apex:pageMessages id="errors" rendered="true" />
+      
+      <p>  
+      <input type="text" width="400px" size="50" id="companyName" onkeyup="doSearch(); "/><apex:commandButton value="Find Matches" onclick="doSearch(); return false;"/>
+      <input type="hidden" id="initVal" value="0"/>
+      </p>     
+      <p>
+       
+      <apex:pageBlock rendered="{!IF((ShowCompanyMatching > 0),true,false)}" mode="edit" id="results"  title="Results:">
+            
+         <div style="display: {!IF(IF(ShowCompanyMatching = 1, true, false)|| IF(ShowCompanyMatching = 2, true, false),'block','none')}">
+       
+          <b>Top accounts matching criteria: (Total List Size :  <span id = "totalAccountSize">{!total_sizeAccount}</span>) </b>
+           <div id = "AccountButtons" style = 'float:right;'>
+               <div style = "display:inline-block; margin-right: 20px;">  Page <span id="currentPageAccount"></span> of <span id ="totalPageAccount"></span></div>
+               <button type = "button" id = "beginButton" onClick = "doBegin(); return false;"> Begin </Button>
+               <button type = "button" id = "previousButton" onClick = "doPrevious(); return false;"> &#60; </Button>
+               <button  id = "nextButton" onClick = "doNext(); return false;"> &#62; </Button>
+               <button type = "button" id = "endButton" onClick = "doEnd(); return false;"> END </Button>  
+            </div>      
+
+            
+          <apex:outputPanel id="myAccountPanel">
+          <apex:pageBlockTable value="{!AccRows}" var="a">
+            <apex:column rendered="{!IF(CompanyLinkToAccount, true, false)}"> 
+                <apex:commandLink value="Link" action="{!MatchToAccount}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+                    <apex:param name="AccountIdParam" assignTo="{!AccountId}" value="{!a.aId}"/>
+                </apex:commandLink>
+            </apex:column>
+            
+            <apex:column headerValue="Name">                
+                <apex:outputLink value="/{!a.aId}" style="{!IF(UPPER(companyToMatch.Name) == UPPER(a.aName),'color:green','')}">{!a.aName}</apex:outputLink>
+            </apex:column> 
+           <apex:column headerValue="{!accountHeaders[0]}">                
+                <apex:outputText value="{!a.aCity}" style="{!IF(UPPER(companyToMatch.ConstructionPts__City__c) == UPPER(a.aCity), 'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!accountHeaders[1]}">                
+                <apex:outputText value="{!a.aCountry}" style="{!IF(UPPER(companyToMatch.ConstructionPts__Country__c) == UPPER(a.aCountry), 'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!accountHeaders[2]}">                
+                <apex:outputText value="{!a.aState}" style="{!IF(UPPER(companyToMatch.ConstructionPts__State__c) == UPPER(a.aState),'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!accountHeaders[3]}">               
+                 <apex:outputText value="{!a.aPostal}"  style="{!IF(UPPER(companyToMatch.ConstructionPts__Zipcode__c) == UPPER(a.aPostal),'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!accountHeaders[4]}">                
+                <apex:outputText value="{!a.aStreet}" style="{!IF(UPPER(companyToMatch.ConstructionPts__Address__c) == UPPER(a.aStreet),'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="Owner">                
+                <apex:outputText value="{!a.aOwner}"/>
+            </apex:column>
+          
+          </apex:pageBlockTable>
+            </apex:outputPanel>
+        
+        </div> 
+         
+        <br/>
+        
+        <div style="display: {!IF(IF(ShowCompanyMatching =1,true,false) || IF(ShowCompanyMatching=3, true, false),'block','none')}">          
+         <b>Top leads matching criteria: (Total List Size : <span id = 'totalLeadSize'>{!total_sizeLead}</span>)</b>
+         
+            <div id = "LeadButtons" style = 'float:right;'>
+               <div style = "display:inline-block; margin-right: 20px;">  Page <span id= "currentPageLead"></span> of <span id = "totalPageLead"></span></div> 
+               <button type = "button" id = "beginButtonLead" onClick = "doBeginLead(); return false;"> Begin </Button>
+               <button type = "button" id = "previousButtonLead" onClick = "doPreviousLead(); return false;"> &#60; </Button>
+               <button  id = "nextButtonLead" onClick = "doNextLead(); return false;"> &#62; </Button>
+               <button type = "button" id = "endButtonLead" onClick = "doEndLead(); return false;"> END </Button>  
+            </div>      
+               
+        <apex:outputPanel id="myLeadPanel">
+          <apex:pageBlockTable value="{!LeadRows}" var="l">
+            <apex:column rendered="{!IF(CompanyLinkToLead, true, false)}"> 
+                <apex:commandLink value="Link" action="{!MatchToLead}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+                    <apex:param name="LeadIdParama" assignTo="{!LeadId}" value="{!l.lId}"/>
+                </apex:commandLink>
+            </apex:column>   
+            <apex:column headerValue="Name">                
+                <apex:outputLink value="/{!l.lId}" style="{!IF(UPPER(companyToMatch.Name) == UPPER(l.lName),'color:green','')}">{!l.lName}</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Company">       
+                <apex:outputText value="{!l.lCompany}"  style="{!IF(UPPER(companyToMatch.Name) == UPPER(l.lCompany),'color:green','')}"/>
+            </apex:column> 
+           <apex:column headerValue="{!leadHeaders[0]}">                
+                <apex:outputText value="{!l.lCity}" style="{!IF(UPPER(companyToMatch.ConstructionPts__City__c) == UPPER(l.lCity), 'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!leadHeaders[1]}">                
+                <apex:outputText value="{!l.lCountry}" style="{!IF(UPPER(companyToMatch.ConstructionPts__Country__c) == UPPER(l.lCountry), 'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!leadHeaders[2]}">                
+                <apex:outputText value="{!l.lState}" style="{!IF(UPPER(companyToMatch.ConstructionPts__State__c) == UPPER(l.lState),'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!leadHeaders[3]}">               
+                 <apex:outputText value="{!l.lPostal}"  style="{!IF(UPPER(companyToMatch.ConstructionPts__Zipcode__c) == UPPER(l.lPostal),'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="{!leadHeaders[4]}">                
+                <apex:outputText value="{!l.lStreet}" style="{!IF(UPPER(companyToMatch.ConstructionPts__Address__c) == UPPER(l.lStreet),'color:green','')}"/>
+            </apex:column>
+            <apex:column headerValue="Owner">                
+                <apex:outputText value="{!l.lOwner}"/>
+            </apex:column>
+          </apex:pageBlockTable>
+          </apex:outputPanel>
+       </div>
+       
+      </apex:pageBlock>      
+      </p>
+  
+        <apex:commandLink rendered="{!IF(ShowAccountButton,true,false)}" value="Create new Account" action="{!CreateNewAccount}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>
+        
+        <apex:commandLink rendered="{!IF(ShowLeadButton,true,false)}" value="Create new Lead" action="{!CreateNewLead}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>
+      
+        <apex:commandLink rendered="{!IF(ISNULL(ConstructionPts__CP_Company__c.Account__r) && ISNULL(ConstructionPts__CP_Company__c.Lead__r),false,true)}" value="Cancel" action="{!ShowMatchingInfo}" styleClass="btn" style="padding:2px 5px 2px 5px; text-decoration:none;">      
+        </apex:commandLink>   
+
+ </apex:pageBlock>
+
+  </apex:form>
+       <apex:detail relatedList="true" showChatter="true" title="true" inlineEdit="true"/>
+    <div id="divPrepop">
+        <c:GenericFieldPrepop rendered="{!IF(ShowCompanyPrepopButton,true,false)}" />
+    </div>
+    <c:SelectRole rendered="{!IF(ShowRolesCompany,true,false)}" />
+    <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+
+    <script type="text/javascript">
+    
+    function doSearch() {
+     
+      offsetAccount = 0;
+      offsetLead = 0 ;
+     j$('currentPageAccount').text('1');
+     j$('currentPageLead').text('1');   
+      searchServer(document.getElementById("companyName").value);
+   
+    }
+
+    function updatePageNumber(){ 
+       var list_size = parseInt('{!list_size}');
+       if (list_size > 0) {
+            j$('#currentPageAccount').text(offsetAccount / list_size + 1);
+       }
+    }
+    
+    function updateTotalPages(){
+        var totalAccountSize = parseInt($('#totalAccountSize').text());
+        var list_size = parseInt('{!list_size}');
+        
+        if (list_size > 0) {
+            if (totalAccountSize / list_size > 0 ){
+                j$('#totalPageAccount').text(parseInt(totalAccountSize / list_size + 1)) ;
+            }else{
+                j$('#totalPageAccount').text(parseInt(totalAccountSize / list_size));
+            }
+        }
+    }
+    
+    function updatePageNumberLead(){ 
+        var list_size = parseInt('{!list_size}');
+        if (list_size > 0) {
+            j$('#currentPageLead').text(offsetLead / list_size + 1);
+        }
+    }
+    
+    function updateTotalPagesLead(){
+        var totalLeadSize = parseInt($('#totalLeadSize').text());
+        var list_size = parseInt('{!list_size}');
+        if (list_size > 0) {
+            if(totalLeadSize / list_size > 0 ){
+                j$('#totalPageLead').text(parseInt(totalLeadSize / list_size + 1)) ;
+            }else{
+                j$('#totalPageLead').text(parseInt(totalLeadSize / list_size));
+            }
+        }
+    }
+    
+     
+    function doNext(){
+         var totalAccountSize = parseInt(j$('#totalAccountSize').text());
+    
+        if(offsetAccount + parseInt('{!list_size}') <= totalAccountSize){
+            offsetAccount += parseInt('{!list_size}');
+            j$('#previousButton').attr('disabled',false);
+            j$('#beginButton').attr('disabled',false);
+            
+            searchAccount2(document.getElementById("companyName").value,offsetAccount);     
+        }        
+    }
+    
+    function doBegin(){
+        offsetAccount = 0;      
+        j$('#previousButton').attr('disabled',true);
+        j$('#nextButton').attr('disabled',false);
+        j$('#endButton').attr('disabled',false);
+        j$('#beginButton').attr('disabled',true);       
+        searchAccount2(document.getElementById("companyName").value,offsetAccount);    
+    }
+    
+    function doPrevious(){          
+        var checkVal = offsetAccount - parseInt('{!list_size}');
+        
+        if(checkVal >= 0){
+            j$('#nextButton').attr('disabled',false);
+            j$('#endButton').attr('disabled',false);
+            offsetAccount -= parseInt('{!list_size}');          
+            searchAccount2(document.getElementById("companyName").value,offsetAccount);     
+        }
+    }
+    
+    function doEnd(){
+        var totalAccountSize = parseInt(j$('#totalAccountSize').text());
+        var totalListSize = parseInt('{!list_size}');
+        if (totalListSize === 0) {
+            return;
+        }
+        var checkVal = totalAccountSize - (totalAccountSize % totalListSize);
+        
+        if(checkVal != offsetAccount){
+            offsetAccount = totalAccountSize - (totalAccountSize % totalListSize);              
+            j$('#nextButton').attr('disabled',true);
+            j$('#beginButton').attr('disabled',false);
+            j$('#previousButton').attr('disabled',false);
+            j$('#endButton').attr('disabled',true);
+            searchAccount2(document.getElementById("companyName").value,offsetAccount);                             
+        }
+    }
+    
+   function doNextLead(){
+        var totalLeadSize = parseInt(j$('#totalLeadSize').text());      
+        if(offsetLead + parseInt('{!list_size}') <= totalLeadSize){
+            offsetLead += parseInt('{!list_size}');
+            j$('#previousButtonLead').attr('disabled',false);
+            j$('#beginButtonLead').attr('disabled',false);
+        
+            searchLead2(document.getElementById("companyName").value,offsetLead);       
+        }       
+    }
+    
+    function doBeginLead(){
+        offsetLead = 0;     
+        j$('#previousButtonLead').attr('disabled',true);
+        j$('#nextButtonLead').attr('disabled',false);
+        j$('#endButtonLead').attr('disabled',false);
+        j$('#beginButtonLead').attr('disabled',true);       
+        searchLead2(document.getElementById("companyName").value,offsetLead);    
+    }
+    
+    function doPreviousLead(){
+        
+        var checkVal = offsetLead - parseInt('{!list_size}');
+        
+        if(checkVal >= 0){
+            j$('#nextButtonLead').attr('disabled',false);
+            j$('#endButtonLead').attr('disabled',false);
+            offsetLead -= parseInt('{!list_size}');         
+            searchLead2(document.getElementById("companyName").value,offsetLead);       
+        }
+    }
+    
+    function doEndLead(){
+        var totalLeadSize = parseInt(j$('#totalLeadSize').text());
+        var totalListSize = parseInt('{!list_size}');
+        if (totalListSize === 0) {
+            return;
+        }
+        var checkVal = totalLeadSize - (totalLeadSize % totalListSize);
+        
+        if(checkVal != offsetLead){
+            offsetLead = totalLeadSize - (totalLeadSize % totalListSize);               
+            j$('#nextButtonLead').attr('disabled',true);
+            j$('#beginButtonLead').attr('disabled',false);
+            j$('#previousButtonLead').attr('disabled',false);
+            j$('#endButtonLead').attr('disabled',true);
+            searchLead2(document.getElementById("companyName").value,offsetLead);
+                    
+        }
+    }
+
+
+    // Using jQuery, hide all of the actionLinks
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function() {
+        'use strict';
+
+        var offsetAccount = 0;
+        var offsetLead = 0;
+        var initVal = document.getElementById("initVal");
+        j$("a.actionLink").css("display","none");
+        var el = j$("td.actionColumn");
+        if (el.length > 0) {
+            j$(el).html(el.html().replace("|", "").replace("|", "").replace("|", ""));
+        }
+
+        j$('#totalAccountSize').text('0');
+        j$('#totalLeadSize').text('0');
+        addCPLinks(j$);
+        j$("#divPrepop").remove().appendTo(j$("form[name*=cpMainForm]"));
+
+        if(initVal){
+          if(initVal.value == "0")
+          {
+              var name = '{!JSENCODE(companyNameEscaped)}';
+              initVal.value = '1';
+              var companyName = document.getElementById("companyName");
+              if(companyName){
+                companyName.value = name;
+              }
+           }
+        }
+
+    });
+  
+    </script>
+  
+</apex:page>

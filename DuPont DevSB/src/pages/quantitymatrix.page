@@ -1,0 +1,95 @@
+<apex:page standardController="opportunity" tabStyle="opportunity" extensions="QuantitySchedulingController" id="page">
+<apex:pagemessages />
+
+<style>
+.headerRow .headerStyle{text-align:right}
+.footerStyle{text-align:right}
+.headerclasstest{color:blue;font-weight:strong;}
+.locationError{color:blue;font-weight:strong;}
+.head{text-align:left;word-spacing:28px;white-space:nowrap;}
+.stylcol{height:100px;width:105px;overflow-x:scroll;overflow-y:scroll;overflow:auto;}
+.this{overflow:auto!important;overflow:inherit;overflow-x: auto;width: 100%;} 
+</style>
+
+<script>
+function confirmSave() {
+    alert('{!str1}');
+    if({!stotal}!={!olitem})
+        alert('unequal');
+    else if({!stotal}=={!olitem})
+        alert('equal');
+}
+</script>
+
+<apex:form id="f">
+
+<apex:actionFunction name="sayHello" action="{!qwerty}" immediate="false" reRender="f" status="calculatingtotal"/>
+<apex:pageBlock id="result" title="Quantity Matrix for Opportunity Products" mode="edit">
+
+<script>
+function sqajj(){
+    sqaj();
+}
+function f(){
+    sayHello();
+}
+function b(){
+    if({!sqtotal}!={!total.quantity}){
+        var isSave = confirm("The sum of schedule quantities is not equal to the total quantity.Do you wish to overwrite total quantity?");
+        if (isSave) 
+            return true;
+        return false;
+    }
+}
+</script>
+
+<apex:pageBlockButtons location="top" >
+<apex:commandButton id="btnTest" value="Save" action="{!saveChanges}" onclick="return b()" status="ajaxStatus"/>
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+
+<script>
+function DisableButton(){
+    document.getElementById("{!$Component.btnTest}").disabled=true;
+}
+function EnableButton(){
+    document.getElementById("{!$Component.btnTest}").disabled=false;
+}
+</script>
+
+</apex:pageBlockButtons>
+<apex:actionStatus id="ajaxStatus" startText="Updating line items..." >
+</apex:actionStatus>
+<apex:pageBlockTable value="{!secondcontroller}" var="oli" id="pbt">
+<apex:column id="thename" headerValue="Opportunity Product Name " width="170px" >
+<apex:outputText value="{!oli.transcript2.PriceBookEntry.Product2.Name}" title="{!oli.transcript2.PriceBookEntry.Product2.Name}" />
+</apex:column>
+<apex:column headerValue="         {!abc}" headerClass="head">
+<apex:repeat value="{!oli.trainee2}" var="b">
+<apex:inputfield value="{!b.quantity}" onchange="f()" style="width:56px"/>
+</apex:repeat>
+</apex:column>
+<apex:column style="text-align:right" headerClass="headerStyle" title="This is the sum of all the schedule quantites for {!oli.transcript2.PriceBookEntry.Product2.Name}" headerValue="Quantity Sum" >
+<b>{!oli.q}
+</b>
+</apex:column>
+<apex:column style="text-align:right" title="This is the total quantity" headerValue="Quantity" footerClass="footerStyle" headerClass="headerStyle" footervalue="Total:{!total.quantity}">
+{!oli.transcript2.quantity}
+</apex:column>
+<apex:column headerValue="UOM">
+{!oli.tr2.Unit_Of_Measure__c}
+</apex:column>
+<apex:column headerValue="Unit Sales Price" >
+<apex:inputField value="{!oli.transcript2.UnitPrice}" style="width:70px"/>
+</apex:column>
+<apex:column headerValue="LineDesc" >
+<apex:inputField value="{!oli.transcript2.description}" id="ls1" style="width:70px"/>
+</apex:column>
+</apex:pageblocktable>
+<apex:actionStatus id="calculatingtotal" startText="Calculating the total quantity sum..." onstart="DisableButton()" onstop="EnableButton()">
+</apex:actionStatus>
+
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

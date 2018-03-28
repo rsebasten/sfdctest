@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This is used for storing all the used values in Accounts Batch processes.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountGroup__c</fullName>
+        <externalId>false</externalId>
+        <label>AccountGroup</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountOwnerUserName__c</fullName>
+        <description>This field will hold the username.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will hold the username of static user &quot;Customer Service&quot; created in application.</inlineHelpText>
+        <label>Account Owner User Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountOwner__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Owner</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecordType_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>RecordType Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_General__c</fullName>
+        <description>To capture the general Data Record type name</description>
+        <externalId>false</externalId>
+        <label>Record Type Name - General</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SendErrorNotificationTo__c</fullName>
+        <externalId>false</externalId>
+        <label>Send Error Notification To</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZR_partner_code__c</fullName>
+        <description>Created to store ZR partner code</description>
+        <externalId>false</externalId>
+        <label>ZR partner code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CS_AccountLoadSettings</label>
+    <visibility>Public</visibility>
+</CustomObject>

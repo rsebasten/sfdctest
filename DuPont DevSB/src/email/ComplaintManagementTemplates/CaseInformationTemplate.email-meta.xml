@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this template to send case information to investigators and CSRs.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Case Information Template</name>
+    <style>none</style>
+    <subject>Case #{!Case.CaseNumber} - {!Case.Status} - {!Case.Account}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

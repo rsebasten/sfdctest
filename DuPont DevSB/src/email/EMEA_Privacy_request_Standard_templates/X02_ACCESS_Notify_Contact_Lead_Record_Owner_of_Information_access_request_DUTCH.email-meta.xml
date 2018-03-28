@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>02 ACCESS Notify Contact-Lead Record Owner of Information access request DUTCH</name>
+    <style>formalLetter</style>
+    <subject>{!Lead_Routing__c.Lead_Name__c} &apos;s Access Privacy request</subject>
+    <textOnly>Beste {!Lead.Name},
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+We ontvingen een SFDC aanvraag van de klant genaamd {!Lead_Routing__c.Lead_Name__c}, op jouw naam, die toegang vraagt tot vertrouwelijke informatie waarover DuPont beschikt over hem/haar.
+
+{!Lead_Routing__c.Product_Comments__c}
+
+
+
+In lijn met onze wet op de privacy, hebben wij de contactpersoon ingelicht dat deze informatie momenteel opgeslagen is in onze databank.
+
+Er is geen verdere actie gevraagd van uw kant aangezien deze informatie dient ter informatie over deze aanvraag indien u deze verder wil opvolgen met uw contactpersoon.
+
+Met vriendelijke groeten,
+
+DuPont Inquiry Management  Center
+
+Toll-free number : 00800 3876 68 38
+
+Phone : 0034 985 12 37
+
+
+Fax : 0034 912 72 52 37
+
+E-mail: eu-info@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

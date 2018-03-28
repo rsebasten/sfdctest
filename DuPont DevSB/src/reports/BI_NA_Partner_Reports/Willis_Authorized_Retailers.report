@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$fId18__c</field>
+    </columns>
+    <columns>
+        <field>Account$Mb_of_Marketing_Program__c</field>
+    </columns>
+    <columns>
+        <field>Account$Locators__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$ShippingAddress</field>
+    </columns>
+    <columns>
+        <field>Account$ShippingCity</field>
+    </columns>
+    <columns>
+        <field>Account$ShippingState</field>
+    </columns>
+    <columns>
+        <field>Account$Phone</field>
+    </columns>
+    <columns>
+        <field>Account.R00N30000002iTfiEAE__r$Product_Name__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>if account handles both C&amp;Z, account name will be listed 2X</description>
+    <filter>
+        <booleanFilter>(1 or 4) and 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Account$Distributor__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>willis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Mb_of_Marketing_Program__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>includes</operator>
+            <value>Authorized Retailer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Stage__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Inactive</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Owner</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>frances johnstone,lethbridge,reddig,conedera,cobabe,brooke henderson,dallas,gary ness,prince,jennifer vivian,topic,wiles,bezemer,bennett,kelly bruno,kristin girard,dewhirst,st-george,nancy busch,scarberry,nigel,page johnston,nielson,gordon,paproski,lambert</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Willis - Authorized Retailers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_with_or_Without_Account_Materials__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,33 @@
+<apex:page tabStyle="Dodge_Projects__tab" StandardController="ConstructionPts__CP_Project__c" extensions="ConstructionPts.SupportVideosController" sideBar="false">
+
+<style> 
+  li { line-height: 3em; }  
+  li.reset {margin-top: -57.3em; }
+  
+  li.column1 { margin-left: 0em; } 
+  li.column2 { margin-left: 35em; }
+  li.column3 { margin-left: 70em; }
+ 
+</style>  
+ 
+<c:CPHeader title="" subtitle="" ShowDodgeLogo="true" ShowCPLinks="true"  ShowTitle="true" />  
+<br/>
+   
+<ol>
+	<apex:repeat value="{!lstVideoData}" var="video">
+		<li>
+			<h3 style="float:top;">{!video.VideoName}</h3><br/>
+			<a href="{!video.VideoLink}" title="{!video.Description}" target="blank">
+				<img src="{!IF(video.ThumbnailLink != '', video.ThumbnailLink, $Resource.defaultVideoThumbnail)}" alt="{!video.Description}" ></img>
+			</a>
+	    </li>
+	</apex:repeat>
+</ol>
+
+<br/>           
+<c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/> 
+<script>
+      var j$ = jQuery.noConflict(); 
+      setSelectedTab(j$, "Support Videos");      
+</script>  
+</apex:page>

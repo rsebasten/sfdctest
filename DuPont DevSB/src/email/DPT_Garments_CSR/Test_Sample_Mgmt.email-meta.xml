@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Test Sample Mgmt</name>
+    <style>freeForm</style>
+    <subject>Test Email</subject>
+    <textOnly>{!Lead.Name},
+
+This is email is confirm that your sample request for {!Request_Item__c.Catalog_Item_Name__c} has been received. We appreciate your interest in DuPont products and will gladly follow up with any questions you may have. Please call at XXX-XXX-XXXX or email XXX@XXX with any questions or concerns.
+
+Tracking Number: {!Request__c.Tracking_Numbers__c}
+
+Shipping Address:
+{!Request__c.Request_Shipping_Street__c}
+{!Request__c.Request_Shipping_City__c},{!Request__c.Request_Shipping_State__c} {!Request__c.Request_Shipping_Postal_Code__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

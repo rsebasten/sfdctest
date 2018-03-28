@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>GENERIC DESCRIPTION LETTER</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Cease and Desist - Unauthorized Use of the {!Case.Product_Selected__c} Trademark on your website, {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Dear {!Case.Company__c}:
+
+
+The DuPont Brand Protection Center is an authorized agent of E. I. du Pont de Nemours and Company (DuPont), and is tasked with the responsibility of protecting DuPont’s brands and trademarks.
+
+
+DuPont is the owner of the {!Case.Product_Selected__c} trademark; DuPont owns trademark registrations in the United States and in countries throughout the world. As such, DuPont is the sole and exclusive owner of the trademark rights over the {!Case.Product_Selected__c} brand.
+
+
+Our efforts to ensure proper labeling, identification and usage of this trademark are critical in protecting the value that the {!Case.Product_Selected__c} brand brings to DuPont and its customers.  Defense of our trademarks, including policing unauthorized use, assures customers of legitimate source of supply and quality control of products made with our resins and coatings.
+
+
+We recently became aware of your company using the {!Case.Product_Selected__c} trademark. Use of the {!Case.Product_Selected__c} trademark in connection with your ______________(list category here) is incorrect and constitutes misuse of our trademark. Based upon our review, DuPont does not manufacture or sell these offerings.    If your supplier represented to you that you would have permission to use the {!Case.Product_Selected__c} brand, that representation was incorrect. [REMOVE THIS SENTENCE IF NOT TEFLON® BRAND - For more information please see: http://www2.dupont.com/Teflon_Industrial/en_US/real_teflon_brand.html.
+
+
+{!Case.Product_Selected__c} is not the common name for ___________________. {!Case.Product_Selected__c} is not a name for any finished product. {!Case.Product_Selected__c} is a brand for a unique ingredient, the ____________________ additive, which makes products better.
+
+
+
+Neither your suppliers nor your company can promote or use the {!Case.Product_Selected__c} trademark to sell any finished goods.  Buying from DuPont does not entitle your suppliers or your company to use the {!Case.Product_Selected__c} trademark.  Instead, you or your supplier only are entitled to use the DuPont name or the DuPont code number, and then only as depicted in our invoices and product labels of genuine DuPont _______________________.
+
+
+Because your website is not referring to the actual DuPont™ {!Case.Product_Selected__c} product but rather __________________ in general, and your use of the {!Case.Product_Selected__c} brand is not authorized, your company must immediately terminate all use of the {!Case.Product_Selected__c} trademark and substitute, destroy, replace or cover all advertising materials and packages, Internet websites, metatags, pages, sales brochures, marketing materials, letterhead, and labels that contain the {!Case.Product_Selected__c} trademark.  We recommend that you use the proper _____________________ name in place of any use of {!Case.Product_Selected__c}.
+
+
+For your information, all use of the {!Case.Product_Selected__c} trademark requires a license from DuPont, and that license only is granted for quality goods made with DuPont ___________________ as approved by DuPont.
+
+
+DuPont views the infringement of our intellectual property assets as a serious matter. Accordingly, we must insist that, within ten (10) days of receiving this letter, you (1) take all steps necessary to cease all unauthorized use of the {!Case.Product_Selected__c} trademark; and (2) confirm in writing that you have complied with the requests contained in this letter.
+
+
+We appreciate your cooperation in this matter and look forward to receiving your written assurance of compliance by ___(insert deadline)___________.
+
+
+This communication is being sent in an attempt to achieve an amicable resolution to this matter. Nothing contained in (or omitted from) this communication is intended to be or should be considered an admission of a fact or a waiver of any rights or defenses, all of which are expressly reserved.
+
+
+
+We thank you in advance for your prompt attention to this matter.
+
+
+Sincerely,
+
+
+DuPont Brand Protection Center
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

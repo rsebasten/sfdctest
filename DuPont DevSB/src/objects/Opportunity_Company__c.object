@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Companies related to this opportunity</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Company_Role__c</fullName>
+        <description>Role this company is playing in this opportunity</description>
+        <externalId>false</externalId>
+        <label>Company Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Architect</fullName>
+                    <default>false</default>
+                    <label>Architect</label>
+                </value>
+                <value>
+                    <fullName>Competitor</fullName>
+                    <default>false</default>
+                    <label>Competitor</label>
+                </value>
+                <value>
+                    <fullName>Converter</fullName>
+                    <default>false</default>
+                    <label>Converter</label>
+                </value>
+                <value>
+                    <fullName>Customer</fullName>
+                    <default>false</default>
+                    <label>Customer</label>
+                </value>
+                <value>
+                    <fullName>Developer</fullName>
+                    <default>false</default>
+                    <label>Developer</label>
+                </value>
+                <value>
+                    <fullName>Development Customer</fullName>
+                    <default>false</default>
+                    <label>Development Customer</label>
+                </value>
+                <value>
+                    <fullName>Distributor</fullName>
+                    <default>false</default>
+                    <label>Distributor</label>
+                </value>
+                <value>
+                    <fullName>General Contractor</fullName>
+                    <default>false</default>
+                    <label>General Contractor</label>
+                </value>
+                <value>
+                    <fullName>Indirect Customer</fullName>
+                    <default>false</default>
+                    <label>Indirect Customer</label>
+                </value>
+                <value>
+                    <fullName>Influencer</fullName>
+                    <default>false</default>
+                    <label>Influencer</label>
+                </value>
+                <value>
+                    <fullName>OEM</fullName>
+                    <default>false</default>
+                    <label>OEM</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Partner-Fabricator</fullName>
+                    <default>false</default>
+                    <label>Partner-Fabricator</label>
+                </value>
+                <value>
+                    <fullName>Supplier</fullName>
+                    <default>false</default>
+                    <label>Supplier</label>
+                </value>
+                <value>
+                    <fullName>System Manufacturer</fullName>
+                    <default>false</default>
+                    <label>System Manufacturer</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Company associated with this Opportunity</description>
+        <externalId>false</externalId>
+        <label>Company</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Opportunity_Company</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Main Contact of this Company at this Opportunity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Main Contact of this Company at this Opportunity</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunity-Companies</relationshipLabel>
+        <relationshipName>R00N30000001qJPpEAM</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Detail description of this Opportunity-Company</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Discount_off_List__c</fullName>
+        <description>Discout Off DuPont List price this partner will get specifically for this opportunity</description>
+        <externalId>false</externalId>
+        <label>Discount off List %</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Main__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Main Company Relationship for this opportunity</description>
+        <externalId>false</externalId>
+        <label>Main</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <description>Oppoortunity this Company is related to</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Opportunity_Company</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Rebate_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Rebate Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>% off List Price</fullName>
+                    <default>false</default>
+                    <label>% off List Price</label>
+                </value>
+                <value>
+                    <fullName>% off Usual Price</fullName>
+                    <default>false</default>
+                    <label>% off Usual Price</label>
+                </value>
+                <value>
+                    <fullName>Amount per UOM</fullName>
+                    <default>false</default>
+                    <label>Amount per UOM</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rebate__c</fullName>
+        <externalId>false</externalId>
+        <label>Rebate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCountry__c</fullName>
+        <description>Country from the associated Account</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Company__r.Country__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Country from the associated Account</inlineHelpText>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fRegion__c</fullName>
+        <description>The GeoRegion from the associated Account</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Company__r.Region__c)</formula>
+        <inlineHelpText>The GeoRegion from the associated Account</inlineHelpText>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fSubRegion__c</fullName>
+        <description>Geo SubRegion from the associated Account</description>
+        <externalId>false</externalId>
+        <formula>Company__r.SubRegion__c</formula>
+        <inlineHelpText>Geo SubRegion from the associated Account</inlineHelpText>
+        <label>SubRegion</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Opportunity-Company</label>
+    <listViews>
+        <fullName>Kwangjin_Ind1</fullName>
+        <columns>NAME</columns>
+        <columns>Company__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Kwangjin Ind</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Kwangjin_Ind2</fullName>
+        <columns>NAME</columns>
+        <columns>Company__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Kwangjin Ind</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Rebatesprovided</fullName>
+        <columns>Company__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Rebate_Type__c</columns>
+        <columns>Rebate__c</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity_Company__c.DPT_IPPEMEA</value>
+        </filters>
+        <label>Rebates provided</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DPTEMEA</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>OPCO{YY}{MM}-{0000}</displayFormat>
+        <label>OPCO ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity-Companies</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Construction</fullName>
+        <active>true</active>
+        <description>Construction Relationships</description>
+        <label>Construction</label>
+        <picklistValues>
+            <picklist>Company_Role__c</picklist>
+            <values>
+                <fullName>Architect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner-Fabricator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rebate_Type__c</picklist>
+            <values>
+                <fullName>%25 off List Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%25 off Usual Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amount per UOM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPT_IPPEMEA</fullName>
+        <active>true</active>
+        <description>DPT - DPP EMEA</description>
+        <label>DPT-IPP EMEA</label>
+        <picklistValues>
+            <picklist>Company_Role__c</picklist>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rebate_Type__c</picklist>
+            <values>
+                <fullName>%25 off List Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%25 off Usual Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amount per UOM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPT_Standard</fullName>
+        <active>true</active>
+        <description>DPT - IPP NA Companies (i.e. competitors, etc.) related to this Opportunity</description>
+        <label>DPT Standard</label>
+        <picklistValues>
+            <picklist>Company_Role__c</picklist>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rebate_Type__c</picklist>
+            <values>
+                <fullName>%25 off List Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%25 off Usual Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amount per UOM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OneDuPont</fullName>
+        <active>true</active>
+        <description>Main standard way to document the role of a company at a given opportunity</description>
+        <label>OneDuPont</label>
+        <picklistValues>
+            <picklist>Company_Role__c</picklist>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rebate_Type__c</picklist>
+            <values>
+                <fullName>%25 off List Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%25 off Usual Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amount per UOM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>MassAdd</fullName>
+        <availability>online</availability>
+        <description>Mass Add companies, company roles and optionally contacts</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!URLFOR($Site.BaseUrl+&apos;/apex/OppCompanyMassAdd&apos;)}?oppId={!Opportunity.Id}&amp;RecordType={!Opportunity.RecordTypeId}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Companies</fullName>
+        <availability>online</availability>
+        <description>View Companies related to this Opportunity</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>View Companies</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00O30000001Tpl2?pv0={!Opportunity.Id}</url>
+    </webLinks>
+</CustomObject>

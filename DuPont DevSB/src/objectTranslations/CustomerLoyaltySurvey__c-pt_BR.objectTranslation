@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Customer Loyalty Survey --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Customer Loyalty Survey --></value>
+    </caseValues>
+    <fields>
+        <help><!-- History field:  Account Name at time of survey --></help>
+        <label>Nome da Conta</label>
+        <name>AccountName__c</name>
+    </fields>
+    <fields>
+        <help><!-- History:   Previous YR Revenue to DuPont - when the CLS record was created --></help>
+        <label>Receita Anual para a DuPont</label>
+        <name>AccountRevenue__c</name>
+    </fields>
+    <fields>
+        <label>Conta</label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CLS Bounced --></label>
+        <name>CLS_Bounced__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Source Campaign --></help>
+        <label>Campanha</label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Canal</label>
+        <name>Channel__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check this box to notify the Assigned to user of the need to Close the Loop on this Survey Response. --></help>
+        <label>Tipo de Fechamento</label>
+        <name>ClosingType__c</name>
+        <picklistValues>
+            <masterLabel>Close the Loop</masterLabel>
+            <translation><!-- Close the Loop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Usuário de Fechamento</label>
+        <name>ClosingUser__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys (Closing User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- History field:  Contact Country at time of survey. --></help>
+        <label>País do Contato</label>
+        <name>Contact_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- History field:  Contact Email at time of survey. --></help>
+        <label>Email do Contato</label>
+        <name>Contact_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- History:  Contact Firstname at time of survey. --></help>
+        <label>Primeiro Nome do Contato</label>
+        <name>Contact_Firstname__c</name>
+    </fields>
+    <fields>
+        <help><!-- History field:  Contact Preferred Language at time of survey. --></help>
+        <label>Idioma do Contato</label>
+        <name>Contact_Language__c</name>
+    </fields>
+    <fields>
+        <help><!-- History: Contact Lastname at time of survey. --></help>
+        <label>Sobrenome do Contato</label>
+        <name>Contact_Lastname__c</name>
+    </fields>
+    <fields>
+        <help><!-- History field: Contact Region at time of survey. --></help>
+        <label>Região do Contato</label>
+        <name>Contact_Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- History field: Contact Member Role at time of survey. --></help>
+        <label>Role do Contato</label>
+        <name>Contact_Role__c</name>
+    </fields>
+    <fields>
+        <help><!-- History field: Contact State or Province at time of survey. --></help>
+        <label>Estado do Contato</label>
+        <name>Contact_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- History field: Contact Title at time of survey. --></help>
+        <label>Título do Contato</label>
+        <name>Contact_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to: The Contact associated with the survey detail response. --></help>
+        <label>Contato</label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Seguimento do Cliente</label>
+        <name>CustomerSegment__c</name>
+    </fields>
+    <fields>
+        <help><!-- The targeted survey period  (Quarter-Year) for this contact. (YYQ#) --></help>
+        <label>Implantação Qtr</label>
+        <name>DeploymentQtr__c</name>
+        <picklistValues>
+            <masterLabel>08Q1</masterLabel>
+            <translation><!-- 08Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08Q2</masterLabel>
+            <translation><!-- 08Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08Q3</masterLabel>
+            <translation><!-- 08Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08Q4</masterLabel>
+            <translation><!-- 08Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09Q1</masterLabel>
+            <translation><!-- 09Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09Q2</masterLabel>
+            <translation><!-- 09Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09Q3</masterLabel>
+            <translation><!-- 09Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10Q1</masterLabel>
+            <translation><!-- 10Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10Q2</masterLabel>
+            <translation><!-- 10Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10Q3</masterLabel>
+            <translation><!-- 10Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10Q4</masterLabel>
+            <translation><!-- 10Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11Q1</masterLabel>
+            <translation><!-- 11Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11Q2</masterLabel>
+            <translation><!-- 11Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11Q3</masterLabel>
+            <translation><!-- 11Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11Q4</masterLabel>
+            <translation><!-- 11Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12Q1</masterLabel>
+            <translation><!-- 12Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12Q2</masterLabel>
+            <translation><!-- 12Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12Q3</masterLabel>
+            <translation><!-- 12Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12Q4</masterLabel>
+            <translation><!-- 12Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13Q1</masterLabel>
+            <translation><!-- 13Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13Q2</masterLabel>
+            <translation><!-- 13Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13Q3</masterLabel>
+            <translation><!-- 13Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13Q4</masterLabel>
+            <translation><!-- 13Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14Q1</masterLabel>
+            <translation><!-- 14Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14Q2</masterLabel>
+            <translation><!-- 14Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14Q3</masterLabel>
+            <translation><!-- 14Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14Q4</masterLabel>
+            <translation><!-- 14Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15Q1</masterLabel>
+            <translation><!-- 15Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15Q2</masterLabel>
+            <translation><!-- 15Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15Q3</masterLabel>
+            <translation><!-- 15Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15Q4</masterLabel>
+            <translation><!-- 15Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16Q1</masterLabel>
+            <translation><!-- 16Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16Q2</masterLabel>
+            <translation><!-- 16Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Proper business name of a DuPont organization or entity as recognized in the marketplace. --></help>
+        <label>Nome da Empresa Externa</label>
+        <name>ExternalBusinessName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Unique Id, to specify a submitted recipient,  YYQ#_+ {source CampaignMember Id} --></help>
+        <label>Id Externo</label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>Email do Usuário de Acompanhamento</label>
+        <name>FollowUpUser_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- History: The user who was selected to initiate the Follow-up to the Survey respondent - when the CLS record was created --></help>
+        <label>Usuário de Acompanhamento</label>
+        <name>FollowUpUser_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe any additional follow up that is needed. --></help>
+        <label>Ações de Acompanhamento</label>
+        <name>FollowUp_Actions__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Date that the follow-up interview was conducted with the Contact --></help>
+        <label>Data do Acompanhamento</label>
+        <name>FollowUp_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document a summary of the essence of the Follow-Up Call with the customer. --></help>
+        <label>Sumário de Acompanhamento</label>
+        <name>FollowUp_Summary__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to: The user who initiates the follow-up to the Survey respondent --></help>
+        <label>Link do Usuário de Acompanhamento</label>
+        <name>FollowUp_User__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys (Follow-up User Link) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The overall grouping that represents the Follow-up Categorizations.  Multiple can be selected --></help>
+        <label>Grupo de Resposta do Acompanhamento</label>
+        <name>Follow_up_Response_Category_Group__c</name>
+        <picklistValues>
+            <masterLabel>Customer Experience</masterLabel>
+            <translation><!-- Customer Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products &amp; Innovation</masterLabel>
+            <translation><!-- Products &amp; Innovation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- An assessment of the Follow-up summary with the survey respondent. Key words - multiple can be chosen --></help>
+        <label>Categoria de Resposta do Acompanhamento</label>
+        <name>Follow_up_Response_Category__c</name>
+        <picklistValues>
+            <masterLabel>Communication</masterLabel>
+            <translation><!-- Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery/Supply</masterLabel>
+            <translation><!-- Delivery/Supply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Innovation</masterLabel>
+            <translation><!-- Innovation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products</masterLabel>
+            <translation><!-- Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Responsiveness</masterLabel>
+            <translation><!-- Responsiveness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tech Support</masterLabel>
+            <translation><!-- Tech Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CLS Opt Out --></label>
+        <name>HasOptedOutOfCLS__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Indústria</label>
+        <name>Industry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Responded Survey --></label>
+        <name>LastRespondedSurvey__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Describe the impact of the resolution on the relationship with this customer. --></help>
+        <label>Aprendizados</label>
+        <name>Learnings__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Letter Head Name --></help>
+        <label>Papel Timbrado</label>
+        <name>LetterHead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Leverage Potential --></label>
+        <name>Leverage_Potential__c</name>
+    </fields>
+    <fields>
+        <help><!-- Market Segments values for the platform --></help>
+        <label>Segmento de Mercado</label>
+        <name>MarketSegment__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPS Category Score --></label>
+        <name>NPS_Category_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- History: The Product-Offering (translation) that was selected on the Campaign - when the CLS record was created --></help>
+        <label>Descrição de Produtos ofertados</label>
+        <name>Offerings_Products__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to: English version of  the Offerings-Products Name (limit 80 Chars).  Click on link to see complete Description. --></help>
+        <label>Link da Descrição de Produtos ofertados</label>
+        <name>Offerings_SiteObject__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Corporate Customer Response Record ID that was used to generate this legacy Customer Loyalty Survey record. --></help>
+        <label><!-- Old CCR ID --></label>
+        <name>Old_CCR_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the DuPont organization responsible for this record entry. --></help>
+        <label>Organização dos Negócios</label>
+        <name>Owning_Org__c</name>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORP</masterLabel>
+            <translation><!-- CORP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP-Polymers</masterLabel>
+            <translation><!-- DPP-Polymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Aramids</masterLabel>
+            <translation><!-- DPT-Aramids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Automotive</masterLabel>
+            <translation><!-- DPT-Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Chemical Industrial</masterLabel>
+            <translation><!-- DPT-Chemical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Cleanroom/Pharma</masterLabel>
+            <translation><!-- DPT-Cleanroom/Pharma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Critical Clean</masterLabel>
+            <translation><!-- DPT-Critical Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-DPP</masterLabel>
+            <translation><!-- DPT-DPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-ES</masterLabel>
+            <translation><!-- DPT-ES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Graphics</masterLabel>
+            <translation><!-- DPT-Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Ind Pkg &amp; Protection</masterLabel>
+            <translation><!-- DPT-Ind Pkg &amp; Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Mechanical Industrial</masterLabel>
+            <translation><!-- DPT-Mechanical Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Fabrics</masterLabel>
+            <translation><!-- DPT-Medical Fabrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Medical Packaging</masterLabel>
+            <translation><!-- DPT-Medical Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-NOW</masterLabel>
+            <translation><!-- DPT-NOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-PM</masterLabel>
+            <translation><!-- DPT-PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-ER</masterLabel>
+            <translation><!-- DPT-Public Sector-ER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-LE</masterLabel>
+            <translation><!-- DPT-Public Sector-LE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Public Sector-MIL</masterLabel>
+            <translation><!-- DPT-Public Sector-MIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT-Thermal Industrial</masterLabel>
+            <translation><!-- DPT-Thermal Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;IP-Ethylene Copolymers</masterLabel>
+            <translation><!-- P&amp;IP-Ethylene Copolymers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PY NPS Category Score --></label>
+        <name>PY_NPS_Category_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- PY Rating Category --></label>
+        <name>PY_Rating_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to: The contact record for the DuPont business person responsible for the contact relationship. --></help>
+        <label>Link do Nome do Primeiro Assinante</label>
+        <name>PrimarySignContact__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys (Primary Signature) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- History: The  name of the contact of the DuPont business person with Primary responsibility for the contact relationship - when the CLS record was created --></help>
+        <label>Nome do Primeiro Assinante</label>
+        <name>PrimarySignName__c</name>
+    </fields>
+    <fields>
+        <help><!-- History:  The title of the Primary contact - selected from a picklist on the Campaign - when the CLS record was created. --></help>
+        <label>Nome do Segundo Assinante</label>
+        <name>PrimarySignTitle__c</name>
+    </fields>
+    <fields>
+        <help><!-- The designated group classification based on responses and net promoter rating. --></help>
+        <label><!-- CY Rating Category --></label>
+        <name>Rating_Category__c</name>
+        <picklistValues>
+            <masterLabel>Detractor</masterLabel>
+            <translation><!-- Detractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neutral</masterLabel>
+            <translation><!-- Neutral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promoter</masterLabel>
+            <translation><!-- Promoter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Fill in additional comments regarding the disposition of this survey response.  If you run out of space, Save, then add a note related to this Survey Response. --></help>
+        <label><!-- Resolution Comments --></label>
+        <name>Resolution_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that this Customer Satisfaction Survey Follow-up Resolution is closed. --></help>
+        <label><!-- Resolution Date --></label>
+        <name>Resolution_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the values that reflect most closely how this follow-up with Survey Respondent was/ or is being resolved. --></help>
+        <label><!-- Resolution --></label>
+        <name>Resolution__c</name>
+        <picklistValues>
+            <masterLabel>Disagreement/dispute with customer</masterLabel>
+            <translation><!-- Disagreement/dispute with customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost Customer</masterLabel>
+            <translation><!-- Lost Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monitoring situation</masterLabel>
+            <translation><!-- Monitoring situation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More information requested</masterLabel>
+            <translation><!-- More information requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (See Resolution Comments)</masterLabel>
+            <translation><!-- Other (See Resolution Comments) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially resolved</masterLabel>
+            <translation><!-- Partially resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project initiated</masterLabel>
+            <translation><!-- Project initiated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved internally</masterLabel>
+            <translation><!-- Resolved internally --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved with the customer</masterLabel>
+            <translation><!-- Resolved with the customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- To be able to calculate survey response rates in Reports. --></help>
+        <label><!-- Responded --></label>
+        <name>Responded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Category Group --></label>
+        <name>Response_Category_Group__c</name>
+        <picklistValues>
+            <masterLabel>Customer Experience</masterLabel>
+            <translation><!-- Customer Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products &amp; Innovation</masterLabel>
+            <translation><!-- Products &amp; Innovation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the keywords that best categorize the verbatim comments of the survey respondent --></help>
+        <label><!-- Response Category --></label>
+        <name>Response_Category__c</name>
+        <picklistValues>
+            <masterLabel>Communication</masterLabel>
+            <translation><!-- Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery/Supply</masterLabel>
+            <translation><!-- Delivery/Supply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Innovation</masterLabel>
+            <translation><!-- Innovation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products</masterLabel>
+            <translation><!-- Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Responsiveness</masterLabel>
+            <translation><!-- Responsiveness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tech Support</masterLabel>
+            <translation><!-- Tech Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The date of the initial response of the survey. --></help>
+        <label><!-- Response Date --></label>
+        <name>Response_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Email --></label>
+        <name>Response_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Firstname --></label>
+        <name>Response_Firstname__c</name>
+    </fields>
+    <fields>
+        <help><!-- In order to serve you , may someone contact you for a brief follow-up? --></help>
+        <label>Acompanhamento Solicitado</label>
+        <name>Response_FollowUp__c</name>
+    </fields>
+    <fields>
+        <help><!-- The unique Market Tool (Z-telligence) identifier for a user-survey instance. --></help>
+        <label><!-- Response ID --></label>
+        <name>Response_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Lastname --></label>
+        <name>Response_Lastname__c</name>
+    </fields>
+    <fields>
+        <label>Texto de Resposta 1 aberta</label>
+        <name>Response_OpenText_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- English translation of response to Question #1 --></help>
+        <label>Texto de Resposta 1 aberta (en)</label>
+        <name>Response_OpenText_1_en__c</name>
+    </fields>
+    <fields>
+        <label>Texto de Resposta 2 aberta</label>
+        <name>Response_OpenText_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- English translation of response to Question #2 --></help>
+        <label>Texto de Resposta 2 aberta</label>
+        <name>Response_OpenText_2_en__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Phone # --></label>
+        <name>Response_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- The promoter score returned and captured via the Z-Tel survey. --></help>
+        <label><!-- Response Rating --></label>
+        <name>Response_Rating__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Responder’s understanding of customers primary concerns --></help>
+        <label><!-- Root Issues --></label>
+        <name>Root_Issues__c</name>
+    </fields>
+    <fields>
+        <help><!-- DateTime of last Upload attempt to CSAT --></help>
+        <label><!-- SYS_LastUploadDate --></label>
+        <name>SYS_LastUploadDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- CustomerSAT Survey Id of Last upload.  This number determines the survey to use. --></help>
+        <label><!-- SYS Survey Id --></label>
+        <name>SYS_SurveyId__c</name>
+    </fields>
+    <fields>
+        <help><!-- CustomerSAT generated file name of Last upload. --></help>
+        <label><!-- SYS UploadFileName --></label>
+        <name>SYS_UploadFileName__c</name>
+    </fields>
+    <fields>
+        <help><!-- CustomerSAT Upload Response:  &apos;unsuccessful&apos; or a the FileID --></help>
+        <label><!-- SYS FileID --></label>
+        <name>SYS_UploadResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Representative --></label>
+        <name>SalesRepresentative__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to: the Contact associated with the DuPont business person with secondary responsibility for the contact relationship. --></help>
+        <label>Link do Nome do Segundo Assinante</label>
+        <name>SecondarySignContact__c</name>
+        <relationshipLabel><!-- Customer Loyalty Surveys  (Secondary Signatures) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- History: The  name of the contact of the DuPont business person with secondary responsibility for the contact relationship - when the CLS record was created --></help>
+        <label>Nome do Segundo Assinante</label>
+        <name>SecondarySignName__c</name>
+    </fields>
+    <fields>
+        <help><!-- History:  The title of the Secondary DuPont Business contact - selected from a picklist on the Campaign - when the CLS record was created. --></help>
+        <label>Título do Segundo Assinante</label>
+        <name>SecondarySignTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Close the Loop</masterLabel>
+            <translation><!-- Close the Loop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow-up</masterLabel>
+            <translation><!-- Follow-up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send</masterLabel>
+            <translation><!-- Send --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting For Response</masterLabel>
+            <translation><!-- Waiting For Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Attempted</masterLabel>
+            <translation><!-- Attempted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Responded</masterLabel>
+            <translation><!-- Responded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Posição na Cadeia de Valor</label>
+        <name>ValueChainPosition__c</name>
+    </fields>
+    <fields>
+        <label><!-- YOY Change in Response Rating --></label>
+        <name>YOY_Change_in_Response_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Owning Org --></label>
+        <name>fAccountOwningOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign Name --></label>
+        <name>fCampaignName__c</name>
+    </fields>
+    <fields>
+        <label>Programa da Campanha</label>
+        <name>fCampaign_Program__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula Field : First Date of the Deployment Quarter --></help>
+        <label><!-- Deployment Date --></label>
+        <name>fDeploymentDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deployment Year --></label>
+        <name>fDeployment_Year__c</name>
+    </fields>
+    <fields>
+        <label>Possuídor dos Negócios</label>
+        <name>fOwning_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- PY Response Rating --></label>
+        <name>fPYResponseRating__c</name>
+    </fields>
+    <fields>
+        <label>Programa</label>
+        <name>fProgram__c</name>
+    </fields>
+    <fields>
+        <label>Texto de Pergunta 2 aberta</label>
+        <name>fQuestion2__c</name>
+    </fields>
+    <fields>
+        <label>Texto de Pergunta 1 aberta</label>
+        <name>fQuestion_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- CY Response Rating --></label>
+        <name>fResponseRating__c</name>
+    </fields>
+    <fields>
+        <help><!-- CustomerSAT required field used to drive backend process. --></help>
+        <label><!-- SYS lang - LetterHead --></label>
+        <name>fSYS_LangLetterhead__c</name>
+    </fields>
+    <fields>
+        <help><!-- formula: to convert the ISO (Contact_Language__c) to the CustomerSAT expected language format. --></help>
+        <label><!-- SYS Language --></label>
+        <name>fSYS_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status_img --></label>
+        <name>fStatus_img__c</name>
+    </fields>
+    <gender><!-- Feminine --></gender>
+    <nameFieldLabel><!-- Name --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Customer Loyalty Survey - Close the Loop --></label>
+        <name>Customer_Loyalty_Survey_Close_the_Loop</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer Loyalty Survey - Closed Locked --></label>
+        <name>Customer_Loyalty_Survey_Closed_Locked</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer Loyalty Survey - Follow up --></label>
+        <name>Customer_Loyalty_Survey_Follow_up</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer Loyalty Survey - New --></label>
+        <name>Customer_Loyalty_Survey_New</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer Loyalty Survey - Returned --></label>
+        <name>Customer_Loyalty_Survey_Returned</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- If closing type is close the loop , Please mention Closing User name. --></errorMessage>
+        <name>Closing_User_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

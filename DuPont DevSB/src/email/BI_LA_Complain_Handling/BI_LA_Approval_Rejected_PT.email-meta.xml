@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI LA - Aprovação rejeitada PT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI LA - Aprovação rejeitada  PT</name>
+    <style>formalLetter</style>
+    <subject>Aprovação rejeitada  (caso: {!Case.CaseNumber})</subject>
+    <textOnly>Prezado Processador,
+Posterior a análise de sua reclamação, {!Case.CaseNumber}, enviada na data {!Case.Date_Entered__c}, determinou-se a não aplicação da garantia. A fim de orientá-los no tratamento deste caso, apresentamos a baixo o parecer técnico do problema e sugestões corretivas:
+
+
+
+{!Case.Special_Instructions__c}
+{!Case.Primary_Corrective_Action__c}
+{!Case.Secondary_Corrective_Action__c}
+
+
+
+Lamentamos o transtorno e esperamos ter resolvido de forma satisfatória o seu problema.
+
+
+
+Qualquer dúvida entrar em contato com o vendedor de sua região, quem se encontra em copia neste e-mail.
+
+
+Muito Obrigado
+
+Atenciosamente,
+
+Time Técnico
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

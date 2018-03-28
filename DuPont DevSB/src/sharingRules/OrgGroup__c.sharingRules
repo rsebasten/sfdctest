@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>OrganizationalGroup_Criteria_RecType_ERPSalesArea_AND_SalesOrgCode_RIS_BI_RO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>OrganizationalGroup_Criteria_RecType-ERPSalesArea_AND_SalesOrgCode_RIS-BI_RO</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ERP Sales Area</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ERP_Sales_Org_Code__c</field>
+            <operation>equals</operation>
+            <value>A603,A618,A629,A640,A641,A642,A64A,A64B,A674,A680,A693,D600,D602,D603,D618,D629,D630,D63B,D642,D643,D64A,D655,D66D,D674,D680,D691,D693</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,660 @@
+<!--/*******************************************************************************
+Copyright Â© 2014 DuPont. All rights reserved. 
+Author: Alvin Johnson
+Email: alvin_johnson@infosys.com
+Description:  VF page for performing duplicate customer check in COB
+Change History :Varsha Singh Varsha.singh@accenture.com Added Code to Prepopulate Case Number
+                 as per CST Implementation
+               :Sai Mamillapalli sai.mamillapalli@tcs.com Changed the Radio Button rendering condition 
+                by removing Not for Customer status'MFD' in line 252 327 579
+                :<RS06092016> Rohit saini IS ID-00069327 Adding option for miscellaneous requests  
+********************************************************************************/-->
+<apex:page controller="ctrlCOBCustomerSearch"  >
+  <apex:includeScript value="{!URLFOR($Resource.CS_JQueryUI, '/jquery.min.js')}" />
+  <style>
+.spinnerCt {
+    left: 50%;
+    top: 35%;
+    position: fixed;
+    z-index: 1050;
+    padding: 20px 40px;
+    box-shadow: 0pt 2px 5px rgb(172, 172, 172);
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid rgb(206, 236, 255);
+    background-color: rgb(206, 236, 255);
+    background-style: solid;
+}
+
+.spinner {
+    padding: 10px 15px 10px 0pt;
+    vertical-align: middle;
+    float: left
+}
+
+.spinnerCt .loadingIndicator {
+    display: inline;
+    font-size: 135%;
+    font-weight: bold;
+    float: left
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.45;
+    filter: alpha(opacity =     45);
+    position: absolute;
+    z-index: 1000;
+    top: 0pt;
+    left: 0pt;
+}
+
+.custPopup {
+background-color : white;
+border-width : 5px;
+border-style: groove;
+border-color: black;
+border-width: thin;
+left : 50%;
+padding : 10px;
+position : fixed;
+width : 400px;
+margin-left : -150px;
+height : 100px;
+top : 225px;
+z-index: 1050;
+font-family : FF-META-WEB-PRO, "MYRIAD PRO", "SEGOE UI", ARIAL, SANS-SERIF;
+}
+
+.popupBackground {
+background-color : grey;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50);
+opacity: .5;
+position : absolute;
+width : 100%;
+height : 100%;
+top : 0;
+left : 0;
+z-index: 1000;
+}
+
+</style>
+
+<apex:form id="TypeofSearch">
+<apex:outputPanel id="ErrorMsgId" ><apex:PageMessages ></apex:PageMessages></apex:outputPanel>
+<apex:actionStatus id="counterStatus">
+        <apex:facet name="start">
+            <div class="spinnerMask" id="spinnerMask">
+                <div class="spinnerCt">
+                    <img src="/img/analytics/reportbuilder/icons/spinner32.gif" alt="Loading..." width="32" height="32" class="spinner" title="Loading..." />
+                    <div class="loadingIndicator">Loading...</div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+
+ <!-------------------------------------  Type of search  -------------------------------------->
+  <apex:sectionHeader title="Type Of Search"/>
+  <apex:pageBlock >
+  
+         
+          <apex:pageBlockSection >
+          <apex:outPutText value="Please choose the type of search to be performed" style="font-weight:bold;color:#4a4a56;font-size: 12px"/>
+          <apex:outPutText />
+              <apex:selectRadio id="selectSearch" value="{!search}" immediate="true" style="width:700px" >
+                  <apex:selectOption itemValue="Duplicate Search" itemLabel="Duplicate Search"/>
+                  <apex:selectOption itemValue="Modify Search" itemLabel="Modify Customer Select"/>
+                  <apex:selectOption itemValue="Extend a Customer" itemLabel=" Extend Customer Select"/>
+                   <apex:selectOption itemValue="Miscellaneous request" itemLabel="Miscellaneous request (Not linked with Account)"/> <!--<RS06092016> Rohit saini IS ID-00069327 Adding option for miscellaneous requests -->
+                  <apex:actionSupport reRender="proceedButton, ErrorMsgId,ErrorMsgId1,search,test,caseNo,SearchForm,CustomerList,AccountList,EntryCriteria,EntryCriteria2,SerachButtonId,selectCST,extendedCustomers" event="onclick" action="{!onChangeSearch}" status="counterStatus"  />
+              
+              </apex:selectRadio>
+          </apex:pageBlockSection>
+          
+          
+    <!--         <apex:pageBlockSection id="test">Type of search - {!search}</apex:pageBlockSection>
+       <apex:pageBlockSection id="cstVSnoncst">
+              <apex:selectRadio id="selectCST" value="{!identifyCST}"   rendered="{!search == 'Modify Search' || search == 'Extend a Customer'}">
+                  <apex:selectOption itemValue="CST Customer" itemLabel="CST Customer"/>
+                  <apex:selectOption itemValue="Non CST Customer" itemLabel="Non CST Customer"/>
+                  <apex:actionSupport reRender="caseNo,ErrorMsgId,ErrorMsgId1" event="onclick" action="{!onChangeSearchCST}"  status="counterStatus"/>
+              </apex:selectRadio>
+              </apex:pageBlockSection>  -->
+              <apex:pageBlockSection id="caseNo" >
+              <apex:pageblockSectionItem >
+                  <apex:outputLabel value="Case Number" rendered="{!search == 'Modify Search' || search == 'Extend a Customer' || search == 'Duplicate Search'}" ></apex:outputLabel>
+                 
+                    <apex:inputField id="caseNumberToReplace" label="Case Number"   value="{!cdr.Case_Number__c}" rendered="{!search == 'Modify Search' || search == 'Extend a Customer' || search == 'Duplicate Search'}"/>
+                                 
+                 </apex:pageblockSectionItem>
+                 <!--- Added by Varsha : Added id to for Inputfield-->                 
+                 <script>
+                      $j = jQuery.noConflict();
+                      $j('input[id$=caseNumberToReplace]').val('{!$CurrentPage.parameters.CaseNumber}');
+                 </script>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+      
+      <!----------------------------------- Proceed button ----------------------------------->      
+      <center><apex:outputPanel id="proceedButton">
+          <apex:commandButton id="Proceed" value="Proceed"   action="{!TypeofSearchProceed}" rendered="{!!isMiscellaneousSearch}" status="counterStatus" reRender="CustomerList,ErrorMsgId,DuplicateserachPgBlcId,EntryCriteria,EntryCriteria2,SerachButtonId,AccountList,extendedCustomers"></apex:commandbutton>
+        <apex:commandButton id="proceedMisce" rendered="{!isMiscellaneousSearch}" value="Proceed to Miscellaneous request" action="{!MiscellaneousReq}" status="counterStatus" />
+        </apex:outputPanel></center>
+      
+       
+      <!------------------------- Duplicate search criteria ----------------------------------------->
+       
+       <apex:outputPanel id="EntryCriteria">
+      <apex:sectionHeader id="DuplicateCustSearch" title="{!$Label.Search_Title}" subtitle="{!$Label.Search_Subtitle}" rendered="{!IF(((search== 'Duplicate Search')  && (IsCriteriaAvailable==true)),true,false)}">
+          
+               <apex:pageBlock id="DuplicateserachPgBlcId">
+                <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Name" />
+                <apex:inputText label="Customer Name" value="{!CustName3}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="VAT Number" />
+                <apex:inputText label="VAT Number" value="{!VAT3}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Tax Code" />
+                <apex:inputText label="Tax Code" value="{!taxCode3}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="ERP Account Code" />
+                <apex:inputText label="Customer Code" value="{!CustCode3}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Postal Code" />
+                <apex:inputText label="Postal Code" value="{!PostalCode3}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer business license/Registration number" />
+                <apex:inputText label="Customer business license/Registration number" value="{!RegNo3}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Language" />
+                <apex:selectList value="{!localLanguage}" size="1">
+                    <apex:selectOptions value="{!Languages}" /> 
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+              </apex:pageBlockSection>
+          
+           </apex:pageBlock>
+          </apex:SectionHeader>
+          </apex:outputPanel>
+        
+          <!------------------------------------- modify and extend search criteria ------------------------------------------------------------->
+            <apex:outputPanel id="EntryCriteria2">
+           <apex:sectionHeader title="{!$Label.Search_Title}" subtitle="Customer Search" rendered="{!IF((((search== 'Modify Search')|| (search== 'Extend a Customer') ) && (IsCriteriaAvailable==true) ),true,false)}">
+           
+                <apex:pageBlock >
+                <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Name" />
+                <apex:inputText label="Customer Name" value="{!CustName1}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="VAT Number" />
+                <apex:inputText label="VAT Number" value="{!VAT1}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Tax Code" />
+                <apex:inputText label="Tax Code" value="{!taxCode1}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Country" />
+                <apex:inputText label="Country" value="{!Country1}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="ERP Account Code" />
+                <apex:inputText label="Customer Code" value="{!CustCode1}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Account Group" />
+                <apex:selectList value="{!AccountGrp1}" multiselect="false" size="1">
+                <apex:selectoption itemValue="" itemLabel="None"></apex:selectoption>
+                <apex:selectoption itemValue="Z001 ( Sold-to party )" itemLabel="Z001 ( Sold-to party )"></apex:selectoption>
+                <apex:selectoption itemValue="Z002 (Ship-to party)" itemLabel="Z002 (Ship-to party)"></apex:selectoption>
+                <apex:selectoption itemValue="Z003 (Payer)" itemLabel="Z003 (Payer)"></apex:selectoption>
+                <apex:selectoption itemValue="Z004 (Bill-to party)" itemLabel="Z004 (Bill-to party)"></apex:selectoption>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Postal Code" />
+                <apex:inputText label="Postal Code" value="{!PostalCode1}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer business license/Registration number" />
+                <apex:inputText label="Customer business license/Registration number" value="{!RegNo1}"/>
+                </apex:pageBlockSectionItem>
+       
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Language" />
+                <apex:selectList value="{!localLanguage}" size="1">
+                    <apex:selectOptions value="{!Languages}" /> 
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                </apex:pageBlock>
+           
+            </apex:SectionHeader>
+             </apex:outputPanel>
+            <!----------------------search customer button--------------------------------->
+        <apex:outputPanel id="SerachButtonId">
+        <center><b><apex:commandButton id="filterGo" value="{!$Label.Button_Search_Customers}" rendered="{!IsCriteriaAvailable}" reRender="ErrorMsgId1,filterGo4,CustomerList,filterGo2,filterGo6,extendedCustomers,AccountList" status="counterStatus" action="{!findMatchCustomers}" ><apex:param assignTo="{!isCustomerSearchExecute}" name="CustomerSearch" id="CustomerSearch" value="true"/></apex:commandbutton></b></center>
+        </apex:outputPanel>
+      <!------------------ customer list section------------------------------------------------------->
+      <br></br><apex:outputPanel id="CustomerList">
+            
+            <apex:pageBlock rendered="{!IsListRender}">
+                    <apex:pageBlockSection id="CustomerListSection" title="Customer Records - Page #{!PageNumber} of {!TotalPages}" columns="1"
+                        collapsible="true">
+                        <apex:pageBlockTable value="{!CustomerWrapperList1}" var="cw" id="table">
+                           <apex:column >
+                           <apex:selectRadio value="{!cw.isChecked}" rendered="{!IF(((search=='Extend a Customer') || (search == 'Modify Search')) && ( (CONTAINS(cw.CustomerStatus,'MFD'))|| IsNULL(cw.CustomerStatus) ),true,false)}">
+                           <apex:selectOption itemValue="True"></apex:selectOption>
+                           <apex:actionSupport action="{!ClearCustomerList}" event="onclick" reRender="ErrorMsgId,ErrorMsgId1,IsListRender2,CustomerList,IsAccountSearch,AccountList,extendedCustomers,filterGo5,filterGo6,filterGo8" status="counterStatus"><apex:param id="first" name="first" assignTo="{!currentSelectionCustomerId}" value="{!cw.Id}"/><apex:param id="second" name="second" assignTo="{!currentSelectionCustomerName}" value="{!cw.Name}"/><apex:param id="third" name="third" assignTo="{!currentSelectionCustomerAccountGroup}" value="{!cw.AccountGroup}"/></apex:actionSupport>
+                           </apex:selectRadio>
+                           </apex:column>
+                            <apex:column value="{!cw.Name}">
+                                <apex:facet name="header">Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.CustomerStatus}" style="font-weight:bold;color:#ff0000;font-size: 14px" >
+                                <apex:facet name="header">Customer Status</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.LocalName}">
+                                <apex:facet name="header">Local Lang Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.VATNumber}">
+                                <apex:facet name="header">VAT Number</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.TaxCode}">
+                                <apex:facet name="header">Tax Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.AccountGroup}">
+                                <apex:facet name="header">Account Group</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.CustomerCode}">
+                                <apex:facet name="header">ERP Account Code</apex:facet>
+                            </apex:column>
+                           <!-- <apex:column value="{!cw.SalesOrgCode}">
+                                <apex:facet name="header">Sales Org Code</apex:facet>
+                            </apex:column>  -->
+                            <apex:column value="{!cw.ExternalAccountID}">
+                                <apex:facet name="header">External ERP ID</apex:facet>
+                            </apex:column>
+                     
+                          <!--  <apex:column value="{!cw.distributionChannel}">
+                                <apex:facet name="header">Distribution Channel</apex:facet>
+                            </apex:column> 
+                            <apex:column value="{!cw.erpDivision}">
+                                <apex:facet name="header">Division</apex:facet>
+                            </apex:column>-->
+                            <apex:column value="{!cw.Street}">
+                                <apex:facet name="header">Street</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.City}">
+                                <apex:facet name="header">City</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.State}">
+                                <apex:facet name="header">State</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.Country}">
+                                <apex:facet name="header">Country</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.PCode}">
+                                <apex:facet name="header">Postal Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw.erpCluster}">
+                                <apex:facet name="header">Cluster</apex:facet>
+                            </apex:column>
+                            
+                         </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                    <apex:panelGrid columns="2">
+                    <apex:commandButton disabled="{!DisablePrevious}" value="{!$Label.Button_Previous}" status="counterStatus" action="{!Previous}" reRender="ErrorMsgId,CustomerList"><apex:param assignTo="{!TypeOfTable}" name="CustomerPreviousParam" id="CustomerPreviousParam" value="Customer"/><apex:param assignTo="{!isCustomerSearchExecute}" name="CustomerSearch1" id="CustomerSearch1" value="false"/></apex:commandButton>
+                    <apex:commandButton disabled="{!DisableNext}" status="counterStatus" value="{!$Label.Button_Next}" action="{!Next}" reRender="ErrorMsgId,CustomerList">
+                    <apex:param assignTo="{!TypeOfTable}" name="CustomerNextParam" id="CustomerNextParam" value="Customer"/>
+                    <apex:param assignTo="{!isCustomerSearchExecute}" name="CustomerSearch2" id="CustomerSearch2" value="false"/>
+                    </apex:commandButton>
+                   </apex:panelGrid>                  
+                </apex:pageBlock>
+                
+                
+                 <apex:pageBlock rendered="{!IsListRender2}">
+                    <apex:pageBlockSection id="CustomerListSection2" title="Customer Records " columns="1"
+                        collapsible="true">
+                        <apex:pageBlockTable value="{!CustomerWrapperList2}" var="cw2" id="table">
+                           <apex:column >
+                           <apex:selectRadio value="{!cw2.isChecked}" rendered="{!IF(((search=='Extend a Customer' && (cw2.ifSoldToCust ==true)) || (search == 'Modify Search')) && ( (CONTAINS(cw2.CustomerStatus,'MFD'))|| IsNULL(cw2.CustomerStatus) ),true,false)}">
+                           <apex:selectOption itemValue="True"></apex:selectOption>
+                           <apex:actionSupport action="{!ClearCustomerList2}" event="onclick" reRender="CustomerList,AccountList" status="counterStatus"><apex:param id="first" name="first" assignTo="{!currentSelectionCustomerId2}" value="{!cw2.Id}"/><apex:param id="second" name="second" assignTo="{!currentSelectionCustomerName2}" value="{!cw2.Name}"/></apex:actionSupport>
+                           </apex:selectRadio>
+                           </apex:column>
+                            <apex:column value="{!cw2.Name}">
+                                <apex:facet name="header">Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.CustomerStatus}" style="font-weight:bold;color:#ff0000;font-size: 14px" >
+                                <apex:facet name="header">Customer Status</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.LocalName}">
+                                <apex:facet name="header">Local Lang Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.VATNumber}">
+                                <apex:facet name="header">VAT Number</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.TaxCode}">
+                                <apex:facet name="header">Tax Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.AccountGroup}">
+                                <apex:facet name="header">Account Group</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.CustomerCode}">
+                                <apex:facet name="header">ERP Account Code</apex:facet>
+                            </apex:column>
+                        <!--    <apex:column value="{!cw2.SalesOrgCode}">
+                                <apex:facet name="header">Sales Org Code</apex:facet>
+                            </apex:column> -->
+                            <apex:column value="{!cw2.ExternalAccountID}">
+                                <apex:facet name="header">External ERP ID</apex:facet>
+                            </apex:column>
+                  
+                       <!--     <apex:column value="{!cw2.distributionChannel}">
+                                <apex:facet name="header">Distribution Channel</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.erpDivision}">
+                                <apex:facet name="header">Division</apex:facet>
+                            </apex:column> -->
+                            <apex:column value="{!cw2.Street}">
+                                <apex:facet name="header">Street</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.City}">
+                                <apex:facet name="header">City</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.State}">
+                                <apex:facet name="header">State</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.Country}">
+                                <apex:facet name="header">Country</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.PCode}">
+                                <apex:facet name="header">Postal Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw2.erpCluster}">
+                                <apex:facet name="header">Cluster</apex:facet>
+                            </apex:column>
+                            
+                         </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+               <!--     <apex:panelGrid columns="2">
+                    <apex:commandButton disabled="{!DisablePrevious}" value="{!$Label.Button_Previous}" status="counterStatus" action="{!Previous}" reRender="ErrorMsgId,CustomerList"><apex:param assignTo="{!TypeOfTable}" name="CustomerPreviousParam" id="CustomerPreviousParam" value="Customer"/><apex:param assignTo="{!isCustomerSearchExecute}" name="CustomerSearch1" id="CustomerSearch1" value="false"/></apex:commandButton>
+                    <apex:commandButton disabled="{!DisableNext}" status="counterStatus" value="{!$Label.Button_Next}" action="{!Next}" reRender="ErrorMsgId,CustomerList">
+                    <apex:param assignTo="{!TypeOfTable}" name="CustomerNextParam" id="CustomerNextParam" value="Customer"/>
+                    <apex:param assignTo="{!isCustomerSearchExecute}" name="CustomerSearch2" id="CustomerSearch2" value="false"/>
+                    </apex:commandButton>
+                   </apex:panelGrid>     -->      
+                </apex:pageBlock>
+                
+             <!-------------------------------Account search button ---------------------------------->   
+                
+          <center><b><apex:commandButton id="filterGo2" rendered="{!IsAccountSearch}" status="counterStatus" value="{!$Label.Button_Search_Accounts}" action="{!AccountSearch}" reRender="extendedCustomers,ErrorMsgId1,CustomerList,AccountList,EntryCriteria3,filterGo5,ExtenSearchCustID,filterGo7"><apex:param assignTo="{!isGenericAccountSearchExecute}" name="genericaccountsearch" id="genericaccountsearch" value="true" /></apex:commandbutton></b></center><br></br>
+                </apex:outputPanel>
+              <apex:outputPanel id="ErrorMsgId1" ><apex:PageMessages ></apex:PageMessages></apex:outputPanel>
+              <!---------------------------------Accounts------------------------------------------>  
+                 <apex:outputPanel id="AccountList">
+                 <!-------------------------- Related accounts----------------->
+                 <apex:pageBlock rendered="{!IsCustomerRelatedAccountListRender}" >
+                    <apex:actionStatus startText="Loading..." id="SelectAccount" />
+                    <apex:pageBlockSection title="Customer Related Account Records - Page #{!RelatedAccountPageNumber} of {!RelatedAccountTotalPages}" columns="1"
+                        collapsible="true">
+                        <apex:pageBlockTable value="{!CustomerRelatedAccountWrapperList}" var="a" id="table">
+                           <apex:column >
+                           <apex:selectRadio value="{!a.isChecked}">
+                           <apex:selectOption itemValue="True" ></apex:selectOption>
+                           <apex:actionSupport action="{!ClearAccountList}" event="onclick" reRender="ErrorMsgId1,CustomerList,AccountList" status="counterStatus"><apex:param id="first" name="first" assignTo="{!currentSelectionAccountId}" value="{!a.Id}"/></apex:actionSupport>
+                           </apex:selectRadio>
+                           </apex:column>
+                            <apex:column value="{!a.Name}">
+                                <apex:facet name="header">Account Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.VATNumber}">
+                                <apex:facet name="header">VAT Number</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.GeoRegion}">
+                                <apex:facet name="header">Geo Region</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.Country}">
+                                <apex:facet name="header">Country</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.ExternalAccountID}">
+                                <apex:facet name="header">External Account ID</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.ERPCustName}">
+                                <apex:facet name="header">Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.owningOrganization}">
+                                <apex:facet name="header">Owning Organization</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.accountSBU}">
+                                <apex:facet name="header">SBU</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.ERPCompanyCode}">
+                                <apex:facet name="header">Selling Company Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.Type}">
+                                <apex:facet name="header">Account Type</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.recType}">
+                                <apex:facet name="header">Account RecordType</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a.AccountOwnerName}">
+                                <apex:facet name="header">Account Owner</apex:facet>
+                            </apex:column>
+                         </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                    <apex:panelGrid columns="2">
+                    <apex:commandButton disabled="{!DisableRelatedAccountPrevious}"  status="counterStatus" value="{!$Label.Button_Previous}" action="{!Previous}" reRender="ErrorMsgId1,CustomerList"><apex:param assignTo="{!TypeOfTable}" name="RelatedAccountPreviousParam" id="RelatedAccountPreviousParam" value="RelatedAccount"/><apex:param assignTo="{!isGenericAccountSearchExecute}" name="genericaccountsearch1" id="genericaccountsearch1" value="false" /></apex:commandButton>
+                    <apex:commandButton disabled="{!DisableRelatedAccountNext}" status="counterStatus" value="{!$Label.Button_Next}" action="{!Next}" reRender="ErrorMsgId1,CustomerList"><apex:param assignTo="{!TypeOfTable}" name="RelatedAccountNextParam" id="RelatedAccountNextParam" value="RelatedAccount"/><apex:param assignTo="{!isGenericAccountSearchExecute}" name="genericaccountsearch2" id="genericaccountsearch2" value="false" /></apex:commandButton>
+                    </apex:panelGrid>
+                </apex:pageBlock>  
+                 
+                 <!-----------------------General Accounts------------------------------>
+                <apex:pageBlock rendered="{!IsGenericAccountListRender}" >
+                    <apex:actionStatus startText="Loading..." id="SelectAccount2" />
+                    <apex:pageBlockSection title="Generic Account Records - Page #{!GenericAccountPageNumber} of {!GenericAccountTotalPages}" columns="1"
+                        collapsible="true">
+                        <apex:pageBlockTable value="{!AccountWrapperList}" var="a1" id="table2">
+                           <apex:column >
+                           <apex:selectRadio value="{!a1.isChecked}">
+                           <apex:selectOption itemValue="True" ></apex:selectOption>
+                           <apex:actionSupport action="{!ClearAccountList}" event="onclick" reRender="CustomerList,AccountList,ErrorMsgId1" status="counterStatus"><apex:param id="first" name="first" assignTo="{!currentSelectionAccountId}" value="{!a1.Id}"/></apex:actionSupport>
+                           </apex:selectRadio>
+                           </apex:column>
+                            <apex:column value="{!a1.Name}">
+                                <apex:facet name="header">Account Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.VATNumber}">
+                                <apex:facet name="header">VAT Number</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.GeoRegion}">
+                                <apex:facet name="header">Geo Region</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.Country}">
+                                <apex:facet name="header">Country</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.ERPCustName}">
+                                <apex:facet name="header">Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.owningOrganization}">
+                                <apex:facet name="header">Owning Organization</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.accountSBU}">
+                                <apex:facet name="header">SBU</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.ERPCompanyCode}">
+                                <apex:facet name="header">Selling Company Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.Type}">
+                                <apex:facet name="header">Account Type</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.recType}">
+                                <apex:facet name="header">Account RecordType</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!a1.AccountOwnerName}">
+                                <apex:facet name="header">Account Owner</apex:facet>
+                            </apex:column>
+                         </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                    <apex:panelGrid columns="2">
+                    <apex:commandButton action="{!Previous}" disabled="{!DisableGenericAccountPrevious}" status="counterStatus" value="{!$Label.Button_Previous}" reRender="ErrorMsgId1,CustomerList,AccountList"><apex:param assignTo="{!TypeOfTable}" name="GenericAccountPreviousParam" id="GenericAccountPreviousParam" value="GenericAccount"/></apex:commandButton>
+                    <apex:commandButton action="{!Next}" disabled="{!DisableGenericAccountNext}" status="counterStatus" value="{!$Label.Button_Next}" reRender="ErrorMsgId1,CustomerList,AccountList"><apex:param assignTo="{!TypeOfTable}" name="GenericAccountNextParam" id="GenericAccountNextParam" value="GenericAccount"/></apex:commandButton>
+                    </apex:panelGrid>
+                </apex:pageBlock> 
+                
+                <center><b><apex:commandButton id="filterGo3" rendered="{!IsProceedAvailble}" value="{!$Label.Button_Proceed}" action="{!openDownloadPopUpFlag}" reRender="ErrorMsgId1,extendedCustomers" status="counterStatus"/></b>
+              <!--  <b><apex:commandButton id="filterGo4" rendered="{!IsNewAccountOptionAvailble}" value="{!$Label.Button_Create_New_Account}" action="{!NewAccountRedirect}"/></b> -->
+                <b><apex:commandButton id="filterGo6" rendered="{!isExtendNewSearch}" value="Proceed to Search" action="{!extendsearch}" reRender="ErrorMsgId1,filterGo5,extendedCustomers,ExtenSearchCustID," status="counterStatus" /></b>
+                <b><apex:commandButton id="filterGo8" rendered="{!singleAccount}" value="Proceed" action="{!openDownloadPopUpFlag}" reRender="ErrorMsgId1,filterGo5,extendedCustomers,ExtenSearchCustID," status="counterStatus" /></b></center>
+                </apex:outputPanel> 
+                        
+             <!----------------extended customer search criteria------------------------------------>
+                <apex:outputPanel id="extendedCustomers">
+                <apex:pageBlock rendered="{!IsExtendedSearch}" >
+                <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Name" />
+                <apex:inputText label="Customer Name" value="{!CustName2}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="VAT Number" />
+                <apex:inputText label="VAT Number" value="{!VAT2}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Tax Code" />
+                <apex:inputText label="Tax Code" value="{!taxCode2}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Country" />
+                <apex:inputText label="Country" value="{!Country2}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="ERP Account Code" />
+                <apex:inputText label="Customer Code" value="{!CustCode2}"/>
+                </apex:pageBlockSectionItem>
+               <!--   <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Account Group" />
+                <apex:selectList value="{!AccountGrp2}" multiselect="false" size="1">
+                <apex:selectoption itemValue="" itemLabel="None"></apex:selectoption>
+                <apex:selectoption itemValue="Z001 ( Sold-to party )" itemLabel="Z001 ( Sold-to party )"></apex:selectoption>
+                <apex:selectoption itemValue="Z002 (Ship-to party)" itemLabel="Z002 (Ship-to party)"></apex:selectoption>
+                <apex:selectoption itemValue="Z003 (Payer)" itemLabel="Z003 (Payer)"></apex:selectoption>
+                <apex:selectoption itemValue="Z004 (Bill-to party)" itemLabel="Z004 (Bill-to party)"></apex:selectoption>
+                </apex:selectList>
+                </apex:pageBlockSectionItem> -->
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Postal Code" />
+                <apex:inputText label="Postal Code" value="{!PostalCode2}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer business license/Registration number" />
+                <apex:inputText label="Customer business license/Registration number" value="{!RegNo2}"/>
+                </apex:pageBlockSectionItem>
+           
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Language" />
+                <apex:selectList value="{!localLanguage}" size="1">
+                    <apex:selectOptions value="{!Languages}" /> 
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                </apex:pageBlock>
+            
+            
+        <center><b><apex:commandButton id="filterGo5" value="{!$Label.Button_Search_Customers}" rendered="{!IsExtendedSearch}" status="counterStatus" reRender="ErrorMsgId1,ExtenSearchCustID,ExtendedCustomerListId,CustomerListSection3" action="{!populateCustomer}" ><apex:param assignTo="{!isCustomerExtendedSearchExecute}" name="CustomerSearchExtend" id="CustomerSearchExtend" value="true"/></apex:commandButton></b></center>
+        
+         <!--------------------------------New customer List-------------->
+           <apex:outputPanel id="ExtenSearchCustID">
+           <apex:pageBlock rendered="{!IsListRender3}" id="ExtendedCustomerListId">
+                    <apex:pageBlockSection id="CustomerListSection3" title="Customer Records - Page #{!PageNumberExtend} of {!TotalPagesExtend}" columns="1"
+                        collapsible="true">
+                        <apex:pageBlockTable value="{!CustomerWrapperList3}"  var="cw3" id="table3">
+                           <apex:column >
+                           <apex:selectRadio value="{!cw3.isChecked}" rendered="{!IF(((search=='Extend a Customer')) && ( (CONTAINS(cw3.CustomerStatus,'MFD'))|| IsNULL(cw3.CustomerStatus) ),true,false)}">
+                           <apex:selectOption itemValue="True"></apex:selectOption>
+                           <apex:actionSupport action="{!ClearCustomerList2}" event="onclick" reRender="ErrorMsgId1,CustomerList,ExtenSearchCustID" status="counterStatus"><apex:param id="first3" name="first3" assignTo="{!currentSelectionCustomerId3}" value="{!cw3.Id}"/><apex:param id="second3" name="second3" assignTo="{!currentSelectionCustomerName3}" value="{!cw3.Name}"/></apex:actionSupport>
+                           </apex:selectRadio>
+                           </apex:column>
+                            <apex:column value="{!cw3.Name}">
+                                <apex:facet name="header">Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.CustomerStatus}" style="font-weight:bold;color:#ff0000;font-size: 14px" >
+                                <apex:facet name="header">Customer Status</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.LocalName}">
+                                <apex:facet name="header">Local Lang Customer Name</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.VATNumber}">
+                                <apex:facet name="header">VAT Number</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.TaxCode}">
+                                <apex:facet name="header">Tax Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.AccountGroup}">
+                                <apex:facet name="header">Account Group</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.CustomerCode}">
+                                <apex:facet name="header">ERP Account Code</apex:facet>
+                            </apex:column>
+                         <!--   <apex:column value="{!cw3.SalesOrgCode}">
+                                <apex:facet name="header">Sales Org Code</apex:facet>
+                            </apex:column> -->
+                            <apex:column value="{!cw3.ExternalAccountID}">
+                                <apex:facet name="header">External ERP ID</apex:facet>
+                            </apex:column>
+                 
+                            
+                         <!--   <apex:column value="{!cw3.distributionChannel}">
+                                <apex:facet name="header">Distribution Channel</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.erpDivision}">
+                                <apex:facet name="header">Division</apex:facet>
+                            </apex:column> -->
+                            <apex:column value="{!cw3.Street}">
+                                <apex:facet name="header">Street</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.City}">
+                                <apex:facet name="header">City</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.State}">
+                                <apex:facet name="header">State</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.Country}">
+                                <apex:facet name="header">Country</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.PCode}">
+                                <apex:facet name="header">Postal Code</apex:facet>
+                            </apex:column>
+                            <apex:column value="{!cw3.erpCluster}">
+                                <apex:facet name="header">Cluster</apex:facet>
+                            </apex:column>
+                            
+                         </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                   <apex:panelGrid columns="2">
+                    <apex:commandButton action="{!Previous}" disabled="{!DisableCustExtendPrevious}" status="counterStatus" value="{!$Label.Button_Previous}" reRender="ErrorMsgId1,CustomerList,AccountList,ExtenSearchCustID"><apex:param assignTo="{!TypeOfTable}" name="CustomerExtendSearchPreviousParam" id="CustomerExtendSearchPreviousParam" value="CustomerExtendSearch"/></apex:commandButton>
+                    <apex:commandButton action="{!Next}" disabled="{!DisableCustExtendNext}" status="counterStatus" value="{!$Label.Button_Next}" reRender="ErrorMsgId1,CustomerList,AccountList,ExtenSearchCustID"><apex:param assignTo="{!TypeOfTable}" name="CustomerExtendSearchNextParam" id="CustomerExtendSearchNextParam" value="CustomerExtendSearch"/></apex:commandButton>
+                    </apex:panelGrid>  
+                </apex:pageBlock>
+               
+           <center><b><apex:commandButton id="filterGo7" value="Proceed with" rendered="{!IsListRender3}" status="counterStatus" action="{!openDownloadPopUpFlag}" /></b></center>
+           </apex:outputPanel>
+          </apex:outputPanel>
+             
+                          
+  </apex:form>
+</apex:page>

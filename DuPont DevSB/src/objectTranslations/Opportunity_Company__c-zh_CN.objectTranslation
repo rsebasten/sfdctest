@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Opportunity-Company --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Company Role --></label>
+        <name>Company_Role__c</name>
+        <picklistValues>
+            <masterLabel>Architect</masterLabel>
+            <translation><!-- Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor</masterLabel>
+            <translation>竞争者</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Converter</masterLabel>
+            <translation><!-- Converter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation>客户</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer</masterLabel>
+            <translation><!-- Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development Customer</masterLabel>
+            <translation><!-- Development Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation>代理商</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Contractor</masterLabel>
+            <translation><!-- General Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect Customer</masterLabel>
+            <translation>间接客户</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Influencer</masterLabel>
+            <translation>设计院</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM</masterLabel>
+            <translation><!-- OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>其他</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner</masterLabel>
+            <translation><!-- Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation>合作伙伴</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner-Fabricator</masterLabel>
+            <translation><!-- Partner-Fabricator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplier</masterLabel>
+            <translation><!-- Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Manufacturer</masterLabel>
+            <translation><!-- System Manufacturer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+        <relationshipLabel><!-- Opportunity-Companies --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Main Contact of this Company at this Opportunity --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel>业务机会-关联公司</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount off List % --></label>
+        <name>Discount_off_List__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main --></label>
+        <name>Main__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity-Companies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rebate Type --></label>
+        <name>Rebate_Type__c</name>
+        <picklistValues>
+            <masterLabel>% off List Price</masterLabel>
+            <translation><!-- % off List Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>% off Usual Price</masterLabel>
+            <translation><!-- % off Usual Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amount per UOM</masterLabel>
+            <translation><!-- Amount per UOM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rebate --></label>
+        <name>Rebate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country from the associated Account --></help>
+        <label><!-- Country --></label>
+        <name>fCountry__c</name>
+    </fields>
+    <fields>
+        <help><!-- The GeoRegion from the associated Account --></help>
+        <label><!-- Region --></label>
+        <name>fRegion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Geo SubRegion from the associated Account --></help>
+        <label><!-- SubRegion --></label>
+        <name>fSubRegion__c</name>
+    </fields>
+    <nameFieldLabel><!-- OPCO ID --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Construction --></label>
+        <name>Construction</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT-IPP EMEA --></label>
+        <name>DPT_IPPEMEA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DPT Standard --></label>
+        <name>DPT_Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OneDuPont --></label>
+        <name>OneDuPont</name>
+    </recordTypes>
+    <webLinks>
+        <label>新建</label>
+        <name>MassAdd</name>
+    </webLinks>
+    <webLinks>
+        <label>查看-公司</label>
+        <name>View_Companies</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Owner</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Lead$Application_2__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Description</field>
+    </columns>
+    <columns>
+        <field>Lead$BU_Answer1__c</field>
+    </columns>
+    <currency>EUR</currency>
+    <description>to check cladding leads, application 2 to be added =&gt; correct version</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Owner</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Natalie Teugels,Caroline Janssens,Anneleen Laevers,Vincent Requier,Ben J.M.Teunissen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Product__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>includes</operator>
+            <value>Corian,Zodiaq</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Leads Benelux with or without activities</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_and_Without_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

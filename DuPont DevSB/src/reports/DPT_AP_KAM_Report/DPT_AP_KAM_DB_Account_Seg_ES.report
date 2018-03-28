@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_84659348</developerName>
+        <masterLabel>KA Category</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>ACCOUNT.NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Qingdao Yunlu Electronics Co., Ltd.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Guangdong Galanz Group Co., .Ltd.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Guangdong Midea Microwave and Electrical Applicances Manufacturing Co., Ltd.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CSR Zhuzhou Electric Co.,LTD</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hainan Jinpan electric Co., Ltd.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>China Electronic Equipment Group</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>GUANGDONG HAIHONG TRANSFORMER CO.,LTD.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Foshan Eaglerise</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>大同ABB牵引变压器有限责任公司</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Fuzhou Leroy-somer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Johnson Electric</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dongfang Motor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hefei ECU-Tamura Electronic Co.LTD(ECT)</sourceValue>
+            </sourceValues>
+            <value>Tier 1 KA</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBarStackedTo100</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>ACCOUNT.NAME</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>Account.Customer_Segment__c</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.DPT_Aramids</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Country__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CHINA,HONG KONG</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Customer_Segment__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Core,Innovator,Key Customer,Price Buyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALIAS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>others</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Owning_Organization__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>DPT-Energy Solutions</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Customer_Segment__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPT-AP-KAM-DB Account Seg-ES</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

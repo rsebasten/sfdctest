@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>StandardCorporateLetterhead</letterhead>
+    <name>05 UPDATE Notify Contact-Lead-Information update complete-GERMAN</name>
+    <style>formalLetter</style>
+    <subject>DuPont Customer Privacy request - Contact details update</subject>
+    <textOnly>Sehr geehrter Herr/ Sehr geehrte Frau {!Lead.LastName},
+
+wir haben Ihre Aufforderung zur Änderung Ihrer bei DuPont gespeicherten  persönlichen Daten bekommen.
+
+Gemäß Ihren Angaben haben wir Ihre persönlichen Daten in unserer Datenbank geändert. Die folgenden Daten sind nun gespeichert:  
+
+·         Ansprectpartner Name : {!Lead.Name}
+·         Firma  Name: {!Lead.Company}
+·         Address: {!Lead.Address}
+·         Telefon Nummer : {!Lead.Phone}
+·         Handy Nummer : {!Lead.MobilePhone}
+·         Fax Nummer : {!Lead.Fax}
+·         E-mail Address: {!Lead.Email}
+
+·         Website : {!Lead.Website}
+
+
+Für weitere Fragen und Unterstützung wenden Sie sich bitte an den unten angegebenen Kontakt.
+
+Mit freundlichen Grüßen
+ 
+DuPont Inquiry Management  Center
+Toll-free number : 00800 3876 68 38
+Phone : 0034 985 12 3773
+Fax : 0034 912 72 52 37
+E-mail: eu-info@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

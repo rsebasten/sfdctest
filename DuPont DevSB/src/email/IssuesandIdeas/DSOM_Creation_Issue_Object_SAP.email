@@ -1,0 +1,24 @@
+Hi Helpdesk, 
+
+Please raise a Ticket against Issue {!Issue__c.Issue__c} follows.
+
+TSR GROUP: DUP-TCS-SAP-Support
+APPLICATION: Salesforce.com (SFDC) 
+Issue Details: {!Issue__c.Description__c} 
+TSR Name: {!CASE(SFDC_Access_Request__c.OwnerFullName,"Madhu Reddipalli")} 
+CONSUMER / ORIGINATOR: Madhu Reddipalli 
+LOGGED SYSTEM ROLE: All 
+CUSTOMER AND/OR USER NAME:{!Issue__c.CreatedBy} 
+CATEGORY : {!Issue__c.Category__c} 
+{!Issue__c.Issue__c} 
+{!Issue__c.User__c} 
+
+DATE & TIME ISSUE OCCURRED: {!Issue__c.CreatedDate} 
+REPLICABLE (Y/N): N (not receiving any notifications) 
+SCREENSHOTS AVAILABLE AND ATTACHED (Y/N): N 
+WORK AROUND EXISTENT WITHIN Salesforce (not through e-mail or manually) (Y/N): N 
+BUSINESS IMPACT (Optional): {!CASE(Issue__c.Category__c,"Cat 3","Medium","Cat 1","High","Cat 2","High","Low")} 
+
+Upon issue resolution reply confirming "Completed" in the below mentioned address (Should be in Bcc):
+
+emailtosalesforce@1g8vweyrj64rivw5fz7lex6wa5oiti736pn3g6vlphulc8wokw.3-66bqeay.na19.le.salesforce.com

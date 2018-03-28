@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to terminate QN partnership with a service center</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA QN Termination Letter IT</name>
+    <style>formalLetter</style>
+    <subject>Corian®  Contratto di Fabbrictaore/Installatore  auorizzato Nr. ({!Qualification__c.Reference_Id__c})</subject>
+    <textOnly>Egr. Signore,
+
+Gentila Signora,
+Con la presente siamo a comunicare, in ottemperanza alle previsioni di cui all&apos;art. 9, formale disdetta dell&apos;accordo in oggetto con voi sottoscritto in data {!Qualification__c.Start_Date__c}.
+
+Pertanto, con decorrenza da 30  giorni dal ricevimento della presente lettera, l&apos;accordo si intendera&apos; risolto.
+
+Vi invitiamo  a restituire a DuPont  enro 14 giorni  tutto il materiale a supporto, quale il goffratore, le schede di garanzia, i  marchi di qualità,
+
+Distinti saluti
+
+Patrick S. Schriber
+Director
+DuPont™ Corian® / DuPont Building Innovations
+BI-Warranty@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

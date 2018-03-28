@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA CH Complaint Approval Request Recalled</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA CH Approval Recalled EN</name>
+    <style>formalLetter</style>
+    <subject>Complaint approval request has been recalled (case: {!Case.CaseNumber})</subject>
+    <textOnly>Dear Approver,
+
+Please be advised that the following approval request for complaint {!Case.CaseNumber} has been recalled. Until a new request for approval is submitted you do not need to act upon this complaint.
+
+If you want to review this complaint please follow the link below.
+
+Link: {!Case.Link}
+
+
+Kind regards,
+
+
+{!Case.OwnerFirstName}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

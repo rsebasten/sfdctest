@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>Dashboard to give overview on opportunities, call reports and leads from sales view.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>EXP_AMOUNT.CONVERT</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>true</expandOthers>
+            <groupingColumn>STAGE_NAME</groupingColumn>
+            <header>Opportunities Pipeline Current Year (close date)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/EMEA_MPP_Opps_per_stage_not_at_Risk</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Expected revenue/Opps current year</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Funnel</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Opportunity Pipeline Updates</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/MPP_Opps_modified_last_90_days</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>EMEA MPP OPPS Modified last 2 months</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>AMOUNT</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Thousands</displayUnits>
+            <drillEnabled>true</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>STAGE_NAME</groupingColumn>
+            <groupingColumn>CLOSE_DATE</groupingColumn>
+            <header>Business @ Risk Pipeline (close date)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/EMEA_MPP_Opps_at_Risk</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Total Amount - all time</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Business @  Risk (close date)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>NOWEMEA/EMEA_MPP_Opps_at_Risk_Won</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Total Amount Revenue at Risk Won</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>AMOUNT</column>
+            </chartSummary>
+            <componentType>Line</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CLOSE_DATE</groupingColumn>
+            <header>All opportunities created by year as of 1.1.2012 - won</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/MPP_OPPS_created_as_of_1_1_2012</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>true</expandOthers>
+            <footer>Click on the graph to get the detailed report</footer>
+            <header>Opportunity Pipeline Current year (created date)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/MPP_opps_by_stage_current_year</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Total amount/Opps current year</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>EXP_AMOUNT</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>true</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Opportunity.First_Ship_Date__c</groupingColumn>
+            <groupingColumn>STAGE_NAME</groupingColumn>
+            <header>Opp Pipeline: First Ship Date Chosen period: Current &amp; next year</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/MPP_Opps_by_stage_in_plan_2015_2016</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Opps Expected Revenue - in plan</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardTableColumn>
+                <column>ACCOUNT_NAME</column>
+                <sortBy>RowLabelAscending</sortBy>
+            </dashboardTableColumn>
+            <dashboardTableColumn>
+                <aggregateType>Sum</aggregateType>
+                <calculatePercent>false</calculatePercent>
+                <column>AMOUNT</column>
+                <showTotal>true</showTotal>
+            </dashboardTableColumn>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>Opportunities Pipeline</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_EMEA_dashboards/MPP_Opps_won_last_90_days</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <title>Won Opportunities since last 90 days</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardTableColumn>
+                <column>ACCOUNT_NAME</column>
+                <sortBy>RowLabelAscending</sortBy>
+            </dashboardTableColumn>
+            <dashboardTableColumn>
+                <aggregateType>Sum</aggregateType>
+                <calculatePercent>false</calculatePercent>
+                <column>AMOUNT</column>
+                <showTotal>true</showTotal>
+            </dashboardTableColumn>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>Opportunities Pipeline</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_EMEA_dashboards/MPP_Opps_lost_last_90_days</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <title>Lost Opportunities since last 90 days</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardTableColumn>
+                <column>ACCOUNT_NAME</column>
+                <sortBy>RowLabelAscending</sortBy>
+            </dashboardTableColumn>
+            <dashboardTableColumn>
+                <aggregateType>Sum</aggregateType>
+                <calculatePercent>false</calculatePercent>
+                <column>AMOUNT</column>
+                <showTotal>true</showTotal>
+            </dashboardTableColumn>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>Opportunities Pipeline</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_EMEA_dashboards/MPP_Opps_new_since_chosen_period</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <title>New Opportunities since chosen period</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardTableColumn>
+                <column>TYPE</column>
+                <sortBy>RowLabelDescending</sortBy>
+            </dashboardTableColumn>
+            <dashboardTableColumn>
+                <aggregateType>Sum</aggregateType>
+                <calculatePercent>false</calculatePercent>
+                <column>AMOUNT</column>
+                <showTotal>true</showTotal>
+            </dashboardTableColumn>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <footer>Click on the table to get the detailed report</footer>
+            <header>Amount of opportunities</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_EMEA_dashboards/MPP_Opps_new_by_type_since_chosen_period</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <title>Opportunities new by type chosen period</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Line</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CREATED_DATE</groupingColumn>
+            <header>All opps created as of 1.1.2012 - Success rate per year</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/PP_OPPS_created_as_of_1_1_2012_success</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Success rate/opps won versus opps lost</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>Opps pipeline created date all time by type</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/MPP_Opps_created_current_year</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Total Amount</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardTableColumn>
+                <column>ACCOUNT_NAME</column>
+                <sortBy>RowLabelAscending</sortBy>
+            </dashboardTableColumn>
+            <dashboardTableColumn>
+                <aggregateType>Sum</aggregateType>
+                <calculatePercent>false</calculatePercent>
+                <column>AMOUNT</column>
+                <showTotal>true</showTotal>
+            </dashboardTableColumn>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>Opportunities Pipeline</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>DPT_EMEA_dashboards/MPP_Opps_overdue_last_90_days</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <title>Closing Date Overdue</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>EXP_AMOUNT.CONVERT</column>
+            </chartSummary>
+            <componentType>Funnel</componentType>
+            <displayUnits>Thousands</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>STAGE_NAME</groupingColumn>
+            <header>Opportunities Pipeline Previous Year (close date)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_dashboards/EMEA_MPP_Opps_not_at_Risk_Prev_Year</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Opps Expected Revenue not at risk</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>lisa.mcshane@lux.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Sales EMEA MPP Opportunities - Eric</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

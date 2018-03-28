@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DuPont™ Products</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPS - DuPont™ Products</name>
+    <style>formalLetter</style>
+    <subject>DuPont™ Products</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.FirstName} {!Lead.LastName},
+
+
+Thank you for your interest in DuPont™ products.
+ 
+DuPont ™ manufactures a variety of products which are utilized in various industries.  
+ 
+To learn more about these products on our DuPont™ website, please copy and paste the following web address into your  web browser.
+ 
+http://www2.dupont.com/Directories/en_US/Products_Services_Index/index.html
+  
+DuPont Protection Solutions
+ 
+ 
+ 
+ </textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

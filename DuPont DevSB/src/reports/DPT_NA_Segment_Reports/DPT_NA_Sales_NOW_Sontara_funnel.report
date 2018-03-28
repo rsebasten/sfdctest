@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_85455274</developerName>
+        <masterLabel>Segment</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity.Owning_Organisation__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>DPT-Ind Pkg &amp; Protection</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Envelopes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Graphics</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Air and Filtration</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-ASPS</sourceValue>
+            </sourceValues>
+            <value>GPP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DPT-Medical Packaging</sourceValue>
+            </sourceValues>
+            <value>Med Pkg</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DPT-A&amp;HF</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Critical Clean</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Medical Fabrics</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DPT-Sontara</sourceValue>
+            </sourceValues>
+            <value>Sontara</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_66277103</developerName>
+        <masterLabel>Team Members</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>FULL_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Norris Brooks</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Sullivan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jay Hooper</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William Dunnagan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Todd Barnes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dale Reese</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Helen Campbell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brad Thompson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jimmie Garland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Patricia Humble</sourceValue>
+            </sourceValues>
+            <value>LP/MT/ES Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>David Domnisch</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joe Kubiatowicz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rodney Taylor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Boivin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lucie Fink</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Greg Tandarich</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rose Santia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sarah Ritchie</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrew Siemionko</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alex Blair</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ed Hoffman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Bowen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dan Garofalo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Greg Schaecher</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robert B Clements</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Foutty</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susan Henshaw</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Scott Zorn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Craig Chavez</sourceValue>
+            </sourceValues>
+            <value>IPP team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>EXP_AMOUNT.CONVERT</column>
+        </chartSummaries>
+        <chartType>Funnel</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>STAGE_NAME</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>BucketField_85455274</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Owning_Organisation__c</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Status__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EXP_AMOUNT.CONVERT</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>FISCAL_YEAR</field>
+    </columns>
+    <columns>
+        <field>FISCAL_QUARTER</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Market_Segment__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Market_SubSegment__c</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>STAGE_DURATION</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.DPT_NOWGlobalOpportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Region__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>North America</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_85455274</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Sontara</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STAGE_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPT NA Sales - NOW Sontara funnel</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,372 @@
+<apex:page standardController="ConstructionPts__CP_Settings__c" extensions="ConstructionPts.CPSettingsUsers">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" />
+<apex:includeScript value="/soap/ajax/32.0/connection.js"/>
+<c:CPHeader title="Edit Permissions" subtitle="Edit Permissions" ShowTitle="True" ShowDodgeLogo="false" ShowCPLinks="true"   /> 
+<script language="javascript">
+var j$ = jQuery.noConflict();  
+j$(document).ready(function() {
+   
+    j$('#btn-add').click(function(){
+        j$('#select-from-all-projects option:selected').each( function() {
+                j$('#select-to-all-projects').append("<option value='"+j$(this).val()+"'>"+j$(this).text()+"</option>");
+            j$(this).remove();
+        });
+    });
+    j$('#btn-remove').click(function(){
+        j$('#select-to-all-projects option:selected').each( function() {
+            j$('#select-from-all-projects').append("<option value='"+ j$(this).val()+"'>"+ j$(this).text()+"</option>");
+            j$(this).remove();
+        });
+    });
+     j$('#btn-add-delete').click(function(){
+        j$('#select-from-delete-projects option:selected').each( function() {
+                j$('#select-to-delete-projects').append("<option value='"+ j$(this).val()+"'>"+ j$(this).text()+"</option>");
+            j$(this).remove();
+        });
+    });
+    j$('#btn-remove-delete').click(function(){
+        j$('#select-to-delete-projects option:selected').each( function() {
+            j$('#select-from-delete-projects').append("<option value='"+ j$(this).val()+"'>"+ j$(this).text()+"</option>");
+            j$(this).remove();
+        });
+    });
+    
+
+});
+	function LoadProfiles(){
+      try {
+      		sforce.connection.sessionId = "{!$Api.Session_ID}";
+      		
+		 	 if(ns != undefined && ns != null ){
+					sforce.connection.defaultNamespace = ns; 
+					}
+            var profiles = sforce.connection.query("SELECT Id, Name FROM Profile Order by Name").getArray("records");
+            j$('#ProfilesAvailable').append('<option value="">None Selected</option>');
+            j$('#ProfilesAvailableDeleted').append('<option value="">None Selected</option');
+            profiles.map(function(profile) { 
+            	j$('#ProfilesAvailable').append('<option value="' + profile.Id + '">' + profile.Name + '</option>');
+            	j$('#ProfilesAvailableDeleted').append('<option value="' + profile.Id + '">' + profile.Name + '</option>');
+            	
+            });
+          } catch(e) {
+                        alert('An Error has Occured. Error:' + e);
+          }          
+           // empty user lists
+           j$('#select-from-all-projects').empty();
+           j$('#select-to-all-projects').empty();
+          
+           var sOptions = "{!JSENCODE(AvailableUsers)}";
+           if (sOptions.length >0){
+               var sOptions= sOptions.split(',');
+               j$.each(sOptions, function (idx, val) {
+               	  var nSplitPosn = val.indexOf(':');
+               	  var idxVal = val.substring(0, nSplitPosn);
+               	  var displayVal= val.substring(nSplitPosn + 1, val.length);
+               	  j$('#select-from-all-projects').append("<option value='" +idxVal + "'> " + displayVal+ " </option>");
+               });  
+    	   }
+    	  
+    	   var sOptionsTo = "{!JSENCODE(SelectedProjectUsers)}";
+     	   if (sOptionsTo.length >0){
+              var sOptionsTo = sOptionsTo.split(',');
+              j$.each(sOptionsTo, function (idx, val) {
+                  var nSplitPosn = val.indexOf(':');
+                  var idxVal = val.substring(0, nSplitPosn);
+                  var displayVal= val.substring(nSplitPosn + 1, val.length);
+                 j$('#select-to-all-projects').append("<option value='" +idxVal + "'> " + displayVal+ " </option>");
+             });  
+    	  }
+    	  
+    	   var sOptionsDel = "{!JSENCODE(AvailableDeletedProjectUsers)}";
+           if (sOptionsDel.length >0){
+              var sOptionsDel = sOptionsDel.split(',');
+              j$.each(sOptionsDel,function (idx, val) {
+                  var nSplitPosn = val.indexOf(':');
+                  var idxVal = val.substring(0, nSplitPosn);
+                  var displayVal= val.substring(nSplitPosn + 1, val.length);
+                 j$('#select-from-delete-projects').append("<option value='" +idxVal + "'> " + displayVal+ " </option>");
+              });  
+           }
+         
+          var sOptionsToDel = "{!JSENCODE(SelectedDeletedProjectUsers)}";
+          if (sOptionsToDel.length >0){
+             var sOptionsToDel = sOptionsToDel.split(',');
+             j$.each(sOptionsToDel, function (idx, val) {
+                  var nSplitPosn = val.indexOf(':');
+                  var idxVal = val.substring(0, nSplitPosn);
+                  var displayVal= val.substring(nSplitPosn + 1, val.length);
+                 j$('#select-to-delete-projects').append("<option value='" +idxVal + "'> " + displayVal+ " </option>");
+             });   
+         }          
+          //when the profile dropdown changes
+          j$('#ProfilesAvailable').change(function(){
+          	var AllProjectOrDeleted = "AllProject";
+          	//get Users based on profile
+          	var profileId = j$(this).val();
+          	getUsers(profileId,AllProjectOrDeleted);
+          });
+          
+          j$("#ProfilesAvailableDeleted").change(function(){
+          	var AllProjectOrDeleted = "Deleted";
+          	var profileId = j$(this).val();
+          	getUsers(profileId,AllProjectOrDeleted);
+          });	
+	}	
+	function getUsers(profileId,AllProjectOrDeleted){
+		var users; 
+		var profileQuery = "SELECT Id,Name FROM User";
+		/* var sOptions = "{!JSENCODE(AvailableUsers)}";
+		var sOptionsDel = "{!JSENCODE(AvailableDeletedProjectUsers)}"; */
+		var sOptionsVal = [];
+				
+		if(AllProjectOrDeleted == "Deleted"){
+			var sOptions = "{!JSENCODE(AvailableDeletedProjectUsers)}";
+			if (sOptions.length >0){
+            var sOptions= sOptions.split(',');
+            j$.each(sOptions, function (idx, val) {
+                var nSplitPosn = val.indexOf(':');
+                var idxVal = val.substring(0, nSplitPosn);
+                var newidxVal = "'" + idxVal + "'";
+                sOptionsVal.push(newidxVal);
+        	});
+        }    		
+		}
+		
+		if(AllProjectOrDeleted == "AllProject"){
+			var sOptions = "{!JSENCODE(AvailableUsers)}";
+			if (sOptions.length >0){
+            var sOptions= sOptions.split(',');
+            j$.each(sOptions, function (idx, val) {
+                var nSplitPosn = val.indexOf(':');
+                var idxVal = val.substring(0, nSplitPosn);
+                var newidxVal = "'" + idxVal + "'";
+                sOptionsVal.push(newidxVal);
+        	});
+        }
+		}
+				
+		if(profileId){
+			if(sOptionsVal.length > 0){				
+				profileQuery += (" WHERE profileId = '" + profileId + "'" +" AND Id IN (" + sOptionsVal + ")"  );
+				//console.log("ProfileQuery " + profileQuery);
+			}else{
+				profileQuery += (" WHERE profileId = '" + profileId + "'");
+			}
+		}		
+		try{
+			sforce.connection.sessionId = "{!$Api.Session_ID}";
+      		
+		  	if(ns != undefined && ns != null ){
+					sforce.connection.defaultNamespace = ns; 
+			}				
+			users = sforce.connection.query(profileQuery).getArray("records");
+			//console.log("New profile users " + users);			
+			this.populateAllProjectUsers(users,AllProjectOrDeleted);
+			
+		
+		} catch(e){
+			alert('An Error has occured. Error:' + e);
+		}
+		
+	}
+	
+	function populateAllProjectUsers(results,AllProjectOrDeleted){	
+		if(AllProjectOrDeleted == "AllProject"){
+		// clear out error info
+        j$('#errorInfo').remove();
+		
+		//populate the select list
+		var selectedUsers = j$("#select-to-all-projects").children();
+		j$("#select-from-all-projects").empty();
+		var found = false; 
+		
+		// check if no users
+        if (results.length == 0) {
+        	j$('#ProfilesAvailable').after('<p id="errorInfo" style=\"color: red;\">No users with selected profile.</p>');
+          return;
+      	}
+      	
+      	// iterate through results
+        for (var i = 0; i < results.length; i++) {
+        	// remove already selected users
+           found = false;
+           for (var j = 0; j < selectedUsers.length; j++) {
+               if (j$(selectedUsers[j]).val() == results[i].Id) {
+                  found = true;
+                  }
+           }
+            if (found == false) {
+                j$('#select-from-all-projects').append('<option value="' + results[i].Id + '">' + results[i].Name + '</option>');
+            }
+       }
+        // check if any users were added to the available users list
+        if (j$('#select-from-all-projects').children().length == 0) {
+            j$('#ProfilesAvailable').after('<p id="errorInfo" style=\"color: red;\">All users with profile already selected.</p>');
+           }
+		}
+		
+		if(AllProjectOrDeleted == "Deleted"){
+		// clear out error info
+        j$('#errorInfo').remove();
+		
+		//populate the select list
+		var selectedUsers = j$("#select-to-delete-projects").children();
+		j$("#select-from-delete-projects").empty();
+		var found = false; 
+		
+		// check if no users
+        if (results.length == 0) {
+        	j$('#ProfilesAvailableDeleted').after('<p id="errorInfo" style=\"color: red;\">No users with selected profile.</p>');
+          return;
+      	}
+      	
+      	// iterate through results
+        for (var i = 0; i < results.length; i++) {
+        	// remove already selected users
+           found = false;
+           for (var j = 0; j < selectedUsers.length; j++) {
+               if (j$(selectedUsers[j]).val() == results[i].Id) {
+                  found = true;
+                  }
+           }
+            if (found == false) {
+                j$('#select-from-delete-projects').append('<option value="' + results[i].Id + '">' + results[i].Name + '</option>');
+            }
+       }
+        // check if any users were added to the available users list
+        if (j$('#select-from-delete-projects').children().length == 0) {
+            j$('#ProfilesAvailableDeleted').after('<p id="errorInfo" style=\"color: red;\">All users with profile already selected.</p>');
+           }
+		}
+		
+		
+	}
+
+
+
+   
+
+
+function doSave(){
+    var sSelUsers = '';
+    var sSelDelUsers = '';   
+    j$('#select-to-all-projects option').each(function() {
+      sSelUsers = sSelUsers + "'" + (j$(this).val()) + "',";
+    });
+    if(sSelUsers.length >0) {
+        sSelUsers= sSelUsers.substring(0, sSelUsers.length-1); 
+    }
+
+   j$('#select-to-delete-projects option').each(function() {
+      sSelDelUsers = sSelDelUsers + "'" + (j$(this).val()) + "'," ;
+    });
+    if(sSelDelUsers .length >0) {
+        sSelDelUsers = sSelDelUsers.substring(0, sSelDelUsers.length-1); 
+    }
+
+    Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPSettingsUsers.SaveAllSelectedUsers}', sSelUsers, sSelDelUsers, doCallBack);
+
+}
+
+ function doCallBack(sReturn, event){
+    doGoBack();
+ }
+
+function doGoBack(){    
+    var currUrl = window.location.href; 
+    currUrl = currUrl.toLowerCase();    
+    var backUrl = currUrl.substring(0,currUrl.indexOf(".com") + 4) + "/apex/CPSettingsDefault"; 
+    if (sforce.console.isInConsole()){                
+          backUrl = backUrl + '?isdtp=vw';
+    } 
+    window.location = backUrl;
+}
+
+</script>   
+<c:CPHeader Title="CP Settings" SubTitle="{!selCPSettingsName} - Edit Permissions" /> 
+<apex:form >
+<!-- &lt;&lt;<apex:commandLink onclick="doGoBack(); return false;" value="Back to Detail: {!selCPSettingsName}" id="lnkGoBack"/> -->
+
+
+<table cellpadding="2" cellspacing="2">
+    <tr>
+        <td colspan="3" align="center">
+
+            <input type="button"  id="btnSave" value="Save" onclick="javaScript:doSave(); return false;" style="width:50px" />
+        <input type="button"  id="btnCancel" value="Cancel" onclick="javaScript:doGoBack(); return false;" style="width:55px" />          
+
+       <br/><br/>
+ </td>
+    </tr>
+        <!-- <tr  style="display: none;" class="letsHide" > -->
+        <tr class = "letsHide" >     
+    		<td colspan="3"><b>Users who can access the "All projects" tab</b></td> 
+    	</tr>
+    	<!-- <tr class="letsHide" style="display: none;"> -->
+    	<tr class="letsHide">
+    		<td  colspan="3">
+           		<span>by Profile:</span> 
+            	<select  id="ProfilesAvailable"></select>
+    		</td> 
+    	</tr>
+   
+    <!-- <tr class="letsHide" style="display: none;">   -->
+    <tr class = "letsHide" >             
+        <td>
+            <div id="divAvailUsers"> 
+        <select title="CP All Project User" multiple="true" size="10" id="select-from-all-projects" style="width: 180px">
+        </select>
+           </div>
+        </td>
+        <td align="center" style = "width:100px;  vertical-align:middle;" >
+            <a href="JavaScript:void(0);" id="btn-add">Add &raquo;</a>
+        <br/>
+            <a href="JavaScript:void(0);" id="btn-remove">&laquo; Remove</a>
+        </td>
+        <td>
+           <div id="divSelUsers">
+        <select size="10" multiple="true" id="select-to-all-projects" style="width: 180px">
+        </select>
+           </div>
+        </td>   
+    </tr>
+    
+   	<tr>
+    	<td colspan="3" nowrap="false"><br/><b>Users who can access "Deleted Projects" tab</b></td> 
+    </tr>
+    <tr>
+    	 <td  colspan="3">
+           	<span>by Profile:</span> 
+            <select  id="ProfilesAvailableDeleted"></select>
+    	</td>  
+    </tr>    
+ <tr>
+    <td>
+        <div id="divAvailDelUsers">  
+            <select size="10" multiple="true" id="select-from-delete-projects" style="width: 180px">
+             </select>  
+          </div>
+        </td>
+        <td align="center" style = "width:100px;  vertical-align:middle;">
+            <a href="JavaScript:void(0);" id="btn-add-delete">Add &raquo;</a>
+        <br/>
+            <a href="JavaScript:void(0);" id="btn-remove-delete">&laquo; Remove</a>
+        </td>
+        <td>
+         <div id="divSelDelUsers">
+           <select size="10" multiple="true" id="select-to-delete-projects" style="width: 180px">
+            </select>
+          </div> 
+        </td>   
+    </tr>        
+    </table>            
+<br/>
+  <c:CPFooter ShowMHCInfo="false" ShowMHCLogo="false"/>
+    <script language="javascript">       
+         
+         LoadProfiles();
+    </script>       
+</apex:form>     
+</apex:page>

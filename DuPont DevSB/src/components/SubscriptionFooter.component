@@ -1,0 +1,15 @@
+<apex:component >
+<table id="parentHomeFooterContentCell" width="732px">
+<tbody><tr><td align="left"> </td>
+	<td id="homeFooterContentCell">
+	<div id="footer">
+		<div class="hFooterStyle">
+			<apex:outputText escape="false" value="{!$Label.SiteFooter_Links}"/>             
+		</div><br/>
+		<div class="overline" style="text-align: left;">			
+		    <p class="overline">{!$Label.SiteFooter_Copyright}</p>
+		</div>
+	</div>
+</td></tr></tbody>
+</table>
+</apex:component>

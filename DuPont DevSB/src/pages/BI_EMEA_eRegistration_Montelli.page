@@ -1,0 +1,57 @@
+<apex:page sidebar="false" showHeader="false" controller="ctrlBIeWarrantyInput" language="{!$CurrentPage.parameters.lang}" >
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <style type="text/css"> 
+        .inputCustomize{
+            width: 120px;                            
+        }
+    </style>
+
+    <script type="text/javascript">
+    $(document).ready(function(){           
+           $(".inputCustomize").focus(function(){
+           $(this).css({"background-color":"lightgrey","font-weight" : "450"});
+               $(this).animate({
+                   width:'+15em'       
+               });           
+           });
+           
+        $(".inputCustomize").focusout(function(){
+         $(this).css({"background-color":"white","font-weight" : "450"});
+            $(this).animate({
+                width:'+9em'           
+            });         
+         });       
+     });    
+    </script>    
+    
+<p style="background-color:lightgrey;"><image src="http://www.dupont.com/etc/designs/dupont/phoenix/clientlibs/source/images/header-top-bar-logo.jpg"/>
+</p>
+    <apex:form >
+        <style>body { color: grey; font: normal normal bold 11px Trebuchet MS, Helvetica;} </style>
+        <apex:outputPanel >
+        <apex:pageBlock >                
+                    <apex:outputPanel >                                    
+                            <apex:outputText value="{!FetchedData}" style="color: red; font: normal normal bold 11px Trebuchet MS, Helvetica;" rendered="{!NOT(CONTAINS(fetchedData,'success'))}"/>                         
+                            <apex:outputText value="{!FetchedData}" style="color: green; font: normal normal bold 11px Trebuchet MS, Helvetica;" rendered="{!(CONTAINS(fetchedData,'success'))}"/>                         
+                    </apex:outputPanel> 
+                    <apex:outputPanel >                    
+                        <apex:pageBlockSection > 
+                            <apex:pageBlockSectionItem >                                                
+                               <apex:outputLabel value="{!$Label.outLabel_warrantyCode}" for="warCode" style="font-size:12px;"><span style="color:red;font-size:small;vertical-align:top;">*</span></apex:outputLabel>
+                               <apex:inputText id="warCode" styleclass="inputCustomize" value="{!entitlementCode}"/>
+                             </apex:pageBlockSectionItem> 
+                              <br/>
+                             <apex:pageBlockSectionItem >                       
+                               <apex:outputLabel value="{!$Label.outputLabel_SellerId}" for="sellerid" style="font-size:12px;"><span style="color:red;font-size:small;vertical-align:top;">*</span></apex:outputLabel>
+                               <apex:inputText id="sellerId" styleClass="inputCustomize" value="{!sellerId}" />
+                             </apex:pageBlockSectionItem> 
+                             <br/>                              
+                        </apex:pageBlockSection>                                               
+                    </apex:outputPanel> <br/>        
+                    <b><apex:commandButton id="submit" style="width: 100px;font: normal normal bold 11px Trebuchet MS, Helvetica;margin-left:150px;" value="{!$Label.button_submit}" action="{!verifyMontelli}"/></b>
+                    <apex:pageMessages />               
+        </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

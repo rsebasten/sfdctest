@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Basic sales or business objectives for this Account, as determined by the account owner or collected from the customer.  This object has a master-detail relationship to Account and is available for offline use.   Corporate Marketing &amp; Sales Management Leadership have approved and recommend the more robust Plan object functionality for official Account Plans.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>AccountPlans</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>HasAttachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>There is a trigger to check whether there is an Attachment on the record. For more details on how this works please contact Tom Snyder and Vinayak Vjayakumar.</description>
+        <externalId>false</externalId>
+        <label>HasAttachment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Initiative__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The related Initiative to this Account Plan</description>
+        <externalId>false</externalId>
+        <label>Initiative</label>
+        <referenceTo>Initiative__c</referenceTo>
+        <relationshipName>R00N30000002yu8JEAQ</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Account Objective</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Account Objective Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Objectives</pluralLabel>
+    <recordTypes>
+        <fullName>BI_NA_Account_Objective</fullName>
+        <active>true</active>
+        <label>BI-NA Account Objective</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DCFAccountObjectives</fullName>
+        <active>false</active>
+        <description>DuPont Chemicals &amp; Fluoroproducts Account Objectives</description>
+        <label>DCF Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DEC_PGAccountObjectives</fullName>
+        <active>false</active>
+        <description>Electronics &amp; Communications Packaging Graphics Account Objectives</description>
+        <label>DEC-PG Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPEAccountObjectives</fullName>
+        <active>false</active>
+        <description>DuPont Performance Elastomer Account Objectives</description>
+        <label>DPE Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DuPontTateLyleAccountObjectives</fullName>
+        <active>false</active>
+        <description>DuPont Tate &amp; Lyle Account Objectives</description>
+        <label>DuPont Tate &amp; Lyle Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EKCAccountObjectives</fullName>
+        <active>false</active>
+        <description>EKC Account Objectives</description>
+        <label>EKC Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>HDMAccountObjectives</fullName>
+        <active>false</active>
+        <description>HD Microsystems Account Objectives</description>
+        <label>HDM Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>HPMAccountObjectives</fullName>
+        <active>false</active>
+        <description>HPM Account Objectives</description>
+        <label>HPM Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ITVRMAccountObjectives</fullName>
+        <active>false</active>
+        <description>IT VRM Account Objectives</description>
+        <label>IT VRM Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MCMAmericasAccountObjectives</fullName>
+        <active>false</active>
+        <description>Microcircuit Materials Account Objectives</description>
+        <label>MCM Americas Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OneDuPontAccountObjectives</fullName>
+        <active>false</active>
+        <description>One DuPont Inside Sales Account Objectives</description>
+        <label>OneDuPont Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PIPECPAccountObjective</fullName>
+        <active>false</active>
+        <description>P&amp;IP ECP Account Objectives</description>
+        <label>P&amp;IP ECP Account Objectives</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Solae_Account_Objective</fullName>
+        <active>false</active>
+        <description>Solae Account Objective Record Type</description>
+        <label>Solae Account Objectives</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

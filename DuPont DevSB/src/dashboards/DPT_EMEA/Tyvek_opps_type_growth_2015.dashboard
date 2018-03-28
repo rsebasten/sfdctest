@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>All Tyvek opportunities with close date 2015 - type growth</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>opps type growth by segments</footer>
+            <header>All Tyvek opps type growth 2015</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/opps_Tyvek_2015_growth_forecast</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Total year by segment</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>TOTAL_PRICE</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>opps type growth by quarter in plan / not counted</footer>
+            <groupingColumn>CLOSE_DATE</groupingColumn>
+            <groupingColumn>Opportunity.Forecasting_Group__c</groupingColumn>
+            <header>All Tyvek opps type growth 2015</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/opps_Tyvek_2015_growth_forecast</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>by quarter - forecasting</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Metric</componentType>
+            <displayUnits>Thousands</displayUnits>
+            <header>All Tyvek opps growth 2015</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Sum opps 2015 - growth</metricLabel>
+            <report>DPT_EMEA_sales/opps_Tyvek_2015_growth_forecast</report>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>TOTAL_PRICE</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>opps type growth by segments in plan/not counted</footer>
+            <groupingColumn>Opportunity.Owning_Organisation__c</groupingColumn>
+            <groupingColumn>Opportunity.Forecasting_Group__c</groupingColumn>
+            <header>All Tyvek opps type growth 2015</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/opps_Tyvek_2015_growth_forecast</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Total year by segment and forecasting</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>opps type growth not counted by segment and by quarter</footer>
+            <header>All Tyvek opps type growth 2015</header>
+            <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>50</maxValuesDisplayed>
+            <report>DPT_EMEA_sales/opps_Tyvek_2015_growth_by_Q_and_Segment</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Opps not counted - by Q. &amp; by segment</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>TOTAL_PRICE</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>opps type growth in plan / not counted</footer>
+            <groupingColumn>Opportunity.Forecasting_Group__c</groupingColumn>
+            <header>All Tyvek opps type growth 2015</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/opps_Tyvek_2015_growth_by_q_forecast</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>total year - forecasting</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <aggregate>Sum</aggregate>
+                <axisBinding>y</axisBinding>
+                <column>TOTAL_PRICE</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>opps type growth by country</footer>
+            <groupingColumn>Opportunity.Account_Country__c</groupingColumn>
+            <header>All Tyvek opps type growth 2015</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_EMEA_sales/opps_Tyvek_2015_growth_forecast</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>false</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Total year by country</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>lisa.mcshane@lux.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Tyvek opps type growth 2015</title>
+    <titleColor>#330033</titleColor>
+    <titleSize>8</titleSize>
+</Dashboard>

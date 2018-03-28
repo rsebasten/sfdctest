@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity-Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity-Products</value>
+    </caseValues>
+    <fields>
+        <help><!-- This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique. --></help>
+        <label><!-- Legacy One DuPont SFID --></label>
+        <name>Legacy_One_DuPont_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Description --></label>
+        <name>Line_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>ProductOfOpportunity__c</name>
+        <relationshipLabel><!-- Opportunity Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Price --></label>
+        <name>Sales_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Price --></label>
+        <name>Total_Price__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- DPT-IPP EMEA END USER --></label>
+        <name>DPT_IPP_EMEA_END_USER</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

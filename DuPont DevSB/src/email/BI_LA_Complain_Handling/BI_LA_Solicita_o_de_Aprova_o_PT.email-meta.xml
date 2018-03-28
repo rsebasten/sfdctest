@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI LA -  Solicitação de Aprovação PT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Cases</letterhead>
+    <name>BI LA -  Solicitação de Aprovação PT</name>
+    <style>formalLetter</style>
+    <subject>Solicitação de Aprovação de Reclamação (case: {!Case.CaseNumber})</subject>
+    <textOnly>Prezado Aprovador,
+Referente ao número da reclamação {!Case.CaseNumber} com data de inscrição {!Case.Date_Entered__c}, solicito sua aprovação.
+
+Link: {!Case.Link}
+{!Case.Special_Instructions__c}
+
+
+Muito Obrigado
+
+
+Atenciosamente
+
+
+{!Case.OwnerFullName}
+Safety &amp; Construction - Corian® Design
+{!Case.OwnerTitle}
+Email: {!Case.OwnerEmail}
+www.corian.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

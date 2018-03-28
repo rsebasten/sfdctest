@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>List of Apex Jobs to schedule.  This data is used in the method utilSchedule.scheduleApexJobs() to schedule apex jobs.  Currently you are unable to deploy using any classes that have dependencies related to any scheduled apex.  (exception when deploying with changeset)  To simplify deployment call utilSchedule.abortApexJobs() before deployment and utilSchedule.scheduleApexJobs()  after.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ClassName__c</fullName>
+        <description>name of Schedulable Class.  (do not include Parenthesis.)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>name of Schedulable Class.  (do not include Parenthesis.)</inlineHelpText>
+        <label>Class Name</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CronExpr__c</fullName>
+        <description>see http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_scheduler.htm</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cron Expression.</inlineHelpText>
+        <label>CronExpr</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This will schedule the Job on next invocation of utilSchedule.scheduleApexJobs();</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will schedule the Job on next invocation of utilSchedule.scheduleApexJobs();</inlineHelpText>
+        <label>isActive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Scheduled Apex</label>
+    <visibility>Protected</visibility>
+</CustomObject>

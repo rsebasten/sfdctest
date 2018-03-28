@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Garments-CE,Garments-GP</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Kevlar</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Nomex</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Sontara</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Tyvek</values>
+        </dashboardFilterOptions>
+        <name>Product Category</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>notEqual</operator>
+            <values>01241000001E71X</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>01241000001E71X</values>
+        </dashboardFilterOptions>
+        <name>Case Record Type</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <description>Filter out Quick Complaints using the Case Record Type Filter at the top of the dashboard.
+Filter by Business using Product Category filter.
+Complaints with Reason = Invalid Complaint are not included.
+Hover over for details, click to view report.</description>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DPT  Service Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Complnt_Last_Month_by_Mfg_Plant</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Last Month by Mfg Plant</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DPT Service Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Complnt_Last_Month_by_CmplntTyp</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Month by Case Record Type</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DPT  Service Complaint</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Cmplnt_Last_Month</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Last Month by Product</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>Case.Owning_Organization__c</groupingColumn>
+            <header>DPT  Service Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Complnt_Last_Month_by_OwnOrg</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Last Month by Owning Org</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DPT Service Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Complnt_Last_Month_by_MfgPltReg</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Month by Mfg Region</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>ColumnGrouped</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DPT  Service Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Complnt_Last_Month_by_Reason</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Last Month by Reason</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DPT  Service Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Complnt_Last_Month_by_OrigReg</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Month by Region of Initiator</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <dashboardFilterColumns>
+                <column>Case.Product_Category__c</column>
+            </dashboardFilterColumns>
+            <dashboardFilterColumns>
+                <column>RECORDTYPE</column>
+            </dashboardFilterColumns>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <header>DPT Service Complaints</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>DPT_Global_Complaints/DPT_Srvc_Complnt_Last_Month_by_CustReg</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Last Month by Region of Customer</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>wendy.c.youell@usa.dupont.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>DPT Service Complaints Dashboard - Last Month</title>
+    <titleColor>#3333FF</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

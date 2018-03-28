@@ -1,0 +1,6 @@
+<apex:page docType="html-5.0" standardStylesheets="true" sidebar="false"  standardController="ConstructionPts__CP_Project__c" extensions="ConstructionPts.CPProjectControllerExtension" >
+<apex:stylesheet value="{!URLFOR($Resource.ConstructionPts__Mobile_Design_Templates_Master, 'Mobile-Design-Templates-master/common/css/app.css')}"/>
+<div class="content" >
+    <c:CPPursuit rendered="{!IF(ShowProjectPursuit && $ObjectType['CP_Project__c'].Fields['CPPursuit__c'].Accessible,true,false)}" />
+</div>
+</apex:page>

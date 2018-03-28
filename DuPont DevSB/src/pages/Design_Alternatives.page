@@ -1,0 +1,157 @@
+<apex:page standardController="Search_Criteria__c" extensions="ctrlDPSYarnSpecBasePDF" renderAs="pdf" showHeader="false" sidebar="false" applyBodyTag="false">
+    <head>
+        <style type="text/css"  media="print"> 
+            <!-- For background image & the font of the body of the page. -->
+            body{
+                font-family: Arial Unicode MS;
+            }
+            
+            @page{
+                margin : 100pt .3in 1.2in .3in;
+                @top-center {content: element(header);}
+                @bottom-left {content: element(footer);}  
+            }
+            
+            <!-- Border for the header of the design alternative table -->
+            th{
+                border:0.5px solid black;
+            }
+            
+            <!-- Header image of the pdf page. -->
+            div.header{
+                margin-top: 0.5em;
+                position: running(header);
+                margin: 2px 5px 5px 5px;
+                width:743px;
+                align:center;
+            }
+            
+            <!-- Footer disclamer of the pdf page. -->
+            div.footer{
+                text-align:justify;
+                font-size:9px;   
+                position: running(footer);                             
+            }
+            
+            <!-- Section Header (eg: Customer Information) -->
+            .caption{
+                text-align:left;
+                font-weight:bold;
+                font-size:15px;
+                background-color:#BCC6CC;
+                border: .8px solid black;
+                padding:8px;
+                font-family: Arial Unicode MS;
+            }
+            
+            <!-- CSS for Customer information Section -->
+            .CItableStyle {border-collapse:collapse;margin-left:2px;}
+            .CIcolStyle1 { width: 15%; text-align:left; padding:5px; border: .5px solid black; font-weight:bold; font:14px;}
+            .CIcolStyle2 { width: 35%; text-align:left; padding:5px; border: .5px solid black; font:14px;}
+            .CIcolStyle3 { width: 15%; text-align:left; padding:5px; border: .5px solid black; font-weight:bold; font:14px;}
+            .CIcolStyle4 { width: 35%; text-align:left; padding:5px; border: .5px solid black; font:14px;}
+            .CIrowstyle { padding:0px;}
+            
+            <!-- CSS for Comments in Customer information Section -->
+            .CMtableStyle {border-collapse:collapse;margin-left:2px;}
+            .CMcolStyle1 { width: 15%;text-align:left; padding:5px; border: .5px solid black; font-weight:bold; font:14px; vertical-align: top;}
+            .CMcolStyle2 { max-width: 85%; text-align:left; padding:5px; border: .5px solid black; font:14px;}
+            .CMrowstyle { padding:0px;}
+            
+            <!-- CSS for table in the Search Criteria  -->
+            .tableStyle {border-collapse:collapse;}
+            .colStyle1 { width: 300px;text-align:left; padding:5px; font-weight:bold; font:14px; border: .5px solid black; height:33px;}
+            .colStyle2 { width: 200px; text-align:left; padding:5px; padding-left: 10px; font:14px; border: .5px solid black;}
+            .rowstyle { padding:10px;}
+            
+        </style>
+    </head>  
+
+    <apex:form >
+        <apex:pageMessages id="ShowMsg"/>
+        
+        <!-- Header Start -->
+        <div class="header">
+            <apex:image url="{!$Resource.DPS_SrchCritYarnPDFHeaderImg}" width="100%" />    
+        </div>
+        <!-- Header End -->
+        <!-- Footer Section Start -->
+        <div class="footer">
+            {!$Label.DPS_Footer_1}{!$Label.DPS_Footer_2}
+        </div>
+            <!-- Footer Section End -->
+
+        <apex:pageBlock mode="maindetail" rendered="{!showPage}">
+            <apex:pageBlock mode="maindetail" id="title1">
+            
+                <!-- Customer Information Start -->
+                <div class="caption" style="100%">Customer Information</div>
+                <div style="height:2px;"/>
+                    <apex:panelGrid columns="4" styleClass="CItableStyle" columnClasses="CIcolStyle1,CIcolStyle2,CIcolStyle3,CIcolStyle4" rowClasses="CIrowstyle" width="99.3%">
+                        <apex:outputText value="Customer"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_Customer__r.Name}"/>
+                        <apex:outputText value="OEM Platform"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_OEM_Platform__c}"/>
+                        <apex:outputText value="OEM Country"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_OEM_Country__c}"/>
+                        <apex:outputText value="OEM"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_OEM__c}"/>        
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" styleClass="CMtableStyle" columnClasses="CMcolStyle1,CMcolStyle2," rowClasses="CMrowstyle" width="99.3%">
+                        <apex:outputText value="Comments" />
+                        <apex:outputText value="{!objSearchCritPDF.KV_Comments__c}"/>
+                    </apex:panelGrid>
+                <!-- Customer Information End -->
+                
+                <!-- Space between the 2 section (Customer Information & Search Critria.) -->
+                <div style="height:40px"></div>
+                
+                <!-- Search Criteria Start -->
+                <div class="caption">Search Criteria</div>
+                <apex:panelGrid columns="2" style="width:100%;">
+                    <apex:panelGrid columns="2" styleClass="tableStyle" columnClasses="colStyle1,colStyle2" rowClasses="rowstyle">
+                        <apex:outputText value="Operating Temperature (°C)"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_Operating_Temperature__c}"/>
+                        <apex:outputText value="Operating Pressure Value ({!objSearchCritPDF.KV_Operating_Pressure_Unit__c})"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_Operating_Pressure_Value__c}"/>
+                        <apex:outputText value="Internal Diameter (mm)"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_Internal_Diameter_mm__c}"/>
+                        <apex:outputText value="Inner Wall Thickness (mm)"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_Inner_Wall_Thickness_mm__c}"/>
+                        <apex:outputText value="Stitch Length Value ({!objSearchCritPDF.KV_Stitch_Length_Unit__c})"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_Stitch_Length_Value__c}"/>
+                        <apex:outputText value="Knitting Angle (°)"/>
+                        <apex:outputText value="{!objSearchCritPDF.KV_Knitting_Angle__c }"/>
+                    </apex:panelGrid>
+                    <apex:panelGrid width="100%">
+                        <apex:image id="theImage" value="{!$Resource.DPS_Pipe_Image_Pdf}" styleClass="image" width="350px" height="190px"/>
+                    </apex:panelGrid>
+                </apex:panelGrid>
+                <!-- Search Criteria End -->
+            </apex:pageblock>
+            
+            <!-- Space between the 2 section (Search Critria & Design alternatives.) -->
+            <div style="height:40px"></div>
+            
+            <!-- Design Alternative Start -->
+                <apex:outputPanel >
+                    <div class="caption" style="100%">Design Alternatives</div>
+                    <apex:panelGrid width="100%">
+                        <apex:pageBlockTable value="{!lswrap}" var="wrap" width="100%" style="font:10px;border: .5px solid black;text-align:center;font-family:Arial Unicode MS;">
+                            <apex:column value="{!wrap.yrsp.KV_Product_Name__c}" style="text-align:left;border: .5px solid black;width:170px;padding-left:2px;"/>
+                            <apex:column value="{!wrap.burstPrPSI}" headerValue="Burst Pressure (PSI)" style="text-align:right;border: .5px solid black;width:100px;padding-right:5px;"/>
+                            <apex:column value="{!wrap.burstPrBAR}" headerValue="Burst Pressure (BAR)" style="text-align:right;border: .5px solid black;width:100px;padding-right:5px;"/>
+                            <apex:variable var="row"  value="{!1}"/>
+                            <apex:repeat value="{!fields}" var="f" >
+                                <apex:column rendered="{! if(f.type!='string',true,false)}" style="width:50px;color:white;height:20px;font-family:Arial Unicode MS;text-align:center;border: .2px solid black;background-color: {! IF(wrap.yrsp!=null && wrap.yrsp[f.fieldPath ] != null && wrap.yrsp[f.fieldPath ] >= appLoopStrength  && wrap.yrsp[f.fieldPath ] > 0, 'green', 'red')};">
+                                    <apex:facet name="header">{!f.label}</apex:facet>
+                                </apex:column>
+                            </apex:repeat>
+                        </apex:pageBlockTable>
+                    </apex:panelGrid>
+                </apex:outputPanel>
+            <!-- Design Alternative End -->        
+            
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

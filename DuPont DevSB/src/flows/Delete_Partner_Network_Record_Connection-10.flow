@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Record_Found</name>
+        <label>Record Found</label>
+        <locationX>110</locationX>
+        <locationY>112</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PartnerNetworkRecordConnection</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Partner_Record_Network_Connection</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Delete Partner Network Record Connection {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delete Partner Network Record Connection</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Partner_Record_Network_Connection</name>
+        <label>Delete Partner Record Network Connection</label>
+        <locationX>256</locationX>
+        <locationY>229</locationY>
+        <inputReference>PartnerNetworkRecordConnection</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Retrieve Record if Shared From OneDupont</description>
+        <name>Get_Partner_Network_Record_Connection</name>
+        <label>Get Partner Network Record Connection</label>
+        <locationX>21</locationX>
+        <locationY>16</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Record_Found</targetReference>
+        </connector>
+        <filters>
+            <field>ConnectionId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>04P4B00000000CsUAI</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LocalRecordId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Lead.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Received</stringValue>
+            </value>
+        </filters>
+        <object>PartnerNetworkRecordConnection</object>
+        <outputReference>PartnerNetworkRecordConnection</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <startElementReference>Get_Partner_Network_Record_Connection</startElementReference>
+    <variables>
+        <name>Lead</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+    <variables>
+        <name>PartnerNetworkRecordConnection</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>PartnerNetworkRecordConnection</objectType>
+    </variables>
+</Flow>

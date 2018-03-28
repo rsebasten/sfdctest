@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BusinessPartner_MigrationUser_RS_RO_PSCRM</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>(06-JUL-17) - Issue fix for IS ID-00082857.  This is a &quot;generic&quot; share to extend &apos;Data Migration User&apos; owned records with PS CRM role and subordinates ---due to original owners being inactive in OneDuPont.</description>
+        <label>Business Partner Migration User RO to RS PSCRM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PS_CRM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00541000003FCKu</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>DPTBusinessPartnerCaseMgmtListViewShare</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>(30-MAY-17)  - Defect fix for W-001421.  Several hundred business partner records owned by inactive users in One DuPont auto-migrated to API user, &quot;Migration User&quot; which impacted existing shares.
+
+Sharing rule based on what Business Partner list intends to accomplish: Share r-w access to four (4) roles where business partner record type = &quot;DPT Business Partner Case Management&quot;.</description>
+        <label>DPT Business Partner Case Mgmt List View share</label>
+        <sharedTo>
+            <group>DPTBusinessPartnerCaseMgmtListView</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>DPT Business Partner Case Management</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>DPTBusinessPartnerComplaintMgmtShare</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>(31-MAY-17) - Defect fix for W-001435.  Several hundred business partner records owned by members of public group &apos;DIMC Complaint Management&apos; (e.g., &quot;Christine Gaesser&quot;) in O/D were auto-migrated to &quot;Migration User&quot; in DPS UAT.  This occurred because none of the members of &apos;DIMC Complaint Management&apos; exist in DPS UAT which interrupted the sharing of &quot;complaint manager&quot; business partner records to  Nancy Lloyd and Kathleen Saerens, etc.  This rule shares &quot;Complaint Manager&quot; records with &quot;Protection Solutions&quot; roles and subordinates as requested by the business.</description>
+        <label>DPT Business Partner Complaint Mgmt Share</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DuPont_Protection_Solutions</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Complaint Manager</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BILAI</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>BI-LAI</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BILA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BILA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BusinessPartnerBI_AP_BI_AP_CSR_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Criteria: Owner in Group: DIMC Complaint Management 
+Shared With: Group: BI-AP CSR Team 
+Access Level: Read Only</description>
+        <label>BusinessPartnerBI_AP_BI_AP_CSR_R</label>
+        <sharedTo>
+            <group>BI_AP_CSR_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DIMCComplaintManagement</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BusinessPartner_BI_RIS_BI_RIS_BI_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>BusinessPartner_BI_RIS-BI_RIS-BI_R</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Business_Partner_BI_AP_RIS_Building_Innovations_PG_AP_BI_AP_CSR_Team_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Business Partner_BI_AP_RIS_Building Innovations_PG_AP_BI-AP CSR Team_R</label>
+        <sharedTo>
+            <group>BI_AP_CSR_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Business_Partner_DPT_RI_DPT_RI_DPT_RO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Business_Partner_DPT_RI.DPT_RI.DPT_RO</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DuPontProtectionTechnologies</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPontProtectionTechnologies</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Business_Partner_RIS_DuPont_Protection_Technologies_PG_BI_AP_CSR_Team_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Business Partner_RIS-DuPont Protection Technologies_PG-BI-AP CSR Team_R</label>
+        <sharedTo>
+            <group>BI_AP_CSR_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPontProtectionTechnologies</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Business_Partner_c_RIS_DPT_RIS_BI_R</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Business_Partner_c_RIS_DPT-RIS_BI_R</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DuPontProtectionTechnologies</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

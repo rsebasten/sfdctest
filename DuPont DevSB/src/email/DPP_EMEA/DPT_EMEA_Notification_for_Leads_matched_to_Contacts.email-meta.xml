@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DPT-EMEA Notification for Leads matched to Contacts used in Electric Arc webform . . . . .</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>DPT-EMEA Notification for Leads matched to Contacts</name>
+    <style>freeForm</style>
+    <subject>Arc Guide: The Lead {!Lead.Name} was mapped to an existing Contact</subject>
+    <textOnly>Lead
+Name: {!Lead.Name}
+Lead Link: {!Lead.Link}
+Origin Name: {!Lead.Origin_Name__c}
+
+Contact
+Related Contact: {!Lead.Related_Contact__c}
+Contact Link: https://one-dupont.my.salesforce.com/{!Lead.Related_ContactId__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

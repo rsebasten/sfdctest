@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LEAD_ID</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>PHONE</field>
+    </columns>
+    <columns>
+        <field>MOBILE_PHONE</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE_BY</field>
+    </columns>
+    <columns>
+        <field>ZIP</field>
+    </columns>
+    <columns>
+        <field>CITY</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>Lead.Lead_Country__c</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(1) AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15 OR 16 OR 17 OR 18)</booleanFilter>
+        <criteriaItems>
+            <column>Lead.First_Referrer_Name__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Interieur</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/9/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/14/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/15/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/16/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/17/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/18/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/19/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/20/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/21/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/22/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10/23/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>11/4/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>11/5/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>11/7/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>11/8/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>11/9/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>11/10/2016 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Surf BNL FAIR Leads Interieur 2016</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>LAST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

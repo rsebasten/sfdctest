@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>ACCESS- Provide customers information- For leads only (English)</name>
+    <style>formalLetter</style>
+    <subject>DuPont Customer Privacy Access Request</subject>
+    <textOnly>Dear Customer
+
+We have received your request for the access to the personal information that DuPont has concerning you. Please be ensure that DuPont has strict policies regarding storage of personal information.
+
+You will find below the information we currently have, in our database(s), concerning you:
+
+
+• Contact name : {!Lead.Name}
+• Company name : {!Lead.Company}
+• Address: {!Lead.Address}
+• Phone number: {!Lead.Phone}
+• Mobile number: {!Lead.MobilePhone}
+• Fax  number: {!Lead.Fax}
+• E-mail Address: {!Lead.Email}
+• Website:{!Lead.Website}
+
+
+For further queries and assistance, please contact us using the details provided below.
+
+
+Sincerely,
+
+{!User.Name}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

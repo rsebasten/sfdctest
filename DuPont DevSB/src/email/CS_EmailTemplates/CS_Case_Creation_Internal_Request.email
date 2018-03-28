@@ -1,0 +1,28 @@
+<messaging:emailTemplate subject="{!$Label.CS_Email_Subject}" recipientType="Contact" relatedToType="Case" language="{!relatedTo.CS_Lang__c}">
+<messaging:htmlEmailBody >
+{!$Label.CS_Email_Body_Internal_One} <BR /><BR />
+{!$Label.CS_Email_Body_Two}{!relatedTo.Subject}{!$Label.CS_Email_Body_Two_Half}  <BR />
+{!$Label.CS_Email_Body_Three} <BR /><BR />
+{!$Label.CS_Email_Body_Internal_Four} {!relatedTo.fCS_Email_Sig2__c} {!$Label.CS_Email_Body_Internal_Eleven} <BR /><BR />
+{!$Label.CS_Email_Body_Five} <BR /><BR /><BR /><BR /><BR />
+{!$Label.CS_Email_Body_Six} <BR /><BR />
+{!$Label.CS_Email_Body_Seven} <BR />
+{!$Label.CS_Email_Body_Eight} {!relatedTo.fCS_Email_Sig__c} <BR />
+{!$Label.CS_Email_Body_Nine} {!relatedTo.fCS_Email_Sig2__c} <BR />
+<apex:image url="https://one-dupont--dev11--c.cs23.content.force.com/servlet/servlet.ImageServer?id=01518000000aKiV&oid=00D180000004osz&lastMod=1450782135000" />  <BR /><BR /><BR />
+{!$Label.CS_Email_Body_Ten} <a href = "http://www.dupont.com">http://www.dupont.com</a> <BR /><BR />
+This communication is for use by the intended recipient and contains 
+information that may be Privileged, confidential or copyrighted under 
+applicable law. If you are not the intended recipient, you are hereby 
+formally notified that any use, copying or distribution of this e-mail, 
+in whole or in part, is strictly prohibited. Please notify the sender by 
+return e-mail and delete this e-mail from your system. Unless explicitly 
+and conspicuously designated as "E-Contract Intended", this e-mail does 
+not constitute a contract offer, a contract amendment, or an acceptance 
+of a contract offer. This e-mail does not constitute a consent to the 
+use of sender's contact information for direct marketing purposes or for 
+transfers of data to third parties. <BR />
+Francais Deutsch Italiano Espanol Portugues Japanese Chinese Korean 
+http://www.DuPont.com/corp/email_disclaimer.html
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

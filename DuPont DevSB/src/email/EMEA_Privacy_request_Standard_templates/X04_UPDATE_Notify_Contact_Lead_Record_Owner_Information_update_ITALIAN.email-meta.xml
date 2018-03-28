@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>04 UPDATE Notify Contact-Lead Record Owner- Information update - ITALIAN</name>
+    <style>formalLetter</style>
+    <subject>Privacy request - {!Lead_Routing__c.Lead_Name__c}&apos;s contact details update</subject>
+    <textOnly>Gentile cliente,
+
+
+Abbiamo ricevuto da parte del suo contatto {!Lead_Routing__c.Lead_Name__c},
+
+{!Lead_Routing__c.Product_Comments__c} una richiesta SFDC di modifica/aggiornamento dei suoi dati attualmente in possesso di DuPont.
+
+________________________________________
+
+{!Lead_Routing__c.Description__c}
+
+________________________________________
+
+Conformemente alla nostra normativa sulla privacy, ogni cliente/contatto ha il diritto di rivedere, correggere, aggiornare, cancellare o altrimenti limitare l’uso dei propri dati personali da parte di DuPont.
+
+La prego di procedere all’aggiornarmento del record del contatto e, una volta completato, la preghiamo di informarci. C&apos;è uno standard aziendale di 10 giorni per questo aggiornamento, a partire da oggi.
+
+Per chiarimenti sulla nostra normativa per la privacy la preghiamo di contattare Geryl M. Craft(Geryl.M.Craft@dupont.com) , nostro contatto Global Privacy Leader – Marketing &amp; Sales
+
+Cordiali saluti
+
+DuPont Inquiry Management  Center
+
+Toll-free number : 00800 3876 68 38
+
+Phone : 0034 985 12 37
+
+
+Fax : 0034 912 72 52 37
+
+E-mail: eu-info@dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

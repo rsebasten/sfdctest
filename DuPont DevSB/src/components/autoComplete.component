@@ -1,0 +1,80 @@
+<!-- 
+/**
+*
+* @file 	autoComplete.component
+* @author  	Thomas E. Snyder II <thomas.snyder@usa.dupont.com>
+* @version 1.0
+*
+* Copyright © 2010 DuPont. All rights reserved. 
+*
+* component using the jQuery's autoComplete plug-in. 
+*/
+ -->
+<apex:component >
+	<apex:attribute name="value" description="value" type="string" />
+	<apex:attribute name="data" description="JSON array like [{label: 'Label 1', value: 'Value 1'}, {label: 'Label 2', value: 'Value 2'}, {...]" type="string" description="JSON array like [{label: 'Label 1', value: 'Value 1'}, {label: 'Label 2', value: 'Value 2'}, {...]" required="false"/>
+	<apex:attribute name="delimiter" description="data" type="string" default=";"/>
+	<apex:attribute name="onSelect" description="onSelect" type="string" default="ac_onSelect"/>
+	<apex:attribute name="defaultLabel" description="defaultLabel" type="string" default=""/>
+	<apex:attribute name="formatItem" description="javscript function(item, position, length) to override an item for display in the dropdown list" type="string" />
+	<apex:attribute name="formatResult" description="javscript function(item) to override the format for display in the inputbox once it is selected." type="string" />
+<!--  
+	<apex:attribute name="formatMatch" description="javscript function(item, position, length) the value." type="string" />
+-->
+	
+	<apex:includescript value="{!URLFOR($Resource.Jquery_1_7_2,'/js/jquery-1.3.2.min.js')}" />
+	<apex:includescript value="{!URLFOR($Resource.jQuery_autocomplete,'/jquery-autocomplete/lib/jquery.bgiframe.min.js')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.jQuery_autocomplete,'/jquery-autocomplete/jquery.autocomplete.css')}" />	
+	<apex:includescript value="{!URLFOR($Resource.jQuery_autocomplete,'/jquery-autocomplete/jquery.autocomplete.js')}" />
+<head>
+    <style>
+    div.ac_results li{ padding: 1px;  }
+	li.ac_odd { background-color: #E6EFF2; }
+	li.ac_over { font-weight: normal !important;}
+    </style>
+</head>
+
+	<apex:inputText styleClass="classId_autocomplete" id="ac" value="{!defaultLabel}" style="font-size:12px;width:100%"></apex:inputText>
+	
+	<apex:inputHidden id="ach" value="{!value}"/>
+	
+	<script type="text/javascript">
+		var j$ = jQuery.noConflict();	
+		j$(document).ready(function(){
+				//EX:  data= [{label: "Label 1", value: "Value 1},{label: "Label 2", value: "Value 2"},...]
+			    var data;
+			    {!IF(ISNULL(data),'','data='+data+';') };
+			   //alert('debug:autocomplete.init');
+				j$(".classId_autocomplete").autocomplete(data,{
+					matchContains: "word",
+					//autoFill: false,
+					//width: 310,
+					formatItem: function(row, i, max) {
+						return {!IF(ISNULL(formatItem),'row.label;',formatItem+'(row, i, max);') };
+					},
+					//formatMatch Default: formatItem is used (dont really see a need for this
+					//Use this option if you want to limit the data that autocomplete searches for matches. 
+					//For example, there may be items you want displayed to the user, but don't want included 
+					//in the data that's searched. Gets called with the same arguments as formatItem.
+					//formatMatch: function(row, i, max) {return row.label;}
+					//	return {IF(ISNULL(formatMatch),'row.label;',formatMatch+'(row, i, max);') };
+					//},
+					
+					//formatResult: adds a space,cause otherwise if blank or null it will return the row.label;
+					formatResult: function(row) {
+						return {!IF(ISNULL(formatResult),'" ";',formatResult+'(row, i, max);') };
+					}
+				});
+  		});
+  		
+  		var currVal=null;		
+  		j$(".classId_autocomplete").result(function(event, data, formatted) {
+			var hidden = jQuery(this).parent().next().find(">:input");
+			hidden.val(data.value);
+			j$(".classId_autocomplete").val(undefined); //formatResult: adds a space, this will remove
+  			{!onSelect}(data.value, 'autocomplete_result');
+		});
+  		
+	</script>
+
+</apex:component>

@@ -1,0 +1,25 @@
+This is a phone inquiry received by the DuPont Inquiry Management Center for Anti-Reflective Coatings.
+
+LEAD INFORMATION
+Application: {!Lead_Routing__c.Product_Details__c}
+Subject of Your Inquiry:  {!Lead_Routing__c.Type__c}
+Your Question: {!Lead_Routing__c.Description__c}
+
+CONTACT INFORMATION
+Name:  {!Lead_Routing__c.Salutation__c} {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c}
+Company:  {!Lead_Routing__c.Lead_Company__c}
+Address:  {!Lead_Routing__c.Lead_Address__c}
+Country:  {!Lead_Routing__c.Lead_Country__c}
+Phone:  {!Lead_Routing__c.Lead_Phone__c}
+E-Mail:  {!Lead_Routing__c.Lead_Email__c}
+
+LEAD SEGMENTATION
+Primary Business:  {!Lead_Routing__c.Market_Segment__c}
+Primary Job Function:  {!Lead_Routing__c.Role__c}
+How Did You Hear About Us:  {!Lead_Routing__c.Leadsource__c}
+
+LEAD ROUTING
+Created Date:  {!Lead_Routing__c.Lead_Created_Time__c}
+Routed By:  {!Lead_Routing__c.CreatedBy}
+Routed Date:  {!Lead_Routing__c.CreatedDate}
+Comments:  {!Lead_Routing__c.Close_Comments__c}

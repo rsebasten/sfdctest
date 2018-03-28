@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>First Cease and desist letter send by legal team</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>LCD-1</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: First Cease and Desist Legal Letter</subject>
+    <textOnly>&lt;div style=&quot;position:absolute;right:5px;&quot;&gt;
+
+&lt;address&gt;
+
+Giselle Ruiz-Arthur&lt;br&gt;
+
+Senior Trademark Counsel&lt;br&gt;
+
+Dupont Legal&lt;br&gt;
+
+Barley Mill Plaza 25-2310&lt;br&gt;
+
+4417 Lancaster Pike&lt;br&gt;
+
+Wilmington,DE 19805 U.S.A.&lt;br&gt;
+
+Telephone: 302-992-5839 Fascimile: 302-892-0699&lt;br&gt;
+
+email: Giselle.Ruiz@usa.dupont.com&lt;br&gt;
+
+&lt;/address&gt;
+
+&lt;/div&gt;
+
+&lt;pre&gt;                                                       Date  {!Case_Details__c.CreatedDate}&lt;/pre&gt;
+
+&lt;p&gt;Certified letter, return receipt requested&lt;/p&gt;
+
+&lt;p&gt; Re:  Unauthorized Use of the DuPontTM Trademark on your website {!Case.Site_Address__c} and product literature&lt;/p&gt;
+
+&lt;p&gt;Dear Mr.{!Case_Company__c.Name},&lt;/p&gt;
+
+
+&lt;p&gt;This letter has been forwarded to the DuPont Legal Trademark Department for handling after being contacted by DuPont business representatives to amicable resolve the unauthorized use of our DuPontTM trademark. I represent E. I. du Pont de Nemours and Company (DuPont) as inside trademark counsel with authority to take legal actions against infringers or counterfeiters of our trademarks.&lt;/p&gt;
+
+
+&lt;p&gt; As you are aware, DuPont is the owner of the DuPontTM trademark and owns trademark registrations in the United States and in more than 80 countries throughout the world. As such, DuPont is the rightful owner of the trademark rights over the DuPontTM trademark.&lt;/p&gt;
+
+
+&lt;p&gt;DuPont has invested a substantial sum of money in the advertising and promotion of the DuPontTM trademark to establish it as a symbol of our Company&apos;s high quality products. DuPont is committed to protect the integrity of its products so consumers can be assured of the high quality that this trademark and related brands represents. Our efforts to ensure proper labeling, identification and usage of this trademark is critical in protecting the value that the DuPontTM trademark brings to DuPont and its customers. Defense of our trademarks and policing unauthorized use assures customers of legitimate source of supply and quality control of products made with our products.&lt;/p&gt;
+
+
+&lt;p&gt;Recently, we became aware of your company using the DuPontTM trademark on your website {!Case.Site_Address__c}, as well as in product literature and advertisement which are enclosed herewith as evidence. Your unauthorized use of the DuPontTM trademark constitutes an infringement of the rights of DuPont&lt;/p&gt;
+
+
+&lt;p&gt;As indicated to you by DuPont business representatives earlier, your company cannot promote or use the DuPontTM trademark unless DuPont has granted a license authorizing use of such trademark. There are no fair use rights over product made with our products. Because your use of the DuPontTM trademark is not authorized, your company must immediately terminate all use of the DuPontTM trademark and destroy or replace or cover all materials and packages, Internet websites, metatags, pages, sales brochures, marketing materials, letterheads, and labels that contain the DuPontTM trademark and all other references not cited herein. In addition, please identify your original source of supply as you may be sourcing counterfeit goods from your supplier.
+
+&lt;/p&gt;
+
+
+&lt;p&gt; If we cannot get your cooperation to remedy this situation and remove all use of the DuPontTM trademark in current and future advertisement within the time frame indicted below, I have been instructed to take all necessary legal remedies and actions to protect the DuPontTM trademark including instituting infringement civil and criminal actions and any other remedy available to us in defense of our trademark. DuPont views the infringement of our intellectual property assets as a serious matter. Your lack of cooperation with previous DuPont business representatives’ contacts demonstrates your unwillingness to resolve amicably. We thereby look forward to a speedy and amicable final resolution of this issue with this Legal infringement notification.&lt;/p&gt;
+
+
+&lt;p&gt;We appreciate your cooperation in this matter and look forward to receiving your written assurance of compliance with our requests herein within five (5) days of receipt of this letter. We thank you in advance for your prompt attention to this matter.&lt;/p&gt;
+
+
+&lt;p&gt; GRA/mad&lt;/p&gt;
+
+&lt;p&gt;Enclosure&lt;/p&gt;</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send an Opportunity to a non SFDC user - Internal Use Only</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>StandardCorporateLetterhead</letterhead>
+    <name>Send an Opportunity - Internal Use Only</name>
+    <style>formalLetter</style>
+    <subject>New opportunity from {!Opportunity.CreatedBy}</subject>
+    <textOnly>Hi, 
+Find below the new opportunity from {!Opportunity.CreatedBy}. Click on this link: {!Opportunity.Link} to have more details or to modify it.
+Opportunity Name : {!Opportunity.Name} attached to {!Opportunity.Account}
+
+Opportunity Detail                                                                                                 
+
+ 
+Opportunity Name
+{!Opportunity.Name}
+ 
+Account 
+Name
+
+ 
+{!Opportunity.Account}
+
+
+
+
+Close Date
+{!Opportunity.CloseDate}
+
+
+Opportunity Owner
+
+ {!Opportunity.OwnerFullName}
+Amount
+ {!Opportunity.Amount}
+
+Stage
+
+
+{!Opportunity.StageName}
+Probability (%)
+
+
+{!Opportunity.Probability}
+
+
+
+
+Status
+ 
+ 
+Reason
+
+
+{!Opportunity.Status__c}
+ 
+ 
+{!Opportunity.Status_Reason__c}
+Customer Development Phase
+
+
+{!Opportunity.Customer_Development_Phase__c}
+
+
+Related Initiative
+
+
+ {!Opportunity.Related_Initiative__c}
+
+
+Industry
+
+ {!Opportunity.Industry__c}
+
+
+Owning Organisation
+
+ {!Opportunity.Owning_Organisation__c}
+
+Involved Org
+
+ {!Opportunity.Involved_Org__c}
+
+Description
+
+ {!Opportunity.Description}
+
+Next Step Date
+
+ {!Opportunity.Next_Step_Date__c}
+
+Next Step
+
+ {!Opportunity.NextStep}
+
+Sales Pipeline Stage                                                                                                  
+
+Lead Source
+
+ {!Opportunity.LeadSource}
+
+Main Qualification Reason
+
+ {!Opportunity.Reason_Qualified__c}
+
+Qualify Checklist
+
+ {!Opportunity.Qualify_Checklist__c}
+
+Design Checklist
+
+ {!Opportunity.Design_Checklist__c}
+
+Value Proposition
+
+ {!Opportunity.Value_Proposition__c}
+
+Propose Checklist
+
+ {!Opportunity.Propose_Checklist__c}
+
+Close Checklist
+
+ {!Opportunity.Close_Checklist__c}
+
+Ship &amp; Support Checklist
+ {!Opportunity.Ship_Support_Checklist__c}
+
+
+
+Created By
+{!Opportunity.CreatedBy} {!Opportunity.CreatedDate}
+Copyright
+(c) 2007 DuPont. All rights reserved. The DuPont Oval Logo, DuPont(TM), The
+miracles of science(TM) and all products denoted with (R) or (TM) are
+registered trademarks or trademarks of E. I. du Pont de Nemours and Company or its affiliates.     privacy.dupont.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

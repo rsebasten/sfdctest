@@ -1,0 +1,50 @@
+<apex:page standardController="ConstructionPts__CP_Project__c" extensions="ConstructionPts.CPProjectControllerExtension"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" />
+    <c:CPHeader title="Projects" subtitle="" ShowDodgeLogo="false" ShowCPLinks="true"  />
+    <apex:form id="cpMainForm">
+        <apex:outputPanel id="opMsg"><font color="red"><b>{!sMsg}</b></font></apex:outputPanel>
+        <apex:outputPanel id="pnlMsg">
+            <apex:pageMessages rendered="true" id="PageMsg" /> 
+             <apex:outputPanel id="opIsDeleted" rendered="{!IF(ConstructionPts__CP_Project__c.ConstructionPts__Customer_Tracking__c == 'Delete',true,false)}" layout="inline">
+                            <table align="center" border="0">
+                                <tr>
+                                    <td>
+                                        <font color="red"><b>Note: This project has been flagged for deletion.</b></font>
+                                    </td>
+                                </tr>
+                            </table>
+            
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <apex:actionFunction name="afFlagForDelete" action="{!FlagProjectForDeletion}" rerender="pnlMsg"/>
+        <apex:actionFunction name="afCreateOpportunity" action="{!doCreateOpportunity}" reRender="opMsg"/>
+
+    </apex:form>      
+    <apex:detail relatedList="true" title="true" showChatter="true" inlineEdit="true" />
+
+    <div id="cpcomponents" >
+        <c:GenericFieldPrepop rendered="{!IF(ShowProjectPrepopButton,true,false)}" />
+        <c:SelectRole rendered="{!IF(ShowSelectRolesProject,true,false) && !IF(RecordTypePrivate, true, false) && IF(ShowRolesProject,true,false)}"/>
+        <c:CPEmailAFriend rendered="{!IF(ShowEmailAFriend,true,false)}" />
+        <c:CPPursuit rendered="{!IF(ShowProjectPursuit && $ObjectType['CP_Project__c'].Fields['CPPursuit__c'].Accessible,true,false)}"/>
+    </div>
+    <c:SelectRole rendered="{!IF(ShowSelectRolesProject,false,true) && IF(ShowRolesProject,true,false)}"/>
+    <br/>
+
+    <c:CPFooter ShowMHCInfo="true" ShowMHCLogo="false"/>
+   <script>
+
+       var j$ = jQuery.noConflict();
+       function FlagForDelete(){
+            afFlagForDelete();
+       }
+
+       j$(document).ready(function() {
+            addCPLinks(j$);
+            j$("#cpcomponents").remove().appendTo(j$("form[name*=cpMainForm]"));
+
+       });
+
+    </script>
+
+</apex:page>

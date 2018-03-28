@@ -1,0 +1,5203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom object to collect the data pushed and customers responses from the Market Tools CSAT Survey</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AccountName__c</fullName>
+        <description>History field:  Account Name at time of survey</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History field:  Account Name at time of survey</inlineHelpText>
+        <label>Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountRevenue__c</fullName>
+        <description>History field:   PYR Revenue to DuPont at time of survey. Pulled from the Account - Revenue PYR USD</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History:   Previous YR Revenue to DuPont - when the CLS record was created</inlineHelpText>
+        <label>Annual Revenue to DuPont</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the account associated with the Contacts who have been surveyed.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Customer Loyalty Surveys</relationshipLabel>
+        <relationshipName>AccountLoyaltySurveys</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CLS_Bounced__c</fullName>
+        <description>Bounced is captured from ConfirmIt and pushed to the CLS record based on the CampaignMember&apos;s email address.</description>
+        <externalId>false</externalId>
+        <label>CLS Bounced</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Source Campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Source Campaign</inlineHelpText>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Customer Loyalty Surveys</relationshipLabel>
+        <relationshipName>Customer_Loyalty_Surveys</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <description>How the survey was delivered/provided to the Contact</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>true</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ClosingType__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to notify the Assigned to user of the need to Close the Loop on this Survey Response.</inlineHelpText>
+        <label>Closing Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Close the Loop</fullName>
+                    <default>false</default>
+                    <label>Close the Loop</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ClosingUser__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Salesforce.com user who is assigned for closing the loop on survey comments.</description>
+        <externalId>false</externalId>
+        <label>Closing User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CloseTheLoopLoyaltySurveys</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Country__c</fullName>
+        <description>History field:  Contact Country at time of survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History field:  Contact Country at time of survey.</inlineHelpText>
+        <label>Contact Country</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <description>History field:  Contact Email at time of survey.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>History field:  Contact Email at time of survey.</inlineHelpText>
+        <label>Contact Email</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Firstname__c</fullName>
+        <description>History field:  Contact Firstname at time of survey - comes from the Contact &amp; Campaign Member records</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History:  Contact Firstname at time of survey.</inlineHelpText>
+        <label>Contact Firstname</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Language__c</fullName>
+        <description>History field:  Contact Preferred Language at time of survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History field:  Contact Preferred Language at time of survey.</inlineHelpText>
+        <label>Contact Language</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Lastname__c</fullName>
+        <description>History field: Contact Lastname at time of survey- comes from the Contact &amp; Campaign Member records</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History: Contact Lastname at time of survey.</inlineHelpText>
+        <label>Contact Lastname</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Region__c</fullName>
+        <description>History field: Contact Region at time of survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History field: Contact Region at time of survey.</inlineHelpText>
+        <label>Contact Region</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Role__c</fullName>
+        <description>History field: Contact Member Role at time of survey,  This field comes from the campaign member.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History field: Contact Member Role at time of survey.</inlineHelpText>
+        <label>Contact Role</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_State__c</fullName>
+        <description>History field: Contact State or Province at time of survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History field: Contact State or Province at time of survey.</inlineHelpText>
+        <label>Contact State</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Title__c</fullName>
+        <description>History field: Contact Title at time of survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History field: Contact Title at time of survey.</inlineHelpText>
+        <label>Contact Title</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <description>Master-Detail Lookup - Related list of Contact to capture details of the Corporate Customer Survey Response</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to: The Contact associated with the survey detail response.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Loyalty Surveys</relationshipLabel>
+        <relationshipName>ContactLoyaltySurveys</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CustomerSegment__c</fullName>
+        <description>CLS: from Account.Customer Segment</description>
+        <externalId>false</externalId>
+        <label>CustomerSegment</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DeploymentQtr__c</fullName>
+        <description>The targeted survey period  (Quarter-Year) for this contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The targeted survey period  (Quarter-Year) for this contact. (YYQ#)</inlineHelpText>
+        <label>Deployment Qtr</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>08Q1</fullName>
+                    <default>false</default>
+                    <label>08Q1</label>
+                </value>
+                <value>
+                    <fullName>08Q2</fullName>
+                    <default>false</default>
+                    <label>08Q2</label>
+                </value>
+                <value>
+                    <fullName>08Q3</fullName>
+                    <default>false</default>
+                    <label>08Q3</label>
+                </value>
+                <value>
+                    <fullName>08Q4</fullName>
+                    <default>false</default>
+                    <label>08Q4</label>
+                </value>
+                <value>
+                    <fullName>09Q1</fullName>
+                    <default>false</default>
+                    <label>09Q1</label>
+                </value>
+                <value>
+                    <fullName>09Q2</fullName>
+                    <default>false</default>
+                    <label>09Q2</label>
+                </value>
+                <value>
+                    <fullName>09Q3</fullName>
+                    <default>false</default>
+                    <label>09Q3</label>
+                </value>
+                <value>
+                    <fullName>10Q1</fullName>
+                    <default>false</default>
+                    <label>10Q1</label>
+                </value>
+                <value>
+                    <fullName>10Q2</fullName>
+                    <default>false</default>
+                    <label>10Q2</label>
+                </value>
+                <value>
+                    <fullName>10Q3</fullName>
+                    <default>false</default>
+                    <label>10Q3</label>
+                </value>
+                <value>
+                    <fullName>10Q4</fullName>
+                    <default>false</default>
+                    <label>10Q4</label>
+                </value>
+                <value>
+                    <fullName>11Q1</fullName>
+                    <default>false</default>
+                    <label>11Q1</label>
+                </value>
+                <value>
+                    <fullName>11Q2</fullName>
+                    <default>false</default>
+                    <label>11Q2</label>
+                </value>
+                <value>
+                    <fullName>11Q3</fullName>
+                    <default>false</default>
+                    <label>11Q3</label>
+                </value>
+                <value>
+                    <fullName>11Q4</fullName>
+                    <default>false</default>
+                    <label>11Q4</label>
+                </value>
+                <value>
+                    <fullName>12Q1</fullName>
+                    <default>false</default>
+                    <label>12Q1</label>
+                </value>
+                <value>
+                    <fullName>12Q2</fullName>
+                    <default>false</default>
+                    <label>12Q2</label>
+                </value>
+                <value>
+                    <fullName>12Q3</fullName>
+                    <default>false</default>
+                    <label>12Q3</label>
+                </value>
+                <value>
+                    <fullName>12Q4</fullName>
+                    <default>false</default>
+                    <label>12Q4</label>
+                </value>
+                <value>
+                    <fullName>13Q1</fullName>
+                    <default>false</default>
+                    <label>13Q1</label>
+                </value>
+                <value>
+                    <fullName>13Q2</fullName>
+                    <default>false</default>
+                    <label>13Q2</label>
+                </value>
+                <value>
+                    <fullName>13Q3</fullName>
+                    <default>false</default>
+                    <label>13Q3</label>
+                </value>
+                <value>
+                    <fullName>13Q4</fullName>
+                    <default>false</default>
+                    <label>13Q4</label>
+                </value>
+                <value>
+                    <fullName>14Q1</fullName>
+                    <default>false</default>
+                    <label>14Q1</label>
+                </value>
+                <value>
+                    <fullName>14Q2</fullName>
+                    <default>false</default>
+                    <label>14Q2</label>
+                </value>
+                <value>
+                    <fullName>14Q3</fullName>
+                    <default>false</default>
+                    <label>14Q3</label>
+                </value>
+                <value>
+                    <fullName>14Q4</fullName>
+                    <default>false</default>
+                    <label>14Q4</label>
+                </value>
+                <value>
+                    <fullName>15Q1</fullName>
+                    <default>false</default>
+                    <label>15Q1</label>
+                </value>
+                <value>
+                    <fullName>15Q2</fullName>
+                    <default>false</default>
+                    <label>15Q2</label>
+                </value>
+                <value>
+                    <fullName>15Q3</fullName>
+                    <default>false</default>
+                    <label>15Q3</label>
+                </value>
+                <value>
+                    <fullName>15Q4</fullName>
+                    <default>false</default>
+                    <label>15Q4</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>16Q1</fullName>
+                    <default>false</default>
+                    <label>16Q1</label>
+                </value>
+                <value>
+                    <fullName>16Q2</fullName>
+                    <default>false</default>
+                    <label>16Q2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ExternalBusinessName__c</fullName>
+        <description>The proper business name of a DuPont organizations or entity.  For example, DPC, DuPOnt Performance Coatings.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Proper business name of a DuPont organization or entity as recognized in the marketplace.</inlineHelpText>
+        <label>External Business Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExternalId__c</fullName>
+        <description>Unique Id, to specify a submitted recipient,  YYQ#_+ {source CampaignMember Id}</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Unique Id, to specify a submitted recipient,  YYQ#_+ {source CampaignMember Id}</inlineHelpText>
+        <label>ExternalId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FollowUpUser_Email__c</fullName>
+        <description>This is the internet email address of the DuPont User (Responder)  This field is required for the NPS Survey original input - since all of the survey results will be sent to this email address.</description>
+        <externalId>false</externalId>
+        <label>Follow-up User Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FollowUpUser_Name__c</fullName>
+        <description>Name of the Follow-up user - pulled in from the Campaign or Campaign Member (if one is present in the Campaign Member) - Next Step User</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History: The user who was selected to initiate the Follow-up to the Survey respondent - when the CLS record was created</inlineHelpText>
+        <label>Follow-Up User</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FollowUp_Actions__c</fullName>
+        <description>Follow-up Actions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe any additional follow up that is needed.</inlineHelpText>
+        <label>Follow-up Actions</label>
+        <length>2000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FollowUp_Date__c</fullName>
+        <description>The Date that the follow-up interview was conducted with the Contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Date that the follow-up interview was conducted with the Contact</inlineHelpText>
+        <label>Follow-up Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FollowUp_Summary__c</fullName>
+        <description>customer feedback from follow-up</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Document a summary of the essence of the Follow-Up Call with the customer.</inlineHelpText>
+        <label>Follow-up Summary</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FollowUp_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the user who initiates the follow-up to the Survey respondent</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to: The user who initiates the follow-up to the Survey respondent</inlineHelpText>
+        <label>Follow-up User Link</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CLS_FollowUps</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Response_Category_Group__c</fullName>
+        <description>The overall grouping that represents the Follow-up Categorizations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall grouping that represents the Follow-up Categorizations.  Multiple can be selected</inlineHelpText>
+        <label>Follow-up Response Category Group</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Products &amp; Innovation</fullName>
+                    <default>false</default>
+                    <label>Products &amp; Innovation</label>
+                </value>
+                <value>
+                    <fullName>Customer Experience</fullName>
+                    <default>false</default>
+                    <label>Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Response_Category__c</fullName>
+        <description>An assessment of the Follow-up summary with the survey respondent. Key words - multiple can be chosen</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An assessment of the Follow-up summary with the survey respondent. Key words - multiple can be chosen</inlineHelpText>
+        <label>Follow-up Response Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Products</fullName>
+                    <default>false</default>
+                    <label>Products</label>
+                </value>
+                <value>
+                    <fullName>Innovation</fullName>
+                    <default>false</default>
+                    <label>Innovation</label>
+                </value>
+                <value>
+                    <fullName>Responsiveness</fullName>
+                    <default>false</default>
+                    <label>Responsiveness</label>
+                </value>
+                <value>
+                    <fullName>Relationship</fullName>
+                    <default>false</default>
+                    <label>Relationship</label>
+                </value>
+                <value>
+                    <fullName>Communication</fullName>
+                    <default>false</default>
+                    <label>Communication</label>
+                </value>
+                <value>
+                    <fullName>Tech Support</fullName>
+                    <default>false</default>
+                    <label>Tech Support</label>
+                </value>
+                <value>
+                    <fullName>Delivery/Supply</fullName>
+                    <default>false</default>
+                    <label>Delivery/Supply</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfCLS__c</fullName>
+        <description>Campaign Member chose to Opt Out of CLS surveys through ConfirmIt.</description>
+        <externalId>false</externalId>
+        <label>CLS Opt Out</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Industry__c</fullName>
+        <externalId>false</externalId>
+        <label>Industry</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastRespondedSurvey__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Last Responded Survey</label>
+        <referenceTo>CustomerLoyaltySurvey__c</referenceTo>
+        <relationshipLabel>Customer Loyalty Surveys</relationshipLabel>
+        <relationshipName>Customer_Loyalty_Surveys</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Learnings__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the impact of the resolution on the relationship with this customer.</inlineHelpText>
+        <label>Learnings</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated. Its is case sensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LetterHead__c</fullName>
+        <description>Letterhead Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Letter Head Name</inlineHelpText>
+        <label>Letterhead</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Leverage_Potential__c</fullName>
+        <description>To Describe how the learning&apos;s and opportunities may be leveraged with other customers or across the business.</description>
+        <externalId>false</externalId>
+        <label>Leverage Potential</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MarketSegment__c</fullName>
+        <description>Market Segments values for the platform</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Market Segments values for the platform</inlineHelpText>
+        <label>Market Segment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPS_Category_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Rating_Category__c, &quot;Promoter&quot;), 1,IF(ISPICKVAL(Rating_Category__c, &quot;Detractor&quot;), -1,0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NPS Category Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offerings_Products__c</fullName>
+        <description>A text field to collect information regarding product, solutions, or business offering related to a survey contact.  This information comes from the Campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History: The Product-Offering (translation) that was selected on the Campaign - when the CLS record was created</inlineHelpText>
+        <label>Offerings-Products Description</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Offerings_SiteObject__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to SiteObject to describe the Offerings and Products</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to: English version of  the Offerings-Products Name (limit 80 Chars).  Click on link to see complete Description.</inlineHelpText>
+        <label>Offerings-Products Description Link</label>
+        <referenceTo>SiteObject__c</referenceTo>
+        <relationshipLabel>Customer Loyalty Surveys</relationshipLabel>
+        <relationshipName>Customer_Loyalty_Surveys</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Old_CCR_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Corporate Customer Response Record ID that was used to generate this legacy Customer Loyalty Survey record.</inlineHelpText>
+        <label>Old CCR ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owning_Org__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the DuPont organization responsible for this record entry.</inlineHelpText>
+        <label>Owning Org</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BI</fullName>
+                    <default>false</default>
+                    <label>BI</label>
+                </value>
+                <value>
+                    <fullName>CORP</fullName>
+                    <default>false</default>
+                    <label>CORP</label>
+                </value>
+                <value>
+                    <fullName>DPP-Polymers</fullName>
+                    <default>false</default>
+                    <label>DPP-Polymers</label>
+                </value>
+                <value>
+                    <fullName>DPT-Aramids</fullName>
+                    <default>false</default>
+                    <label>DPT-Aramids</label>
+                </value>
+                <value>
+                    <fullName>DPT-Automotive</fullName>
+                    <default>false</default>
+                    <label>DPT-Automotive</label>
+                </value>
+                <value>
+                    <fullName>DPT-Chemical Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Chemical Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Cleanroom/Pharma</fullName>
+                    <default>false</default>
+                    <label>DPT-Cleanroom/Pharma</label>
+                </value>
+                <value>
+                    <fullName>DPT-Critical Clean</fullName>
+                    <default>false</default>
+                    <label>DPT-Critical Clean</label>
+                </value>
+                <value>
+                    <fullName>DPT-DPP</fullName>
+                    <default>false</default>
+                    <label>DPT-DPP</label>
+                </value>
+                <value>
+                    <fullName>DPT-ES</fullName>
+                    <default>false</default>
+                    <label>DPT-ES</label>
+                </value>
+                <value>
+                    <fullName>DPT-Graphics</fullName>
+                    <default>false</default>
+                    <label>DPT-Graphics</label>
+                </value>
+                <value>
+                    <fullName>DPT-Ind Pkg &amp; Protection</fullName>
+                    <default>false</default>
+                    <label>DPT-Ind Pkg &amp; Protection</label>
+                </value>
+                <value>
+                    <fullName>DPT-Mechanical Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Mechanical Industrial</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Fabrics</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Fabrics</label>
+                </value>
+                <value>
+                    <fullName>DPT-Medical Packaging</fullName>
+                    <default>false</default>
+                    <label>DPT-Medical Packaging</label>
+                </value>
+                <value>
+                    <fullName>DPT-NOW</fullName>
+                    <default>false</default>
+                    <label>DPT-NOW</label>
+                </value>
+                <value>
+                    <fullName>DPT-PM</fullName>
+                    <default>false</default>
+                    <label>DPT-PM</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-ER</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-ER</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-LE</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-LE</label>
+                </value>
+                <value>
+                    <fullName>DPT-Public Sector-MIL</fullName>
+                    <default>false</default>
+                    <label>DPT-Public Sector-MIL</label>
+                </value>
+                <value>
+                    <fullName>DPT-Thermal Industrial</fullName>
+                    <default>false</default>
+                    <label>DPT-Thermal Industrial</label>
+                </value>
+                <value>
+                    <fullName>P&amp;IP-Ethylene Copolymers</fullName>
+                    <default>false</default>
+                    <label>P&amp;IP-Ethylene Copolymers</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PY_NPS_Category_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PY_Rating_Category__c=&quot;Promoter&quot;,1,IF(PY_Rating_Category__c=&quot;Detractor&quot;,-1,0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PY NPS Category Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PY_Rating_Category__c</fullName>
+        <description>Previous Year “Likely to Recommend” category determined by “CY Response Rating”. (Categories are Promoter, Neutral, or Detractor.)</description>
+        <externalId>false</externalId>
+        <formula>TEXT( LastRespondedSurvey__r.Rating_Category__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PY Rating Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrimarySignContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Lookup to Contact associated with the DuPont business person responsible for the contact relationship.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to: The contact record for the DuPont business person responsible for the contact relationship.</inlineHelpText>
+        <label>Primary Signature Name Link</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Loyalty Surveys (Primary Signature)</relationshipLabel>
+        <relationshipName>PrimarySignContacts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PrimarySignName__c</fullName>
+        <description>History: The  name of the contact of the DuPont business person with responsibility for the contact relationship - when the CLS record was created - pulled from the Campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History: The  name of the contact of the DuPont business person with Primary responsibility for the contact relationship - when the CLS record was created</inlineHelpText>
+        <label>Primary Signature Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrimarySignTitle__c</fullName>
+        <description>History: The title of the Primary contact - selected from a picklist on the Campaign - pulled from Campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History:  The title of the Primary contact - selected from a picklist on the Campaign - when the CLS record was created.</inlineHelpText>
+        <label>Primary Signature Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating_Category__c</fullName>
+        <description>Current Year “Likely to Recommend” category determined by “CY Response Rating”. (Categories are Promoter, Neutral, or Detractor.)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The designated group classification based on responses and net promoter rating.</inlineHelpText>
+        <label>CY Rating Category</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Detractor</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                    <label>Detractor</label>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <color>#FFFF66</color>
+                    <default>false</default>
+                    <label>Neutral</label>
+                </value>
+                <value>
+                    <fullName>Promoter</fullName>
+                    <color>#33CC00</color>
+                    <default>false</default>
+                    <label>Promoter</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resolution_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Fill in additional comments regarding the disposition of this survey response.  If you run out of space, Save, then add a note related to this Survey Response.</inlineHelpText>
+        <label>Resolution Comments</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resolution_Date__c</fullName>
+        <description>The date that this Survey Response is finally Resolved.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date that this Customer Satisfaction Survey Follow-up Resolution is closed.</inlineHelpText>
+        <label>Resolution Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Resolution__c</fullName>
+        <description>The resolution of the Follow-up call Action Steps</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the values that reflect most closely how this follow-up with Survey Respondent was/ or is being resolved.</inlineHelpText>
+        <label>Resolution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Resolved internally</fullName>
+                    <default>false</default>
+                    <label>Resolved internally</label>
+                </value>
+                <value>
+                    <fullName>Resolved with the customer</fullName>
+                    <default>false</default>
+                    <label>Resolved with the customer</label>
+                </value>
+                <value>
+                    <fullName>Partially resolved</fullName>
+                    <default>false</default>
+                    <label>Partially resolved</label>
+                </value>
+                <value>
+                    <fullName>Project initiated</fullName>
+                    <default>false</default>
+                    <label>Project initiated</label>
+                </value>
+                <value>
+                    <fullName>Monitoring situation</fullName>
+                    <default>false</default>
+                    <label>Monitoring situation</label>
+                </value>
+                <value>
+                    <fullName>More information requested</fullName>
+                    <default>false</default>
+                    <label>More information requested</label>
+                </value>
+                <value>
+                    <fullName>Disagreement/dispute with customer</fullName>
+                    <default>false</default>
+                    <label>Disagreement/dispute with customer</label>
+                </value>
+                <value>
+                    <fullName>Other (See Resolution Comments)</fullName>
+                    <default>false</default>
+                    <label>Other (See Resolution Comments)</label>
+                </value>
+                <value>
+                    <fullName>Lost Customer</fullName>
+                    <default>false</default>
+                    <label>Lost Customer</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Responded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To be able to calculate survey response rates in Reports.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To be able to calculate survey response rates in Reports.</inlineHelpText>
+        <label>Responded</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Response_Category_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Response Category Group</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Products &amp; Innovation</fullName>
+                    <default>false</default>
+                    <label>Products &amp; Innovation</label>
+                </value>
+                <value>
+                    <fullName>Customer Experience</fullName>
+                    <default>false</default>
+                    <label>Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Response_Category__c</fullName>
+        <description>An assessment of the verbatim comments from the survey respondent. Key words - multiple can be chosen</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the keywords that best categorize the verbatim comments of the survey respondent</inlineHelpText>
+        <label>Response Category</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Products</fullName>
+                    <default>false</default>
+                    <label>Products</label>
+                </value>
+                <value>
+                    <fullName>Innovation</fullName>
+                    <default>false</default>
+                    <label>Innovation</label>
+                </value>
+                <value>
+                    <fullName>Responsiveness</fullName>
+                    <default>false</default>
+                    <label>Responsiveness</label>
+                </value>
+                <value>
+                    <fullName>Relationship</fullName>
+                    <default>false</default>
+                    <label>Relationship</label>
+                </value>
+                <value>
+                    <fullName>Communication</fullName>
+                    <default>false</default>
+                    <label>Communication</label>
+                </value>
+                <value>
+                    <fullName>Tech Support</fullName>
+                    <default>false</default>
+                    <label>Tech Support</label>
+                </value>
+                <value>
+                    <fullName>Delivery/Supply</fullName>
+                    <default>false</default>
+                    <label>Delivery/Supply</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Response_DateTime__c</fullName>
+        <description>The date of the initial response of the survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date of the initial response of the survey.</inlineHelpText>
+        <label>Response Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Response_Email__c</fullName>
+        <description>The email address associated with whom the Follow-up phone call should be directed.</description>
+        <externalId>false</externalId>
+        <label>Response Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_Firstname__c</fullName>
+        <description>First Name of the person to whom follow-up phone call should go to</description>
+        <externalId>false</externalId>
+        <label>Response Firstname</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_FollowUp__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Box is checked if customer has requested a Follow-up Call based on the survey question: “Would you like to be contacted for more discussion about your comments?”</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In order to serve you , may someone contact you for a brief follow-up?</inlineHelpText>
+        <label>Follow-up Requested</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Response_ID__c</fullName>
+        <description>The unique Market Tool (Z-telligence) identifier for a user-survey instance.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>The unique Market Tool (Z-telligence) identifier for a user-survey instance.</inlineHelpText>
+        <label>Response ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_Lastname__c</fullName>
+        <description>The Last name of the person to whom the follow-up phone call should be directed.</description>
+        <externalId>false</externalId>
+        <label>Response Lastname</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_OpenText_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Text Response #1</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Response_OpenText_1_en__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>English translation of response to Question #1</inlineHelpText>
+        <label>Open Text Response #1 (en)</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Response_OpenText_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Text Response #2</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Response_OpenText_2_en__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>English translation of response to Question #2</inlineHelpText>
+        <label>Open Text  Response #2 (en)</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Response_Phone__c</fullName>
+        <description>Phone number provided by contact for Followu-up to Response to Survey</description>
+        <externalId>false</externalId>
+        <label>Response Phone #</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Response_Rating__c</fullName>
+        <description>The promoter score returned and captured via the Z-Tel survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The promoter score returned and captured via the Z-Tel survey.</inlineHelpText>
+        <label>Response Rating</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>0</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>6</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <label>7</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>8</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <label>9</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Root_Issues__c</fullName>
+        <description>Responder&apos;s understanding of &quot;root issues&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Responder’s understanding of customers primary concerns</inlineHelpText>
+        <label>Root Issues</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SYS_LastUploadDate__c</fullName>
+        <description>DateTime of last Upload attempt to CSAT</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DateTime of last Upload attempt to CSAT</inlineHelpText>
+        <label>SYS_LastUploadDate</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SYS_SurveyId__c</fullName>
+        <description>CustomerSAT Survey Id of Last upload.  This number determines the survey to use.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CustomerSAT Survey Id of Last upload.  This number determines the survey to use.</inlineHelpText>
+        <label>SYS Survey Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SYS_UploadFileName__c</fullName>
+        <description>CustomerSAT generated file name of Last upload.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CustomerSAT generated file name of Last upload.</inlineHelpText>
+        <label>SYS UploadFileName</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SYS_UploadResponse__c</fullName>
+        <description>CustomerSAT Upload Response:  &apos;unsuccessful&apos; or a the FileID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CustomerSAT Upload Response:  &apos;unsuccessful&apos; or a the FileID</inlineHelpText>
+        <label>SYS FileID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesRepresentative__c</fullName>
+        <description>Sales_Representative Name</description>
+        <externalId>false</externalId>
+        <label>Sales Representative</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SecondarySignContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Lookup to Contact associated with the DuPont business person with secondary responsibility for the contact relationship.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to: the Contact associated with the DuPont business person with secondary responsibility for the contact relationship.</inlineHelpText>
+        <label>Secondary Signature Name Link</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Loyalty Surveys  (Secondary Signatures)</relationshipLabel>
+        <relationshipName>SecondarySignContacts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SecondarySignName__c</fullName>
+        <description>History: The  name of the contact of the DuPont business person with secondary responsibility for the contact relationship - when the CLS record was created - pulled from the Campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History: The  name of the contact of the DuPont business person with secondary responsibility for the contact relationship - when the CLS record was created</inlineHelpText>
+        <label>Secondary Signature Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SecondarySignTitle__c</fullName>
+        <description>History:  The title of the secondary DuPont Business contact - selected from a picklist on the Campaign - Pulled in from Campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>History:  The title of the Secondary DuPont Business contact - selected from a picklist on the Campaign - when the CLS record was created.</inlineHelpText>
+        <label>Secondary Signature Title</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Send</fullName>
+                    <default>true</default>
+                    <label>Send</label>
+                </value>
+                <value>
+                    <fullName>Waiting For Response</fullName>
+                    <default>false</default>
+                    <label>Waiting For Response</label>
+                </value>
+                <value>
+                    <fullName>Follow-up</fullName>
+                    <default>false</default>
+                    <label>Follow-up</label>
+                </value>
+                <value>
+                    <fullName>Close the Loop</fullName>
+                    <default>false</default>
+                    <label>Close the Loop</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Stage__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Responded</fullName>
+                    <default>false</default>
+                    <label>Responded</label>
+                </value>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>false</default>
+                    <label>Requested</label>
+                </value>
+                <value>
+                    <fullName>Attempted</fullName>
+                    <default>false</default>
+                    <label>Attempted</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Send</controllingFieldValue>
+                <valueName>New</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Waiting For Response</controllingFieldValue>
+                <valueName>Responded</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Follow-up</controllingFieldValue>
+                <controllingFieldValue>Close the Loop</controllingFieldValue>
+                <valueName>Requested</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Follow-up</controllingFieldValue>
+                <controllingFieldValue>Close the Loop</controllingFieldValue>
+                <valueName>Attempted</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Follow-up</controllingFieldValue>
+                <controllingFieldValue>Close the Loop</controllingFieldValue>
+                <controllingFieldValue>Complete</controllingFieldValue>
+                <valueName>Complete</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ValueChainPosition__c</fullName>
+        <description>Derived from the Account Type</description>
+        <externalId>false</externalId>
+        <label>Value Chain Position</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YOY_Change_in_Response_Rating__c</fullName>
+        <description>Change in “Likely to Recommend” rating from Previous Year to Current Year.</description>
+        <externalId>false</externalId>
+        <formula>IF( fPYResponseRating__c = null , null , fResponseRating__c - LastRespondedSurvey__r.fResponseRating__c )</formula>
+        <label>YOY Change in Response Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fAccountOwningOrg__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text (Contact__r.Account.Owning_Organization__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Owning Org</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCampaignName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCampaign_Program__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Campaign__r.Program__c)</formula>
+        <label>Campaign Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fDeploymentDate__c</fullName>
+        <description>Formula Field : First Date of the Deployment Quarter</description>
+        <externalId>false</externalId>
+        <formula>DATE( 2000+VALUE(MID(TEXT(DeploymentQtr__c), 1, 2)),VALUE(MID(TEXT(DeploymentQtr__c), 4, 1))*3-2,1)</formula>
+        <inlineHelpText>Formula Field : First Date of the Deployment Quarter</inlineHelpText>
+        <label>Deployment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>fDeployment_Year__c</fullName>
+        <description>Tto group data based on deployment quarter for reporting by year</description>
+        <externalId>false</externalId>
+        <formula>DATE( 2000+VALUE(MID(TEXT(DeploymentQtr__c), 1, 2)),VALUE(MID(TEXT(DeploymentQtr__c), 4, 1))*3-1,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Deployment Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>fOwning_Business__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+FIND(&apos;-&apos;,TEXT( Owning_Org__c ))&gt;0,
+MID(TEXT( Owning_Org__c ), 1, FIND(&apos;-&apos;,TEXT( Owning_Org__c ))-1),
+TEXT( Owning_Org__c )
+)</formula>
+        <label>Owning Business</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fPYResponseRating__c</fullName>
+        <description>Previous Year “Likely to Recommend” rating from this Contact.</description>
+        <externalId>false</externalId>
+        <formula>VALUE( TEXT( LastRespondedSurvey__r.Response_Rating__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PY Response Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fProgram__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Account__r.Program__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fQuestion2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(TEXT(Response_Rating__c)),&apos;&apos;,SUBSTITUTE(If(VALUE(TEXT(Response_Rating__c))&gt;8,
+IF(VALUE(SUBSTITUTE(TEXT(DeploymentQtr__c),&apos;Q&apos;,&apos;&apos;))&gt;=103,$Label.CLS_Q2PRM_10Q4,  $Label.CLS_Q2PRM_00Q1),
+$Label.CLS_Q2NONP_10Q4),
+&apos;{0}&apos;, TEXT(Campaign__r.ExternalBusinessName__c)))</formula>
+        <label>Open Text Question #2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fQuestion_1__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(TEXT(Response_Rating__c)),&apos;&apos;,SUBSTITUTE(If(VALUE(TEXT(Response_Rating__c))&gt;8,$Label.CLS_Q1PRM_10Q4,  $Label.CLS_Q1NONP_10Q4),
+&apos;{0}&apos;,TEXT(Campaign__r.ExternalBusinessName__c)))</formula>
+        <label>Open Text Question #1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fResponseRating__c</fullName>
+        <description>Current Year “Likely to Recommend” rating from this Contact.</description>
+        <externalId>false</externalId>
+        <formula>VALUE( TEXT(Response_Rating__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CY Response Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fSYS_LangLetterhead__c</fullName>
+        <description>CustomerSAT required field used to drive backend process.</description>
+        <externalId>false</externalId>
+        <formula>BLANKVALUE(  Contact_Language__c  , &apos;en&apos;) + &apos; - &apos; +  BLANKVALUE(  LetterHead__c  , &apos;Dupont&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>CustomerSAT required field used to drive backend process.</inlineHelpText>
+        <label>SYS lang - LetterHead</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fSYS_Language__c</fullName>
+        <description>formula: to convert the ISO (Contact_Language__c) to the CustomerSAT expected language format.</description>
+        <externalId>false</externalId>
+        <formula>CASE( Contact_Language__c, 
+        &apos;en&apos;, &apos;English&apos;, 
+        &apos;pt&apos;, &apos;Portuguese&apos;,
+        &apos;es&apos;, &apos;Spanish&apos;,
+        &apos;it&apos;, &apos;Italian&apos;,
+        &apos;nl&apos;, &apos;Dutch&apos;, 
+        &apos;fr&apos;, &apos;French&apos;, 
+        &apos;de&apos;, &apos;German&apos;,
+        &apos;ja&apos;,  &apos;Japanese&apos;,
+        &apos;ko&apos;, &apos;Korean&apos;,
+        &apos;ru&apos;, &apos;Russian&apos;,
+        &apos;pl&apos;,  &apos;Polish&apos;,
+        &apos;el&apos;, &apos;Greek&apos;,       
+        &apos;zh&apos;, &apos;Simplified Chinese&apos;,
+        &apos;zh_TW&apos;, &apos;Traditional Chinese&apos;,
+        &apos;sv&apos;,&apos;SWEDISH&apos;,
+        &apos;hu&apos;, &apos;HUNGARIAN&apos;, 
+        &apos;English&apos;)</formula>
+        <inlineHelpText>formula: to convert the ISO (Contact_Language__c) to the CustomerSAT expected language format.</inlineHelpText>
+        <label>SYS Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fStatus_img__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(CASE(Status__c,&quot;Requested&quot;,&quot;/servlet/servlet.FileDownload?file=01530000000LgSA&quot;,&quot;Attempted&quot;,&quot;/servlet/servlet.FileDownload?file=01530000000LgS5&quot;,&quot;Complete&quot;,&quot;/servlet/servlet.FileDownload?file=01530000000LgS0&quot;,&quot;/s.gif&quot;),&quot;StatusImg&quot;)</formula>
+        <label>Status_img</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Customer Loyalty Survey</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_Contacts_12Q2</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_Rating__c</columns>
+        <columns>CONNECTION_RECEIVED.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Sarah Doggrell</value>
+        </filters>
+        <filters>
+            <field>Campaign__c</field>
+            <operation>contains</operation>
+            <value>BI-EMEA</value>
+        </filters>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>startsWith</operation>
+            <value>12</value>
+        </filters>
+        <label>BI-EMEA CLS Contacts - 12Q2</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_Contacts_12Q2_Follow_up</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Contact_Region__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_FollowUp__c</columns>
+        <columns>FollowUp_Date__c</columns>
+        <columns>FollowUp_User__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Sarah Doggrell</value>
+        </filters>
+        <filters>
+            <field>Campaign__c</field>
+            <operation>contains</operation>
+            <value>BI-EMEA</value>
+        </filters>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>startsWith</operation>
+            <value>12</value>
+        </filters>
+        <filters>
+            <field>Response_DateTime__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>BI-EMEA CLS Contacts - 12Q2 - Follow up</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_Contacts_Follow_up_Calls</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Contact_Region__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_FollowUp__c</columns>
+        <columns>FollowUp_Date__c</columns>
+        <columns>FollowUp_User__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>FollowUp_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Response_FollowUp__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>equals</operation>
+            <value>13Q2</value>
+        </filters>
+        <label>BI-EMEA CLS - My Follow Up Calls - To Do</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_Contacts_Q3</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_Rating__c</columns>
+        <columns>CONNECTION_RECEIVED.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>equals</operation>
+            <value>11Q3</value>
+        </filters>
+        <filters>
+            <field>Campaign__c</field>
+            <operation>contains</operation>
+            <value>BI-EMEA</value>
+        </filters>
+        <label>BI-EMEA CLS Contacts - Q3</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_Contacts_Q4</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_Rating__c</columns>
+        <columns>CONNECTION_RECEIVED.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>startsWith</operation>
+            <value>14</value>
+        </filters>
+        <filters>
+            <field>Campaign__c</field>
+            <operation>contains</operation>
+            <value>BI-NA</value>
+        </filters>
+        <label>BI-NA CLS Contacts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BINA</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_Contacts_Q4_BI_ENV</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_Rating__c</columns>
+        <columns>CONNECTION_RECEIVED.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>equals</operation>
+            <value>11Q4</value>
+        </filters>
+        <filters>
+            <field>Campaign__c</field>
+            <operation>contains</operation>
+            <value>BI-EMEA</value>
+        </filters>
+        <filters>
+            <field>fCampaignName__c</field>
+            <operation>contains</operation>
+            <value>ENV</value>
+        </filters>
+        <label>BI-EMEA CLS Contacts - Q4 - BI-ENV</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_Contacts_Q4_BI_SURF</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_Rating__c</columns>
+        <columns>CONNECTION_RECEIVED.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>equals</operation>
+            <value>11Q4</value>
+        </filters>
+        <filters>
+            <field>Campaign__c</field>
+            <operation>contains</operation>
+            <value>BI-EMEA</value>
+        </filters>
+        <filters>
+            <field>fCampaignName__c</field>
+            <operation>contains</operation>
+            <value>SURF</value>
+        </filters>
+        <label>BI-EMEA CLS Contacts - Q4 - BI-SURF</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BI_EMEA_CLS_My_Follow_Up_Calls_All</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Contact_Region__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_FollowUp__c</columns>
+        <columns>FollowUp_Date__c</columns>
+        <columns>FollowUp_User__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>fCampaignName__c</field>
+            <operation>contains</operation>
+            <value>CLS BI-EMEA</value>
+        </filters>
+        <filters>
+            <field>Response_FollowUp__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>13Q</value>
+        </filters>
+        <label>BI-EMEA CLS - My Follow Up Calls - All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>BuildingInnovations</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CSAT_Status</fullName>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>fSYS_LangLetterhead__c</columns>
+        <columns>fSYS_Language__c</columns>
+        <columns>ExternalId__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>CSAT Status</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Campaign_CLS_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Campaign__c</columns>
+        <columns>FollowUp_Date__c</columns>
+        <columns>FollowUp_Summary__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ExternalBusinessName__c</field>
+            <operation>equals</operation>
+            <value>DuPont Protection Technologies</value>
+        </filters>
+        <filters>
+            <field>fCampaignName__c</field>
+            <operation>contains</operation>
+            <value>LA</value>
+        </filters>
+        <label>DPT LA All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DPTAdmin</group>
+            <roleAndSubordinatesInternal>DPTNA</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CustomerSAT_Status</fullName>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>SYS_LastUploadDate__c</columns>
+        <columns>SYS_UploadFileName__c</columns>
+        <columns>SYS_UploadResponse__c</columns>
+        <columns>SYS_SurveyId__c</columns>
+        <columns>ExternalId__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ExternalId__c</field>
+            <operation>startsWith</operation>
+            <value>11Q2</value>
+        </filters>
+        <label>CustomerSAT Status</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>DPT_CSAT_Surveys</fullName>
+        <columns>Owning_Org__c</columns>
+        <columns>AccountName__c</columns>
+        <columns>NAME</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Rating_Category__c</columns>
+        <columns>Response_Rating__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ExternalBusinessName__c</field>
+            <operation>equals</operation>
+            <value>DuPont Protection Technologies</value>
+        </filters>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>equals</operation>
+            <value>11Q1</value>
+        </filters>
+        <filters>
+            <field>Contact_Region__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </filters>
+        <label>DPT CSAT Surveys</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DPTNA</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DPT_EMEA_CLS_Campaign</fullName>
+        <columns>NAME</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Campaign__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SecondarySignName__c</field>
+            <operation>equals</operation>
+            <value>Diego Boeri</value>
+        </filters>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>equals</operation>
+            <value>11Q1,11Q2,11Q3</value>
+        </filters>
+        <filters>
+            <field>Rating_Category__c</field>
+            <operation>equals</operation>
+            <value>Detractor,Neutral,Promoter</value>
+        </filters>
+        <label>DPT-EMEA IPP CLS Campaign</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DPTEMEA</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_CLS_contacts</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>Response_DateTime__c</columns>
+        <columns>Response_Rating__c</columns>
+        <columns>CONNECTION_RECEIVED.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Sarah Doggrell</value>
+        </filters>
+        <filters>
+            <field>Campaign__c</field>
+            <operation>contains</operation>
+            <value>BI-EMEA</value>
+        </filters>
+        <label>BI-EMEA CLS Contacts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BIEMEAAdmin</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_DPT_CLS_contacts</fullName>
+        <columns>DeploymentQtr__c</columns>
+        <columns>Campaign__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Rating_Category__c</columns>
+        <columns>Owning_Org__c</columns>
+        <columns>MarketSegment__c</columns>
+        <columns>Contact_Role__c</columns>
+        <columns>ValueChainPosition__c</columns>
+        <columns>Response_FollowUp__c</columns>
+        <columns>FollowUp_Date__c</columns>
+        <columns>Resolution_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CustomerLoyaltySurvey__c.Customer_Loyalty_Survey_New,CustomerLoyaltySurvey__c.Customer_Loyalty_Survey_Returned</value>
+        </filters>
+        <filters>
+            <field>fCampaignName__c</field>
+            <operation>contains</operation>
+            <value>CLS DPT NA</value>
+        </filters>
+        <filters>
+            <field>DeploymentQtr__c</field>
+            <operation>equals</operation>
+            <value>13Q1,13Q2,13Q3,13Q4</value>
+        </filters>
+        <label>DPT NA - 2013 CLS Responses</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DPTNA</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Q2_CLS_BI_LA</fullName>
+        <columns>NAME</columns>
+        <columns>AccountName__c</columns>
+        <columns>fCampaignName__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Contact_Email__c</columns>
+        <columns>Response_FollowUp__c</columns>
+        <columns>FollowUpUser_Name__c</columns>
+        <columns>Response_Rating__c</columns>
+        <columns>Status__c</columns>
+        <columns>Rating_Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>fCampaignName__c</field>
+            <operation>contains</operation>
+            <value>Q2 CLS BI LA</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>15Q2</value>
+        </filters>
+        <filters>
+            <field>Response_FollowUp__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>15Q2 CLS BI - LA</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>dpt_la</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>Q2 CLS P&amp;IP EMEA</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Customer Loyalty Surveys</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Customer_Loyalty_Survey_Close_the_Loop</fullName>
+        <active>true</active>
+        <label>Customer Loyalty Survey - Close the Loop</label>
+        <picklistValues>
+            <picklist>CLS_Bounced__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ClosingType__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DeploymentQtr__c</picklist>
+            <values>
+                <fullName>08Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HasOptedOutOfCLS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPP-Polymers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Chemical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Cleanroom%2FPharma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Critical Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Graphics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Ind Pkg %26 Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Mechanical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-ER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-LE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Thermal Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%26IP-Ethylene Copolymers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating_Category__c</picklist>
+            <values>
+                <fullName>Detractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resolution__c</picklist>
+            <values>
+                <fullName>Disagreement%2Fdispute with customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring situation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>More information requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28See Resolution Comments%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved internally</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved with the customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Rating__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting For Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Loyalty_Survey_Closed_Locked</fullName>
+        <active>true</active>
+        <label>Customer Loyalty Survey - Closed Locked</label>
+        <picklistValues>
+            <picklist>CLS_Bounced__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ClosingType__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DeploymentQtr__c</picklist>
+            <values>
+                <fullName>08Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HasOptedOutOfCLS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPP-Polymers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Chemical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Cleanroom%2FPharma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Critical Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Graphics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Ind Pkg %26 Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Mechanical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-ER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-LE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Thermal Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%26IP-Ethylene Copolymers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating_Category__c</picklist>
+            <values>
+                <fullName>Detractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resolution__c</picklist>
+            <values>
+                <fullName>Disagreement%2Fdispute with customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring situation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>More information requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28See Resolution Comments%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved internally</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved with the customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Rating__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting For Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Loyalty_Survey_Follow_up</fullName>
+        <active>true</active>
+        <label>Customer Loyalty Survey - Follow up</label>
+        <picklistValues>
+            <picklist>CLS_Bounced__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ClosingType__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DeploymentQtr__c</picklist>
+            <values>
+                <fullName>08Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HasOptedOutOfCLS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPP-Polymers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Chemical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Cleanroom%2FPharma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Critical Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Graphics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Ind Pkg %26 Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Mechanical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-ER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-LE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Thermal Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%26IP-Ethylene Copolymers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating_Category__c</picklist>
+            <values>
+                <fullName>Detractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resolution__c</picklist>
+            <values>
+                <fullName>Disagreement%2Fdispute with customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring situation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>More information requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28See Resolution Comments%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved internally</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved with the customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Rating__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting For Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Loyalty_Survey_New</fullName>
+        <active>true</active>
+        <description>Has been created, but no response from contact</description>
+        <label>Customer Loyalty Survey - New</label>
+        <picklistValues>
+            <picklist>CLS_Bounced__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ClosingType__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DeploymentQtr__c</picklist>
+            <values>
+                <fullName>08Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HasOptedOutOfCLS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPP-Polymers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Chemical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Cleanroom%2FPharma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Critical Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Graphics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Ind Pkg %26 Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Mechanical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-ER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-LE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Thermal Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%26IP-Ethylene Copolymers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating_Category__c</picklist>
+            <values>
+                <fullName>Detractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resolution__c</picklist>
+            <values>
+                <fullName>Disagreement%2Fdispute with customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring situation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>More information requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28See Resolution Comments%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved internally</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved with the customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Rating__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting For Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Loyalty_Survey_Returned</fullName>
+        <active>true</active>
+        <description>Read Only except for Follow-up and Close the Loop fields</description>
+        <label>Customer Loyalty Survey - Returned</label>
+        <picklistValues>
+            <picklist>CLS_Bounced__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ClosingType__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DeploymentQtr__c</picklist>
+            <values>
+                <fullName>08Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15Q4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_up_Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HasOptedOutOfCLS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>BI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPP-Polymers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Aramids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Chemical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Cleanroom%2FPharma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Critical Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-ES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Graphics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Ind Pkg %26 Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Mechanical Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Medical Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-NOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-ER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-LE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Public Sector-MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPT-Thermal Industrial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%26IP-Ethylene Copolymers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating_Category__c</picklist>
+            <values>
+                <fullName>Detractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resolution__c</picklist>
+            <values>
+                <fullName>Disagreement%2Fdispute with customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monitoring situation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>More information requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28See Resolution Comments%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved internally</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved with the customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category_Group__c</picklist>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products %26 Innovation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Category__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery%2FSupply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responsiveness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_Rating__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Close the Loop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting For Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Closing_User_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( ClosingType__c , &apos;Close the Loop&apos;), $RecordType.Name =&apos;Customer Loyalty Survey - Follow up&apos;, ISBLANK( ClosingUser__c ), ISPICKVAL(  Status__c  , &apos;Complete&apos;))</errorConditionFormula>
+        <errorDisplayField>ClosingUser__c</errorDisplayField>
+        <errorMessage>If closing type is close the loop , Please mention Closing User name.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

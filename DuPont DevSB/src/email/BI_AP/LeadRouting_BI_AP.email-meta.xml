@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this template to route lead to non-SFDC users</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Lead Routing - BI AP</name>
+    <style>none</style>
+    <subject>New Lead {!Lead_Routing__c.Lead_Name__c} Type={!Lead_Routing__c.Type__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

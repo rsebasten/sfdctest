@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ação do Caso</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ações do Caso</value>
+    </caseValues>
+    <fields>
+        <help><!-- The specific Action taken (related to the Type) as a result of this case --></help>
+        <label>Subtipo da Ação</label>
+        <name>ActionSubtype__c</name>
+        <picklistValues>
+            <masterLabel>Change Material/Batch</masterLabel>
+            <translation>Troca de Material/Lote</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corrective Actions</masterLabel>
+            <translation>Ações Corretivas</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Return Material</masterLabel>
+            <translation>Retorno do Material do Cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Sell Seed as Grain</masterLabel>
+            <translation>Venda do Material como Grão do Cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Visit</masterLabel>
+            <translation>Visita ao Cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defective Product Pull-Out</masterLabel>
+            <translation>Retirada do Produto com Defeito</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Test</masterLabel>
+            <translation>Teste de Campo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab Analysis</masterLabel>
+            <translation>Análise em Laboratório</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Restitution - Current Sales Campaign</masterLabel>
+            <translation>Indenização em Material – CV Atual</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Restitution - Future Sales Campaign</masterLabel>
+            <translation>Indenização em Material – CV Futura</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Return</masterLabel>
+            <translation>Devolução do Material</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monetary Restitution</masterLabel>
+            <translation>Indenização em Valor</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation>Outros</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pardon Debt</masterLabel>
+            <translation>Perdão de Dívida</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preventive Actions</masterLabel>
+            <translation>Ações Preventivas</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Replacement</masterLabel>
+            <translation>Substituição do Produto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sale as Grain</masterLabel>
+            <translation>Venda de Grão</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Collection</masterLabel>
+            <translation>Coleta de Amostra</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Pictures &amp; Details</masterLabel>
+            <translation>Pintura e Detalhes de Amostra</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation><!-- ZZ - Field Not Used --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The type or category of the Action taken as a result of this case --></help>
+        <label>Tipo da Ação</label>
+        <name>ActionType__c</name>
+        <picklistValues>
+            <masterLabel>Investigation</masterLabel>
+            <translation>Investigação</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Investigation</masterLabel>
+            <translation>Pós Investigação</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution</masterLabel>
+            <translation>Solução</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZZ - Field Not Used</masterLabel>
+            <translation>ZZ - Não Utilizar</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Custo Real Total</label>
+        <name>Actual_Total_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reliance CAPA Id --></label>
+        <name>CAPAId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reflects stage in CAPA investigation from EtQ Reliance. --></help>
+        <label><!-- CAPA Investigation Phase --></label>
+        <name>CAPAInvestigationPhase__c</name>
+        <picklistValues>
+            <masterLabel>Approve Action Plan</masterLabel>
+            <translation><!-- Approve Action Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Effective</masterLabel>
+            <translation><!-- Closed - Effective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Not Effective</masterLabel>
+            <translation><!-- Closed - Not Effective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Develop Action Plan</masterLabel>
+            <translation><!-- Develop Action Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Implement Action Plan</masterLabel>
+            <translation><!-- Implement Action Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investigation</masterLabel>
+            <translation><!-- Investigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problem Description/Initiation</masterLabel>
+            <translation><!-- Problem Description/Initiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verify Effectiveness</masterLabel>
+            <translation><!-- Verify Effectiveness --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CAPA Phase Change Date --></label>
+        <name>CAPAPhaseChangeDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The related Case --></help>
+        <label>Caso</label>
+        <name>Case__c</name>
+        <relationshipLabel>Ações do Caso</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Actual Date of Completion --></help>
+        <label>Data de Realização</label>
+        <name>Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label>Descrição</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Data Desejada de Início</label>
+        <name>Desired_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Target Date of Completion --></help>
+        <label>Data de Vencimento</label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label>Tem Anexos</label>
+        <name>HasAttachment__c</name>
+    </fields>
+    <fields>
+        <label>Nome Relacionado</label>
+        <name>Related_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reliance Complaint Status --></label>
+        <name>RelianceComplaintStatus__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint Review</masterLabel>
+            <translation><!-- Complaint Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiation</masterLabel>
+            <translation><!-- Initiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reliance Complaint Status Change Date --></label>
+        <name>RelianceStatusChangeDate__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation>Completo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation>Em Andamento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation>Não Iniciado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting</masterLabel>
+            <translation><!-- Waiting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Assunto</label>
+        <name>Subject__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Número da Ação do Caso</nameFieldLabel>
+    <recordTypes>
+        <label><!-- AGCP-CPC EMEA Complaint --></label>
+        <name>AGCP_CPC_EMEA_Complaint</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Color Case Action --></label>
+        <name>Color_Case_Action</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Complaint Result --></label>
+        <name>Complaint_Result</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DCP AP Complaint Action --></label>
+        <name>DCP_AP_Complaint_Action</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EtQ Reliance Action --></label>
+        <name>EtQ_Reliance_Action</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Pioneer LA-AF Complaint --></label>
+        <name>Pioneer_LA_AF_Complaint</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Portal Case Action --></label>
+        <name>Portal_Case_Action</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Technical Case Action --></label>
+        <name>Technical_Case_Action</name>
+    </recordTypes>
+</CustomObjectTranslation>

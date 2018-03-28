@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Para dar seguimiento a sulicitudes con representantes, 2da llamada</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Follow up - Yennci</name>
+    <style>freeForm</style>
+    <subject>Solicitud registrada en Customer Care</subject>
+    <textOnly>¡Hola &lt;&lt;RTV&gt;&gt; !
+
+Esperamos te encuentres muy bien.
+
+Estamos dando seguimiento a la siguiente oportunidad de negocio, con el objetivo de dar una respuesta oportuna al cliente.
+
+Agradeceremos nos puedas copiar en tu respuesta, con la finalidad de tener un registro en Salesforce.com.
+
+Información de la solicitud:
+Empresa: {!Lead_Routing__c.Lead_Company__c}
+Estado: {!Lead_Routing__c.Lead_Address__c}
+Nombre: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c}
+Tel:{!Lead_Routing__c.Lead_Phone__c}
+Cel:{!Lead_Routing__c.Lead_Mobilephone__c}
+Email: {!Lead_Routing__c.Lead_Email__c}
+Descripción:{!Lead_Routing__c.Description__c}
+{!Lead_Routing__c.Product_Comments__c}
+
+Te recomendamos descargar la aplicación de SalesForce1 en tu móvil.
+
+¡Gracias y Saludos!
+
+Yennci Suárez
+DuPont Corporate Customer Care
+Email: Yennci.angelica.suarez@dupont.com |Tel: +52 (55) 5722 2032 | DUCOM 250-2032</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

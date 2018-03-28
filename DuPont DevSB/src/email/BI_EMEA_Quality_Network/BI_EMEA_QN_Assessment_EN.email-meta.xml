@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to inform and request an assessment of a porspect partner by a service center</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA QN Assessment - EN</name>
+    <style>formalLetter</style>
+    <subject>QN Assessment forms to be used during QN inspections</subject>
+    <textOnly>Dear Partner,
+Please find attached the QN assessment forms for fabricator &quot;{!Account.Name}&quot;,  to be used during your QN inspection.
+
+Contact: {!Case.Contact}
+Tel: {!Account.Phone}
+Address: {!Account.BillingAddress}
+
+May I kindly ask you to scan in the signed forms after completion  and send them electronically to your contact person in the warranty department.
+
+Friendly Regards,
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated
+
+companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

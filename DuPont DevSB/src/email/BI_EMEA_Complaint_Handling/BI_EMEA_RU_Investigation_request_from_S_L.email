@@ -1,0 +1,21 @@
+Dear colleagues,
+
+Please investigate a.m. case with supplier and upon completion of your investigation provide resolution outcome.
+
+Kind regards,
+{!Case.CreatedBy}
+
+
+Title: {!Case.Subject}
+BI Complaint ID: {!Case.CaseNumber} / {!Case.Link}
+Originator: {!Case.OwnerFullName}
+Customer: {!Case.Account} / {!Case.AccountId}
+Contact: {!Case.Contact}
+
+Ship Point: {!Case.Ship_Point__c}
+Carrier name: {!Case.Carrier_Name__c}
+
+Delivery: {!Case.Delivery__c}
+
+Case information:
+{!Case.Description}

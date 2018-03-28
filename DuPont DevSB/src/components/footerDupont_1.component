@@ -1,0 +1,16 @@
+<apex:component id="headerDupont_1">
+<apex:attribute name="page" type="PageBase" description="reference to pagebase" required="true"/> 
+            <br/><table id="parentHomeFooterContentCell" width="{!page.pageWidth}">
+            <tbody><tr><td><br/></td>
+                <td id="homeFooterContentCell">
+                <div id="footer">
+                    <div class="hFooterStyle">
+                        <apex:outputText escape="false" value="{!$Label.SiteFooter_Links}"/>             
+                    </div><br/>
+                    <div class="overline" style="text-align: left;">            
+                        <p class="overline">{!$Label.SiteFooter_Copyright}</p>
+                    </div>
+                </div>
+            </td></tr></tbody>
+            </table>
+</apex:component>

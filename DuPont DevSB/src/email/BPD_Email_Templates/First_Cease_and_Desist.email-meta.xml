@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>CEASE &amp; DESIST 1 - DOMAIN NAME CEASE AND DESIST ONLY</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Cease and Desist - Notice of Trademark Infringement: {!Case.Customer_Lab_Result__c}</subject>
+    <textOnly>Note: when replying to this email, please select “Reply All” and ensure that “Subject” line begins with the case number {!Case.CaseNumber}.
+
+
+
+Dear Addressee or To Whom It May Concern {!Case.Customer_Lab_Result__c}:
+
+
+
+It has come to our attention that you [“your client” in the case of a Registrar and private hosting] have registered the domain name &quot;{!Case.Customer_Lab_Result__c}&quot;. This registration infringes the trademark rights of DuPont, since DuPont is the exclusive owner of the trademark {!Case.Product_Selected__c}, which is registered in numerous countries around the world.  DuPont has invested a substantial amount of effort and financial resources in advertising and promoting its trademarks in order to establish them as symbols of our company’s high quality products.  We are sure you will agree with us that trademarks are valuable properties deserving protection.
+
+
+
+In view of the above, we request that you cease the use of the &quot;{!Case.Customer_Lab_Result__c}&quot; domain name and proceed to cancel the &quot;{!Case.Customer_Lab_Result__c}&quot; domain name with your Internet provider.
+
+
+
+We trust you appreciate the concern with which we view this matter, and that you will handle it accordingly.  We expect to hear from you by _____ (10 business days from the date of this communication).  It is our hope that this matter can be resolved without resorting to legal means.  Naturally, we reserve all our rights in the unlikely event that we are unable to resolve this matter with you.
+
+
+
+If you have any questions concerning the proper identification of our trademarks, please feel free to contact us at brand.protection@dupont.com or by fax at 302-380-3509.
+
+
+
+Thank you for your cooperation.
+
+
+
+Sincerely,
+
+
+
+
+
+DuPont Brand Protection Center
+
+
+
+DuPont™ and {!Case.Product_Selected__c} are trademarks or registered trademarks of E. I. du Pont de Nemours and Company.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

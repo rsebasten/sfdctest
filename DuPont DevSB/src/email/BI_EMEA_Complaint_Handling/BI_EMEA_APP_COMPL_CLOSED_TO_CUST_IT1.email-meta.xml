@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA APP COMPL CLOSED TO CUST - IT</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA APP Compl Closed To Cust - IT</name>
+    <style>freeForm</style>
+    <subject>Corian® Solid Surface: chiusura del reclamo {!Case.CaseNumber}.</subject>
+    <textOnly>Gent. Cliente,
+
+
+In riferimento al vostro reclamo {!Case.CaseNumber} effettuato in data {!Case.Date_Entered__c}, siamo spiacenti del disagio procurato Le e La informiamo che la pratica e’ stata chiusa e archiviata.
+
+
+Speriamo che l’ installazione in Corian® Solid Surface la soddisferà per gli anni a seguire.
+
+
+Per qualsiasi chiarimento, non esitate a contattarci.
+
+
+
+Cordiali Saluti,
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+Desideriamo informarla che i suoi dati verranno utilizzati per individuare i suoi interessi commerciali, offrirle prodotti e servizi e assicurare una customer experience positiva nell&apos;ambito dei nostri rapporti commerciali. I suoi dati personali (nome, e-mail, telefono e altre informazioni di contatto) saranno archiviati su sistemi informatici selezionati, situati principalmente negli Stati Uniti. Queste informazioni potranno essere utilizzate da DuPont, dai suoi affiliati e partner e da terze parti selezionate in altri paesi per lo stesso scopo. Per accedere, modificare, eliminare o non autorizzare l&apos;elaborazione dei suoi dati, la invitiamo a collegarsi a questo link.
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

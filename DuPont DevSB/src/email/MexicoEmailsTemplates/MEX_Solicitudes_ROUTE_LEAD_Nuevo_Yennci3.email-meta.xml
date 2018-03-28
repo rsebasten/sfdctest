@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Enviar a RTVs que se encuentran fuera de la instancia One DuPont</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Solicitudes Route lead Yennci Otros</name>
+    <style>freeForm</style>
+    <subject>Solicitud registrada en Customer Care</subject>
+    <textOnly>¡Hola &lt;&lt;RTV&gt;&gt; !
+
+Compartimos una oportunidad potencial para tu negocio. Agradecemos de antemano tu seguimiento.
+
+Por favor compártenos el estatus.
+
+Información de la solicitud:
+Empresa: {!Lead_Routing__c.Lead_Company__c}
+Nombre: {!Lead_Routing__c.Lead_FirstName__c} {!Lead_Routing__c.Lead_LastName__c}
+Tel:{!Lead_Routing__c.Lead_Phone__c}
+Cel:{!Lead_Routing__c.Lead_Mobilephone__c}
+Email: {!Lead_Routing__c.Lead_Email__c}
+Estado: {!Lead_Routing__c.Lead_Address__c}
+
+Descripción:
+{!Lead_Routing__c.Description__c}
+{!Lead_Routing__c.Product_Comments__c}
+
+¿Se generó alguna venta? por favor envíanos una nota respondiendo a este correo.
+
+¡Gracias y Saludos!
+
+Yennci Suárez
+DuPont Corporate Customer Care
+Email: Yennci.angelica.suarez@dupont.com |Tel: +52 (55) 5722 2032 | DUCOM 250-2032</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

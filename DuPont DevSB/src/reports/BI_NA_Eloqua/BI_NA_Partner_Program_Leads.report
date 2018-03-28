@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>Lead.Origin_URL__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Distributor_Or_Partner__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Related_Partner_Contact__c</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>CITY</field>
+    </columns>
+    <columns>
+        <field>ZIP</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <currency>USD</currency>
+    <description>A listing of partner program leads by distributor</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead.Origin_Name__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>BI Partner Program</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BI-NA Partner Program Leads</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-05-01</startDate>
+    </timeFrameFilter>
+</Report>

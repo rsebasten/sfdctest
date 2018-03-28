@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>BI_Certification_Email</letterhead>
+    <name>BI Authorized Retailer Certificate</name>
+    <style>freeForm</style>
+    <subject>Authorization Certificate</subject>
+    <textOnly>This certificate acknowledges that
+{!Qualification__c.Account_Name__c}
+is a Corian® Solid Surface and
+Corian® Quartz Authorized Retailer!
+
+
+Certification Id: {!Qualification__c.Name}
+Issued Date:          {!Qualification__c.Start_Date__c}
+Expiration Date:    {!Qualification__c.End_Date__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

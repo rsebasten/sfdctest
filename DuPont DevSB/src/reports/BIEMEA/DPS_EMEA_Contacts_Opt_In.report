@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$Account</field>
+    </columns>
+    <columns>
+        <field>Contact$MailingAddress</field>
+    </columns>
+    <columns>
+        <field>Contact$Email</field>
+    </columns>
+    <columns>
+        <field>Contact$Phone</field>
+    </columns>
+    <columns>
+        <field>Contact.CampaignMembers$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Contact.CampaignMembers$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BI Opt-In Master List</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$RecordType</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contact.ConstructionEMEA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Inactive</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>DPS-EMEA Contacts - Opt-In</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Campaign_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

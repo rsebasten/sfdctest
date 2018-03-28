@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <currency>USD</currency>
+    <description>all privacy leads</description>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Lead.Level1Leads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>privacy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONVERTED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.Lead_Country__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Privacy Leads Per Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2016-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-08-08</startDate>
+    </timeFrameFilter>
+</Report>

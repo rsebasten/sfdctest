@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity">
+    <script type="text/javascript">
+    if(({!Opportunity.Opportunity_Product__c}==0) ||({!Opportunity.Opportunity_Product__c}==NULL)) {
+        alert('Remember to add a Product Schedule');
+    }
+    </script>
+</apex:page>

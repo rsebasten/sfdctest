@@ -1,0 +1,104 @@
+<messaging:emailTemplate subject="Thank you for using DuPont Weatherization Products" recipientType="User" relatedToType="Entitlement">
+<messaging:htmlEmailBody >
+
+ 
+
+Dear Specialist,<br/><br/>
+
+Attached is the documentation for your Warranty Registration for {!relatedTo.Name}.&nbsp;  You need to forward the attached Warranty Registration documentation on to your Account and any other companies associated with this project that need a copy of the Warranty Registration.   Your customer has not received a copy.<br/>  
+If you have Warranty Registration questions, please contact  Patti.A.Wolfe@dupont.com.  For Warranty Coverage questions, please contact Michael.D.Dubnansky-1@dupont.com. Please do not reply to this message as no one  monitors this email.
+<br/><br/>
+Please click &nbsp;<apex:outputLink value="{!$Label.BuildingInnovationPartnerCommunity_Base_url+relatedTo.Id}">here</apex:outputLink> to see the registration in system.
+<br/><br/>
+Thank you.
+     
+
+
+</messaging:htmlEmailBody>
+<messaging:attachment renderAs="PDF" filename="Registration Details- {!relatedTo.Registration_Number__c}.pdf">
+
+<div>
+    <apex:image url="{!$Resource.DuPontLogoNoText}" width="100" height="50" style="float:left;"/>
+      
+        <apex:OutputText value="DuPont Building Innovations<br/>Chestnut Run Plaza 730<br/>974 Centre Road, PO Box 2915<br/>Wilmington, DE  19805<br/>1-800-44-TYVEK<br/>" escape="false" style="float:right; font-size:75%;"/>
+       </div>                                                                          
+<br/><br/><br/><br/><br/>
+{!relatedTo.Account.name}<br/>
+{!relatedTo.Account.ShippingStreet}, {!relatedTo.Account.ShippingCity}, {!relatedTo.Account.ShippingState}, {!relatedTo.Account.ShippingPostalCode}
+<br/><br/>
+{!relatedTo.Name}--{!relatedTo.Registration_Number__c}
+<br/><br/><br/>
+Thank you for using DuPont™ Weatherization Products on your building and we are pleased to
+extend a 10-Year Limited Warranty.  Proper usage and installation of DuPont™ Weatherization
+Products can control air flow, hold out bulk water, and allow moisture vapor to escape; thereby
+providing protection for the building and helping to improve the building’s energy efficiency.
+<br/><br/><br/>
+Attached to this document please find a copy of the completed Product Warranty Registration
+Form for your project: {!relatedTo.Name}.  To review the terms of the DuPont 10-Year
+Limited Warranty visit our website:  www.weatherization.tyvek.com. Should you have an issue,
+compliance with all terms and conditions contained in the Warranty itself will determine whether
+or not a claim falls within the terms of the Warranty coverage, whether your project is registered
+or not.
+<br/><br/><br/>
+Thank you again for using DuPont™ Weatherization Products. We look forward to continuing to
+provide protection for your buildings for years to come.  When looking for building innovations
+in managing air, water, moisture vapor or thermal, we trust you will once again look to DuPont
+products.
+<br/><br/><br/>
+Sincerely,<br/>
+<apex:image url="{!$Resource.BI_NA_Env_Sign}" width="180" height="90"/><br/>
+Linda W. Marquess<br/>
+North America Sales Manager
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
+<apex:image url="{!$Resource.Tyvekdupontlogo}" width="1000" height="200"/>
+<br/>
+<br/>
+<p> The Registration Details  of the project: {!relatedTo.Name} is below: </p>
+
+<b><apex:outputText >General Information</apex:outputText></b>
+<br/>
+<br/>
+<apex:outputLabel value="Registration Number: "/><apex:outputField value="{!relatedTo.Registration_Number__c}"/>
+<br/>
+<apex:outputLabel value="Registration Type: "/><apex:outputField value="{!relatedTo.Type}"/>
+<br/>
+<apex:outputLabel value="Application: "/><apex:outputField value="{!relatedTo.Application__c}"/>
+<br/>
+<apex:outputLabel value="Registration Address: "/><apex:outputField value="{!relatedTo.Registration_Address__c}"/>
+<br/>
+<apex:outputLabel value="Registration City: "/><apex:outputField value="{!relatedTo.Registration_City__c}"/>
+<br/>
+<apex:outputLabel value="Registration Country: "/><apex:outputField value="{!relatedTo.Registration_Country1__c}"/>
+<br/>
+<apex:outputLabel value="Registration State/Province: "/><apex:outputField value="{!relatedTo.Registration_State_Province__c}"/>
+<br/>
+<apex:outputLabel value="Registration Postal Code: "/><apex:outputField value="{!relatedTo.Registration_Postal_Code__c}"/>
+<br/>
+<br/>
+<b><apex:outputText >Project Information</apex:outputText></b>
+<br/>
+<br/>
+<apex:outputLabel value="Building Type: "/><apex:outputField value="{!relatedTo.Building_Type__c}"/>
+<br/>
+<br/>
+<b><apex:outputText > Warranty Dates </apex:outputText></b>
+<br/>
+<br/>
+<apex:outputLabel value="Date of Product Purchased"/>&nbsp;:&nbsp;<apex:outputField value="{!relatedTo.StartDate}"/>
+<br/>
+<apex:outputLabel value="Warranty Completion Date"/>&nbsp;:&nbsp;<apex:outputField value="{!relatedTo.EndDate}"/>
+<br/>
+<br/>
+<b><apex:outputText > DuPont Products Purchased </apex:outputText></b>
+<br/>
+<br/>
+<apex:outputLabel value="Products Selected: "/><apex:outputField value="{!relatedTo.Product_Answer1__c}"/>
+<br/>
+<apex:outputLabel value="SKU Lot: "/><apex:outputField value="{!relatedTo.Lot_Nb__c}"/>
+<br/>
+<br/>
+
+<p>Thank You!</p>
+</messaging:attachment>
+</messaging:emailTemplate>

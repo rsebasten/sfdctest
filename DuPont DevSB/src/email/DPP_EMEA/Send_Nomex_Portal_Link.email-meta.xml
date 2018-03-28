@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For sending the Nomex customer portal link to a contact in Salesforce</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DuPontLetterhead</letterhead>
+    <name>Send Nomex Portal Link</name>
+    <style>freeForm</style>
+    <subject>Your Nomex® Fabric and Garment certifications</subject>
+    <textOnly>Dear {!Contact.Salutation} {!Contact.FirstName} {!Contact.LastName}
+
+please follow the link below to view fabrics and garments you have submitted for certification by us and to request new certifications.
+
+https://dupont.secure.force.com/apex/sitePage?key=a1q30000000L06c{!Account.Id}{!Contact.Id}
+
+Kind Regards
+
+Christel Pavlousek
+
+Nomex® Label Programme
+ </textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Certification-Notification To The Candidate- Agreement</name>
+    <style>none</style>
+    <subject>DuPont Certification Completed-Certificaton Number Assigned</subject>
+    <textOnly>{!Qualification__c.OwnerFullName}
+
+Congratulations! You have successfully achieved certification as a &apos;{!Qualification__c.Certified_In_Area__c}&apos;. Your {!Qualification__c.Certified_In_Area__c} number is &apos;{!Qualification__c.Certified_In_Area__c}-{!Qualification__c.Name}&apos; If you have any questions, please contact {!Qualification__c.CreatedBy}.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Misuse of DuPont Company Name (Soft)</name>
+    <style>freeForm</style>
+    <subject>{!Case.CaseNumber}: Proper Use - DuPont Company Name on &quot;{!Case.Customer_Lab_Result__c}&quot;</subject>
+    <textOnly>Note: when replying to this email, please select “Reply All” and ensure that “Subject” line begins with the case number {!Case.CaseNumber}.
+
+
+Dear {!Case.Alt_Contact__c}:
+
+
+We have noticed your mention of &quot;{!Case.Product_Selected__c}&quot; on the home page of your website, &quot;{!Case.Customer_Lab_Result__c}&quot;.  This is considered misuse of our company name and trademark; proper use would consist of changing it to &quot;DuPont&quot;.
+
+
+However, although we appreciate favorable mention of our company, we generally prefer that there be no mention made on web sites that might be interpreted as an endorsement by our company of another company&apos;s product or services.
+
+Therefore, we would appreciate your removing the photo and any mention of our company entirely from your web site within the next 30 days.  Changes to relevant printed materials such as catalogs, brochures, etc. may be made at the next printing.
+
+If you have any questions, please contact us at the following e-mail address: Brand.Protection@dupont.com or via fax at (302) 380-3509.
+
+Thank you for your assistance and cooperation in this matter.
+
+Sincerely,
+
+DuPont Brand Protection Center</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

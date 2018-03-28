@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BI-EMEA S&amp;P Settlement Proposal Fabricator FR</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BI_EMEA_Quality_Network_Corian</letterhead>
+    <name>BI-EMEA S&amp;P Settlement  Proposal Fabricator - FR</name>
+    <style>freeForm</style>
+    <subject>Proposition (case: {!Case.CaseNumber})</subject>
+    <textOnly>Cher {!Case.Contact},
+Suite à votre réclamation {!Case.CaseNumber} du {!Case.Date_Entered__c}, veuillez trouver notre proposition afin de pouvoir répondre à votre demande et de clôturer le dossier ensuite.
+
+{!Case.Special_Instructions__c}
+
+Sauf si vous êtes en désaccord, la demande d’avoir/de remplacement avec charge/de remplacement à titre gracieux  sera transmise à notre département du service clientèle pour exécution.
+
+Nous sommes désolés des désagréments causés mais nous espérons de vous avoir répondu à votre satisfaction. Veuillez référer au numéro mentionné ci-dessus dans vos communications.
+
+En vous remerciant de votre réponse par retour.
+
+Sincères salutations,
+
+
+
+{!Case.OwnerFullName}
+
+QN &amp; Warranty Assistant
+
+Tel:  {!Case.OwnerPhone}
+
+{!Case.OwnerEmail}
+
+Nous vous informons que les données collectées à votre sujet ont pour but de nous aider à identifier les
+
+informations susceptibles d&apos;intéresser votre entreprise, vous proposer des produits ou des services et vous
+
+apporter satisfaction lors de nos échanges commerciaux. Vos données à caractère personnel (nom, adresse
+
+e-mail, numéro de téléphone et autres coordonnées) seront conservées dans des systèmes clients que nous
+
+avons sélectionnés et qui sont principalement hébergés aux États-Unis. Ces données pourront être
+
+communiquées, à ces mêmes fins, au sein de l&apos;entreprise DuPont, à ses filiales, à ses partenaires ainsi qu&apos;à
+
+des tiers triés sur le volet établis dans d&apos;autres pays. Cliquez sur ce lien pour accéder à vos données, les
+
+modifier ou les supprimer, ou vous opposer à leur traitement.
+
+
+DuPont™ and Corian® are trademarks or registered trademarks of E. I. du Pont de Nemours and Company
+
+or its affiliates. The usage of logos, trademarks and registered trademarks of E. I. du Pont de Nemours and
+
+Company must be authorized by E. I. du Pont de Nemours and Company or by one of its affiliated companies.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
