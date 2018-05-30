@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Each record represents a unique email in the system, user for:
+-Privacy Notification</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Bounced_Reason__c</fullName>
+        <description>The reason to identify in the Sales force email log indicating why the email was not delivered to the recipient.</description>
+        <externalId>false</externalId>
+        <label>Bounced Reason</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bounced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Bounced is captured at the record on the eMail object and pushed to Leads &amp; Contact records based on email address. Whenever a lead and contact eMail is updated the bounced flag is released.</description>
+        <externalId>false</externalId>
+        <label>Bounced</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to LastModified Contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>LastModified Contact</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Emails</relationshipLabel>
+        <relationshipName>Emails</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Email Address (External Id Unique)</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Email Address</inlineHelpText>
+        <label>Email</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Historical_Notification_Reason__c</fullName>
+        <description>Reason for the grandfathered status (Grandfather)</description>
+        <externalId>false</externalId>
+        <label>Historical Notification Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Historical_Notification_Status__c</fullName>
+        <description>Initial status on existing emails before privacy notification &apos;go live&apos;</description>
+        <externalId>false</externalId>
+        <label>Historical Notification Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Notified</fullName>
+                    <default>false</default>
+                    <label>Notified</label>
+                </value>
+                <value>
+                    <fullName>Not Notified</fullName>
+                    <default>false</default>
+                    <label>Not Notified</label>
+                </value>
+                <value>
+                    <fullName>Unknown - On Hold</fullName>
+                    <default>false</default>
+                    <label>Unknown - On Hold</label>
+                </value>
+                <value>
+                    <fullName>No notification required</fullName>
+                    <default>false</default>
+                    <label>No notification required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to LastModified Lead</description>
+        <externalId>false</externalId>
+        <inlineHelpText>LastModified Lead</inlineHelpText>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Emails</relationshipLabel>
+        <relationshipName>Emails</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_Language__c</fullName>
+        <description>Preferred Language</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Preferred Language</inlineHelpText>
+        <label>Preferred Language</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AFRIKAANS</fullName>
+                    <default>false</default>
+                    <label>AFRIKAANS</label>
+                </value>
+                <value>
+                    <fullName>ALBANIAN</fullName>
+                    <default>false</default>
+                    <label>ALBANIAN</label>
+                </value>
+                <value>
+                    <fullName>ARABIC</fullName>
+                    <default>false</default>
+                    <label>ARABIC</label>
+                </value>
+                <value>
+                    <fullName>ARMENIAN</fullName>
+                    <default>false</default>
+                    <label>ARMENIAN</label>
+                </value>
+                <value>
+                    <fullName>AZERBAIJANI</fullName>
+                    <default>false</default>
+                    <label>AZERBAIJANI</label>
+                </value>
+                <value>
+                    <fullName>BASQUE</fullName>
+                    <default>false</default>
+                    <label>BASQUE</label>
+                </value>
+                <value>
+                    <fullName>BULGARIAN</fullName>
+                    <default>false</default>
+                    <label>BULGARIAN</label>
+                </value>
+                <value>
+                    <fullName>BURMESE</fullName>
+                    <default>false</default>
+                    <label>BURMESE</label>
+                </value>
+                <value>
+                    <fullName>BYELORUSSIAN</fullName>
+                    <default>false</default>
+                    <label>BYELORUSSIAN</label>
+                </value>
+                <value>
+                    <fullName>CHINESE</fullName>
+                    <default>false</default>
+                    <label>CHINESE</label>
+                </value>
+                <value>
+                    <fullName>CHINESE (Traditional)</fullName>
+                    <default>false</default>
+                    <label>CHINESE (Traditional)</label>
+                </value>
+                <value>
+                    <fullName>CROATIAN</fullName>
+                    <default>false</default>
+                    <label>CROATIAN</label>
+                </value>
+                <value>
+                    <fullName>CZECH</fullName>
+                    <default>false</default>
+                    <label>CZECH</label>
+                </value>
+                <value>
+                    <fullName>DANISH</fullName>
+                    <default>false</default>
+                    <label>DANISH</label>
+                </value>
+                <value>
+                    <fullName>DUTCH</fullName>
+                    <default>false</default>
+                    <label>DUTCH</label>
+                </value>
+                <value>
+                    <fullName>ENGLISH</fullName>
+                    <default>false</default>
+                    <label>ENGLISH</label>
+                </value>
+                <value>
+                    <fullName>ESTONIAN</fullName>
+                    <default>false</default>
+                    <label>ESTONIAN</label>
+                </value>
+                <value>
+                    <fullName>FINNISH</fullName>
+                    <default>false</default>
+                    <label>FINNISH</label>
+                </value>
+                <value>
+                    <fullName>FRENCH</fullName>
+                    <default>false</default>
+                    <label>FRENCH</label>
+                </value>
+                <value>
+                    <fullName>GERMAN</fullName>
+                    <default>false</default>
+                    <label>GERMAN</label>
+                </value>
+                <value>
+                    <fullName>GREEK</fullName>
+                    <default>false</default>
+                    <label>GREEK</label>
+                </value>
+                <value>
+                    <fullName>HEBREW</fullName>
+                    <default>false</default>
+                    <label>HEBREW</label>
+                </value>
+                <value>
+                    <fullName>HINDI</fullName>
+                    <default>false</default>
+                    <label>HINDI</label>
+                </value>
+                <value>
+                    <fullName>HUNGARIAN</fullName>
+                    <default>false</default>
+                    <label>HUNGARIAN</label>
+                </value>
+                <value>
+                    <fullName>ICELANDIC</fullName>
+                    <default>false</default>
+                    <label>ICELANDIC</label>
+                </value>
+                <value>
+                    <fullName>INDONESIAN</fullName>
+                    <default>false</default>
+                    <label>INDONESIAN</label>
+                </value>
+                <value>
+                    <fullName>ITALIAN</fullName>
+                    <default>false</default>
+                    <label>ITALIAN</label>
+                </value>
+                <value>
+                    <fullName>JAPANESE</fullName>
+                    <default>false</default>
+                    <label>JAPANESE</label>
+                </value>
+                <value>
+                    <fullName>KOREAN</fullName>
+                    <default>false</default>
+                    <label>KOREAN</label>
+                </value>
+                <value>
+                    <fullName>LATIN</fullName>
+                    <default>false</default>
+                    <label>LATIN</label>
+                </value>
+                <value>
+                    <fullName>LATVIAN</fullName>
+                    <default>false</default>
+                    <label>LATVIAN</label>
+                </value>
+                <value>
+                    <fullName>LITHUANIAN</fullName>
+                    <default>false</default>
+                    <label>LITHUANIAN</label>
+                </value>
+                <value>
+                    <fullName>MACEDONIAN</fullName>
+                    <default>false</default>
+                    <label>MACEDONIAN</label>
+                </value>
+                <value>
+                    <fullName>MALAY</fullName>
+                    <default>false</default>
+                    <label>MALAY</label>
+                </value>
+                <value>
+                    <fullName>MONGOLIAN</fullName>
+                    <default>false</default>
+                    <label>MONGOLIAN</label>
+                </value>
+                <value>
+                    <fullName>NORWEGIAN</fullName>
+                    <default>false</default>
+                    <label>NORWEGIAN</label>
+                </value>
+                <value>
+                    <fullName>PERSIAN</fullName>
+                    <default>false</default>
+                    <label>PERSIAN</label>
+                </value>
+                <value>
+                    <fullName>POLISH</fullName>
+                    <default>false</default>
+                    <label>POLISH</label>
+                </value>
+                <value>
+                    <fullName>PORTUGUESE</fullName>
+                    <default>false</default>
+                    <label>PORTUGUESE</label>
+                </value>
+                <value>
+                    <fullName>PORTUGUESE (Brazilian)</fullName>
+                    <default>false</default>
+                    <label>PORTUGUESE (Brazilian)</label>
+                </value>
+                <value>
+                    <fullName>ROMANIAN</fullName>
+                    <default>false</default>
+                    <label>ROMANIAN</label>
+                </value>
+                <value>
+                    <fullName>RUSSIAN</fullName>
+                    <default>false</default>
+                    <label>RUSSIAN</label>
+                </value>
+                <value>
+                    <fullName>SERBIAN</fullName>
+                    <default>false</default>
+                    <label>SERBIAN</label>
+                </value>
+                <value>
+                    <fullName>SERBO-CROATIAN</fullName>
+                    <default>false</default>
+                    <label>SERBO-CROATIAN</label>
+                </value>
+                <value>
+                    <fullName>SLOVAK</fullName>
+                    <default>false</default>
+                    <label>SLOVAK</label>
+                </value>
+                <value>
+                    <fullName>SLOVENIAN</fullName>
+                    <default>false</default>
+                    <label>SLOVENIAN</label>
+                </value>
+                <value>
+                    <fullName>SPANISH</fullName>
+                    <default>false</default>
+                    <label>SPANISH</label>
+                </value>
+                <value>
+                    <fullName>SPANISH (Mexican)</fullName>
+                    <default>false</default>
+                    <label>SPANISH (Mexican)</label>
+                </value>
+                <value>
+                    <fullName>SWAHILI</fullName>
+                    <default>false</default>
+                    <label>SWAHILI</label>
+                </value>
+                <value>
+                    <fullName>SWEDISH</fullName>
+                    <default>false</default>
+                    <label>SWEDISH</label>
+                </value>
+                <value>
+                    <fullName>TAGALOG</fullName>
+                    <default>false</default>
+                    <label>TAGALOG</label>
+                </value>
+                <value>
+                    <fullName>TAMIL</fullName>
+                    <default>false</default>
+                    <label>TAMIL</label>
+                </value>
+                <value>
+                    <fullName>THAI</fullName>
+                    <default>false</default>
+                    <label>THAI</label>
+                </value>
+                <value>
+                    <fullName>TIBETAN</fullName>
+                    <default>false</default>
+                    <label>TIBETAN</label>
+                </value>
+                <value>
+                    <fullName>TURKISH</fullName>
+                    <default>false</default>
+                    <label>TURKISH</label>
+                </value>
+                <value>
+                    <fullName>UKRANIAN</fullName>
+                    <default>false</default>
+                    <label>UKRANIAN</label>
+                </value>
+                <value>
+                    <fullName>VIETNAMESE</fullName>
+                    <default>false</default>
+                    <label>VIETNAMESE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Privacy_Notification__c</fullName>
+        <description>Privacy notification delivery status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Privacy notification delivery status</inlineHelpText>
+        <label>Privacy Notification</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Notified</fullName>
+                    <default>true</default>
+                    <label>Not Notified</label>
+                </value>
+                <value>
+                    <fullName>Notified</fullName>
+                    <default>false</default>
+                    <label>Notified</label>
+                </value>
+                <value>
+                    <fullName>Grandfathered - Not Notified</fullName>
+                    <default>false</default>
+                    <label>Grandfathered - Not Notified</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TotalContacts__c</fullName>
+        <description>Total number of Contacts with this email.</description>
+        <externalId>false</externalId>
+        <label>Total Contacts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalLeads__c</fullName>
+        <description>Total Number of Leads with this email</description>
+        <externalId>false</externalId>
+        <label>Total Leads</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCountry__c</fullName>
+        <externalId>false</externalId>
+        <formula>UPPER(BLANKVALUE( BLANKVALUE(TEXT(Contact__r.Contact_Country__c) , TEXT(Contact__r.Account.Country__c))
+ ,  TEXT(Lead__r.Lead_Country__c)))</formula>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fIsoLanguageCode__c</fullName>
+        <description>ISO code of preferred Language.  This value is used for translation of the VF Pages.</description>
+        <externalId>false</externalId>
+        <formula>CASE( TEXT(Preferred_Language__c),
+ &apos;AFRIKAANS&apos;,&apos;af&apos;,
+&apos;ALBANIAN&apos;,&apos;sq&apos;,
+&apos;ARABIC&apos;,&apos;ar&apos;,
+&apos;ARMENIAN&apos;,&apos;hy&apos;,
+&apos;AZERBAIJANI&apos;,&apos;az&apos;,
+&apos;BASQUE&apos;,&apos;eu&apos;,
+&apos;BULGARIAN&apos;,&apos;bg&apos;,
+&apos;BURMESE&apos;,&apos;my&apos;,
+&apos;BYELORUSSIAN&apos;,&apos;be&apos;,
+&apos;CHINESE&apos;,&apos;zh-CN&apos;,
+&apos;CROATIAN&apos;,&apos;hr&apos;,
+&apos;CZECH&apos;,&apos;cs&apos;,
+&apos;DANISH&apos;,&apos;da&apos;,
+&apos;DUTCH&apos;,&apos;nl&apos;,
+&apos;ENGLISH&apos;,&apos;en&apos;,
+&apos;ESTONIAN&apos;,&apos;et&apos;,
+&apos;FINNISH&apos;,&apos;fi&apos;,
+&apos;FRENCH&apos;,&apos;fr&apos;,
+&apos;GERMAN&apos;,&apos;de&apos;,
+&apos;GREEK&apos;,&apos;el&apos;,
+&apos;HEBREW&apos;,&apos;he&apos;,
+&apos;HINDI&apos;,&apos;hi&apos;,
+&apos;HUNGARIAN&apos;,&apos;hu&apos;,
+&apos;ICELANDIC&apos;,&apos;is&apos;,
+&apos;INDONESIAN&apos;,&apos;id&apos;,
+&apos;ITALIAN&apos;,&apos;it&apos;,
+&apos;JAPANESE&apos;,&apos;ja&apos;,
+&apos;KOREAN&apos;,&apos;ko&apos;,
+&apos;LATIN&apos;,&apos;la&apos;,
+&apos;LATVIAN&apos;,&apos;lv&apos;,
+&apos;LITHUANIAN&apos;,&apos;lt&apos;,
+&apos;MACEDONIAN&apos;,&apos;mk&apos;,
+&apos;MALAY&apos;,&apos;ml&apos;,
+&apos;MONGOLIAN&apos;,&apos;mn&apos;,
+&apos;NORWEGIAN&apos;,&apos;no&apos;,
+&apos;PERSIAN&apos;,&apos;fa&apos;,
+&apos;POLISH&apos;,&apos;pl&apos;,
+&apos;PORTUGUESE&apos;,&apos;pt&apos;,
+&apos;ROMANIAN&apos;,&apos;ro&apos;,
+&apos;RUSSIAN&apos;,&apos;ru&apos;,
+&apos;SERBIAN&apos;,&apos;sr&apos;,
+&apos;SLOVAK&apos;,&apos;sk&apos;,
+&apos;SLOVENIAN&apos;,&apos;sl&apos;,
+&apos;SPANISH&apos;,&apos;es&apos;,
+&apos;SWAHILI&apos;,&apos;sw&apos;,
+&apos;SWEDISH&apos;,&apos;sv&apos;,
+&apos;TAGALOG&apos;,&apos;tl&apos;,
+&apos;TAMIL&apos;,&apos;ta&apos;,
+&apos;THAI&apos;,&apos;th&apos;,
+&apos;TIBETAN&apos;,&apos;bo&apos;,
+&apos;TURKISH&apos;,&apos;tr&apos;,
+&apos;UKRANIAN&apos;,&apos;uk&apos;,
+&apos;VIETNAMESE&apos;,&apos;vi&apos;,
+&apos;SPANISH (Mexican)&apos;, &apos;es-MX&apos;,
+&apos;PORTUGUESE (Brazilian)&apos;,&apos;pt-BR&apos;,
+&apos;CHINESE (Traditional)&apos;,&apos;zh-TW&apos;,
+null)</formula>
+        <label>ISO Language Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Email</label>
+    <nameField>
+        <label>EM</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Emails</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Email__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Privacy_Notification__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>fCountry__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>fIsoLanguageCode__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TotalContacts__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TotalLeads__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Lead__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Email__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>fCountry__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>fIsoLanguageCode__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Privacy_Notification__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TotalContacts__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TotalLeads__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Lead__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

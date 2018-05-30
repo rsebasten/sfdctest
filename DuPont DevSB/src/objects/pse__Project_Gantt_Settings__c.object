@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>These settings control configurable elements of the Project Task Gantt, allowing you to customize its appearance and functions to suit your users.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>pse__Break_Current_Locks__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When a project is locked for editing, this setting determines whether users (who have permission to edit tasks on the Project Task Gantt) are given the option to break the lock and force the other user into read-only mode.</inlineHelpText>
+        <label>Always Allow Breaking Locks</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Columns_Field_Set__c</fullName>
+        <defaultValue>&quot;Gantt_Columns&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the API name of the field set, on the project task object, that contains the custom columns to show on Project Task Gantt. References the Gantt Custom Columns field set by default. Leave blank to disable.</inlineHelpText>
+        <label>Columns Field Set</label>
+        <length>90</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Disable_Resolve_Dependency_Btn_On_Sync__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected the resolve dependency button is deactivated when the project task dependencies are synchronized. If deselected, the button remains active when project task dependencies do not need to be synchronized. The default value is deselected.</inlineHelpText>
+        <label>Disable Resolve Dependency Btn on Sync</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Read_Only_Field_Set__c</fullName>
+        <defaultValue>&apos;Gantt_Read_Only_Fields&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of a field set on a project task containing fields that are not editable in Project Task Gantt.</inlineHelpText>
+        <label>Read Only Field Set</label>
+        <length>90</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Save_Column_Prefs__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, customizations to width, order, and visibility of columns in the Project Task Gantt will be remembered per user.</inlineHelpText>
+        <label>Save Column Preferences</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Show_Generate_RRs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, the Create Resource Demand button is shown on the Project Task Gantt toolbar. Use to staff the project plan through the Create Resource Demand button from Project Task Assignments page.</inlineHelpText>
+        <label>Show &quot;Create Resource Demand&quot; button</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Project Task Gantt Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

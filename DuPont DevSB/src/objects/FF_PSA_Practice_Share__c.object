@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>FF_PSA_From_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>From Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Percentage_Share__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Percentage Share</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Practice__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Practice</label>
+        <referenceTo>pse__Practice__c</referenceTo>
+        <relationshipLabel>Practices Share</relationshipLabel>
+        <relationshipName>Practices_Share</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Project__c</fullName>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>pse__Proj__c</referenceTo>
+        <relationshipLabel>Practices Share</relationshipLabel>
+        <relationshipName>Practices_Share</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_To_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>To Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_settlement_profit_center__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( FF_PSA_Practice__r.Name , 
+&quot;Asset Productivity&quot;, &quot;BDSOSAS&quot;, 
+&quot;Capital Effectiveness&quot;, &quot;BDSOCEF&quot;, 
+&quot;Contract Safety Management&quot;, &quot;BDSRCSM&quot;, 
+&quot;Employee Safety&quot;, &quot;BDSRESM&quot;, 
+&quot;Energy Efficiency&quot;, &quot;BDSOEEF&quot;, 
+&quot;Environment Management&quot;, &quot;BDSOEMA&quot;, 
+&quot;Learning and Development&quot;, &quot;BD01660&quot;, 
+&quot;Process Safety Management&quot;, &quot;BDSPRSM&quot;, 
+&quot;L&amp;D Custom&quot;, &quot;BDC1660&quot;, 
+&quot;L&amp;D Traditional Media&quot;, &quot;BDT1660&quot;, 
+&quot;L&amp;D eLearning&quot;, &quot;BDE1660&quot;, 
+&quot;L&amp;D ILT&quot;, &quot;BDI1660 &quot;, 
+&quot;Consulting ILT&quot;, &quot;BD00461&quot;, 
+&quot;Branding &amp; Communication&quot;, &quot;BD0049M&quot;, 
+&quot;Consulting Custom Program&quot;, &quot;BD0049L&quot;,&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Profit Center</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Practice Share</label>
+    <nameField>
+        <displayFormat>PS-{0000000}</displayFormat>
+        <label>Practice Share ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Practices Share</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Check_Global_Practice</fullName>
+        <active>true</active>
+        <description>Validation rule on practice share to stop users from picking &apos;DSS Global Consulting&apos; practice which is parent practice for all practices and does not have FRB Code. 
+Ref: IS ID-00078292</description>
+        <errorConditionFormula>FF_PSA_Practice__r.pse__Hierarchy_Depth__c = 0</errorConditionFormula>
+        <errorMessage>You cannot create practice share for Global Practice</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

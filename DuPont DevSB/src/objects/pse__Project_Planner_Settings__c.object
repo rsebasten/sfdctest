@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings that determine the behavior of the project planners.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>pse__Assignment_Ordering__c</fullName>
+        <defaultValue>&quot;name&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting defines the API name of a field to order assignments by and, optionally, the direction (ASC or DESC). Assignments always appear above held resource requests.</inlineHelpText>
+        <label>Assignment Ordering</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Assignment_Tooltip_Field_Set__c</fullName>
+        <defaultValue>&quot;Assignment_Tooltip_Field_Set&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the field set that contains the fields to show as tooltips for assignments on the project planner. The field set must exist in the Assignment object.</inlineHelpText>
+        <label>Assignment Tooltip Field Set</label>
+        <length>90</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Columns_Field_Set__c</fullName>
+        <defaultValue>&quot;Project_Planner_Columns&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the field set that contains the columns to show on the project planner. The field set must exist in the Project object.</inlineHelpText>
+        <label>Columns Field Set</label>
+        <length>90</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Default_Assignment_Future_Days__c</fullName>
+        <defaultValue>270</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting defines the number of future days, from today, for which the enhanced Project Planner will display assignments. For example, enter 30 to display assignments that start or end within 30 days of today.</inlineHelpText>
+        <label>Default Future Days to Show Assignments</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Default_Assignment_Historical_Days__c</fullName>
+        <defaultValue>7</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting defines the number of days prior to today for which the enhanced Project Planner will display assignments. For example, enter 30 to display assignments that start or end in the preceding 30 days.</inlineHelpText>
+        <label>Default Past Days to Show Assignments</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Default_Resource_Image__c</fullName>
+        <defaultValue>&quot;/resource/Planners/resources/images/FForce/default_resource_image.png&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines a URL (absolute or relative) that points to the default image to use for resources without a profile photo. Image files of 22 pixels square work best.</inlineHelpText>
+        <label>Default Resource Image</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>pse__Preload_Limit__c</fullName>
+        <defaultValue>100</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting defines the maximum number of projects that load in the background when viewing large numbers of records. Entering a higher value results in fewer loading interruptions, but uses more memory.</inlineHelpText>
+        <label>Preload Limit</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Project_Tooltip_Field_Set__c</fullName>
+        <defaultValue>&quot;Project_Tooltip_Field_Set&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the field set that contains the fields to show as tooltips for projects on the project planner. The field set must exist in the Project object.</inlineHelpText>
+        <label>Project Tooltip Field Set</label>
+        <length>90</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Record_Load_Limit__c</fullName>
+        <defaultValue>25</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting defines the number of projects that display per request to the server. You should not adjust the Record Load Limit without first consulting Customer Support.</inlineHelpText>
+        <label>Record Load Limit</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Res_Request_Tooltip_Field_Set__c</fullName>
+        <defaultValue>&quot;Res_Request_Tooltip_Field_Set&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the field set that contains the fields to show as tooltips for resource requests on the project planner. The field set must exist in the Resource Request object.</inlineHelpText>
+        <label>Resource Request Tooltip Field Set</label>
+        <length>90</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Resource_Request_Ordering__c</fullName>
+        <defaultValue>&quot;name&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting defines the API name of a field to order held resource requests by and, optionally, the direction (ASC or DESC). Held resource requests always appear below assignments.</inlineHelpText>
+        <label>Resource Request Ordering</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Restrict_Editing_Past_Dates__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If selected, you can edit Project Planner assignment and schedule hours in the past. The default value is unselected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, you can edit Project Planner assignment and schedule hours in the past. The default value is unselected.</inlineHelpText>
+        <label>Restrict Editing Past Dates</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Save_Column_Prefs__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, customizations to width, order, and visibility of columns in the Project Planner will be remembered per user.</inlineHelpText>
+        <label>Save Column Preferences</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Use_V2_Planner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting determines whether your users see the enhanced (new) or classic Project Planner.</inlineHelpText>
+        <label>Use New Project Planner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__require_staffing_permission__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting determines whether or not your users will require a permission control, with the Staffing checkbox selected, before they can edit schedules on the enhanced Project Planner.</inlineHelpText>
+        <label>Edit Requires Staffing Permission</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Planners - Project</label>
+    <visibility>Public</visibility>
+</CustomObject>

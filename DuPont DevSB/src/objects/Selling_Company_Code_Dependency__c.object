@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This Holds all the dependent field values on Selling Company Code.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Customer_Currency__c</fullName>
+        <description>Customer&apos;s currency for a sales area. This currency will be used to settle the customer&apos;s charges for the given sales organization.</description>
+        <externalId>false</externalId>
+        <label>Billing Currency</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_key__c</fullName>
+        <description>To store Group key.</description>
+        <externalId>false</externalId>
+        <label>Group key</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Cred_rep_grp__c</fullName>
+        <description>Credit representative group: The Credit Representative Group code corresponds to a person in charge of Credit Management for the Customer</description>
+        <externalId>false</externalId>
+        <label>Proposed Cred.rep.grp</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Credit_Limit_Currency_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Credit Limit Currency Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SBU__c</fullName>
+        <externalId>false</externalId>
+        <label>SBU</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Org_Code__c</fullName>
+        <description>Sales Org Code based on selected Selling Company Code and SBU</description>
+        <externalId>false</externalId>
+        <label>Sales Org Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Selling_Company_Code__c</fullName>
+        <description>Controlling Field</description>
+        <externalId>false</externalId>
+        <label>Selling Company Code</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Business__c</fullName>
+        <description>To store Sub Business information based on selling company code</description>
+        <externalId>false</externalId>
+        <label>Sub-Business</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_Category__c</fullName>
+        <description>Classification of companies according to tax aspects.</description>
+        <externalId>false</externalId>
+        <label>Tax Category</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>COB Selling Company Code Dependencies</label>
+    <visibility>Public</visibility>
+</CustomObject>

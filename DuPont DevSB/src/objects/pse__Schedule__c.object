@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>pse__ScheduleHelp</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Represents start and end dates and weekly working hours for an assignment. You enter schedule details when you create an assignment, which also creates an associated schedule record. Although schedule records have the fields Scheduled Hours and Scheduled Days, these are not intended for users to enter time directly. Their values are system-generated based on schedule dates, patterns, and exceptions. Specific deviations from schedules are represented as schedule exceptions.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Action_Force_Schedule_Refresh__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked on save, refreshes Scheduled Hours, Assignment Projected Revenue and Est Vs Actuals records related to Schedule/Assignment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked on save, refreshes Scheduled Hours, Assignment Projected Revenue and Est Vs Actuals records related to Schedule/Assignment.</inlineHelpText>
+        <label>Action: Force Schedule Refresh</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>pse__Friday_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Friday Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Monday_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Monday Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Saturday_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Saturday Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Scheduled_Days__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of days scheduled</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days scheduled</inlineHelpText>
+        <label>Scheduled Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Scheduled_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total number of hours scheduled</inlineHelpText>
+        <label>Scheduled Hours</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>pse__Sunday_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sunday Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Thursday_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Thursday Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Tuesday_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Tuesday Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Wednesday_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Wednesday Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Week_Total_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total of the daily hours</description>
+        <externalId>false</externalId>
+        <formula>pse__Sunday_Hours__c + pse__Monday_Hours__c + pse__Tuesday_Hours__c + pse__Wednesday_Hours__c + pse__Thursday_Hours__c + pse__Friday_Hours__c + pse__Saturday_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Week Total Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Schedule</label>
+    <listViews>
+        <fullName>pse__All</fullName>
+        <columns>NAME</columns>
+        <columns>pse__Start_Date__c</columns>
+        <columns>pse__End_Date__c</columns>
+        <columns>pse__Sunday_Hours__c</columns>
+        <columns>pse__Monday_Hours__c</columns>
+        <columns>pse__Tuesday_Hours__c</columns>
+        <columns>pse__Wednesday_Hours__c</columns>
+        <columns>pse__Thursday_Hours__c</columns>
+        <columns>pse__Friday_Hours__c</columns>
+        <columns>pse__Saturday_Hours__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>Schedule{000000}</displayFormat>
+        <label>Schedule Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Schedules</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>pse__Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Sunday_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Monday_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Tuesday_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Wednesday_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Thursday_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Friday_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Saturday_Hours__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>pse__Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>pse__End_Date__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>pse__Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>pse__End_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>pse__PSE_Member_Share__c</fullName>
+        <label>PSE Member Share</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>pse__PSE_PM_Share__c</fullName>
+        <label>PSE PM Share</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>pse__Check_End_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>pse__End_Date__c &lt;  pse__Start_Date__c</errorConditionFormula>
+        <errorDisplayField>pse__End_Date__c</errorDisplayField>
+        <errorMessage>End date cannot occur before start date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>pse__Check_Hours</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(pse__Sunday_Hours__c &lt; 0, pse__Sunday_Hours__c &gt; 24, pse__Monday_Hours__c &lt; 0, pse__Monday_Hours__c &gt; 24, pse__Tuesday_Hours__c &lt; 0, pse__Tuesday_Hours__c &gt; 24, pse__Wednesday_Hours__c &lt; 0, pse__Wednesday_Hours__c &gt; 24, pse__Thursday_Hours__c &lt; 0, pse__Thursday_Hours__c &gt; 24, pse__Friday_Hours__c &lt; 0, pse__Friday_Hours__c &gt; 24, pse__Saturday_Hours__c &lt; 0, pse__Saturday_Hours__c &gt; 24)</errorConditionFormula>
+        <errorMessage>Hours cannot be negative or greater than 24.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>pse__Zero_Schedule</fullName>
+        <availability>online</availability>
+        <description>Click to zero out the hours on the schedule associated with the assignment.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Zero Schedule</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__AssignmentScheduleZeroFromSchedule</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

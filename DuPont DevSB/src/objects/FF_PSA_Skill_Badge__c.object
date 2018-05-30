@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>FF_PSA_Certification__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Certification</label>
+        <referenceTo>pse__Skill__c</referenceTo>
+        <relationshipLabel>Certifications</relationshipLabel>
+        <relationshipName>Skill_Badges</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Skill_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Skill Name</label>
+        <referenceTo>pse__Skill__c</referenceTo>
+        <relationshipLabel>Skills</relationshipLabel>
+        <relationshipName>Skills</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Skill_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Skill Rating</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Skill Badge</label>
+    <nameField>
+        <label>Badge Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Skill Badges</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>FF_PSA_Badge_Certification</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(NOT(ISPICKVAL(FF_PSA_Certification__r.pse__Group__c,&apos;Badge&apos;)),true,False)</errorConditionFormula>
+        <errorMessage>Certification Should be a Master Badge</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Badge_Skill</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF((ISPICKVAL( FF_PSA_Skill_Name__r.pse__Group__c ,&apos;Badge&apos;)),true,False)</errorConditionFormula>
+        <errorMessage>Skill Should Not be a Master Badge</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Badge_Skill_Rating</fullName>
+        <active>true</active>
+        <errorConditionFormula>if(((FF_PSA_Skill_Rating__c&lt;1) ||(FF_PSA_Skill_Rating__c&gt;5)),true,false)</errorConditionFormula>
+        <errorMessage>Please Enter Skill Rating Greater Than 0 And Less Than 6</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

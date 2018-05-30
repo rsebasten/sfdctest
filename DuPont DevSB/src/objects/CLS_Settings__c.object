@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings for Customer Loyalty Survey CLS</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CSAT_DaysBack__c</fullName>
+        <defaultValue>90</defaultValue>
+        <description>Number of days to pull the feedback from CSAT.   If survey was continued at a later date the latest date on the CSAT side is not refreshed.  because of this s window of 30/60+ back-days is recommended.  This will however have a impact on the size.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days to pull the feedback from CSAT.   If survey was continued at a later date the latest date on the CSAT side is not refreshed.  because of this a window of 30+ back-days is recommended.  This will however have a impact on the size.</inlineHelpText>
+        <label>CSAT DaysBack</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSAT_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>CSAT Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSAT_FilterId__c</fullName>
+        <description>Default CSAT FilterId</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default CSAT FilterId</inlineHelpText>
+        <label>CSAT FilterId</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSAT_SurveyId__c</fullName>
+        <description>Default CSAT Survey Id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default CSAT Survey Id</inlineHelpText>
+        <label>CSAT SurveyId</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GetFeedbackBatchCount__c</fullName>
+        <description>Max Number of batches to run.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Max Number of batches to run.  default (200)</inlineHelpText>
+        <label>GetFeedbackBatchCount</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>CLS_Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

@@ -1,0 +1,4002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>Customer Support</fullName>
+        <description>Customer Support including order inquiry management &amp; complaints</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Close</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigate-Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Resolve</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolve-Escalated</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Service Management</fullName>
+        <description>Service &amp; Support Case Mangement (no Resolve-escalated status needed)</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Close</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigate-Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolve</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Approval_Status__c</fullName>
+        <description>Approval status retrieved from same field in Account object</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Approval_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account.Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Sales_Area__c</fullName>
+        <description>The DuPont Sales District, Zone or &quot;area&quot; in which the account of this resides. Also allows allow territory management team to control security and sharing among multiple businesses.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Sales_Area__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Sales Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Sub_Type_2__c</fullName>
+        <description>SubType 2 value retrieved from same field in Account object</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Sub_Type_2__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account.SubType 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Sub_Type__c</fullName>
+        <description>SubType value retrieve from Account object</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Account_Sub_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account.SubType</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Id__c</fullName>
+        <description>When Status field on a particular Task is completed, a trigger updates the case with a task id . E.g. BI EMEA complaint uses this associate with an email alert to the case owner.</description>
+        <externalId>false</externalId>
+        <label>Activity Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alt_Contact_Email__c</fullName>
+        <description>The email address associated with the Alternate Contact for this Case.</description>
+        <externalId>false</externalId>
+        <label>Alt Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alt_Contact__c</fullName>
+        <description>A back-up /additional contact for this case</description>
+        <externalId>false</externalId>
+        <label>Alt Contact</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alt_Phone__c</fullName>
+        <description>A back-up /additional contact phone # for a this case</description>
+        <externalId>false</externalId>
+        <label>Alt Phone #</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <description>The status of the approval process associated with this case</description>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>In Approval</fullName>
+                    <default>false</default>
+                    <label>In Approval</label>
+                </value>
+                <value>
+                    <fullName>Not Submitted</fullName>
+                    <default>false</default>
+                    <label>Not Submitted</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assessment_Time__c</fullName>
+        <description>To calcuate the days used in assessment stage
+
+(10/12/2017) - Removed &quot;Assessment_Date__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>Investigation_Date__c - NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assessment Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Batch_Quantity__c</fullName>
+        <description>Amount being complained about</description>
+        <externalId>false</externalId>
+        <label>Batch Quantity</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_Time__c</fullName>
+        <description>Hours to resolve Case with no Work Order</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hours to resolve Case with no Work Order</inlineHelpText>
+        <label>Call Time</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_SubType__c</fullName>
+        <description>Subject or sub-category of complaint or request.  Dependent on Case Type.</description>
+        <externalId>false</externalId>
+        <label>Case SubType</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                    <label>Application</label>
+                </value>
+                <value>
+                    <fullName>Network</fullName>
+                    <default>false</default>
+                    <label>Network</label>
+                </value>
+                <value>
+                    <fullName>Statement of Work</fullName>
+                    <default>false</default>
+                    <label>Statement of Work</label>
+                </value>
+                <value>
+                    <fullName>User Support</fullName>
+                    <default>false</default>
+                    <label>User Support</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Complaint</controllingFieldValue>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>Application</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>License Request</controllingFieldValue>
+                <valueName>Statement of Work</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>Network</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>User Support</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <description>The date when the case was fully closed</description>
+        <externalId>false</externalId>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Close_Lag_Time__c</fullName>
+        <description>Difference in Close Date and Respond to Customer Date
+
+(10/12/2017) - Removed &quot;Respond_To_Customer_Date__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>Close_Date__c - NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Close Lag Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Close_Type__c</fullName>
+        <description>Used to capture additional information on the Close of a Case (eg: Unresolved)</description>
+        <externalId>false</externalId>
+        <label>Close Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Customer Not Contacted</fullName>
+                    <default>false</default>
+                    <label>Customer Not Contacted</label>
+                </value>
+                <value>
+                    <fullName>Effective</fullName>
+                    <default>false</default>
+                    <label>Effective</label>
+                </value>
+                <value>
+                    <fullName>Not Effective</fullName>
+                    <default>false</default>
+                    <label>Not Effective</label>
+                </value>
+                <value>
+                    <fullName>Partially accepted</fullName>
+                    <default>false</default>
+                    <label>Partially accepted</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Unresolved</fullName>
+                    <default>false</default>
+                    <label>Unresolved</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ClosedDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactFax</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactMobile</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Contact_Role__c</fullName>
+        <description>Describes the role of the contact opening the case</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Contact.Role__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CostTrackingCount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>CostTrackingCount__c : Number of related Cost Tracking records</description>
+        <externalId>false</externalId>
+        <label>Cost Tracking Count</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CreatedByMe__c</fullName>
+        <description>Formula field to indicate whether a case was created by the current user. Useful for list views</description>
+        <externalId>false</externalId>
+        <formula>CreatedBy.Username = $User.Username</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CreatedByMe</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Created_In_SF1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field that can be set when a new record is created in the SF1 mobile app. Setting the field should be done in a mobile quick action.</description>
+        <externalId>false</externalId>
+        <label>Created In SF1</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Customer_Complaint_Number__c</fullName>
+        <description>The complaint ID from the customers&apos; system</description>
+        <externalId>false</externalId>
+        <label>Customer Complaint Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <description>The date when the case was received from the customer</description>
+        <externalId>false</externalId>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <inlineHelpText>Used to capture the details of the Case.</inlineHelpText>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Dimension__c</fullName>
+        <description>Formula field that calculates the dimension based on fields Length and Width.
+
+(10/12/2017) - Removed &quot;Length__c&quot; and &quot;Width__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dimension</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <description>Date which this Case is expected or requested to be resolved or completed</description>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ERP_CustomerLanguage__c</fullName>
+        <description>Mapped to Account&apos;s Language Field ,Created as a part of req.106</description>
+        <externalId>false</externalId>
+        <formula>Account.fERP_Language__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_DistChannelCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Dist. Channel Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_DistChannelDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Dist. Channel Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_DivisionCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Division Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_DivisionDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Division Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_SalesOrgCode__c</fullName>
+        <description>Mapped to Account &apos;s Sales Org. Code</description>
+        <externalId>false</externalId>
+        <label>Sales Org. Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_SalesOrgDescription__c</fullName>
+        <description>Mapped to Account Sales Org Description</description>
+        <externalId>false</externalId>
+        <label>Sales Org Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EntitlementId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Error_Code__c</fullName>
+        <description>Error identification code (i.e. machine error code)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Error identification code (i.e. machine error code)</inlineHelpText>
+        <label>Error Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>First_Close_Age__c</fullName>
+        <description>To display the duration when the case was closed for the first time</description>
+        <externalId>false</externalId>
+        <label>First Close Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HasAttachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used by the trigger to check whether there is an Attachment attached to the record.</description>
+        <externalId>false</externalId>
+        <label>HasAttachment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Investigation_Date__c</fullName>
+        <description>The date that the Investigation began</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that the Investigation began</inlineHelpText>
+        <label>Investigation Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Investigation_sample_Time__c</fullName>
+        <description>measure of days for investigation based upon the date the sample was received
+
+(10/12/2017) - Removed &quot;Sample_Received_Date__c&quot; and &quot;Investigation_Completion_Date__c&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Investigation sample Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsClosedOnCreate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsEscalated</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsStopped</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Legacy_Case_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy Case Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Customer_ID__c</fullName>
+        <description>Used as legacy reference and as primary key for migration to link Case data to associated Account and  Contact data for lookup.</description>
+        <externalId>false</externalId>
+        <label>Legacy Customer ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatus</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatusIcon</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Open_Lag_Time__c</fullName>
+        <description>Open Lag Time: formula calculates the number of days a closed case was open since Investigation Date or the number of days an open case has been open since the Investigation Date. The formula returns zero if the case has been open for less than 24 hours.</description>
+        <externalId>false</externalId>
+        <formula>IF( IsClosed, 
+ROUND(Close_Date__c - Investigation_Date__c, 0), ROUND((TODAY() - Investigation_Date__c),0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open Lag Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Original_Shipping_Address__c</fullName>
+        <description>Populates case Shipping address from Account Shipping address</description>
+        <externalId>false</externalId>
+        <formula>Account.ShippingStreet&amp;&quot;,&quot;&amp; Account.ShippingCity&amp;&quot;,&quot;&amp; Account.ShippingState&amp;&quot;,&quot;&amp; Account.ShippingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Original Shipping Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owning_Organization__c</fullName>
+        <description>SBU(Strategic Business Unit)_BU(Business Unit)_Sub-BU(Market or business)</description>
+        <externalId>false</externalId>
+        <label>Owning Organization</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Owning_SBU__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>DSS-CKM</fullName>
+                    <default>false</default>
+                    <label>DSS-CKM</label>
+                </value>
+                <value>
+                    <fullName>DSS-L&amp;D</fullName>
+                    <default>false</default>
+                    <label>DSS-L&amp;D</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Sustainable Solutions</controllingFieldValue>
+                <valueName>DSS-CKM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sustainable Solutions</controllingFieldValue>
+                <valueName>DSS-L&amp;D</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Owning_SBU__c</fullName>
+        <description>Business responsible for the case resolution</description>
+        <externalId>false</externalId>
+        <label>Owning SBU</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Marketing &amp; Sales</fullName>
+                    <default>false</default>
+                    <label>Marketing &amp; Sales</label>
+                </value>
+                <value>
+                    <fullName>Sustainable Solutions</fullName>
+                    <default>false</default>
+                    <label>Sustainable Solutions</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Preventive_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Preventive Action</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Problem_Description__c</fullName>
+        <description>Free form text box to document complaint details</description>
+        <externalId>false</externalId>
+        <label>Problem Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProductId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Category__c</fullName>
+        <description>The highest level Product &quot;Category&quot; - this field is the parent of dependent picklist Product Subcategory</description>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Selected__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Selected</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <description>This is the Salesforce.com Program implementation. Used for defining or for reports - to identify the records for a specific program.</description>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>DSS-CKM</fullName>
+                    <default>false</default>
+                    <label>DSS-CKM</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Qty__c</fullName>
+        <description>Complaint Quantity</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Related_Material__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The primary Material associated with the case (Lookup to Material Object)</description>
+        <externalId>false</externalId>
+        <label>Related Material</label>
+        <referenceTo>Material__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_Quality__c</fullName>
+        <description>An indicator of the emotional state the caller was in when the case was documented</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An indicator of the emotional state the caller was in when the case was documented</inlineHelpText>
+        <label>Relationship Quality</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>true</default>
+                    <label>Neutral</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resolution_Description__c</fullName>
+        <description>Free form text box to document complaint resolution</description>
+        <externalId>false</externalId>
+        <label>Resolution Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resolved_Date__c</fullName>
+        <description>Date received response from investigator.</description>
+        <externalId>false</externalId>
+        <label>Resolved Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Response_Cycle_Time__c</fullName>
+        <description>Difference in Respond to Customer Date and Date Received
+
+(10/17/2017) - Removed &quot;Respond_To_Customer_Date__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL - Date_Received__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Response Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_Lag_Time__c</fullName>
+        <description>Difference between Respond to Customer Date and Investigation Completion Date
+
+
+(10/12/2017) - Removed &quot;Respond_To_Customer_Date__c&quot; and &quot;Investigation_Completion_Date__c&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Response Lag Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_Time__c</fullName>
+        <description>Calculates number of days from Investigate to Resolve for reporting
+(Resolved_Date - Investigation_Date)</description>
+        <externalId>false</externalId>
+        <formula>Resolved_Date__c -  Investigation_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days from Investigate to Resolve</inlineHelpText>
+        <label>Response Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Root_Cause__c</fullName>
+        <externalId>false</externalId>
+        <label>Root Cause Description</label>
+        <length>32000</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SF1_Submit_to_Queue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to enable the equivalent of the &quot;Submit to Queue&quot; custom javascript button when using the SF1 mobile app.  SF1 can set this field and then workflow logic can perform the submit to queue functionality.  The field is not accessed directly by end users.</description>
+        <externalId>false</externalId>
+        <label>Submit to Queue</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Available__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Identifies if a sample is available to be investigated</description>
+        <externalId>false</externalId>
+        <label>Sample Available</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_to_be_Returned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the sample has to be returned to the customer</description>
+        <externalId>false</externalId>
+        <label>Sample to be Returned</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SlaExitDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SlaStartDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SourceId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SpecialHandling__c</fullName>
+        <description>This Field is Mapped to Account&apos;s ERP_SpecialHandling__c field</description>
+        <externalId>false</externalId>
+        <formula>Account.ERP_SpecialHandling__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Special Handling</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions__c</fullName>
+        <description>Instructions over and above the problem description that can help describe or identify the issues related to the case/complaint for investigator or resolution</description>
+        <externalId>false</externalId>
+        <label>Special Instructions</label>
+        <length>32000</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StopStartDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Subreason1__c</fullName>
+        <description>Dependent on Case Reason: Sub-Reason1 is used to identify a service support problem or issue category</description>
+        <externalId>false</externalId>
+        <inlineHelpText>depends on Case Reason</inlineHelpText>
+        <label>Sub-Reason1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Reason</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>3rd Party Application</fullName>
+                    <default>false</default>
+                    <label>3rd Party Application</label>
+                </value>
+                <value>
+                    <fullName>Assessment Tool</fullName>
+                    <default>false</default>
+                    <label>Assessment Tool</label>
+                </value>
+                <value>
+                    <fullName>Checklist Setup</fullName>
+                    <default>false</default>
+                    <label>Checklist Setup</label>
+                </value>
+                <value>
+                    <fullName>Client Training</fullName>
+                    <default>false</default>
+                    <label>Client Training</label>
+                </value>
+                <value>
+                    <fullName>Content Issues</fullName>
+                    <default>false</default>
+                    <label>Content Issues</label>
+                </value>
+                <value>
+                    <fullName>Content Mgmt (Authoring Tool/CustomEase)</fullName>
+                    <default>false</default>
+                    <label>Content Mgmt (Authoring Tool/CustomEase)</label>
+                </value>
+                <value>
+                    <fullName>Contractor Company Support</fullName>
+                    <default>false</default>
+                    <label>Contractor Company Support</label>
+                </value>
+                <value>
+                    <fullName>Course Content Issue</fullName>
+                    <default>false</default>
+                    <label>Course Content Issue</label>
+                </value>
+                <value>
+                    <fullName>Course Data Sync Issue</fullName>
+                    <default>false</default>
+                    <label>Course Data Sync Issue</label>
+                </value>
+                <value>
+                    <fullName>Course Installer</fullName>
+                    <default>false</default>
+                    <label>Course Installer</label>
+                </value>
+                <value>
+                    <fullName>Course License Key Update</fullName>
+                    <default>false</default>
+                    <label>Course License Key Update</label>
+                </value>
+                <value>
+                    <fullName>Course Preview Issue</fullName>
+                    <default>false</default>
+                    <label>Course Preview Issue</label>
+                </value>
+                <value>
+                    <fullName>Data Entry</fullName>
+                    <default>false</default>
+                    <label>Data Entry</label>
+                </value>
+                <value>
+                    <fullName>Email Notification</fullName>
+                    <default>false</default>
+                    <label>Email Notification</label>
+                </value>
+                <value>
+                    <fullName>Export Routine</fullName>
+                    <default>false</default>
+                    <label>Export Routine</label>
+                </value>
+                <value>
+                    <fullName>General Administration</fullName>
+                    <default>false</default>
+                    <label>General Administration</label>
+                </value>
+                <value>
+                    <fullName>Hosted Site Form</fullName>
+                    <default>false</default>
+                    <label>Hosted Site Form</label>
+                </value>
+                <value>
+                    <fullName>Implementation Project</fullName>
+                    <default>false</default>
+                    <label>Implementation Project</label>
+                </value>
+                <value>
+                    <fullName>Import Routine</fullName>
+                    <default>false</default>
+                    <label>Import Routine</label>
+                </value>
+                <value>
+                    <fullName>Internal Tasks</fullName>
+                    <default>false</default>
+                    <label>Internal Tasks</label>
+                </value>
+                <value>
+                    <fullName>Iso Container</fullName>
+                    <default>false</default>
+                    <label>Iso Container</label>
+                </value>
+                <value>
+                    <fullName>License Concern</fullName>
+                    <default>false</default>
+                    <label>License Concern</label>
+                </value>
+                <value>
+                    <fullName>License Generation</fullName>
+                    <default>false</default>
+                    <label>License Generation</label>
+                </value>
+                <value>
+                    <fullName>License Keys</fullName>
+                    <default>false</default>
+                    <label>License Keys</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Outage</fullName>
+                    <default>false</default>
+                    <label>Outage</label>
+                </value>
+                <value>
+                    <fullName>Password Reset</fullName>
+                    <default>false</default>
+                    <label>Password Reset</label>
+                </value>
+                <value>
+                    <fullName>Report Management</fullName>
+                    <default>false</default>
+                    <label>Report Management</label>
+                </value>
+                <value>
+                    <fullName>Settings &amp; Configuration</fullName>
+                    <default>false</default>
+                    <label>Settings &amp; Configuration</label>
+                </value>
+                <value>
+                    <fullName>Site Administration</fullName>
+                    <default>false</default>
+                    <label>Site Administration</label>
+                </value>
+                <value>
+                    <fullName>Site Shutdown</fullName>
+                    <default>false</default>
+                    <label>Site Shutdown</label>
+                </value>
+                <value>
+                    <fullName>Upgrade to DES</fullName>
+                    <default>false</default>
+                    <label>Upgrade to DES</label>
+                </value>
+                <value>
+                    <fullName>UPS  Related</fullName>
+                    <default>false</default>
+                    <label>UPS  Related</label>
+                </value>
+                <value>
+                    <fullName>User Data Import</fullName>
+                    <default>false</default>
+                    <label>User Data Import</label>
+                </value>
+                <value>
+                    <fullName>User Guide Error</fullName>
+                    <default>false</default>
+                    <label>User Guide Error</label>
+                </value>
+                <value>
+                    <fullName>User Guide Information Error</fullName>
+                    <default>false</default>
+                    <label>User Guide Information Error</label>
+                </value>
+                <value>
+                    <fullName>User Management</fullName>
+                    <default>false</default>
+                    <label>User Management</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <controllingFieldValue>Quality Product</controllingFieldValue>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES MCPS</controllingFieldValue>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>Software</controllingFieldValue>
+                <controllingFieldValue>Training.dupont.com</controllingFieldValue>
+                <controllingFieldValue>CoastalFlix</controllingFieldValue>
+                <controllingFieldValue>Consumables</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Customer Abuse</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>Datapro MCPS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <controllingFieldValue>DES MCPS</controllingFieldValue>
+                <controllingFieldValue>Visit - In House</controllingFieldValue>
+                <controllingFieldValue>Visit - Site</controllingFieldValue>
+                <controllingFieldValue>Visual Defect</controllingFieldValue>
+                <controllingFieldValue>Documentation</controllingFieldValue>
+                <controllingFieldValue>DVD</controllingFieldValue>
+                <controllingFieldValue>Hardware</controllingFieldValue>
+                <controllingFieldValue>Lab Services Request</controllingFieldValue>
+                <controllingFieldValue>Result Interpretation</controllingFieldValue>
+                <controllingFieldValue>Scorm</controllingFieldValue>
+                <controllingFieldValue>Scorm Wrapper</controllingFieldValue>
+                <controllingFieldValue>Product and Packaging</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quality Product</controllingFieldValue>
+                <controllingFieldValue>DVD</controllingFieldValue>
+                <valueName>3rd Party Application</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quality Product</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <valueName>Contractor Company Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Content Mgmt (Authoring Tool/CustomEase)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <controllingFieldValue>Scorm</controllingFieldValue>
+                <controllingFieldValue>Scorm Wrapper</controllingFieldValue>
+                <valueName>Course Content Issue</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Email Notification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Export Routine</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <controllingFieldValue>Scorm</controllingFieldValue>
+                <controllingFieldValue>Scorm Wrapper</controllingFieldValue>
+                <valueName>Hosted Site Form</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Import Routine</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>License Concern</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES MCPS</controllingFieldValue>
+                <controllingFieldValue>Training.dupont.com</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>Datapro MCPS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <controllingFieldValue>DES MCPS</controllingFieldValue>
+                <controllingFieldValue>Scorm Wrapper</controllingFieldValue>
+                <valueName>Outage</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Report Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Settings &amp; Configuration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <controllingFieldValue>Scorm Wrapper</controllingFieldValue>
+                <valueName>Site Shutdown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <valueName>Upgrade to DES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>User Data Import</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Hosted</controllingFieldValue>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>User Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES MCPS</controllingFieldValue>
+                <controllingFieldValue>DES MCPS</controllingFieldValue>
+                <valueName>Course Installer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES MCPS</controllingFieldValue>
+                <controllingFieldValue>DES MCPS</controllingFieldValue>
+                <valueName>Course License Key Update</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES MCPS</controllingFieldValue>
+                <controllingFieldValue>DES MCPS</controllingFieldValue>
+                <valueName>License Generation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES MCPS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>Datapro MCPS</controllingFieldValue>
+                <controllingFieldValue>DES MCPS</controllingFieldValue>
+                <valueName>Site Administration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>Training.dupont.com</controllingFieldValue>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <controllingFieldValue>Scorm</controllingFieldValue>
+                <controllingFieldValue>Scorm Wrapper</controllingFieldValue>
+                <valueName>Internal Tasks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CES Non-Hosted</controllingFieldValue>
+                <controllingFieldValue>CoastalFlix</controllingFieldValue>
+                <valueName>License Keys</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Training.dupont.com</controllingFieldValue>
+                <valueName>Course Preview Issue</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <valueName>Client Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CTS</controllingFieldValue>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Implementation Project</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <valueName>Checklist Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <valueName>Data Entry</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <valueName>General Administration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Datapro</controllingFieldValue>
+                <valueName>Password Reset</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DES Hosted</controllingFieldValue>
+                <valueName>Assessment Tool</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Documentation</controllingFieldValue>
+                <valueName>User Guide Error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Documentation</controllingFieldValue>
+                <valueName>User Guide Information Error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DVD</controllingFieldValue>
+                <valueName>Content Issues</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hardware</controllingFieldValue>
+                <valueName>UPS  Related</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Scorm Wrapper</controllingFieldValue>
+                <valueName>Course Data Sync Issue</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SuppliedCompany</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedName</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Total_Qty__c</fullName>
+        <description>(10/12/2017) - Removed &quot;Complaint_Qty__c&quot; and &quot;Conv_Factor__c&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>fAccount_Global_Sales_Area__c</fullName>
+        <description>The DuPont Sales District, Zone or &quot;area&quot; in which the account of this resides.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Global_Sales_Area__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Global Sales Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fAccount_Region__c</fullName>
+        <description>Region where customer is located.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Region__c)</formula>
+        <inlineHelpText>Region where customer is located.</inlineHelpText>
+        <label>Account Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCS_Case_attached_to_Parent_Account__c</fullName>
+        <description>Case should be assigned to a Child Account before Closing the Case</description>
+        <externalId>false</externalId>
+        <formula>IF(Account.RecordTypeId == $Label.CS_General_Account_Record_Type_Id, IMAGE(&apos;/resource/CS_ExclamationMark&apos;, &quot;Case should be assigned to a Child Account before Closing the Case&quot;, 20, 20),&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Case should be assigned to a Child Account before Closing the Case</inlineHelpText>
+        <label>Parent Acct?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCS_Email_Sig1__c</fullName>
+        <description>(10/12/2017) - Removed &quot;CustomerServiceCenter__c&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>$Label.CS_Email_Address_IND_Service</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>fCS_Email_Sig1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCS_Email_Sig2__c</fullName>
+        <description>(10/12/2017) - Removed &quot;CustomerServiceCenter__c&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>$Label.CS_Email_Address_IND_Internal</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>fCS_Email_Sig2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCS_Email_Sig__c</fullName>
+        <description>(10/16/2017) - Removed &quot;CustomerServiceCenter__c&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>$Label.CS_Email_Address_IND_Order</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>fCS_Email_Sig</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCaseAgeSymbol__c</fullName>
+        <description>Created as per req.133, it changes the color based on below conditions 
+If case age is between 0-12 hrs make an indicator color to Green. 
+If case age is between 12-24 hrs make an indicator color to Yellow. 
+If case age is above 24 hrs make an indicator color to Red.</description>
+        <externalId>false</externalId>
+        <formula>IF(fCaseAge__c &gt;= 25, IMAGE(&apos;/resource/CS_RedFlag&apos;, &quot;red&quot;, 20, 50),
+IF(fCaseAge__c &gt;= 13, IMAGE(&apos;/resource/CS_YellowFlag&apos;, &quot;yellow&quot;, 20, 50),
+IF(fCaseAge__c &gt;= 0, IMAGE(&apos;/resource/CS_GreeFlag&apos;, &quot;green&quot;, 20, 50),
+IMAGE(&apos;/resource/CS_RedFlag&apos;, &quot;red&quot;, 20, 50))))</formula>
+        <label>Case-Age</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCaseAge__c</fullName>
+        <description>This Field has been created to calculate the time difference between the day the case was closed and the date case was created. created as a part of Request 93.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(ClosedDate), (FLOOR(( NOW()- CreatedDate)*24)) 
++
+ROUND((((
+((Now() - CreatedDate)*24)-
+FLOOR((Now() - CreatedDate)*24))
+*60)/100),2), 
+ (FLOOR(( ClosedDate- CreatedDate)*24)) 
++
+ROUND((((
+((ClosedDate - CreatedDate)*24)-
+FLOOR((ClosedDate - CreatedDate)*24))
+*60)/100),2))</formula>
+        <label>Case Age (HR:MM)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCredit_Status__c</fullName>
+        <description>Status based on Financial Risk Category (from Account):
+High = Red; Medium = Yellow; Low = Green</description>
+        <externalId>false</externalId>
+        <formula>IMAGE(CASE( Account.Financial_Risk_Category__c ,&quot;Medium Risk&quot;,&quot;/servlet/servlet.FileDownload?file=01530000000LgSA&quot;,&quot;Yellow&quot;,&quot;Low Risk&quot;,&quot;/servlet/servlet.FileDownload?file=01530000000LgS5&quot;,&quot;Green&quot;,&quot;High Risk&quot;,&quot;/servlet/servlet.FileDownload?file=01530000000LgS0&quot;,&quot;/s.gif&quot;),&quot;StatusImg&quot;)</formula>
+        <inlineHelpText>Status based on Financial Risk Category (Red=High; Yellow=Medium; Green=Low)</inlineHelpText>
+        <label>Credit Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCustomer_Segment__c</fullName>
+        <description>Primary Customer Segment we have decided to put in the Account this Case belongs to (e.g to drive our service levels accordingly)</description>
+        <externalId>false</externalId>
+        <formula>Text(Account.Customer_Segment__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Segment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCycle_Time__c</fullName>
+        <description>Case Cycle time from when the Customer notified DuPont (Date Received) of the Complaint to the Approval Date (Resolved Date).
+(formula :  Resolved_Date__c - Date_Received__c )</description>
+        <externalId>false</externalId>
+        <formula>Resolved_Date__c  -  Date_Received__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fDate_Entered_Year__c</fullName>
+        <description>to get year of Date Entered, for YOY comparison purpose.
+
+(10/16/2017) - Removed &quot;Date_Entered__c&quot; reference as part of remediation effort</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Entered(Year)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fERP_CustomerGroup9__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.ERP_CustomerGroup9__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Group 9</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fERP_DistChannel__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ERP_DistChannelCode__c &lt;&gt; null, ERP_DistChannelCode__c &amp; &apos; (&apos; &amp; ERP_DistChannelDescription__c &amp; &apos;)&apos; , ERP_DistChannelCode__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dist Channel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fERP_Division__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ERP_DivisionCode__c &lt;&gt; null,  ERP_DivisionCode__c &amp; &apos; (&apos; &amp; ERP_DivisionDescription__c &amp; &apos;)&apos; , ERP_DivisionCode__c)</formula>
+        <label>Division</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fERP_SalesOrg__c</fullName>
+        <description>Concatenation of Sales Org. Code and Sales Org. Description</description>
+        <externalId>false</externalId>
+        <formula>IF(ERP_SalesOrgCode__c &lt;&gt; null, ERP_SalesOrgCode__c &amp; &apos;(&apos; &amp; ERP_SalesOrgDescription__c &amp; &apos;)&apos;, ERP_SalesOrgCode__c)</formula>
+        <label>Sales Org.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fEntryLagTime__c</fullName>
+        <description>measure of days between Date a case is received until it is entered for follow-up
+
+(10/16/2017) - Removed &quot;Date_Entered__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL - Date_Received__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Date Entered - Date Received</inlineHelpText>
+        <label>Entry Lag Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fId18__c</fullName>
+        <description>18 digit unique id for record. Same Id used for dataloader and other API tools.</description>
+        <externalId>false</externalId>
+        <formula>Id
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)</formula>
+        <inlineHelpText>18 digit unique id for record. Same Id used for dataloader and other API tools.</inlineHelpText>
+        <label>Id18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fOverall_Conclude_Cycle_Time__c</fullName>
+        <description>Case Overall Cycle time from when the Customer notified DuPont (Date Received) of the Complaint to the Approval Date (Investigation Completion Date)
+
+(10/12/2017) - Removed &quot;Investigation_Completion_Date__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL - Date_Received__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Conclude Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fOverall_Cycle_Time__c</fullName>
+        <description>Case Overall Cycle time from when the Customer notified DuPont (Date Received) of the Complaint to it is closed(Close Date)</description>
+        <externalId>false</externalId>
+        <formula>Close_Date__c - Date_Received__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fProduct_Product_Family__c</fullName>
+        <description>The Product Family value from the Related Product
+
+(10/12/2017) - Removed &quot;Related_Product__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Product Family value from the Related Product</inlineHelpText>
+        <label>Product.Product Family</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fProduct_Product_L4__c</fullName>
+        <description>The Product L4 from the Related Product
+
+(10/13/2017) - Removed &quot;Related_Product__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Product L4 from the Related Product</inlineHelpText>
+        <label>Product.Product L4</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fReason_Level_1__c</fullName>
+        <description>The Top Level Reason in the Reason hierarchy</description>
+        <externalId>false</externalId>
+        <formula>primaryReason__r.ReasonL1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reason Level 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fReason_Level_2__c</fullName>
+        <description>Pulls from the Reason Object - the Level 2 item</description>
+        <externalId>false</externalId>
+        <formula>primaryReason__r.ReasonL2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Auto populated from the Reason Object - Level 2</inlineHelpText>
+        <label>Reason Level 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fReason_Level_3__c</fullName>
+        <externalId>false</externalId>
+        <formula>primaryReason__r.ReasonL3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reason Level 3</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fReason_Level_4__c</fullName>
+        <externalId>false</externalId>
+        <formula>primaryReason__r.ReasonL4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reason Level 4</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fResolutionTime__c</fullName>
+        <description>Calculates number of days from Resolve to Close for reporting
+(Close Date - Resolved Date)</description>
+        <externalId>false</externalId>
+        <formula>Close_Date__c - Resolved_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days from Resolve to Close</inlineHelpText>
+        <label>Resolution Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fResolve_Time__c</fullName>
+        <description>measure of days between Date a case is approved until it is Resolved
+
+(10/12/2017) - Removed &quot;Investigation_Completion_Date__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>Resolved_Date__c - NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Resolve Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fSite_Investigation_Time__c</fullName>
+        <description>measure of days between Date a case is Entered until the investigation is approved
+
+(10/12/2017) - Removed &quot;Date_Entered__c&quot; and &quot;Investigation_Completion_Date__c&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site Investigation Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fTeam__c</fullName>
+        <description>(10/18/2017) - Removed &quot;Team__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Team</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fTime_to_Close__c</fullName>
+        <description>measure of days between Date a case is Entered until it is Closed
+
+(10/16/2017) - Removed &quot;Date_Entered__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>ABS( Close_Date__c - NULL )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time to Close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fTime_to_Resolve__c</fullName>
+        <description>measure of days between Date a case is Entered until it is Resolved
+
+(10/16/2017) - Removed &quot;Date_Entered__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>ABS( Resolved_Date__c - NULL )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time to Resolve</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>primaryReason__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Case Reason (Primary)</description>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Reason__c.IsSelectable__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Reason__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>DSS_CKM_Case_All</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>primaryReason__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>Investigation_Date__c</columns>
+        <columns>Resolved_Date__c</columns>
+        <columns>fAccount_Region__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>Resolution_Description__c</columns>
+        <columns>CASES.CLOSED</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.DSS_CKM_Case</value>
+        </filters>
+        <label>DSS CKM Case - All</label>
+        <language>en_US</language>
+        <sharedTo/>
+    </listViews>
+    <listViews>
+        <fullName>DSS_CKM_Cases_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS CKM Cases</label>
+        <queue>DSS_CKM_Cases</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_CKM_Completed_Cases_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS CKM Completed Cases</label>
+        <queue>DSS_CKM_Completed_Cases</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_CKM_DSS_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>primaryReason__c</columns>
+        <columns>NAME</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.DSS_CKM_Case</value>
+        </filters>
+        <filters>
+            <field>Owning_SBU__c</field>
+            <operation>equals</operation>
+            <value>Sustainable Solutions</value>
+        </filters>
+        <label>DSS CKM DSS Cases</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>DSS_CKM_M_S_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>primaryReason__c</columns>
+        <columns>NAME</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.DSS_CKM_Case</value>
+        </filters>
+        <filters>
+            <field>Owning_SBU__c</field>
+            <operation>equals</operation>
+            <value>Marketing &amp; Sales</value>
+        </filters>
+        <label>DSS CKM M&amp;S Cases</label>
+        <language>en_US</language>
+        <sharedTo/>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Case_Team_Open_Report</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.DSS_L_D_Case</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,In Progress,On Hold,Assess,Investigate,Investigate-Escalated,Waiting</value>
+        </filters>
+        <label>DSS Case Team Open Report</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Helpdesk_Applications_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS Helpdesk Applications</label>
+        <language>en_US</language>
+        <queue>DSS_Helpdesk_Applications</queue>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Helpdesk_Level_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.DSS_Internal_L_D_Case</value>
+        </filters>
+        <label>DSS Helpdesk Level 1</label>
+        <language>en_US</language>
+        <queue>DSS_Helpdesk_Level_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Helpdesk_Level_1_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS Helpdesk Level 1</label>
+        <queue>DSS_Helpdesk_Level_1</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Helpdesk_Level_1_Open_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>,New,In Progress,On Hold,Assess,Investigate,Investigate-Escalated,Waiting</value>
+        </filters>
+        <label>DSS Helpdesk Level 1 Open Cases</label>
+        <language>en_US</language>
+        <queue>DSS_Helpdesk_Level_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Helpdesk_Level_3</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.DSS_Internal_L_D_Case</value>
+        </filters>
+        <label>DSS Helpdesk Level 3</label>
+        <language>en_US</language>
+        <queue>DSS_Helpdesk_Level_3</queue>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Helpdesk_Level_3_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS Internal Helpdesk Level 3</label>
+        <language>en_US</language>
+        <queue>DSS_Helpdesk_Level_3</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Internal_Helpdesk_Level_3_Open</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Close</value>
+        </filters>
+        <label>DSS Internal Helpdesk Level 3 - Open</label>
+        <language>en_US</language>
+        <queue>DSS_Helpdesk_Level_3</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Internal_Helpdesk_Level_3_Open1</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.LAST_UPDATE_DATE_ONLY</field>
+            <operation>lessThan</operation>
+            <value>1/1/2017 12:00 AM</value>
+        </filters>
+        <label>DSS Internal Helpdesk Level 3 - Recent</label>
+        <language>en_US</language>
+        <queue>DSS_Helpdesk_Level_3</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Coastalflix_Escalation_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D Coastalflix Escalation</label>
+        <queue>DSS_L_D_Coastalflix_Escalation</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Coastalflix_Escalation_View</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Coastalflix Escalation</value>
+        </filters>
+        <label>DSS L&amp;D Coastalflix Escalation View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_DataPro_Escalation_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D DataPro Escalation</label>
+        <queue>DSS_L_D_DataPro_Escalation</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_DataPro_Escalation_View</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D DataPro Escalation</value>
+        </filters>
+        <label>DSS L&amp;D DataPro Escalation View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Deployment_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D Deployment</label>
+        <queue>DSS_L_D_Deployment</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Deployment_View</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Deployment</value>
+        </filters>
+        <label>DSS L&amp;D Deployment View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Developer_Escalation_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D Developer Escalation</label>
+        <queue>DSS_L_D_Developer_Escalation</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Developer_Escalation_View</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Developer Escalation</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>,New,In Progress,On Hold,Investigate,Investigate-Escalated,Waiting,Resolve</value>
+        </filters>
+        <label>DSS L&amp;D Developer Escalation View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Developer_Escalation_View1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>NAME</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Developer Escalation</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>,New,In Progress,On Hold,Investigate,Investigate-Escalated,Waiting,Resolve</value>
+        </filters>
+        <label>V ONE MAN SHOW</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Developer_Escalation_View2</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>NAME</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Developer Escalation</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>,New,In Progress,On Hold,Investigate,Investigate-Escalated,Waiting,Resolve</value>
+        </filters>
+        <label>DSS L&amp;D Developer Escalation View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_External_Closed_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CASES.CLOSED</columns>
+        <columns>CASES.CLOSED_DATE</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.DSS_L_D_Case</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>Close,Completed</value>
+        </filters>
+        <label>DSS L&amp;D External Closed Cases</label>
+        <language>en_US</language>
+        <sharedTo/>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_LMS_Enhancements_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D LMS Enhancements</label>
+        <queue>DSS_L_D_LMS_Enhancements</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Level_2_View</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>CASES.REASON</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>fAccount_Region__c</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Level 2</value>
+        </filters>
+        <label>DSS L&amp;D Level 2 View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Project_Lead_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D Project Lead</label>
+        <queue>DSS_L_D_Project_Lead</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_TCS_Escalation_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Date_Received__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Close,Completed,Abandoned,Cancelled,Closed,Closed-Unresolved</value>
+        </filters>
+        <label>DSS L&amp;D TCS Escalation</label>
+        <language>en_US</language>
+        <queue>DSS_L_D_TCS_Escalation</queue>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_TCS_Escalation_Queue</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+        <columns>fAccount_Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D TCS Escalation</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,In Progress,On Hold,Investigate,Investigate-Escalated,Waiting</value>
+        </filters>
+        <label>TCS (DSS-L&amp;D Escalation)</label>
+        <language>en_US</language>
+        <queue>DSS_L_D_TCS_Escalation</queue>
+        <sharedTo>
+            <group>DSS_Helpdesk_Level_1</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_TCS_Escalation_View</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CASES.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D TCS Escalation</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,In Progress,On Hold,Investigate,Waiting,Resolve,Waiting on Customer</value>
+        </filters>
+        <label>DSS L&amp;D TCS Escalation View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Tech_Support_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D Tech Support</label>
+        <queue>DSS_L_D_Tech_Support</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Tech_Support_View</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Tech Support</value>
+        </filters>
+        <label>DSS L&amp;D Tech Support View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Website_Escalation_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>DSS L&amp;D Website Escalation</label>
+        <queue>DSS_L_D_Website_Escalation</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_L_D_Website_Escalation_View</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>DSS L&amp;D Website Escalation</value>
+        </filters>
+        <label>DSS L&amp;D Website Escalation View</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSS_L_D_Case_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Open_Cases_by_Agent</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Owning_Organization__c</field>
+            <operation>equals</operation>
+            <value>DSS-L&amp;D</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,Investigate,Investigate-Escalated,Resolve,Resolve-Escalated</value>
+        </filters>
+        <label>DSS Open Cases by Agent</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Default_Case_Owner_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Default Case Owner Queue</label>
+        <queue>Default_Case_Owner_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Open Cases</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>DSS_CKM_Case</fullName>
+        <active>true</active>
+        <businessProcess>Service Management</businessProcess>
+        <description>For DSS CKM Case Management</description>
+        <label>DSS CKM Case</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_SubType__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Type__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Not Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Effective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Effective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unresolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>DSS-CKM</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_SBU__c</picklist>
+            <values>
+                <fullName>Marketing %26 Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sustainable Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>DSS-CKM</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>CSR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central Warehouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Related Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danzas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Essers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GSB%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K %26 N</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loading %26 Blending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Availability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Package%2FCont</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schenker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service - CSC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service - Contracted Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service - DuPont</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service - FRT Forwarder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service - Plant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service - Ship Point</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TONA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Air</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Ocean Carrier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Rail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation - Truck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Cause</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Quality__c</picklist>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subreason1__c</picklist>
+            <values>
+                <fullName>Iso Container</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Support</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DSS_Internal_L_D_Case</fullName>
+        <active>true</active>
+        <businessProcess>Customer Support</businessProcess>
+        <description>Case will be developed when internal users are having Software issues in the L&amp;D portion of our business.</description>
+        <label>DSS Internal L&amp;D Case</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_SubType__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Type__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Not Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Effective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Effective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unresolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intra-Company - Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Voice Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>DSS-L%26D</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_SBU__c</picklist>
+            <values>
+                <fullName>Marketing %26 Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sustainable Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>DSS-CKM</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoastalFlix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Datapro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SQL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soloman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training%2Edupont%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Rights</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Quality__c</picklist>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subreason1__c</picklist>
+            <values>
+                <fullName>3rd Party Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assessment Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Checklist Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Mgmt %28Authoring Tool%2FCustomEase%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractor Company Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Content Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Data Sync Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Installer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course License Key Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Preview Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Export Routine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosted Site Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Import Routine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Tasks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>License Concern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>License Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>License Keys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Settings %26 Configuration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Shutdown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade to DES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Data Import</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Support</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DSS_L_D_Case</fullName>
+        <active>true</active>
+        <businessProcess>Customer Support</businessProcess>
+        <label>DSS L&amp;D Case</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_SubType__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Type__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Not Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Effective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Effective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unresolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intra-Company - Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Voice Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Organization__c</picklist>
+            <values>
+                <fullName>DSS-L%26D</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_SBU__c</picklist>
+            <values>
+                <fullName>Marketing %26 Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sustainable Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>DSS-CKM</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CES MCPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CES Non-Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CoastalFlix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES MCPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Datapro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Datapro MCPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scorm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scorm Wrapper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training%2Edupont%2Ecom</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Quality__c</picklist>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subreason1__c</picklist>
+            <values>
+                <fullName>3rd Party Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assessment Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Checklist Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Mgmt %28Authoring Tool%2FCustomEase%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractor Company Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Content Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Data Sync Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Installer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course License Key Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Course Preview Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Export Routine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosted Site Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Import Routine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Tasks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>License Concern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>License Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>License Keys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Settings %26 Configuration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Shutdown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade to DES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Data Import</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Support</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.PRIORITY</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Alt_Phone__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>ACCOUNT.NAME</searchFilterFields>
+        <searchFilterFields>CASES.RECORDTYPE</searchFilterFields>
+        <searchFilterFields>CORE.USERS.LAST_NAME</searchFilterFields>
+        <searchFilterFields>CASES.CREATED_DATE_DATE_ONLY</searchFilterFields>
+        <searchFilterFields>Owning_Organization__c</searchFilterFields>
+        <searchFilterFields>Owning_SBU__c</searchFilterFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Close_Case</fullName>
+        <availability>online</availability>
+        <description>Close Case button with Status default to Close</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Close Case</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!Case.Id}/s?retURL={!Case.Id}&amp;id={!Case.Id}&amp;cas7=Close</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Select_Reason</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Select Reason</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/Reasonwizard?rtype={!Case.RecordTypeId}&amp;ancor={!Case.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>These preferences control individual customizations to the appearance of Project Task Gantt and its interactions with users.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>pse__Hide_Save_Preview__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If deselected, a dialog box is displayed every time you click Save. This allows you to review the proposed changes to project tasks before committing them to the underlying records in your organization.</inlineHelpText>
+        <label>Hide Preview and Confirmation on Save</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Single_Click_Task_Selection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This allows a user to change the default behavior of Gantt from double-click to single-click in the task pane.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This allows a user to change the default behavior of Gantt from double-click to single-click in the task pane.</inlineHelpText>
+        <label>Single Click Task Selection</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Project Task Gantt Preferences</label>
+    <visibility>Public</visibility>
+</CustomObject>

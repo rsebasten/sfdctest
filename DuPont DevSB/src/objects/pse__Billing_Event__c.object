@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>pse__BillingEventHelp</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Contains billing event items prior to invoicing. Billings events, once released, often correspond with invoices in your financials system, with billing event items serving as invoice line items. Invoicing always occurs at the billing event level.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>FF_PSA_Release_Billing_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check it manually to release accrual sales order</inlineHelpText>
+        <label>Release Billing Event - Accrual</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Billing_Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pse__Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Billing Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Billing Events (Billing Contact)</relationshipLabel>
+        <relationshipName>Billing_Events1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pse__Billing_Event_Batch__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Billing Event Batch</label>
+        <referenceTo>pse__Billing_Event_Batch__c</referenceTo>
+        <relationshipLabel>Billing Events</relationshipLabel>
+        <relationshipName>Billing_Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pse__Budget_Remaining__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>pse__Project__r.pse__Bookings__c -  pse__Summary_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Budget Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>pse__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>pse__Event_Key__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Generated key to identify a Billing Event. Contains concatenation of Billing_Event_Batch__c, Project__c, and an optional two-character suffix based on the type of business records it contains (if the records are configured to be in separate billing events).</description>
+        <externalId>true</externalId>
+        <label>Event Key</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Invoice_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>pse__Invoice_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Invoice Number</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Invoiced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Has this billing event been invoiced?</description>
+        <externalId>false</externalId>
+        <label>Invoiced</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Is_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Is_Released__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Released</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>pse__Proj__c</referenceTo>
+        <relationshipLabel>Billing Events</relationshipLabel>
+        <relationshipName>Billing_Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pse__Rounded_Summary_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Rounded Summary Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>pse__Skip_Sync_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If true, do not check for out-of-sync billing event items on update of the Is_Released__c field. This should only be used by code, never shown to users.</description>
+        <externalId>false</externalId>
+        <label>Skip Sync Check</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Saved</fullName>
+                    <default>false</default>
+                    <label>Saved</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>pse__Summary_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Summary Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Billing Event</label>
+    <listViews>
+        <fullName>pse__All</fullName>
+        <columns>NAME</columns>
+        <columns>pse__Billing_Event_Batch__c</columns>
+        <columns>pse__Project__c</columns>
+        <columns>pse__Date__c</columns>
+        <columns>pse__Summary_Amount__c</columns>
+        <columns>pse__Status__c</columns>
+        <columns>pse__Invoiced__c</columns>
+        <columns>pse__Invoice_Date__c</columns>
+        <columns>pse__Invoice_Number__c</columns>
+        <columns>pse__Is_Released__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>BE-{000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Billing Events</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>pse__Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Summary_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>pse__Is_Released__c</customTabListAdditionalFields>
+        <listViewButtons>pse__Recalc</listViewButtons>
+        <listViewButtons>pse__Release</listViewButtons>
+        <listViewButtons>pse__Invoice</listViewButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>pse__PSE_Member_Share__c</fullName>
+        <label>PSE Member Share</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>pse__PSE_PM_Share__c</fullName>
+        <label>PSE PM Share</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>FF_PSA_ReleaseTheReleaseAccrual</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(pse__Project__r.FF_PSA_Allow_Accrual__c = true, 
+pse__Is_Released__c = false, 
+FF_PSA_Release_Billing_Event__c = true)</errorConditionFormula>
+        <errorMessage>As the Project allows Accrual, please do the following for successful BE release: 
+(1) Please release BE by clicking &quot;Release&quot; button 
+(2) Please check the &quot;Release Billing Event - Accrual&quot; checkbox and Click SAVE.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Uncheck_Release_Billing_Event</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(PRIORVALUE(FF_PSA_Release_Billing_Event__c)==true, isChanged(FF_PSA_Release_Billing_Event__c ), NOT($Profile.Name = &apos;System Administrator&apos;))</errorConditionFormula>
+        <errorMessage>Sales order can&apos;t be revoked once generated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_checkProjAccrualForBE</fullName>
+        <active>true</active>
+        <description>Checks if Project does not allow accrual and prevents from manually checking &quot;Release Billing Event - Accrual&quot;.</description>
+        <errorConditionFormula>AND(pse__Project__r.FF_PSA_Allow_Accrual__c = false, 
+pse__Is_Released__c = false, 
+FF_PSA_Release_Billing_Event__c = true)</errorConditionFormula>
+        <errorMessage>As the Project does not allow Accrual, please do not check &quot;Release Billing Event - Accrual&quot; manually. This will be checked automatically once you click &quot;Release&quot; button.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>pse__Invoiced</fullName>
+        <active>true</active>
+        <description>Invoice Number or Date is not allowed on record unless it is invoiced</description>
+        <errorConditionFormula>(pse__Invoice_Number__c != null ||
+pse__Invoice_Date__c != null) &amp;&amp; pse__Invoiced__c = false</errorConditionFormula>
+        <errorMessage>Invoice Number or Date is not allowed on record unless it is invoiced</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>pse__Clear_Billing_Data</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Clear Billing Data</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__ClearBillingDataEvent</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>pse__Invoice</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Invoice</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__BillingEventsInvoice</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>pse__Invoice_Detail</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Invoice</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__BillingEventsInvoiceDetail</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>pse__Recalc</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Recalc</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__BillingEventsRecalcEvent</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>pse__Recalc_Detail</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Recalc</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__BillingEventsRecalcEventDetail</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>pse__Release</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Release</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__BillingEventsReleaseEvent</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>pse__Release_Detail</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Release</masterLabel>
+        <openType>sidebar</openType>
+        <page>pse__BillingEventsReleaseEventDetail</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>FF_PSA_Business_Partner_Nb__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_Resource__r.FF_PSA_Business_Partner_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>External ERP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_OA_Item_Descr__c</fullName>
+        <externalId>false</externalId>
+        <label>OA Item Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_OA_Item_Nb__c</fullName>
+        <externalId>false</externalId>
+        <label>OA Item Nb</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_OA_Nb__c</fullName>
+        <externalId>false</externalId>
+        <label>OA Nb</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_OA_Service_Nb__c</fullName>
+        <description>Service number for the assignment type</description>
+        <externalId>false</externalId>
+        <label>OA Service Nb</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>3106602</fullName>
+                    <default>false</default>
+                    <label>3106602</label>
+                </value>
+                <value>
+                    <fullName>3106603</fullName>
+                    <default>false</default>
+                    <label>3106603</label>
+                </value>
+                <value>
+                    <fullName>3106604</fullName>
+                    <default>false</default>
+                    <label>3106604</label>
+                </value>
+                <value>
+                    <fullName>3106605</fullName>
+                    <default>false</default>
+                    <label>3106605</label>
+                </value>
+                <value>
+                    <fullName>3106606</fullName>
+                    <default>false</default>
+                    <label>3106606</label>
+                </value>
+                <value>
+                    <fullName>3106607</fullName>
+                    <default>false</default>
+                    <label>3106607</label>
+                </value>
+                <value>
+                    <fullName>3106608</fullName>
+                    <default>false</default>
+                    <label>3106608</label>
+                </value>
+                <value>
+                    <fullName>3111680</fullName>
+                    <default>false</default>
+                    <label>3111680</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_OA_SubLine_Item_Descr__c</fullName>
+        <externalId>false</externalId>
+        <label>OA Sub Line Item Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SAFETY CONSULTANT - HOLDOVER</fullName>
+                    <default>false</default>
+                    <label>SAFETY CONSULTANT - HOLDOVER</label>
+                </value>
+                <value>
+                    <fullName>EXPENSES - TRANSPORTATION</fullName>
+                    <default>false</default>
+                    <label>EXPENSES - TRANSPORTATION</label>
+                </value>
+                <value>
+                    <fullName>EXPENSES - OTHER</fullName>
+                    <default>false</default>
+                    <label>EXPENSES - OTHER</label>
+                </value>
+                <value>
+                    <fullName>SAFETY CONSULTANT - WORK</fullName>
+                    <default>false</default>
+                    <label>SAFETY CONSULTANT - WORK</label>
+                </value>
+                <value>
+                    <fullName>SAFETY CONSULTANT - TRAVEL</fullName>
+                    <default>false</default>
+                    <label>SAFETY CONSULTANT - TRAVEL</label>
+                </value>
+                <value>
+                    <fullName>SAFETY CONSULTANT - TRAINING</fullName>
+                    <default>false</default>
+                    <label>SAFETY CONSULTANT - TRAINING</label>
+                </value>
+                <value>
+                    <fullName>EXPENSES - LODGING</fullName>
+                    <default>false</default>
+                    <label>EXPENSES - LODGING</label>
+                </value>
+                <value>
+                    <fullName>SAFETY CONSULTANT - OTHER FEES</fullName>
+                    <default>false</default>
+                    <label>SAFETY CONSULTANT - OTHER FEES</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_OA_Sub_Line_Item_Nb__c</fullName>
+        <externalId>false</externalId>
+        <label>OA Sub Line Item Nb</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Resource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Resource</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Outline Agreement Items</relationshipLabel>
+        <relationshipName>Outline_Agreement_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Outline Agreement Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>FF_PSA_Resource__c</columns>
+        <columns>FF_PSA_OA_Item_Descr__c</columns>
+        <columns>FF_PSA_OA_SubLine_Item_Descr__c</columns>
+        <columns>FF_PSA_OA_Item_Nb__c</columns>
+        <columns>FF_PSA_OA_Nb__c</columns>
+        <columns>FF_PSA_OA_Service_Nb__c</columns>
+        <columns>FF_PSA_OA_Sub_Line_Item_Nb__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>OAI-{0000000}</displayFormat>
+        <label>Outline Agreement Item Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Outline Agreement Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

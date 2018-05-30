@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sell-side Project or Initiative</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Auto_ID__c</fullName>
+        <displayFormat>I-{00000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Auto ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Date__c</fullName>
+        <description>Date contract was signed</description>
+        <externalId>false</externalId>
+        <label>Contract Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of this Initiative</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>End Date of this Initiative</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>InitiativeNumber__c</fullName>
+        <displayFormat>IN-{00000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Initiative #</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Initiative_Details_rtf__c</fullName>
+        <description>Additional details regarding this Initiative (may include formatting or pictures)</description>
+        <externalId>false</externalId>
+        <label>Initiative Details</label>
+        <length>15000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <description>list of product lines that can be associated with an initiative</description>
+        <externalId>false</externalId>
+        <label>Product Line</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Corn</fullName>
+                    <default>false</default>
+                    <label>Corn</label>
+                </value>
+                <value>
+                    <fullName>Sorghum</fullName>
+                    <default>false</default>
+                    <label>Sorghum</label>
+                </value>
+                <value>
+                    <fullName>Soybeans</fullName>
+                    <default>false</default>
+                    <label>Soybeans</label>
+                </value>
+                <value>
+                    <fullName>Sunflower</fullName>
+                    <default>false</default>
+                    <label>Sunflower</label>
+                </value>
+                <value>
+                    <fullName>Zodiaq</fullName>
+                    <default>false</default>
+                    <label>Zodiaq</label>
+                </value>
+                <value>
+                    <fullName>Corian</fullName>
+                    <default>false</default>
+                    <label>Corian</label>
+                </value>
+                <value>
+                    <fullName>Montelli</fullName>
+                    <default>false</default>
+                    <label>Montelli</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Profile_Year__c</fullName>
+        <description>The year that will be used to select information from the Crop Profile object.</description>
+        <externalId>false</externalId>
+        <label>Profile Year</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2013</fullName>
+                    <default>false</default>
+                    <label>2013</label>
+                </value>
+                <value>
+                    <fullName>2014</fullName>
+                    <default>false</default>
+                    <label>2014</label>
+                </value>
+                <value>
+                    <fullName>2015</fullName>
+                    <default>false</default>
+                    <label>2015</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Season__c</fullName>
+        <description>the growing season associated to the initiative</description>
+        <externalId>false</externalId>
+        <label>Season</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Winter</fullName>
+                    <default>false</default>
+                    <label>Winter</label>
+                </value>
+                <value>
+                    <fullName>Summer</fullName>
+                    <default>false</default>
+                    <label>Summer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Start Date of this specific Initiative</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Planned and then Actual Start Date of this specific Initiative</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Comment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status of this Initiative</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <color>#F3D904</color>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Behind Schedule</fullName>
+                    <default>false</default>
+                    <label>Behind Schedule</label>
+                </value>
+                <value>
+                    <fullName>Waiting</fullName>
+                    <default>false</default>
+                    <label>Waiting</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <color>#33CC00</color>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <color>#CC0000</color>
+                    <default>false</default>
+                    <label>Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Planned</fullName>
+                    <default>false</default>
+                    <label>Planned</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>Preparation</fullName>
+                    <default>false</default>
+                    <label>Preparation</label>
+                </value>
+                <value>
+                    <fullName>Rep Estimation</fullName>
+                    <default>false</default>
+                    <label>Rep Estimation</label>
+                </value>
+                <value>
+                    <fullName>District Review</fullName>
+                    <default>false</default>
+                    <label>District Review</label>
+                </value>
+                <value>
+                    <fullName>Area Review</fullName>
+                    <default>false</default>
+                    <label>Area Review</label>
+                </value>
+                <value>
+                    <fullName>DP BU Meeting</fullName>
+                    <default>false</default>
+                    <label>DP BU Meeting</label>
+                </value>
+                <value>
+                    <fullName>DP Supply Meeting</fullName>
+                    <default>false</default>
+                    <label>DP Supply Meeting</label>
+                </value>
+                <value>
+                    <fullName>BU Allocations</fullName>
+                    <default>false</default>
+                    <label>BU Allocations</label>
+                </value>
+                <value>
+                    <fullName>District Allocations</fullName>
+                    <default>false</default>
+                    <label>District Allocations</label>
+                </value>
+                <value>
+                    <fullName>Rep Allocations</fullName>
+                    <default>false</default>
+                    <label>Rep Allocations</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+                <value>
+                    <fullName>Under Review</fullName>
+                    <default>false</default>
+                    <label>Under Review</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubType__c</fullName>
+        <description>Initiative SubType</description>
+        <externalId>false</externalId>
+        <label>SubType</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account Mgm</fullName>
+                    <default>false</default>
+                    <label>Account Mgm</label>
+                </value>
+                <value>
+                    <fullName>Administration</fullName>
+                    <default>false</default>
+                    <label>Administration</label>
+                </value>
+                <value>
+                    <fullName>Advocacy</fullName>
+                    <default>false</default>
+                    <label>Advocacy</label>
+                </value>
+                <value>
+                    <fullName>Brand Management</fullName>
+                    <default>false</default>
+                    <label>Brand Management</label>
+                </value>
+                <value>
+                    <fullName>Business Development</fullName>
+                    <default>false</default>
+                    <label>Business Development</label>
+                </value>
+                <value>
+                    <fullName>Business Strategic Plan</fullName>
+                    <default>false</default>
+                    <label>Business Strategic Plan</label>
+                </value>
+                <value>
+                    <fullName>Campaign Group</fullName>
+                    <default>false</default>
+                    <label>Campaign Group</label>
+                </value>
+                <value>
+                    <fullName>Carbon Value Capture</fullName>
+                    <default>false</default>
+                    <label>Carbon Value Capture</label>
+                </value>
+                <value>
+                    <fullName>Central Billing</fullName>
+                    <default>false</default>
+                    <label>Central Billing</label>
+                </value>
+                <value>
+                    <fullName>Certification</fullName>
+                    <default>false</default>
+                    <label>Certification</label>
+                </value>
+                <value>
+                    <fullName>Channel</fullName>
+                    <default>false</default>
+                    <label>Channel</label>
+                </value>
+                <value>
+                    <fullName>Channel Management</fullName>
+                    <default>false</default>
+                    <label>Channel Management</label>
+                </value>
+                <value>
+                    <fullName>Commercial</fullName>
+                    <default>false</default>
+                    <label>Commercial</label>
+                </value>
+                <value>
+                    <fullName>Company Acquisition</fullName>
+                    <default>false</default>
+                    <label>Company Acquisition</label>
+                </value>
+                <value>
+                    <fullName>Company Screening</fullName>
+                    <default>false</default>
+                    <label>Company Screening</label>
+                </value>
+                <value>
+                    <fullName>Competition Mgm</fullName>
+                    <default>false</default>
+                    <label>Competition Mgm</label>
+                </value>
+                <value>
+                    <fullName>Consulting Services</fullName>
+                    <default>false</default>
+                    <label>Consulting Services</label>
+                </value>
+                <value>
+                    <fullName>Corporate Planning</fullName>
+                    <default>false</default>
+                    <label>Corporate Planning</label>
+                </value>
+                <value>
+                    <fullName>Country Mgm</fullName>
+                    <default>false</default>
+                    <label>Country Mgm</label>
+                </value>
+                <value>
+                    <fullName>Custom Product Development</fullName>
+                    <default>false</default>
+                    <label>Custom Product Development</label>
+                </value>
+                <value>
+                    <fullName>Deal Closing</fullName>
+                    <default>false</default>
+                    <label>Deal Closing</label>
+                </value>
+                <value>
+                    <fullName>Distributor Screening</fullName>
+                    <default>false</default>
+                    <label>Distributor Screening</label>
+                </value>
+                <value>
+                    <fullName>DMX - T</fullName>
+                    <default>false</default>
+                    <label>DMX - T</label>
+                </value>
+                <value>
+                    <fullName>DMX - T Quadrant 1</fullName>
+                    <default>false</default>
+                    <label>DMX - T Quadrant 1</label>
+                </value>
+                <value>
+                    <fullName>DMX - T Quadrant 2</fullName>
+                    <default>false</default>
+                    <label>DMX - T Quadrant 2</label>
+                </value>
+                <value>
+                    <fullName>DMX - T Quadrant 3</fullName>
+                    <default>false</default>
+                    <label>DMX - T Quadrant 3</label>
+                </value>
+                <value>
+                    <fullName>DMX - T Quadrant 4</fullName>
+                    <default>false</default>
+                    <label>DMX - T Quadrant 4</label>
+                </value>
+                <value>
+                    <fullName>Due Diligence</fullName>
+                    <default>false</default>
+                    <label>Due Diligence</label>
+                </value>
+                <value>
+                    <fullName>Industry Assessment</fullName>
+                    <default>false</default>
+                    <label>Industry Assessment</label>
+                </value>
+                <value>
+                    <fullName>Industry Business Dev</fullName>
+                    <default>false</default>
+                    <label>Industry Business Dev</label>
+                </value>
+                <value>
+                    <fullName>Industry Leadership</fullName>
+                    <default>false</default>
+                    <label>Industry Leadership</label>
+                </value>
+                <value>
+                    <fullName>Industry Value Capture</fullName>
+                    <default>false</default>
+                    <label>Industry Value Capture</label>
+                </value>
+                <value>
+                    <fullName>Internal Process Improvement</fullName>
+                    <default>false</default>
+                    <label>Internal Process Improvement</label>
+                </value>
+                <value>
+                    <fullName>Investment Analysis</fullName>
+                    <default>false</default>
+                    <label>Investment Analysis</label>
+                </value>
+                <value>
+                    <fullName>Lead Generation</fullName>
+                    <default>false</default>
+                    <label>Lead Generation</label>
+                </value>
+                <value>
+                    <fullName>Lead Mgm</fullName>
+                    <default>false</default>
+                    <label>Lead Mgm</label>
+                </value>
+                <value>
+                    <fullName>Licensing</fullName>
+                    <default>false</default>
+                    <label>Licensing</label>
+                </value>
+                <value>
+                    <fullName>Loyalty Management</fullName>
+                    <default>false</default>
+                    <label>Loyalty Management</label>
+                </value>
+                <value>
+                    <fullName>Loyalty Program</fullName>
+                    <default>false</default>
+                    <label>Loyalty Program</label>
+                </value>
+                <value>
+                    <fullName>M&amp;A Support</fullName>
+                    <default>false</default>
+                    <label>M&amp;A Support</label>
+                </value>
+                <value>
+                    <fullName>Market Assessment</fullName>
+                    <default>false</default>
+                    <label>Market Assessment</label>
+                </value>
+                <value>
+                    <fullName>Market Driven Innovation</fullName>
+                    <default>false</default>
+                    <label>Market Driven Innovation</label>
+                </value>
+                <value>
+                    <fullName>Marketing Challenges</fullName>
+                    <default>false</default>
+                    <label>Marketing Challenges</label>
+                </value>
+                <value>
+                    <fullName>Marketing Communication</fullName>
+                    <default>false</default>
+                    <label>Marketing Communication</label>
+                </value>
+                <value>
+                    <fullName>Marketing-Other</fullName>
+                    <default>false</default>
+                    <label>Marketing-Other</label>
+                </value>
+                <value>
+                    <fullName>Marketing Plan</fullName>
+                    <default>false</default>
+                    <label>Marketing Plan</label>
+                </value>
+                <value>
+                    <fullName>Market Research</fullName>
+                    <default>false</default>
+                    <label>Market Research</label>
+                </value>
+                <value>
+                    <fullName>New Product Pricing</fullName>
+                    <default>false</default>
+                    <label>New Product Pricing</label>
+                </value>
+                <value>
+                    <fullName>Office Location Analysis</fullName>
+                    <default>false</default>
+                    <label>Office Location Analysis</label>
+                </value>
+                <value>
+                    <fullName>Office Setup</fullName>
+                    <default>false</default>
+                    <label>Office Setup</label>
+                </value>
+                <value>
+                    <fullName>Operation Mgmt</fullName>
+                    <default>false</default>
+                    <label>Operation Mgmt</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Analysis</fullName>
+                    <default>false</default>
+                    <label>Opportunity Analysis</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Mgm</fullName>
+                    <default>false</default>
+                    <label>Opportunity Mgm</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Partner Communication</fullName>
+                    <default>false</default>
+                    <label>Partner Communication</label>
+                </value>
+                <value>
+                    <fullName>Partner Mgm</fullName>
+                    <default>false</default>
+                    <label>Partner Mgm</label>
+                </value>
+                <value>
+                    <fullName>Pre-Commercial</fullName>
+                    <default>false</default>
+                    <label>Pre-Commercial</label>
+                </value>
+                <value>
+                    <fullName>Price Mgm</fullName>
+                    <default>false</default>
+                    <label>Price Mgm</label>
+                </value>
+                <value>
+                    <fullName>Pricing Process Management</fullName>
+                    <default>false</default>
+                    <label>Pricing Process Management</label>
+                </value>
+                <value>
+                    <fullName>Product Demo</fullName>
+                    <default>false</default>
+                    <label>Product Demo</label>
+                </value>
+                <value>
+                    <fullName>Productivity</fullName>
+                    <default>false</default>
+                    <label>Productivity</label>
+                </value>
+                <value>
+                    <fullName>Product Launch</fullName>
+                    <default>false</default>
+                    <label>Product Launch</label>
+                </value>
+                <value>
+                    <fullName>Product Launch Plan</fullName>
+                    <default>false</default>
+                    <label>Product Launch Plan</label>
+                </value>
+                <value>
+                    <fullName>Product Mgm</fullName>
+                    <default>false</default>
+                    <label>Product Mgm</label>
+                </value>
+                <value>
+                    <fullName>Product Registration</fullName>
+                    <default>false</default>
+                    <label>Product Registration</label>
+                </value>
+                <value>
+                    <fullName>Promoter</fullName>
+                    <default>false</default>
+                    <label>Promoter</label>
+                </value>
+                <value>
+                    <fullName>Promotion</fullName>
+                    <default>false</default>
+                    <label>Promotion</label>
+                </value>
+                <value>
+                    <fullName>Promotional Pricing</fullName>
+                    <default>false</default>
+                    <label>Promotional Pricing</label>
+                </value>
+                <value>
+                    <fullName>Public Policy</fullName>
+                    <default>false</default>
+                    <label>Public Policy</label>
+                </value>
+                <value>
+                    <fullName>Public Relations</fullName>
+                    <default>false</default>
+                    <label>Public Relations</label>
+                </value>
+                <value>
+                    <fullName>Rapid Value Assessment</fullName>
+                    <default>false</default>
+                    <label>Rapid Value Assessment</label>
+                </value>
+                <value>
+                    <fullName>Rebate</fullName>
+                    <default>false</default>
+                    <label>Rebate</label>
+                </value>
+                <value>
+                    <fullName>Regional Strategic plan</fullName>
+                    <default>false</default>
+                    <label>Regional Strategic plan</label>
+                </value>
+                <value>
+                    <fullName>Reporting</fullName>
+                    <default>false</default>
+                    <label>Reporting</label>
+                </value>
+                <value>
+                    <fullName>Route To Market</fullName>
+                    <default>false</default>
+                    <label>Route To Market</label>
+                </value>
+                <value>
+                    <fullName>Sales Aid</fullName>
+                    <default>false</default>
+                    <label>Sales Aid</label>
+                </value>
+                <value>
+                    <fullName>Sales Incentive Compensation</fullName>
+                    <default>false</default>
+                    <label>Sales Incentive Compensation</label>
+                </value>
+                <value>
+                    <fullName>Sales-Other</fullName>
+                    <default>false</default>
+                    <label>Sales-Other</label>
+                </value>
+                <value>
+                    <fullName>Sales Training</fullName>
+                    <default>false</default>
+                    <label>Sales Training</label>
+                </value>
+                <value>
+                    <fullName>Segmentation</fullName>
+                    <default>false</default>
+                    <label>Segmentation</label>
+                </value>
+                <value>
+                    <fullName>Segmentation / Targeting</fullName>
+                    <default>false</default>
+                    <label>Segmentation / Targeting</label>
+                </value>
+                <value>
+                    <fullName>Standard Product Development</fullName>
+                    <default>false</default>
+                    <label>Standard Product Development</label>
+                </value>
+                <value>
+                    <fullName>Strategic Accounts</fullName>
+                    <default>false</default>
+                    <label>Strategic Accounts</label>
+                </value>
+                <value>
+                    <fullName>Strategic Plan</fullName>
+                    <default>false</default>
+                    <label>Strategic Plan</label>
+                </value>
+                <value>
+                    <fullName>Strategic Pricing</fullName>
+                    <default>false</default>
+                    <label>Strategic Pricing</label>
+                </value>
+                <value>
+                    <fullName>Strategy</fullName>
+                    <default>false</default>
+                    <label>Strategy</label>
+                </value>
+                <value>
+                    <fullName>Supervision</fullName>
+                    <default>false</default>
+                    <label>Supervision</label>
+                </value>
+                <value>
+                    <fullName>Sustainability</fullName>
+                    <default>false</default>
+                    <label>Sustainability</label>
+                </value>
+                <value>
+                    <fullName>Technical Support</fullName>
+                    <default>false</default>
+                    <label>Technical Support</label>
+                </value>
+                <value>
+                    <fullName>Toll Mfg Screening</fullName>
+                    <default>false</default>
+                    <label>Toll Mfg Screening</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Training - Color</fullName>
+                    <default>false</default>
+                    <label>Training - Color</label>
+                </value>
+                <value>
+                    <fullName>Training - Product</fullName>
+                    <default>false</default>
+                    <label>Training - Product</label>
+                </value>
+                <value>
+                    <fullName>Transactional Pricing</fullName>
+                    <default>false</default>
+                    <label>Transactional Pricing</label>
+                </value>
+                <value>
+                    <fullName>Transaction Support</fullName>
+                    <default>false</default>
+                    <label>Transaction Support</label>
+                </value>
+                <value>
+                    <fullName>Trials</fullName>
+                    <default>false</default>
+                    <label>Trials</label>
+                </value>
+                <value>
+                    <fullName>Value Chain Analysis</fullName>
+                    <default>false</default>
+                    <label>Value Chain Analysis</label>
+                </value>
+                <value>
+                    <fullName>Value Pricing</fullName>
+                    <default>false</default>
+                    <label>Value Pricing</label>
+                </value>
+                <value>
+                    <fullName>Value Prop Development</fullName>
+                    <default>false</default>
+                    <label>Value Prop Development</label>
+                </value>
+                <value>
+                    <fullName>Value Proposition</fullName>
+                    <default>false</default>
+                    <label>Value Proposition</label>
+                </value>
+                <value>
+                    <fullName>Value Prop Testing</fullName>
+                    <default>false</default>
+                    <label>Value Prop Testing</label>
+                </value>
+                <value>
+                    <fullName>VOC</fullName>
+                    <default>false</default>
+                    <label>VOC</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Brand Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Government Affairs</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Certification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Competition Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <valueName>Consulting Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Industry Leadership</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Licensing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Loyalty Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Loyalty Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Marketing Communication</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Marketing-Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Product Development</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Opportunity Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Management</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Partner Communication</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Partner Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Promotion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Rebate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Sales Aid</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Sales-Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Management</controllingFieldValue>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <controllingFieldValue>Technical</controllingFieldValue>
+                <valueName>Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <valueName>Value Chain Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Value Prop Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mergers &amp; Acquisitions</controllingFieldValue>
+                <valueName>Company Acquisition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mergers &amp; Acquisitions</controllingFieldValue>
+                <valueName>Company Screening</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mergers &amp; Acquisitions</controllingFieldValue>
+                <valueName>Deal Closing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Mergers &amp; Acquisitions</controllingFieldValue>
+                <valueName>Due Diligence</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operations</controllingFieldValue>
+                <valueName>Administration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operations</controllingFieldValue>
+                <valueName>Office Location Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operations</controllingFieldValue>
+                <valueName>Office Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operations</controllingFieldValue>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Operation Mgmt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operations</controllingFieldValue>
+                <valueName>Toll Mfg Screening</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operations</controllingFieldValue>
+                <valueName>Transaction Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <valueName>Account Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Lead Generation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Lead Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Process &amp; Tools</controllingFieldValue>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <valueName>Opportunity Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Development</controllingFieldValue>
+                <valueName>Commercial</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Development</controllingFieldValue>
+                <valueName>Custom Product Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Development</controllingFieldValue>
+                <valueName>Pre-Commercial</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Development</controllingFieldValue>
+                <valueName>Standard Product Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <valueName>Sales Incentive Compensation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <valueName>Sales Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <valueName>Strategic Accounts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Business Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <controllingFieldValue>Government Affairs</controllingFieldValue>
+                <valueName>Industry Business Dev</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <valueName>Price Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <valueName>Product Demo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <valueName>Product Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <valueName>Promoter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <valueName>Technical Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Implementation</controllingFieldValue>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Value Prop Testing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Channel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Market Assessment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Marketing Plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Market Research</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Rapid Value Assessment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>Route To Market</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Value Proposition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Strategy</controllingFieldValue>
+                <valueName>VOC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Government Affairs</controllingFieldValue>
+                <valueName>Advocacy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Government Affairs</controllingFieldValue>
+                <valueName>Productivity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Government Affairs</controllingFieldValue>
+                <valueName>Product Registration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Government Affairs</controllingFieldValue>
+                <valueName>Public Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Management</controllingFieldValue>
+                <valueName>Corporate Planning</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Management</controllingFieldValue>
+                <valueName>Country Mgm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Management</controllingFieldValue>
+                <valueName>Investment Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Management</controllingFieldValue>
+                <valueName>Reporting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Management</controllingFieldValue>
+                <valueName>Supervision</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <valueName>Campaign Group</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - DMX</controllingFieldValue>
+                <valueName>DMX - T</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - DMX</controllingFieldValue>
+                <valueName>DMX - T Quadrant 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - DMX</controllingFieldValue>
+                <valueName>DMX - T Quadrant 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - DMX</controllingFieldValue>
+                <valueName>DMX - T Quadrant 3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - DMX</controllingFieldValue>
+                <valueName>DMX - T Quadrant 4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - DMX</controllingFieldValue>
+                <valueName>Marketing Challenges</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing Implementation</controllingFieldValue>
+                <valueName>Public Relations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Industry Assessment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Internal Process Improvement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Market Driven Innovation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Segmentation / Targeting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Strategy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Non-Pricing</controllingFieldValue>
+                <valueName>Sustainability</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technical</controllingFieldValue>
+                <valueName>Training - Color</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technical</controllingFieldValue>
+                <valueName>Training - Product</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Pricing</controllingFieldValue>
+                <valueName>New Product Pricing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Pricing</controllingFieldValue>
+                <valueName>Pricing Process Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Pricing</controllingFieldValue>
+                <valueName>Promotional Pricing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Pricing</controllingFieldValue>
+                <valueName>Strategic Pricing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Pricing</controllingFieldValue>
+                <valueName>Transactional Pricing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing - Pricing</controllingFieldValue>
+                <valueName>Value Pricing</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Type of Initiative</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Government Affairs</fullName>
+                    <default>false</default>
+                    <label>Government Affairs</label>
+                </value>
+                <value>
+                    <fullName>GPMP Support</fullName>
+                    <default>false</default>
+                    <label>GPMP Support</label>
+                </value>
+                <value>
+                    <fullName>Industry Initiative</fullName>
+                    <default>false</default>
+                    <label>Industry Initiative</label>
+                </value>
+                <value>
+                    <fullName>Management</fullName>
+                    <default>false</default>
+                    <label>Management</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Marketing Campaign</fullName>
+                    <default>false</default>
+                    <label>Marketing Campaign</label>
+                </value>
+                <value>
+                    <fullName>Marketing - DMX</fullName>
+                    <default>false</default>
+                    <label>Marketing - DMX</label>
+                </value>
+                <value>
+                    <fullName>Marketing Implementation</fullName>
+                    <default>false</default>
+                    <label>Marketing Implementation</label>
+                </value>
+                <value>
+                    <fullName>Marketing - Non-Pricing</fullName>
+                    <default>false</default>
+                    <label>Marketing - Non-Pricing</label>
+                </value>
+                <value>
+                    <fullName>Marketing - Pricing</fullName>
+                    <default>false</default>
+                    <label>Marketing - Pricing</label>
+                </value>
+                <value>
+                    <fullName>Marketing Strategy</fullName>
+                    <default>false</default>
+                    <label>Marketing Strategy</label>
+                </value>
+                <value>
+                    <fullName>Mergers &amp; Acquisitions</fullName>
+                    <default>false</default>
+                    <label>Mergers &amp; Acquisitions</label>
+                </value>
+                <value>
+                    <fullName>Operations</fullName>
+                    <default>false</default>
+                    <label>Operations</label>
+                </value>
+                <value>
+                    <fullName>PCF Projects</fullName>
+                    <default>false</default>
+                    <label>PCF Projects</label>
+                </value>
+                <value>
+                    <fullName>Process &amp; Tools</fullName>
+                    <default>false</default>
+                    <label>Process &amp; Tools</label>
+                </value>
+                <value>
+                    <fullName>Product Development</fullName>
+                    <default>false</default>
+                    <label>Product Development</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Sales Implementation</fullName>
+                    <default>false</default>
+                    <label>Sales Implementation</label>
+                </value>
+                <value>
+                    <fullName>Sales Strategy</fullName>
+                    <default>false</default>
+                    <label>Sales Strategy</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>Technology Licensing</fullName>
+                    <default>false</default>
+                    <label>Technology Licensing</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Grouping</fullName>
+                    <default>true</default>
+                    <label>Opportunity Grouping</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Initiative</label>
+    <nameField>
+        <label>Initiative Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Initiatives</pluralLabel>
+    <recordTypes>
+        <fullName>CRM_Initiatives</fullName>
+        <active>false</active>
+        <description>Customer Relationship Management Initiatives</description>
+        <label>CRM Initiatives</label>
+        <picklistValues>
+            <picklist>Product_Line__c</picklist>
+            <values>
+                <fullName>Zodiaq</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Profile_Year__c</picklist>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Season__c</picklist>
+            <values>
+                <fullName>Summer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubType__c</picklist>
+            <values>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Channel Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competition Mgm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loyalty Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity Analysis</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Product Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value Chain Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value Prop Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value Prop Testing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Marketing Implementation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Marketing Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Process %26 Tools</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SubType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SubType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.LAST_NAME</lookupDialogsAdditionalFields>
+        <lookupFilterFields>OWNER.LAST_NAME</lookupFilterFields>
+        <lookupFilterFields>OWNER.ALIAS</lookupFilterFields>
+        <lookupFilterFields>SubType__c</lookupFilterFields>
+        <lookupFilterFields>End_Date__c</lookupFilterFields>
+        <searchFilterFields>Type__c</searchFilterFields>
+        <searchFilterFields>SubType__c</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
+        <searchFilterFields>End_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SubType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

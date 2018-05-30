@@ -1,0 +1,2132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AdvancedSetup</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>ActualCost</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>AmountAllOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>AmountWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>BudgetedCost</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>CampaignMemberRecordTypeId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Details_rtf__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional information and pictures describing this Campaign in more details (Rich Text)</inlineHelpText>
+        <label>Campaign Details</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <description>Main Communication channel used during the execution of this campaign</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>eMail</fullName>
+                    <default>false</default>
+                    <label>eMail</label>
+                </value>
+                <value>
+                    <fullName>Event</fullName>
+                    <default>false</default>
+                    <label>Event</label>
+                </value>
+                <value>
+                    <fullName>Face to Face</fullName>
+                    <default>false</default>
+                    <label>Face to Face</label>
+                </value>
+                <value>
+                    <fullName>Multiple</fullName>
+                    <default>false</default>
+                    <label>Multiple</label>
+                </value>
+                <value>
+                    <fullName>Paper mail</fullName>
+                    <default>false</default>
+                    <label>Paper mail</label>
+                </value>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>Seminar</fullName>
+                    <default>false</default>
+                    <label>Seminar</label>
+                </value>
+                <value>
+                    <fullName>Trade Publications</fullName>
+                    <default>false</default>
+                    <label>Trade Publications</label>
+                </value>
+                <value>
+                    <fullName>Trade Show</fullName>
+                    <default>false</default>
+                    <label>Trade Show</label>
+                </value>
+                <value>
+                    <fullName>Web-Content Sharing</fullName>
+                    <default>false</default>
+                    <label>Web-Content Sharing</label>
+                </value>
+                <value>
+                    <fullName>Web-Social Media</fullName>
+                    <default>false</default>
+                    <label>Web-Social Media</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>Website</fullName>
+                    <default>false</default>
+                    <label>Website</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>EndDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ExpectedResponse</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ExternalBusinessName__c</fullName>
+        <description>Public facing name of the Business</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Public facing name of the Business</inlineHelpText>
+        <label>External Business Name</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Geography__c</fullName>
+        <description>Geographical area targeted by this Campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Geographical area targeted by this Campaign</inlineHelpText>
+        <label>Geography</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>AP</fullName>
+                    <default>false</default>
+                    <label>AP</label>
+                </value>
+                <value>
+                    <fullName>AP-ANZ</fullName>
+                    <default>false</default>
+                    <label>AP-ANZ</label>
+                </value>
+                <value>
+                    <fullName>AP-ASEAN</fullName>
+                    <default>false</default>
+                    <label>AP-ASEAN</label>
+                </value>
+                <value>
+                    <fullName>APEJ</fullName>
+                    <default>false</default>
+                    <label>APEJ</label>
+                </value>
+                <value>
+                    <fullName>AP-GCHINA</fullName>
+                    <default>false</default>
+                    <label>AP-GCHINA</label>
+                </value>
+                <value>
+                    <fullName>AP-INDIA</fullName>
+                    <default>false</default>
+                    <label>AP-INDIA</label>
+                </value>
+                <value>
+                    <fullName>AP-JAPAN</fullName>
+                    <default>false</default>
+                    <label>AP-JAPAN</label>
+                </value>
+                <value>
+                    <fullName>AP-KOREA</fullName>
+                    <default>false</default>
+                    <label>AP-KOREA</label>
+                </value>
+                <value>
+                    <fullName>EMEA</fullName>
+                    <default>false</default>
+                    <label>EMEA</label>
+                </value>
+                <value>
+                    <fullName>EMEA-CE-Czech Republic</fullName>
+                    <default>false</default>
+                    <label>EMEA-CE-Czech Republic</label>
+                </value>
+                <value>
+                    <fullName>EMEA-CE-Serbia</fullName>
+                    <default>false</default>
+                    <label>EMEA-CE-Serbia</label>
+                </value>
+                <value>
+                    <fullName>EMEA-CE-Slovakia</fullName>
+                    <default>false</default>
+                    <label>EMEA-CE-Slovakia</label>
+                </value>
+                <value>
+                    <fullName>EMEA-ECE/MEA</fullName>
+                    <default>false</default>
+                    <label>EMEA-ECE/MEA</label>
+                </value>
+                <value>
+                    <fullName>EMEA-ECE/MEA-CE-Hungary</fullName>
+                    <default>false</default>
+                    <label>EMEA-ECE/MEA-CE-Hungary</label>
+                </value>
+                <value>
+                    <fullName>EMEA-ECE/MEA-CE-Poland</fullName>
+                    <default>false</default>
+                    <label>EMEA-ECE/MEA-CE-Poland</label>
+                </value>
+                <value>
+                    <fullName>EMEA-EE-Russian Federation</fullName>
+                    <default>false</default>
+                    <label>EMEA-EE-Russian Federation</label>
+                </value>
+                <value>
+                    <fullName>EMEA-EE-Ukraine</fullName>
+                    <default>false</default>
+                    <label>EMEA-EE-Ukraine</label>
+                </value>
+                <value>
+                    <fullName>EMEA-SSA-South Africa</fullName>
+                    <default>false</default>
+                    <label>EMEA-SSA-South Africa</label>
+                </value>
+                <value>
+                    <fullName>EMEA-TMENA</fullName>
+                    <default>false</default>
+                    <label>EMEA-TMENA</label>
+                </value>
+                <value>
+                    <fullName>EMEA-TMENA-Bulgaria</fullName>
+                    <default>false</default>
+                    <label>EMEA-TMENA-Bulgaria</label>
+                </value>
+                <value>
+                    <fullName>EMEA-TMENA-Romania</fullName>
+                    <default>false</default>
+                    <label>EMEA-TMENA-Romania</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Belgium</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Belgium</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-France</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-France</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Germany</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Germany</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Italy</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Italy</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Luxembourg</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Luxembourg</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Netherlands</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Netherlands</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Nordic</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Nordic</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Portugal</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Portugal</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-Spain</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-Spain</label>
+                </value>
+                <value>
+                    <fullName>EMEA-WE-United Kingdom</fullName>
+                    <default>false</default>
+                    <label>EMEA-WE-United Kingdom</label>
+                </value>
+                <value>
+                    <fullName>Global</fullName>
+                    <default>false</default>
+                    <label>Global</label>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                    <label>LA</label>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                    <label>NA</label>
+                </value>
+                <value>
+                    <fullName>NA-Canada</fullName>
+                    <default>false</default>
+                    <label>NA-Canada</label>
+                </value>
+                <value>
+                    <fullName>NA-US</fullName>
+                    <default>false</default>
+                    <label>NA-US</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HierarchyActualCost</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyAmountAllOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyAmountWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyBudgetedCost</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyExpectedRevenue</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfContacts</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfConvertedLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfResponses</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberSent</fullName>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>IsPublic__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>TRUE if this Campaign can be publicly displayed externally</inlineHelpText>
+        <label>IsPublic</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Key_Learnings__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Key Learnings from this &quot;In Progress&quot; or &quot;Completed&quot; Campaign. To store more detailed result, store an excel or Word document attachment to this campaign</inlineHelpText>
+        <label>Key Learnings</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Letterhead__c</fullName>
+        <externalId>false</externalId>
+        <label>Letterhead</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>List_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Master: For Opted-In
+Campaign: For a specific Campaign
+Test Group: For a test group
+Segment: For a segment of Contacts to be used for reporting purposes only</inlineHelpText>
+        <label>List Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Campaign</fullName>
+                    <default>false</default>
+                    <label>Campaign</label>
+                </value>
+                <value>
+                    <fullName>Campaign Test</fullName>
+                    <default>false</default>
+                    <label>Campaign Test</label>
+                </value>
+                <value>
+                    <fullName>Master</fullName>
+                    <default>false</default>
+                    <label>Master</label>
+                </value>
+                <value>
+                    <fullName>Subscriber</fullName>
+                    <default>false</default>
+                    <label>Subscriber</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>NextStepUser__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>CLS: Followup Responder The individual within DuPont who will follow-up if the survey respondent requests follow-up</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CLS Followup Responder - The individual within DuPont who will follow-up if the survey respondent requests follow-up</inlineHelpText>
+        <label>Next Step User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NumberOfContacts</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfConvertedLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfResponses</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberSent</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Offerings_SiteObject__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>lookup to SiteObject,  used for language translation of the offerings</description>
+        <externalId>false</externalId>
+        <inlineHelpText>lookup to SiteObject,   used for language translation of the offerings</inlineHelpText>
+        <label>Products/Offerings Description</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <filterItems>
+                <field>$Source.Owning_Business__c</field>
+                <operation>equals</operation>
+                <valueField>SiteObject__c.Owning_Business__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>SiteObject__c.Owning_Business__c</field>
+                <operation>equals</operation>
+                <value>Corporate</value>
+            </filterItems>
+            <filterItems>
+                <field>SiteObject__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Translation</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>SiteObject__c</referenceTo>
+        <relationshipLabel>Campaigns (Offerings)</relationshipLabel>
+        <relationshipName>CampaignOfferings</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Origin_Tracking_Code__c</fullName>
+        <description>A Reference code associated with the Campaign, such as Omniture Tracking Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A Reference code associated with the Campaign, such as Omniture Tracking Code</inlineHelpText>
+        <label>Origin Tracking Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owning_Business__c</fullName>
+        <description>CLS: Owning_Business filter for offering products SiteObject lookup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For Custom Loyalty project only, use Owning Org for all projects</inlineHelpText>
+        <label>Owning_Business</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Owning_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Owning Org</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>DSS</fullName>
+                    <default>false</default>
+                    <label>DSS</label>
+                </value>
+                <value>
+                    <fullName>DSS-Consulting</fullName>
+                    <default>false</default>
+                    <label>DSS-Consulting</label>
+                </value>
+                <value>
+                    <fullName>DSS-L&amp;D</fullName>
+                    <default>false</default>
+                    <label>DSS-L&amp;D</label>
+                </value>
+                <value>
+                    <fullName>IB-Biomaterials-BioIsoprene</fullName>
+                    <default>false</default>
+                    <label>IB-Biomaterials-BioIsoprene</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phase__c</fullName>
+        <description>Customer Loyalty Survey : Deployment Qtr ( YYQ# )</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Loyalty Survey : Deployment Qtr ( YYQ# )</inlineHelpText>
+        <label>Phase</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_End_Date__c</fullName>
+        <description>The planned ending date for this campaign.  &quot;End Date&quot; should be used for the actual end of the campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The planned ending date for this campaign.  &quot;End Date&quot; should be used for the actual end of the campaign</inlineHelpText>
+        <label>Planned End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PrimarySignContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Name of Business or Sales Leader.  This is a lookup to a Contact - if not already in SFDC as a Contact, add them, then link to this individual.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Business or Sales Leader.  This is a lookup to a Contact - if not already in SFDC as a Contact, add them, then link to this individual.</inlineHelpText>
+        <label>Primary Signature</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Campaigns (Primary Signature)</relationshipLabel>
+        <relationshipName>PrimarySignature</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PrimarySignTitle__c</fullName>
+        <description>Job Title for Primary Signature</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Job Title for Primary Signature</inlineHelpText>
+        <label>Primary Signature Title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Country Business Manager</fullName>
+                    <default>false</default>
+                    <label>Country Business Manager</label>
+                </value>
+                <value>
+                    <fullName>Country Leader</fullName>
+                    <default>false</default>
+                    <label>Country Leader</label>
+                </value>
+                <value>
+                    <fullName>Country Manager</fullName>
+                    <default>false</default>
+                    <label>Country Manager</label>
+                </value>
+                <value>
+                    <fullName>Country President</fullName>
+                    <default>false</default>
+                    <label>Country President</label>
+                </value>
+                <value>
+                    <fullName>EMEA Sales Manager</fullName>
+                    <default>false</default>
+                    <label>EMEA Sales Manager</label>
+                </value>
+                <value>
+                    <fullName>North America Business Director</fullName>
+                    <default>false</default>
+                    <label>North America Business Director</label>
+                </value>
+                <value>
+                    <fullName>North America Sales Manager</fullName>
+                    <default>false</default>
+                    <label>North America Sales Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Director</fullName>
+                    <default>false</default>
+                    <label>Regional Director</label>
+                </value>
+                <value>
+                    <fullName>Regional Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Managing Director</fullName>
+                    <default>false</default>
+                    <label>Regional Managing Director</label>
+                </value>
+                <value>
+                    <fullName>Regional President</fullName>
+                    <default>false</default>
+                    <label>Regional President</label>
+                </value>
+                <value>
+                    <fullName>Regional Product Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Product Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Sales Director</fullName>
+                    <default>false</default>
+                    <label>Regional Sales Director</label>
+                </value>
+                <value>
+                    <fullName>Regional Sales Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Sales Manager</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PublicDescription__c</fullName>
+        <description>Short Description (1000 chars) used to describe this campaign to the public.   This is an extension of the Public Name field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Short Description visible to external audience</inlineHelpText>
+        <label>Public Description</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PublicName__c</fullName>
+        <description>Name of this campaign shown to public (IE web sites, printed material, etc...)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name visible to external audience</inlineHelpText>
+        <label>Public Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Initiative__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Main initiative this campaign contributes to</description>
+        <externalId>false</externalId>
+        <label>Related Initiative</label>
+        <referenceTo>Initiative__c</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SecondarySignContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Secondary Signature  involved with this Campaign (this is a lookup to the contact)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Secondary Signature  involved with this Campaign (this is a lookup to the contact)</inlineHelpText>
+        <label>Secondary Signature</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Campaigns (Secondary Signature)</relationshipLabel>
+        <relationshipName>CampaignSecondarySignature</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SecondarySignTitle__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Signature Title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Country Business Manager</fullName>
+                    <default>false</default>
+                    <label>Country Business Manager</label>
+                </value>
+                <value>
+                    <fullName>Country Leader</fullName>
+                    <default>false</default>
+                    <label>Country Leader</label>
+                </value>
+                <value>
+                    <fullName>Country Manager</fullName>
+                    <default>false</default>
+                    <label>Country Manager</label>
+                </value>
+                <value>
+                    <fullName>Country President</fullName>
+                    <default>false</default>
+                    <label>Country President</label>
+                </value>
+                <value>
+                    <fullName>EMEA Sales Manager</fullName>
+                    <default>false</default>
+                    <label>EMEA Sales Manager</label>
+                </value>
+                <value>
+                    <fullName>North America Business Director</fullName>
+                    <default>false</default>
+                    <label>North America Business Director</label>
+                </value>
+                <value>
+                    <fullName>North America Sales Manager</fullName>
+                    <default>false</default>
+                    <label>North America Sales Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Director</fullName>
+                    <default>false</default>
+                    <label>Regional Director</label>
+                </value>
+                <value>
+                    <fullName>Regional Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Managing Director</fullName>
+                    <default>false</default>
+                    <label>Regional Managing Director</label>
+                </value>
+                <value>
+                    <fullName>Regional President</fullName>
+                    <default>false</default>
+                    <label>Regional President</label>
+                </value>
+                <value>
+                    <fullName>Regional Product Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Product Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Sales Director</fullName>
+                    <default>false</default>
+                    <label>Regional Sales Director</label>
+                </value>
+                <value>
+                    <fullName>Regional Sales Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Sales Manager</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Segment_Group__c</fullName>
+        <description>Main Segment Group this Campaigns focuses on. For more details, use the Account-Segment of the contacts attached to this campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Main Segment Group this Campaign focuses on. For more details, use the Account-Segment of the contacts attached to this campaign or the Target Group field</inlineHelpText>
+        <label>Segment Group</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Chemical Industry</fullName>
+                    <default>false</default>
+                    <label>Chemical Industry</label>
+                </value>
+                <value>
+                    <fullName>Electrical and Electronics</fullName>
+                    <default>false</default>
+                    <label>Electrical and Electronics</label>
+                </value>
+                <value>
+                    <fullName>ES-O&amp;G</fullName>
+                    <default>false</default>
+                    <label>ES-O&amp;G</label>
+                </value>
+                <value>
+                    <fullName>Food</fullName>
+                    <default>false</default>
+                    <label>Food</label>
+                </value>
+                <value>
+                    <fullName>Health Care</fullName>
+                    <default>false</default>
+                    <label>Health Care</label>
+                </value>
+                <value>
+                    <fullName>Industrial and Manufacturing</fullName>
+                    <default>false</default>
+                    <label>Industrial and Manufacturing</label>
+                </value>
+                <value>
+                    <fullName>Multiple</fullName>
+                    <default>false</default>
+                    <label>Multiple</label>
+                </value>
+                <value>
+                    <fullName>T-Marine</fullName>
+                    <default>false</default>
+                    <label>T-Marine</label>
+                </value>
+                <value>
+                    <fullName>T-Rail</fullName>
+                    <default>false</default>
+                    <label>T-Rail</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Short_Term_Objectives__c</fullName>
+        <externalId>false</externalId>
+        <label>Short Term Objectives</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>StartDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strategic_Intent__c</fullName>
+        <externalId>false</externalId>
+        <label>Strategic Intent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Target_Group__c</fullName>
+        <description>Short description of the kind of the targeted contacts and companies this specific campaign is designed for.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Short description of the kind of the targeted contacts and companies this specific campaign is designed for.</inlineHelpText>
+        <label>Target Group</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Website__c</fullName>
+        <description>The main URL address of this Campaign or Channel</description>
+        <externalId>false</externalId>
+        <label>Website</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>fId18__c</fullName>
+        <description>18 digit unique id for record. Same Id used for dataloader and other API tools.</description>
+        <externalId>false</externalId>
+        <formula>Id
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)</formula>
+        <inlineHelpText>18 digit unique id for record. Same Id used for dataloader and other API tools.</inlineHelpText>
+        <label>Id18</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fOwningBusiness__c</fullName>
+        <description>DuPont Business</description>
+        <externalId>false</externalId>
+        <formula>MID(TEXT( Owning_Org__c ), 1, FIND(&apos;-&apos;,TEXT( Owning_Org__c ))-1)</formula>
+        <inlineHelpText>DuPont Business</inlineHelpText>
+        <label>Owning Business</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fPhase__c</fullName>
+        <description>(10/12/2017) - Removed Campaign &quot;Phase__c&quot; reference as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>Parent.Phase__c</formula>
+        <label>Campaign Phase</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>AllActiveCampaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Campaigns</fullName>
+        <columns>CAMPAIGN.ID</columns>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
+        <columns>CAMPAIGN.NUM_LEADS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Campaigns</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Campaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.CREATED_DATE</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.NUM_CONVERTED_LEADS</columns>
+        <columns>CAMPAIGN.NUM_OPPORTUNITIES</columns>
+        <columns>CAMPAIGN.NUM_WON_OPPORTUNITIES</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CAMPAIGN.NUM_LEADS</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
+        <columns>CAMPAIGN.TOT_OPPORTUNITIES</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Campaign.DSS_Campaign</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>contains</operation>
+            <value>L&amp;D</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2014 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Owning_Org__c</field>
+            <operation>contains</operation>
+            <value>DSS,DSS-L&amp;D</value>
+        </filters>
+        <label>DSS L&amp;D Campaigns 2014</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSSNALeads</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DSS_Non_Active_Campaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.CREATED_DATE</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>Geography__c</columns>
+        <columns>CAMPAIGN.NUM_LEADS</columns>
+        <columns>CAMPAIGN.NUM_CONVERTED_LEADS</columns>
+        <columns>CAMPAIGN.NUM_OPPORTUNITIES</columns>
+        <columns>CAMPAIGN.NUM_WON_OPPORTUNITIES</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Campaign.DSS_Campaign</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>DSS Non Active Campaigns</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DSSNALeads</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyActiveCampaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Active Campaigns</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>DSS_Campaign</fullName>
+        <active>true</active>
+        <description>DSRB Campaign Record Type</description>
+        <label>DSS Campaign</label>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Publications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Geography__c</picklist>
+            <values>
+                <fullName>AP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Serbia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Slovakia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-ECE%2FMEA-CE-Hungary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-EE-Russian Federation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-EE-Ukraine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-SSA-South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA-Bulgaria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA-Romania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>NA-Canada</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>List_Type__c</picklist>
+            <values>
+                <fullName>Campaign</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Campaign Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Master</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>DSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS-Consulting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>DSS-L%26D</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Segment_Group__c</picklist>
+            <values>
+                <fullName>Chemical Industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ES-O%26G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrical and Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial and Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T-Marine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T-Rail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Satisfaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merger or Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-purpose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulatory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LatinAmericaCampaigns</fullName>
+        <active>true</active>
+        <description>Record Type for Latin America Campaigns</description>
+        <label>Latin America Campaigns</label>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Geography__c</picklist>
+            <values>
+                <fullName>AP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-ANZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-ASEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-GCHINA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-INDIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-JAPAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-KOREA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Serbia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Slovakia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-ECE%2FMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-ECE%2FMEA-CE-Hungary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-EE-Russian Federation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-EE-Ukraine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-SSA-South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA-Bulgaria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA-Romania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Italy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Nordic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-United Kingdom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>List_Type__c</picklist>
+            <values>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Master</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>DSS-Consulting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Segment_Group__c</picklist>
+            <values>
+                <fullName>Chemical Industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ES-O%26G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrical and Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial and Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T-Marine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T-Rail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Satisfaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-purpose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulatory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Subscriber_List</fullName>
+        <active>true</active>
+        <label>Subscriber List</label>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Geography__c</picklist>
+            <values>
+                <fullName>AP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-ANZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-ASEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-GCHINA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-INDIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-JAPAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AP-KOREA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Serbia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-CE-Slovakia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-ECE%2FMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-ECE%2FMEA-CE-Hungary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-EE-Russian Federation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-EE-Ukraine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-SSA-South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA-Bulgaria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-TMENA-Romania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Italy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Nordic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA-WE-United Kingdom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA-Canada</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>List_Type__c</picklist>
+            <values>
+                <fullName>Master</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscriber</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Owning_Org__c</picklist>
+            <values>
+                <fullName>DSS-Consulting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Segment_Group__c</picklist>
+            <values>
+                <fullName>Chemical Industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ES-O%26G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrical and Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industrial and Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T-Marine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T-Rail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Satisfaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Communication</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Multi-purpose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulatory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CAMPAIGN.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CAMPAIGN.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CAMPAIGN.START_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CAMPAIGN.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Owning_Org__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>List_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CAMPAIGN.ACTIVE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CAMPAIGN.STATUS</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Geography__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Channel__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CAMPAIGN.CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CAMPAIGN.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PARENT_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CAMPAIGN.ACTIVE</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Geography__c</searchFilterFields>
+        <searchFilterFields>CAMPAIGN.STATUS</searchFilterFields>
+        <searchFilterFields>CAMPAIGN.START_DATE</searchFilterFields>
+        <searchFilterFields>Owning_Org__c</searchFilterFields>
+        <searchFilterFields>CAMPAIGN.RECORDTYPE</searchFilterFields>
+        <searchFilterFields>CAMPAIGN.NAME</searchFilterFields>
+        <searchResultsAdditionalFields>CAMPAIGN.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>List_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.NUM_LEADS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.NUM_CONTACTS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.LAST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.ACTIVE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Duplicate_Emails</fullName>
+        <availability>online</availability>
+        <description>If campaign has parent will search across siblings and only return duplicates where applicable to current campaign</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Duplicate Emails</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/CampaignDupEmails?id={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ViewAllCampaignMembers</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View All Campaign Members</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O?scope=1&amp;rt=5&amp;scopeid={!Campaign.Name}</url>
+        <width>500</width>
+    </webLinks>
+    <webLinks>
+        <fullName>ViewCampaignInfluenceReport</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Campaign Influence Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O?rt=117&amp;break0=CAN&amp;scope=1&amp;scopeid_lkid={!Campaign.Id}&amp;scopeid={!Campaign_Name}&amp;c=CAN&amp;c=MR&amp;c=PCS&amp;c=CFN&amp;c=RN&amp;c=ON&amp;c=OA&amp;c=OS&amp;c=OCD&amp;c=AN&amp;s=OA&amp;duel0=CAN%2CMR%2CCFN%2CRN%2CAN%2CON%2CPCS%2COS%2COCD%2COA&amp;details=yes&amp;format=t</url>
+        <width>500</width>
+    </webLinks>
+</CustomObject>

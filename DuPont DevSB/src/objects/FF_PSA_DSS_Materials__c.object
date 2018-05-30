@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Master – to store all DSS Materials like ILT Material,Seminars etc with cost against each item.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>FF_PSA_Floor_Price__c</fullName>
+        <description>These are the standard price offerings against each product and are prepopulated. These values cannot be changed by the BDM. The Master data for Floor, Market and Stretch Price for each of the product will be stored in the system and can be updated by the Admin.</description>
+        <externalId>false</externalId>
+        <label>Floor Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_High_Est__c</fullName>
+        <description>High estimate for the training. This is a master data which the BDM cannot change</description>
+        <externalId>false</externalId>
+        <label>High Estimate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_Admin_Fee__c</fullName>
+        <description>Number of admin kits for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-Admin Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_Audit_Checklist_Fee__c</fullName>
+        <description>Number of Observation Checklist for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-Audit Checklist Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_DVD_Fee__c</fullName>
+        <description>Unit cost for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-DVD Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_Decals_Fee__c</fullName>
+        <description>Number of Decals for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-Decals Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_Leader_Fee__c</fullName>
+        <description>Number of leader kits for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-Leader Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_License_Fee__c</fullName>
+        <description>License Cost for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-License Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_Observation_Fee__c</fullName>
+        <description>Number of Observation cards for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-Observation Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_ILT_Participant_Fee__c</fullName>
+        <description>Number of Participant Workbooks for the Course</description>
+        <externalId>false</externalId>
+        <label>ILT-Participant Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Low_Est__c</fullName>
+        <description>Low estimate for the training. This is a master data which the BDM cannot change</description>
+        <externalId>false</externalId>
+        <label>Low Estimate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Market_Price__c</fullName>
+        <description>These are the standard price offerings against each product and are prepopulated. These values cannot be changed by the BDM. The Master data for Floor, Market and Stretch Price for each of the product will be stored in the system and can be updated by the Admin.</description>
+        <externalId>false</externalId>
+        <label>Market Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Material_Category__c</fullName>
+        <description>Indicates the type of product</description>
+        <externalId>false</externalId>
+        <label>Material Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Custom Training</fullName>
+                    <default>false</default>
+                    <label>Custom Training</label>
+                </value>
+                <value>
+                    <fullName>ILT material</fullName>
+                    <default>false</default>
+                    <label>ILT material</label>
+                </value>
+                <value>
+                    <fullName>Seminars/Workshops</fullName>
+                    <default>false</default>
+                    <label>Seminars/Workshops</label>
+                </value>
+                <value>
+                    <fullName>SPS VAB Survey</fullName>
+                    <default>false</default>
+                    <label>SPS VAB Survey</label>
+                </value>
+                <value>
+                    <fullName>Streaming</fullName>
+                    <default>false</default>
+                    <label>Streaming</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Material_Name__c</fullName>
+        <description>Name of the material</description>
+        <externalId>false</externalId>
+        <label>Material Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Material_Sub_Category__c</fullName>
+        <description>Dependent pick list on Material category</description>
+        <externalId>false</externalId>
+        <label>Material Sub Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Project Pricing</fullName>
+                    <default>false</default>
+                    <label>Project Pricing</label>
+                </value>
+                <value>
+                    <fullName>Translation Pricing</fullName>
+                    <default>false</default>
+                    <label>Translation Pricing</label>
+                </value>
+                <value>
+                    <fullName>Streaming</fullName>
+                    <default>false</default>
+                    <label>Streaming</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_No_of_Access__c</fullName>
+        <description>Number of accesses for which the rate is provided. It is assumed that this field value will be 1</description>
+        <externalId>false</externalId>
+        <label>Class Size for Seminar</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Per_Access_Fees__c</fullName>
+        <description>Per access fee for each tailor content</description>
+        <externalId>false</externalId>
+        <label>License Fees per Trainer</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Per_User_Fee__c</fullName>
+        <description>Per user fee for each tailor content 
+Per user fee for each tailor support Service
+Per user fee for each tailor Course Service
+Per user fee for each tailor SMB Service
+Per user fee for each tailor pass pricing option Pricing standard
+Per user fee for each open pricing option Pricing standard
+Per user fee for each monthly license pricing option Pricing standard</description>
+        <externalId>false</externalId>
+        <label>Additional cost for extra participant</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Region__c</fullName>
+        <description>Training Region for translation cost and price estimates.</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EMEA</fullName>
+                    <default>false</default>
+                    <label>EMEA</label>
+                </value>
+                <value>
+                    <fullName>AP</fullName>
+                    <default>false</default>
+                    <label>AP</label>
+                </value>
+                <value>
+                    <fullName>LA (Spanish)</fullName>
+                    <default>false</default>
+                    <label>LA (Spanish)</label>
+                </value>
+                <value>
+                    <fullName>LA (Portuguese)</fullName>
+                    <default>false</default>
+                    <label>LA (Portuguese)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Seminar_Cost__c</fullName>
+        <description>Seminar cost for each of the seminars for standard number of participants and 1 course in the period</description>
+        <externalId>false</externalId>
+        <label>Seminar Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Seminar_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Seminar Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Special_Instructions__c</fullName>
+        <description>to store special instructions</description>
+        <externalId>false</externalId>
+        <label>Special Instructions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_ACC_High__c</fullName>
+        <externalId>false</externalId>
+        <label>Streaming Access Range High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_ACC_Low__c</fullName>
+        <externalId>false</externalId>
+        <label>Streaming Access Range Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_Fees__c</fullName>
+        <externalId>false</externalId>
+        <label>Streaming Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_No_of_Access__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Access</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1-TO-50</fullName>
+                    <default>false</default>
+                    <label>1-TO-50</label>
+                </value>
+                <value>
+                    <fullName>51-to-500</fullName>
+                    <default>false</default>
+                    <label>51-to-500</label>
+                </value>
+                <value>
+                    <fullName>501-to-1000</fullName>
+                    <default>false</default>
+                    <label>501-to-1000</label>
+                </value>
+                <value>
+                    <fullName>1001-to-5000</fullName>
+                    <default>false</default>
+                    <label>1001-to-5000</label>
+                </value>
+                <value>
+                    <fullName>5001-to-10000</fullName>
+                    <default>false</default>
+                    <label>5001-to-10000</label>
+                </value>
+                <value>
+                    <fullName>10001-to-25000</fullName>
+                    <default>false</default>
+                    <label>10001-to-25000</label>
+                </value>
+                <value>
+                    <fullName>&gt;25000</fullName>
+                    <default>false</default>
+                    <label>&gt;25000</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_No_of_Titles__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Titles</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2-TO-5</fullName>
+                    <default>false</default>
+                    <label>2-TO-5</label>
+                </value>
+                <value>
+                    <fullName>6-TO-10</fullName>
+                    <default>false</default>
+                    <label>6-TO-10</label>
+                </value>
+                <value>
+                    <fullName>11-TO-19</fullName>
+                    <default>false</default>
+                    <label>11-TO-19</label>
+                </value>
+                <value>
+                    <fullName>&gt;=20</fullName>
+                    <default>false</default>
+                    <label>&gt;=20</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_Pricing_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Pricing Standard</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Brazil</fullName>
+                    <default>false</default>
+                    <label>Brazil</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_TTL_High__c</fullName>
+        <externalId>false</externalId>
+        <label>Streaming Title Range High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_TTL_Low__c</fullName>
+        <externalId>false</externalId>
+        <label>Streaming Title Range Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_Title_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>FF_PSA_Stream_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full Length Videos</fullName>
+                    <default>false</default>
+                    <label>Full Length Videos</label>
+                </value>
+                <value>
+                    <fullName>Short Videos</fullName>
+                    <default>false</default>
+                    <label>Short Videos</label>
+                </value>
+                <value>
+                    <fullName>Video Bytes</fullName>
+                    <default>false</default>
+                    <label>Video Bytes</label>
+                </value>
+                <value>
+                    <fullName>Flix Format-Full</fullName>
+                    <default>false</default>
+                    <label>Flix Format-Full</label>
+                </value>
+                <value>
+                    <fullName>Flix Format-Short</fullName>
+                    <default>false</default>
+                    <label>Flix Format-Short</label>
+                </value>
+                <value>
+                    <fullName>Flix Format-Bytes</fullName>
+                    <default>false</default>
+                    <label>Flix Format-Bytes</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Select Pass Annual</controllingFieldValue>
+                <controllingFieldValue>Select Pass Monthly</controllingFieldValue>
+                <valueName>Full Length Videos</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Select Pass Annual</controllingFieldValue>
+                <controllingFieldValue>Select Pass Monthly</controllingFieldValue>
+                <valueName>Short Videos</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Select Pass Annual</controllingFieldValue>
+                <controllingFieldValue>Select Pass Monthly</controllingFieldValue>
+                <valueName>Video Bytes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Open Pricing Annual Only</controllingFieldValue>
+                <valueName>Flix Format-Full</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Open Pricing Annual Only</controllingFieldValue>
+                <valueName>Flix Format-Short</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Open Pricing Annual Only</controllingFieldValue>
+                <valueName>Flix Format-Bytes</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stream_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Types of streaming, Select Pass Annual,Open Pricing Annual Only,Select Pass Monthly</inlineHelpText>
+        <label>Streaming Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Select Pass Annual</fullName>
+                    <default>false</default>
+                    <label>Select Pass Annual</label>
+                </value>
+                <value>
+                    <fullName>Open Pricing Annual Only</fullName>
+                    <default>false</default>
+                    <label>Open Pricing Annual Only</label>
+                </value>
+                <value>
+                    <fullName>Select Pass Monthly</fullName>
+                    <default>false</default>
+                    <label>Select Pass Monthly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stretch_Price__c</fullName>
+        <description>These are the standard price offerings against each product and are prepopulated. These values cannot be changed by the BDM. The Master data for Floor, Market and Stretch Price for each of the product will be stored in the system and can be updated by the Admin.</description>
+        <externalId>false</externalId>
+        <label>Stretch Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_project_type__c</fullName>
+        <description>Type of the training/Seminar to be provided</description>
+        <externalId>false</externalId>
+        <label>Course Seminar Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Participant Guide (40 page with 10 item test)</fullName>
+                    <default>false</default>
+                    <label>Participant Guide (40 page with 10 item test)</label>
+                </value>
+                <value>
+                    <fullName>eLearning Translation Costs (No SME Required)</fullName>
+                    <default>false</default>
+                    <label>eLearning Translation Costs (No SME Required)</label>
+                </value>
+                <value>
+                    <fullName>Establishing a Central Safety Committee (CSC) workshop/working session</fullName>
+                    <default>false</default>
+                    <label>Establishing a Central Safety Committee (CSC) workshop/working session</label>
+                </value>
+                <value>
+                    <fullName>SafeStart IAW (4 Days)</fullName>
+                    <default>false</default>
+                    <label>SafeStart IAW (4 Days)</label>
+                </value>
+                <value>
+                    <fullName>DataPro; Enterprise License</fullName>
+                    <default>false</default>
+                    <label>DataPro; Enterprise License</label>
+                </value>
+                <value>
+                    <fullName>DataPro; Pilot Single Site License</fullName>
+                    <default>false</default>
+                    <label>DataPro; Pilot Single Site License</label>
+                </value>
+                <value>
+                    <fullName>DataPro; Single Site License</fullName>
+                    <default>false</default>
+                    <label>DataPro; Single Site License</label>
+                </value>
+                <value>
+                    <fullName>SafeStart™ ELF + EAU Combo</fullName>
+                    <default>false</default>
+                    <label>SafeStart™ ELF + EAU Combo</label>
+                </value>
+                <value>
+                    <fullName>SafeStart™ Employee License Fee Units 1-5</fullName>
+                    <default>false</default>
+                    <label>SafeStart™ Employee License Fee Units 1-5</label>
+                </value>
+                <value>
+                    <fullName>SafeStart™ Extended Applicatiop Units 1-5</fullName>
+                    <default>false</default>
+                    <label>SafeStart™ Extended Applicatiop Units 1-5</label>
+                </value>
+                <value>
+                    <fullName>STOP™ for Each Other</fullName>
+                    <default>false</default>
+                    <label>STOP™ for Each Other</label>
+                </value>
+                <value>
+                    <fullName>STOP™ for Ergonomics</fullName>
+                    <default>false</default>
+                    <label>STOP™ for Ergonomics</label>
+                </value>
+                <value>
+                    <fullName>STOP™ for Supervision</fullName>
+                    <default>false</default>
+                    <label>STOP™ for Supervision</label>
+                </value>
+                <value>
+                    <fullName>Take Two Video Combo Set (Incl #13-49; #51-68): DVD</fullName>
+                    <default>false</default>
+                    <label>Take Two Video Combo Set (Incl #13-49; #51-68): DVD</label>
+                </value>
+                <value>
+                    <fullName>Take Two Video Combo Set (Incl #13-49; #51-68); Enterprise License Copy</fullName>
+                    <default>false</default>
+                    <label>Take Two Video Combo Set (Incl #13-49; #51-68); Enterprise License Copy</label>
+                </value>
+                <value>
+                    <fullName>Take Two Video Combo Set (Incl #13-49; #51-68); Site License Copy</fullName>
+                    <default>false</default>
+                    <label>Take Two Video Combo Set (Incl #13-49; #51-68); Site License Copy</label>
+                </value>
+                <value>
+                    <fullName>Take Two Video Set (Incl #51-68); DVD</fullName>
+                    <default>false</default>
+                    <label>Take Two Video Set (Incl #51-68); DVD</label>
+                </value>
+                <value>
+                    <fullName>Take Two Video Set (Incl #51-68); Enterprise License Copy</fullName>
+                    <default>false</default>
+                    <label>Take Two Video Set (Incl #51-68); Enterprise License Copy</label>
+                </value>
+                <value>
+                    <fullName>Take Two Video Set (Incl #51-68); Site License Copy</fullName>
+                    <default>false</default>
+                    <label>Take Two Video Set (Incl #51-68); Site License Copy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>DSS Materials</label>
+    <nameField>
+        <displayFormat>DSSMAST-{0000}</displayFormat>
+        <label>DSS Materials Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>DSS Materials</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>FF_PSA_DSS_Materials</fullName>
+        <active>true</active>
+        <label>FF PSA DSS Materials</label>
+        <picklistValues>
+            <picklist>FF_PSA_Material_Category__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Streaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Material_Sub_Category__c</picklist>
+            <values>
+                <fullName>Project Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Streaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation Pricing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Region__c</picklist>
+            <values>
+                <fullName>AP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA %28Portuguese%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA %28Spanish%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Stream_No_of_Access__c</picklist>
+            <values>
+                <fullName>%3E25000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1-TO-50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10001-to-25000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1001-to-5000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5001-to-10000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>501-to-1000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51-to-500</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Stream_No_of_Titles__c</picklist>
+            <values>
+                <fullName>%3E%3D20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-TO-19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2-TO-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6-TO-10</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Stream_Pricing_Standard__c</picklist>
+            <values>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Stream_Title_Level__c</picklist>
+            <values>
+                <fullName>Flix Format-Bytes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flix Format-Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flix Format-Short</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Length Videos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Short Videos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video Bytes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Stream_Type__c</picklist>
+            <values>
+                <fullName>Open Pricing Annual Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select Pass Annual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Select Pass Monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_project_type__c</picklist>
+            <values>
+                <fullName>DataPro%3B Enterprise License</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataPro%3B Pilot Single Site License</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DataPro%3B Single Site License</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Establishing a Central Safety Committee %28CSC%29 workshop%2Fworking session</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Participant Guide %2840 page with 10 item test%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STOP%E2%84%A2 for Each Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STOP%E2%84%A2 for Ergonomics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STOP%E2%84%A2 for Supervision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SafeStart IAW %284 Days%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SafeStart%E2%84%A2 ELF %2B EAU Combo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SafeStart%E2%84%A2 Employee License Fee Units 1-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SafeStart%E2%84%A2 Extended Applicatiop Units 1-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Two Video Combo Set %28Incl %2313-49%3B %2351-68%29%3A DVD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Two Video Combo Set %28Incl %2313-49%3B %2351-68%29%3B Enterprise License Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Two Video Combo Set %28Incl %2313-49%3B %2351-68%29%3B Site License Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Two Video Set %28Incl %2351-68%29%3B DVD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Two Video Set %28Incl %2351-68%29%3B Enterprise License Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Two Video Set %28Incl %2351-68%29%3B Site License Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning Translation Costs %28No SME Required%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

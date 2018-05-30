@@ -1,0 +1,3971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Transactional  - to store the Materials added to project with corresponding cost/price info.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Are_Reports_in_Other_Langauges_Needed__c</fullName>
+        <description>Reports required in language other than English</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reports required in language other than English</inlineHelpText>
+        <label>Are Reports in Other Langauges Needed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Estimated_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Survey_Price_Without_Registration_Fee__c *30)/100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimated Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSAPremium_Skills_PSM_Per_User_Charge__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(u2__c&lt;=50,(-$Setup.elear__c.c1__c
+*u2__c+ $Setup.elear__c.c2__c)
+,IF(u2__c&lt;=100,
+(- $Setup.elear__c.c3__c
+*u2__c+ $Setup.elear__c.c4__c)
+,
+IF(u2__c&lt;=1000, ($Setup.elear__c.SingLib_Premium_Skills5__c
+- $Setup.elear__c.SingLib_Premium_Skills6__c
+*u2__c), $Setup.elear__c.SingLib_Premium_Skills7__c
+)))
+*IF(c2__c&lt;=5, $Setup.elear__c.SingLib_Premium_Skills8__c
+,IF(c2__c&lt;=10,$Setup.elear__c.SingLib_Premium_Skills9__c 
+,IF(AND(c2__c&lt;=20,u2__c&lt;=100),
+$Setup.elear__c.SingLib_Premium_Skills10__c
+,
+IF(AND(c2__c&lt;=20,u2__c&gt;100), 
+$Setup.elear__c.SingLib_Premium_Skills11__c,
+IF(AND(c2__c&gt;20, u2__c&lt;=100), 
+$Setup.elear__c.SingLib_Premium_Skills12__c
+, $Setup.elear__c.SingLib_Premium_Skills13__c
+)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Premium Content/PSM(Per User Charge)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Adnl_Material_Info__c</fullName>
+        <description>Product related additional information to be stored as text such as no of kits and participants work book.</description>
+        <externalId>false</externalId>
+        <label>Additonal Material Information</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_All_Other_Survey_Cost__c</fullName>
+        <description>All other costs include Additional Language cost and cost of reports.</description>
+        <externalId>false</externalId>
+        <formula>if(No_of_People_using_Paper_Surveys__c&gt;0, 
+
+
+
+if(ISPICKVAL(FF_PSA_SPS_Include12PSM__c,&apos;yes&apos;), 1.25*((FF_PSA_No_of_Lang_Survey__c-1)*$Setup.elear__c.FF_PSA_C1__c+(FF_PSA_Nb_of_rprts_to_be_created__c*$Setup.elear__c.FF_PSA_C2__c)+$Setup.elear__c.FF_PSA_C3__c+ (No_of_People_using_Paper_Surveys__c*2)), ((FF_PSA_No_of_Lang_Survey__c-1)*$Setup.elear__c.FF_PSA_C1__c+(FF_PSA_Nb_of_rprts_to_be_created__c*$Setup.elear__c.FF_PSA_C2__c)+$Setup.elear__c.FF_PSA_C3__c+ (No_of_People_using_Paper_Surveys__c*2))) 
+
+, 
+((FF_PSA_No_of_Lang_Survey__c-1)*$Setup.elear__c.FF_PSA_C1__c+(FF_PSA_Nb_of_rprts_to_be_created__c*$Setup.elear__c.FF_PSA_C2__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>All other costs include Additional Language cost and cost of reports.</inlineHelpText>
+        <label>All Other Survey Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Custom_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_DSS_Material_Item_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_Milestone__r.pse__Milestone_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DSS Material Item Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Elear_Additional_Participants_Pri__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Setup.elear__c.FF_PSA_Elear_Additional_Participants_Pri__c * FF_PSA_eLear_Additional_Participants__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Additional Participant</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Elear_Price_ImplementationService__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;DES Hosted&apos;),ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;LMS Only&apos;)),
+IF(ISPICKVAL(FF_PSA_eLear_first_adoption_LMS__c,&apos;No&apos;),
+IF(ISPICKVAL(FF_PSA_eLear_Admin_Cent_Decent__c,&apos;Centralized&apos;), $Setup.elear__c.FF_PSA_eLear_DES_LMS_No_Centralized__c,
+IF(AND(ISPICKVAL(FF_PSA_eLear_Admin_Cent_Decent__c,&apos;Decentralized&apos;),FF_PSA_eLear_Decentralised_Number__c&lt;=3),
+ $Setup.elear__c.FF_PSA_Elear_No_Decentralized_till_3__c,
+ IF(AND(ISPICKVAL(FF_PSA_eLear_Admin_Cent_Decent__c,&apos;Decentralized&apos;),FF_PSA_eLear_Decentralised_Number__c&gt;3),
+  $Setup.elear__c.FF_PSA_eLear_No_Decentralized_Great_3__c,0))),
+IF(ISPICKVAL(FF_PSA_eLear_Admin_Cent_Decent__c,&apos;Centralized&apos;), $Setup.elear__c.FF_PSA_eLear_DES_LMS_Yes_Centralized__c,
+IF(AND(ISPICKVAL(FF_PSA_eLear_Admin_Cent_Decent__c,&apos;Decentralized&apos;),FF_PSA_eLear_Decentralised_Number__c&lt;=3),
+ $Setup.elear__c.FF_PSA_Elear_Yes_Decentralized_till_3__c,
+ IF(AND(ISPICKVAL(FF_PSA_eLear_Admin_Cent_Decent__c,&apos;Decentralized&apos;),FF_PSA_eLear_Decentralised_Number__c&gt;3),
+  $Setup.elear__c.FF_PSA_eLear_Yes_Decentralized_Great_3__c,0)))),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Implementation Service</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Health_Train_Per_user_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;500, $Setup.elear__c.HT1__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;1000,$Setup.elear__c.HT2__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;2500,$Setup.elear__c.HT3__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;5000,$Setup.elear__c.HT4__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;10000,$Setup.elear__c.HT5__c,$Setup.elear__c.HT6__c)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Health Train Per user Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Health_Train_no_of_Access__c</fullName>
+        <externalId>false</externalId>
+        <label>Health Train no of Access</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Health_Train_no_of_Courses__c</fullName>
+        <externalId>false</externalId>
+        <label>Health Train no of Courses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Hosting_3rd_party_content_on_SMB__c</fullName>
+        <description>Hosting 3rd party content on SMB</description>
+        <externalId>false</externalId>
+        <label>Courses Hosting 3rd party content on SMB</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_IP_cost_Survey__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(FF_PSA_Survey_Type__c,&apos;SPS Survey&apos;), 
+ISPICKVAL(FF_PSA_SPS_Include12PSM__c,&apos;Yes&apos;),((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)&lt;4444)), 
+( $Setup.elear__c.IPC_C1__c+ $Setup.elear__c.IPC_C2__c*(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c )-
+
+ $Setup.elear__c.IPC_C8__c*((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)*
+ (No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c))), 
+ 
+      (if(AND(ISPICKVAL(FF_PSA_Survey_Type__c,&apos;SPS Survey&apos;),(ISPICKVAL(FF_PSA_SPS_Include12PSM__c,&apos;No&apos;)),
+              ((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)&lt;4444)), 
+         ($Setup.elear__c.IPC_C4__c+ $Setup.elear__c.IPC_C5__c*(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)-
+ $Setup.elear__c.IPC_C3__c*
+((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)*
+(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c))), 
+
+                    (IF(AND(ISPICKVAL(FF_PSA_Survey_Type__c,&apos;SPS Survey&apos;), 
+                            ISPICKVAL(FF_PSA_SPS_Include12PSM__c,&apos;Yes&apos;),((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)&gt;4444)),
+                                     ($Setup.elear__c.IPC_C6__c+(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)* $Setup.elear__c.IPC_C7__c)*1.25,
+ 
+ 
+
+                               ( IF(AND(ISPICKVAL(FF_PSA_Survey_Type__c,&apos;SPS Survey&apos;), 
+                                    ISPICKVAL(FF_PSA_SPS_Include12PSM__c,&apos;No&apos;),((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)&gt;4444)),
+                                         ($Setup.elear__c.IPC_C6__c+(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)* $Setup.elear__c.IPC_C7__c),
+
+
+
+                                                (if(AND(ISPICKVAL(FF_PSA_Survey_Type__c,&apos;VAB Survey&apos;),((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)&lt;4444)), 
+                                                    ($Setup.elear__c.IPC_C4__c+ $Setup.elear__c.IPC_C5__c*(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)- $Setup.elear__c.IPC_C3__c*
+                                                        ((No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)*(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c))), 
+                                                             $Setup.elear__c.IPC_C6__c+(No_of_People_for_Online_Surveys__c+No_of_People_using_Paper_Surveys__c)* $Setup.elear__c.IPC_C7__c)))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Intellectual Property Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Material_Item_Price__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <description>Price at an Individual Product Level</description>
+        <externalId>false</externalId>
+        <label>Material Item Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Material_Item_Quanity__c</fullName>
+        <description>A quantity value used to store no of offerings,items,
+access or no of licences</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Material_Item_cost__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <description>Cost at an Individual Product Level</description>
+        <externalId>false</externalId>
+        <label>Material Item Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Material_Name__c</fullName>
+        <description>A Name used to refer type of course,
+ Seminar,workshop or a elearning course</description>
+        <externalId>false</externalId>
+        <label>Material Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Migration_of_C3_from_CES_to_SMB__c</fullName>
+        <description>Migration of C3 course from CES to SMB</description>
+        <externalId>false</externalId>
+        <label>Courses Migration of C3 from CES to SMB</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Milestone__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Milestone</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>pse__Milestone__c.pse__Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.FF_PSA_Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>pse__Milestone__c</referenceTo>
+        <relationshipLabel>Project Materials</relationshipLabel>
+        <relationshipName>Project_Materials</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Nb_of_rprts_to_be_created__c</fullName>
+        <description>Number of reports to be created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of reports to be created</inlineHelpText>
+        <label>Number of reports to be created</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_No_of_Lang_Survey__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Languages to be used in survey</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_No_of_Users_Cont1__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_No_of_addnl_Quest_upto8__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Number of additional Questions to Survey(up to 8)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of additional Questions to Survey(up to 8)</inlineHelpText>
+        <label>Number of additional Questions to Survey</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Notes_for_Custom_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes for Custom Price</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Price_Per_User_Non_Premium_Skills__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),IF(u1__c&lt;5000,$Setup.elear__c.D1__c, 
+IF(AND(u1__c&gt;5000,u1__c&lt;=10000),$Setup.elear__c.D2__c,IF(AND(u1__c&gt;10000,u1__c&lt;=20000),$Setup.elear__c.D3__c, IF(AND(u1__c&gt;20000,u1__c&lt;=30000),$Setup.elear__c.D4__c, 
+IF(AND(u1__c&gt;30000,u1__c&lt;=40000),$Setup.elear__c.D5__c,IF(AND(u1__c&gt;40000,u1__c&lt;=49999),$Setup.elear__c.D6__c,IF(u1__c&gt;=50000,$Setup.elear__c.D7__c,0))))))),(IF(u1__c&lt;=100,($Setup.elear__c.D8__c-0.03*u1__c),$Setup.elear__c.D9__c)-IF(c1__c&lt;=5,0,IF(c1__c&lt;=10,$Setup.elear__c.D10__c,IF(AND(c1__c&lt;=20,u1__c&lt;=35),$Setup.elear__c.D11__c,$Setup.elear__c.D12__c))))*IF(c1__c&lt;=20,1,IF(c1__c&gt;20,IF(c1__c&lt;=30,$Setup.elear__c.D13__c,IF(c1__c&lt;=40,$Setup.elear__c.D14__c,IF(c1__c&lt;=50,$Setup.elear__c.D15__c,$Setup.elear__c.D16__c))),0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Per User Maintenance &amp; Reliability</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Project__c</fullName>
+        <description>The Master project that is in progress</description>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>pse__Proj__c</referenceTo>
+        <relationshipLabel>Project Materials</relationshipLabel>
+        <relationshipName>Project_Materials</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_SCSCW_Days__c</fullName>
+        <description>SCORM &amp; SCORM Wrapper Production no of days</description>
+        <externalId>false</externalId>
+        <label>Days SCORM &amp; SCORMWrapper Production Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_SPS_Include12PSM__c</fullName>
+        <description>Include PSA Questions(12 addnl) in safety perception Survey. This is applicable only for SPS Suveys.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Include PSA Questions(12 addnl) in safety perception Survey. This is applicable only for SPS Suveys.</inlineHelpText>
+        <label>Include PSMQuestions(12 addnl) in safety</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Safety_EC_Gov_NBCourses__c</fullName>
+        <externalId>false</externalId>
+        <label>Safety E&amp;C Gov No of Courses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Safety_EC_Gov_Nb_Access__c</fullName>
+        <externalId>false</externalId>
+        <label>Safety E&amp;C Gov No of Access</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Safety_EC_Gov_Price_Per_User__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;500, $Setup.elear__c.AM1__c ,IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;1000,$Setup.elear__c.AM2__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;2500,$Setup.elear__c.AM3__c,IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;5000,$Setup.elear__c.AM4__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;10000,$Setup.elear__c.AM5__c,$Setup.elear__c.AM6__c)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Safety E&amp;C Gov Price Per User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Selected_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Selected Price</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Skills_NbCourses__c</fullName>
+        <externalId>false</externalId>
+        <label>Skills No. of Courses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Skills_Nb_Access__c</fullName>
+        <externalId>false</externalId>
+        <label>Skills No. of Access</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Skills_Per_User_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;500, $Setup.elear__c.SK1__c ,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;1000,$Setup.elear__c.SK2__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;2500,$Setup.elear__c.SK3__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;5000,$Setup.elear__c.SK4__c,
+IF(FF_PSA_Safety_EC_Gov_Nb_Access__c&lt;10000,$Setup.elear__c.SK5__c,$Setup.elear__c.SK6__c)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Skills Per User Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Survey_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SPS Survey</fullName>
+                    <default>false</default>
+                    <label>SPS Survey</label>
+                </value>
+                <value>
+                    <fullName>VAB Survey</fullName>
+                    <default>false</default>
+                    <label>VAB Survey</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Price_SMB_Services__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Setup.elear__c.FF_PSA_Migration_of_C3_from_CES_to_SMB__c*FF_PSA_Migration_of_C3_from_CES_to_SMB__c+FF_PSA_Hosting_3rd_party_content_on_SMB__c* $Setup.elear__c.FF_PSA_Hosting_3rd_party_content_on_SMB__c
++IF( AND(FF_PSA_Migration_of_C3_from_CES_to_SMB__c&gt;=1,FF_PSA_Hosting_3rd_party_content_on_SMB__c &gt;=1),$Setup.elear__c.FF_PSA_SMB_Services_Annual_Fee__c,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Price SMB Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Survey_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_IP_cost_Survey__c+ FF_PSA_All_Other_Survey_Cost__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Survey Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Material Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Custom Training</fullName>
+                    <default>false</default>
+                    <label>Custom Training</label>
+                </value>
+                <value>
+                    <fullName>eLearning/Streaming</fullName>
+                    <default>false</default>
+                    <label>eLearning/Streaming</label>
+                </value>
+                <value>
+                    <fullName>ILT material</fullName>
+                    <default>false</default>
+                    <label>ILT material</label>
+                </value>
+                <value>
+                    <fullName>Seminars/Workshops</fullName>
+                    <default>false</default>
+                    <label>Seminars/Workshops</label>
+                </value>
+                <value>
+                    <fullName>SPS VAB Survey</fullName>
+                    <default>false</default>
+                    <label>SPS VAB Survey</label>
+                </value>
+                <value>
+                    <fullName>eLearning/Other</fullName>
+                    <default>false</default>
+                    <label>eLearning/Other</label>
+                </value>
+                <value>
+                    <fullName>SPS Online Survey</fullName>
+                    <default>false</default>
+                    <label>SPS Online Survey</label>
+                </value>
+                <value>
+                    <fullName>DSS Consulting Services</fullName>
+                    <default>false</default>
+                    <label>DSS Consulting Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Additional_Participants__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional participants in excess of 10</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Admin_Cent_Decent__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is LMS Administration Centralized or Decentralized?</inlineHelpText>
+        <label>Administration Centralized/Decentralized</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Decentralized</fullName>
+                    <default>false</default>
+                    <label>Decentralized</label>
+                </value>
+                <value>
+                    <fullName>Centralized</fullName>
+                    <default>false</default>
+                    <label>Centralized</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Client_type__c</fullName>
+        <externalId>false</externalId>
+        <label>Client type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Enterprise</fullName>
+                    <default>false</default>
+                    <label>Enterprise</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Cont1_SubName__c</fullName>
+        <defaultValue>&apos;Does NOT include Premium Skills&apos;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Multiple Library access Enterprise Model. Content Name</inlineHelpText>
+        <label>Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Content_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Multiple Library access Enterprise Model</fullName>
+                    <default>false</default>
+                    <label>Multiple Library access Enterprise Model</label>
+                </value>
+                <value>
+                    <fullName>Single Library Course Model</fullName>
+                    <default>false</default>
+                    <label>Single Library Course Model</label>
+                </value>
+                <value>
+                    <fullName>Access Model</fullName>
+                    <default>false</default>
+                    <label>Access Model</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Decentralised_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If Decentralized, number of Locations/Countries:</inlineHelpText>
+        <label>No. of Locations/Countries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Implementation_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DES Hosted</fullName>
+                    <default>false</default>
+                    <label>DES Hosted</label>
+                </value>
+                <value>
+                    <fullName>CES Hosted</fullName>
+                    <default>false</default>
+                    <label>CES Hosted</label>
+                </value>
+                <value>
+                    <fullName>SCORM Wrapper</fullName>
+                    <default>false</default>
+                    <label>SCORM Wrapper</label>
+                </value>
+                <value>
+                    <fullName>SCORM</fullName>
+                    <default>false</default>
+                    <label>SCORM</label>
+                </value>
+                <value>
+                    <fullName>Non Hosted Coastal LMS</fullName>
+                    <default>false</default>
+                    <label>Non Hosted Coastal LMS</label>
+                </value>
+                <value>
+                    <fullName>LMS Only</fullName>
+                    <default>false</default>
+                    <label>LMS Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Import_Routine_Setup_DES__c</fullName>
+        <externalId>false</externalId>
+        <label>User  Profile Import Routine Setup DES</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_No_of_Libraries_cont1__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Libraries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Participants_Beach_office__c</fullName>
+        <externalId>false</externalId>
+        <label>10 Participants (max) @ Va. Beach office</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Per_User_Charge_Content1__c</fullName>
+        <description>Multiple Library access Enterprise Model, formula field for no of libraries and user based price.</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c&lt;2)),0,
+IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c=2)),(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0))*0.3+(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0)),
+IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c=3)),(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0))*0.4+(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0)),
+IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c=4)),(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0))*0.5+(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0)),
+IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c=5)),(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0))*0.6+(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0)),
+IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c&lt;=6)),(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0))*0.7+(If(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;),(FF_PSA_No_of_Users_Cont1__c &gt;= 10000)),(-0.0000263157894736842*FF_PSA_No_of_Users_Cont1__c+6.26315789473684*1+(0.39*50)),0)),0))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Multiple Library Access Model Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Price_BeachOffice__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Setup.elear__c.FF_PSA_eLear_Price_BeachOffice__c *FF_PSA_eLear_Participants_Beach_office__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Beach Office Participants</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Price_ClientSide__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Setup.elear__c.FF_PSA_eLear_Price_ClientSide__c *FF_PSA_eLearn_Participants_Client_Site__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Client Side Participants</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Price_Training_Data_Export__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_eLear_TrainingData_Export_Routine__c *  $Setup.elear__c.FF_PSA_eLear_TrainingData_Export_Routine__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Training Data Export Routine</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_StopeLear_Per_User_Charge__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Stop_e_Learning__c , 
+&quot;Series Pricing&quot;,if(u4__c&lt;100,$Setup.elear__c.S24__c,if(u4__c&lt;500,$Setup.elear__c.S25__c,if(u4__c&lt;1000,$Setup.elear__c.S26__c,if(u4__c&lt;2500,$Setup.elear__c.S27__c,if(u4__c&lt;5000,$Setup.elear__c.S29__c
+,if(u4__c&lt;10000,$Setup.elear__c.S30__c,$Setup.elear__c.S31__c )))))),
+&quot;Series w/materials&quot;,if(u4__c&lt;100,$Setup.elear__c.SF24__c,if(u4__c&lt;500,$Setup.elear__c.SF25__c,if(u4__c&lt;1000,$Setup.elear__c.SF26__c,if(u4__c&lt;2500,$Setup.elear__c.SF27__c
+,if(u4__c&lt;5000,$Setup.elear__c.SF29__c,if(u4__c&lt;10000,$Setup.elear__c.SF30__c,$Setup.elear__c.SF31__c) ))))),
+&quot;Refresher&quot;,if(u4__c&lt;100,( $Setup.elear__c.S24__c * $Setup.elear__c.SM__c ),if(u4__c&lt;500,( $Setup.elear__c.S25__c * $Setup.elear__c.SM__c )
+,if(u4__c&lt;1000,( $Setup.elear__c.S26__c * $Setup.elear__c.SM__c ),if(u4__c&lt;2500,( $Setup.elear__c.S27__c * $Setup.elear__c.SM__c )
+,if(u4__c&lt;5000,( $Setup.elear__c.S29__c * $Setup.elear__c.SM__c ),if(u4__c&lt;10000,($Setup.elear__c.S30__c * $Setup.elear__c.SM__c),
+($Setup.elear__c.S31__c * $Setup.elear__c.SM__c)) ))))),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Stop eLearning Per User Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_SubTotal_StopeLear_Two__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_eLear_StopeLear_Per_User_Charge__c*u4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Stop e-Learning Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Sub_Total_Content_Model_3__c</fullName>
+        <externalId>false</externalId>
+        <formula>(FF_PSA_Safety_EC_Gov_Price_Per_User__c *FF_PSA_Safety_EC_Gov_Nb_Access__c)+
+(FF_PSA_Skills_Nb_Access__c*FF_PSA_Skills_Per_User_Price__c)+
+(FF_PSA_Health_Train_no_of_Access__c*FF_PSA_Health_Train_Per_user_Price__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub Total Content Model Three</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Sub_Total_Content_Model_One__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_eLear_Per_User_Charge_Content1__c*FF_PSA_No_of_Users_Cont1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub Total Content Model One</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Total_Training_Services__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_eLear_Price_BeachOffice__c+FF_PSA_eLear_Price_ClientSide__c+FF_PSA_Elear_Additional_Participants_Pri__c+FF_PSA_eLear_Travel_and_Living_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Training Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_TrainingData_Export_Routine__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Data Export Routine Setup DES</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Travel_and_Living_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Setup.elear__c.FF_PSA_eLear_Travel_and_Living_Price__c *FF_PSA_eLear_Travel_and_Living__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Travel and Living</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Travel_and_Living__c</fullName>
+        <externalId>false</externalId>
+        <label>Travel and Living</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_Type_of_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Data Services</fullName>
+                    <default>false</default>
+                    <label>Data Services</label>
+                </value>
+                <value>
+                    <fullName>Implementation Services</fullName>
+                    <default>false</default>
+                    <label>Implementation Services</label>
+                </value>
+                <value>
+                    <fullName>Support Services</fullName>
+                    <default>false</default>
+                    <label>Support Services</label>
+                </value>
+                <value>
+                    <fullName>Technical Services</fullName>
+                    <default>false</default>
+                    <label>Technical Services</label>
+                </value>
+                <value>
+                    <fullName>SMB Services</fullName>
+                    <default>false</default>
+                    <label>SMB Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_User_Upload_LMS_DES__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Post-launch one-time User Upload in LMS 4.9 or DES</inlineHelpText>
+        <label>Post-launch User Upload in LMS/DES</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLear_first_adoption_LMS__c</fullName>
+        <externalId>false</externalId>
+        <label>Is this their first adoption of an LMS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLearn_Participants_Client_Site__c</fullName>
+        <externalId>false</externalId>
+        <label>10 Participants (max) @ Client Site</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_eLearning_Total_eLearning_Price__c</fullName>
+        <description>Total price for elearning for all Software,Content,Implementation Services, Data Services together</description>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_Total_Software__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total eLearning Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Assessment_Builder__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Builder</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>&lt;500 Employees</fullName>
+                    <default>false</default>
+                    <label>&lt;500 Employees</label>
+                </value>
+                <value>
+                    <fullName>500-2499 Employees</fullName>
+                    <default>false</default>
+                    <label>500-2499 Employees</label>
+                </value>
+                <value>
+                    <fullName>2500-9999 Employees</fullName>
+                    <default>false</default>
+                    <label>2500-9999 Employees</label>
+                </value>
+                <value>
+                    <fullName>&gt;= 10000 Employees</fullName>
+                    <default>false</default>
+                    <label>&gt;= 10000 Employees</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Authoring_Tool__c</fullName>
+        <externalId>false</externalId>
+        <label>Authoring Tool</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Basic (&lt;=29 Courses)</fullName>
+                    <default>false</default>
+                    <label>Basic (&lt;=29 Courses)</label>
+                </value>
+                <value>
+                    <fullName>Advanced (Btwn 30-99 Courses)</fullName>
+                    <default>false</default>
+                    <label>Advanced (Btwn 30-99 Courses)</label>
+                </value>
+                <value>
+                    <fullName>Enterprise (&gt;100 Courses)</fullName>
+                    <default>false</default>
+                    <label>Enterprise (&gt;100 Courses)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Content_Final__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Content Final Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Customized_Courses__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide customized courses (Hosted or SCORM Wrapper) in SCORM format</inlineHelpText>
+        <label>Provide customized courses Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_DES_SCORMWrapper__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;SCORM Wrapper&apos;),ISPICKVAL(FF_PSA_eLear_Contract_Type__c,&apos;New&apos;)),$Setup.elear__c.SSW_C1__c,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Server Setup New DES SCORM Wrapper</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Hosting_3_Party__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Hosting 3rd party content on Coastal servers</inlineHelpText>
+        <label>Hosting 3rd party Content on CoastalServ</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_LMS_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;DES Hosted&apos;),$Setup.elear__c.LMS_C1__c,
+IF(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;LMS Only&apos;),$Setup.elear__c.LMS_C2__c,
+IF(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;SCORM Wrapper&apos;),$Setup.elear__c.LMS_C3__c,0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LMS Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_3_Party_Server__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_Hosting_3_Party__c *  $Setup.elear__c.FF_PSA_elear_Hosting_3_Party__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Hosted 3rd Party Coastal Servers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_Assessment_Builder__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(FF_PSA_elear_Assessment_Builder__c,&apos;&lt;500 Employees&apos;), $Setup.elear__c.FF_PSA_elear_AB_500_Emp__c ,
+IF(ISPICKVAL(FF_PSA_elear_Assessment_Builder__c,&apos;500-2499 Employees&apos;), $Setup.elear__c.FF_PSA_elear_AB_500_2499_Emp__c ,
+IF(ISPICKVAL(FF_PSA_elear_Assessment_Builder__c,&apos;2500-9999 Employees&apos;), $Setup.elear__c.FF_PSA_elear_AB_2500_9999_Emp__c ,
+IF(ISPICKVAL(FF_PSA_elear_Assessment_Builder__c,&apos;&gt;= 10000 Employees&apos;), $Setup.elear__c.FF_PSA_elear_AB_10000_Emp__c,0))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Assessment Builder</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_Authoring_Tool__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(FF_PSA_elear_Authoring_Tool__c,&apos;Enterprise (&gt;100 Courses)&apos;), $Setup.elear__c.FF_PSA_eLear_AT_Courses_Greater_100__c ,
+IF(ISPICKVAL(FF_PSA_elear_Authoring_Tool__c,&apos;Advanced (Btwn 30-99 Courses)&apos;), $Setup.elear__c.FF_PSA_elear_AT_Course_30_99__c ,
+IF(ISPICKVAL(FF_PSA_elear_Authoring_Tool__c,&apos;Basic (&lt;=29 Courses)&apos;), $Setup.elear__c.FF_PSA_eLear_AT_Courses_less_29__c,0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Authoring Tool</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_Customized_Courses__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_Customized_Courses__c *  $Setup.elear__c.FF_PSA_elear_Customized_Courses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Customized Courses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_Enterprise_Tech__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Enterprise&apos;) ,
+IF(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;DES Hosted&apos;),
+IF(FF_PSA_elear_Users_in_LMS__c&lt;30000,  $Setup.elear__c.FF_PSA_elear_DES_less_30000__c, 
+$Setup.elear__c.FF_PSA_elear_DES_greater_30000__c) ,
+IF(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;SCORM Wrapper&apos;), $Setup.elear__c.FF_PSA_elear_Scorm_Enterprises_Support__c,0)),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Enterprise Level Tech Support</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_Refresher_training__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_Refresher_training__c *  $Setup.elear__c.FF_PSA_elear_Refresher_training__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Refresher training via phone</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_SCM_SCW_Production__c</fullName>
+        <externalId>false</externalId>
+        <formula>CEILING(FF_PSA_elear_SCM_SCW_Production_Fee__c/10)*100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price ONE-OFF SCM or SCW Production Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_User_Profile_Import__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_eLear_Import_Routine_Setup_DES__c *  $Setup.elear__c.FF_PSA_eLear_Import_Routine_Setup_DES__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price User Profile Import Routine</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_User_Upload_LMS_DES__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_eLear_User_Upload_LMS_DES__c *  $Setup.elear__c.FF_PSA_eLear_User_Upload_LMS_DES__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Post-launch User Upload in LMS/DES</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Price_Users_in_LMS__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;LMS Only&apos;),FF_PSA_elear_Users_in_LMS__c*$Setup.elear__c.LMSU1__c,IF(FF_PSA_elear_Users_in_LMS__c&lt;1,0,IF(FF_PSA_elear_Users_in_LMS__c&lt;1000,($Setup.elear__c.LMSU2__c/$Setup.elear__c.LMSU3__c*FF_PSA_elear_Users_in_LMS__c+$Setup.elear__c.LMSU4__c/$Setup.elear__c.LMSU5__c), IF(FF_PSA_elear_Users_in_LMS__c&lt;5000,($Setup.elear__c.LMSU6__c/$Setup.elear__c.LMSU7__c*FF_PSA_elear_Users_in_LMS__c+$Setup.elear__c.LMSU8__c),IF(FF_PSA_elear_Users_in_LMS__c&lt;10000,($Setup.elear__c.LMSU9__c*FF_PSA_elear_Users_in_LMS__c+$Setup.elear__c.LMSU10__c), IF(FF_PSA_elear_Users_in_LMS__c&lt;25000,($Setup.elear__c.LMSU11__c/$Setup.elear__c.LMSU12__c*FF_PSA_elear_Users_in_LMS__c+$Setup.elear__c.LMSU13__c/$Setup.elear__c.LMSU14__c), (IF(FF_PSA_elear_Users_in_LMS__c&lt;50000,($Setup.elear__c.LMSU15__c/$Setup.elear__c.LMSU16__c*FF_PSA_elear_Users_in_LMS__c+$Setup.elear__c.LMSU17__c), (IF(FF_PSA_elear_Users_in_LMS__c&lt;100000,($Setup.elear__c.LMSU18__c/$Setup.elear__c.LMSU19__c*FF_PSA_elear_Users_in_LMS__c+$Setup.elear__c.LMSU20__c),($Setup.elear__c.LMSU21__c/$Setup.elear__c.LMSU22__c*FF_PSA_elear_Users_in_LMS__c+$Setup.elear__c.LMSU23__c)))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price Users in LMS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Refresher_training__c</fullName>
+        <description>Refresher training via phone, 4-hour block</description>
+        <externalId>false</externalId>
+        <label>Refresher training via phone,4-hourblock</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_SCM_SCW_Production_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>ONE-OFF SCM or SCW Production Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_SCORMWrapper_Production_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;SCORM Wrapper&apos;) || ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;SCORM&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c&gt;=2)),$Setup.elear__c.SWC_C1__c,
+IF(AND(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;SCORM Wrapper&apos;) || ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;SCORM&apos;),(FF_PSA_eLear_No_of_Libraries_cont1__c&lt;2)),$Setup.elear__c.SWC_C2__c/$Setup.elear__c.SWC_C3__c*$Setup.elear__c.SWC_C4__c,0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price SCORM Wrapper Production Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Tech_Support_Service__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enterprise Level Technical Support Services</inlineHelpText>
+        <label>Enterprise Level Tech Support Service</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Total_Course_Services__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_Price_Customized_Courses__c+FF_PSA_elear_Price_3_Party_Server__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Course Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Total_Data_Services__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_Price_User_Upload_LMS_DES__c+FF_PSA_elear_Price_User_Profile_Import__c+FF_PSA_eLear_Price_Training_Data_Export__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Data Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Total_Services__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_eLear_Total_Training_Services__c+FF_PSA_elear_Total_Data_Services__c+FF_PSA_elear_Total_Support_Services__c+FF_PSA_elear_Total_Course_Services__c+FF_PSA_Elear_Price_ImplementationService__c
++FF_PSA_Total_Price_SMB_Services__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Total_Software__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_LMS_Fee__c + FF_PSA_elear_Price_Users_in_LMS__c +  
+ FF_PSA_elear_Price_Authoring_Tool__c+ 
+ IF(OR(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;DES Hosted&apos;),
+ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&apos;LMS Only&apos;)),FF_PSA_elear_Price_Assessment_Builder__c,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Software Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Total_Support_Services__c</fullName>
+        <externalId>false</externalId>
+        <formula>FF_PSA_elear_Price_Refresher_training__c+FF_PSA_elear_Price_Enterprise_Tech__c+FF_PSA_elear_Price_SCM_SCW_Production__c+SCORM_SCORMWrapper_Production_Fee__c+FF_PSA_elear_DES_SCORMWrapper__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Support Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_Users_in_LMS__c</fullName>
+        <externalId>false</externalId>
+        <label>Users in LMS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_elear_content_subtotal_2__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Content Subtotal two</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_People_for_Online_Surveys__c</fullName>
+        <description>Number of people to be surveys using online surveys.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of people to be surveys using online surveys</inlineHelpText>
+        <label>No of People using Online Surveys</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_People_using_Paper_Surveys__c</fullName>
+        <description>Number of people to be surveyed using paper surveys</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of people to be surveyed using paper surveys</inlineHelpText>
+        <label>No of People using Paper Surveys</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registration_Fee_Once_Per_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Fee(Once Per Year)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SCORM_SCORMWrapper_Production_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(OR(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&quot;SCORM Wrapper&quot;),
+ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&quot;SCORM&quot;)),FF_PSA_eLear_No_of_Libraries_cont1__c&gt;=2), $Setup.elear__c.SSWP_C1__c ,
+IF(AND(OR(ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&quot;SCORM Wrapper&quot;),
+ISPICKVAL(FF_PSA_eLear_Implementation_Type__c,&quot;SCORM&quot;)),FF_PSA_eLear_No_of_Libraries_cont1__c&lt;2),CEILING(c3__c+c2__c+c1__c+FF_PSA_Safety_EC_Gov_NBCourses__c
++FF_PSA_Skills_NbCourses__c+FF_PSA_Health_Train_no_of_Courses__c)/ $Setup.elear__c.SSWP_C2__c * $Setup.elear__c.SSWP_C3__c ,0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SCORM &amp; SCORMWrapper Production Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Safety_E_C_Gov_HT_Per_User_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;EnterPrise&apos;),
+u3__c&gt;=10000,c3__c&lt;51),
+- ($Setup.elear__c.SingLibSafety1__c *u3__c)+ $Setup.elear__c.SingLibSafety2__c 
+*1+( $Setup.elear__c.SingLibSafety3__c *c3__c),
+IF(AND(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;EnterPrise&apos;),
+u3__c&gt;=10000,c3__c&gt;49),
+- $Setup.elear__c.SingLibSafety1__c *u3__c+ $Setup.elear__c.SingLibSafety2__c *1+( $Setup.elear__c.SingLibSafety3__c *50),
+IF(ISPICKVAL(FF_PSA_eLear_Client_type__c,&apos;Standard&apos;),
+- $Setup.elear__c.SingLibSafety4__c *u3__c+ $Setup.elear__c.SingLibSafety5__c *1
++(0.39*c3__c),0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Safety E&amp;C Gov HT Per User Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stop_e_Learning__c</fullName>
+        <externalId>false</externalId>
+        <label>Stop e-Learning</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Series Pricing</fullName>
+                    <default>false</default>
+                    <label>Series Pricing</label>
+                </value>
+                <value>
+                    <fullName>Series w/materials</fullName>
+                    <default>false</default>
+                    <label>Series w/materials</label>
+                </value>
+                <value>
+                    <fullName>Refresher</fullName>
+                    <default>false</default>
+                    <label>Refresher</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Survey_Price_Without_Registration_Fee__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>New Text Field</inlineHelpText>
+        <label>Survey Price Without Registration Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Prices__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>New Field</inlineHelpText>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>c1__c</fullName>
+        <externalId>false</externalId>
+        <label>Maintenance &amp; Reliability(No Of Courses)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c2__c</fullName>
+        <externalId>false</externalId>
+        <label>Premium Content/PSM(No Of Courses)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c3__c</fullName>
+        <externalId>false</externalId>
+        <label>Safety E&amp;C Gov HT(No of Courses)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>u1__c</fullName>
+        <externalId>false</externalId>
+        <label>Maintenance &amp; Reliability(No of Users)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>u2__c</fullName>
+        <externalId>false</externalId>
+        <label>Premium Content/PSM(No of Users)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>u3__c</fullName>
+        <externalId>false</externalId>
+        <label>Safety E&amp;C Gov HT(No of Users)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>u4__c</fullName>
+        <externalId>false</externalId>
+        <label>Stop e-Learning(No of Users)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Project Materials</label>
+    <nameField>
+        <displayFormat>PROJMAT-{0000}</displayFormat>
+        <label>Project Materials Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Project Materials</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>FF_PSA_All_Other</fullName>
+        <active>true</active>
+        <description>Record type for ILT,Seminars workshops,Custom Training and Streaming</description>
+        <label>All Other</label>
+        <picklistValues>
+            <picklist>Are_Reports_in_Other_Langauges_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_SPS_Include12PSM__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Survey_Type__c</picklist>
+            <values>
+                <fullName>SPS Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAB Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Type__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS Consulting Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Online Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FStreaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Admin_Cent_Decent__c</picklist>
+            <values>
+                <fullName>Centralized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentralized</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Client_type__c</picklist>
+            <values>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Content_Model__c</picklist>
+            <values>
+                <fullName>Access Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Library access Enterprise Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Library Course Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Contract_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Implementation_Type__c</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Hosted Coastal LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM Wrapper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Type_of_Services__c</picklist>
+            <values>
+                <fullName>Data Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMB Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_first_adoption_LMS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Assessment_Builder__c</picklist>
+            <values>
+                <fullName>%3C500 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D 10000 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2500-9999 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500-2499 Employees</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Authoring_Tool__c</picklist>
+            <values>
+                <fullName>Advanced %28Btwn 30-99 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic %28%3C%3D29 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise %28%3E100 Courses%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Fee_Once_Per_Year__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_e_Learning__c</picklist>
+            <values>
+                <fullName>Refresher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series w%2Fmaterials</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FF_PSA_DSS_Consulting_Services</fullName>
+        <active>true</active>
+        <label>DSS Consulting Services</label>
+        <picklistValues>
+            <picklist>Are_Reports_in_Other_Langauges_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_SPS_Include12PSM__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Survey_Type__c</picklist>
+            <values>
+                <fullName>SPS Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAB Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Type__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS Consulting Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Online Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FStreaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Admin_Cent_Decent__c</picklist>
+            <values>
+                <fullName>Centralized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentralized</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Client_type__c</picklist>
+            <values>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Content_Model__c</picklist>
+            <values>
+                <fullName>Access Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Library access Enterprise Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Library Course Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Contract_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Implementation_Type__c</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Hosted Coastal LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM Wrapper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Type_of_Services__c</picklist>
+            <values>
+                <fullName>Data Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMB Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_first_adoption_LMS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Assessment_Builder__c</picklist>
+            <values>
+                <fullName>%3C500 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D 10000 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2500-9999 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500-2499 Employees</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Authoring_Tool__c</picklist>
+            <values>
+                <fullName>Advanced %28Btwn 30-99 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic %28%3C%3D29 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise %28%3E100 Courses%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Fee_Once_Per_Year__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_e_Learning__c</picklist>
+            <values>
+                <fullName>Refresher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series w%2Fmaterials</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FF_PSA_SPS_Online_Survey</fullName>
+        <active>true</active>
+        <label>SPS Online Survey</label>
+        <picklistValues>
+            <picklist>Are_Reports_in_Other_Langauges_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_SPS_Include12PSM__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Survey_Type__c</picklist>
+            <values>
+                <fullName>SPS Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAB Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Type__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS Consulting Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Online Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FStreaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Admin_Cent_Decent__c</picklist>
+            <values>
+                <fullName>Centralized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentralized</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Client_type__c</picklist>
+            <values>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Content_Model__c</picklist>
+            <values>
+                <fullName>Access Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Library access Enterprise Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Library Course Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Contract_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Implementation_Type__c</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Hosted Coastal LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM Wrapper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Type_of_Services__c</picklist>
+            <values>
+                <fullName>Data Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMB Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_first_adoption_LMS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Assessment_Builder__c</picklist>
+            <values>
+                <fullName>%3C500 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D 10000 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2500-9999 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500-2499 Employees</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Authoring_Tool__c</picklist>
+            <values>
+                <fullName>Advanced %28Btwn 30-99 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic %28%3C%3D29 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise %28%3E100 Courses%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Fee_Once_Per_Year__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_e_Learning__c</picklist>
+            <values>
+                <fullName>Refresher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series w%2Fmaterials</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FF_PSA_SPS_VAB_Surveys</fullName>
+        <active>true</active>
+        <label>SPS VAB Surveys</label>
+        <picklistValues>
+            <picklist>Are_Reports_in_Other_Langauges_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_SPS_Include12PSM__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Survey_Type__c</picklist>
+            <values>
+                <fullName>SPS Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAB Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Type__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS Consulting Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Online Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FStreaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Admin_Cent_Decent__c</picklist>
+            <values>
+                <fullName>Centralized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentralized</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Client_type__c</picklist>
+            <values>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Content_Model__c</picklist>
+            <values>
+                <fullName>Access Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Library access Enterprise Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Library Course Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Contract_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Implementation_Type__c</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Hosted Coastal LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM Wrapper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Type_of_Services__c</picklist>
+            <values>
+                <fullName>Data Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMB Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_first_adoption_LMS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Assessment_Builder__c</picklist>
+            <values>
+                <fullName>%3C500 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D 10000 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2500-9999 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500-2499 Employees</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Authoring_Tool__c</picklist>
+            <values>
+                <fullName>Advanced %28Btwn 30-99 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic %28%3C%3D29 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise %28%3E100 Courses%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Fee_Once_Per_Year__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_e_Learning__c</picklist>
+            <values>
+                <fullName>Refresher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series w%2Fmaterials</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FF_PSA_Services</fullName>
+        <active>true</active>
+        <label>Services</label>
+        <picklistValues>
+            <picklist>Are_Reports_in_Other_Langauges_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_SPS_Include12PSM__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Survey_Type__c</picklist>
+            <values>
+                <fullName>SPS Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAB Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Type__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS Consulting Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Online Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FStreaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Admin_Cent_Decent__c</picklist>
+            <values>
+                <fullName>Centralized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentralized</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Client_type__c</picklist>
+            <values>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Content_Model__c</picklist>
+            <values>
+                <fullName>Access Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Library access Enterprise Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Library Course Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Contract_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Implementation_Type__c</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Hosted Coastal LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM Wrapper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Type_of_Services__c</picklist>
+            <values>
+                <fullName>Data Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMB Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_first_adoption_LMS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Assessment_Builder__c</picklist>
+            <values>
+                <fullName>%3C500 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D 10000 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2500-9999 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500-2499 Employees</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Authoring_Tool__c</picklist>
+            <values>
+                <fullName>Advanced %28Btwn 30-99 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic %28%3C%3D29 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise %28%3E100 Courses%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Fee_Once_Per_Year__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_e_Learning__c</picklist>
+            <values>
+                <fullName>Refresher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series w%2Fmaterials</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FF_PSA_Software</fullName>
+        <active>true</active>
+        <label>Software</label>
+        <picklistValues>
+            <picklist>Are_Reports_in_Other_Langauges_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_SPS_Include12PSM__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Survey_Type__c</picklist>
+            <values>
+                <fullName>SPS Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAB Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Type__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS Consulting Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Online Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FStreaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Admin_Cent_Decent__c</picklist>
+            <values>
+                <fullName>Centralized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentralized</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Client_type__c</picklist>
+            <values>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Content_Model__c</picklist>
+            <values>
+                <fullName>Access Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Library access Enterprise Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Library Course Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Contract_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Implementation_Type__c</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Hosted Coastal LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM Wrapper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Type_of_Services__c</picklist>
+            <values>
+                <fullName>Data Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMB Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_first_adoption_LMS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Assessment_Builder__c</picklist>
+            <values>
+                <fullName>%3C500 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D 10000 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2500-9999 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500-2499 Employees</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Authoring_Tool__c</picklist>
+            <values>
+                <fullName>Advanced %28Btwn 30-99 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic %28%3C%3D29 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise %28%3E100 Courses%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Fee_Once_Per_Year__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_e_Learning__c</picklist>
+            <values>
+                <fullName>Refresher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series w%2Fmaterials</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FF_PSA_eLearn_Content</fullName>
+        <active>true</active>
+        <label>Content</label>
+        <picklistValues>
+            <picklist>Are_Reports_in_Other_Langauges_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_SPS_Include12PSM__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Survey_Type__c</picklist>
+            <values>
+                <fullName>SPS Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAB Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_Type__c</picklist>
+            <values>
+                <fullName>Custom Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS Consulting Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILT material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Online Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS VAB Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminars%2FWorkshops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eLearning%2FStreaming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Admin_Cent_Decent__c</picklist>
+            <values>
+                <fullName>Centralized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentralized</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Client_type__c</picklist>
+            <values>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Content_Model__c</picklist>
+            <values>
+                <fullName>Access Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Library access Enterprise Model</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Library Course Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Contract_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Implementation_Type__c</picklist>
+            <values>
+                <fullName>CES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DES Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LMS Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Hosted Coastal LMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCORM Wrapper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_Type_of_Services__c</picklist>
+            <values>
+                <fullName>Data Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMB Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_eLear_first_adoption_LMS__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Assessment_Builder__c</picklist>
+            <values>
+                <fullName>%3C500 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D 10000 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2500-9999 Employees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500-2499 Employees</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FF_PSA_elear_Authoring_Tool__c</picklist>
+            <values>
+                <fullName>Advanced %28Btwn 30-99 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic %28%3C%3D29 Courses%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enterprise %28%3E100 Courses%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Fee_Once_Per_Year__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_e_Learning__c</picklist>
+            <values>
+                <fullName>Refresher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series w%2Fmaterials</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>FF_PSA_10_Participants_max_Va_Beach</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_Participants_Beach_office__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_Participants_Beach_office__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_10_Participants_max_at_Client_Sit</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLearn_Participants_Client_Site__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLearn_Participants_Client_Site__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Additional_participants_in_excess</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_Additional_Participants__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_Additional_Participants__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Content_Final_Price</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_Content_Final__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_Content_Final__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Content_Subtotal_two</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_content_subtotal_2__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_content_subtotal_2__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Days_SCORM_and_SCORMWrapper_Prod</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_SCSCW_Days__c   &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_SCSCW_Days__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Enterprise_Level_Tech_Support_Ser</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_Tech_Support_Service__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_Tech_Support_Service__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Health_Train_no_of_Access</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Health_Train_no_of_Access__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Health_Train_no_of_Access__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Health_Train_no_of_Courses</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Health_Train_no_of_Courses__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Health_Train_no_of_Courses__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Hosting_3rd_party_Content_on_Coas</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_Hosting_3_Party__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_Hosting_3_Party__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Material_Item_Cost</fullName>
+        <active>false</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Material_Item_cost__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Material_Item_cost__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Material_Item_Price</fullName>
+        <active>false</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Material_Item_Price__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Material_Item_Price__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_No_of_Libraries</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_No_of_Libraries_cont1__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_No_of_Libraries_cont1__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_No_of_LocationsCountries</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_Decentralised_Number__c   &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_Decentralised_Number__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_No_of_People_using_Online_Surveys</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>No_of_People_for_Online_Surveys__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>No_of_People_for_Online_Surveys__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_No_of_People_using_Paper_Surveys</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>No_of_People_using_Paper_Surveys__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>No_of_People_using_Paper_Surveys__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_No_of_Users</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_No_of_Users_Cont1__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_No_of_Users_Cont1__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Non_Premium_Skills_No_Of_Courses</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>c1__c &lt;0</errorConditionFormula>
+        <errorDisplayField>c1__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Non_Premium_Skills_No_of_Users</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>u1__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>u1__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Number_of_Languages_to_be_used_in</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_No_of_Lang_Survey__c   &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_No_of_Lang_Survey__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Number_of_additional_Questions_to</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_No_of_addnl_Quest_upto8__c   &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_No_of_addnl_Quest_upto8__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Number_of_reports_to_be_created</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Nb_of_rprts_to_be_created__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Nb_of_rprts_to_be_created__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_ONE_OFF_SCM_or_SCW_Production_Fee</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_SCM_SCW_Production_Fee__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_SCM_SCW_Production_Fee__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Post_launch_User_Upload_in_LMS_DE</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_User_Upload_LMS_DES__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_User_Upload_LMS_DES__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Premium_Skills_PSM_No_Of_Courses</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>c2__c &lt;0</errorConditionFormula>
+        <errorDisplayField>c2__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Premium_Skills_PSM_No_of_Users</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>u2__c &lt;0</errorConditionFormula>
+        <errorDisplayField>u2__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Provide_customized_courses_Number</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_Customized_Courses__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_Customized_Courses__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Quantity</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Material_Item_Quanity__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Material_Item_Quanity__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Refresher_training_via_phone_4_ho</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_Refresher_training__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_Refresher_training__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Safety_EandC_Gov_HT_No_of_Course</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>c3__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>c3__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Safety_EandC_Gov_HT_No_of_Users</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>u3__c &lt;0</errorConditionFormula>
+        <errorDisplayField>u3__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Safety_EandC_Gov_No_of_Access</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Safety_EC_Gov_Nb_Access__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Safety_EC_Gov_Nb_Access__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Safety_EandC_Gov_No_of_Courses</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Safety_EC_Gov_NBCourses__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Safety_EC_Gov_NBCourses__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Skills_No_of_Access</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Skills_Nb_Access__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Skills_Nb_Access__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Skills_No_of_Courses</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_Skills_NbCourses__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_Skills_NbCourses__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Stop_e_Learning_No_of_Users</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>u4__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>u4__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Survey_Add_Question_Cannot_8</fullName>
+        <active>true</active>
+        <description>Survey_Additional_questions_cannot_&gt;_8</description>
+        <errorConditionFormula>If(FF_PSA_No_of_addnl_Quest_upto8__c&gt;8,true,false)</errorConditionFormula>
+        <errorDisplayField>FF_PSA_No_of_addnl_Quest_upto8__c</errorDisplayField>
+        <errorMessage>No of additional questions in surveys cannot be more than 8</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Training_Data_Export_Routine_Setu</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_TrainingData_Export_Routine__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_TrainingData_Export_Routine__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Travel_and_Living</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_Travel_and_Living__c &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_Travel_and_Living__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_User_Profile_Import_Routine_Setup</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_eLear_Import_Routine_Setup_DES__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_eLear_Import_Routine_Setup_DES__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FF_PSA_Users_in_LMS</fullName>
+        <active>true</active>
+        <description>The field value cannot be negative</description>
+        <errorConditionFormula>FF_PSA_elear_Users_in_LMS__c  &lt;0</errorConditionFormula>
+        <errorDisplayField>FF_PSA_elear_Users_in_LMS__c</errorDisplayField>
+        <errorMessage>This field cannot have a negative value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Survey_Additional_questions_cannot_grt_8</fullName>
+        <active>true</active>
+        <description>Survey_Additional_questions_cannot_&gt;_8</description>
+        <errorConditionFormula>If(FF_PSA_No_of_addnl_Quest_upto8__c&gt;8,true,false)</errorConditionFormula>
+        <errorDisplayField>FF_PSA_No_of_addnl_Quest_upto8__c</errorDisplayField>
+        <errorMessage>No of additional questions in surveys cannot be more than 8</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

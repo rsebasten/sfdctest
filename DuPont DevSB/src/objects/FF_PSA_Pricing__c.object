@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to store all the pricing related calculations and Final Price for each of the Pricing Option</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>FF_PSA_Actual_Other_Additional_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Other Additional Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Administrative_Fee_Percent__c</fullName>
+        <description>capture the admin fees which will be added to the % Labor price to calculate final T&amp;L Price</description>
+        <externalId>false</externalId>
+        <label>Administrative Fee Percent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Annual_Cost_Escalation__c</fullName>
+        <description>The annual cost escalation price based on the annual cost escalation % added at the Project level.BDM will not be able to change this value.</description>
+        <externalId>false</externalId>
+        <label>Total Annual Cost Escalation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Break_Even__c</fullName>
+        <description>To determine the break even period for the payment, calculated based on Total revenue and project cost.</description>
+        <externalId>false</externalId>
+        <label>Break Even</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Contingency_Price__c</fullName>
+        <description>The final contingency price based on the contingency % added at the Project level. BDM will not be able to change this value.</description>
+        <externalId>false</externalId>
+        <label>Contingency Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Custom_Margin__c</fullName>
+        <description>This field is used to capture the margin to be added to the Cost to calculate the Price for Work, Travel, Holdover and Training.</description>
+        <externalId>false</externalId>
+        <label>Custom Margin Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Custom_Price__c</fullName>
+        <description>BDM can decide to select custom Price, if he/she is not satisfied with any of the Floor, Market or Stretch prices.</description>
+        <externalId>false</externalId>
+        <label>Custom Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Estimated_Tax_Excluding_T_L__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Tax(Excluding T&amp;L)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Estimated_Tax__c</fullName>
+        <description>The final tax price based on the Tax % added at the Project level. BDM will not be able to change this value.</description>
+        <externalId>false</externalId>
+        <label>Estimated Tax(Including T&amp;L)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Final_Project_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Project Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Floor_Margin__c</fullName>
+        <description>It will be prepopulated based on the Region/Sub region and Country of the Project</description>
+        <externalId>false</externalId>
+        <label>Floor Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Floor_Price__c</fullName>
+        <description>This is standard price offering against each product and are prepopulated. These value cannot be changed by the BDM. The Master data for Floor price for each of the product will be stored in the system and can be updated by the Admin.</description>
+        <externalId>false</externalId>
+        <label>Floor Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Hold_Over_Cost__c</fullName>
+        <description>Hold over cost calculated based on the Role and Holdover Cost rate for all the resource requests for the Project</description>
+        <externalId>false</externalId>
+        <label>Total Hold Over Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Key_Performance_Indicators__c</fullName>
+        <description>Specifies the KPIs to idenify the performance of the project</description>
+        <externalId>false</externalId>
+        <label>Key Performance Indicators</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Lump_Sum_Amount__c</fullName>
+        <description>store T&amp;L Lump sum amount based on agreement</description>
+        <externalId>false</externalId>
+        <label>Lump Sum Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Market_Price__c</fullName>
+        <description>This is standard price offering against each product and are prepopulated. These value cannot be changed by the BDM. The Master data for Market Price for each of the product will be stored in the system and can be updated by the Admin</description>
+        <externalId>false</externalId>
+        <label>Market Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Milestone_Target_Dates__c</fullName>
+        <externalId>false</externalId>
+        <label>Milestone Target Dates</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Milestones_End_Date__c</fullName>
+        <description>End date for Milestone generation in pricing module for project</description>
+        <externalId>false</externalId>
+        <label>Milestones End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Milestones_Start_Date__c</fullName>
+        <description>Start date for milestone generation in Pricing Module of Project</description>
+        <externalId>false</externalId>
+        <label>Milestones Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Payment_Schedule__c</fullName>
+        <description>Indicates the frequency of payment</description>
+        <externalId>false</externalId>
+        <label>Payment Schedule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Yearly</fullName>
+                    <default>false</default>
+                    <label>Yearly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Planned_Total_Project_Cost__c</fullName>
+        <description>Prepopulated based on the project cost calculated at the project level</description>
+        <externalId>false</externalId>
+        <label>Total Planned Project Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Planned_Total_Project_Price__c</fullName>
+        <description>Total Project Price calculated by adding the margin</description>
+        <externalId>false</externalId>
+        <label>Total Planned Project Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Profit__c</fullName>
+        <description>Profit  based on the Cost and Final Price of the Project</description>
+        <externalId>false</externalId>
+        <label>Profit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Project_Milestones__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Milestones</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Project_Price_Excluding_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Price Excluding Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Project_Price_Including_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Price Including Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Project_Profitability__c</fullName>
+        <description>Profitability (in Percentage) based on the Cost and Final Price of the Project</description>
+        <externalId>false</externalId>
+        <label>Project Profitability</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A reference to the Master Project</description>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>pse__Proj__c</referenceTo>
+        <relationshipLabel>Pricings</relationshipLabel>
+        <relationshipName>Pricings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Resource_Bill_Rates__c</fullName>
+        <externalId>false</externalId>
+        <label>Resource Bill Rates</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Resource_Request_List__c</fullName>
+        <externalId>false</externalId>
+        <label>Resource Request List</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Revenue_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Selected_margin__c</fullName>
+        <externalId>false</externalId>
+        <label>FF PSA Selected margin</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Floor Margin</fullName>
+                    <default>false</default>
+                    <label>Floor Margin</label>
+                </value>
+                <value>
+                    <fullName>Target Margin</fullName>
+                    <default>false</default>
+                    <label>Target Margin</label>
+                </value>
+                <value>
+                    <fullName>Stretch Margin</fullName>
+                    <default>false</default>
+                    <label>Stretch Margin</label>
+                </value>
+                <value>
+                    <fullName>Custom Margin</fullName>
+                    <default>false</default>
+                    <label>Custom Margin</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stretch_Margin__c</fullName>
+        <description>It will be prepopulated based on the Region/Sub region and Country of the Project</description>
+        <externalId>false</externalId>
+        <label>Stretch Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Stretch_Price__c</fullName>
+        <description>This is standard price offering against each product and are prepopulated. These value cannot be changed by the BDM. The Master data for Stretch Price for each of the product will be stored in the system and can be updated by the Admin</description>
+        <externalId>false</externalId>
+        <label>Stretch Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_T_L_Option__c</fullName>
+        <description>Option to be determine the T&amp;L price for the project</description>
+        <externalId>false</externalId>
+        <label>Travel &amp; Living Option</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>At a Fixed % Of Service Fee</fullName>
+                    <default>false</default>
+                    <label>At a Fixed % Of Service Fee</label>
+                </value>
+                <value>
+                    <fullName>Lump Sum Based on Agreement</fullName>
+                    <default>false</default>
+                    <label>Lump Sum Based on Agreement</label>
+                </value>
+                <value>
+                    <fullName>Reimbursed at cost</fullName>
+                    <default>false</default>
+                    <label>Reimbursed at cost</label>
+                </value>
+                <value>
+                    <fullName>Estimated markup as Admin fee on T&amp;L</fullName>
+                    <default>false</default>
+                    <label>Estimated markup as Admin fee on T&amp;L</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_T_L_Percentage_of_Service_Fee__c</fullName>
+        <description>capture the % labor price which will be used calculate the final T&amp;L price</description>
+        <externalId>false</externalId>
+        <label>T&amp;L Percentage of Service Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Target_Margin__c</fullName>
+        <description>It will be prepopulated based on the Region/Sub region and Country of the Project</description>
+        <externalId>false</externalId>
+        <label>Target Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Additional_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Additional Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Hold_Over_Price__c</fullName>
+        <description>It represents the Total Hold Over Price calculated by adding the margin.</description>
+        <externalId>false</externalId>
+        <label>Total Hold Over Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Resource_Cost__c</fullName>
+        <description>The sum of work,travel,training and holdover cost</description>
+        <externalId>false</externalId>
+        <label>Total Resource Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_T_L_Price__c</fullName>
+        <description>It represents the Total T&amp;L Price</description>
+        <externalId>false</externalId>
+        <label>Total T&amp;L Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Training_Cost__c</fullName>
+        <description>Hold over cost calculated based on the Role and Holdover Cost rate for all the resource requests for the Project</description>
+        <externalId>false</externalId>
+        <label>Total Training Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Training_Price__c</fullName>
+        <description>It represents the Total Training Price calculated by adding the margin.</description>
+        <externalId>false</externalId>
+        <label>Total Training Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Travel_Cost__c</fullName>
+        <description>Travel Cost calculated based on the Role and Travel Cost rate for all the resource requests for the Project</description>
+        <externalId>false</externalId>
+        <label>Total Travel Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Travel_Price__c</fullName>
+        <description>It represents the Total Travel Price calculated by adding the margin.</description>
+        <externalId>false</externalId>
+        <label>Total Travel Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Total_Work_Price__c</fullName>
+        <description>It represents the Total Work Price calculated by adding the margin.</description>
+        <externalId>false</externalId>
+        <label>Total Work Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FF_PSA_Work_Cost__c</fullName>
+        <description>Work Cost calculated based on the Role and Work Cost rate for all the resource requests for the Project</description>
+        <externalId>false</externalId>
+        <label>Total Work Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Hybrid_Combinations__c</fullName>
+        <externalId>false</externalId>
+        <label>Select Hybrid Combination</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fixed Cost Plus &amp; Value Based</fullName>
+                    <default>false</default>
+                    <label>Fixed Cost Plus &amp; Value Based</label>
+                </value>
+                <value>
+                    <fullName>T&amp;M Cost Plus &amp; Value Based</fullName>
+                    <default>false</default>
+                    <label>T&amp;M Cost Plus &amp; Value Based</label>
+                </value>
+                <value>
+                    <fullName>Fixed Cost Plus &amp; Performance Based Contract</fullName>
+                    <default>false</default>
+                    <label>Fixed Cost Plus &amp; Performance Based Contract</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Applied__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checks if price is applied after last modification.</description>
+        <externalId>false</externalId>
+        <label>Price Applied</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pricing_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Pricing Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fixed Cost Plus</fullName>
+                    <default>false</default>
+                    <label>Fixed Cost Plus</label>
+                </value>
+                <value>
+                    <fullName>Hybrid</fullName>
+                    <default>false</default>
+                    <label>Hybrid</label>
+                </value>
+                <value>
+                    <fullName>Performance Based Contract</fullName>
+                    <default>false</default>
+                    <label>Performance Based Contract</label>
+                </value>
+                <value>
+                    <fullName>T&amp;M Cost Plus</fullName>
+                    <default>false</default>
+                    <label>T&amp;M Cost Plus</label>
+                </value>
+                <value>
+                    <fullName>Value Based</fullName>
+                    <default>false</default>
+                    <label>Value Based</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Pricing</label>
+    <nameField>
+        <displayFormat>PP-{0000}</displayFormat>
+        <label>Pricing Id</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pricings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Sharing_with_Project_Owner__c</fullName>
+        <label>Sharing with Project Owner</label>
+    </sharingReasons>
+    <visibility>Public</visibility>
+</CustomObject>

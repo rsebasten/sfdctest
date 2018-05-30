@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>General settings are applied here</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Disable_ApexSchedule__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This will disable the schedule jobs that look for this flag (currently Metadata__c, ApprovalStep, ScheduleHistory jobs).  Non-full copy sandbox&apos;s do not copy the custom setting records and will treat as disabled</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will disable the schedule jobs that look for this flag.</inlineHelpText>
+        <label>Disable Apex Schedule</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_GeoValidation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked (true)  the geoValidation is disabled for the Account,Contact and Leads.  This is only applicable at the org level, profile and user overrides will be ignored.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked (true)  the geoValidation is disabled for the Account,Contact and Leads.  This is only applicable at the org level, profile and user overrides will be ignored.</inlineHelpText>
+        <label>Disable GeoValidation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Green_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <label>Green Threshold</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NH_Innovation_Dashboard_Admin_EPass__c</fullName>
+        <description>Epass used for NH Innovation Admins when they login</description>
+        <externalId>false</externalId>
+        <label>NH_Innovation_Dashboard_Admin_EPass</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NH_SAFI_Dashboard_Admin_User__c</fullName>
+        <description>Used to store the user name for the appropriate hierarchy level on the NH SAFI Dashboard when logging in as a dashboard admin user (permission set).</description>
+        <externalId>false</externalId>
+        <label>NH SAFI Dashboard Admin User</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NH_Sales_Dashboard_Admin_EPass__c</fullName>
+        <externalId>false</externalId>
+        <label>NH_Sales_Dashboard_Admin_EPass</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pod__c</fullName>
+        <description>Production Pod this org is located.  (i.e.  na1)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Production Pod this org is located.  (i.e.  na1)</inlineHelpText>
+        <label>Pod</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Red_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <label>Red Threshold</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TSR_Global_Average_Rate__c</fullName>
+        <description>The global average cost of a TSR per hour</description>
+        <externalId>false</externalId>
+        <label>TSR Global Average Rate</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Yellow_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <label>Yellow Threshold</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>General Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

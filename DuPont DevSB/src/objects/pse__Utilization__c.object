@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>pse__Calculate_Cross_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Allows the calculation of cross product combination of region, practice and group.
+Such as Region by Practice, or Group by Region</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Allows the calculation of cross product combination of region, practice and group.
+Such as Region by Practice, or Group by Region</inlineHelpText>
+        <label>Calculate Cross Products</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Calculate_Held_Resource_Request_Time__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If true, calculate the amount of scheduled time for held (unassigned) resource requests.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If true, calculate the amount of scheduled time for held (unassigned) resource requests.</inlineHelpText>
+        <label>Calculate Held Resource Request Time</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Calculate_Summary_By_Role__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Calculate Summary By Role</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Calculate_Unheld_Resource_Request_Time__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Calculate Unheld Resource Request Time</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Default_Opportunity_Probability__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Default Opportunity Probability</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>pse__Minimum_Opportunity_Probability__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Minimum Opportunity Probability</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>pse__Resource_Batch_Size__c</fullName>
+        <defaultValue>20</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of resources to process in a single batch when calculating utilization</inlineHelpText>
+        <label>Resource Batch Size</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Resource_Request_Batch_Size__c</fullName>
+        <defaultValue>100</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Resource Request Batch Size</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Target_Utilization_Approach__c</fullName>
+        <defaultValue>&quot;WEIGHTED&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>For a value of “LAST” only the Utilization Target at the end date of any Time Period is used for the Utilization Detail result for that period, multiplying it with the calendar hours.
+For a value of “WEIGHTED” (default) between each Resource Change, the effective Target Utilization for each segment between Resource Change is multiplied with the calendar hours for that segment, and the resulting subtotals from each segment are summed (across both Historical and Scheduled periods) to arrive at Utilization Target Hours.</description>
+        <externalId>false</externalId>
+        <label>Target Utilization Approach</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Timecard_Statuses__c</fullName>
+        <defaultValue>&apos;Submitted,Approved&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>A comma delimited list of timecard status values that are used to determine which timecards are used for utilization calculations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma delimited list of timecard status values that are used to determine which timecards are used for utilization calculations.</inlineHelpText>
+        <label>Timecard Statuses</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Uncheck_Master_Based_On_Time_Parent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines whether that &quot;Is Report Master&quot; flag is reset based on the Time Period and Parent object (Checked) or based on the Utilization Calculation Name (Unchecked)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether that &quot;Is Report Master&quot; flag is reset based on the Time Period and Parent object (Checked) or based on the Utilization Calculation Name (Unchecked)</inlineHelpText>
+        <label>Uncheck Master Based On Time/Parent</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Utilization</label>
+    <visibility>Public</visibility>
+</CustomObject>

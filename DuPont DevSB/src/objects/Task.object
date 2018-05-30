@@ -1,0 +1,4142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <fieldSets>
+        <fullName>MA_Check_In</fullName>
+        <description>Used in MapAnything Check In/Out.</description>
+        <displayedFields>
+            <field>Subject</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Activity_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ActivityDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>MA Check In</label>
+    </fieldSets>
+    <fields>
+        <fullName>ActivityDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence</fullName>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>BCC_Email</fullName>
+        <active>false</active>
+        <description>BCC Email activity history to record email sent to Contacts sent from a Contact List View</description>
+        <label>BCC Email</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>eMail</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>1st Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Complaint</fullName>
+        <active>false</active>
+        <description>Complaint</description>
+        <label>Complaint</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Agronomy Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combine Ride</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farm Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 FxF Planting Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 Notes%2FScouting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 VRS prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fly-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Summer Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plot%2FIMPACT Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product %2FAgronomy Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal and Invoice Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FFacilities Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ship and Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Feasibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Data File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Capture</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close-Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigate-Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolve-Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Consult I2C Data Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contract</fullName>
+        <active>false</active>
+        <description>Contract</description>
+        <label>Contract</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Agronomy Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combine Ride</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farm Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 FxF Planting Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 Notes%2FScouting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 VRS prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fly-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Summer Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plot%2FIMPACT Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product %2FAgronomy Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal and Invoice Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FFacilities Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ship and Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Feasibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Data File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Consult I2C Data Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CustomerFollowupDSS</fullName>
+        <active>true</active>
+        <description>DSRB Customer Follow-up</description>
+        <label>Customer Follow-up (DSS)</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>1st Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CustomerInteractionDSS</fullName>
+        <active>true</active>
+        <description>DSRB Customer Interaction</description>
+        <label>Customer Interaction (DSS)</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>1st Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Loyalty</fullName>
+        <active>false</active>
+        <description>Users will be creating a Task from the CLS record</description>
+        <label>Customer Loyalty</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Agronomy Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combine Ride</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farm Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 FxF Planting Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 Notes%2FScouting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 VRS prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fly-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Summer Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plot%2FIMPACT Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product %2FAgronomy Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal and Invoice Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FFacilities Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ship and Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Feasibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Data File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>1st Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DemandGeneration</fullName>
+        <active>false</active>
+        <description>Outbound activity where we proactively call a Target with a specific objective/outcome in mind</description>
+        <label>Demand Generation</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>1st Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>GenericTask</fullName>
+        <active>false</active>
+        <description>Very simple set of fields for a generic task assignment</description>
+        <label>Generic Task</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Agronomy Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combine Ride</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farm Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 FxF Planting Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 Notes%2FScouting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 VRS prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fly-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Summer Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plot%2FIMPACT Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product %2FAgronomy Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal and Invoice Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FFacilities Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ship and Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Feasibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Data File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>1st Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Pricing</fullName>
+        <active>false</active>
+        <description>Pricing</description>
+        <label>Pricing</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Agronomy Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combine Ride</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farm Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 FxF Planting Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 Notes%2FScouting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 VRS prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fly-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Summer Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plot%2FIMPACT Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product %2FAgronomy Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal and Invoice Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FFacilities Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ship and Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Feasibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Data File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Consult I2C Data Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Proposal_DSS</fullName>
+        <active>false</active>
+        <description>Used by DSS-Clean Tech for proposal requests.</description>
+        <label>Proposal (DSS)</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Agronomy Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combine Ride</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farm Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 FxF Planting Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 Notes%2FScouting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 VRS prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fly-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Summer Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plot%2FIMPACT Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product %2FAgronomy Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal and Invoice Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FFacilities Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ship and Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Feasibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Data File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>1st Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2nd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5th Attempt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Quote</fullName>
+        <active>false</active>
+        <description>Create, Approve and Send Quote to a customer</description>
+        <label>Quote</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Agronomy Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combine Ride</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demand Generation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farm Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 FxF Planting Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 Notes%2FScouting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field 360 VRS prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fly-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Summer Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plot%2FIMPACT Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product %2FAgronomy Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposal and Invoice Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research%2FFacilities Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Selling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ship and Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Feasibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Data File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Backup%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face to Face %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper mail %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webmeeting %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Distributor %3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eMail %3A</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Consult I2C Data Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Send_an_Email</fullName>
+        <availability>online</availability>
+        <description>Defaults To: to primary contact</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send an Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>window.open(&apos;/_ui/core/email/author/EmailAuthor?p3_lkid={!Account.Id}&amp;p4={!Account.OwnerEmail}&amp;retURL=%2F{!Account.Id}&apos;,&apos;_parent&apos;)</url>
+    </webLinks>
+</CustomObject>

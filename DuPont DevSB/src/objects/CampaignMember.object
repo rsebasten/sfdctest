@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Create_Opportunity</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Additional_Privacy_Information__c</fullName>
+        <description>Opt-In compliance information for leads manually assigned to a campaign. (eg. compliance information as part of CASL (Canadian Anti-Spam Legislation).</description>
+        <externalId>false</externalId>
+        <label>Additional Privacy Information</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City</fullName>
+    </fields>
+    <fields>
+        <fullName>CompanyOrAccount</fullName>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Country</fullName>
+    </fields>
+    <fields>
+        <fullName>Default_Next_Step_User__c</fullName>
+        <description>(10/12/2017) - Removed &quot;Campaign.NextStepUser__r&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Default Next Step User</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>DoNotCall</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>EmailHash__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Contact.EmailHash__c!=null,Contact.EmailHash__c,
+if(Lead.EmailHash__c!=null, Lead.EmailHash__c, null))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EmailHash</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID used for Interface proposal</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External ID used for Interface proposal</inlineHelpText>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstName</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstRespondedDate</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+    </fields>
+    <fields>
+        <fullName>HasResponded</fullName>
+    </fields>
+    <fields>
+        <fullName>LastName</fullName>
+    </fields>
+    <fields>
+        <fullName>LastUpdatedLocation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The tag of the traffic source which triggered the Last Membership change (e.g. name of website, email Campaign, etc)</inlineHelpText>
+        <label>Last Update Source Tag</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LeadId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+    </fields>
+    <fields>
+        <fullName>NextStepUser__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The SFDC User who is responsible to follow-up with the survey respondent if they request follow-up</inlineHelpText>
+        <label>Next Step User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>NextStep_Members</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_User_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step User Role</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Follow-up Responder</fullName>
+                    <default>false</default>
+                    <label>Follow-up Responder</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>PostalCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <description>Created for CLS although can be leveraged, DO NOT add new non-CLS roles to CLS recordtype.</description>
+        <externalId>false</externalId>
+        <label>Campaign Member Role</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>End-User</fullName>
+                    <default>false</default>
+                    <label>End-User</label>
+                </value>
+                <value>
+                    <fullName>General Management</fullName>
+                    <default>false</default>
+                    <label>General Management</label>
+                </value>
+                <value>
+                    <fullName>Influencer</fullName>
+                    <default>false</default>
+                    <label>Influencer</label>
+                </value>
+                <value>
+                    <fullName>Operations Leadership</fullName>
+                    <default>false</default>
+                    <label>Operations Leadership</label>
+                </value>
+                <value>
+                    <fullName>Purchasing Management</fullName>
+                    <default>false</default>
+                    <label>Purchasing Management</label>
+                </value>
+                <value>
+                    <fullName>Sales &amp; Marketing</fullName>
+                    <default>false</default>
+                    <label>Sales &amp; Marketing</label>
+                </value>
+                <value>
+                    <fullName>Technology Leadership</fullName>
+                    <default>false</default>
+                    <label>Technology Leadership</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Salutation</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street</fullName>
+    </fields>
+    <fields>
+        <fullName>SubscriptionId__c</fullName>
+        <description>External Id in SiteObjectValue and is used to identify the status based on this email.
+This field replaces the fSubscriptionId__c on this object,   The formula was not indexed and since this table is soo huge the following was required for deployment to production.</description>
+        <externalId>true</externalId>
+        <label>Subscription Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+    </fields>
+    <fields>
+        <fullName>fCountry__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Contact.Id!=null
+,IF(TEXT(Contact.Contact_Country__c)!=null
+     ,TEXT(Contact.Contact_Country__c)
+     ,TEXT(Contact.Account.Country__c)
+     )
+,IF(TEXT(Lead.Lead_Country__c)!=null
+     ,TEXT(Lead.Lead_Country__c)
+     ,null
+     )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fEmail__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Contact.Email!=null,Contact.Email, 
+if(Lead.Email!=null, Lead.Email, null))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fId18__c</fullName>
+        <description>18 digit unique id for record. Same Id used for dataloader and other API tools.</description>
+        <externalId>false</externalId>
+        <formula>Id
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)</formula>
+        <inlineHelpText>18 digit unique id for record. Same Id used for dataloader and other API tools.</inlineHelpText>
+        <label>Id18</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fMember_Contact_Type__c</fullName>
+        <description>The Contact Type of the lead or contact related to this campaign member record.</description>
+        <externalId>false</externalId>
+        <formula>If(Contact.Id!=null,
+  TEXT(Contact.Contact_Type__c),
+  TEXT(Lead.Contact_Type__c)
+)</formula>
+        <inlineHelpText>The Contact Type of the lead or contact related to this campaign member record.</inlineHelpText>
+        <label>Member Contact Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fMember_Owning_Organization__c</fullName>
+        <description>The Owning Organization of the lead or contact related to this campaign member record.</description>
+        <externalId>false</externalId>
+        <formula>If(Contact.Id!=null,
+  TEXT(Contact.Account.Owning_Organization__c),
+  TEXT(Lead.Owning_Organization__c)
+)</formula>
+        <inlineHelpText>The Owning Organization of the lead or contact related to this campaign member record.</inlineHelpText>
+        <label>Member Owning Organization</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fNextStepUser__c</fullName>
+        <description>Name of the FollowUp Responder
+
+(10/12/2017) - Removed &quot;Campaign.NextStepUser__r&quot; references as part of remediation effort.</description>
+        <externalId>false</externalId>
+        <formula>NULL</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FollowUp Responder</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fRegion__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Contact.Id!=null, BLANKVALUE(TEXT(Contact.Geo_Region__c),TEXT(Contact.Account.Region__c)),
+TEXT(Lead.Region__c))</formula>
+        <label>Geo Region</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <description>Standard</description>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Next_Step_User_Role__c</picklist>
+            <values>
+                <fullName>Follow-up Responder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>End-User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations Leadership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchasing Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Leadership</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Optin_Management</fullName>
+        <active>true</active>
+        <description>Rule that validates if a user has been given the Opt-in Management rights (Campaign Member), which helps ensure leads are contacts are not opted in to Campaigns without clear permission.</description>
+        <errorConditionFormula>(Campaign.RecordTypeId ==&apos;01230000000QT37&apos; ) &amp;&amp;
+($Profile.Name &lt;&gt;  &apos;System Administrator&apos; ) &amp;&amp;
+NOT(INCLUDES($User.SpecialRights__c,&apos;Opt-In Management&apos;) ) &amp;&amp;
+( CONTAINS( LOWER(TEXT(Status)), &apos;opt-in&apos;) || CONTAINS(LOWER(TEXT(Status)), &apos;opt-out&apos;) )</errorConditionFormula>
+        <errorMessage>Opt-in Management permissions not available, please use another Member Status value or check with your Key User or System Administrator.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Google</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Google</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>http://google.com</url>
+    </webLinks>
+</CustomObject>

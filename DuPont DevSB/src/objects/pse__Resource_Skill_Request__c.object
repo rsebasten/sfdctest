@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>pse__ResourceSkillRequestHelp</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Represents the skills or certifications requested for a resource prior to staffing them on a project. A skill or certification can be marked as primary to identify the primary skill desired in the resource request.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>pse__Is_Primary__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this the primary skill / certification for the request?</inlineHelpText>
+        <label>Primary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pse__Minimum_Rating__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Minimum Rating</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Development Needed</fullName>
+                    <default>false</default>
+                    <label>1 - Development Needed</label>
+                </value>
+                <value>
+                    <fullName>2 - Meets Performance</fullName>
+                    <default>false</default>
+                    <label>2 - Meets Performance</label>
+                </value>
+                <value>
+                    <fullName>3 - Exceeds Performance</fullName>
+                    <default>false</default>
+                    <label>3 - Exceeds Performance</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>pse__Resource_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Resource Request</label>
+        <referenceTo>pse__Resource_Request__c</referenceTo>
+        <relationshipLabel>Resource Skill Requests</relationshipLabel>
+        <relationshipName>Resource_Skill_Requests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pse__Skill_Certification__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Skill / Certification</label>
+        <referenceTo>pse__Skill__c</referenceTo>
+        <relationshipLabel>Resource Skill Requests</relationshipLabel>
+        <relationshipName>Resource_Skill_Requests</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>pse__Skill_or_Certification__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+    ISPICKVAL(pse__Skill_Certification__r.pse__Skill_Or_Certification__c,&apos;Skill&apos;), &apos;Skill&apos;, 
+    IF(
+        ISPICKVAL(pse__Skill_Certification__r.pse__Skill_Or_Certification__c, &apos;Certification&apos;), &apos;Certification&apos;, 
+        &apos;Unknown&apos;
+    )
+)</formula>
+        <label>Skill or Certification</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Resource Skill Request</label>
+    <nameField>
+        <displayFormat>SkillRequest{0000000}</displayFormat>
+        <label>Resource Skill Request Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Resource Skill Requests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>pse__Rating_Required_For_Skill</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( pse__Skill_or_Certification__c = &apos;Skill&apos;, ISPICKVAL( pse__Minimum_Rating__c, &quot;&quot; ))</errorConditionFormula>
+        <errorDisplayField>pse__Minimum_Rating__c</errorDisplayField>
+        <errorMessage>Minimum rating is required for skill requests.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>pse__Resource_Request_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>LEN( pse__Resource_Request__c ) = 0</errorConditionFormula>
+        <errorDisplayField>pse__Resource_Request__c</errorDisplayField>
+        <errorMessage>Resource request is required</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

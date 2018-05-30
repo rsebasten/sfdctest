@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Segments related to an account</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>SNL_Demo</fullName>
+        <description>Hierarchy Wizard Demo</description>
+        <label>SNL_Demo</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account-Segments</relationshipLabel>
+        <relationshipName>AccountSegment</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>End_Use__c</fullName>
+        <description>End Use within this Segment</description>
+        <externalId>false</externalId>
+        <label>End Use</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>627 Sterile Pkg</fullName>
+                    <default>false</default>
+                    <label>627 Sterile Pkg</label>
+                </value>
+                <value>
+                    <fullName>Cleanroom</fullName>
+                    <default>false</default>
+                    <label>Cleanroom</label>
+                </value>
+                <value>
+                    <fullName>Flexible film</fullName>
+                    <default>false</default>
+                    <label>Flexible film</label>
+                </value>
+                <value>
+                    <fullName>Geotextiles</fullName>
+                    <default>false</default>
+                    <label>Geotextiles</label>
+                </value>
+                <value>
+                    <fullName>Industrial Felts</fullName>
+                    <default>false</default>
+                    <label>Industrial Felts</label>
+                </value>
+                <value>
+                    <fullName>Manufacturing / production</fullName>
+                    <default>false</default>
+                    <label>Manufacturing / production</label>
+                </value>
+                <value>
+                    <fullName>Plastics</fullName>
+                    <default>false</default>
+                    <label>Plastics</label>
+                </value>
+                <value>
+                    <fullName>United States Postal</fullName>
+                    <default>false</default>
+                    <label>United States Postal</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Key_Markets__c</fullName>
+        <description>Key Markets this account participates in</description>
+        <externalId>false</externalId>
+        <label>Key Markets</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ERA Regional Winner</fullName>
+                    <default>false</default>
+                    <label>ERA Regional Winner</label>
+                </value>
+                <value>
+                    <fullName>ERA State Winner</fullName>
+                    <default>false</default>
+                    <label>ERA State Winner</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Line Description</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Main_Segment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Main Segment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DEC-CPM</fullName>
+                    <default>false</default>
+                    <label>DEC-CPM</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Segment_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Segment Group</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AFS-PM</fullName>
+                    <default>false</default>
+                    <label>AFS-PM</label>
+                </value>
+                <value>
+                    <fullName>CPM</fullName>
+                    <default>false</default>
+                    <label>CPM</label>
+                </value>
+                <value>
+                    <fullName>DPP</fullName>
+                    <default>false</default>
+                    <label>DPP</label>
+                </value>
+                <value>
+                    <fullName>DSRB</fullName>
+                    <default>false</default>
+                    <label>DSRB</label>
+                </value>
+                <value>
+                    <fullName>E-O&amp;G</fullName>
+                    <default>false</default>
+                    <label>E-O&amp;G</label>
+                </value>
+                <value>
+                    <fullName>Food</fullName>
+                    <default>false</default>
+                    <label>Food</label>
+                </value>
+                <value>
+                    <fullName>MTEC PG-EMEA</fullName>
+                    <default>false</default>
+                    <label>MTEC PG-EMEA</label>
+                </value>
+                <value>
+                    <fullName>NOW</fullName>
+                    <default>false</default>
+                    <label>NOW</label>
+                </value>
+                <value>
+                    <fullName>Qualicon</fullName>
+                    <default>false</default>
+                    <label>Qualicon</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>07-Ag Services</fullName>
+                    <default>false</default>
+                    <label>07-Ag Services</label>
+                </value>
+                <value>
+                    <fullName>08-Forestry</fullName>
+                    <default>false</default>
+                    <label>08-Forestry</label>
+                </value>
+                <value>
+                    <fullName>09-Fishing,Hunting,Trapping</fullName>
+                    <default>false</default>
+                    <label>09-Fishing,Hunting,Trapping</label>
+                </value>
+                <value>
+                    <fullName>10-Metal Mining</fullName>
+                    <default>false</default>
+                    <label>10-Metal Mining</label>
+                </value>
+                <value>
+                    <fullName>12-(Energy) Coal Mining</fullName>
+                    <default>false</default>
+                    <label>12-(Energy) Coal Mining</label>
+                </value>
+                <value>
+                    <fullName>13-(Energy) Oil &amp; Gas  Extraction</fullName>
+                    <default>false</default>
+                    <label>13-(Energy) Oil &amp; Gas  Extraction</label>
+                </value>
+                <value>
+                    <fullName>14-Mining&amp; Quarrying of Nonmetallic Minerals, except fuels</fullName>
+                    <default>false</default>
+                    <label>14-Mining&amp; Quarrying of Nonmetallic Minerals, except fuels</label>
+                </value>
+                <value>
+                    <fullName>15-(Construction)-Building,Gen Contractors</fullName>
+                    <default>false</default>
+                    <label>15-(Construction)-Building,Gen Contractors</label>
+                </value>
+                <value>
+                    <fullName>16-(Construction)-Heavy, other than Bldg. Construction</fullName>
+                    <default>false</default>
+                    <label>16-(Construction)-Heavy, other than Bldg. Construction</label>
+                </value>
+                <value>
+                    <fullName>17-(Construction)-Special Trade Contractors</fullName>
+                    <default>false</default>
+                    <label>17-(Construction)-Special Trade Contractors</label>
+                </value>
+                <value>
+                    <fullName>20-(Mfg)Food &amp; Kindred Products</fullName>
+                    <default>false</default>
+                    <label>20-(Mfg)Food &amp; Kindred Products</label>
+                </value>
+                <value>
+                    <fullName>23-(Mfg)Apparel &amp; Other Finished Products</fullName>
+                    <default>false</default>
+                    <label>23-(Mfg)Apparel &amp; Other Finished Products</label>
+                </value>
+                <value>
+                    <fullName>24-(Mfg)Lumber &amp; Wood Products, except Furniture</fullName>
+                    <default>false</default>
+                    <label>24-(Mfg)Lumber &amp; Wood Products, except Furniture</label>
+                </value>
+                <value>
+                    <fullName>26-(Mfg)Paper &amp; Allied Products</fullName>
+                    <default>false</default>
+                    <label>26-(Mfg)Paper &amp; Allied Products</label>
+                </value>
+                <value>
+                    <fullName>27-(Mfg)Printing, Publishing &amp; Allied Industries</fullName>
+                    <default>false</default>
+                    <label>27-(Mfg)Printing, Publishing &amp; Allied Industries</label>
+                </value>
+                <value>
+                    <fullName>28-(Mfg)Chemicals &amp; Allied Products</fullName>
+                    <default>false</default>
+                    <label>28-(Mfg)Chemicals &amp; Allied Products</label>
+                </value>
+                <value>
+                    <fullName>29-(Energy/Mfg)Petroleum Refining &amp; Related Industries</fullName>
+                    <default>false</default>
+                    <label>29-(Energy/Mfg)Petroleum Refining &amp; Related Industries</label>
+                </value>
+                <value>
+                    <fullName>30-(Mfg)Rubber &amp; Misc. Plastic Products</fullName>
+                    <default>false</default>
+                    <label>30-(Mfg)Rubber &amp; Misc. Plastic Products</label>
+                </value>
+                <value>
+                    <fullName>32-(Mfg)Stone, Clay, Glass &amp; Concrete Products</fullName>
+                    <default>false</default>
+                    <label>32-(Mfg)Stone, Clay, Glass &amp; Concrete Products</label>
+                </value>
+                <value>
+                    <fullName>33-(Mfg)Primary Metals</fullName>
+                    <default>false</default>
+                    <label>33-(Mfg)Primary Metals</label>
+                </value>
+                <value>
+                    <fullName>34-(Mfg)Fabricated Metal, except machinery &amp; Transp. Equipment</fullName>
+                    <default>false</default>
+                    <label>34-(Mfg)Fabricated Metal, except machinery &amp; Transp. Equipment</label>
+                </value>
+                <value>
+                    <fullName>35-(Mfg)Industrial &amp; Commercial Machinery &amp; Computer Equipment</fullName>
+                    <default>false</default>
+                    <label>35-(Mfg)Industrial &amp; Commercial Machinery &amp; Computer Equipment</label>
+                </value>
+                <value>
+                    <fullName>36-(Mfg)Electronic &amp; Other Electrical Equip. &amp; Components, except Computer Equipment</fullName>
+                    <default>false</default>
+                    <label>36-(Mfg)Electronic &amp; Other Electrical Equip. &amp; Components, except Computer Equipment</label>
+                </value>
+                <value>
+                    <fullName>37-(Mfg)Transportation Equipment</fullName>
+                    <default>false</default>
+                    <label>37-(Mfg)Transportation Equipment</label>
+                </value>
+                <value>
+                    <fullName>38-(Mfg)Instruments &amp; Related Products</fullName>
+                    <default>false</default>
+                    <label>38-(Mfg)Instruments &amp; Related Products</label>
+                </value>
+                <value>
+                    <fullName>39-(Mfg)Misc. Manufacturing Industries</fullName>
+                    <default>false</default>
+                    <label>39-(Mfg)Misc. Manufacturing Industries</label>
+                </value>
+                <value>
+                    <fullName>40-(Transp)Railroad Transportation</fullName>
+                    <default>false</default>
+                    <label>40-(Transp)Railroad Transportation</label>
+                </value>
+                <value>
+                    <fullName>41-(Transp)-Transit, Local &amp; suburban passenger</fullName>
+                    <default>false</default>
+                    <label>41-(Transp)-Transit, Local &amp; suburban passenger</label>
+                </value>
+                <value>
+                    <fullName>42-(Transp)-Motor Freight Transportation &amp; Warehousing</fullName>
+                    <default>false</default>
+                    <label>42-(Transp)-Motor Freight Transportation &amp; Warehousing</label>
+                </value>
+                <value>
+                    <fullName>43-United States Postal Service</fullName>
+                    <default>false</default>
+                    <label>43-United States Postal Service</label>
+                </value>
+                <value>
+                    <fullName>44-(Transp)Water Transportation</fullName>
+                    <default>false</default>
+                    <label>44-(Transp)Water Transportation</label>
+                </value>
+                <value>
+                    <fullName>45-(Transp)Transporation by Air</fullName>
+                    <default>false</default>
+                    <label>45-(Transp)Transporation by Air</label>
+                </value>
+                <value>
+                    <fullName>47-(Transp)Transportation Services</fullName>
+                    <default>false</default>
+                    <label>47-(Transp)Transportation Services</label>
+                </value>
+                <value>
+                    <fullName>49a-(Energy)Electric, Gas,</fullName>
+                    <default>false</default>
+                    <label>49a-(Energy)Electric, Gas,</label>
+                </value>
+                <value>
+                    <fullName>49b-Sanitary Services</fullName>
+                    <default>false</default>
+                    <label>49b-Sanitary Services</label>
+                </value>
+                <value>
+                    <fullName>50-(Wholesale) Trade-Durable Goods</fullName>
+                    <default>false</default>
+                    <label>50-(Wholesale) Trade-Durable Goods</label>
+                </value>
+                <value>
+                    <fullName>51-(Wholesale) Trade-Nondurable Goods</fullName>
+                    <default>false</default>
+                    <label>51-(Wholesale) Trade-Nondurable Goods</label>
+                </value>
+                <value>
+                    <fullName>52-(Retail)Building Materials, Hardware, Garden &amp; Mobile Home Dealers</fullName>
+                    <default>false</default>
+                    <label>52-(Retail)Building Materials, Hardware, Garden &amp; Mobile Home Dealers</label>
+                </value>
+                <value>
+                    <fullName>54-(Retail)-Food Stores</fullName>
+                    <default>false</default>
+                    <label>54-(Retail)-Food Stores</label>
+                </value>
+                <value>
+                    <fullName>55-(Retail) Auto Dealers &amp; Gasoline Service Stations</fullName>
+                    <default>false</default>
+                    <label>55-(Retail) Auto Dealers &amp; Gasoline Service Stations</label>
+                </value>
+                <value>
+                    <fullName>59-(Retai)-Misc. Retail</fullName>
+                    <default>false</default>
+                    <label>59-(Retai)-Misc. Retail</label>
+                </value>
+                <value>
+                    <fullName>65-Real Estate</fullName>
+                    <default>false</default>
+                    <label>65-Real Estate</label>
+                </value>
+                <value>
+                    <fullName>67-Holding &amp;Other Investment Offices</fullName>
+                    <default>false</default>
+                    <label>67-Holding &amp;Other Investment Offices</label>
+                </value>
+                <value>
+                    <fullName>73-Business Services</fullName>
+                    <default>false</default>
+                    <label>73-Business Services</label>
+                </value>
+                <value>
+                    <fullName>79-Amusement &amp; Recreation Services</fullName>
+                    <default>false</default>
+                    <label>79-Amusement &amp; Recreation Services</label>
+                </value>
+                <value>
+                    <fullName>80-Healthcare Services</fullName>
+                    <default>false</default>
+                    <label>80-Healthcare Services</label>
+                </value>
+                <value>
+                    <fullName>87-Engineering, Accounting, Research, Mgmnt Services</fullName>
+                    <default>false</default>
+                    <label>87-Engineering, Accounting, Research, Mgmnt Services</label>
+                </value>
+                <value>
+                    <fullName>89-Services Not Elsewhere Classified</fullName>
+                    <default>false</default>
+                    <label>89-Services Not Elsewhere Classified</label>
+                </value>
+                <value>
+                    <fullName>Appliance  / consumer electronics</fullName>
+                    <default>false</default>
+                    <label>Appliance  / consumer electronics</label>
+                </value>
+                <value>
+                    <fullName>Automotive Short Fiber</fullName>
+                    <default>false</default>
+                    <label>Automotive Short Fiber</label>
+                </value>
+                <value>
+                    <fullName>Beer</fullName>
+                    <default>false</default>
+                    <label>Beer</label>
+                </value>
+                <value>
+                    <fullName>Chemicals, chem products+man-made fibres</fullName>
+                    <default>false</default>
+                    <label>Chemicals, chem products+man-made fibres</label>
+                </value>
+                <value>
+                    <fullName>Consumer Electronics</fullName>
+                    <default>false</default>
+                    <label>Consumer Electronics</label>
+                </value>
+                <value>
+                    <fullName>Converter - Narrow Web</fullName>
+                    <default>false</default>
+                    <label>Converter - Narrow Web</label>
+                </value>
+                <value>
+                    <fullName>Converter - Post Print Integrated Corrugated</fullName>
+                    <default>false</default>
+                    <label>Converter - Post Print Integrated Corrugated</label>
+                </value>
+                <value>
+                    <fullName>Converter - Wide Web Flexible Pkg</fullName>
+                    <default>false</default>
+                    <label>Converter - Wide Web Flexible Pkg</label>
+                </value>
+                <value>
+                    <fullName>Dairy and Milk Products</fullName>
+                    <default>false</default>
+                    <label>Dairy and Milk Products</label>
+                </value>
+                <value>
+                    <fullName>Fish &amp; Seafood</fullName>
+                    <default>false</default>
+                    <label>Fish &amp; Seafood</label>
+                </value>
+                <value>
+                    <fullName>Frozen Food</fullName>
+                    <default>false</default>
+                    <label>Frozen Food</label>
+                </value>
+                <value>
+                    <fullName>Industrial</fullName>
+                    <default>false</default>
+                    <label>Industrial</label>
+                </value>
+                <value>
+                    <fullName>Meat and Meat Products</fullName>
+                    <default>false</default>
+                    <label>Meat and Meat Products</label>
+                </value>
+                <value>
+                    <fullName>Medical Pkg</fullName>
+                    <default>false</default>
+                    <label>Medical Pkg</label>
+                </value>
+                <value>
+                    <fullName>Oil &amp; Gas</fullName>
+                    <default>false</default>
+                    <label>Oil &amp; Gas</label>
+                </value>
+                <value>
+                    <fullName>Other manufacturing</fullName>
+                    <default>false</default>
+                    <label>Other manufacturing</label>
+                </value>
+                <value>
+                    <fullName>Packaging &amp; Printing</fullName>
+                    <default>false</default>
+                    <label>Packaging &amp; Printing</label>
+                </value>
+                <value>
+                    <fullName>Pet Food</fullName>
+                    <default>false</default>
+                    <label>Pet Food</label>
+                </value>
+                <value>
+                    <fullName>Pharmaceutical industry</fullName>
+                    <default>false</default>
+                    <label>Pharmaceutical industry</label>
+                </value>
+                <value>
+                    <fullName>Poultry &amp; Eggs</fullName>
+                    <default>false</default>
+                    <label>Poultry &amp; Eggs</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Development</fullName>
+                    <default>false</default>
+                    <label>Real Estate Development</label>
+                </value>
+                <value>
+                    <fullName>Safety Management</fullName>
+                    <default>false</default>
+                    <label>Safety Management</label>
+                </value>
+                <value>
+                    <fullName>State Agencies - Government</fullName>
+                    <default>false</default>
+                    <label>State Agencies - Government</label>
+                </value>
+                <value>
+                    <fullName>Tradeshop - Non-corrugated</fullName>
+                    <default>false</default>
+                    <label>Tradeshop - Non-corrugated</label>
+                </value>
+                <value>
+                    <fullName>Transport, storage and communication</fullName>
+                    <default>false</default>
+                    <label>Transport, storage and communication</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubSegment__c</fullName>
+        <description>SubSegment</description>
+        <externalId>false</externalId>
+        <label>SubSegment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>I&amp;A Pkg: Pkging -  Industrial Bag (614)</fullName>
+                    <default>false</default>
+                    <label>I&amp;A Pkg: Pkging -  Industrial Bag (614)</label>
+                </value>
+                <value>
+                    <fullName>MedPkg: Sterile Pkg</fullName>
+                    <default>false</default>
+                    <label>MedPkg: Sterile Pkg</label>
+                </value>
+                <value>
+                    <fullName>Mobile Phones</fullName>
+                    <default>false</default>
+                    <label>Mobile Phones</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Market Segment</fullName>
+                    <default>false</default>
+                    <label>Market Segment</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Account-Segment</label>
+    <nameField>
+        <displayFormat>ACPR{YY}{MM}-{0000}</displayFormat>
+        <label>Account Segment Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account-Segments</pluralLabel>
+    <recordTypes>
+        <fullName>DSS_Segment</fullName>
+        <active>true</active>
+        <description>DSRB Segment</description>
+        <label>DSS Segment</label>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Segment_Group__c</picklist>
+            <values>
+                <fullName>DSRB</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Segment__c</picklist>
+            <values>
+                <fullName>07-Ag Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Forestry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Fishing%2CHunting%2CTrapping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Metal Mining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-%28Energy%29 Coal Mining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-%28Energy%29 Oil %26 Gas  Extraction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Mining%26 Quarrying of Nonmetallic Minerals%2C except fuels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-%28Construction%29-Building%2CGen Contractors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-%28Construction%29-Heavy%2C other than Bldg%2E Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17-%28Construction%29-Special Trade Contractors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-%28Mfg%29Food %26 Kindred Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-%28Mfg%29Apparel %26 Other Finished Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-%28Mfg%29Lumber %26 Wood Products%2C except Furniture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-%28Mfg%29Paper %26 Allied Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-%28Mfg%29Printing%2C Publishing %26 Allied Industries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28-%28Mfg%29Chemicals %26 Allied Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29-%28Energy%2FMfg%29Petroleum Refining %26 Related Industries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30-%28Mfg%29Rubber %26 Misc%2E Plastic Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-%28Mfg%29Stone%2C Clay%2C Glass %26 Concrete Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33-%28Mfg%29Primary Metals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-%28Mfg%29Fabricated Metal%2C except machinery %26 Transp%2E Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-%28Mfg%29Industrial %26 Commercial Machinery %26 Computer Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-%28Mfg%29Electronic %26 Other Electrical Equip%2E %26 Components%2C except Computer Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37-%28Mfg%29Transportation Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38-%28Mfg%29Instruments %26 Related Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39-%28Mfg%29Misc%2E Manufacturing Industries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40-%28Transp%29Railroad Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41-%28Transp%29-Transit%2C Local %26 suburban passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42-%28Transp%29-Motor Freight Transportation %26 Warehousing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43-United States Postal Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44-%28Transp%29Water Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45-%28Transp%29Transporation by Air</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>47-%28Transp%29Transportation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49a-%28Energy%29Electric%2C Gas%2C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49b-Sanitary Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-%28Wholesale%29 Trade-Durable Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51-%28Wholesale%29 Trade-Nondurable Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52-%28Retail%29Building Materials%2C Hardware%2C Garden %26 Mobile Home Dealers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>54-%28Retail%29-Food Stores</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55-%28Retail%29 Auto Dealers %26 Gasoline Service Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>59-%28Retai%29-Misc%2E Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65-Real Estate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>67-Holding %26Other Investment Offices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>73-Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>79-Amusement %26 Recreation Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80-Healthcare Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>87-Engineering%2C Accounting%2C Research%2C Mgmnt Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>89-Services Not Elsewhere Classified</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Market Segment</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Segment__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SubSegment__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Segment__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Main_Segment__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <searchFilterFields>Segment_Group__c</searchFilterFields>
+        <searchFilterFields>End_Use__c</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Segment__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Main_Segment__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

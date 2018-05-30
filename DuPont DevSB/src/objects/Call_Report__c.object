@@ -1,0 +1,1732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sales Team Members&apos; Call Report documentation.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Attendees__c</fullName>
+        <description>Attendees employed by the Account or by its key Partners</description>
+        <externalId>false</externalId>
+        <label>Account Attendees</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Account_Highlight__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Highlight</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Call Reports</relationshipLabel>
+        <relationshipName>R00N30000001Uzc5EAC</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Activity_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Activity_Initiator__c</fullName>
+        <description>The party who initiated the call report activity</description>
+        <externalId>false</externalId>
+        <label>Activity Initiator</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DuPont</fullName>
+                    <default>true</default>
+                    <label>DuPont</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Activity_Level__c</fullName>
+        <description>The activity level associated with the customer&apos;s location.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How busy is this customer?  Select a number that represents the Activity Level
+0 - Going Out of Business
+1 - Not Busy at All  through 10 - Extremely Busy</inlineHelpText>
+        <label>Activity Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>true</default>
+                    <label>0</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer Interaction</fullName>
+                    <default>false</default>
+                    <label>Customer Interaction</label>
+                </value>
+                <value>
+                    <fullName>New Business Development</fullName>
+                    <default>false</default>
+                    <label>New Business Development</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Site Visit</fullName>
+                    <default>false</default>
+                    <label>Site Visit</label>
+                </value>
+                <value>
+                    <fullName>Technical-Support</fullName>
+                    <default>false</default>
+                    <label>Technical-Support</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Attendees__c</fullName>
+        <externalId>false</externalId>
+        <label>Attendees</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Call_Date__c</fullName>
+        <description>Actual Start Date of the meeting</description>
+        <externalId>false</externalId>
+        <label>Call Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>eMail</fullName>
+                    <default>false</default>
+                    <label>eMail</label>
+                </value>
+                <value>
+                    <fullName>Event</fullName>
+                    <default>false</default>
+                    <label>Event</label>
+                </value>
+                <value>
+                    <fullName>Face To Face</fullName>
+                    <default>false</default>
+                    <label>Face To Face</label>
+                </value>
+                <value>
+                    <fullName>No Call-Information Only</fullName>
+                    <default>false</default>
+                    <label>No Call-Information Only</label>
+                </value>
+                <value>
+                    <fullName>Paper mail</fullName>
+                    <default>false</default>
+                    <label>Paper mail</label>
+                </value>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>Phone-Hotline</fullName>
+                    <default>false</default>
+                    <label>Phone-Hotline</label>
+                </value>
+                <value>
+                    <fullName>Phone-Inbound</fullName>
+                    <default>false</default>
+                    <label>Phone-Inbound</label>
+                </value>
+                <value>
+                    <fullName>Phone-Outbound</fullName>
+                    <default>false</default>
+                    <label>Phone-Outbound</label>
+                </value>
+                <value>
+                    <fullName>Seminar</fullName>
+                    <default>false</default>
+                    <label>Seminar</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Competitive_Data__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Competitive Data</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Competitive_Information__c</fullName>
+        <description>Short information of Competitive Information</description>
+        <externalId>false</externalId>
+        <label>Competitive Information</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Confidential__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Confidential</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A key contact for this call report</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Call Report</relationshipLabel>
+        <relationshipName>CallReportContact</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Direction__c</fullName>
+        <externalId>false</externalId>
+        <label>Direction</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Outbound</fullName>
+                    <default>false</default>
+                    <label>Outbound</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Displacement_Time__c</fullName>
+        <description>When insert values for time please write your time according to the following rules:
+
+0.25 = 15 minutes
+0.50 = 30 minutes
+0.75 = 45 minutes
+1.00 = 1 hour
+
+Ex. for 1 hour and 45 minutes write 1.75, for 2 hours and 15 minutes write 2.25.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When insert values for time please write your time according to the following rules:
+
+0.25 = 15 minutes
+0.50 = 30 minutes
+0.75 = 45 minutes
+1.00 = 1 hour
+
+Ex. for 1 hour and 45 minutes write 1.75, for 2 hours and 15 minutes write 2.25.</inlineHelpText>
+        <label>Displacement Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DuPont_Attendees__c</fullName>
+        <description>Attendees employed by DuPont or key Partners</description>
+        <externalId>false</externalId>
+        <label>DuPont Attendees</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Geography__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <referenceTo>Geography__c</referenceTo>
+        <relationshipLabel>Call Reports</relationshipLabel>
+        <relationshipName>Call_Reports</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HasAttachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>There is a trigger to check whether there is an Attachment on the record. For more details on how this works please contact Tom Snyder and Vinayak Vjayakumar.</description>
+        <externalId>false</externalId>
+        <label>HasAttachment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Issues__c</fullName>
+        <externalId>false</externalId>
+        <label>Issues</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Joint_Visit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>DuPont and distributor visit together?</description>
+        <externalId>false</externalId>
+        <label>Joint Visit</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_One_DuPont_SFID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is populated with the legacy One DuPont SF ID and was used during the split to map related records during the split and insert process to maintain the migrated record’s parent child record relationships.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This is the pre-split original 18 digit Salesforce ID of this record that came from the original One Dupont Salesforce instance before the business units were separated.  Its is case insensitive and unique.</inlineHelpText>
+        <label>Legacy One DuPont SFID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Market_Competitive_Infomation__c</fullName>
+        <externalId>false</externalId>
+        <label>Market- Competitive Infomation</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Market_Information__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Information</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Monthly_Highlight__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Monthly Highlight</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Nb_Of_Participants__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of people who have actively participated in this event or call.</inlineHelpText>
+        <label>Nb Of Participants</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Steps_R__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>List of next steps agreed upon during the call
+(Formatting and pictures are possible)</inlineHelpText>
+        <label>Next Steps_</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Next_Steps__c</fullName>
+        <description>List of next steps agreed upon during the call</description>
+        <externalId>false</externalId>
+        <label>Next Steps</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Objective__c</fullName>
+        <description>The item that reflects the COT or Objective associated with this call report.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the item that reflects the COT or Objective associated with this call report.</inlineHelpText>
+        <label>Objective</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Activity_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Technical First Analysis</fullName>
+                    <default>false</default>
+                    <label>Technical First Analysis</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Technical-Support</controllingFieldValue>
+                <valueName>Technical First Analysis</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>R00N30000001UzcPEAS</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Origin_Channel_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Origin Channel Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Used to capture product details; specifically around a customer complaint.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AFS-EMEA</fullName>
+                    <default>false</default>
+                    <label>AFS-EMEA</label>
+                </value>
+                <value>
+                    <fullName>CPC</fullName>
+                    <default>false</default>
+                    <label>CPC</label>
+                </value>
+                <value>
+                    <fullName>DEC-CPM</fullName>
+                    <default>false</default>
+                    <label>DEC-CPM</label>
+                </value>
+                <value>
+                    <fullName>DEC-PVFM</fullName>
+                    <default>false</default>
+                    <label>DEC-PVFM</label>
+                </value>
+                <value>
+                    <fullName>DPP-Parts-K/V</fullName>
+                    <default>false</default>
+                    <label>DPP-Parts-K/V</label>
+                </value>
+                <value>
+                    <fullName>DPP-Parts-Kalrez</fullName>
+                    <default>false</default>
+                    <label>DPP-Parts-Kalrez</label>
+                </value>
+                <value>
+                    <fullName>DPP-Parts-Vespel</fullName>
+                    <default>false</default>
+                    <label>DPP-Parts-Vespel</label>
+                </value>
+                <value>
+                    <fullName>DPP-Polymers</fullName>
+                    <default>false</default>
+                    <label>DPP-Polymers</label>
+                </value>
+                <value>
+                    <fullName>DSS</fullName>
+                    <default>false</default>
+                    <label>DSS</label>
+                </value>
+                <value>
+                    <fullName>DSS-CleanTech</fullName>
+                    <default>false</default>
+                    <label>DSS-CleanTech</label>
+                </value>
+                <value>
+                    <fullName>DSS-Consulting</fullName>
+                    <default>false</default>
+                    <label>DSS-Consulting</label>
+                </value>
+                <value>
+                    <fullName>DSS-L&amp;D</fullName>
+                    <default>false</default>
+                    <label>DSS-L&amp;D</label>
+                </value>
+                <value>
+                    <fullName>GM Global</fullName>
+                    <default>false</default>
+                    <label>GM Global</label>
+                </value>
+                <value>
+                    <fullName>Solae</fullName>
+                    <default>false</default>
+                    <label>Solae</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Purpose__c</fullName>
+        <description>Purpose &amp; Agenda of this Call</description>
+        <externalId>false</externalId>
+        <label>Purpose &amp; Agenda</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <description>Reason for the visit or contact - you can select multiple reasons for the Call or Visit</description>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Administrative</fullName>
+                    <default>false</default>
+                    <label>Administrative</label>
+                </value>
+                <value>
+                    <fullName>BIP</fullName>
+                    <default>false</default>
+                    <label>BIP</label>
+                </value>
+                <value>
+                    <fullName>Business Consulting</fullName>
+                    <default>false</default>
+                    <label>Business Consulting</label>
+                </value>
+                <value>
+                    <fullName>Certification - New</fullName>
+                    <default>false</default>
+                    <label>Certification - New</label>
+                </value>
+                <value>
+                    <fullName>Certification - Renewal</fullName>
+                    <default>false</default>
+                    <label>Certification - Renewal</label>
+                </value>
+                <value>
+                    <fullName>Checkup / Followup</fullName>
+                    <default>false</default>
+                    <label>Checkup / Followup</label>
+                </value>
+                <value>
+                    <fullName>Collection Call</fullName>
+                    <default>false</default>
+                    <label>Collection Call</label>
+                </value>
+                <value>
+                    <fullName>Color Complaint</fullName>
+                    <default>false</default>
+                    <label>Color Complaint</label>
+                </value>
+                <value>
+                    <fullName>Color Development</fullName>
+                    <default>false</default>
+                    <label>Color Development</label>
+                </value>
+                <value>
+                    <fullName>Color Inquiry</fullName>
+                    <default>false</default>
+                    <label>Color Inquiry</label>
+                </value>
+                <value>
+                    <fullName>Complaint</fullName>
+                    <default>false</default>
+                    <label>Complaint</label>
+                </value>
+                <value>
+                    <fullName>Computer Support</fullName>
+                    <default>false</default>
+                    <label>Computer Support</label>
+                </value>
+                <value>
+                    <fullName>Conference Call</fullName>
+                    <default>false</default>
+                    <label>Conference Call</label>
+                </value>
+                <value>
+                    <fullName>Consultation</fullName>
+                    <default>false</default>
+                    <label>Consultation</label>
+                </value>
+                <value>
+                    <fullName>Credits</fullName>
+                    <default>false</default>
+                    <label>Credits</label>
+                </value>
+                <value>
+                    <fullName>Customer Shop Call</fullName>
+                    <default>false</default>
+                    <label>Customer Shop Call</label>
+                </value>
+                <value>
+                    <fullName>Demo</fullName>
+                    <default>false</default>
+                    <label>Demo</label>
+                </value>
+                <value>
+                    <fullName>Distributor Call</fullName>
+                    <default>false</default>
+                    <label>Distributor Call</label>
+                </value>
+                <value>
+                    <fullName>Installation of Equipment</fullName>
+                    <default>false</default>
+                    <label>Installation of Equipment</label>
+                </value>
+                <value>
+                    <fullName>Inventory</fullName>
+                    <default>false</default>
+                    <label>Inventory</label>
+                </value>
+                <value>
+                    <fullName>Lunch N&apos; Learn</fullName>
+                    <default>false</default>
+                    <label>Lunch N&apos; Learn</label>
+                </value>
+                <value>
+                    <fullName>Maintenance</fullName>
+                    <default>false</default>
+                    <label>Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Monthly Call</fullName>
+                    <default>false</default>
+                    <label>Monthly Call</label>
+                </value>
+                <value>
+                    <fullName>Monthly Champion Empowerment Meeting</fullName>
+                    <default>false</default>
+                    <label>Monthly Champion Empowerment Meeting</label>
+                </value>
+                <value>
+                    <fullName>Monthly Mailer</fullName>
+                    <default>false</default>
+                    <label>Monthly Mailer</label>
+                </value>
+                <value>
+                    <fullName>MSDS or Data Sheet</fullName>
+                    <default>false</default>
+                    <label>MSDS or Data Sheet</label>
+                </value>
+                <value>
+                    <fullName>New Products</fullName>
+                    <default>false</default>
+                    <label>New Products</label>
+                </value>
+                <value>
+                    <fullName>Order Info</fullName>
+                    <default>false</default>
+                    <label>Order Info</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Performance Alliance</fullName>
+                    <default>false</default>
+                    <label>Performance Alliance</label>
+                </value>
+                <value>
+                    <fullName>Place an Order</fullName>
+                    <default>false</default>
+                    <label>Place an Order</label>
+                </value>
+                <value>
+                    <fullName>Press Review</fullName>
+                    <default>false</default>
+                    <label>Press Review</label>
+                </value>
+                <value>
+                    <fullName>Price Information</fullName>
+                    <default>false</default>
+                    <label>Price Information</label>
+                </value>
+                <value>
+                    <fullName>Product Complaint</fullName>
+                    <default>false</default>
+                    <label>Product Complaint</label>
+                </value>
+                <value>
+                    <fullName>Product Return</fullName>
+                    <default>false</default>
+                    <label>Product Return</label>
+                </value>
+                <value>
+                    <fullName>Sales Meeting (Internal)</fullName>
+                    <default>false</default>
+                    <label>Sales Meeting (Internal)</label>
+                </value>
+                <value>
+                    <fullName>Sales Trend Analysis</fullName>
+                    <default>false</default>
+                    <label>Sales Trend Analysis</label>
+                </value>
+                <value>
+                    <fullName>Sample</fullName>
+                    <default>false</default>
+                    <label>Sample</label>
+                </value>
+                <value>
+                    <fullName>Shipping Issues</fullName>
+                    <default>false</default>
+                    <label>Shipping Issues</label>
+                </value>
+                <value>
+                    <fullName>Stock Order</fullName>
+                    <default>false</default>
+                    <label>Stock Order</label>
+                </value>
+                <value>
+                    <fullName>Target Shop Call</fullName>
+                    <default>false</default>
+                    <label>Target Shop Call</label>
+                </value>
+                <value>
+                    <fullName>Technical Support</fullName>
+                    <default>false</default>
+                    <label>Technical Support</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Vendor Rep Call</fullName>
+                    <default>false</default>
+                    <label>Vendor Rep Call</label>
+                </value>
+                <value>
+                    <fullName>Weathering Standards Clarification</fullName>
+                    <default>false</default>
+                    <label>Weathering Standards Clarification</label>
+                </value>
+                <value>
+                    <fullName>Responsible Care</fullName>
+                    <default>false</default>
+                    <label>Responsible Care</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>New Contact</fullName>
+                    <default>false</default>
+                    <label>New Contact</label>
+                </value>
+                <value>
+                    <fullName>New Lead</fullName>
+                    <default>false</default>
+                    <label>New Lead</label>
+                </value>
+                <value>
+                    <fullName>New Account</fullName>
+                    <default>false</default>
+                    <label>New Account</label>
+                </value>
+                <value>
+                    <fullName>New Business Opportunity</fullName>
+                    <default>false</default>
+                    <label>New Business Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Follow up on Existing Opportunity</fullName>
+                    <default>false</default>
+                    <label>Follow up on Existing Opportunity</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_Competition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Main Competion mentioned in this call report</inlineHelpText>
+        <label>Related Competition</label>
+        <referenceTo>Competition__c</referenceTo>
+        <relationshipLabel>Call Reports</relationshipLabel>
+        <relationshipName>R00N30000001wKvuEAE</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Report_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Scoring_Type__c</fullName>
+        <description>Method used to generate the Scoring contained in the Topic field</description>
+        <externalId>false</externalId>
+        <label>Scoring Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Automated-SFDC</fullName>
+                    <default>true</default>
+                    <label>Automated-SFDC</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Overall status of this Call</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <default>false</default>
+                    <label>Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Behind Schedule</fullName>
+                    <default>false</default>
+                    <label>Behind Schedule</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Completed &amp; Reviewed</fullName>
+                    <default>false</default>
+                    <label>Completed &amp; Reviewed</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>In Review</fullName>
+                    <default>false</default>
+                    <label>In Review</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Planned</fullName>
+                    <default>false</default>
+                    <label>Planned</label>
+                </value>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>false</default>
+                    <label>Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Waiting</fullName>
+                    <default>false</default>
+                    <label>Waiting</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Summary_R__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Summary of the call with all main key comments made
+(Formatting and pictures are possible)</inlineHelpText>
+        <label>Summary_</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Summary__c</fullName>
+        <description>Summary of the call with all main key comments made</description>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Talked_to_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Did a direct interface occur with the shop manager?</description>
+        <externalId>false</externalId>
+        <label>Talked to Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Time_Duration__c</fullName>
+        <description>When insert values for time please write your time according to the following rules:
+
+0.25 = 15 minutes
+0.50 = 30 minutes
+0.75 = 45 minutes
+1.00 = 1 hour
+
+Ex. for 1 hour and 45 minutes write 1.75, for 2 hours and 15 minutes write 2.25.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When insert values for time please write your time according to the following rules:
+
+0.25 = 15 minutes
+0.50 = 30 minutes
+0.75 = 45 minutes
+1.00 = 1 hour
+
+Ex. for 1 hour and 45 minutes write 1.75, for 2 hours and 15 minutes write 2.25.</inlineHelpText>
+        <label>Time Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Topic__c</fullName>
+        <description>Main topic of this call report</description>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                    <label>Application</label>
+                </value>
+                <value>
+                    <fullName>Delivery</fullName>
+                    <default>false</default>
+                    <label>Delivery</label>
+                </value>
+                <value>
+                    <fullName>Logistics</fullName>
+                    <default>false</default>
+                    <label>Logistics</label>
+                </value>
+                <value>
+                    <fullName>Packaging</fullName>
+                    <default>false</default>
+                    <label>Packaging</label>
+                </value>
+                <value>
+                    <fullName>Pricing</fullName>
+                    <default>false</default>
+                    <label>Pricing</label>
+                </value>
+                <value>
+                    <fullName>Product</fullName>
+                    <default>false</default>
+                    <label>Product</label>
+                </value>
+                <value>
+                    <fullName>Quality</fullName>
+                    <default>false</default>
+                    <label>Quality</label>
+                </value>
+                <value>
+                    <fullName>Sales Call</fullName>
+                    <default>false</default>
+                    <label>Sales Call</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Topics__c</fullName>
+        <description>List of topics covered during this call</description>
+        <externalId>false</externalId>
+        <label>Topics</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Competition</fullName>
+                    <default>false</default>
+                    <label>Competition</label>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                    <label>Contract</label>
+                </value>
+                <value>
+                    <fullName>Demo</fullName>
+                    <default>false</default>
+                    <label>Demo</label>
+                </value>
+                <value>
+                    <fullName>Finance</fullName>
+                    <default>false</default>
+                    <label>Finance</label>
+                </value>
+                <value>
+                    <fullName>Management</fullName>
+                    <default>false</default>
+                    <label>Management</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Pricing</fullName>
+                    <default>false</default>
+                    <label>Pricing</label>
+                </value>
+                <value>
+                    <fullName>Quality</fullName>
+                    <default>false</default>
+                    <label>Quality</label>
+                </value>
+                <value>
+                    <fullName>Relationship Building</fullName>
+                    <default>false</default>
+                    <label>Relationship Building</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+                <value>
+                    <fullName>Supply Chain</fullName>
+                    <default>false</default>
+                    <label>Supply Chain</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>Trial</fullName>
+                    <default>false</default>
+                    <label>Trial</label>
+                </value>
+                <value>
+                    <fullName>VOC</fullName>
+                    <default>false</default>
+                    <label>VOC</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Type of Call report:  Pre-call Planner, Post interaction call report</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call Report Only</fullName>
+                    <default>false</default>
+                    <label>Call Report Only</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Monthly Highlight and Call Report</fullName>
+                    <default>false</default>
+                    <label>Monthly Highlight and Call Report</label>
+                </value>
+                <value>
+                    <fullName>Monthly Highlight Only</fullName>
+                    <default>false</default>
+                    <label>Monthly Highlight Only</label>
+                </value>
+                <value>
+                    <fullName>Phone Call</fullName>
+                    <default>false</default>
+                    <label>Phone Call</label>
+                </value>
+                <value>
+                    <fullName>Pre-Call Planner</fullName>
+                    <default>true</default>
+                    <label>Pre-Call Planner</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unmet_Customer_Needs__c</fullName>
+        <externalId>false</externalId>
+        <label>Unmet Customer Needs</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>12</visibleLines>
+    </fields>
+    <fields>
+        <fullName>fAccount_Country__c</fullName>
+        <description>Country name from the Account</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Account__r.Country__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Country name from the Account</inlineHelpText>
+        <label>Account_Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fAccount_Region__c</fullName>
+        <description>The Geo Region from the Account</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Account__r.Region__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Geo Region from the Account</inlineHelpText>
+        <label>Account_Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fCall_Report_Created_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Call Report Created Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Call Report</label>
+    <nameField>
+        <label>Call Report Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Call Reports</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>DSS_Call_Report</fullName>
+        <active>true</active>
+        <label>DSS Call Report</label>
+        <picklistValues>
+            <picklist>Activity_Initiator__c</picklist>
+            <values>
+                <fullName>DuPont</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Activity_Level__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Customer Interaction</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Site Visit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Face To Face</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>DSS-Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSS-L%26D</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scoring_Type__c</picklist>
+            <values>
+                <fullName>Automated-SFDC</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behind Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Topic__c</picklist>
+            <values>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Topics__c</picklist>
+            <values>
+                <fullName>Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VOC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Call Report Only</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Call_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Report_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Reason__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Topic__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Contact__c</searchFilterFields>
+        <searchFilterFields>Call_Date__c</searchFilterFields>
+        <searchFilterFields>LAST_UPDATE</searchFilterFields>
+        <searchFilterFields>RECORDTYPE</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Call_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Channel__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Send_by_Email</fullName>
+        <availability>online</availability>
+        <description>Standard Layout to send Call report summary to Customer</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Send by Email</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/email/author/emailauthor.jsp?p2_lkid={!Account.Id}&amp;rtype=003&amp;p3_lkid={!Call_Report__c.Id}&amp;retURL=/{!Call_Report__c.Id}&amp;template_id=00X30000000nRxD</url>
+    </webLinks>
+</CustomObject>
