@@ -2954,6 +2954,177 @@ End (Complete)</inlineHelpText>
         <description>Compliance and SFDC System Maintenance</description>
         <label>CRM Administration</label>
         <picklistValues>
+            <picklist>DEIS_Stage__c</picklist>
+            <values>
+                <fullName>0 - Pre-Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Identify Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Research and Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DEIS_Status__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>CRM Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrective Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy New SFDC Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improve Business Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduce New SFDC Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usability Improvement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gap %26 Reconciliation Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT%26P Priortized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea%2FForecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Build_and_Configure__c</picklist>
             <values>
                 <fullName>Business process review</fullName>
@@ -3110,48 +3281,6 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Review Adoption versus Scope</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>DEIS_Stage__c</picklist>
-            <values>
-                <fullName>0 - Pre-Project</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 - Identify Need</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 - Research and Evaluate</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 - Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 - Build</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5 - Launch</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>DEIS_Status__c</picklist>
-            <values>
-                <fullName>Green</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Red</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yellow</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3776,41 +3905,6 @@ End (Complete)</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Project_Type__c</picklist>
-            <values>
-                <fullName>CRM Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Compliance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Corrective Enhancement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Quality</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deploy New SFDC Program</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Improve Business Process</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Introduce New SFDC Functionality</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Usability Improvement</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>SFDC_Instance__c</picklist>
             <values>
                 <fullName>One-DuPont</fullName>
@@ -4073,57 +4167,6 @@ End (Complete)</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Stage__c</picklist>
-            <values>
-                <fullName>Charter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Configure</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Construct</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Control</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deploy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Develop</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>End</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Plan</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Quality Assurance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USAT</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Validate</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Status_Reason__c</picklist>
             <values>
                 <fullName>Business Readiness</fullName>
@@ -4175,49 +4218,6 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Security</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Cancelled</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Gap %26 Reconciliation Needed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IT%26P Priortized</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Idea%2FForecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>On Hold</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pending Start</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pre-Planning</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4485,6 +4485,81 @@ End (Complete)</inlineHelpText>
         <description>Business Organization CRM Strategy - Parent Project for CRM Support Issues &amp; SFARs</description>
         <label>CRM Program</label>
         <picklistValues>
+            <picklist>DEIS_Stage__c</picklist>
+            <values>
+                <fullName>0 - Pre-Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Identify Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Research and Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DEIS_Status__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Program</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Control</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Build_and_Configure__c</picklist>
             <values>
                 <fullName>Business process review</fullName>
@@ -4629,48 +4704,6 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Review Adoption versus Scope</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>DEIS_Stage__c</picklist>
-            <values>
-                <fullName>0 - Pre-Project</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 - Identify Need</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 - Research and Evaluate</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 - Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 - Build</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5 - Launch</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>DEIS_Status__c</picklist>
-            <values>
-                <fullName>Green</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Red</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yellow</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5259,13 +5292,6 @@ End (Complete)</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Project_Type__c</picklist>
-            <values>
-                <fullName>Program</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>SFDC_Instance__c</picklist>
             <values>
                 <fullName>One-DuPont</fullName>
@@ -5276,17 +5302,6 @@ End (Complete)</inlineHelpText>
             <picklist>Sandbox__c</picklist>
             <values>
                 <fullName>ZZ - Field Not Used</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Stage__c</picklist>
-            <values>
-                <fullName>Control</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>End</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5326,21 +5341,6 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Security</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Cancelled</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5592,38 +5592,6 @@ End (Complete)</inlineHelpText>
         <description>Large project: 160+ hours or $10,000+ and funded by business</description>
         <label>CRM Project</label>
         <picklistValues>
-            <picklist>Build_and_Configure__c</picklist>
-            <values>
-                <fullName>ZZ - Field Not Used</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Business_Priority__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Change_Management__c</picklist>
-            <values>
-                <fullName>ZZ - Field Not Used</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Control_Phase__c</picklist>
-            <values>
-                <fullName>ZZ - Field Not Used</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>DEIS_Stage__c</picklist>
             <values>
                 <fullName>0 - Pre-Project</fullName>
@@ -5662,6 +5630,171 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>CRM Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrective Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy New SFDC Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improve Business Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduce New SFDC Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usability Improvement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BU%2FFN Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gap %26 Reconciliation Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT%26P Priortized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea%2FForecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Start</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pre-Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Build_and_Configure__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Priority__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Change_Management__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Control_Phase__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5870,41 +6003,6 @@ End (Complete)</inlineHelpText>
             <picklist>Project_Resources__c</picklist>
             <values>
                 <fullName>ZZ - Field Not Used</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Project_Type__c</picklist>
-            <values>
-                <fullName>CRM Content</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Compliance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Corrective Enhancement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Data Quality</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deploy New SFDC Program</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Improve Business Process</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Introduce New SFDC Functionality</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Usability Improvement</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6171,57 +6269,6 @@ End (Complete)</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Stage__c</picklist>
-            <values>
-                <fullName>Charter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Configure</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Construct</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Control</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deploy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Develop</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>End</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Plan</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Quality Assurance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USAT</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Validate</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Status_Reason__c</picklist>
             <values>
                 <fullName>Business Readiness</fullName>
@@ -6273,53 +6320,6 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Security</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>BU%2FFN Approved</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Cancelled</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Gap %26 Reconciliation Needed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IT%26P Priortized</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Idea%2FForecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>On Hold</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pending Start</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Pre-Planning</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6567,6 +6567,165 @@ End (Complete)</inlineHelpText>
         <description>Between 40 and 160 hours and less than $10,000</description>
         <label>SFDC Enhancement</label>
         <picklistValues>
+            <picklist>DEIS_Stage__c</picklist>
+            <values>
+                <fullName>0 - Pre-Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Identify Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Research and Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DEIS_Status__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrective Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improve Business Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usability Improvement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BU%2FFN Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gap %26 Reconciliation Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT%26P Priortized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea%2FForecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Start</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pre-Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Build_and_Configure__c</picklist>
             <values>
                 <fullName>Business process review</fullName>
@@ -6711,48 +6870,6 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Review Adoption versus Scope</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>DEIS_Stage__c</picklist>
-            <values>
-                <fullName>0 - Pre-Project</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 - Identify Need</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 - Research and Evaluate</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 - Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 - Build</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5 - Launch</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>DEIS_Status__c</picklist>
-            <values>
-                <fullName>Green</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Red</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yellow</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7345,25 +7462,6 @@ End (Complete)</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Project_Type__c</picklist>
-            <values>
-                <fullName>Compliance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Corrective Enhancement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Improve Business Process</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Usability Improvement</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>SFDC_Instance__c</picklist>
             <values>
                 <fullName>One-DuPont</fullName>
@@ -7626,57 +7724,6 @@ End (Complete)</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Stage__c</picklist>
-            <values>
-                <fullName>Charter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Configure</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Construct</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Control</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deploy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Develop</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>End</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Plan</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Quality Assurance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USAT</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Validate</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Status_Reason__c</picklist>
             <values>
                 <fullName>Business Readiness</fullName>
@@ -7712,53 +7759,6 @@ End (Complete)</inlineHelpText>
             </values>
             <values>
                 <fullName>Security</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>BU%2FFN Approved</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Cancelled</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Gap %26 Reconciliation Needed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IT%26P Priortized</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Idea%2FForecast</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>On Hold</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pending Start</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Pre-Planning</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
