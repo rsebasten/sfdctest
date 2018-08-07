@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MetaData Mapping (PA Util)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MetaData Mappings (PA Util)</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter all the orgs this metadata component will be migrated to --></help>
+        <label><!-- Destination Org --></label>
+        <name>Destination_Org__c</name>
+        <picklistValues>
+            <masterLabel>AgCo Util</masterLabel>
+            <translation><!-- AgCo Util --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MatCo Util</masterLabel>
+            <translation><!-- MatCo Util --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RemedyCo Util</masterLabel>
+            <translation><!-- RemedyCo Util --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SpecCo Util</masterLabel>
+            <translation><!-- SpecCo Util --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installed Package --></label>
+        <name>InstalledPackage__c</name>
+        <relationshipLabel><!-- MetaData Mappings (PA Util) (Installed Package) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MetaData Name --></label>
+        <name>MetaDataName__c</name>
+    </fields>
+    <fields>
+        <label><!-- MetaData Type --></label>
+        <name>MetaDataType__c</name>
+        <relationshipLabel><!-- MetaData Mappings (PA Util) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MetaData Version --></label>
+        <name>MetaDataVersion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent MetaData --></label>
+        <name>ParentMetaData__c</name>
+        <relationshipLabel><!-- MetaData Mappings (PA Util) (Parent MetaData) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>Parent__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

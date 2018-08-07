@@ -1,0 +1,9 @@
+<apex:page standardController="Metadata_Sync__c" extensions="SFDC_MetadataSync_Controller" >
+	<apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages /> 
+        </apex:pageBlock>
+    	 <apex:commandButton value="Sync Metadata" action="{!syncLines}"/>
+        <apex:commandButton value="Return to Sync Record" action="{!cancel}"/>
+    </apex:form>
+</apex:page>

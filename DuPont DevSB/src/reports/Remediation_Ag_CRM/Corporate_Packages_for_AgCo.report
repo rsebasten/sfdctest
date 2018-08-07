@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Corporate_Package__c.Status__c</field>
+    </columns>
+    <description>List of all Corporate packages that are scoped for target of AgCo CRM</description>
+    <filter>
+        <criteriaItems>
+            <column>Corporate_Package__c.Targeted_Production_Orgs__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>AgCo</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Corporate Packages for AgCo</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Corporate_Package__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Corporate_Package__c.Status__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.TEST_STEPS__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.Test_Script_Name__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.Test_Script_Description__c</field>
+    </columns>
+    <description>(31-MAY): On this date Francois Xavier (FX) has confirmed Corian website registration testing is no longer needed.  As such this report aims to identify Corian-related QA Test Scripts so that the QA team can mark as out of scope.</description>
+    <filter>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <column>QATest_Script__c.TEST_STEPS__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Corian</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QATest_Script__c.Test_Script_Name__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Corian</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QATest_Script__c.Test_Script_Description__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Corian</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>DPS - Corian related QATest Scripts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$QATest_Script__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>QATest_Script__c.Last_Run_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

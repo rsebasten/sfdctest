@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OneDuPontMetaData__c.MetaDataName__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.Destination_Org__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.MetaDataName__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>CustomField.Activity.</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>All BU Activity Fields</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$OneDuPontMetaData__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OneDuPontMetaData__c.AgCO_Last_Mapped_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

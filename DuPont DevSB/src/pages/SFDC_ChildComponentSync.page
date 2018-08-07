@@ -1,0 +1,51 @@
+<apex:page standardController="OneDuPontMetaData__c" extensions="SFDC_ChildComponentSync_Controller" >
+	<apex:form >
+        <apex:pageBlock >  
+            <apex:pageMessages />
+        
+        
+        	<apex:pageBlockSection >
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="CRM Org"/> 
+        			<apex:selectList id="chooseCRM" value="{!buSelection}" size="1">
+                        <apex:selectOption itemValue="None" itemLabel="--None--"/>
+                        <apex:selectOption itemValue="AgCo" itemLabel="AgCo"/>
+                        <apex:selectOption itemValue="FMC" itemLabel="FMC"/>
+                        <apex:selectOption itemValue="MS" itemLabel="MS"/>
+                        <apex:selectOption itemValue="PS" itemLabel="PS"/>
+                        <apex:selectOption itemValue="SS" itemLabel="SS"/>
+                        <apex:selectOption itemValue="EC" itemLabel="EC"/>
+                        <apex:selectOption itemValue="IB" itemLabel="IB"/>
+                        <apex:selectOption itemValue="NH" itemLabel="NH"/>
+        			</apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem />
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Remediation Level"/>
+        			<apex:inputField value="{!syncRecord.AgCo_Remediation_Level__c}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem />
+        		
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Metadata Remediation"/>
+        			<apex:inputField value="{!syncRecord.AgCo_CRM_Metadata_Remediation__c}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem />
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Remediation Reason Note"/>
+        			<apex:inputField value="{!syncRecord.AgCo_CRM_Remediation_Reason_Note__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+    	 <apex:commandButton value="Update Children Components" action="{!updateLines}"/>
+        <apex:commandButton value="Cancel" action="{!cancel}"/>
+
+        	</apex:pageBlock>
+            </apex:form>
+</apex:page>

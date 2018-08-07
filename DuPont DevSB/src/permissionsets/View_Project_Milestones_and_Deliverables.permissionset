@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows Standard users to view the Project Milestones and Deliverables</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>View Project Milestones and Deliverables</label>
+    <license>Salesforce</license>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Project_Milestones_and_Deliverables__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <tabSettings>
+        <tab>Project_Milestones_and_Deliverables__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

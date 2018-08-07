@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Risks &amp; Issues</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Risks &amp; Issues</value>
+    </caseValues>
+    <fields>
+        <help><!-- Optionally tie the Risk/Issue to a Build --></help>
+        <label><!-- Build --></label>
+        <name>Build__c</name>
+        <relationshipLabel><!-- Risks &amp; Issues --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Required to enter a description of the problem statement --></help>
+        <label><!-- Problem Statement --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the mitigation approach for the risk/issue --></help>
+        <label><!-- Mitigation Approach --></label>
+        <name>Mitigation_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required: Enter the Severity level of the Risk/Issue --></help>
+        <label><!-- Severity Level --></label>
+        <name>Severity_Level__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Optionally tie a Risk/Issue to a Sprint --></help>
+        <label><!-- Sprint --></label>
+        <name>Sprint__c</name>
+        <relationshipLabel><!-- Risks &amp; Issues --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Optionally tie the Risk/Issue to a User Story --></help>
+        <label><!-- User Story --></label>
+        <name>User_Story__c</name>
+        <relationshipLabel><!-- Risks &amp; Issues --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the related work for the RIsk/issue --></help>
+        <label><!-- Work --></label>
+        <name>Work__c</name>
+        <relationshipLabel><!-- Risks &amp; Issues --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <description><!-- A Risk that has been realized and is now a Issue to a program, project, sprint, or user story --></description>
+        <label><!-- Issue --></label>
+        <name>Issue</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Issue has not materialized yet and is merely a Risk to a program, project, sprint, or user story --></description>
+        <label><!-- Risk --></label>
+        <name>Risk</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Description Field is Required --></errorMessage>
+        <name>Description_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

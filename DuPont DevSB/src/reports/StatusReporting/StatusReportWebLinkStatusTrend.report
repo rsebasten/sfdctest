@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Status_Report__c.Overall__c</field>
+    </columns>
+    <columns>
+        <field>Status_Report__c.Budget__c</field>
+    </columns>
+    <columns>
+        <field>Status_Report__c.Resource__c</field>
+    </columns>
+    <description>DO NOT DELETE: Web link to display week-over-week status trends</description>
+    <filter>
+        <criteriaItems>
+            <column>Status_Report__c.Customer_Name__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Status_Report__c.Project_Id__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Status Report Web Link: Status Trend</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Status_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Status_Report__c.Detail_Due_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

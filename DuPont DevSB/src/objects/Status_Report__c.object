@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Status report header</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Accomplishments_this_Period__c</fullName>
+        <description>Describes tasks completed during the past week</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describes tasks completed during the past week</inlineHelpText>
+        <label>Accomplishments this Period</label>
+        <length>32000</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Budget_Status__c</fullName>
+        <description>Budget Status</description>
+        <externalId>false</externalId>
+        <label>Budget Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Schedule</fullName>
+                    <default>false</default>
+                    <label>On Schedule</label>
+                </value>
+                <value>
+                    <fullName>Potential Risk</fullName>
+                    <default>false</default>
+                    <label>Potential Risk</label>
+                </value>
+                <value>
+                    <fullName>At Risk</fullName>
+                    <default>false</default>
+                    <label>At Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <description>Budget Status Indicator</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE( Budget_Status__c , 
+&quot;On Schedule&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Potential Risk&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;At Risk&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;budget status indicator&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Budget</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Distribution_List__c</fullName>
+        <description>List of client team members to send the status report</description>
+        <externalId>false</externalId>
+        <label>Client Distribution List</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cust_Sat__c</fullName>
+        <description>Customer Satisfaction Indicator</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(   Customer_Satisfaction__c , 
+&quot;Green&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Yellow&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;Red&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;cust sat indicator&quot;)</formula>
+        <label>Cust Sat</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <description>Customer Name</description>
+        <externalId>false</externalId>
+        <label>Customer Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Satisfaction__c</fullName>
+        <description>Rate the level of Customer Satisfaction as perceived by the Project Executive Sponsor</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rate the level of Customer Satisfaction as perceived by the Project Executive Sponsor</inlineHelpText>
+        <label>Customer Satisfaction</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>true</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Detail_Due_Date__c</fullName>
+        <description>Date of which all status report details are due so the Project Manager can process the input.</description>
+        <externalId>false</externalId>
+        <label>Detail Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Items_for_Management_Attn__c</fullName>
+        <description>Indicate high priority items for management&apos;s consideration here</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate high priority items for management&apos;s consideration here</inlineHelpText>
+        <label>Items for Management Attn</label>
+        <length>3000</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Overall_Status__c</fullName>
+        <description>Overall Status</description>
+        <externalId>false</externalId>
+        <label>Overall Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Schedule</fullName>
+                    <default>false</default>
+                    <label>On Schedule</label>
+                </value>
+                <value>
+                    <fullName>Potential Risk</fullName>
+                    <default>false</default>
+                    <label>Potential Risk</label>
+                </value>
+                <value>
+                    <fullName>At Risk</fullName>
+                    <default>false</default>
+                    <label>At Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Overall__c</fullName>
+        <description>Overall Status Indicator</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(  Overall_Status__c , 
+&quot;On Schedule&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Potential Risk&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;At Risk&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;overall status indicator&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PHC_Name__c</fullName>
+        <description>Project Health Check Name</description>
+        <externalId>false</externalId>
+        <formula>Project_Overview__r.Name +  &quot;-&quot;+ TEXT(Status_Date__c )+ &quot;-Post Sales Health Check&quot;</formula>
+        <label>PHC Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_but_Not_Accomplished__c</fullName>
+        <description>Describes tasks not completed but were planned to be done</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describes tasks not completed but were planned to be done</inlineHelpText>
+        <label>Planned, but Not Accomplished</label>
+        <length>2550</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Planned_for_Next_Period__c</fullName>
+        <description>Describes tasks that are planned to be undertaken next week</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describes tasks that are planned to be undertaken next week</inlineHelpText>
+        <label>Planned for Next Period</label>
+        <length>2550</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Id__c</fullName>
+        <description>Project identifier</description>
+        <externalId>false</externalId>
+        <label>Project Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Overview__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related Project</description>
+        <externalId>false</externalId>
+        <label>Project Overview</label>
+        <referenceTo>Project_Overview__c</referenceTo>
+        <relationshipLabel>Status Reports</relationshipLabel>
+        <relationshipName>R00N80000002QnvqEAC</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Schedule__c</fullName>
+        <description>G/Y/R status re project schedule</description>
+        <externalId>false</externalId>
+        <inlineHelpText>PM: How are we progressing vs. the agreed upon project timeline?</inlineHelpText>
+        <label>Project Schedule</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>true</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Scope__c</fullName>
+        <description>G/Y/R status re project scope</description>
+        <externalId>false</externalId>
+        <inlineHelpText>PM: How close are we to the latest approved scope (i.e. original SOW + latest CO&apos;s)</inlineHelpText>
+        <label>Project Scope</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>true</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resource_Status__c</fullName>
+        <description>Resource Status</description>
+        <externalId>false</externalId>
+        <label>Resource Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Schedule</fullName>
+                    <default>false</default>
+                    <label>On Schedule</label>
+                </value>
+                <value>
+                    <fullName>Potential Risk</fullName>
+                    <default>false</default>
+                    <label>Potential Risk</label>
+                </value>
+                <value>
+                    <fullName>At Risk</fullName>
+                    <default>false</default>
+                    <label>At Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resource__c</fullName>
+        <description>Resource Status Indicator</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(   Resource_Status__c , 
+&quot;On Schedule&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Potential Risk&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;At Risk&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;resource status indicator&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Resource</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salesforce_com_Distribution_List__c</fullName>
+        <description>List of Salesforce.com team members to send the status report</description>
+        <externalId>false</externalId>
+        <label>Salesforce.com Distribution List</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Sched__c</fullName>
+        <description>Project Schedule Indicator</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(   Project_Schedule__c  , 
+&quot;Green&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Yellow&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;Red&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;sched status indicator&quot;)</formula>
+        <label>Sched</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scope__c</fullName>
+        <description>Project Scope Indicator</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(   Project_Scope__c  , 
+&quot;Green&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Yellow&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;Red&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;scope indicator&quot;)</formula>
+        <label>Scope</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Date__c</fullName>
+        <description>Date of status report</description>
+        <externalId>false</externalId>
+        <label>Status Date</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>Request Update from Track Owners</fullName>
+                    <default>false</default>
+                    <label>Request Update from Track Owners</label>
+                </value>
+                <value>
+                    <fullName>In-Process</fullName>
+                    <default>false</default>
+                    <label>In-Process</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Summary_Project_Status__c</fullName>
+        <description>Short summary of where the project is currently</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Write a short summary of where the project is currently - e.g. &quot;BPR completed successfully, completed KT with TA to start preparing for Technical Design sessions.&quot;</inlineHelpText>
+        <label>Summary - Project Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Status Report</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Project_Overview__c</columns>
+        <columns>NAME</columns>
+        <columns>Project_Id__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Status Report Header Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Status Reports</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Centralized</fullName>
+        <active>true</active>
+        <description>Enter status progress in a single form</description>
+        <label>Centralized</label>
+        <picklistValues>
+            <picklist>Budget_Status__c</picklist>
+            <values>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Potential Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_Satisfaction__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Overall_Status__c</picklist>
+            <values>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Potential Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Schedule__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Scope__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resource_Status__c</picklist>
+            <values>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Potential Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Update from Track Owners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Distributed</fullName>
+        <active>true</active>
+        <description>Enable Track Owners to submit project status feedback.</description>
+        <label>Distributed</label>
+        <picklistValues>
+            <picklist>Budget_Status__c</picklist>
+            <values>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Potential Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_Satisfaction__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Overall_Status__c</picklist>
+            <values>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Potential Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Schedule__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Scope__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resource_Status__c</picklist>
+            <values>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Potential Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Update from Track Owners</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project_Overview__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Overall_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Resource_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Budget_Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Overview__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Overall_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Resource_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Budget_Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Project_Overview__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Overall_Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Resource_Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Budget_Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Overview__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Overall_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Budget_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Resource_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Debug_Centralized_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Debug Centralized Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx
+?SessionID={!API.Session_ID}
+&amp;ServerURL={!API.Partner_Server_URL_80}
+&amp;Id={!Status_Report__c.Id}
+&amp;ReportId=00O30000004LwOB?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOC?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOD
+&amp;ReportId=00O30000004LwOE?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOF?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOG?pv0={!Status_Report__c.Project_OverviewId__c}~pv1={!Status_Report__c.Status_Date__c}
+&amp;ReportId=00O30000004LwOH?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOI?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;TemplateId=a0t300000016HOv
+&amp;OFN=Centralized+Status+Report+-+{!Status_Report__c.Customer_Name__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Debug_Distributed_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Debug Distributed Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx
+?SessionID={!API.Session_ID}
+&amp;ServerURL={!API.Partner_Server_URL_80}
+&amp;Id={!Status_Report__c.Id}
+&amp;ReportId=00O30000004LwOJ
+&amp;ReportId=00O30000004LwOK
+&amp;ReportId=00O30000004LwOL
+&amp;ReportId=00O30000004LwOM
+&amp;ReportId=00O30000004LwON?pv0={!Status_Report__c.Project_Id__c}
+&amp;ReportId=00O30000004LwOO?pv0={!Status_Report__c.Id}~pv1={!Status_Report__c.Project_Id__c}~pv2={!Status_Report__c.Status_Date__c}
+&amp;ReportId=00O30000004LwOP?pv0={!Status_Report__c.Project_Id__c}
+&amp;ReportId=00O30000004LwOQ?pv0={!Status_Report__c.Project_Id__c}
+&amp;ReportId=00O30000004LwOR?pv0={!Status_Report__c.Project_Id__c}
+&amp;ReportId=00O30000004LwOS?pv0={!Status_Report__c.Project_Id__c}
+&amp;TemplateId=a0t300000016HP0
+&amp;OFN=Distributed+Status+Report+-+{!Status_Report__c.Customer_Name__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Centralized_Status_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>150</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Generate Centralized Status Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx
+?SessionID={!API.Session_ID}
+&amp;ServerURL={!API.Partner_Server_URL_80}
+&amp;Id={!Status_Report__c.Id}
+&amp;ReportId=00O30000004LwOB?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOC?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOD
+&amp;ReportId=00O30000004LwOE?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOF?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOG?pv0={!Status_Report__c.Project_OverviewId__c}~pv1={!Status_Report__c.Status_Date__c}
+&amp;ReportId=00O30000004LwOH?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;ReportId=00O30000004LwOI?pv0={!Status_Report__c.Project_OverviewId__c}
+&amp;TemplateId=a0t300000016HOv
+&amp;OFN=Centralized+Status+Report+-+{!Status_Report__c.Customer_Name__c}
+&amp;ds7=3
+&amp;bml=Download Status Report</url>
+        <width>300</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Distributed_Status_Report</fullName>
+        <availability>online</availability>
+        <description>Creates status report output using Conga</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>150</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Generate Distributed Status Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx
+?SessionID={!API.Session_ID}
+&amp;ServerURL={!API.Partner_Server_URL_80}
+&amp;Id={!Status_Report__c.Id}
+&amp;ReportId=00O30000004LwOJ
+&amp;ReportId=00O30000004LwOK
+&amp;ReportId=00O30000004LwOL
+&amp;ReportId=00O30000004LwOM
+&amp;ReportId=00O30000004LwON?pv0={!Status_Report__c.Project_Overview__c}
+&amp;ReportId=00O30000004LwOO?pv0={!Status_Report__c.Id}~pv1={!Status_Report__c.Project_Overview__c}~pv2={!Status_Report__c.Status_Date__c}
+&amp;ReportId=00O30000004LwOP?pv0={!Status_Report__c.Project_Overview__c}
+&amp;ReportId=00O30000004LwOQ?pv0={!Status_Report__c.Project_Overview__c}
+&amp;ReportId=00O30000004LwOR?pv0={!Status_Report__c.Project_Overview__c}
+&amp;ReportId=00O30000004LwOS?pv0={!Status_Report__c.Project_Overview__c}
+&amp;TemplateId=a0t300000016HP0
+&amp;OFN=Distributed+Status+Report+-+{!Status_Report__c.Customer_Name__c}
+&amp;ds7=3
+&amp;bml=Download Status Report</url>
+        <width>300</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Project_Status_Trend</fullName>
+        <availability>online</availability>
+        <description>Web link to custom report to display week-over-week status trending</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Project Status Trend</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://na1.salesforce.com/00O30000004LwOU?pv0={!Status_Report__c.Customer_Name__c}&amp;pv1={!Status_Report__c.Project_Id__c}</url>
+    </webLinks>
+</CustomObject>

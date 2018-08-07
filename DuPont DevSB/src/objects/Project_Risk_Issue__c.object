@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Customer_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates who is responsible for helping address this issue from the Client side.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates who is responsible for helping address this issue from the Client side.</inlineHelpText>
+        <label>Customer Owner</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>R00N80000002awulEAA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Closed__c</fullName>
+        <externalId>false</externalId>
+        <label>Date/Time Closed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>10000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Expected_Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Close Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Likelihood__c</fullName>
+        <externalId>false</externalId>
+        <label>Likelihood</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Potential_Impact__c</fullName>
+        <externalId>false</externalId>
+        <label>Potential Impact</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Overview__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Overview</label>
+        <referenceTo>Project_Overview__c</referenceTo>
+        <relationshipName>R00N80000002awugEAA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Resolution__c</fullName>
+        <description>Upon closure, describe how this issue was resolved.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Upon closure, describe how this issue was resolved.</inlineHelpText>
+        <label>Resolution</label>
+        <length>10000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Risk_ID__c</fullName>
+        <description>Unique identifier</description>
+        <displayFormat>R-{0000000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Risk ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Risk_Mitigation_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Risk Mitigation Plan</label>
+        <length>400</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1) New</fullName>
+                    <default>false</default>
+                    <label>1) New</label>
+                </value>
+                <value>
+                    <fullName>2) Working</fullName>
+                    <default>false</default>
+                    <label>2) Working</label>
+                </value>
+                <value>
+                    <fullName>3) Pending</fullName>
+                    <default>false</default>
+                    <label>3) Pending</label>
+                </value>
+                <value>
+                    <fullName>4) Monitoring</fullName>
+                    <default>false</default>
+                    <label>4) Monitoring</label>
+                </value>
+                <value>
+                    <fullName>5) Closed</fullName>
+                    <default>false</default>
+                    <label>5) Closed</label>
+                </value>
+                <value>
+                    <fullName>1 - New</fullName>
+                    <default>false</default>
+                    <label>1 - New</label>
+                </value>
+                <value>
+                    <fullName>2 - Monitoring</fullName>
+                    <default>false</default>
+                    <label>2 - Monitoring</label>
+                </value>
+                <value>
+                    <fullName>3 - Impacting Project</fullName>
+                    <default>false</default>
+                    <label>3 - Impacting Project</label>
+                </value>
+                <value>
+                    <fullName>4 - Closed</fullName>
+                    <default>false</default>
+                    <label>4 - Closed</label>
+                </value>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Ready for Retest</fullName>
+                    <default>false</default>
+                    <label>Ready for Retest</label>
+                </value>
+                <value>
+                    <fullName>Duplicate</fullName>
+                    <default>false</default>
+                    <label>Duplicate</label>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Project Risk/Issue</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Project_Overview__c</columns>
+        <columns>Risk_ID__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_S_C_Service_Risks_Issues</fullName>
+        <columns>Risk_ID__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <columns>Risk_Mitigation_Plan__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <label>Project Victory S&amp;C Service Risks/Issues</label>
+    </listViews>
+    <listViews>
+        <fullName>S_C_Service_SoW013_Issues</fullName>
+        <columns>Project_Overview__c</columns>
+        <columns>Risk_ID__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>equals</operation>
+            <value>S&amp;C Service SoW013</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Risk_Issue__c.Issue</value>
+        </filters>
+        <label>S&amp;C Service SoW013- Issues</label>
+    </listViews>
+    <nameField>
+        <label>Project Risk/Issue Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Project Risks/Issues</pluralLabel>
+    <recordTypes>
+        <fullName>Issue</fullName>
+        <active>true</active>
+        <description>An Issue is an obstacle impeding progress within the work plan that is controllable and can be resolved with the right people in the right room at the right time.</description>
+        <label>Issue</label>
+        <picklistValues>
+            <picklist>Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Impact__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>1%29 New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2%29 Working</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%29 Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%29 Monitoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%29 Closed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Risk</fullName>
+        <active>true</active>
+        <description>A Risk is the likelihood that an event will occur that prevent the project from be completed on time/budget.</description>
+        <label>Risk</label>
+        <picklistValues>
+            <picklist>Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Impact__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>1 - New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2 - Monitoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Impacting Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Closed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

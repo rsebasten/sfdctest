@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Track Project and program level decisions</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Build__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related Build</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required to enter the Build (Project) associated with this decision</inlineHelpText>
+        <label>Build</label>
+        <referenceTo>agf__ADM_Build__c</referenceTo>
+        <relationshipLabel>Decisions</relationshipLabel>
+        <relationshipName>Decisions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Decision_Description__c</fullName>
+        <description>Description of the Decision needed or made</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter a description of the decision needed or made</inlineHelpText>
+        <label>Decision Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Decision_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Optionally enter the due date for the decision needed</inlineHelpText>
+        <label>Decision Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Decision_Made_By2__c</fullName>
+        <description>Decision Made By</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter either the lookup or text field for the resource making the decision</inlineHelpText>
+        <label>Decision Made By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the status of the Decision process</inlineHelpText>
+        <label>Status</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Decision Needed</fullName>
+                    <default>true</default>
+                    <label>Decision Needed</label>
+                </value>
+                <value>
+                    <fullName>Decision Made</fullName>
+                    <default>false</default>
+                    <label>Decision Made</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UserStory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>User Story related to the Decision</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optionally tie the Decision to a particular User Story in the Build</inlineHelpText>
+        <label>User Story</label>
+        <referenceTo>copado__User_Story__c</referenceTo>
+        <relationshipLabel>Decisions</relationshipLabel>
+        <relationshipName>Decisions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Decision</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Decision_Made_By2__c</columns>
+        <columns>Decision_Description__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Corp</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Decision_Made_By2__c</columns>
+        <columns>Decision_Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Decision__c.DuPont_Corporate_Level_Decision</value>
+        </filters>
+        <label>All Corporate Decisions</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Corp_pend</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Decision_Made_By2__c</columns>
+        <columns>Decision_Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Decision__c.DuPont_Corporate_Level_Decision</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Decision Needed</value>
+        </filters>
+        <label>All Corporate Decisions Pending</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_S_C_Service_Decisions</fullName>
+        <columns>NAME</columns>
+        <columns>Build__c</columns>
+        <columns>Decision_Description__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Build__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <label>Project Victory S&amp;C Service Decisions</label>
+    </listViews>
+    <nameField>
+        <displayFormat>D-{0000000}</displayFormat>
+        <label>Decision Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Decisions</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>DuPont_Corporate_Level_Decision</fullName>
+        <active>true</active>
+        <description>Decision made at a corporate level that affects all project level work streams</description>
+        <label>Corporate/Program Level Decision</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Decision Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decision Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Project_Level_Decision</fullName>
+        <active>true</active>
+        <description>Decision made that is applicable to a specific build, project, User Story or workstream</description>
+        <label>Build/Project/Work Level Decision</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Decision Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decision Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Decision_Made_By2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Decision_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Decision_Due_Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Decision_Made_by_Required_Optionally</fullName>
+        <active>true</active>
+        <description>Decision Made By is required with Decision Status is Decision Made</description>
+        <errorConditionFormula>AND(ISPICKVAL( Status__c , &apos;Decision Made&apos;),ISBLANK( Decision_Made_By2__c))</errorConditionFormula>
+        <errorDisplayField>Decision_Made_By2__c</errorDisplayField>
+        <errorMessage>Decision Made by is required if the Status is Decision Made</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>
