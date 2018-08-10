@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to log Risks &amp; Issues</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Build__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Optionally tie the Risk/Issue to a Build</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optionally tie the Risk/Issue to a Build</inlineHelpText>
+        <label>Build</label>
+        <referenceTo>agf__ADM_Build__c</referenceTo>
+        <relationshipLabel>Risks &amp; Issues</relationshipLabel>
+        <relationshipName>Risks_Issues</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of the Issue or Risk</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required to enter a description of the problem statement</inlineHelpText>
+        <label>Problem Statement</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mitigation_Description__c</fullName>
+        <description>Text area to capture the mitigation approach</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the mitigation approach for the risk/issue</inlineHelpText>
+        <label>Mitigation Approach</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Severity_Level__c</fullName>
+        <description>Enter the Severity level of the Risk/Issue</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required: Enter the Severity level of the Risk/Issue</inlineHelpText>
+        <label>Severity Level</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>true</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Critical</fullName>
+                    <default>false</default>
+                    <label>Critical</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sprint__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Optionally tie a Risk/Issue to a Sprint</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optionally tie a Risk/Issue to a Sprint</inlineHelpText>
+        <label>Sprint</label>
+        <referenceTo>agf__ADM_Sprint__c</referenceTo>
+        <relationshipLabel>Risks &amp; Issues</relationshipLabel>
+        <relationshipName>Risks_Issues</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Story__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Optionally tie the Risk/Issue to a User Story</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optionally tie the Risk/Issue to a User Story</inlineHelpText>
+        <label>User Story</label>
+        <referenceTo>copado__User_Story__c</referenceTo>
+        <relationshipLabel>Risks &amp; Issues</relationshipLabel>
+        <relationshipName>Risks_Issues</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Enter the related work for the RIsk/issue</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the related work for the RIsk/issue</inlineHelpText>
+        <label>Work</label>
+        <referenceTo>agf__ADM_Work__c</referenceTo>
+        <relationshipLabel>Risks &amp; Issues</relationshipLabel>
+        <relationshipName>Risks_Issues</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Risks &amp; Issues</label>
+    <nameField>
+        <displayFormat>I-{00000}</displayFormat>
+        <label>Risks &amp; Issues Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Risks &amp; Issues</pluralLabel>
+    <recordTypeTrackFeedHistory>true</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Issue</fullName>
+        <active>true</active>
+        <description>A Risk that has been realized and is now a Issue to a program, project, sprint, or user story</description>
+        <label>Issue</label>
+        <picklistValues>
+            <picklist>Severity_Level__c</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Risk</fullName>
+        <active>true</active>
+        <description>Issue has not materialized yet and is merely a Risk to a program, project, sprint, or user story</description>
+        <label>Risk</label>
+        <picklistValues>
+            <picklist>Severity_Level__c</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Severity_Level__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Mitigation_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Build__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sprint__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>User_Story__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Work__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Description_Required</fullName>
+        <active>true</active>
+        <description>Description is Required</description>
+        <errorConditionFormula>ISBLANK( Description__c)</errorConditionFormula>
+        <errorDisplayField>Description__c</errorDisplayField>
+        <errorMessage>Description Field is Required</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

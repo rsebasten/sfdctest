@@ -1,0 +1,9 @@
+<apex:page standardController="Corporate_Package__c" extensions="SFDC_CorpPackage_SyncLines_Controller" >
+	<apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages />
+        </apex:pageBlock>
+    	 <apex:commandButton value="Sync Metadata Component Lines" action="{!syncLines}"/>
+        <apex:commandButton value="Return to Corporate Package" action="{!cancel}"/>
+    </apex:form>
+</apex:page>

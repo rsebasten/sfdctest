@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Key Milestones and Deliverables</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BU__c</fullName>
+        <description>List of Business Units for the Project Milestone Record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the BU the Milestone pertains to for proper reporting</inlineHelpText>
+        <label>BU</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FMC AGCRM</fullName>
+                    <default>false</default>
+                    <label>FMC AGCRM</label>
+                </value>
+                <value>
+                    <fullName>MATCOCRM</fullName>
+                    <default>false</default>
+                    <label>MS - CRM</label>
+                </value>
+                <value>
+                    <fullName>AGCRM</fullName>
+                    <default>false</default>
+                    <label>AGCRM</label>
+                </value>
+                <value>
+                    <fullName>DPSCRM</fullName>
+                    <default>false</default>
+                    <label>DPSCRM</label>
+                </value>
+                <value>
+                    <fullName>DSSCRM</fullName>
+                    <default>false</default>
+                    <label>DSSCRM</label>
+                </value>
+                <value>
+                    <fullName>E&amp;CCRM</fullName>
+                    <default>false</default>
+                    <label>E&amp;CCRM</label>
+                </value>
+                <value>
+                    <fullName>IBCRM</fullName>
+                    <default>false</default>
+                    <label>IBCRM</label>
+                </value>
+                <value>
+                    <fullName>N&amp;HCRM</fullName>
+                    <default>false</default>
+                    <label>N&amp;HCRM</label>
+                </value>
+                <value>
+                    <fullName>AGUtil</fullName>
+                    <default>false</default>
+                    <label>AGUtil</label>
+                </value>
+                <value>
+                    <fullName>MATCOUtil</fullName>
+                    <default>false</default>
+                    <label>MS - Util</label>
+                </value>
+                <value>
+                    <fullName>SpecCoUtil</fullName>
+                    <default>false</default>
+                    <label>SpecCoUtil</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Confirmed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Confirmation by the Delivery Manager that a key deliverable has been completed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirmed by the SFDC Delivery Manager</inlineHelpText>
+        <label>Confirmed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <description>Milestone Date</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Milestone Description</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Fixed_Fee_Payment__c</fullName>
+        <description>Designates payment to be made when milestone is completed in a fixed fee project.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates payment to be made when milestone is completed in a fixed fee project.</inlineHelpText>
+        <label>Fixed Fee Payment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Key_Deliverable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates a key deliverable milestone</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this milestone a key deliverable in the project (i.e. a formal signoff is required by the Client)?</inlineHelpText>
+        <label>Key Deliverable?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Status_Icon__c</fullName>
+        <description>Milestone Status Icon</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(   Status__c  , 
+&quot;New&quot;, &quot;/img/samples/stars_100.gif&quot;, 
+&quot;In Process&quot;, &quot;/img/samples/stars_300.gif&quot;, 
+&quot;On Hold&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;Complete&quot;, &quot;/img/samples/stars_500.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;milestone status icon&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Milestone Status Icon</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Milestone_Type__c</fullName>
+        <description>Field to identify if Milestone relates to UAT or Prod Migration</description>
+        <externalId>false</externalId>
+        <label>Migration Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>UAT Migration</fullName>
+                    <default>false</default>
+                    <label>UAT Migration</label>
+                </value>
+                <value>
+                    <fullName>PROD Migration</fullName>
+                    <default>false</default>
+                    <label>PROD Migration</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Milestone__c</fullName>
+        <description>Milestone Name</description>
+        <externalId>false</externalId>
+        <label>Milestone</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Completion_Date__c</fullName>
+        <description>As defined by the original project timeline during the planning stage of the project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>As defined by the original project timeline during the planning stage of the project</inlineHelpText>
+        <label>Original Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Percent_Complete__c</fullName>
+        <description>Milestone % complete to enhance reporting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>enter the percent complete for the milestone</inlineHelpText>
+        <label>Percent Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Phase__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Plan</fullName>
+                    <default>true</default>
+                    <label>1 - Plan</label>
+                </value>
+                <value>
+                    <fullName>2 - Analyze</fullName>
+                    <default>false</default>
+                    <label>2 - Analyze</label>
+                </value>
+                <value>
+                    <fullName>3 - Design</fullName>
+                    <default>false</default>
+                    <label>3 - Design</label>
+                </value>
+                <value>
+                    <fullName>4 - Build &amp; Validate</fullName>
+                    <default>false</default>
+                    <label>4 - Build &amp; Validate</label>
+                </value>
+                <value>
+                    <fullName>5 - Deploy</fullName>
+                    <default>false</default>
+                    <label>5 - Deploy</label>
+                </value>
+                <value>
+                    <fullName>6 - Closure</fullName>
+                    <default>false</default>
+                    <label>6 - Closure</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Progress_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(  Progress__c , 
+&quot;Green&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Yellow&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;Red&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;cust sat indicator&quot;)</formula>
+        <label>Progress Flag</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Progress__c</fullName>
+        <description>G = on target to meet completion date
+Y = delayed, but no impact to overall project schedule
+R = delayed, will impact go live date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>G = on target to meet completion date
+Y = delayed, but no impact to overall project schedule
+R = delayed, will impact go live date</inlineHelpText>
+        <label>Progress</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>true</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+                <value>
+                    <fullName>DONE</fullName>
+                    <default>false</default>
+                    <label>DONE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Overview__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related Project</description>
+        <externalId>false</externalId>
+        <label>Project Overview</label>
+        <referenceTo>Project_Overview__c</referenceTo>
+        <relationshipLabel>Project Milestones and Deliverables</relationshipLabel>
+        <relationshipName>R00N80000002QnvmEAC</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Revised_Estimated_Completion_Date__c</fullName>
+        <description>If the estimate changes, enter the new date here</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the estimate changes, enter the new date here</inlineHelpText>
+        <label>Revised Estimated Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Team Responsible for completing the assigned milestone</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select Team Name for list</inlineHelpText>
+        <label>Team</label>
+        <referenceTo>agf__ADM_Scrum_Team__c</referenceTo>
+        <relationshipLabel>Project Milestones and Deliverables</relationshipLabel>
+        <relationshipName>Project_Milestones_and_Deliverables</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Project Milestones and Deliverables</label>
+    <listViews>
+        <fullName>AG_CRM_Milestones</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Status__c</columns>
+        <columns>Milestone_Type__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>AGCRM</value>
+        </filters>
+        <label>AG CRM Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>AgCO_Util_Milestones</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>AGUtil</value>
+        </filters>
+        <label>AgCO Util Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Remediation_Milestones</fullName>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Description__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Milestone__c</field>
+            <operation>contains</operation>
+            <value>Remediation</value>
+        </filters>
+        <label>All Remediation Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>DPS_CRM_Milestones</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>DPSCRM</value>
+        </filters>
+        <label>DPS CRM -Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>DSS_CRM_Milestones</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>DSSCRM</value>
+        </filters>
+        <label>DSS CRM -Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>E_C_CRM_Milestones</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>E&amp;CCRM</value>
+        </filters>
+        <label>E&amp;C CRM -Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>FMC_AGCRM</fullName>
+        <columns>NAME</columns>
+        <columns>BU__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>FMC AGCRM</value>
+        </filters>
+        <label>FMC AGCRM</label>
+    </listViews>
+    <listViews>
+        <fullName>IB_CRM_Milestones</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Status__c</columns>
+        <columns>Milestone_Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Project_Overview__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>IBCRM</value>
+        </filters>
+        <label>IB CRM Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>PS_CRM_UAT</fullName>
+        <columns>NAME</columns>
+        <columns>BU__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>DPSCRM</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Complete</value>
+        </filters>
+        <label>PS-CRM UAT</label>
+    </listViews>
+    <listViews>
+        <fullName>SFDC_SoW007_Core_Team</fullName>
+        <columns>NAME</columns>
+        <columns>Team__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>SFDC SoW007 Core Team</value>
+        </filters>
+        <label>SFDC SoW007 Core Team</label>
+    </listViews>
+    <listViews>
+        <fullName>SpecCo_Util_Milestones</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>SpecCoUtil</value>
+        </filters>
+        <label>SpecCo Util Milestones</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_A_DSS</fullName>
+        <columns>NAME</columns>
+        <columns>BU__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>DSSCRM</value>
+        </filters>
+        <label>Team A - DSS</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_A_E_C</fullName>
+        <columns>NAME</columns>
+        <columns>BU__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>E&amp;CCRM</value>
+        </filters>
+        <label>Team A - E&amp;C</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_A_NH_CRM_E_C_DSS</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team A - NH CRM - E&amp;C/DSS</value>
+        </filters>
+        <label>Team A - NH CRM -E&amp;C - DSS</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_A_NH_CRM_E_C_DSS_In_progress</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team A - NH CRM - E&amp;C/DSS</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <label>Team A - NH CRM - E&amp;C/DSS - In progress</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_A_N_H</fullName>
+        <columns>NAME</columns>
+        <columns>BU__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>N&amp;HCRM</value>
+        </filters>
+        <label>Team A - N&amp;H</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_B_AG_CRM_IB_In_Progress</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team B - AG CRM - IB</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <filters>
+            <field>BU__c</field>
+            <operation>equals</operation>
+            <value>AGCRM</value>
+        </filters>
+        <label>Team B - AG CRM - IB - In Progress</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_C_AGUtil_SpecCoPA_DPS_in_Progress</fullName>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team C - AG Utility - SpecCo PA - DPS</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <label>Team C AGUtil-SpecCoPA-DPS in Progress</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_C_AG_Utility_SpecCo_PA_IB</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team C - AG Utility - SpecCo PA - DPS</value>
+        </filters>
+        <filters>
+            <field>Team__c</field>
+            <operation>contains</operation>
+            <value>DPS</value>
+        </filters>
+        <label>Team C - AG Utility - SpecCo PA - DPS</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_D_MATCO_CRM</fullName>
+        <columns>NAME</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team D MATCO CRM</value>
+        </filters>
+        <label>Team D MATCO CRM</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_D_MATCO_Util</fullName>
+        <columns>NAME</columns>
+        <columns>Team__c</columns>
+        <columns>BU__c</columns>
+        <columns>Percent_Complete__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Key_Deliverable__c</columns>
+        <columns>Milestone_Status_Icon__c</columns>
+        <columns>Progress_Flag__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team D MATCO Utility</value>
+        </filters>
+        <label>Team D MATCO Util</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>Project Milestones and Deliverables</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Project Milestones and Deliverables</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project_Overview__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Milestone__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Overview__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Milestone__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Project_Overview__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Milestone__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Overview__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Milestone__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

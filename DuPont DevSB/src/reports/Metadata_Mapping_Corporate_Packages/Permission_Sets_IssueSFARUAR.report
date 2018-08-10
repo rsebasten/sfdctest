@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.MetaDataType__c</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.Destination_Org__c</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.MetaDataName__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$OneDuPontMetaData__c.MetaDataType__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Perm</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Permission Sets IssueSFARUAR</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Corporate_Package__c$Corporate_Metadata_Components__c@Corporate_Metadata_Components__c.Metdata_Mapping_One_Dupont__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

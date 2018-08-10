@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Corporate Packages Object to track all Corp package deployments being done as part of org Split</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Copado_Deployment__c</fullName>
+        <description>URL For the Copado Deployment Record</description>
+        <externalId>false</externalId>
+        <label>Copado Deployment</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Deployed_Production_Orgs__c</fullName>
+        <externalId>false</externalId>
+        <label>Deployed Production Orgs</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AgCo</fullName>
+                    <default>false</default>
+                    <label>AgCo</label>
+                </value>
+                <value>
+                    <fullName>MatCo</fullName>
+                    <default>false</default>
+                    <label>MatCo</label>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                    <label>NH</label>
+                </value>
+                <value>
+                    <fullName>IB</fullName>
+                    <default>false</default>
+                    <label>IB</label>
+                </value>
+                <value>
+                    <fullName>DPS</fullName>
+                    <default>false</default>
+                    <label>DPS</label>
+                </value>
+                <value>
+                    <fullName>DSS</fullName>
+                    <default>false</default>
+                    <label>DSS</label>
+                </value>
+                <value>
+                    <fullName>EC</fullName>
+                    <default>false</default>
+                    <label>EC</label>
+                </value>
+                <value>
+                    <fullName>Remedy</fullName>
+                    <default>false</default>
+                    <label>Remedy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Out of Scope</fullName>
+                    <default>false</default>
+                    <label>Out of Scope</label>
+                </value>
+                <value>
+                    <fullName>Planned</fullName>
+                    <default>false</default>
+                    <label>Planned</label>
+                </value>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                    <label>Development In Progress</label>
+                </value>
+                <value>
+                    <fullName>Development Completed</fullName>
+                    <default>false</default>
+                    <label>Development Completed</label>
+                </value>
+                <value>
+                    <fullName>Waiting for TCS Validation</fullName>
+                    <default>false</default>
+                    <label>Waiting for TCS Validation</label>
+                </value>
+                <value>
+                    <fullName>TCS Validated</fullName>
+                    <default>false</default>
+                    <label>TCS Validated</label>
+                </value>
+                <value>
+                    <fullName>Waiting for UAT</fullName>
+                    <default>false</default>
+                    <label>UAT In Progess</label>
+                </value>
+                <value>
+                    <fullName>UAT Validated</fullName>
+                    <default>false</default>
+                    <label>UAT Validated</label>
+                </value>
+                <value>
+                    <fullName>Production Ready</fullName>
+                    <default>false</default>
+                    <label>Production Ready</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Targeted_Production_Orgs__c</fullName>
+        <externalId>false</externalId>
+        <label>Targeted Production Orgs</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AgCo</fullName>
+                    <default>false</default>
+                    <label>AgCo</label>
+                </value>
+                <value>
+                    <fullName>MatCo</fullName>
+                    <default>false</default>
+                    <label>MatCo</label>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                    <label>NH</label>
+                </value>
+                <value>
+                    <fullName>IB</fullName>
+                    <default>false</default>
+                    <label>IB</label>
+                </value>
+                <value>
+                    <fullName>DPS</fullName>
+                    <default>false</default>
+                    <label>DPS</label>
+                </value>
+                <value>
+                    <fullName>DSS</fullName>
+                    <default>false</default>
+                    <label>DSS</label>
+                </value>
+                <value>
+                    <fullName>EC</fullName>
+                    <default>false</default>
+                    <label>EC</label>
+                </value>
+                <value>
+                    <fullName>Remedy</fullName>
+                    <default>false</default>
+                    <label>Remedy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Targeted_Sandbox_Orgs__c</fullName>
+        <externalId>false</externalId>
+        <label>Deployed Sandbox Orgs</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AgCo - Dev</fullName>
+                    <default>false</default>
+                    <label>AgCo - Dev</label>
+                </value>
+                <value>
+                    <fullName>AgCO - UAT</fullName>
+                    <default>false</default>
+                    <label>AgCO - UAT</label>
+                </value>
+                <value>
+                    <fullName>MatCo - Dev</fullName>
+                    <default>false</default>
+                    <label>MatCo - Dev</label>
+                </value>
+                <value>
+                    <fullName>MatCo - UAT</fullName>
+                    <default>false</default>
+                    <label>MatCo - UAT</label>
+                </value>
+                <value>
+                    <fullName>NH - Dev</fullName>
+                    <default>false</default>
+                    <label>NH - Dev</label>
+                </value>
+                <value>
+                    <fullName>NH - UAT</fullName>
+                    <default>false</default>
+                    <label>NH - UAT</label>
+                </value>
+                <value>
+                    <fullName>IB - Dev</fullName>
+                    <default>false</default>
+                    <label>IB - Dev</label>
+                </value>
+                <value>
+                    <fullName>IB - UAT</fullName>
+                    <default>false</default>
+                    <label>IB - UAT</label>
+                </value>
+                <value>
+                    <fullName>DPS - Dev</fullName>
+                    <default>false</default>
+                    <label>DPS - Dev</label>
+                </value>
+                <value>
+                    <fullName>DPS - UAT</fullName>
+                    <default>false</default>
+                    <label>DPS - UAT</label>
+                </value>
+                <value>
+                    <fullName>DSS - Dev</fullName>
+                    <default>false</default>
+                    <label>DSS - Dev</label>
+                </value>
+                <value>
+                    <fullName>DSS - UAT</fullName>
+                    <default>false</default>
+                    <label>DSS - UAT</label>
+                </value>
+                <value>
+                    <fullName>EC - Dev</fullName>
+                    <default>false</default>
+                    <label>EC - Dev</label>
+                </value>
+                <value>
+                    <fullName>EC - UAT</fullName>
+                    <default>false</default>
+                    <label>EC - UAT</label>
+                </value>
+                <value>
+                    <fullName>Remedy - Dev</fullName>
+                    <default>false</default>
+                    <label>Remedy - Dev</label>
+                </value>
+                <value>
+                    <fullName>Remedy - UAT</fullName>
+                    <default>false</default>
+                    <label>Remedy - UAT</label>
+                </value>
+                <value>
+                    <fullName>AgCo - Issues</fullName>
+                    <default>false</default>
+                    <label>AgCo - Issues</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <label>Corporate Package</label>
+    <listViews>
+        <fullName>ALL</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Status__c</columns>
+        <columns>Targeted_Production_Orgs__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>ALL</label>
+    </listViews>
+    <nameField>
+        <label>Corporate Package Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Corporate Packages</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Copado_Deployment__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Sync_Metadata_Lines</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Sync Metadata Lines</masterLabel>
+        <openType>sidebar</openType>
+        <page>SFDC_CorpPackage_SyncLines</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

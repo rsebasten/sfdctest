@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Actions__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Actions__c.Date_Opened__c</field>
+    </columns>
+    <columns>
+        <field>Actions__c.Date_Due_Closed__c</field>
+    </columns>
+    <columns>
+        <field>Actions__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>Actions__c.Description__c</field>
+    </columns>
+    <description>Report of Open Items to be discussed at weekly status meeting</description>
+    <filter>
+        <criteriaItems>
+            <column>Actions__c.Date_Due_Closed__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>7/11/2018</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Actions__c.Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_OWNER_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Open Actions</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Actions__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Actions__c.Date_Opened__c</dateColumn>
+        <endDate>2018-09-18</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-02-12</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <description>Orders Feature that is installed on the orgs</description>
+    <filter>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.MetaDataName__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>CustomObject.Order</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OneDuPontMetaData__c.Destination_Org__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Orders Installed by BU</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$OneDuPontMetaData__c@OneDuPontMetaData__c.MetaDataType__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OneDuPontMetaData__c.AgCO_Last_Mapped_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

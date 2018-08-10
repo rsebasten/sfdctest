@@ -1,0 +1,1680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CRM_IT_Project_ID__c</fullName>
+        <description>Number assigned by Salesforce.com when a project is entered</description>
+        <displayFormat>CRM-{YYYY}-{MM}-{0000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto generated ID for the project.</inlineHelpText>
+        <label>CRM IT Project ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>DEIS_ID__c</fullName>
+        <description>DEIS ID if project is part of an existing DEIS Project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter DEIS ID if project is part of an existing DEIS Project</inlineHelpText>
+        <label>DEIS ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEIS_Project_Name__c</fullName>
+        <description>The official name associated with the DEIS Project.</description>
+        <externalId>false</externalId>
+        <label>DEIS Project Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEIS_Stage__c</fullName>
+        <description>Stage of the project in DEIS (if applicable)</description>
+        <externalId>false</externalId>
+        <label>DEIS Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0 - Pre-Project</fullName>
+                    <default>false</default>
+                    <label>0 - Pre-Project</label>
+                </value>
+                <value>
+                    <fullName>1 - Identify Need</fullName>
+                    <default>false</default>
+                    <label>1 - Identify Need</label>
+                </value>
+                <value>
+                    <fullName>2 - Research and Evaluate</fullName>
+                    <default>false</default>
+                    <label>2 - Research and Evaluate</label>
+                </value>
+                <value>
+                    <fullName>3 - Design</fullName>
+                    <default>false</default>
+                    <label>3 - Design</label>
+                </value>
+                <value>
+                    <fullName>4 - Build</fullName>
+                    <default>false</default>
+                    <label>4 - Build</label>
+                </value>
+                <value>
+                    <fullName>5 - Launch</fullName>
+                    <default>false</default>
+                    <label>5 - Launch</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DEIS_Status__c</fullName>
+        <description>Status of Project in DEIS (where applicable)</description>
+        <externalId>false</externalId>
+        <label>DEIS Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>End__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EI</fullName>
+                    <default>false</default>
+                    <label>EI</label>
+                </value>
+                <value>
+                    <fullName>IB</fullName>
+                    <default>false</default>
+                    <label>IB</label>
+                </value>
+                <value>
+                    <fullName>IT-CORP</fullName>
+                    <default>false</default>
+                    <label>IT-CORP</label>
+                </value>
+                <value>
+                    <fullName>M&amp;S-IT</fullName>
+                    <default>false</default>
+                    <label>M&amp;S-IT</label>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                    <label>NH</label>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                    <label>SC</label>
+                </value>
+                <value>
+                    <fullName>SS</fullName>
+                    <default>false</default>
+                    <label>SS</label>
+                </value>
+                <value>
+                    <fullName>TAP</fullName>
+                    <default>false</default>
+                    <label>TAP</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Details_R__c</fullName>
+        <description>Rich Text field for storing pictures, emails, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rich Text field that can be used to store pictures, Emails, etc.</inlineHelpText>
+        <label>Project Details</label>
+        <length>15000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_IT_Environment__c</fullName>
+        <externalId>false</externalId>
+        <label>Project IT Environment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User access -remote, local</fullName>
+                    <default>false</default>
+                    <label>User access -remote, local</label>
+                </value>
+                <value>
+                    <fullName>Device upgrades</fullName>
+                    <default>false</default>
+                    <label>Device upgrades</label>
+                </value>
+                <value>
+                    <fullName>Security (access, visibility)</fullName>
+                    <default>false</default>
+                    <label>Security (access, visibility)</label>
+                </value>
+                <value>
+                    <fullName>DISO review</fullName>
+                    <default>false</default>
+                    <label>DISO review</label>
+                </value>
+                <value>
+                    <fullName>Data sources</fullName>
+                    <default>false</default>
+                    <label>Data sources</label>
+                </value>
+                <value>
+                    <fullName>Data translation, mapping</fullName>
+                    <default>false</default>
+                    <label>Data translation, mapping</label>
+                </value>
+                <value>
+                    <fullName>Targeted legacy replacement</fullName>
+                    <default>false</default>
+                    <label>Targeted legacy replacement</label>
+                </value>
+                <value>
+                    <fullName>Archive legacy history</fullName>
+                    <default>false</default>
+                    <label>Archive legacy history</label>
+                </value>
+                <value>
+                    <fullName>Configuration reuse</fullName>
+                    <default>false</default>
+                    <label>Configuration reuse</label>
+                </value>
+                <value>
+                    <fullName>Business specific data</fullName>
+                    <default>false</default>
+                    <label>Business specific data</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Start_Date__c</fullName>
+        <defaultValue>Today()+1</defaultValue>
+        <description>Initiation date of project</description>
+        <externalId>false</externalId>
+        <label>Project Start Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Type__c</fullName>
+        <description>A effort rating of the degree of complexity of a project.</description>
+        <externalId>false</externalId>
+        <label>Project Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Compliance</fullName>
+                    <default>false</default>
+                    <label>Compliance</label>
+                </value>
+                <value>
+                    <fullName>Corrective Enhancement</fullName>
+                    <default>false</default>
+                    <label>Corrective Enhancement</label>
+                </value>
+                <value>
+                    <fullName>CRM Content</fullName>
+                    <default>false</default>
+                    <label>CRM Content</label>
+                </value>
+                <value>
+                    <fullName>Data Quality</fullName>
+                    <default>false</default>
+                    <label>Data Quality</label>
+                </value>
+                <value>
+                    <fullName>Deploy New SFDC Program</fullName>
+                    <default>false</default>
+                    <label>Deploy New SFDC Program</label>
+                </value>
+                <value>
+                    <fullName>Improve Business Process</fullName>
+                    <default>false</default>
+                    <label>Improve Business Process</label>
+                </value>
+                <value>
+                    <fullName>Introduce New SFDC Functionality</fullName>
+                    <default>false</default>
+                    <label>Introduce New SFDC Functionality</label>
+                </value>
+                <value>
+                    <fullName>Program</fullName>
+                    <default>false</default>
+                    <label>Program</label>
+                </value>
+                <value>
+                    <fullName>Usability Improvement</fullName>
+                    <default>false</default>
+                    <label>Usability Improvement</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDC_Instance__c</fullName>
+        <description>The instance of SFDC for which the project will be implemented.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The instance of SFDC for which the project will be implemented.</inlineHelpText>
+        <label>SFDC Instance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>One-DuPont</fullName>
+                    <default>true</default>
+                    <label>One-DuPont</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+                <value>
+                    <fullName>SS CRM</fullName>
+                    <default>false</default>
+                    <label>SS CRM</label>
+                </value>
+                <value>
+                    <fullName>PS CRM</fullName>
+                    <default>false</default>
+                    <label>PS CRM</label>
+                </value>
+                <value>
+                    <fullName>EC CRM</fullName>
+                    <default>false</default>
+                    <label>EC CRM</label>
+                </value>
+                <value>
+                    <fullName>IB CRM</fullName>
+                    <default>false</default>
+                    <label>IB CRM</label>
+                </value>
+                <value>
+                    <fullName>NH CRM</fullName>
+                    <default>false</default>
+                    <label>NH CRM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <description>Stage of this project (or group of enhancements) in relation to release or deployment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Charter(Discover/Evaluate)
+Plan(Prepare/Initiate)
+Design(Collaborate)
+Configure(Clicks)
+Develop(Code)
+Construct(Build)
+Validate(Test/Review)
+USAT(UserAcceptance)
+Deploy (Go-Live/Train/Communicate)
+Control (Transfer to Support)
+End (Complete)</inlineHelpText>
+        <label>Stage</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Charter</fullName>
+                    <default>false</default>
+                    <label>Charter</label>
+                </value>
+                <value>
+                    <fullName>Plan</fullName>
+                    <default>false</default>
+                    <label>Plan</label>
+                </value>
+                <value>
+                    <fullName>Design</fullName>
+                    <default>false</default>
+                    <label>Design</label>
+                </value>
+                <value>
+                    <fullName>Configure</fullName>
+                    <default>false</default>
+                    <label>Configure</label>
+                </value>
+                <value>
+                    <fullName>Develop</fullName>
+                    <default>false</default>
+                    <label>Develop</label>
+                </value>
+                <value>
+                    <fullName>Construct</fullName>
+                    <default>false</default>
+                    <label>Construct</label>
+                </value>
+                <value>
+                    <fullName>Validate</fullName>
+                    <default>false</default>
+                    <label>Validate</label>
+                </value>
+                <value>
+                    <fullName>USAT</fullName>
+                    <default>false</default>
+                    <label>USAT</label>
+                </value>
+                <value>
+                    <fullName>Quality Assurance</fullName>
+                    <default>false</default>
+                    <label>Quality Assurance</label>
+                </value>
+                <value>
+                    <fullName>Deploy</fullName>
+                    <default>false</default>
+                    <label>Deploy</label>
+                </value>
+                <value>
+                    <fullName>Control</fullName>
+                    <default>false</default>
+                    <label>Control</label>
+                </value>
+                <value>
+                    <fullName>End</fullName>
+                    <default>false</default>
+                    <label>End</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status of this Project or Enhancement based on the status within the Demand Review process (matches Portfolio Status in central Project Server)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Demand Review Status</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Idea/Forecast</fullName>
+                    <default>false</default>
+                    <label>Idea/Forecast</label>
+                </value>
+                <value>
+                    <fullName>BU/FN Approved</fullName>
+                    <default>false</default>
+                    <label>BU/FN Approved</label>
+                </value>
+                <value>
+                    <fullName>IT&amp;P Priortized</fullName>
+                    <default>false</default>
+                    <label>IT&amp;P Priortized</label>
+                </value>
+                <value>
+                    <fullName>Pre-Planning</fullName>
+                    <default>false</default>
+                    <label>Pre-Planning</label>
+                </value>
+                <value>
+                    <fullName>Pending Start</fullName>
+                    <default>false</default>
+                    <label>Pending Start</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Gap &amp; Reconciliation Needed</fullName>
+                    <default>false</default>
+                    <label>Gap &amp; Reconciliation Needed</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Rework/Re-evaluate/Further Action</fullName>
+                    <default>false</default>
+                    <label>Rework/Re-evaluate/Further Action</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>ZZ - Field Not Used</fullName>
+                    <default>false</default>
+                    <label>ZZ - Field Not Used</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>CRM IT Project</label>
+    <nameField>
+        <label>Project Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CRM IT Projects</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>CRMAdministration</fullName>
+        <active>true</active>
+        <description>Compliance and SFDC System Maintenance</description>
+        <label>CRM Administration</label>
+        <picklistValues>
+            <picklist>DEIS_Stage__c</picklist>
+            <values>
+                <fullName>0 - Pre-Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Identify Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Research and Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DEIS_Status__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>EI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT-CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M%26S-IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_IT_Environment__c</picklist>
+            <values>
+                <fullName>Archive legacy history</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business specific data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configuration reuse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DISO review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data sources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data translation%2C mapping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Device upgrades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security %28access%2C visibility%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Targeted legacy replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User access -remote%2C local</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>CRM Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrective Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy New SFDC Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improve Business Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduce New SFDC Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usability Improvement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>EC CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One-DuPont</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>PS CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS CRM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gap %26 Reconciliation Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT%26P Priortized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea%2FForecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CRM_Program</fullName>
+        <active>true</active>
+        <description>Business Organization CRM Strategy - Parent Project for CRM Support Issues &amp; SFARs</description>
+        <label>CRM Program</label>
+        <picklistValues>
+            <picklist>DEIS_Stage__c</picklist>
+            <values>
+                <fullName>0 - Pre-Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Identify Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Research and Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DEIS_Status__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>EI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT-CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M%26S-IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_IT_Environment__c</picklist>
+            <values>
+                <fullName>Archive legacy history</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business specific data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configuration reuse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DISO review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data sources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data translation%2C mapping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Device upgrades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security %28access%2C visibility%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Targeted legacy replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User access -remote%2C local</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Program</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>EC CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One-DuPont</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>PS CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS CRM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Control</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CRM_Project</fullName>
+        <active>true</active>
+        <description>Large project: 160+ hours or $10,000+ and funded by business</description>
+        <label>CRM Project</label>
+        <picklistValues>
+            <picklist>DEIS_Stage__c</picklist>
+            <values>
+                <fullName>0 - Pre-Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Identify Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Research and Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DEIS_Status__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>EI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT-CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M%26S-IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_IT_Environment__c</picklist>
+            <values>
+                <fullName>ZZ - Field Not Used</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>CRM Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrective Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy New SFDC Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improve Business Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Introduce New SFDC Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usability Improvement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>EC CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One-DuPont</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>PS CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS CRM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BU%2FFN Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gap %26 Reconciliation Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT%26P Priortized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea%2FForecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Start</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pre-Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SFDC_Enhancement</fullName>
+        <active>true</active>
+        <description>Between 40 and 160 hours and less than $10,000</description>
+        <label>SFDC Enhancement</label>
+        <picklistValues>
+            <picklist>DEIS_Stage__c</picklist>
+            <values>
+                <fullName>0 - Pre-Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Identify Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Research and Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DEIS_Status__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>EI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT-CORP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M%26S-IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_IT_Environment__c</picklist>
+            <values>
+                <fullName>Archive legacy history</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business specific data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configuration reuse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DISO review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data sources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data translation%2C mapping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Device upgrades</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security %28access%2C visibility%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Targeted legacy replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User access -remote%2C local</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrective Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improve Business Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usability Improvement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC_Instance__c</picklist>
+            <values>
+                <fullName>EC CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IB CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One-DuPont</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>PS CRM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS CRM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Configure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BU%2FFN Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gap %26 Reconciliation Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT%26P Priortized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea%2FForecast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Start</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pre-Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework%2FRe-evaluate%2FFurther Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project_Start_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.LAST_NAME</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>OWNER.LAST_NAME</lookupFilterFields>
+        <lookupFilterFields>CREATED_DATE</lookupFilterFields>
+        <lookupFilterFields>DEIS_Status__c</lookupFilterFields>
+        <lookupFilterFields>Stage__c</lookupFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Stage__c</searchFilterFields>
+        <searchFilterFields>DEIS_Status__c</searchFilterFields>
+        <searchResultsAdditionalFields>Project_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DEIS_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Apex_Sharing_Access__c</fullName>
+        <label>Apex Sharing Access</label>
+    </sharingReasons>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Issues_for_this_Project</fullName>
+        <availability>online</availability>
+        <description>All Issues Related to this Project</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Issues for this Project</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O30000004xpc0?pv0={!CRM_IT_Project__c.Name}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.External_ID__c</field>
+    </columns>
+    <description>All Metadata components for the SFAR/Issue/UAR Corp Package</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>SFAR</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>SFAR/Issue/UAR Package Component List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Corporate_Package__c$Corporate_Metadata_Components__c@Corporate_Metadata_Components__c.Metdata_Mapping_One_Dupont__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

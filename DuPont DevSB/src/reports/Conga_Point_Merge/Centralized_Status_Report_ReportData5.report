@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>Burn_Report__c.Perdent_Complete__c</field>
+    </columns>
+    <columns>
+        <field>Burn_Report__c.Actual_Hours_to_date__c</field>
+    </columns>
+    <columns>
+        <field>Burn_Report__c.Budget_Hrs__c</field>
+    </columns>
+    <columns>
+        <field>Burn_Report__c.Diff_w_Budget__c</field>
+    </columns>
+    <columns>
+        <field>Burn_Report__c.Forecast_Final_Hours__c</field>
+    </columns>
+    <columns>
+        <field>Burn_Report__c.Resource__c</field>
+    </columns>
+    <columns>
+        <field>Burn_Report__c.Role__c</field>
+    </columns>
+    <description>DO NOT DELETE: Data source for Burn Report to be used by Conga Merge</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_ID</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Centralized Status Report: ReportData5</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Project_Overview__c$Burn_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Project_Overview__c.Burn_Report_Last_Update__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

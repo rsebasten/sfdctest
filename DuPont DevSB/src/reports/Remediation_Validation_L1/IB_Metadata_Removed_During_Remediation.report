@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OneDuPontMetaData__c.IB_Remediation_Level__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.MetaDataName__c</field>
+    </columns>
+    <description>List of all Metadata by type that was removed during remediation project</description>
+    <filter>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.Destination_Org__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>excludes</operator>
+            <value>IB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.Destination_Org_Prior_To_Remediation__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>IB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.IB_CRM_Metadata_Remediation__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Delete</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OneDuPontMetaData__c.MetaDataType__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IB - Metadata Removed During Remediation</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$OneDuPontMetaData__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OneDuPontMetaData__c.IB_Last_Mapped_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

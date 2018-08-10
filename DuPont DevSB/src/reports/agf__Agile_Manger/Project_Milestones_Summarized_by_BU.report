@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Project_Milestones_and_Deliverables__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Project_Milestones_and_Deliverables__c.Percent_Complete__c</field>
+    </columns>
+    <columns>
+        <field>Project_Milestones_and_Deliverables__c.Description__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <description>Project Milestone status summarized by BU</description>
+    <filter>
+        <criteriaItems>
+            <column>Project_Milestones_and_Deliverables__c.BU__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AGCRM,AGUtil,DPSCRM,DSSCRM,E&amp;CCRM,IBCRM,MATCOCRM,MATCOUtil,N&amp;HCRM,SpecCoUtil</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project_Milestones_and_Deliverables__c.BU__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Project Milestones Summarized by BU</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Project_Milestones_and_Deliverables__c@Project_Milestones_and_Deliverables__c.Team__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Project_Milestones_and_Deliverables__c.Actual_Completion_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
