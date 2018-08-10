@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.External_ID__c</field>
+    </columns>
+    <description>All Installed Package Custom Fields</description>
+    <filter>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.External_ID__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>CustomField.</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>All Installed Package Custom Fields</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$OneDuPontMetaData__c@OneDuPontMetaData__c.InstalledPackage__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>OneDuPontMetaData__c.External_ID__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>OneDuPontMetaData__c.AgCO_Last_Mapped_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Parent_Work__c.agf__Child_Work__c</field>
+    </columns>
+    <description>list of open or closed work items with relationshipa</description>
+    <filter>
+        <criteriaItems>
+            <column>agf__ADM_Parent_Work__c.agf__Parent_Scrum_Team__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>victory</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>agf__ADM_Parent_Work__c.agf__Parent_Sprint__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sprint 7,Sprint 8</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>agf__ADM_Parent_Work__c.agf__Parent_Sprint__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Related Work Items</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$agf__ADM_Parent_Work__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>agf__ADM_Parent_Work__c.agf__Created_Date__c</dateColumn>
+        <endDate>2018-07-27</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-02-12</startDate>
+    </timeFrameFilter>
+</Report>

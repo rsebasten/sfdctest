@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>MetaDataTypeSF__c$Name</field>
+    </columns>
+    <columns>
+        <field>MetaDataTypeSF__c.OneDupMetaData__r$MetaDataName__c</field>
+    </columns>
+    <columns>
+        <field>MetaDataTypeSF__c.OneDupMetaData__r$Destination_Org__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>MetaDataTypeSF__c$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>InstalledPackage</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Installed Packages by BU</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Metadata_Types_with_Mappings_and_Installed_Package__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>MetaDataTypeSF__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

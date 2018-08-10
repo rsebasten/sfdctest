@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.MetaDataType__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.MetaDataName__c</field>
+    </columns>
+    <description>All objects associated with Corporate packages</description>
+    <filter>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.MetaDataType__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>CustomObject</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Objects associated with Corporate Packag</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$OneDuPontMetaData__c$Corporate_Metadata_Components__c@Corporate_Metadata_Components__c.Corporate_Package__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OneDuPontMetaData__c.AgCO_Last_Mapped_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

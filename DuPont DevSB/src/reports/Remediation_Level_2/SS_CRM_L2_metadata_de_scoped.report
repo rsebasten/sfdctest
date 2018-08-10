@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.SS_Remediation_Levels__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.SS_CRM_Metadata_Remediation__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.Parent_MetaData_Name__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.MetaDataName__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.Custom_Setting__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.SS_CRM_Remediation_Reason_Note__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.SS_CRM_Dependencies__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c.SS_CRM_Dependency_Notes__c</field>
+    </columns>
+    <description>(10/9) - *** DO NOT DELETE *** items identified by PO.</description>
+    <filter>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.SS_CRM_Remediation_Reason_Note__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>[SW: 10/9]</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.SS_CRM_Metadata_Remediation__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Delete</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OneDuPontMetaData__c.MetaDataType__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>SS CRM L2 metadata de-scoped</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$OneDuPontMetaData__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OneDuPontMetaData__c.DSS_Last_Mapped_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Milestones and Deliverables</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Milestones and Deliverables</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Completion Date --></label>
+        <name>Actual_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the BU the Milestone pertains to for proper reporting --></help>
+        <label><!-- BU --></label>
+        <name>BU__c</name>
+        <picklistValues>
+            <masterLabel>AGCRM</masterLabel>
+            <translation><!-- AGCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AGUtil</masterLabel>
+            <translation><!-- AGUtil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPSCRM</masterLabel>
+            <translation><!-- DPSCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSSCRM</masterLabel>
+            <translation><!-- DSSCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E&amp;CCRM</masterLabel>
+            <translation><!-- E&amp;CCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FMC AGCRM</masterLabel>
+            <translation><!-- FMC AGCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBCRM</masterLabel>
+            <translation><!-- IBCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS - CRM</masterLabel>
+            <translation><!-- MS - CRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS - Util</masterLabel>
+            <translation><!-- MS - Util --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N&amp;HCRM</masterLabel>
+            <translation><!-- N&amp;HCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SpecCoUtil</masterLabel>
+            <translation><!-- SpecCoUtil --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Confirmed by the SFDC Delivery Manager --></help>
+        <label><!-- Confirmed --></label>
+        <name>Confirmed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Designates payment to be made when milestone is completed in a fixed fee project. --></help>
+        <label><!-- Fixed Fee Payment --></label>
+        <name>Fixed_Fee_Payment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this milestone a key deliverable in the project (i.e. a formal signoff is required by the Client)? --></help>
+        <label><!-- Key Deliverable? --></label>
+        <name>Key_Deliverable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Milestone Status Icon --></label>
+        <name>Milestone_Status_Icon__c</name>
+    </fields>
+    <fields>
+        <label><!-- Migration Type --></label>
+        <name>Milestone_Type__c</name>
+        <picklistValues>
+            <masterLabel>PROD Migration</masterLabel>
+            <translation><!-- PROD Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT Migration</masterLabel>
+            <translation><!-- UAT Migration --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Milestone --></label>
+        <name>Milestone__c</name>
+    </fields>
+    <fields>
+        <help><!-- As defined by the original project timeline during the planning stage of the project --></help>
+        <label><!-- Original Completion Date --></label>
+        <name>Original_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter the percent complete for the milestone --></help>
+        <label><!-- Percent Complete --></label>
+        <name>Percent_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase --></label>
+        <name>Phase__c</name>
+        <picklistValues>
+            <masterLabel>1 - Plan</masterLabel>
+            <translation><!-- 1 - Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Analyze</masterLabel>
+            <translation><!-- 2 - Analyze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Design</masterLabel>
+            <translation><!-- 3 - Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Build &amp; Validate</masterLabel>
+            <translation><!-- 4 - Build &amp; Validate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Deploy</masterLabel>
+            <translation><!-- 5 - Deploy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 - Closure</masterLabel>
+            <translation><!-- 6 - Closure --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Progress Flag --></label>
+        <name>Progress_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- G = on target to meet completion date
+Y = delayed, but no impact to overall project schedule
+R = delayed, will impact go live date --></help>
+        <label><!-- Progress --></label>
+        <name>Progress__c</name>
+        <picklistValues>
+            <masterLabel>DONE</masterLabel>
+            <translation><!-- DONE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Overview --></label>
+        <name>Project_Overview__c</name>
+        <relationshipLabel><!-- Project Milestones and Deliverables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If the estimate changes, enter the new date here --></help>
+        <label><!-- Revised Estimated Completion Date --></label>
+        <name>Revised_Estimated_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select Team Name for list --></help>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+        <relationshipLabel><!-- Project Milestones and Deliverables --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

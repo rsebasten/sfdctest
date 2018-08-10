@@ -1,0 +1,48 @@
+<apex:page controller="destructiveChangesCtrl" sidebar="false">
+
+    <apex:form >
+        <apex:pageMessages id="msg"/>
+        
+        <apex:pageBlock title="Create Destructive Changes XML" mode="edit">
+            
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create Destructive XML" action="{!createXML}" reRender="msg, xmlOuterBlock" status="status"/>
+            </apex:pageBlockButtons>        
+            
+            <apex:pageBlockSection title="Target Org & Where Clauses" columns="1">
+                <apex:selectList value="{!OrgName}" label="Target Org Name" size="1" required="true">
+                    <apex:selectOptions value="{!targetOrgs}"/>
+                    <apex:actionSupport event="onchange"
+                                action="{!clearXML}"
+                                rerender="msg, xmlOuterBlock" status="status"/>
+                    
+                </apex:selectList>
+                <apex:inputTextarea value="{!AddWhereClause}" rows="3" cols="50" label="Additional Where Clause"/>
+                <apex:outputText Label="Additional Where Clause Example:">MetaDataType__r.Name = 'ValidationRule' AND MetaDataName__c Like '%credit__c%'</apex:outputText>
+               
+                <apex:inputCheckbox Label="Skip Dependent MetaData" value="{!SkipDependent}"/>
+
+            </apex:pageBlockSection>
+            
+            <apex:outputPanel id="xmlOuterBlock">
+            <apex:pageBlockSection id="xmlInnerBlock" rendered="{!IF(destructiveChangesXML != '',true,false) }" title="Destructive Changes XML" columns="1">
+                <apex:inputTextarea value="{!destructiveChangesXML}" cols="225" rows="50"/>
+            </apex:pageBlockSection>            
+            </apex:outputPanel>
+            
+        </apex:pageBlock>
+    
+       <apex:actionStatus id="status">
+            <apex:facet name="start">
+            <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: 1000; background-color: black;">
+                &nbsp;
+            </div>
+            <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 30% 50%">
+                <img src="http://upload.wikimedia.org/wikipedia/commons/e/ed/Cursor_Windows_Vista.gif" />
+            </div>
+            </apex:facet>
+        </apex:actionStatus>    
+    
+    </apex:form>
+
+</apex:page>

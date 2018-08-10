@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.MetaDataName__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <description>All AgCo Items on Corp Packages that should not be deleted</description>
+    <filter>
+        <criteriaItems>
+            <column>Corporate_Package__c.Targeted_Production_Orgs__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>AgCo</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$OneDuPontMetaData__c.MetaDataType__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AgCo Do NOT DELETE List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Corporate_Package__c$Corporate_Metadata_Components__c@Corporate_Metadata_Components__c.Metdata_Mapping_One_Dupont__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

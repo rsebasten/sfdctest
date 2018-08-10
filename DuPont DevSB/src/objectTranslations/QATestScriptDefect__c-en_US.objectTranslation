@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>QATestScriptDefect</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>QATestScriptDefects</value>
+    </caseValues>
+    <fields>
+        <label><!-- QATest Defect --></label>
+        <lookupFilter>
+            <errorMessage><!-- Must select a Work record with Record Type = Bug --></errorMessage>
+        </lookupFilter>
+        <name>QATest_Defect__c</name>
+        <relationshipLabel><!-- Related Tests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- QATest Script --></label>
+        <name>QATest_Script__c</name>
+        <relationshipLabel><!-- Linked Defects --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

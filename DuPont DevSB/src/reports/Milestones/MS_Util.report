@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Project_Milestones_and_Deliverables__c.Description__c</field>
+    </columns>
+    <columns>
+        <field>Project_Milestones_and_Deliverables__c.Percent_Complete__c</field>
+    </columns>
+    <description>Open Milestones for MS _ Utility</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>SFDC SoW007 Core Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project_Milestones_and_Deliverables__c.Percent_Complete__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>100</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project_Milestones_and_Deliverables__c.BU__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>MATCOUtil</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project_Milestones_and_Deliverables__c.BU__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>MS - Util Open Milestones</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Project_Milestones_and_Deliverables__c@Project_Milestones_and_Deliverables__c.Team__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>FK_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Project_Milestones_and_Deliverables__c.Actual_Completion_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

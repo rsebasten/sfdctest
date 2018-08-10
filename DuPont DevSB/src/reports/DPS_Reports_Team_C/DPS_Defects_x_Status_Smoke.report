@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Priority__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Subject__c</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Impact__c</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Assignee__c</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Created_By_import__c</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Created_On_import__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 3 AND (4 OR 5)) AND 6</booleanFilter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>agf__ADM_Work__c.agf__Bug</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>agf__ADM_Work__c.agf__Created_On_import__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>5/16/2017 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>agf__ADM_Work__c.agf__Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed,Verified by SFDC,Deferred,Not a bug</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>agf__ADM_Work__c.agf__Subject__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Smoke</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>agf__ADM_Work__c.agf__Subject__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>PROD</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Team C -</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>agf__ADM_Work__c.agf__Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DPS - Defects x Status (Smoke)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$agf__ADM_Work__c@agf__ADM_Work__c.agf__Scrum_Team__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>agf__ADM_Work__c.agf__Assigned_On__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

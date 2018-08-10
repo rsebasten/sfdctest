@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.EC_CRM_Metadata_Remediation__c</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.PS_CRM_Remediation__c</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.MetaDataType__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.MetaDataName__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$OneDuPontMetaData__c.Destination_Org__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ETQ Integration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$OneDuPontMetaData__c.EC_CRM_Metadata_Remediation__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Delete,Modify</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$OneDuPontMetaData__c.PS_CRM_Remediation__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Delete,Modify</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>ETQ Pkg Verification</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Corporate_Package__c$Corporate_Metadata_Components__c@Corporate_Metadata_Components__c.Metdata_Mapping_One_Dupont__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Status report details</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Accomplishments_this_Period__c</fullName>
+        <description>Accomplishments this Period</description>
+        <externalId>false</externalId>
+        <label>Accomplishments this Period</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Percent_Complete__c</fullName>
+        <description>Overall percent complete for this track</description>
+        <externalId>false</externalId>
+        <label>Percent Complete</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_but_Not_Accomplished__c</fullName>
+        <description>Planned, but Not Accomplished</description>
+        <externalId>false</externalId>
+        <label>Planned, but Not Accomplished</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Planned_for_Next_Period__c</fullName>
+        <description>Planned for Next Period</description>
+        <externalId>false</externalId>
+        <label>Planned for Next Period</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status_Report__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Status Report</description>
+        <externalId>false</externalId>
+        <label>Status Report</label>
+        <referenceTo>Status_Report__c</referenceTo>
+        <relationshipLabel>Track Updates</relationshipLabel>
+        <relationshipName>R00N80000002QnvWEAS</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>The Scrum Team working on the Track</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select your team name from the look up</inlineHelpText>
+        <label>Team</label>
+        <referenceTo>agf__ADM_Scrum_Team__c</referenceTo>
+        <relationshipLabel>Track Updates</relationshipLabel>
+        <relationshipName>Track_Updates</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Track_Status_Icon__c</fullName>
+        <description>Displays an image (red, yellow, green) for each possible track status.</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE(    Track_Status__c  , 
+&quot;On Schedule&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;Potential Risk&quot;, &quot;/img/samples/flag_yellow.gif&quot;, 
+&quot;At Risk&quot;, &quot;/img/samples/flag_red.gif&quot;,
+&quot;Closed&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;track status indicator&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Track Status Icon</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Track_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Track Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Schedule</fullName>
+                    <default>false</default>
+                    <label>On Schedule</label>
+                </value>
+                <value>
+                    <fullName>Potential Risk</fullName>
+                    <default>false</default>
+                    <label>Potential Risk</label>
+                </value>
+                <value>
+                    <fullName>At Risk</fullName>
+                    <default>false</default>
+                    <label>At Risk</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Track__c</fullName>
+        <description>Track - referred to as Project Phase in Status Report output template</description>
+        <externalId>false</externalId>
+        <label>Track</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application Setup &amp; Design</fullName>
+                    <default>false</default>
+                    <label>Application Setup &amp; Design</label>
+                </value>
+                <value>
+                    <fullName>Data Migration</fullName>
+                    <default>false</default>
+                    <label>Data Migration</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>QA</fullName>
+                    <default>false</default>
+                    <label>QA</label>
+                </value>
+                <value>
+                    <fullName>UAT</fullName>
+                    <default>false</default>
+                    <label>UAT</label>
+                </value>
+                <value>
+                    <fullName>Deploy</fullName>
+                    <default>false</default>
+                    <label>Deploy</label>
+                </value>
+                <value>
+                    <fullName>Hyper-Care</fullName>
+                    <default>false</default>
+                    <label>Hyper-Care</label>
+                </value>
+                <value>
+                    <fullName>Closure</fullName>
+                    <default>false</default>
+                    <label>Closure</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Track Update</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status_Report__c</columns>
+        <columns>Team__c</columns>
+        <columns>Track_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Corporate_Core_Packaging_Team_Track_Up</fullName>
+        <columns>NAME</columns>
+        <columns>Status_Report__c</columns>
+        <columns>Team__c</columns>
+        <columns>Track_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Corporate (Core Packaging) Team</value>
+        </filters>
+        <label>Corporate (Core Packaging) Team Track Up</label>
+    </listViews>
+    <listViews>
+        <fullName>FMC_Ag_SoW010_Track_Update</fullName>
+        <columns>NAME</columns>
+        <columns>Status_Report__c</columns>
+        <columns>Team__c</columns>
+        <columns>Track_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>FMC-AG SoW010</value>
+        </filters>
+        <label>FMC Ag  SoW010 Track Update</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_A_Track_Updates</fullName>
+        <columns>NAME</columns>
+        <columns>Status_Report__c</columns>
+        <columns>Team__c</columns>
+        <columns>Track_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team A - NH CRM - E&amp;C/DSS</value>
+        </filters>
+        <label>Team A Track Updates</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_C_Track_Updates</fullName>
+        <columns>NAME</columns>
+        <columns>Status_Report__c</columns>
+        <columns>Team__c</columns>
+        <columns>Track_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team C - AG Utility - SpecCo PA - DPS</value>
+        </filters>
+        <label>Team C Track Updates</label>
+    </listViews>
+    <listViews>
+        <fullName>Team_MATCO_CRM_Team_MATCO_Utility</fullName>
+        <columns>NAME</columns>
+        <columns>Status_Report__c</columns>
+        <columns>Team__c</columns>
+        <columns>Track_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Team D MATCO CRM,Team D MATCO Utility</value>
+        </filters>
+        <label>Team MATCO CRM / Team MATCO Utility</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>Status Report Detail Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Track Updates</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Status_Report__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Team__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Track_Status__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Date_Due_Closed__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Due/Closed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Opened__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Opened</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Item__c</fullName>
+        <externalId>false</externalId>
+        <label>Item</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Activity Assignment</fullName>
+                    <default>false</default>
+                    <label>Activity Assignment</label>
+                </value>
+                <value>
+                    <fullName>Activity Closure</fullName>
+                    <default>false</default>
+                    <label>Activity Closure</label>
+                </value>
+                <value>
+                    <fullName>API Knowledge Transfer</fullName>
+                    <default>false</default>
+                    <label>API Knowledge Transfer</label>
+                </value>
+                <value>
+                    <fullName>Campaigns</fullName>
+                    <default>false</default>
+                    <label>Campaigns</label>
+                </value>
+                <value>
+                    <fullName>Contracts &amp; Orders</fullName>
+                    <default>false</default>
+                    <label>Contracts &amp; Orders</label>
+                </value>
+                <value>
+                    <fullName>Creating Activities</fullName>
+                    <default>false</default>
+                    <label>Creating Activities</label>
+                </value>
+                <value>
+                    <fullName>Dashboards</fullName>
+                    <default>false</default>
+                    <label>Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Data Migration Test File</fullName>
+                    <default>false</default>
+                    <label>Data Migration Test File</label>
+                </value>
+                <value>
+                    <fullName>Date Created Fields</fullName>
+                    <default>false</default>
+                    <label>Date Created Fields</label>
+                </value>
+                <value>
+                    <fullName>Design Progress</fullName>
+                    <default>false</default>
+                    <label>Design Progress</label>
+                </value>
+                <value>
+                    <fullName>Inactive Users</fullName>
+                    <default>false</default>
+                    <label>Inactive Users</label>
+                </value>
+                <value>
+                    <fullName>Knowledge Transfer</fullName>
+                    <default>false</default>
+                    <label>Knowledge Transfer</label>
+                </value>
+                <value>
+                    <fullName>Legacy Systems</fullName>
+                    <default>false</default>
+                    <label>Legacy Systems</label>
+                </value>
+                <value>
+                    <fullName>Mailing List</fullName>
+                    <default>false</default>
+                    <label>Mailing List</label>
+                </value>
+                <value>
+                    <fullName>Project Plan</fullName>
+                    <default>false</default>
+                    <label>Project Plan</label>
+                </value>
+                <value>
+                    <fullName>QTC Interface</fullName>
+                    <default>false</default>
+                    <label>QTC Interface</label>
+                </value>
+                <value>
+                    <fullName>Risks</fullName>
+                    <default>false</default>
+                    <label>Risks</label>
+                </value>
+                <value>
+                    <fullName>Search &amp; Replace</fullName>
+                    <default>false</default>
+                    <label>Search &amp; Replace</label>
+                </value>
+                <value>
+                    <fullName>SOW Invoice</fullName>
+                    <default>false</default>
+                    <label>SOW Invoice</label>
+                </value>
+                <value>
+                    <fullName>Task Console</fullName>
+                    <default>false</default>
+                    <label>Task Console</label>
+                </value>
+                <value>
+                    <fullName>Technical Contact</fullName>
+                    <default>false</default>
+                    <label>Technical Contact</label>
+                </value>
+                <value>
+                    <fullName>Translation Workbench</fullName>
+                    <default>false</default>
+                    <label>Translation Workbench</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Overview__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>To what Project is the Action related</inlineHelpText>
+        <label>Project Overview</label>
+        <referenceTo>Project_Overview__c</referenceTo>
+        <relationshipLabel>Actions</relationshipLabel>
+        <relationshipName>Actions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Raised_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Raised By</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resolution_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Resolution/Comments</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BPR/Configuration</fullName>
+                    <default>false</default>
+                    <label>BPR/Configuration</label>
+                </value>
+                <value>
+                    <fullName>Custom Development</fullName>
+                    <default>false</default>
+                    <label>Custom Development</label>
+                </value>
+                <value>
+                    <fullName>Data Migration</fullName>
+                    <default>false</default>
+                    <label>Data Migration</label>
+                </value>
+                <value>
+                    <fullName>General Items</fullName>
+                    <default>false</default>
+                    <label>General Items</label>
+                </value>
+                <value>
+                    <fullName>Scope</fullName>
+                    <default>false</default>
+                    <label>Scope</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Action</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Project_Overview__c</columns>
+        <columns>Raised_By__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_Open_Action_Item_Annick</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Raised_By__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <filters>
+            <field>OWNER.FIRST_NAME</field>
+            <operation>equals</operation>
+            <value>Annick</value>
+        </filters>
+        <label>Project Victory Open Action Item-Annick</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_Open_Action_Item_CH</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Raised_By__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <filters>
+            <field>OWNER.FIRST_NAME</field>
+            <operation>equals</operation>
+            <value>Cheryl</value>
+        </filters>
+        <label>Project Victory Open Action Item- CH</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_Open_Action_Item_Status</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <filters>
+            <field>Date_Due_Closed__c</field>
+            <operation>lessThan</operation>
+            <value>7/11/2018</value>
+        </filters>
+        <label>Project Victory Open Action Item Status</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_Open_Action_Items_Sandy</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>Type__c</columns>
+        <columns>Priority__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>victory</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>beckwith</value>
+        </filters>
+        <label>Project Victory Open Action Items Sandy</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_S_C_Service_Action_Item</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>Description__c</columns>
+        <columns>Raised_By__c</columns>
+        <columns>Priority__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Project Victory Open Action Item</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_Victory_S_C_Service_Action_ItemC</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Project_Overview__c</columns>
+        <columns>Raised_By__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Project Victory Actions Closed</label>
+    </listViews>
+    <listViews>
+        <fullName>Temp_Heather_Date</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Date_Opened__c</columns>
+        <columns>Type__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Date_Due_Closed__c</columns>
+        <columns>Status__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Raised_By__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Overview__c</field>
+            <operation>contains</operation>
+            <value>Victory</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Temp View Heather Date</label>
+    </listViews>
+    <nameField>
+        <displayFormat>A-{0}</displayFormat>
+        <label>Action No</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Actions</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Due_Closed__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

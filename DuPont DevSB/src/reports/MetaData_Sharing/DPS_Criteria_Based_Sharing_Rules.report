@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OneDuPontMetaData__c$Name</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c$MetaDataType__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c$MetaDataName__c</field>
+    </columns>
+    <columns>
+        <field>OneDuPontMetaData__c$Destination_Org__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c.Corporate_Metadata_Components__r$Corporate_Package__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Privacy,Code Utility for R&amp;M,Corporate Chatter Policy,CRM IT Projects,Customer Service - CDR,Customer Service - Console,Customer Service - Customer Onboarding,Customer Service - Generic (Core CS),Lead Assignment Rules,Lead Replication,Metadata Application,SFAR/Issue/UAR/Survey</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c$MetaDataType__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>SharingCriteriaRule</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c$Destination_Org__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>includes</operator>
+            <value>DPS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OneDuPontMetaData__c$InstalledPackage__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>DPS - Criteria Based Sharing Rules</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>MetaData_Mapping_with_Corp_Package__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>OneDuPontMetaData__c$MetaDataName__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>OneDuPontMetaData__c.Corporate_Metadata_Components__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

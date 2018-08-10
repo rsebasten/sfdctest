@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.Test_Script_Name__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.Test_Script_Type__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.PRE_CONDITIONS__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.TEST_STEPS__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.Expected_Results__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.POST_CONDITIONS__c</field>
+    </columns>
+    <columns>
+        <field>QATest_Script__c.Comments_Notes__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>QATest_Script__c.Test_Script_Name__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>DSS -</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QATest_Script__c.Test_Script_Name__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>DITL</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>DSS - DITL</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$QATest_Script__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>QATest_Script__c.Test_Script_Type__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>QATest_Script__c.Last_Run_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
